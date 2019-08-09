@@ -10,12 +10,21 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 Jekyll also offers powerful support for code snippets:
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+{% highlight python %}
+def import_data(file_name):
+    """
+    import simulation data from csv file
+    :return: sim_data: Dataframe
+    """
+    sim_data = pd.read_csv(file_name)
+    # remove results from first dummy simulation
+    sim_data = sim_data.iloc[sim_data[sim_data.t == 0].index[1]:, :]
+    sim_data.reset_index(drop=True, inplace=True)
+    sim_data.columns = sim_data.columns.str.replace(' ', '')
+    print(sim_data.shape)
+    print(sim_data.head(1))
+
+    return sim_data
 {% endhighlight %}
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
