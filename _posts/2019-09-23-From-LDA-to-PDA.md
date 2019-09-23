@@ -2,7 +2,7 @@
 layout: post
 mathjax: true
 title:  "Linear Discriminant Analysis (LDA) and Beyond"
-date:   2019-09-21 08:00:00 +0800
+date:   2019-09-23 08:00:00 +0800
 categories: learn
 tags: supervised-learning classification
 ---
