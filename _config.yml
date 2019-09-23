@@ -22,7 +22,7 @@ url: "https://yangxiaozhou.github.io" # the base hostname & protocol for your si
 # twitter_username: jekyllrb
 github_username:  YangXiaozhou
 linkedin_username: yangxiaozhou
-youtube_username: a315345751
+youtube_channel: a315345751
 
 # Build settings
 markdown: kramdown
@@ -30,7 +30,7 @@ theme: minima
 plugins:
   - jekyll-feed
 disqus:
-  shortname: yangxiaozhou.github.io
+  shortname: yangxiaozhou
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
