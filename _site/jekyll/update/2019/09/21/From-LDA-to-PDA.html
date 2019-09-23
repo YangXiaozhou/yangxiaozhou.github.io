@@ -15,7 +15,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-09-21T08:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.","@type":"BlogPosting","url":"http://localhost:4000/jekyll/update/2019/09/21/From-LDA-to-PDA.html","headline":"From Linear Discriminant Analysis to Penalized Discriminant Analysis","dateModified":"2019-09-21T08:00:00+08:00","datePublished":"2019-09-21T08:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/update/2019/09/21/From-LDA-to-PDA.html"},"@context":"http://schema.org"}</script>
+{"description":"You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.","headline":"From Linear Discriminant Analysis to Penalized Discriminant Analysis","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/update/2019/09/21/From-LDA-to-PDA.html"},"@type":"BlogPosting","url":"http://localhost:4000/jekyll/update/2019/09/21/From-LDA-to-PDA.html","dateModified":"2019-09-21T08:00:00+08:00","datePublished":"2019-09-21T08:00:00+08:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Yang Xiaozhou" /></head>
 <body><header class="site-header" role="banner">
@@ -49,10 +49,9 @@
 
 <p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
 
-<p>Bayesian rule with class priors $\pi_1, \dots, \pi_K$:
-$
-\text{allocate } \mathbf{x } \text{ to } \Pi_{j} \text{ if } j = \arg\max_i \pi_i f_i(\mathbf{x}) \,.
-$</p>
+<p>Bayesian rule with class priors $\pi_1, \dots, \pi_K $:</p>
+
+<script type="math/tex; mode=display">\text{allocate } \mathbf{x } \text{ to } \Pi_{j} \text{ if } j = \arg\max_i \pi_i f_i(\mathbf{x}) .</script>
 
 <p>Jekyll also offers powerful support for code snippets:</p>
 
@@ -74,7 +73,30 @@ $</p>
 <p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
 
 
-  </div><a class="u-url" href="/jekyll/update/2019/09/21/From-LDA-to-PDA.html" hidden></a>
+  </div>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+
+  <a class="u-url" href="/jekyll/update/2019/09/21/From-LDA-to-PDA.html" hidden></a>
 </article>
 
       </div>
@@ -91,7 +113,7 @@ $</p>
           <li class="p-name">Yang Xiaozhou</li><li><a class="u-email" href="mailto:xiaozhou.yang@u.nus.edu">xiaozhou.yang@u.nus.edu</a></li></ul>
       </div>
 
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/YangXiaozhou"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">YangXiaozhou</span></a></li><li><a href="https://www.linkedin.com/in/yangxiaozhou"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">yangxiaozhou</span></a></li></ul>
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/YangXiaozhou"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">YangXiaozhou</span></a></li><li><a href="https://www.linkedin.com/in/yangxiaozhou"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">yangxiaozhou</span></a></li><li><a href="https://youtube.com/a315345751"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">a315345751</span></a></li></ul>
 </div>
 
       <div class="footer-col footer-col-3">

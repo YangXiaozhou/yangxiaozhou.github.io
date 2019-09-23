@@ -1,5 +1,6 @@
 ---
 layout: post
+mathjax: true
 title:  "From Linear Discriminant Analysis to Penalized Discriminant Analysis"
 date:   2019-09-21 08:00:00 +0800
 categories: jekyll update
@@ -8,10 +9,11 @@ You’ll find this post in your `_posts` directory. Go ahead and edit it and re-
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 
-Bayesian rule with class priors $\pi_1, \dots, \pi_K$:
-$
-\text{allocate } \mathbf{x } \text{ to } \Pi_{j} \text{ if } j = \arg\max_i \pi_i f_i(\mathbf{x}) \,.
-$
+Bayesian rule with class priors $\pi_1, \dots, \pi_K $:
+
+$$
+\text{allocate } \mathbf{x } \text{ to } \Pi_{j} \text{ if } j = \arg\max_i \pi_i f_i(\mathbf{x}) .
+$$
 
 Jekyll also offers powerful support for code snippets:
 
