@@ -1,6 +1,7 @@
 ---
 layout: post
 mathjax: true
+comments: true
 title:  "From Linear Discriminant Analysis to Penalized Discriminant Analysis"
 date:   2019-09-21 08:00:00 +0800
 categories: jekyll update
