@@ -19,10 +19,15 @@ description: >- # this means to ignore newlines until "baseurl:"
   This is my personal website. I write about my research and in general, life, here.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://yangxiaozhou.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: jekyllrb
+
+google_analytics: UA-89141653-4
+
+# show_excerpts: true
+
 github_username:  YangXiaozhou
 linkedin_username: yangxiaozhou
-youtube_channel: a315345751
+youtube_username: a315345751
+
 
 header_pages:
   - publication.md
