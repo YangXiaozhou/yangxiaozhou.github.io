@@ -10,7 +10,7 @@ title:            Yang Xiaozhou
 tagline:          'A personal website'
 description:      'I write about my research and in general, life, here.'
 url:              https://yangxiaozhou.github.io
-baseurl:          ""
+baseurl:          http://yangxiaozhou.github.io/yangxiaozhou.github.io
 
 author:
   name:           'Yang Xiaozhou'
