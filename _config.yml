@@ -1,5 +1,7 @@
 # Dependencies
-markdown:         kramdown
+markdown: kramdown
+kramdown:
+    math_engine: katex
 highlighter:      rouge
 
 # Permalinks

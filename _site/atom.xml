@@ -4,7 +4,7 @@
  <title>Xiaozhou</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-09-25T13:43:00+08:00</updated>
+ <updated>2019-09-25T16:25:09+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>YANG Xiaozhou</name>
@@ -13,10 +13,33 @@
 
  
  <entry>
-   <title>Linear Discriminant Analysis (LDA) and Beyond</title>
-   <link href="http://localhost:4000/learn/2019/09/23/Linear-Discriminant-Analysis-and-Beyond.html"/>
+   <title>Setting up my blog</title>
+   <link href="http://localhost:4000/programming/2019/09/23/Blog-Set-Up.html"/>
    <updated>2019-09-23T08:00:00+08:00</updated>
-   <id>http://localhost:4000/learn/2019/09/23/Linear-Discriminant-Analysis-and-Beyond</id>
+   <id>http://localhost:4000/programming/2019/09/23/Blog-Set-Up</id>
+   <content type="html">&lt;p&gt;What better way to start a blog than writing about how I actually set this blog up. Because the process is not as straightforward as I though it would be.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-set-up-jekyll&quot;&gt;1. Set up Jekyll&lt;/h3&gt;
+
+&lt;h3 id=&quot;2-host-it-on-github&quot;&gt;2. Host it on GitHub&lt;/h3&gt;
+
+&lt;h3 id=&quot;3-tags--categories&quot;&gt;3. Tags &amp;amp; Categories&lt;/h3&gt;
+
+&lt;h3 id=&quot;4-mathjax&quot;&gt;4. MathJax&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;mathjax.html&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Include it in &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Linear discriminant analysis (LDA) and beyond</title>
+   <link href="http://localhost:4000/theory/2019/09/23/Linear-Discriminant-Analysis-and-Beyond.html"/>
+   <updated>2019-09-23T08:00:00+08:00</updated>
+   <id>http://localhost:4000/theory/2019/09/23/Linear-Discriminant-Analysis-and-Beyond</id>
    <content type="html">&lt;p&gt;LDA is used as a tool for classification.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -26,10 +49,28 @@
   &lt;li&gt;and many more&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Inline math: $x+y$&lt;/p&gt;
+&lt;p&gt;Inline math: $\boldsymbol{x}+\mathbf{y}$&lt;/p&gt;
 
-&lt;p&gt;Displayed math: &lt;script type=&quot;math/tex&quot;&gt;x+y&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;Displayed math:&lt;/p&gt;
 
+&lt;div class=&quot;kdmath&quot;&gt;$$
+x+y
+$$&lt;/div&gt;
+
+&lt;p&gt;In (\ref{eq:sample}), we find the value of an
+interesting integral:&lt;/p&gt;
+
+&lt;p&gt;\begin{align}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample}
+\end{align}&lt;/p&gt;
+
+&lt;p&gt;\begin{align}
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \newline
+  \nabla \cdot \vec{\mathbf{E}} &amp;amp; = 4 \pi \rho \newline
+  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp;amp; = \vec{\mathbf{0}} \newline
+  \nabla \cdot \vec{\mathbf{B}} &amp;amp; = 0
+\end{align}&lt;/p&gt;
 </content>
  </entry>
  

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-  <head>
+<head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  
   
   <!-- include collecttags -->
   
@@ -39,7 +37,38 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- MathJax -->
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    // Fix <code> tags after MathJax finishes running. This is a
+    // hack to overcome a shortcoming of Markdown. Discussion at
+    // https://github.com/mojombo/jekyll/issues/199
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  // Autonumbering by mathjax
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
 </head>
+
 
 
   <body>
@@ -109,20 +138,51 @@
 
 
     <div class="content container">
-        
-
-<div class="posts">
+      <div class="posts">
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/learn/2019/09/23/Linear-Discriminant-Analysis-and-Beyond.html">
-        Linear Discriminant Analysis (LDA) and Beyond
+      <a href="/programming/2019/09/23/Blog-Set-Up.html">
+        Setting up my blog
+      </a>
+    </h1>
+
+    <span class="post-date">23 Sep 2019</span>
+
+    <p>What better way to start a blog than writing about how I actually set this blog up. Because the process is not as straightforward as I though it would be.</p>
+
+
+    <!-- <p>What better way to start a blog than writing about how I actually set this blog up. Because the process is not as straightforward as I though it would be.</p>
+
+<h3 id="1-set-up-jekyll">1. Set up Jekyll</h3>
+
+<h3 id="2-host-it-on-github">2. Host it on GitHub</h3>
+
+<h3 id="3-tags--categories">3. Tags &amp; Categories</h3>
+
+<h3 id="4-mathjax">4. MathJax</h3>
+
+<ol>
+  <li>Create a <code class="highlighter-rouge">mathjax.html</code> file</li>
+  <li>Include it in <code class="highlighter-rouge">head.html</code></li>
+</ol>
+
+ -->
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/theory/2019/09/23/Linear-Discriminant-Analysis-and-Beyond.html">
+        Linear discriminant analysis (LDA) and beyond
       </a>
     </h1>
 
     <span class="post-date">23 Sep 2019</span>
 
     <p>LDA is used as a tool for classification.</p>
+
+
+    <!-- <p>LDA is used as a tool for classification.</p>
 
 <ul>
   <li>Bankruptcy prediction: Edward Altman’s 1968 model</li>
@@ -131,11 +191,29 @@
   <li>and many more</li>
 </ul>
 
-<p>Inline math: $x+y$</p>
+<p>Inline math: $\boldsymbol{x}+\mathbf{y}$</p>
 
-<p>Displayed math: <script type="math/tex">x+y</script></p>
+<p>Displayed math:</p>
 
+<div class="kdmath">$$
+x+y
+$$</div>
 
+<p>In (\ref{eq:sample}), we find the value of an
+interesting integral:</p>
+
+<p>\begin{align}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample}
+\end{align}</p>
+
+<p>\begin{align}
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \newline
+  \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \newline
+  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \newline
+  \nabla \cdot \vec{\mathbf{B}} &amp; = 0
+\end{align}</p>
+ -->
   </div>
   
 </div>
