@@ -1,54 +1,27 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# Dependencies
+markdown:         kramdown
+highlighter:      pygments
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Yang Xiaozhou
-email: xiaozhou.yang{at}u.nus.edu
-description: >- # this means to ignore newlines until "baseurl:"
-  This is my personal website. I write about my research and in general, life, here.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://yangxiaozhou.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+# Permalinks
+permalink:        pretty
 
-google_analytics: UA-89141653-4
+# Setup
+title:            Yang Xiaozhou
+tagline:          'A personal website'
+description:      'I write about my research and in general, life, here.'
+url:              https://yangxiaozhou.github.io
+baseurl:          /
 
-# show_excerpts: true
+author:
+  name:           'Yang Xiaozhou'
+  # url:            https://twitter.com/mdo
 
-github_username:  YangXiaozhou
-linkedin_username: yangxiaozhou
-youtube_username: a315345751
+paginate:         5
 
+# Custom vars
+# version:          2.1.0
 
-header_pages:
-  - publication.md
-  - about.md
+github:           YangXiaozhou
+  # repo:           https://github.com/poole/hyde
 
-# Build settings
-markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
-disqus:
-  shortname: yangxiaozhou
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+plugins: [jekyll-paginate]
