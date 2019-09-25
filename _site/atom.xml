@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>Yang Xiaozhou</title>
+ <title>Xiaozhou</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-09-25T12:09:08+08:00</updated>
+ <updated>2019-09-25T13:43:00+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
-   <name>Yang Xiaozhou</name>
+   <name>YANG Xiaozhou</name>
    <email></email>
  </author>
 
  
  <entry>
    <title>Linear Discriminant Analysis (LDA) and Beyond</title>
-   <link href="http://localhost:4000/learn/2019/09/23/Linear-Discriminant-Analysis-and-Beyond/"/>
+   <link href="http://localhost:4000/learn/2019/09/23/Linear-Discriminant-Analysis-and-Beyond.html"/>
    <updated>2019-09-23T08:00:00+08:00</updated>
    <id>http://localhost:4000/learn/2019/09/23/Linear-Discriminant-Analysis-and-Beyond</id>
    <content type="html">&lt;p&gt;LDA is used as a tool for classification.&lt;/p&gt;
