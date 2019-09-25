@@ -9,8 +9,8 @@ permalink:        pretty
 title:            Yang Xiaozhou
 tagline:          'A personal website'
 description:      'I write about my research and in general, life, here.'
-url:              "https://yangxiaozhou.github.io"
-baseurl:          "/"
+url:              'https://yangxiaozhou.github.io'
+baseurl:          ''
 
 author:
   name:           'Yang Xiaozhou'
