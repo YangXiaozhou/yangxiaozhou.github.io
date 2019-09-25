@@ -14,5 +14,9 @@ LDA is used as a tool for classification.
 - Biomedical studies: discriminate different stages of a disease
 - and many more
 
+Inline math: $x+y$
+
+Displayed math: $$x+y$$
+
 
 

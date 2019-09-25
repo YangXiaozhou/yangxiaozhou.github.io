@@ -4,7 +4,7 @@
  <title>Yang Xiaozhou</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-09-25T09:57:10+08:00</updated>
+ <updated>2019-09-25T10:52:03+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -25,6 +25,10 @@
   &lt;li&gt;Biomedical studies: discriminate different stages of a disease&lt;/li&gt;
   &lt;li&gt;and many more&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;Inline math: $x+y$&lt;/p&gt;
+
+&lt;p&gt;Displayed math: &lt;script type=&quot;math/tex&quot;&gt;x+y&lt;/script&gt;&lt;/p&gt;
 
 </content>
  </entry>
