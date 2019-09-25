@@ -7,7 +7,7 @@ categories: programming
 tags: 
 ---
 
-What better way to start a blog than writing a post about how I actually set this blog up. The process is not as straightforward as I though it would be.
+What better way to start a blog than writing a post about how I actually set this blog up. The process is not as straightforward as I thought it would be.
 
 ### 1. Set up Jekyll 
 
