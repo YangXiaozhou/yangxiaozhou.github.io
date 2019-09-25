@@ -1,4 +1,3 @@
-# yangxiaozhou.github.io
-Personal Website: yangxiaozhou.github.io
+Personal website hosted at yangxiaozhou.github.io
 
-Hosting my personal website.
+Build with [Jekyll](http://jekyllrb.com) and [Hyde](http://hyde.getpoole.com).

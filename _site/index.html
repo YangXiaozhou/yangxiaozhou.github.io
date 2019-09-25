@@ -81,7 +81,7 @@
           Xiaozhou
         </a>
       </h1>
-      <p class="lead">I write about my research and in general, life, here.</p>
+      <p class="lead">I write about my experiences here so that I can move forward.</p>
     </div>
 
     <nav class="sidebar-nav">
@@ -142,17 +142,17 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/programming/2019/09/23/Blog-Set-Up.html">
+      <a href="/programming/2019/09/25/Blog-Set-Up.html">
         Setting up my blog
       </a>
     </h1>
 
-    <span class="post-date">23 Sep 2019</span>
+    <span class="post-date">25 Sep 2019</span>
 
-    <p>What better way to start a blog than writing about how I actually set this blog up. Because the process is not as straightforward as I though it would be.</p>
+    <p>What better way to start a blog than writing a post about how I actually set this blog up. The process is not as straightforward as I though it would be.</p>
 
 
-    <!-- <p>What better way to start a blog than writing about how I actually set this blog up. Because the process is not as straightforward as I though it would be.</p>
+    <!-- <p>What better way to start a blog than writing a post about how I actually set this blog up. The process is not as straightforward as I though it would be.</p>
 
 <h3 id="1-set-up-jekyll">1. Set up Jekyll</h3>
 
@@ -163,56 +163,35 @@
 <h3 id="4-mathjax">4. MathJax</h3>
 
 <ol>
-  <li>Create a <code class="highlighter-rouge">mathjax.html</code> file</li>
-  <li>Include it in <code class="highlighter-rouge">head.html</code></li>
+  <li>Create a <code>mathjax.html</code> file</li>
+  <li>Include it in <code>head.html</code></li>
 </ol>
 
- -->
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/theory/2019/09/23/Linear-Discriminant-Analysis-and-Beyond.html">
-        Linear discriminant analysis (LDA) and beyond
-      </a>
-    </h1>
-
-    <span class="post-date">23 Sep 2019</span>
-
-    <p>LDA is used as a tool for classification.</p>
-
-
-    <!-- <p>LDA is used as a tool for classification.</p>
-
+<h4 id="tips">Tips</h4>
 <ul>
-  <li>Bankruptcy prediction: Edward Altman’s 1968 model</li>
-  <li>Face recognition: learnt features are called Fisher faces</li>
-  <li>Biomedical studies: discriminate different stages of a disease</li>
-  <li>and many more</li>
+  <li>To use the normal dollar sign instead of the MathJax command (escape), put <code>&lt;span class="tex2jax_ignore"&gt;...&lt;/span&gt;</code> around the text you don’t want MathJax to process.</li>
 </ul>
 
-<p>Inline math: $\boldsymbol{x}+\mathbf{y}$</p>
+<h4 id="math-rendering-showcase">Math Rendering Showcase</h4>
+<p>Inline math using <code>\$...\$</code>: $\mathbf{x}+\mathbf{y}$.</p>
 
-<p>Displayed math:</p>
+<p>Displayed math using <code>\$\$...\$\$</code> on a new paragrah:</p>
 
-<div class="kdmath">$$
-x+y
-$$</div>
+<script type="math/tex; mode=display">\mathbf{x}+\mathbf{y}</script>
 
-<p>In (\ref{eq:sample}), we find the value of an
-interesting integral:</p>
-
-<p>\begin{align}
+<p>Automatic numbering and referencing using <span class="tex2jax_ignore"><code>\ref{label}</code></span>:
+In (\ref{eq:sample}), we find the value of an interesting integral:
+\begin{align}
   \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
   \label{eq:sample}
 \end{align}</p>
 
-<p>\begin{align}
+<p>Multiline equations using <code>\begin{align*}</code>:
+\begin{align*}
   \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \newline
-  \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \newline
-  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \newline
-  \nabla \cdot \vec{\mathbf{B}} &amp; = 0
-\end{align}</p>
+  \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho
+\end{align*}</p>
+
  -->
   </div>
   

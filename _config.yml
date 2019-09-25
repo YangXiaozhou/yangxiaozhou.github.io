@@ -1,8 +1,6 @@
 # Dependencies
 markdown: kramdown
-kramdown:
-    math_engine: katex
-highlighter:      rouge
+highlighter:      pygments
 
 # Permalinks
 # permalink:        pretty
@@ -10,7 +8,7 @@ highlighter:      rouge
 # Setup
 title:            Xiaozhou
 tagline:          ''
-description:      'I write about my research and in general, life, here.'
+description:      'I write about my experiences here so that I can move forward.'
 url:              https://yangxiaozhou.github.io
 baseurl:          ''
 
