@@ -4,7 +4,7 @@
  <title>Xiaozhou</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-09-26T16:27:06+08:00</updated>
+ <updated>2019-09-26T17:21:03+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>YANG Xiaozhou</name>
@@ -71,7 +71,22 @@
 
 &lt;p&gt;By the end of Step 1 and 2, we have set up the local engine for generating web pages and the GitHub repo for hosting and publishing your pages. Now we proceed to the actual website construction.&lt;/p&gt;
 
-&lt;h2 id=&quot;3-use-hyde&quot;&gt;3. Use Hyde&lt;/h2&gt;
+&lt;h2 id=&quot;3-use-a-website-template&quot;&gt;3. Use a website template&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://hyde.getpoole.com&quot;&gt;Hyde&lt;/a&gt; is a Jekyll website theme built on &lt;a href=&quot;https://github.com/poole/poole&quot;&gt;Poole&lt;/a&gt;. They provide the template and the theme for the website. There are many themes for Jekyll, but I decided to use Hyde because I like the elegant design and it’s easy to customize.&lt;/p&gt;
+
+&lt;p&gt;To get Hyde, you just download &lt;a href=&quot;https://github.com/poole/hyde&quot;&gt;their repo&lt;/a&gt; and move all the files into the local folder that you have just created in Step 2. Remember to clear any existing files in that folder before moving in Hyde files. From here, you just have to edit parts of those files to make the website yours (or use it as it is). I changed the following two lines in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; since redcarpet and pygments are not supported anymore. Other variables can also be changed such as name, github account and etc.&lt;/p&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;kramdown&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;highlighter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;s&quot;&gt;rouge&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;At this point, it would be a good idea to learn some basics of &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;Jekyll&lt;/a&gt;, e.g. what is a front matter, what is a page, how to creat a layout and etc. After learning these, you can go ahead and customize your website as you’d like.&lt;/p&gt;
+
+&lt;p&gt;One problem that I run into is that pages look fine in local serve, but when I publish them to the web, pages other than the home page have suddenly lost all their style elements. After searching though internet, I realize that this has to do with the &lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt; usage.&lt;/p&gt;
+
+&lt;p&gt;Solution:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;change all the &lt;code class=&quot;highlighter-rouge&quot;&gt;site.baseurl&lt;/code&gt;
+instances in &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;sidebar.html&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;'/' | relative_url&lt;/code&gt; so that the correct files can be located.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;4-add-tags--categories&quot;&gt;4. Add tags &amp;amp; categories&lt;/h2&gt;
 

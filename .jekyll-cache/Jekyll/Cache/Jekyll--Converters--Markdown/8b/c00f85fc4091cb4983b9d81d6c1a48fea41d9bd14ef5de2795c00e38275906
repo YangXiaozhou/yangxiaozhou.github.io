@@ -1,157 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  
-  <!-- include collecttags -->
-  
-  
-
-
-
-
-
-  
-
-  <title>
-    
-      Set up my blog &middot; Xiaozhou
-    
-  </title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/hyde.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
-                                 <link rel="shortcut icon" href="/public/favicon.ico">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-
-  <!-- MathJax -->
-  <script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-  });
-  MathJax.Hub.Queue(function() {
-    // Fix <code> tags after MathJax finishes running. This is a
-    // hack to overcome a shortcoming of Markdown. Discussion at
-    // https://github.com/mojombo/jekyll/issues/199
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-
-  MathJax.Hub.Config({
-  // Autonumbering by mathjax
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-</script>
-</head>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89141653-4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-89141653-4');
-</script>
-
-
-
-  <body>
-
-    <div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>
-        <a href="/">
-          Xiaozhou
-        </a>
-      </h1>
-      <p class="lead">I write about my experiences here so that I can move forward.</p>
-    </div>
-
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item" href="/">Home</a>
-
-      
-
-      
-      
-        
-          
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/about/">About</a>
-          
-        
-      
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/categories/">Categories</a>
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/publication/">Publication</a>
-          
-        
-      
-        
-          
-        
-      
-
-      <!-- <a class="sidebar-nav-item" href="https://github.com/yangxiaozhou">GitHub project</a> -->
-      <!-- <span class="sidebar-nav-item">Currently v</span> -->
-    </nav>
-
-    <p>&copy; 2019. All rights reserved.</p>
-  </div>
-</div>
-
-
-    <div class="content container">
-      <div class="post">
-  <h1 class="post-title">Set up my blog</h1>
-  <span class="post-date">25 Sep 2019</span>
-  <p>What would be a better way to start this blog than writing a post about how I actually set it up? Because after three days of reading through all the docs/blogs/stackoverflows/github issues, I finally realised that the process is not as straightforward as I thought it would be. Luckily, I got it to work, for now.</p>
+I"Î<p>What would be a better way to start this blog than writing a post about how I actually set it up? Because after three days of reading through all the docs/blogs/stackoverflows/github issues, I finally realised that the process is not as straightforward as I thought it would be. Luckily, I got it to work, for now.</p>
 
 <p>My aim is simple, to set up a blog for myself where I can post stuff about my life. The blog needs to be free, elegant, easy to navigate and support math. My current set up, Jekyll + Hyde + Github, matches with that. Since there are many resources online about setting up a blog using Jekyll and serve it with GitHub, I am going to skip all the standard procedures by refering to the official documents. Instead, this post specifically documents:</p>
 <ul>
@@ -195,15 +42,10 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">markdown</span><span class="pi">:</span> <span class="s">kramdown</span>
 <span class="na">highlighter</span><span class="pi">:</span>      <span class="s">rouge</span>
 </code></pre></div></div>
-<p>At this point, it would be a good idea to learn some basics of <a href="https://jekyllrb.com/docs/">Jekyll</a>, e.g. what is a front matter, what is a page, how to creat a layout and etc. After learning these, you can go ahead and customize your website as youâ€™d like.</p>
+<p>At this point, it would be a good idea to learn some basics of <a href="https://jekyllrb.com/docs/">Jekyll</a>, e.g. what is a front matter, what is a page, how to creat a layout and etc. 
+One problem that I run into is that</p>
 
-<p>One problem that I run into is that pages look fine in local serve, but when I publish them to the web, pages other than the home page have suddenly lost all their style elements. After searching though internet, I realize that this has to do with the <code class="highlighter-rouge">url</code> and <code class="highlighter-rouge">baseurl</code> usage.</p>
-
-<p>Solution:</p>
-<ul>
-  <li>change all the <code class="highlighter-rouge">site.baseurl</code>
-instances in <code class="highlighter-rouge">head.html</code> and <code class="highlighter-rouge">sidebar.html</code> to <code class="highlighter-rouge">'/' | relative_url</code> so that the correct files can be located.</li>
-</ul>
+<p>/</p>
 
 <h2 id="4-add-tags--categories">4. Add tags &amp; categories</h2>
 
@@ -240,28 +82,4 @@ In (\ref{eq:sample}), we find the value of an interesting integral:
   \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho
 \end{align*}</p>
 
-
-</div>
-
-<span class="post-tags">
-    
-</span><div class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/statistics/2019/09/26/Linear-Discriminant-Analysis-and-Beyond.html">
-            Linear discriminant analysis (LDA) and beyond
-            <small>26 Sep 2019</small>
-          </a>
-        </h3>
-      </li>
-    
-  </ul>
-</div>
-
-    </div>
-
-  </body>
-</html>
+:ET

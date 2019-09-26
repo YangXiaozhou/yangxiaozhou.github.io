@@ -95,7 +95,7 @@
     </div>
 
     <nav class="sidebar-nav">
-      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item active" href="/">Home</a>
 
       
 
@@ -221,7 +221,22 @@
 
 <p>By the end of Step 1 and 2, we have set up the local engine for generating web pages and the GitHub repo for hosting and publishing your pages. Now we proceed to the actual website construction.</p>
 
-<h2 id="3-use-hyde">3. Use Hyde</h2>
+<h2 id="3-use-a-website-template">3. Use a website template</h2>
+<p><a href="http://hyde.getpoole.com">Hyde</a> is a Jekyll website theme built on <a href="https://github.com/poole/poole">Poole</a>. They provide the template and the theme for the website. There are many themes for Jekyll, but I decided to use Hyde because I like the elegant design and it’s easy to customize.</p>
+
+<p>To get Hyde, you just download <a href="https://github.com/poole/hyde">their repo</a> and move all the files into the local folder that you have just created in Step 2. Remember to clear any existing files in that folder before moving in Hyde files. From here, you just have to edit parts of those files to make the website yours (or use it as it is). I changed the following two lines in <code class="highlighter-rouge">_config.yml</code> since redcarpet and pygments are not supported anymore. Other variables can also be changed such as name, github account and etc.</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">markdown</span><span class="pi">:</span> <span class="s">kramdown</span>
+<span class="na">highlighter</span><span class="pi">:</span>      <span class="s">rouge</span>
+</code></pre></div></div>
+<p>At this point, it would be a good idea to learn some basics of <a href="https://jekyllrb.com/docs/">Jekyll</a>, e.g. what is a front matter, what is a page, how to creat a layout and etc. After learning these, you can go ahead and customize your website as you’d like.</p>
+
+<p>One problem that I run into is that pages look fine in local serve, but when I publish them to the web, pages other than the home page have suddenly lost all their style elements. After searching though internet, I realize that this has to do with the <code class="highlighter-rouge">url</code> and <code class="highlighter-rouge">baseurl</code> usage.</p>
+
+<p>Solution:</p>
+<ul>
+  <li>change all the <code class="highlighter-rouge">site.baseurl</code>
+instances in <code class="highlighter-rouge">head.html</code> and <code class="highlighter-rouge">sidebar.html</code> to <code class="highlighter-rouge">'/' | relative_url</code> so that the correct files can be located.</li>
+</ul>
 
 <h2 id="4-add-tags--categories">4. Add tags &amp; categories</h2>
 

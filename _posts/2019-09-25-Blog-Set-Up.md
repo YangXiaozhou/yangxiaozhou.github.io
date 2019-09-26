@@ -40,7 +40,22 @@ Jekyll generates web pages locally, we need a GitHub repository to host our page
 
 By the end of Step 1 and 2, we have set up the local engine for generating web pages and the GitHub repo for hosting and publishing your pages. Now we proceed to the actual website construction.
 
-## 3. Use Hyde
+## 3. Use a website template
+[Hyde](http://hyde.getpoole.com) is a Jekyll website theme built on [Poole](https://github.com/poole/poole). They provide the template and the theme for the website. There are many themes for Jekyll, but I decided to use Hyde because I like the elegant design and it's easy to customize. 
+
+To get Hyde, you just download [their repo](https://github.com/poole/hyde) and move all the files into the local folder that you have just created in Step 2. Remember to clear any existing files in that folder before moving in Hyde files. From here, you just have to edit parts of those files to make the website yours (or use it as it is). I changed the following two lines in `_config.yml` since redcarpet and pygments are not supported anymore. Other variables can also be changed such as name, github account and etc. 
+```yaml
+markdown: kramdown
+highlighter:      rouge
+```
+At this point, it would be a good idea to learn some basics of [Jekyll](https://jekyllrb.com/docs/), e.g. what is a front matter, what is a page, how to creat a layout and etc. After learning these, you can go ahead and customize your website as you'd like. 
+
+One problem that I run into is that pages look fine in local serve, but when I publish them to the web, pages other than the home page have suddenly lost all their style elements. After searching though internet, I realize that this has to do with the `url` and `baseurl` usage. 
+
+Solution:
+- change all the `site.baseurl`
+instances in `head.html` and `sidebar.html` to `'/' | relative_url` so that the correct files can be located. 
+
 
 
 ## 4. Add tags & categories
