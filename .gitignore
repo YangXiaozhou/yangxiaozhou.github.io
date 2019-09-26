@@ -1,2 +1,5 @@
 
 *.ipynb
+.idea/workspace.xml
+.idea/markdown-navigator.xml
+.idea/workspace.xml

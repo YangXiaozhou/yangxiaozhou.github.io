@@ -4,7 +4,7 @@
  <title>Xiaozhou</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-09-25T19:01:18+08:00</updated>
+ <updated>2019-09-26T15:43:00+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>YANG Xiaozhou</name>
@@ -13,45 +13,89 @@
 
  
  <entry>
-   <title>Setting up my blog</title>
-   <link href="http://localhost:4000/programming/2019/09/25/Blog-Set-Up.html"/>
+   <title>Linear discriminant analysis (LDA) and beyond</title>
+   <link href="http://localhost:4000/statistics/2019/09/26/Linear-Discriminant-Analysis-and-Beyond.html"/>
+   <updated>2019-09-26T08:00:00+08:00</updated>
+   <id>http://localhost:4000/statistics/2019/09/26/Linear-Discriminant-Analysis-and-Beyond</id>
+   <content type="html">&lt;p&gt;LDA is used as a tool for classification.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bankruptcy prediction: Edward Altman’s 1968 model&lt;/li&gt;
+  &lt;li&gt;Face recognition: learnt features are called Fisher faces&lt;/li&gt;
+  &lt;li&gt;Biomedical studies: discriminate different stages of a disease&lt;/li&gt;
+  &lt;li&gt;and many more&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Set up my blog</title>
+   <link href="http://localhost:4000/cs/2019/09/25/Blog-Set-Up.html"/>
    <updated>2019-09-25T08:00:00+08:00</updated>
-   <id>http://localhost:4000/programming/2019/09/25/Blog-Set-Up</id>
-   <content type="html">&lt;p&gt;What better way to start a blog than writing a post about how I actually set this blog up. The process is not as straightforward as I though it would be.&lt;/p&gt;
+   <id>http://localhost:4000/cs/2019/09/25/Blog-Set-Up</id>
+   <content type="html">&lt;p&gt;What would be a better way to start this blog than writing a post about how I actually set it up? Because after three days of reading through all the docs/blogs/stackoverflows/github issues, I finally realised that the process is not as straightforward as I thought it would be. Luckily, I got it to work, for now.&lt;/p&gt;
 
-&lt;h3 id=&quot;1-set-up-jekyll&quot;&gt;1. Set up Jekyll&lt;/h3&gt;
+&lt;p&gt;My aim is simple, to set up a blog for myself where I can post stuff about my life. The blog needs to be free, elegant, easy to navigate and support math. My current set up, Jekyll + Hyde + Github, matches with that. Since there are many resources online about setting up a blog using Jekyll and serve it with GitHub, I am going to skip all the standard procedures by refering to the official documents. Instead, this post specifically documents:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;the sequence of setting up different parts,&lt;/li&gt;
+  &lt;li&gt;adding support for Tags, Categories and their corresponding pages,&lt;/li&gt;
+  &lt;li&gt;adding MathJax to support $\LaTeX$-like math.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h3 id=&quot;2-host-it-on-github&quot;&gt;2. Host it on GitHub&lt;/h3&gt;
+&lt;p&gt;Finally, I am using a macbook, so the steps will be described assuming the system is macOS. When in doubt, just google the relevant steps for other OSs.&lt;/p&gt;
 
-&lt;h3 id=&quot;3-tags--categories&quot;&gt;3. Tags &amp;amp; Categories&lt;/h3&gt;
-
-&lt;h3 id=&quot;4-mathjax&quot;&gt;4. MathJax&lt;/h3&gt;
+&lt;h2 id=&quot;1-set-up-jekyll&quot;&gt;1. Set up Jekyll&lt;/h2&gt;
+&lt;p&gt;First thing you want to do is to make sure that &lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is installed and ready to run. Jekyll is the package that is generating all your webiste pages. Follow the official &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;instructions&lt;/a&gt;. If you successfully made a new site, good! But if you ran into a &lt;strong&gt;file permission error&lt;/strong&gt;, here’s what you need to do:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Create a &lt;code&gt;mathjax.html&lt;/code&gt; file&lt;/li&gt;
-  &lt;li&gt;Include it in &lt;code&gt;head.html&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run the following lines to set GEM_HOME to your user directory.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'# Install Ruby Gems to ~/gems'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+ &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export GEM_HOME=$HOME/gems'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+ &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export PATH=$HOME/gems/bin:$PATH'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+ &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now you can proceed with the following line and the rest of the steps.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;bundler jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The problem is caused by the macOS Mojave update. The above solution is provided in one of the GitHub &lt;a href=&quot;https://github.com/jekyll/jekyll/issues/7274&quot;&gt;issues&lt;/a&gt;. Make sure Jekyll can run normally before proceeding to step 2.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-host-it-on-github&quot;&gt;2. Host it on GitHub&lt;/h2&gt;
+
+&lt;h2 id=&quot;3-tags--categories&quot;&gt;3. Tags &amp;amp; Categories&lt;/h2&gt;
+
+&lt;h2 id=&quot;4-mathjax&quot;&gt;4. MathJax&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;mathjax.html&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Include it in &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h4 id=&quot;tips&quot;&gt;Tips&lt;/h4&gt;
 &lt;ul&gt;
-  &lt;li&gt;To use the normal dollar sign instead of the MathJax command (escape), put &lt;code&gt;&amp;lt;span class=&quot;tex2jax_ignore&quot;&amp;gt;...&amp;lt;/span&amp;gt;&lt;/code&gt; around the text you don’t want MathJax to process.&lt;/li&gt;
+  &lt;li&gt;To use the normal dollar sign instead of the MathJax command (escape), put &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;span class=&quot;tex2jax_ignore&quot;&amp;gt;...&amp;lt;/span&amp;gt;&lt;/code&gt; around the text you don’t want MathJax to process.&lt;/li&gt;
+  &lt;li&gt;Check currently supported &lt;a href=&quot;https://docs.mathjax.org/en/latest/input/tex/macros/index.html&quot;&gt;Tex/LaTeX commands by MathJax&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;math-rendering-showcase&quot;&gt;Math Rendering Showcase&lt;/h4&gt;
-&lt;p&gt;Inline math using &lt;code&gt;\$...\$&lt;/code&gt;: $\mathbf{x}+\mathbf{y}$.&lt;/p&gt;
+&lt;p&gt;Inline math using &lt;code class=&quot;highlighter-rouge&quot;&gt;\$...\$&lt;/code&gt;: $\mathbf{x}+\mathbf{y}$.&lt;/p&gt;
 
-&lt;p&gt;Displayed math using &lt;code&gt;\$\$...\$\$&lt;/code&gt; on a new paragrah:&lt;/p&gt;
+&lt;p&gt;Displayed math using &lt;code class=&quot;highlighter-rouge&quot;&gt;\$\$...\$\$&lt;/code&gt; on a new paragrah:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{x}+\mathbf{y}&lt;/script&gt;
 
-&lt;p&gt;Automatic numbering and referencing using &lt;span class=&quot;tex2jax_ignore&quot;&gt;&lt;code&gt;\ref{label}&lt;/code&gt;&lt;/span&gt;:
+&lt;p&gt;Automatic numbering and referencing using &lt;span class=&quot;tex2jax_ignore&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\ref{label}&lt;/code&gt;&lt;/span&gt;:
 In (\ref{eq:sample}), we find the value of an interesting integral:
 \begin{align}
   \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
   \label{eq:sample}
 \end{align}&lt;/p&gt;
 
-&lt;p&gt;Multiline equations using &lt;code&gt;\begin{align*}&lt;/code&gt;:
+&lt;p&gt;Multiline equations using &lt;code class=&quot;highlighter-rouge&quot;&gt;\begin{align*}&lt;/code&gt;:
 \begin{align*}
   \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \newline
   \nabla \cdot \vec{\mathbf{E}} &amp;amp; = 4 \pi \rho
