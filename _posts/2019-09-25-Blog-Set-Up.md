@@ -168,7 +168,7 @@ That's it for MathJax.
 
 #### Math Rendering Showcase
 - Inline math using `\$...\$`: $\mathbf{x}+\mathbf{y}$.
-- Displayed math using `\$\$...\$\$` on a new paragrah: 
+- Displayed math using `\$\$...\$\$` on a new paragraph: 
 
 $$
 \mathbf{x}+\mathbf{y} \,.
