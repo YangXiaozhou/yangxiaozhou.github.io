@@ -4,7 +4,7 @@
  <title>Xiaozhou</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-09-26T17:21:03+08:00</updated>
+ <updated>2019-09-26T19:44:03+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>YANG Xiaozhou</name>
@@ -30,23 +30,23 @@
  </entry>
  
  <entry>
-   <title>Set up my blog</title>
+   <title>How to set up my blog using Jekyll, Hyde and GitHub</title>
    <link href="http://localhost:4000/cs/2019/09/25/Blog-Set-Up.html"/>
    <updated>2019-09-25T08:00:00+08:00</updated>
    <id>http://localhost:4000/cs/2019/09/25/Blog-Set-Up</id>
-   <content type="html">&lt;p&gt;What would be a better way to start this blog than writing a post about how I actually set it up? Because after three days of reading through all the docs/blogs/stackoverflows/github issues, I finally realised that the process is not as straightforward as I thought it would be. Luckily, I got it to work, for now.&lt;/p&gt;
+   <content type="html">&lt;p&gt;What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and github issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now).&lt;/p&gt;
 
-&lt;p&gt;My aim is simple, to set up a blog for myself where I can post stuff about my life. The blog needs to be free, elegant, easy to navigate and support math. My current set up, Jekyll + Hyde + Github, matches with that. Since there are many resources online about setting up a blog using Jekyll and serve it with GitHub, I am going to skip all the standard procedures by refering to the official documents. Instead, this post specifically documents:&lt;/p&gt;
+&lt;p&gt;My aim is simple, to set up a blog for myself where I can post stuff about my life. The blog needs to be free, elegant, intuitive and support math. My current set up, Jekyll + Hyde + Github + MathJax, matches with that. Since there are many resources online about setting up a blog using Jekyll and serve it with GitHub, I am going to skip all the standard procedures by referring to the official documents. Instead, this post specifically documents:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;the sequence of setting up different parts,&lt;/li&gt;
   &lt;li&gt;adding support for Tags, Categories and their corresponding pages,&lt;/li&gt;
   &lt;li&gt;adding MathJax to support $\LaTeX$-like math.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Finally, I am using a macbook, so the steps will be described assuming the system is macOS. When in doubt, just google the relevant steps for other OSs.&lt;/p&gt;
+&lt;p&gt;I am using a macbook, so the steps will be described assuming the system is macOS. When in doubt, just google the relevant steps for other OSs.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-set-up-jekyll&quot;&gt;1. Set up Jekyll&lt;/h2&gt;
-&lt;p&gt;Jekyll is the package that is generating all your webiste pages. First thing you want to do is to make sure that &lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is installed and ready to run.&lt;/p&gt;
+&lt;p&gt;Jekyll is the package that is generating all your website pages. First thing you want to do is to make sure that &lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is installed and ready to run.&lt;/p&gt;
 
 &lt;p&gt;Follow the official &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;instructions&lt;/a&gt;. If you successfully made a new site, good! But if you ran into a &lt;strong&gt;file permission error&lt;/strong&gt;, here’s what you need to do:&lt;/p&gt;
 
@@ -74,54 +74,164 @@
 &lt;h2 id=&quot;3-use-a-website-template&quot;&gt;3. Use a website template&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;http://hyde.getpoole.com&quot;&gt;Hyde&lt;/a&gt; is a Jekyll website theme built on &lt;a href=&quot;https://github.com/poole/poole&quot;&gt;Poole&lt;/a&gt;. They provide the template and the theme for the website. There are many themes for Jekyll, but I decided to use Hyde because I like the elegant design and it’s easy to customize.&lt;/p&gt;
 
-&lt;p&gt;To get Hyde, you just download &lt;a href=&quot;https://github.com/poole/hyde&quot;&gt;their repo&lt;/a&gt; and move all the files into the local folder that you have just created in Step 2. Remember to clear any existing files in that folder before moving in Hyde files. From here, you just have to edit parts of those files to make the website yours (or use it as it is). I changed the following two lines in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; since redcarpet and pygments are not supported anymore. Other variables can also be changed such as name, github account and etc.&lt;/p&gt;
+&lt;p&gt;To get Hyde, just download &lt;a href=&quot;https://github.com/poole/hyde&quot;&gt;their repo&lt;/a&gt; and move all the files into the local folder that you have just created in Step 2. Remember to clear any existing files in that folder before moving in Hyde files. From here, you just have to edit parts of those files to make the website yours (or use it as it is). I changed the following two lines in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; since redcarpet and pygments are not supported anymore. Other variables can also be changed such as name, GitHub account, etc.&lt;/p&gt;
 &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;kramdown&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;highlighter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;s&quot;&gt;rouge&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;highlighter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rouge&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;At this point, it would be a good idea to learn some basics of &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;Jekyll&lt;/a&gt;, e.g. what is a front matter, what is a page, how to creat a layout and etc. After learning these, you can go ahead and customize your website as you’d like.&lt;/p&gt;
+&lt;p&gt;At this point, it would be a good idea to learn some basics of &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;Jekyll&lt;/a&gt;, e.g. what is a front matter, what is a page, how to create a layout, etc. After learning these, you can go ahead and customize the website as you’d like.&lt;/p&gt;
 
-&lt;p&gt;One problem that I run into is that pages look fine in local serve, but when I publish them to the web, pages other than the home page have suddenly lost all their style elements. After searching though internet, I realize that this has to do with the &lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt; usage.&lt;/p&gt;
-
-&lt;p&gt;Solution:&lt;/p&gt;
+&lt;p&gt;One problem that I run into is that pages look fine in local serve, but when I publish them to the web, all pages other than the home page have suddenly lost all their style elements. After searching through the internet, I realize that this has to do with the &lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt; usage. If you also have this problem, consider doing the following:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;change all the &lt;code class=&quot;highlighter-rouge&quot;&gt;site.baseurl&lt;/code&gt;
-instances in &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;sidebar.html&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;'/' | relative_url&lt;/code&gt; so that the correct files can be located.&lt;/li&gt;
+  &lt;li&gt;change all the &lt;code class=&quot;highlighter-rouge&quot;&gt;{{ site.baseurl }}&lt;/code&gt;
+instances in &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;sidebar.html&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;{{ '/' | relative_url }}&lt;/code&gt; so that the correct files can be located.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;4-add-tags--categories&quot;&gt;4. Add tags &amp;amp; categories&lt;/h2&gt;
+&lt;p&gt;I want to add tags and categories to my posts and also a dedicated page where posts can be arranged according to &lt;a href=&quot;https://yangxiaozhou.github.io/tag/supervised-learning&quot;&gt;tags&lt;/a&gt;/&lt;a href=&quot;https://yangxiaozhou.github.io/categories/&quot;&gt;categories&lt;/a&gt;. This should be easy since tags and categories are default front matter variables that you can define in Jekyll. For example, tags and categories of my LDA post are defined like this:&lt;/p&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;mathjax&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;discriminant&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;analysis&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;(LDA)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;beyond&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;s&quot;&gt;2019-09-26 08:00:00 +0800&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;statistics&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;supervised-learning classification&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For &lt;strong&gt;categories&lt;/strong&gt;, I created one page where posts of different categories are collected and is accessible through the sidebar link. To do this, just create a &lt;code class=&quot;highlighter-rouge&quot;&gt;category.html&lt;/code&gt; in the root folder:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: page
+permalink: /categories/
+title: Categories
+---
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;archives&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+{% for category in site.categories %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;archive-group&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#{{ category_name | slugize }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;category-head&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ category_name }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ category_name | slugize }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+    {% for post in site.categories[category_name] %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;article&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;archive-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;h4&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.baseurl }}{{ post.url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{post.title}}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
+    {% endfor %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+{% endfor %}
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For &lt;strong&gt;tags&lt;/strong&gt;, I did two things:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Show the tags of a post at the end of the content.&lt;/li&gt;
+  &lt;li&gt;For every tag, create a page where posts are collected, i.e. &lt;a href=&quot;https://yangxiaozhou.github.io/tag/classification&quot;&gt;classification&lt;/a&gt;, &lt;a href=&quot;https://yangxiaozhou.github.io/tag/supervised-learning&quot;&gt;supervised-learning&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To do 1, include the following lines after the &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; section in your &lt;code class=&quot;highlighter-rouge&quot;&gt;post.html&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-tags&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    {% for tag in page.tags %}
+      {% capture tag_name %}{{ tag }}{% endcapture %}
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;no-underline&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/tag/{{ tag_name }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;code&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;highligher-rouge&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;nobr&amp;gt;&lt;/span&gt;{{ tag_name }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nobr&amp;gt;&amp;lt;/code&amp;gt;&lt;/span&gt;&lt;span class=&quot;ni&quot;&gt;&amp;amp;nbsp;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;    
+    {% endfor %}
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To do 2, Long Qian has written a very clear &lt;a href=&quot;https://longqian.me/2017/02/09/github-jekyll-tag/&quot;&gt;post&lt;/a&gt; about it, please refer to that.&lt;/p&gt;
 
 &lt;h2 id=&quot;5-add-mathjax&quot;&gt;5. Add MathJax&lt;/h2&gt;
+&lt;p&gt;The last piece to my website is to add the support of $\LaTeX$-like math. This is done through MathJax. There are two steps to achieve it:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;mathjax.html&lt;/code&gt; file&lt;/li&gt;
-  &lt;li&gt;Include it in &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;mathjax.html&lt;/code&gt; file and put it in &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes/&lt;/code&gt;:&lt;/p&gt;
+
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;MathJax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;tex2jax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;inlineMath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;displayMath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;$$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;$$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;processEscapes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;processEnvironments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;skipTags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;noscript&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;textarea&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;TeX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;equationNumbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;autoNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;AMS&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;extensions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;AMSmath.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;AMSsymbols.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;MathJax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;// Fix &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tags&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;after&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MathJax&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;finishes&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;running&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;This&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;// hack to overcome a shortcoming of Markdown. Discussion at&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;// https://github.com/mojombo/jekyll/issues/199&lt;/span&gt;
+     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MathJax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getAllJax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;nx&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SourceElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parentNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;className&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt; has-jax&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+   &lt;span class=&quot;nx&quot;&gt;MathJax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;// Autonumbering by mathjax&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;TeX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;equationNumbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;autoNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;AMS&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Put the following line before &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;/head&amp;gt;&lt;/code&gt; in your &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt;:&lt;/p&gt;
+
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; {% include mathjax.html %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;to enbale MathJax on the page.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;That’s it for MathJax.&lt;/p&gt;
 
 &lt;h4 id=&quot;tips&quot;&gt;Tips&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;To use the normal dollar sign instead of the MathJax command (escape), put &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;span class=&quot;tex2jax_ignore&quot;&amp;gt;...&amp;lt;/span&amp;gt;&lt;/code&gt; around the text you don’t want MathJax to process.&lt;/li&gt;
-  &lt;li&gt;Check currently supported &lt;a href=&quot;https://docs.mathjax.org/en/latest/input/tex/macros/index.html&quot;&gt;Tex/LaTeX commands by MathJax&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Check out currently supported Tex/LaTeX commands by MathJax &lt;a href=&quot;https://docs.mathjax.org/en/latest/input/tex/macros/index.html&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;math-rendering-showcase&quot;&gt;Math Rendering Showcase&lt;/h4&gt;
-&lt;p&gt;Inline math using &lt;code class=&quot;highlighter-rouge&quot;&gt;\$...\$&lt;/code&gt;: $\mathbf{x}+\mathbf{y}$.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Inline math using &lt;code class=&quot;highlighter-rouge&quot;&gt;\$...\$&lt;/code&gt;: $\mathbf{x}+\mathbf{y}$.&lt;/li&gt;
+  &lt;li&gt;Displayed math using &lt;code class=&quot;highlighter-rouge&quot;&gt;\$\$...\$\$&lt;/code&gt; on a new paragrah:&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Displayed math using &lt;code class=&quot;highlighter-rouge&quot;&gt;\$\$...\$\$&lt;/code&gt; on a new paragrah:&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{x}+\mathbf{y} \,.&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{x}+\mathbf{y}&lt;/script&gt;
-
-&lt;p&gt;Automatic numbering and referencing using &lt;span class=&quot;tex2jax_ignore&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\ref{label}&lt;/code&gt;&lt;/span&gt;:
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Automatic numbering and referencing using &lt;span class=&quot;tex2jax_ignore&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\ref{label}&lt;/code&gt;&lt;/span&gt;:
 In (\ref{eq:sample}), we find the value of an interesting integral:
 \begin{align}
-  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
-  \label{eq:sample}
+\int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15} \, .
+\label{eq:sample}
 \end{align}&lt;/p&gt;
-
-&lt;p&gt;Multiline equations using &lt;code class=&quot;highlighter-rouge&quot;&gt;\begin{align*}&lt;/code&gt;:
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Multiline equations using &lt;code class=&quot;highlighter-rouge&quot;&gt;\begin{align*}&lt;/code&gt;:
 \begin{align*}
-  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \newline
-  \nabla \cdot \vec{\mathbf{E}} &amp;amp; = 4 \pi \rho
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \,,\newline
+\nabla \cdot \vec{\mathbf{E}} &amp;amp; = 4 \pi \rho \,.
 \end{align*}&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That’s it for now. Happy blogging.&lt;/p&gt;
+
+&lt;p&gt;Additional resources:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Set up &lt;a href=&quot;https://blog.webjeda.com/jekyll-categories/&quot;&gt;categories &amp;amp; tags&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Set up &lt;a href=&quot;http://joshualande.com/jekyll-github-pages-poole&quot;&gt;Disqus comments &amp;amp; Google Analytics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;MathJax basic &lt;a href=&quot;https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&quot;&gt;tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 </content>
  </entry>
