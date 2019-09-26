@@ -8,11 +8,14 @@ Hi, I am currently working on my Ph.D. in industrial engineering at National Uni
 
 Growing up, my dad would always tell me that "好记性不如烂笔头", which means that the palest ink is better than the best memory. He is a man of words. I can still remember vividly how he would sit in the living room and write in his journal every night. I am becoming increasingly aware of the fact that:
 - Writing stuff down forces me to organize and think deeper.
-- I tend to naturally forget stuff, concepts, experiences, and so on.
+- I tend to naturally forget stuff.
 <!-- - I am contributing freely to many UGC-platforms.  -->
 
-So I decided to start this blog and put thoughts down.
-
+So I decided to start this blog where I can put thoughts down and not worry about losing them. 
 
 <iframe height='160' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/29332455/activity-summary/8841b89bede2bd28718dd61773fb925a901e35b2'></iframe>
 I am putting my Strava widget here because I just love the app so much. 
+
+> 没有眼里所无法看见的花朵，更没心中所不愿思慕的明月。
+> 
+> \- 松尾芭蕉

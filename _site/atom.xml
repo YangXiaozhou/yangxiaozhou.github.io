@@ -4,7 +4,7 @@
  <title>Xiaozhou</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-09-26T15:43:00+08:00</updated>
+ <updated>2019-09-26T16:27:06+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>YANG Xiaozhou</name>
@@ -46,7 +46,9 @@
 &lt;p&gt;Finally, I am using a macbook, so the steps will be described assuming the system is macOS. When in doubt, just google the relevant steps for other OSs.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-set-up-jekyll&quot;&gt;1. Set up Jekyll&lt;/h2&gt;
-&lt;p&gt;First thing you want to do is to make sure that &lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is installed and ready to run. Jekyll is the package that is generating all your webiste pages. Follow the official &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;instructions&lt;/a&gt;. If you successfully made a new site, good! But if you ran into a &lt;strong&gt;file permission error&lt;/strong&gt;, here’s what you need to do:&lt;/p&gt;
+&lt;p&gt;Jekyll is the package that is generating all your webiste pages. First thing you want to do is to make sure that &lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is installed and ready to run.&lt;/p&gt;
+
+&lt;p&gt;Follow the official &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;instructions&lt;/a&gt;. If you successfully made a new site, good! But if you ran into a &lt;strong&gt;file permission error&lt;/strong&gt;, here’s what you need to do:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Run the following lines to set GEM_HOME to your user directory.
@@ -64,11 +66,16 @@
 
 &lt;p&gt;The problem is caused by the macOS Mojave update. The above solution is provided in one of the GitHub &lt;a href=&quot;https://github.com/jekyll/jekyll/issues/7274&quot;&gt;issues&lt;/a&gt;. Make sure Jekyll can run normally before proceeding to step 2.&lt;/p&gt;
 
-&lt;h2 id=&quot;2-host-it-on-github&quot;&gt;2. Host it on GitHub&lt;/h2&gt;
+&lt;h2 id=&quot;2-set-up-github-repo&quot;&gt;2. Set up GitHub repo&lt;/h2&gt;
+&lt;p&gt;Jekyll generates web pages locally, we need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHub’s official &lt;a href=&quot;https://pages.github.com&quot;&gt;instructions&lt;/a&gt;. In the end, you should have a repo on GitHub called &lt;em&gt;username&lt;/em&gt;.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io.&lt;/p&gt;
 
-&lt;h2 id=&quot;3-tags--categories&quot;&gt;3. Tags &amp;amp; Categories&lt;/h2&gt;
+&lt;p&gt;By the end of Step 1 and 2, we have set up the local engine for generating web pages and the GitHub repo for hosting and publishing your pages. Now we proceed to the actual website construction.&lt;/p&gt;
 
-&lt;h2 id=&quot;4-mathjax&quot;&gt;4. MathJax&lt;/h2&gt;
+&lt;h2 id=&quot;3-use-hyde&quot;&gt;3. Use Hyde&lt;/h2&gt;
+
+&lt;h2 id=&quot;4-add-tags--categories&quot;&gt;4. Add tags &amp;amp; categories&lt;/h2&gt;
+
+&lt;h2 id=&quot;5-add-mathjax&quot;&gt;5. Add MathJax&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;mathjax.html&lt;/code&gt; file&lt;/li&gt;

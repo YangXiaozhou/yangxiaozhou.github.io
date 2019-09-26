@@ -69,6 +69,16 @@
 </script>
 </head>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89141653-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-89141653-4');
+</script>
+
 
 
   <body>
@@ -153,7 +163,9 @@
 <p>Finally, I am using a macbook, so the steps will be described assuming the system is macOS. When in doubt, just google the relevant steps for other OSs.</p>
 
 <h2 id="1-set-up-jekyll">1. Set up Jekyll</h2>
-<p>First thing you want to do is to make sure that <a href="https://jekyllrb.com">Jekyll</a> is installed and ready to run. Jekyll is the package that is generating all your webiste pages. Follow the official <a href="https://jekyllrb.com/docs/">instructions</a>. If you successfully made a new site, good! But if you ran into a <strong>file permission error</strong>, here’s what you need to do:</p>
+<p>Jekyll is the package that is generating all your webiste pages. First thing you want to do is to make sure that <a href="https://jekyllrb.com">Jekyll</a> is installed and ready to run.</p>
+
+<p>Follow the official <a href="https://jekyllrb.com/docs/">instructions</a>. If you successfully made a new site, good! But if you ran into a <strong>file permission error</strong>, here’s what you need to do:</p>
 
 <ol>
   <li>Run the following lines to set GEM_HOME to your user directory.
@@ -171,11 +183,16 @@
 
 <p>The problem is caused by the macOS Mojave update. The above solution is provided in one of the GitHub <a href="https://github.com/jekyll/jekyll/issues/7274">issues</a>. Make sure Jekyll can run normally before proceeding to step 2.</p>
 
-<h2 id="2-host-it-on-github">2. Host it on GitHub</h2>
+<h2 id="2-set-up-github-repo">2. Set up GitHub repo</h2>
+<p>Jekyll generates web pages locally, we need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHub’s official <a href="https://pages.github.com">instructions</a>. In the end, you should have a repo on GitHub called <em>username</em>.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io.</p>
 
-<h2 id="3-tags--categories">3. Tags &amp; Categories</h2>
+<p>By the end of Step 1 and 2, we have set up the local engine for generating web pages and the GitHub repo for hosting and publishing your pages. Now we proceed to the actual website construction.</p>
 
-<h2 id="4-mathjax">4. MathJax</h2>
+<h2 id="3-use-hyde">3. Use Hyde</h2>
+
+<h2 id="4-add-tags--categories">4. Add tags &amp; categories</h2>
+
+<h2 id="5-add-mathjax">5. Add MathJax</h2>
 
 <ol>
   <li>Create a <code class="highlighter-rouge">mathjax.html</code> file</li>

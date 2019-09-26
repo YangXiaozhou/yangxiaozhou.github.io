@@ -17,7 +17,9 @@ My aim is simple, to set up a blog for myself where I can post stuff about my li
 Finally, I am using a macbook, so the steps will be described assuming the system is macOS. When in doubt, just google the relevant steps for other OSs. 
 
 ## 1. Set up Jekyll 
-First thing you want to do is to make sure that [Jekyll](https://jekyllrb.com) is installed and ready to run. Jekyll is the package that is generating all your webiste pages. Follow the official [instructions](https://jekyllrb.com/docs/). If you successfully made a new site, good! But if you ran into a **file permission error**, here's what you need to do:
+Jekyll is the package that is generating all your webiste pages. First thing you want to do is to make sure that [Jekyll](https://jekyllrb.com) is installed and ready to run. 
+
+Follow the official [instructions](https://jekyllrb.com/docs/). If you successfully made a new site, good! But if you ran into a **file permission error**, here's what you need to do:
 
 1. Run the following lines to set GEM_HOME to your user directory.
     ```bash
@@ -33,13 +35,18 @@ First thing you want to do is to make sure that [Jekyll](https://jekyllrb.com) i
 
 The problem is caused by the macOS Mojave update. The above solution is provided in one of the GitHub [issues](https://github.com/jekyll/jekyll/issues/7274). Make sure Jekyll can run normally before proceeding to step 2. 
 
-## 2. Host it on GitHub
+## 2. Set up GitHub repo
+Jekyll generates web pages locally, we need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHub's official [instructions](https://pages.github.com). In the end, you should have a repo on GitHub called *username*.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io. 
+
+By the end of Step 1 and 2, we have set up the local engine for generating web pages and the GitHub repo for hosting and publishing your pages. Now we proceed to the actual website construction.
+
+## 3. Use Hyde
 
 
-## 3. Tags & Categories
+## 4. Add tags & categories
 
 
-## 4. MathJax
+## 5. Add MathJax
 
 1. Create a `mathjax.html` file
 2. Include it in `head.html`
