@@ -1,8 +1,8 @@
 ---
 layout: post
 mathjax: true
-title:  "Linear discriminant analysis (LDA) and beyond (WIP)"
-date:   2019-09-27 08:00:00 +0800
+title:  "Linear discriminant analysis (LDA) and beyond"
+# date:   2019-09-29 08:00:00 +0800
 categories: statistics
 tags: supervised-learning classification
 ---
