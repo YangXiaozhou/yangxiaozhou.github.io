@@ -7,7 +7,7 @@ categories: programming
 tags: 
 ---
 
-What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and github issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now). 
+What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and GitHub issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now). 
 
 My aim is simple, to set up a blog for myself where I can post stuff about my life. The blog needs to be free, elegant, intuitive and support math. My current set up, Jekyll + Hyde + Github + MathJax, matches with that. Since there are many resources online about setting up a blog using Jekyll and serve it with GitHub, I am going to skip all the standard procedures by referring to the official documents. Instead, this post specifically documents:
 - the sequence of setting up different parts,
@@ -168,7 +168,7 @@ That's it for MathJax.
 
 #### Math Rendering Showcase
 - Inline math using `\$...\$`: $\mathbf{x}+\mathbf{y}$.
-- Displayed math using `\$\$...\$\$` on a new paragrah: 
+- Displayed math using `\$\$...\$\$` on a new paragraph: 
 
 $$
 \mathbf{x}+\mathbf{y} \,.
