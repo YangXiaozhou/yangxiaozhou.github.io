@@ -21,7 +21,7 @@ paginate:         5
 # version:          2.1.0
 
 github:           
-  repo:           https://github.com/yangxiaozhou
+  repo:           https://github.com/yangxiaozhou/yangxiaozhou.github.io
 
 plugins: 
   - jekyll-paginate
@@ -29,7 +29,3 @@ plugins:
 
 disqus:
   shortname: yangxiaozhou
-
-github_username:  YangXiaozhou
-linkedin_username: yangxiaozhou
-youtube_username: a315345751

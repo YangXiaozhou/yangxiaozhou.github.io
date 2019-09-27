@@ -1,9 +1,9 @@
 ---
 layout: post
 mathjax: true
-title:  "How to set up my blog using Jekyll, Hyde and GitHub"
+title:  "How did I set up my blog using Jekyll, Hyde and GitHub"
 date:   2019-09-25 08:00:00 +0800
-categories: cs
+categories: programming
 tags: 
 ---
 
@@ -193,7 +193,6 @@ That's it for now. Happy blogging.
 Additional resources:
 - Set up [categories & tags](https://blog.webjeda.com/jekyll-categories/)
 - Set up [Disqus comments & Google Analytics](http://joshualande.com/jekyll-github-pages-poole)
+- Add in social media [icons](https://jreel.github.io/social-media-icons-on-jekyll/)
 - MathJax basic [tutorial](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
-
-
 
