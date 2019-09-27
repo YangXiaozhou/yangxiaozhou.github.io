@@ -4,13 +4,29 @@
  <title>Xiaozhou</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-09-27T10:58:02+08:00</updated>
+ <updated>2019-09-27T13:23:41+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>YANG Xiaozhou</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Linear discriminant analysis (LDA) and beyond (WIP)</title>
+   <link href="http://localhost:4000/statistics/2019/09/27/linear-discriminant-analysis-and-beyond.html"/>
+   <updated>2019-09-27T08:00:00+08:00</updated>
+   <id>http://localhost:4000/statistics/2019/09/27/linear-discriminant-analysis-and-beyond</id>
+   <content type="html">&lt;p&gt;LDA is used as a tool for classification.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bankruptcy prediction: Edward Altman’s 1968 model&lt;/li&gt;
+  &lt;li&gt;Face recognition: learnt features are called Fisher faces&lt;/li&gt;
+  &lt;li&gt;Biomedical studies: discriminate different stages of a disease&lt;/li&gt;
+  &lt;li&gt;and many more&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>How did I set up my blog using Jekyll, Hyde and GitHub</title>
@@ -214,7 +230,8 @@ In (\ref{eq:sample}), we find the value of an interesting integral:
   &lt;li&gt;Set up &lt;a href=&quot;https://blog.webjeda.com/jekyll-categories/&quot;&gt;categories &amp;amp; tags&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Set up &lt;a href=&quot;http://joshualande.com/jekyll-github-pages-poole&quot;&gt;Disqus comments &amp;amp; Google Analytics&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Add in social media &lt;a href=&quot;https://jreel.github.io/social-media-icons-on-jekyll/&quot;&gt;icons&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;MathJax basic &lt;a href=&quot;https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&quot;&gt;tutorial&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;kramdown &lt;a href=&quot;https://kramdown.gettalong.org/quickref.html&quot;&gt;basics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;MathJax &lt;a href=&quot;https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&quot;&gt;basics&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </content>

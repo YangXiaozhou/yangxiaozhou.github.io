@@ -16,6 +16,4 @@ So I decided to start this blog where I can put thoughts down and not worry abou
 <iframe height='160' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/29332455/activity-summary/8841b89bede2bd28718dd61773fb925a901e35b2'></iframe>
 I am putting my Strava widget here because I just love the app so much. 
 
-> 没有眼里所无法看见的花朵，更没心中所不愿思慕的明月。
-> 
-> \- 松尾芭蕉
+> 没有眼里所无法看见的花朵，更没心中所不愿思慕的明月。\- 松尾芭蕉

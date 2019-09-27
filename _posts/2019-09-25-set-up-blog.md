@@ -194,5 +194,6 @@ Additional resources:
 - Set up [categories & tags](https://blog.webjeda.com/jekyll-categories/)
 - Set up [Disqus comments & Google Analytics](http://joshualande.com/jekyll-github-pages-poole)
 - Add in social media [icons](https://jreel.github.io/social-media-icons-on-jekyll/)
-- MathJax basic [tutorial](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
+- kramdown [basics](https://kramdown.gettalong.org/quickref.html)
+- MathJax [basics](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
 
