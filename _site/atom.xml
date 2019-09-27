@@ -4,7 +4,7 @@
  <title>Xiaozhou</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-09-27T10:16:12+08:00</updated>
+ <updated>2019-09-27T10:23:30+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>YANG Xiaozhou</name>
@@ -34,7 +34,7 @@
    <link href="http://localhost:4000/programming/2019/09/25/set-up-blog.html"/>
    <updated>2019-09-25T08:00:00+08:00</updated>
    <id>http://localhost:4000/programming/2019/09/25/set-up-blog</id>
-   <content type="html">&lt;p&gt;What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and github issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now).&lt;/p&gt;
+   <content type="html">&lt;p&gt;What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and GitHub issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now).&lt;/p&gt;
 
 &lt;p&gt;My aim is simple, to set up a blog for myself where I can post stuff about my life. The blog needs to be free, elegant, intuitive and support math. My current set up, Jekyll + Hyde + Github + MathJax, matches with that. Since there are many resources online about setting up a blog using Jekyll and serve it with GitHub, I am going to skip all the standard procedures by referring to the official documents. Instead, this post specifically documents:&lt;/p&gt;
 &lt;ul&gt;
@@ -201,7 +201,7 @@ title: Categories
 &lt;h4 id=&quot;math-rendering-showcase&quot;&gt;Math Rendering Showcase&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Inline math using &lt;code class=&quot;highlighter-rouge&quot;&gt;\$...\$&lt;/code&gt;: $\mathbf{x}+\mathbf{y}$.&lt;/li&gt;
-  &lt;li&gt;Displayed math using &lt;code class=&quot;highlighter-rouge&quot;&gt;\$\$...\$\$&lt;/code&gt; on a new paragrah:&lt;/li&gt;
+  &lt;li&gt;Displayed math using &lt;code class=&quot;highlighter-rouge&quot;&gt;\$\$...\$\$&lt;/code&gt; on a new paragraph:&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{x}+\mathbf{y} \,.&lt;/script&gt;
