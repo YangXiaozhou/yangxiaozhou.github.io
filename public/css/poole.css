@@ -67,8 +67,9 @@ body {
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
-  color: #268bd2;
-  text-decoration: none;
+  /*color: #268bd2;*/
+  color: #515151;
+  text-decoration: underline;
 }
 a strong {
   color: inherit;
@@ -77,6 +78,7 @@ a strong {
 a:hover,
 a:focus {
   text-decoration: underline;
+  text-decoration-color: gold;
 }
 
 /* Headings */
@@ -407,6 +409,8 @@ tbody tr:nth-child(odd) th {
 /* Only provide a hover state for linked pagination items */
 a.pagination-item:hover {
   background-color: #f5f5f5;
+  /*text-decoration: underline;
+  text-decoration-color: gold;*/
 }
 
 @media (min-width: 30em) {

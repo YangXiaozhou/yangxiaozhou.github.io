@@ -4,7 +4,6 @@ mathjax: true
 title:  "How did I set up my blog using Jekyll, Hyde and GitHub"
 date:   2019-09-25 08:00:00 +0800
 categories: programming
-tags: 
 ---
 
 What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and GitHub issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now). 

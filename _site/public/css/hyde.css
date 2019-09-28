@@ -91,12 +91,44 @@ html {
   display: block;
   line-height: 1.75;
 }
+a.sidebar-nav-item {
+  color: #fff;
+  text-decoration: none;
+}
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
   text-decoration: underline;
+  text-decoration-color: gold;
 }
-.sidebar-nav-item.active {
+a.sidebar-nav-item:active {
   font-weight: bold;
+}
+
+/*Post title*/
+.post-title a {
+  text-decoration: none;
+}
+.post-title a:hover {
+  text-decoration: underline;
+  text-decoration-color: gold;
+}
+
+/*Recent post titles*/
+.recent-posts a {
+  text-decoration: none;
+}
+.recent-posts a:hover {
+  text-decoration: underline;
+  text-decoration-color: gold;
+}
+
+/*Post tags*/
+.post-tags a {
+  text-decoration: none;
+}
+.post-tags a:hover {
+  text-decoration: underline;
+  text-decoration-color: gold;
 }
 
 /* Sticky sidebar
@@ -247,4 +279,20 @@ a.sidebar-nav-item:focus {
 .theme-base-0f .content a,
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
+}
+
+
+
+/*Icon Setting*/
+.fa-envelope:hover {
+  color: gold;
+}
+.fa-github:hover {
+  color: gold;
+}
+.fa-linkedin:hover {
+  color: gold;
+}
+.fa-youtube:hover {
+  color: gold;
 }
