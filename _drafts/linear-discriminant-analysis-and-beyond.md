@@ -13,3 +13,4 @@ LDA is used as a tool for classification.
 - Face recognition: learnt features are called Fisher faces
 - Biomedical studies: discriminate different stages of a disease
 - and many more
+this should render $x+y$

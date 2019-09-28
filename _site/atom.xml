@@ -4,7 +4,7 @@
  <title>杨晓州</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-09-28T16:19:45+08:00</updated>
+ <updated>2019-09-28T16:32:02+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -23,7 +23,8 @@
   &lt;li&gt;Bankruptcy prediction: Edward Altman’s 1968 model&lt;/li&gt;
   &lt;li&gt;Face recognition: learnt features are called Fisher faces&lt;/li&gt;
   &lt;li&gt;Biomedical studies: discriminate different stages of a disease&lt;/li&gt;
-  &lt;li&gt;and many more&lt;/li&gt;
+  &lt;li&gt;and many more
+this should render $x+y$&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
