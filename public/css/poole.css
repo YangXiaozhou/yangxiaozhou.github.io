@@ -70,6 +70,7 @@ a {
   /*color: #268bd2;*/
   color: #515151;
   text-decoration: underline;
+  /*text-decoration-color: gold;*/
 }
 a strong {
   color: inherit;
@@ -77,8 +78,9 @@ a strong {
 /* `:focus` is linked to `:hover` for basic accessibility */
 a:hover,
 a:focus {
-  text-decoration: underline;
+  /*text-decoration: none;*/
   text-decoration-color: gold;
+  /*background-color: gold*/
 }
 
 /* Headings */
