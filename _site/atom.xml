@@ -4,7 +4,7 @@
  <title>杨晓州</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-09-28T16:15:05+08:00</updated>
+ <updated>2019-09-28T16:19:45+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Linear discriminant analysis (LDA) and beyond</title>
    <link href="http://localhost:4000/statistics/2019/09/28/linear-discriminant-analysis-and-beyond.html"/>
-   <updated>2019-09-28T16:06:25+08:00</updated>
+   <updated>2019-09-28T08:00:00+08:00</updated>
    <id>http://localhost:4000/statistics/2019/09/28/linear-discriminant-analysis-and-beyond</id>
    <content type="html">&lt;p&gt;LDA is used as a tool for classification.&lt;/p&gt;
 
