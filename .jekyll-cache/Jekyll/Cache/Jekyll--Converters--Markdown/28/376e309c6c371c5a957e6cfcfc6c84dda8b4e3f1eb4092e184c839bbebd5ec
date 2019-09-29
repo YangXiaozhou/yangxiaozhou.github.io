@@ -1,4 +1,4 @@
-I"©K<p>What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and GitHub issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now).</p>
+I"¾6<p>What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and GitHub issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now).</p>
 
 <p>My aim is simple, to set up a blog for myself where I can post stuff about my life. The blog needs to be free, elegant, intuitive and support math. My current set up, Jekyll + Hyde + Github + MathJax, matches with that. Since there are many resources online about setting up a blog using Jekyll and serve it with GitHub, I am going to skip all the standard procedures by referring to the official documents. Instead, this post specifically documents:</p>
 <ul>
@@ -12,23 +12,27 @@
 <h2 id="1-set-up-jekyll">1. Set up Jekyll</h2>
 <p>Jekyll is the package that is generating all your website pages. First thing you want to do is to make sure that <a href="https://jekyllrb.com">Jekyll</a> is installed and ready to run.</p>
 
-<p>Follow the official <a href="https://jekyllrb.com/docs/">instructions</a>. If you successfully made a new site, good! But if you ran into a <strong>file permission error</strong>, hereâ€™s what you need to do:</p>
+<p>Follow the official <a href="https://jekyllrb.com/docs/">instructions</a>. If you successfully made a new site, good!</p>
 
 <ol>
-  <li>Run the following lines to set GEM_HOME to your user directory.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">echo</span> <span class="s1">'# Install Ruby Gems to ~/gems'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
- <span class="nb">echo</span> <span class="s1">'export GEM_HOME=$HOME/gems'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
- <span class="nb">echo</span> <span class="s1">'export PATH=$HOME/gems/bin:$PATH'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
- <span class="nb">source</span> ~/.bashrc
+  <li>But if you ran into a <strong>failed to build native extension error</strong>, install macOS SDK headers with the following line.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
 </code></pre></div>    </div>
   </li>
-  <li>Now you can proceed with the following line and the rest of the steps.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> gem <span class="nb">install </span>bundler jekyll
+  <li>If you ran into a <strong>file permission error</strong>, run the following lines to set GEM_HOME to your user directory.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'# Install Ruby Gems to ~/gems'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">echo</span> <span class="s1">'export GEM_HOME=$HOME/gems'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">echo</span> <span class="s1">'export PATH=$HOME/gems/bin:$PATH'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">source</span> ~/.bashrc
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p>The problem is caused by the macOS Mojave update. The above solution is provided in one of the GitHub <a href="https://github.com/jekyll/jekyll/issues/7274">issues</a>. Make sure Jekyll can run normally before proceeding to step 2.</p>
+<p>Now you can proceed with the following line and the rest of the steps.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>bundler jekyll
+</code></pre></div></div>
+
+<p>The problem is caused by the macOS Mojave update. The above solution is provided by <a href="https://talk.jekyllrb.com/t/issues-installing-jekyll-on-macos-mojave/2400/3">desiredpersona and Frank</a>. Make sure Jekyll can run normally before proceeding to step 2.</p>
 
 <h2 id="2-set-up-github-repo">2. Set up GitHub repo</h2>
 <p>Jekyll generates web pages locally, we need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHubâ€™s official <a href="https://pages.github.com">instructions</a>. In the end, you should have a repo on GitHub called <em>username</em>.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io.</p>
@@ -111,50 +115,16 @@ title: Categories
 <p>The last piece to my website is to add the support of $\LaTeX$-like math. This is done through MathJax. There are two steps to achieve it:</p>
 
 <ol>
-  <li>
-    <p>Create a <code class="highlighter-rouge">mathjax.html</code> file and put it in <code class="highlighter-rouge">_includes/</code>:</p>
-
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">async</span>
-   <span class="na">src=</span><span class="s">"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span><span class="nt">&gt;</span>
-   <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-   <span class="na">tex2jax</span><span class="p">:</span> <span class="p">{</span>
-     <span class="na">inlineMath</span><span class="p">:</span> <span class="p">[[</span><span class="dl">'</span><span class="s1">$</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">$</span><span class="dl">'</span><span class="p">],</span> <span class="p">[</span><span class="dl">'</span><span class="se">\\</span><span class="s1">(</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="se">\\</span><span class="s1">)</span><span class="dl">'</span><span class="p">]],</span>
-     <span class="na">displayMath</span><span class="p">:</span> <span class="p">[[</span><span class="dl">'</span><span class="s1">$$</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">$$</span><span class="dl">'</span><span class="p">]],</span>
-     <span class="na">processEscapes</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-     <span class="na">processEnvironments</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-     <span class="na">skipTags</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">script</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">noscript</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">style</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">textarea</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">pre</span><span class="dl">'</span><span class="p">],</span>
-     <span class="na">TeX</span><span class="p">:</span> <span class="p">{</span> <span class="na">equationNumbers</span><span class="p">:</span> <span class="p">{</span> <span class="na">autoNumber</span><span class="p">:</span> <span class="dl">"</span><span class="s2">AMS</span><span class="dl">"</span> <span class="p">},</span>
-          <span class="na">extensions</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">AMSmath.js</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">AMSsymbols.js</span><span class="dl">"</span><span class="p">]</span> <span class="p">}</span>
-   <span class="p">}</span>
-   <span class="p">});</span>
-   <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Queue</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-     <span class="c1">// Fix </span><span class="o">&lt;</span><span class="nx">code</span><span class="o">&gt;</span> <span class="nx">tags</span> <span class="nx">after</span> <span class="nx">MathJax</span> <span class="nx">finishes</span> <span class="nx">running</span><span class="p">.</span> <span class="nx">This</span> <span class="nx">is</span> <span class="nx">a</span>
-     <span class="c1">// hack to overcome a shortcoming of Markdown. Discussion at</span>
-     <span class="c1">// https://github.com/mojombo/jekyll/issues/199</span>
-     <span class="kd">var</span> <span class="nx">all</span> <span class="o">=</span> <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">getAllJax</span><span class="p">(),</span> <span class="nx">i</span><span class="p">;</span>
-     <span class="k">for</span><span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">all</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-         <span class="nx">all</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">SourceElement</span><span class="p">().</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1"> has-jax</span><span class="dl">'</span><span class="p">;</span>
-     <span class="p">}</span>
-   <span class="p">});</span>
-
-   <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-   <span class="c1">// Autonumbering by mathjax</span>
-   <span class="na">TeX</span><span class="p">:</span> <span class="p">{</span> <span class="na">equationNumbers</span><span class="p">:</span> <span class="p">{</span> <span class="na">autoNumber</span><span class="p">:</span> <span class="dl">"</span><span class="s2">AMS</span><span class="dl">"</span> <span class="p">}</span> <span class="p">}</span>
-   <span class="p">});</span>
- <span class="nt">&lt;/script&gt;</span>
-</code></pre></div>    </div>
-  </li>
+  <li>Create a <code class="highlighter-rouge">mathjax.html</code> file and put it in your <code class="highlighter-rouge">_includes</code> folder. Download the file <a href="https://github.com/YangXiaozhou/yangxiaozhou.github.io/blob/master/_includes/mathjax.html">here</a>.</li>
   <li>
     <p>Put the following line before <code class="highlighter-rouge">&lt;/head&gt;</code> in your <code class="highlighter-rouge">head.html</code>:</p>
 
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {% include mathjax.html %}
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {% include mathjax.html %}
 </code></pre></div>    </div>
 
     <p>to enbale MathJax on the page.</p>
   </li>
 </ol>
-
-<p>Thatâ€™s it for MathJax.</p>
 
 <h4 id="tips">Tips</h4>
 <ul>

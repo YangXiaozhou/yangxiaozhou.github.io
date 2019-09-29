@@ -21,17 +21,17 @@ Jekyll is the package that is generating all your website pages. First thing you
 Follow the official [instructions](https://jekyllrb.com/docs/). If you successfully made a new site, good! 
 
 1. But if you ran into a **failed to build native extension error**, install macOS SDK headers with the following line.
-  ```bash
-  open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
-  ```
+```bash
+open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+```
 
 2. If you ran into a **file permission error**, run the following lines to set GEM_HOME to your user directory.
-  ```bash
-  echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
-  echo 'export GEM_HOME=$HOME/gems' >> ~/.bashrc
-  echo 'export PATH=$HOME/gems/bin:$PATH' >> ~/.bashrc
-  source ~/.bashrc
-  ```
+```bash
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME=$HOME/gems' >> ~/.bashrc
+echo 'export PATH=$HOME/gems/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+```
 
 Now you can proceed with the following line and the rest of the steps.
 ```bash
@@ -41,7 +41,7 @@ gem install bundler jekyll
 The problem is caused by the macOS Mojave update. The above solution is provided by [desiredpersona and Frank](https://talk.jekyllrb.com/t/issues-installing-jekyll-on-macos-mojave/2400/3). Make sure Jekyll can run normally before proceeding to step 2. 
 
 ## 2. Set up GitHub repo
-Jekyll generates web pages locally, we need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHub's official [instructions](https://pages.github.com). In the end, you should have a repo on GitHub called *username*.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io. 
+Jekyll generates web pages locally. We need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHub's official [instructions](https://pages.github.com). In the end, you should have a repo on GitHub called *username*.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io. 
 
 By the end of Step 1 and 2, we have set up the local engine for generating web pages and the GitHub repo for hosting and publishing your pages. Now we proceed to the actual website construction.
 
@@ -122,49 +122,14 @@ To do 2, Long Qian has written a very clear [post](https://longqian.me/2017/02/0
 ## 5. Add MathJax
 The last piece to my website is to add the support of $\LaTeX$-like math. This is done through MathJax. There are two steps to achieve it:
 
-1. Create a `mathjax.html` file and put it in `_includes/`:
-    {% raw %}
-    ```html
-    <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-      MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [['$$','$$']],
-        processEscapes: true,
-        processEnvironments: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        TeX: { equationNumbers: { autoNumber: "AMS" },
-             extensions: ["AMSmath.js", "AMSsymbols.js"] }
-      }
-      });
-      MathJax.Hub.Queue(function() {
-        // Fix <code> tags after MathJax finishes running. This is a
-        // hack to overcome a shortcoming of Markdown. Discussion at
-        // https://github.com/mojombo/jekyll/issues/199
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i = 0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-
-      MathJax.Hub.Config({
-      // Autonumbering by mathjax
-      TeX: { equationNumbers: { autoNumber: "AMS" } }
-      });
-    </script>
-    ```
-    {% endraw %}
+1. Create a `mathjax.html` file and put it in your `_includes` folder. Download the file [here](https://github.com/YangXiaozhou/yangxiaozhou.github.io/blob/master/_includes/mathjax.html).
 2. Put the following line before `</head>` in your `head.html`:
     {% raw %}
-    ```html
+    ```
     {% include mathjax.html %}
     ```
     {% endraw %}
-    to enbale MathJax on the page. 
-
-That's it for MathJax. 
-
+    to enbale MathJax on the page.
 
 #### Tips
 - To use the normal dollar sign instead of the MathJax command (escape), put `<span class="tex2jax_ignore">...</span>` around the text you don't want MathJax to process.
