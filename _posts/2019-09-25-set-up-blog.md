@@ -18,21 +18,27 @@ I am using a macbook, so the steps will be described assuming the system is macO
 ## 1. Set up Jekyll 
 Jekyll is the package that is generating all your website pages. First thing you want to do is to make sure that [Jekyll](https://jekyllrb.com) is installed and ready to run. 
 
-Follow the official [instructions](https://jekyllrb.com/docs/). If you successfully made a new site, good! But if you ran into a **file permission error**, here's what you need to do:
+Follow the official [instructions](https://jekyllrb.com/docs/). If you successfully made a new site, good! 
 
-1. Run the following lines to set GEM_HOME to your user directory.
+1. But if you ran into a **failed to build native extension error**, install macOS SDK headers with the following line.
+    ```bash
+    open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+    ```
+
+2. If you ran into a **file permission error**, run the following lines to set GEM_HOME to your user directory.
     ```bash
     echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
     echo 'export GEM_HOME=$HOME/gems' >> ~/.bashrc
     echo 'export PATH=$HOME/gems/bin:$PATH' >> ~/.bashrc
     source ~/.bashrc
     ```
-2. Now you can proceed with the following line and the rest of the steps.
+
+Now you can proceed with the following line and the rest of the steps.
     ```bash
     gem install bundler jekyll
     ```
 
-The problem is caused by the macOS Mojave update. The above solution is provided in one of the GitHub [issues](https://github.com/jekyll/jekyll/issues/7274). Make sure Jekyll can run normally before proceeding to step 2. 
+The problem is caused by the macOS Mojave update. The above solution is provided by [desiredpersona and Frank](https://talk.jekyllrb.com/t/issues-installing-jekyll-on-macos-mojave/2400/3). Make sure Jekyll can run normally before proceeding to step 2. 
 
 ## 2. Set up GitHub repo
 Jekyll generates web pages locally, we need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHub's official [instructions](https://pages.github.com). In the end, you should have a repo on GitHub called *username*.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io. 
