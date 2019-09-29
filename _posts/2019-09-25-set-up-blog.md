@@ -21,22 +21,22 @@ Jekyll is the package that is generating all your website pages. First thing you
 Follow the official [instructions](https://jekyllrb.com/docs/). If you successfully made a new site, good! 
 
 1. But if you ran into a **failed to build native extension error**, install macOS SDK headers with the following line.
-    ```bash
-    open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
-    ```
+```bash
+open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+```
 
 2. If you ran into a **file permission error**, run the following lines to set GEM_HOME to your user directory.
-    ```bash
-    echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
-    echo 'export GEM_HOME=$HOME/gems' >> ~/.bashrc
-    echo 'export PATH=$HOME/gems/bin:$PATH' >> ~/.bashrc
-    source ~/.bashrc
-    ```
+```bash
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME=$HOME/gems' >> ~/.bashrc
+echo 'export PATH=$HOME/gems/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+```
 
 Now you can proceed with the following line and the rest of the steps.
-    ```bash
-    gem install bundler jekyll
-    ```
+```bash
+gem install bundler jekyll
+```
 
 The problem is caused by the macOS Mojave update. The above solution is provided by [desiredpersona and Frank](https://talk.jekyllrb.com/t/issues-installing-jekyll-on-macos-mojave/2400/3). Make sure Jekyll can run normally before proceeding to step 2. 
 
