@@ -48,20 +48,20 @@ By the end of Step 1 and 2, we have set up the local engine for generating web p
 ## 3. Use a website template
 [Hyde](http://hyde.getpoole.com) is a Jekyll website theme built on [Poole](https://github.com/poole/poole). They provide the template and the theme for the website. There are many themes for Jekyll, but I decided to use Hyde because I like the elegant design and it's easy to customize. 
 
-To get Hyde, just download [their repo](https://github.com/poole/hyde) and move all the files into the local folder that you have just created in Step 2. Remember to clear any existing files in that folder before moving in Hyde files. From here, you just have to edit parts of those files to make the website yours (or use it as it is). I changed the following two lines in `_config.yml` since redcarpet and pygments are not supported anymore. Other variables can also be changed such as name, GitHub account, etc. 
+To get Hyde, just download [the repo](https://github.com/poole/hyde) and move all the files into the local folder that you have just created in Step 2. Remember to clear any existing file in that folder before moving in Hyde files. From here, you just have to edit parts of those files to make the website yours (or use it as it is). I changed the following two lines in `_config.yml` since redcarpet and pygments are not supported anymore. Other variables can also be changed such as name, GitHub account, etc. 
 ```yaml
 markdown: kramdown
 highlighter: rouge
 ```
 At this point, it would be a good idea to learn some basics of [Jekyll](https://jekyllrb.com/docs/), e.g. what is a front matter, what is a page, how to create a layout, etc. After learning these, you can go ahead and customize the website as you'd like. 
 
-One problem that I run into is that pages look fine in local serve, but when I publish them to the web, all pages other than the home page have suddenly lost all their style elements. After searching through the internet, I realize that this has to do with the `url` and `baseurl` usage. If you also have this problem, consider doing the following:
+One problem that I ran into is that pages look fine in local serve, but when I publish them to the web, all pages other than the home page have suddenly lost all their style elements. After searching through the internet, I realize that this has to do with the `url` and `baseurl` usage. If you also have this problem, consider doing the following:
 - change all the {% raw  %}`{{ site.baseurl }}`{% endraw  %}
 instances in `head.html` and `sidebar.html` to {% raw  %}`{{ '/' | relative_url }}`{% endraw  %} so that the correct files can be located. 
 
 
 ## 4. Add tags & categories
-I want to add tags and categories to my posts and also a dedicated page where posts can be arranged according to [tags](https://yangxiaozhou.github.io/tag/supervised-learning)/[categories](https://yangxiaozhou.github.io/categories/). This should be easy since tags and categories are default front matter variables that you can define in Jekyll. For example, tags and categories of my LDA post are defined like this:
+I want to add tags and categories to my posts and create a dedicated page where posts can be arranged according to [tags](https://yangxiaozhou.github.io/tag/supervised-learning)/[categories](https://yangxiaozhou.github.io/categories/). This should be easy since tags and categories are default front matter variables that you can define in Jekyll. For example, tags and categories of my LDA post are defined like this:
 ```yaml
 ---
 layout: post
@@ -73,7 +73,7 @@ tags: supervised-learning classification
 ---
 ```
 
-For **categories**, I created one page where posts of different categories are collected and is accessible through the sidebar link. To do this, just create a `category.html` in the root folder:
+For **categories**, I created one page where posts of different categories are collected and the page is accessible through the sidebar link. To do this, just create a `category.html` in the root folder:
 {% raw  %}
 ```html
 ---
@@ -117,7 +117,7 @@ To do 1, include the following lines after the `content` section in your `post.h
 </span>
 ```
 {% endraw %}
-To do 2, Long Qian has written a very clear [post](https://longqian.me/2017/02/09/github-jekyll-tag/) about it, please refer to that.
+To do 2, Long Qian has written a very clear [post](https://longqian.me/2017/02/09/github-jekyll-tag/) about it.
 
 ## 5. Add MathJax
 The last piece to my website is to add the support of $\LaTeX$-like math. This is done through MathJax. There are two steps to achieve it:
