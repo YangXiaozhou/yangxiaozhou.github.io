@@ -41,7 +41,7 @@ gem install bundler jekyll
 The problem is caused by the macOS Mojave update. The above solution is provided by [desiredpersona and Frank](https://talk.jekyllrb.com/t/issues-installing-jekyll-on-macos-mojave/2400/3). Make sure Jekyll can run normally before proceeding to step 2. 
 
 ## 2. Set up GitHub repo
-Jekyll generates web pages locally. We need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHub's official [instructions](https://pages.github.com). In the end, you should have a repo on GitHub called *username*.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io. 
+Jekyll generates web pages locally; we need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHub's official [instructions](https://pages.github.com). In the end, you should have a repo on GitHub called *username*.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io. 
 
 By the end of Step 1 and 2, we have set up the local engine for generating web pages and the GitHub repo for hosting and publishing your pages. Now we proceed to the actual website construction.
 
