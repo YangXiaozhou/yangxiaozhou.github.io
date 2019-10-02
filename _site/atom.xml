@@ -4,7 +4,7 @@
  <title>杨晓州</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-09-29T17:55:34+08:00</updated>
+ <updated>2019-10-02T16:33:50+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -13,19 +13,81 @@
 
  
  <entry>
-   <title>Linear discriminant analysis (LDA) and beyond</title>
-   <link href="http://localhost:4000/statistics/2019/09/28/linear-discriminant-analysis-and-beyond.html"/>
-   <updated>2019-09-28T08:00:00+08:00</updated>
-   <id>http://localhost:4000/statistics/2019/09/28/linear-discriminant-analysis-and-beyond</id>
-   <content type="html">&lt;p&gt;LDA is used as a tool for classification.&lt;/p&gt;
+   <title>Linear discriminant analysis (LDA)</title>
+   <link href="http://localhost:4000/statistics/2019/10/02/linear-discriminant-analysis.html"/>
+   <updated>2019-10-02T08:00:00+08:00</updated>
+   <id>http://localhost:4000/statistics/2019/10/02/linear-discriminant-analysis</id>
+   <content type="html">&lt;p&gt;LDA is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed.&lt;/p&gt;
+
+&lt;p&gt;Two prominent examples of using LDA (and it’s variants) include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Bankruptcy prediction&lt;/em&gt;: Edward Altman’s &lt;a href=&quot;https://en.wikipedia.org/wiki/Altman_Z-score&quot;&gt;1968 model&lt;/a&gt; predicts the probability of company bankruptcy using trained LDA coefficients. The accuracy is said to be between 80% and 90%, evaluated over 31 years of data.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Facial recognition&lt;/em&gt;: While features learnt from Principal Components Analysis (PCA) operations are called Eigenfaces, features learnt from LDA operations are called &lt;a href=&quot;http://www.scholarpedia.org/article/Fisherfaces&quot;&gt;Fisherfaces&lt;/a&gt;, named after the great statistician, Sir Ronald Fisher. The connection will be explained later.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This article starts with introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;classification-by-discriminant-analysis&quot;&gt;Classification by discriminant analysis&lt;/h3&gt;
+&lt;p&gt;Consider a generic classification problem: A random variable $X$ comes from one of $K$ classes, $G = 1, \dots, K$, with density $f_k(\mathbf{x})$ on $\mathbb{R}^p$. A discriminant rule divides the space into $K$ disjoint regions $\mathbb{R}_1, \dots, \mathbb{R}_K$. Classification by discriminant analysis simply means that we allocate $\mathbf{x }$ to $\Pi_{j}$ if $\mathbf{x} \in \mathbb{R}_j$. We can follow two allocation rules:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Bankruptcy prediction: Edward Altman’s 1968 model&lt;/li&gt;
-  &lt;li&gt;Face recognition: learnt features are called Fisher faces&lt;/li&gt;
-  &lt;li&gt;Biomedical studies: discriminate different stages of a disease&lt;/li&gt;
-  &lt;li&gt;and many more
-this should render $x+y$&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Maximum likelihood rule&lt;/em&gt;: If we assume that each class could occur with equal probability, then allocate $\mathbf{x }$ to $\Pi_{j}$ if $j = \arg\max_i f_i(\mathbf{x})$ .&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Bayesian rule&lt;/em&gt;: If we know the class prior probabilities, $\pi_1, \dots, \pi_K$, then allocate $\mathbf{x }$ to $\Pi_{j}$ if $j = \arg\max_i \pi_i f_i(\mathbf{x}) $.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;lda--qda&quot;&gt;LDA &amp;amp; QDA&lt;/h3&gt;
+&lt;p&gt;If we assume data comes from multivariate Gaussian distribution, i.e. $X \sim N(\mathbf{\mu}, \mathbf{\Sigma})$, explicit forms of the above allocation rules can be obtained. Following the Bayesian rule, we classify $\mathbf{x}$ to $\Pi_{j}$ if $j = \arg\max_i \delta_i(\mathbf{x})$ where&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+    \delta_i(\mathbf{x}) = \log f_i(\mathbf{x}) + \log \pi_i
+\end{align}&lt;/script&gt;
+
+&lt;p&gt;is called the discriminant function. Note the use of log-likelihood here.  The decision boundary separating any two classes, $k$ and $\ell$, is the set of $\mathbf{x}$ where two discriminant functions have the same value, i.e. &lt;script type=&quot;math/tex&quot;&gt;\{\mathbf{x}: \delta_k(\mathbf{x}) = \delta_{\ell}(\mathbf{x})\}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;LDA arises in the case where we assume equal covariance among $K$ classes, i.e. $\mathbf{\Sigma}_1 = \mathbf{\Sigma}_2 = \dots = \mathbf{\Sigma}_K$. Then we can obtain the following discriminant function:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+    \delta_{k}(\mathbf{x}) = \mathbf{x}^{T} \mathbf{\Sigma}^{-1} \mathbf{\mu}_{k}-\frac{1}{2} \mathbf{\mu}_{k}^{T} \mathbf{\Sigma}^{-1} \mathbf{\mu}_{k}+\log \pi_{k} \,.
+    \label{eqn_lda}
+\end{align}&lt;/script&gt;
+
+&lt;p&gt;This is a linear function in $\mathbf{x}$. Thus, the decision boundary between any pair of classes is also a linear function in $\mathbf{x}$. This is the reason that this classification procedure is called linear discriminant analysis. Without the equal covariance assumption, the quadratic term in the likelihood does not cancel out, hence the resulting discriminant function is a quadractic function in $\mathbf{x}$:
+&lt;script type=&quot;math/tex&quot;&gt;\begin{align}
+    \delta_{k}(\mathbf{x}) = 
+    - \frac{1}{2} \log|\mathbf{\Sigma}_k| 
+    - \frac{1}{2} (\mathbf{x} - \mathbf{\mu}_{k})^{T} \mathbf{\Sigma}_k^{-1} (\mathbf{x} - \mathbf{\mu}_{k}) + \log \pi_{k} \,.
+    \label{eqn_qda}
+\end{align}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Similarly, the decision boundary is quadratic in $\mathbf{x}$. This is known as quadratic discriminant analysis (QDA).&lt;/p&gt;
+
+&lt;h4 id=&quot;number-of-parameters&quot;&gt;Number of parameters&lt;/h4&gt;
+&lt;p&gt;In real problems, population parameters are usually unknown and estimated from training data as $\hat{\pi}_k, \hat{\mathbf{\mu}}_k, \hat{\mathbf{\Sigma}}_k$. While QDA accommodates more flexible decision boundaries compared to LDA, the number of parameters needed to be estimated also increase faster than that of LDA. From (\ref{eqn_lda}), $p+1$ parameters (nonlinear transformation of the original distribution parameters) are needed to construct the discriminant function. For a problem with $K$ classes, we would only need $K-1$ such discriminant functions by arbitrarily choosing one class to be the base class, i.e.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\delta_{k}'(\mathbf{x}) = \delta_{k}(\mathbf{x}) - \delta_{K}(\mathbf{x})\,,&lt;/script&gt;
+
+&lt;p&gt;$k = 1, \dots, K-1$. Hence, the total number of estimated parameters for LDA is &lt;script type=&quot;math/tex&quot;&gt;(K-1)(p+1)&lt;/script&gt;. On the other hand, for each QDA discriminant function (\ref{eqn_qda}), mean vector, covariance matrix, and class prior need to be estimated:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Mean: $p$&lt;/li&gt;
+  &lt;li&gt;Covariance: $p(p+1)/2$&lt;/li&gt;
+  &lt;li&gt;Class prior: 1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hence the total number of estimated parameters for QDA is &lt;script type=&quot;math/tex&quot;&gt;(K-1)\{p(p+3)/2+1\}&lt;/script&gt;. &lt;em&gt;Therefore, the number of parameters estimated in LDA increases linearly with $p$ while that of QDA increases quadratically with $p$.&lt;/em&gt; We would expect QDA to have worse performance than LDA when the dimension $p$ is large.&lt;/p&gt;
+
+&lt;h3 id=&quot;reduced-rank-lda&quot;&gt;Reduced-rank LDA&lt;/h3&gt;
+&lt;h3 id=&quot;fishers-lda&quot;&gt;Fisher’s LDA&lt;/h3&gt;
+&lt;h3 id=&quot;summary-of-lda&quot;&gt;Summary of LDA&lt;/h3&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;flexible-discriminant-analysis-fda&quot;&gt;Flexible discriminant analysis (FDA)&lt;/h3&gt;
+&lt;h3 id=&quot;penalized-discriminant-analysis-pda&quot;&gt;Penalized discriminant analysis (PDA)&lt;/h3&gt;
+&lt;h3 id=&quot;mixture-discriminant-analysis-mda&quot;&gt;Mixture discriminant analysis (MDA)&lt;/h3&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;conlcusion&quot;&gt;Conlcusion&lt;/h2&gt;
+
 </content>
  </entry>
  
@@ -71,27 +133,27 @@ this should render $x+y$&lt;/li&gt;
 &lt;p&gt;The problem is caused by the macOS Mojave update. The above solution is provided by &lt;a href=&quot;https://talk.jekyllrb.com/t/issues-installing-jekyll-on-macos-mojave/2400/3&quot;&gt;desiredpersona and Frank&lt;/a&gt;. Make sure Jekyll can run normally before proceeding to step 2.&lt;/p&gt;
 
 &lt;h2 id=&quot;2-set-up-github-repo&quot;&gt;2. Set up GitHub repo&lt;/h2&gt;
-&lt;p&gt;Jekyll generates web pages locally, we need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHub’s official &lt;a href=&quot;https://pages.github.com&quot;&gt;instructions&lt;/a&gt;. In the end, you should have a repo on GitHub called &lt;em&gt;username&lt;/em&gt;.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io.&lt;/p&gt;
+&lt;p&gt;Jekyll generates web pages locally; we need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHub’s official &lt;a href=&quot;https://pages.github.com&quot;&gt;instructions&lt;/a&gt;. In the end, you should have a repo on GitHub called &lt;em&gt;username&lt;/em&gt;.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io.&lt;/p&gt;
 
 &lt;p&gt;By the end of Step 1 and 2, we have set up the local engine for generating web pages and the GitHub repo for hosting and publishing your pages. Now we proceed to the actual website construction.&lt;/p&gt;
 
 &lt;h2 id=&quot;3-use-a-website-template&quot;&gt;3. Use a website template&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;http://hyde.getpoole.com&quot;&gt;Hyde&lt;/a&gt; is a Jekyll website theme built on &lt;a href=&quot;https://github.com/poole/poole&quot;&gt;Poole&lt;/a&gt;. They provide the template and the theme for the website. There are many themes for Jekyll, but I decided to use Hyde because I like the elegant design and it’s easy to customize.&lt;/p&gt;
 
-&lt;p&gt;To get Hyde, just download &lt;a href=&quot;https://github.com/poole/hyde&quot;&gt;their repo&lt;/a&gt; and move all the files into the local folder that you have just created in Step 2. Remember to clear any existing files in that folder before moving in Hyde files. From here, you just have to edit parts of those files to make the website yours (or use it as it is). I changed the following two lines in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; since redcarpet and pygments are not supported anymore. Other variables can also be changed such as name, GitHub account, etc.&lt;/p&gt;
+&lt;p&gt;To get Hyde, just download &lt;a href=&quot;https://github.com/poole/hyde&quot;&gt;the repo&lt;/a&gt; and move all the files into the local folder that you have just created in Step 2. Remember to clear any existing file in that folder before moving in Hyde files. From here, you just have to edit parts of those files to make the website yours (or use it as it is). I changed the following two lines in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; since redcarpet and pygments are not supported anymore. Other variables can also be changed such as name, GitHub account, etc.&lt;/p&gt;
 &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;kramdown&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;highlighter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rouge&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;At this point, it would be a good idea to learn some basics of &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;Jekyll&lt;/a&gt;, e.g. what is a front matter, what is a page, how to create a layout, etc. After learning these, you can go ahead and customize the website as you’d like.&lt;/p&gt;
 
-&lt;p&gt;One problem that I run into is that pages look fine in local serve, but when I publish them to the web, all pages other than the home page have suddenly lost all their style elements. After searching through the internet, I realize that this has to do with the &lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt; usage. If you also have this problem, consider doing the following:&lt;/p&gt;
+&lt;p&gt;One problem that I ran into is that pages look fine in local serve, but when I publish them to the web, all pages other than the home page have suddenly lost all their style elements. After searching through the internet, I realize that this has to do with the &lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt; usage. If you also have this problem, consider doing the following:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;change all the &lt;code class=&quot;highlighter-rouge&quot;&gt;{{ site.baseurl }}&lt;/code&gt;
 instances in &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;sidebar.html&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;{{ '/' | relative_url }}&lt;/code&gt; so that the correct files can be located.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;4-add-tags--categories&quot;&gt;4. Add tags &amp;amp; categories&lt;/h2&gt;
-&lt;p&gt;I want to add tags and categories to my posts and also a dedicated page where posts can be arranged according to &lt;a href=&quot;https://yangxiaozhou.github.io/tag/supervised-learning&quot;&gt;tags&lt;/a&gt;/&lt;a href=&quot;https://yangxiaozhou.github.io/categories/&quot;&gt;categories&lt;/a&gt;. This should be easy since tags and categories are default front matter variables that you can define in Jekyll. For example, tags and categories of my LDA post are defined like this:&lt;/p&gt;
+&lt;p&gt;I want to add tags and categories to my posts and create a dedicated page where posts can be arranged according to &lt;a href=&quot;https://yangxiaozhou.github.io/tag/supervised-learning&quot;&gt;tags&lt;/a&gt;/&lt;a href=&quot;https://yangxiaozhou.github.io/categories/&quot;&gt;categories&lt;/a&gt;. This should be easy since tags and categories are default front matter variables that you can define in Jekyll. For example, tags and categories of my LDA post are defined like this:&lt;/p&gt;
 &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;mathjax&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
@@ -102,7 +164,7 @@ instances in &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&
 &lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;For &lt;strong&gt;categories&lt;/strong&gt;, I created one page where posts of different categories are collected and is accessible through the sidebar link. To do this, just create a &lt;code class=&quot;highlighter-rouge&quot;&gt;category.html&lt;/code&gt; in the root folder:&lt;/p&gt;
+&lt;p&gt;For &lt;strong&gt;categories&lt;/strong&gt;, I created one page where posts of different categories are collected and the page is accessible through the sidebar link. To do this, just create a &lt;code class=&quot;highlighter-rouge&quot;&gt;category.html&lt;/code&gt; in the root folder:&lt;/p&gt;
 
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
 layout: page
@@ -145,7 +207,7 @@ title: Categories
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;To do 2, Long Qian has written a very clear &lt;a href=&quot;https://longqian.me/2017/02/09/github-jekyll-tag/&quot;&gt;post&lt;/a&gt; about it, please refer to that.&lt;/p&gt;
+&lt;p&gt;To do 2, Long Qian has written a very clear &lt;a href=&quot;https://longqian.me/2017/02/09/github-jekyll-tag/&quot;&gt;post&lt;/a&gt; about it.&lt;/p&gt;
 
 &lt;h2 id=&quot;5-add-mathjax&quot;&gt;5. Add MathJax&lt;/h2&gt;
 &lt;p&gt;The last piece to my website is to add the support of $\LaTeX$-like math. This is done through MathJax. There are two steps to achieve it:&lt;/p&gt;

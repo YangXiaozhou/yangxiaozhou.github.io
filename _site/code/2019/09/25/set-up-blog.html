@@ -124,6 +124,10 @@
         
       
         
+          
+            <a class="sidebar-nav-item" href="/categories/">Categories</a>
+          
+        
       
         
           
@@ -222,27 +226,27 @@
 <p>The problem is caused by the macOS Mojave update. The above solution is provided by <a href="https://talk.jekyllrb.com/t/issues-installing-jekyll-on-macos-mojave/2400/3">desiredpersona and Frank</a>. Make sure Jekyll can run normally before proceeding to step 2.</p>
 
 <h2 id="2-set-up-github-repo">2. Set up GitHub repo</h2>
-<p>Jekyll generates web pages locally, we need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHub’s official <a href="https://pages.github.com">instructions</a>. In the end, you should have a repo on GitHub called <em>username</em>.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io.</p>
+<p>Jekyll generates web pages locally; we need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHub’s official <a href="https://pages.github.com">instructions</a>. In the end, you should have a repo on GitHub called <em>username</em>.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io.</p>
 
 <p>By the end of Step 1 and 2, we have set up the local engine for generating web pages and the GitHub repo for hosting and publishing your pages. Now we proceed to the actual website construction.</p>
 
 <h2 id="3-use-a-website-template">3. Use a website template</h2>
 <p><a href="http://hyde.getpoole.com">Hyde</a> is a Jekyll website theme built on <a href="https://github.com/poole/poole">Poole</a>. They provide the template and the theme for the website. There are many themes for Jekyll, but I decided to use Hyde because I like the elegant design and it’s easy to customize.</p>
 
-<p>To get Hyde, just download <a href="https://github.com/poole/hyde">their repo</a> and move all the files into the local folder that you have just created in Step 2. Remember to clear any existing files in that folder before moving in Hyde files. From here, you just have to edit parts of those files to make the website yours (or use it as it is). I changed the following two lines in <code class="highlighter-rouge">_config.yml</code> since redcarpet and pygments are not supported anymore. Other variables can also be changed such as name, GitHub account, etc.</p>
+<p>To get Hyde, just download <a href="https://github.com/poole/hyde">the repo</a> and move all the files into the local folder that you have just created in Step 2. Remember to clear any existing file in that folder before moving in Hyde files. From here, you just have to edit parts of those files to make the website yours (or use it as it is). I changed the following two lines in <code class="highlighter-rouge">_config.yml</code> since redcarpet and pygments are not supported anymore. Other variables can also be changed such as name, GitHub account, etc.</p>
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">markdown</span><span class="pi">:</span> <span class="s">kramdown</span>
 <span class="na">highlighter</span><span class="pi">:</span> <span class="s">rouge</span>
 </code></pre></div></div>
 <p>At this point, it would be a good idea to learn some basics of <a href="https://jekyllrb.com/docs/">Jekyll</a>, e.g. what is a front matter, what is a page, how to create a layout, etc. After learning these, you can go ahead and customize the website as you’d like.</p>
 
-<p>One problem that I run into is that pages look fine in local serve, but when I publish them to the web, all pages other than the home page have suddenly lost all their style elements. After searching through the internet, I realize that this has to do with the <code class="highlighter-rouge">url</code> and <code class="highlighter-rouge">baseurl</code> usage. If you also have this problem, consider doing the following:</p>
+<p>One problem that I ran into is that pages look fine in local serve, but when I publish them to the web, all pages other than the home page have suddenly lost all their style elements. After searching through the internet, I realize that this has to do with the <code class="highlighter-rouge">url</code> and <code class="highlighter-rouge">baseurl</code> usage. If you also have this problem, consider doing the following:</p>
 <ul>
   <li>change all the <code class="highlighter-rouge">{{ site.baseurl }}</code>
 instances in <code class="highlighter-rouge">head.html</code> and <code class="highlighter-rouge">sidebar.html</code> to <code class="highlighter-rouge">{{ '/' | relative_url }}</code> so that the correct files can be located.</li>
 </ul>
 
 <h2 id="4-add-tags--categories">4. Add tags &amp; categories</h2>
-<p>I want to add tags and categories to my posts and also a dedicated page where posts can be arranged according to <a href="https://yangxiaozhou.github.io/tag/supervised-learning">tags</a>/<a href="https://yangxiaozhou.github.io/categories/">categories</a>. This should be easy since tags and categories are default front matter variables that you can define in Jekyll. For example, tags and categories of my LDA post are defined like this:</p>
+<p>I want to add tags and categories to my posts and create a dedicated page where posts can be arranged according to <a href="https://yangxiaozhou.github.io/tag/supervised-learning">tags</a>/<a href="https://yangxiaozhou.github.io/categories/">categories</a>. This should be easy since tags and categories are default front matter variables that you can define in Jekyll. For example, tags and categories of my LDA post are defined like this:</p>
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
 <span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
 <span class="na">mathjax</span><span class="pi">:</span> <span class="no">true</span>
@@ -253,7 +257,7 @@ instances in <code class="highlighter-rouge">head.html</code> and <code class="h
 <span class="nn">---</span>
 </code></pre></div></div>
 
-<p>For <strong>categories</strong>, I created one page where posts of different categories are collected and is accessible through the sidebar link. To do this, just create a <code class="highlighter-rouge">category.html</code> in the root folder:</p>
+<p>For <strong>categories</strong>, I created one page where posts of different categories are collected and the page is accessible through the sidebar link. To do this, just create a <code class="highlighter-rouge">category.html</code> in the root folder:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: page
@@ -296,7 +300,7 @@ title: Categories
 <span class="nt">&lt;/span&gt;</span>
 </code></pre></div></div>
 
-<p>To do 2, Long Qian has written a very clear <a href="https://longqian.me/2017/02/09/github-jekyll-tag/">post</a> about it, please refer to that.</p>
+<p>To do 2, Long Qian has written a very clear <a href="https://longqian.me/2017/02/09/github-jekyll-tag/">post</a> about it.</p>
 
 <h2 id="5-add-mathjax">5. Add MathJax</h2>
 <p>The last piece to my website is to add the support of $\LaTeX$-like math. This is done through MathJax. There are two steps to achieve it:</p>
@@ -369,10 +373,10 @@ In (\ref{eq:sample}), we find the value of an interesting integral:
     
       <li>
         <h4>
-          <a href="/statistics/2019/09/28/linear-discriminant-analysis-and-beyond.html">
-            Linear discriminant analysis (LDA) and beyond
+          <a href="/statistics/2019/10/02/linear-discriminant-analysis.html">
+            Linear discriminant analysis (LDA)
           </a>
-          <small>28 Sep 2019</small>
+          <small>02 Oct 2019</small>
         </h4>
       </li>
     
