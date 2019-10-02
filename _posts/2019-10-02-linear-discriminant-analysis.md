@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Linear discriminant analysis (LDA)
-date:   2019-10-02 08:00:00 +0800
+title:  Linear discriminant analysis
+date:   2019-09-28 08:00:00 +0800
 categories: STATISTICS
 tags: LDA supervised-learning classification
 ---
 
-LDA is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed. 
+Linear discriminant analysis (LDA) is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed. 
 
 Two prominent examples of using LDA (and it's variants) include:
 - *Bankruptcy prediction*: Edward Altman's [1968 model](https://en.wikipedia.org/wiki/Altman_Z-score) predicts the probability of company bankruptcy using trained LDA coefficients. The accuracy is said to be between 80% and 90%, evaluated over 31 years of data.
@@ -73,11 +73,6 @@ Hence the total number of estimated parameters for QDA is $$(K-1)\{p(p+3)/2+1\}$
 ### Reduced-rank LDA
 ### Fisher's LDA
 ### Summary of LDA
-
---------------------------------------------------------------------------
-### Flexible discriminant analysis (FDA)
-### Penalized discriminant analysis (PDA)
-### Mixture discriminant analysis (MDA)
 
 --------------------------------------------------------------------------
 ## Conlcusion

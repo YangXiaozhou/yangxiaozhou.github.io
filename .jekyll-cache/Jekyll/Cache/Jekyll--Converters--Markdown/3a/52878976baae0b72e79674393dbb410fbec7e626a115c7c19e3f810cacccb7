@@ -1,0 +1,7 @@
+I"Ÿ<p>LDA is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed.</p>
+
+<hr />
+<h3 id="flexible-discriminant-analysis-fda">Flexible discriminant analysis (FDA)</h3>
+<h3 id="penalized-discriminant-analysis-pda">Penalized discriminant analysis (PDA)</h3>
+<h3 id="mixture-discriminant-analysis-mda">Mixture discriminant analysis (MDA)</h3>
+:ET

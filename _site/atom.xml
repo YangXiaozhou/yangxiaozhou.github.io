@@ -4,7 +4,7 @@
  <title>杨晓州</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-10-02T16:33:50+08:00</updated>
+ <updated>2019-10-02T18:03:25+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -13,11 +13,23 @@
 
  
  <entry>
-   <title>Linear discriminant analysis (LDA)</title>
-   <link href="http://localhost:4000/statistics/2019/10/02/linear-discriminant-analysis.html"/>
+   <title>Beyond linear: Flexible, penalized, and mixture discriminant analysis</title>
+   <link href="http://localhost:4000/statistics/2019/10/02/beyond-lda.html"/>
    <updated>2019-10-02T08:00:00+08:00</updated>
-   <id>http://localhost:4000/statistics/2019/10/02/linear-discriminant-analysis</id>
-   <content type="html">&lt;p&gt;LDA is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed.&lt;/p&gt;
+   <id>http://localhost:4000/statistics/2019/10/02/beyond-lda</id>
+   <content type="html">&lt;hr /&gt;
+&lt;h3 id=&quot;flexible-discriminant-analysis-fda&quot;&gt;Flexible discriminant analysis (FDA)&lt;/h3&gt;
+&lt;h3 id=&quot;penalized-discriminant-analysis-pda&quot;&gt;Penalized discriminant analysis (PDA)&lt;/h3&gt;
+&lt;h3 id=&quot;mixture-discriminant-analysis-mda&quot;&gt;Mixture discriminant analysis (MDA)&lt;/h3&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Linear discriminant analysis</title>
+   <link href="http://localhost:4000/statistics/2019/09/28/linear-discriminant-analysis.html"/>
+   <updated>2019-09-28T08:00:00+08:00</updated>
+   <id>http://localhost:4000/statistics/2019/09/28/linear-discriminant-analysis</id>
+   <content type="html">&lt;p&gt;Linear discriminant analysis (LDA) is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed.&lt;/p&gt;
 
 &lt;p&gt;Two prominent examples of using LDA (and it’s variants) include:&lt;/p&gt;
 &lt;ul&gt;
@@ -79,11 +91,6 @@
 &lt;h3 id=&quot;reduced-rank-lda&quot;&gt;Reduced-rank LDA&lt;/h3&gt;
 &lt;h3 id=&quot;fishers-lda&quot;&gt;Fisher’s LDA&lt;/h3&gt;
 &lt;h3 id=&quot;summary-of-lda&quot;&gt;Summary of LDA&lt;/h3&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;flexible-discriminant-analysis-fda&quot;&gt;Flexible discriminant analysis (FDA)&lt;/h3&gt;
-&lt;h3 id=&quot;penalized-discriminant-analysis-pda&quot;&gt;Penalized discriminant analysis (PDA)&lt;/h3&gt;
-&lt;h3 id=&quot;mixture-discriminant-analysis-mda&quot;&gt;Mixture discriminant analysis (MDA)&lt;/h3&gt;
 
 &lt;hr /&gt;
 &lt;h2 id=&quot;conlcusion&quot;&gt;Conlcusion&lt;/h2&gt;
