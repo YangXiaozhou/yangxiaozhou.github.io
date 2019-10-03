@@ -21,7 +21,7 @@
 
   <title>
     
-      Linear discriminant analysis &middot; 杨晓州
+      Linear discriminant analysis - LDA &middot; 杨晓州
     
   </title>
 
@@ -187,8 +187,8 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Linear discriminant analysis</h1>
-  <span class="post-date">28 Sep 2019</span>
+  <h1 class="post-title">Linear discriminant analysis - LDA</h1>
+  <span class="post-date">02 Oct 2019</span>
   <p>Linear discriminant analysis (LDA) is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed.</p>
 
 <p>Two prominent examples of using LDA (and it’s variants) include:</p>
@@ -246,9 +246,37 @@
   <li>Class prior: 1</li>
 </ul>
 
-<p>Hence the total number of estimated parameters for QDA is <script type="math/tex">(K-1)\{p(p+3)/2+1\}</script>. <em>Therefore, the number of parameters estimated in LDA increases linearly with $p$ while that of QDA increases quadratically with $p$.</em> We would expect QDA to have worse performance than LDA when the dimension $p$ is large.</p>
+<p>The total number of estimated parameters for QDA is <script type="math/tex">(K-1)\{p(p+3)/2+1\}</script>. <em>Therefore, the number of parameters estimated in LDA increases linearly with $p$ while that of QDA increases quadratically with $p$.</em> We would expect QDA to have worse performance than LDA when the dimension $p$ is large.</p>
+
+<h4 id="compromise-between-lda--qda">Compromise between LDA &amp; QDA</h4>
+<p>We can find a compromise between LDA and QDA by regularizing the individual class covariance matrices. That is, individual covariance matrix shrinks toward a common pooled covariance matrix through a penalty parameter $\alpha$:</p>
+
+<script type="math/tex; mode=display">\hat{\mathbf{\Sigma}}_k (\alpha) = \alpha \hat{\mathbf{\Sigma}}_k + (1-\alpha) \hat{\mathbf{\Sigma}} \,.</script>
+
+<p>The pooled covariance matrix can also be regularized toward an identity matrix through a penalty parameter $\beta$:</p>
+
+<script type="math/tex; mode=display">\hat{\mathbf{\Sigma}} (\beta) = \beta \hat{\mathbf{\Sigma}} + (1-\beta) \mathbf{I} \,.</script>
+
+<h4 id="computation-for-lda">Computation for LDA</h4>
+<p>We can see from (\ref{eqn_lda}) and (\ref{eqn_qda}) that computations of discriminant functions can be simplified if we diagonalize the covariance matrices first. That is, data are transformed to have an identity covariance matrices. In the case of LDA, here’s how we proceed witht the computation:</p>
+
+<ol>
+  <li>Perform eigen-decompostion on the pooled covariance matrix: 
+<script type="math/tex">\hat{\mathbf{\Sigma}} = \mathbf{U}\mathbf{D}\mathbf{U}^{T} \,.</script></li>
+  <li>Sphere the data:
+<script type="math/tex">\mathbf{x}^{*} \leftarrow \mathbf{D}^{-\frac{1}{2}} \mathbf{U}^{T} \mathbf{x} \,.</script></li>
+  <li>Classify $\mathbf{x}$ according to $\delta_{k}(\mathbf{x}^{*})$ values:</li>
+</ol>
+
+<script type="math/tex; mode=display">\begin{align}
+\delta_{k}(\mathbf{x}^{*})=\mathbf{x^{*}}^{T} \hat{\mu}_{k}-\frac{1}{2} \hat{\mu}_{k}^{T} \hat{\mu}_{k}+\log \pi_{k} \,.
+\label{eqn_lda_sphered}
+\end{align}</script>
+
+<p>Step 2 spheres the data to produce an identity covariance matrix in the transformed space. Step 3 is obtained by following (\ref{eqn_lda}). The computation steps reveal what LDA is actually doing. By sphering the data through step 1 and 2,</p>
 
 <h3 id="reduced-rank-lda">Reduced-rank LDA</h3>
+
 <h3 id="fishers-lda">Fisher’s LDA</h3>
 <h3 id="summary-of-lda">Summary of LDA</h3>
 
@@ -280,10 +308,10 @@
     
       <li>
         <h4>
-          <a href="/statistics/2019/10/02/beyond-lda.html">
-            Beyond linear: Flexible, penalized, and mixture discriminant analysis
+          <a href="/statistics/2019/10/03/beyond-lda.html">
+            Beyond LDA: Flexible, penalized, and mixture discriminant analysis
           </a>
-          <small>02 Oct 2019</small>
+          <small>03 Oct 2019</small>
         </h4>
       </li>
     

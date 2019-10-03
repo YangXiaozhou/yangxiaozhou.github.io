@@ -4,7 +4,7 @@
  <title>杨晓州</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-10-02T18:03:25+08:00</updated>
+ <updated>2019-10-03T18:41:38+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -13,11 +13,13 @@
 
  
  <entry>
-   <title>Beyond linear: Flexible, penalized, and mixture discriminant analysis</title>
-   <link href="http://localhost:4000/statistics/2019/10/02/beyond-lda.html"/>
-   <updated>2019-10-02T08:00:00+08:00</updated>
-   <id>http://localhost:4000/statistics/2019/10/02/beyond-lda</id>
-   <content type="html">&lt;hr /&gt;
+   <title>Beyond LDA: Flexible, penalized, and mixture discriminant analysis</title>
+   <link href="http://localhost:4000/statistics/2019/10/03/beyond-lda.html"/>
+   <updated>2019-10-03T08:00:00+08:00</updated>
+   <id>http://localhost:4000/statistics/2019/10/03/beyond-lda</id>
+   <content type="html">&lt;p&gt;This is the second article that talks about the classification and dimension reduction tool LDA.&lt;/p&gt;
+
+&lt;hr /&gt;
 &lt;h3 id=&quot;flexible-discriminant-analysis-fda&quot;&gt;Flexible discriminant analysis (FDA)&lt;/h3&gt;
 &lt;h3 id=&quot;penalized-discriminant-analysis-pda&quot;&gt;Penalized discriminant analysis (PDA)&lt;/h3&gt;
 &lt;h3 id=&quot;mixture-discriminant-analysis-mda&quot;&gt;Mixture discriminant analysis (MDA)&lt;/h3&gt;
@@ -25,10 +27,10 @@
  </entry>
  
  <entry>
-   <title>Linear discriminant analysis</title>
-   <link href="http://localhost:4000/statistics/2019/09/28/linear-discriminant-analysis.html"/>
-   <updated>2019-09-28T08:00:00+08:00</updated>
-   <id>http://localhost:4000/statistics/2019/09/28/linear-discriminant-analysis</id>
+   <title>Linear discriminant analysis - LDA</title>
+   <link href="http://localhost:4000/statistics/2019/10/02/linear-discriminant-analysis.html"/>
+   <updated>2019-10-02T08:00:00+08:00</updated>
+   <id>http://localhost:4000/statistics/2019/10/02/linear-discriminant-analysis</id>
    <content type="html">&lt;p&gt;Linear discriminant analysis (LDA) is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed.&lt;/p&gt;
 
 &lt;p&gt;Two prominent examples of using LDA (and it’s variants) include:&lt;/p&gt;
@@ -86,9 +88,37 @@
   &lt;li&gt;Class prior: 1&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Hence the total number of estimated parameters for QDA is &lt;script type=&quot;math/tex&quot;&gt;(K-1)\{p(p+3)/2+1\}&lt;/script&gt;. &lt;em&gt;Therefore, the number of parameters estimated in LDA increases linearly with $p$ while that of QDA increases quadratically with $p$.&lt;/em&gt; We would expect QDA to have worse performance than LDA when the dimension $p$ is large.&lt;/p&gt;
+&lt;p&gt;The total number of estimated parameters for QDA is &lt;script type=&quot;math/tex&quot;&gt;(K-1)\{p(p+3)/2+1\}&lt;/script&gt;. &lt;em&gt;Therefore, the number of parameters estimated in LDA increases linearly with $p$ while that of QDA increases quadratically with $p$.&lt;/em&gt; We would expect QDA to have worse performance than LDA when the dimension $p$ is large.&lt;/p&gt;
+
+&lt;h4 id=&quot;compromise-between-lda--qda&quot;&gt;Compromise between LDA &amp;amp; QDA&lt;/h4&gt;
+&lt;p&gt;We can find a compromise between LDA and QDA by regularizing the individual class covariance matrices. That is, individual covariance matrix shrinks toward a common pooled covariance matrix through a penalty parameter $\alpha$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat{\mathbf{\Sigma}}_k (\alpha) = \alpha \hat{\mathbf{\Sigma}}_k + (1-\alpha) \hat{\mathbf{\Sigma}} \,.&lt;/script&gt;
+
+&lt;p&gt;The pooled covariance matrix can also be regularized toward an identity matrix through a penalty parameter $\beta$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat{\mathbf{\Sigma}} (\beta) = \beta \hat{\mathbf{\Sigma}} + (1-\beta) \mathbf{I} \,.&lt;/script&gt;
+
+&lt;h4 id=&quot;computation-for-lda&quot;&gt;Computation for LDA&lt;/h4&gt;
+&lt;p&gt;We can see from (\ref{eqn_lda}) and (\ref{eqn_qda}) that computations of discriminant functions can be simplified if we diagonalize the covariance matrices first. That is, data are transformed to have an identity covariance matrices. In the case of LDA, here’s how we proceed witht the computation:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Perform eigen-decompostion on the pooled covariance matrix: 
+&lt;script type=&quot;math/tex&quot;&gt;\hat{\mathbf{\Sigma}} = \mathbf{U}\mathbf{D}\mathbf{U}^{T} \,.&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;Sphere the data:
+&lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}^{*} \leftarrow \mathbf{D}^{-\frac{1}{2}} \mathbf{U}^{T} \mathbf{x} \,.&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;Classify $\mathbf{x}$ according to $\delta_{k}(\mathbf{x}^{*})$ values:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+\delta_{k}(\mathbf{x}^{*})=\mathbf{x^{*}}^{T} \hat{\mu}_{k}-\frac{1}{2} \hat{\mu}_{k}^{T} \hat{\mu}_{k}+\log \pi_{k} \,.
+\label{eqn_lda_sphered}
+\end{align}&lt;/script&gt;
+
+&lt;p&gt;Step 2 spheres the data to produce an identity covariance matrix in the transformed space. Step 3 is obtained by following (\ref{eqn_lda}). The computation steps reveal what LDA is actually doing. By sphering the data through step 1 and 2,&lt;/p&gt;
 
 &lt;h3 id=&quot;reduced-rank-lda&quot;&gt;Reduced-rank LDA&lt;/h3&gt;
+
 &lt;h3 id=&quot;fishers-lda&quot;&gt;Fisher’s LDA&lt;/h3&gt;
 &lt;h3 id=&quot;summary-of-lda&quot;&gt;Summary of LDA&lt;/h3&gt;
 

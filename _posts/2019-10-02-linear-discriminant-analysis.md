@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Linear discriminant analysis
-date:   2019-09-28 08:00:00 +0800
+title:  Linear discriminant analysis - LDA
+date:   2019-10-2 08:00:00 +0800
 categories: STATISTICS
 tags: LDA supervised-learning classification
 ---
@@ -65,12 +65,45 @@ $k = 1, \dots, K-1$. Hence, the total number of estimated parameters for LDA is 
 - Covariance: $p(p+1)/2$
 - Class prior: 1
  
-Hence the total number of estimated parameters for QDA is $$(K-1)\{p(p+3)/2+1\}$$. *Therefore, the number of parameters estimated in LDA increases linearly with $p$ while that of QDA increases quadratically with $p$.* We would expect QDA to have worse performance than LDA when the dimension $p$ is large. 
+The total number of estimated parameters for QDA is $$(K-1)\{p(p+3)/2+1\}$$. *Therefore, the number of parameters estimated in LDA increases linearly with $p$ while that of QDA increases quadratically with $p$.* We would expect QDA to have worse performance than LDA when the dimension $p$ is large. 
 
+#### Compromise between LDA & QDA
+We can find a compromise between LDA and QDA by regularizing the individual class covariance matrices. That is, individual covariance matrix shrinks toward a common pooled covariance matrix through a penalty parameter $\alpha$:
 
+$$
+\hat{\mathbf{\Sigma}}_k (\alpha) = \alpha \hat{\mathbf{\Sigma}}_k + (1-\alpha) \hat{\mathbf{\Sigma}} \,.
+$$
 
+The pooled covariance matrix can also be regularized toward an identity matrix through a penalty parameter $\beta$:
+
+$$
+\hat{\mathbf{\Sigma}} (\beta) = \beta \hat{\mathbf{\Sigma}} + (1-\beta) \mathbf{I} \,.
+$$
+
+#### Computation for LDA
+We can see from (\ref{eqn_lda}) and (\ref{eqn_qda}) that computations of discriminant functions can be simplified if we diagonalize the covariance matrices first. That is, data are transformed to have an identity covariance matrices. In the case of LDA, here's how we proceed witht the computation:
+
+1. Perform eigen-decompostion on the pooled covariance matrix: 
+$$
+\hat{\mathbf{\Sigma}} = \mathbf{U}\mathbf{D}\mathbf{U}^{T} \,.
+$$
+2. Sphere the data:
+$$
+\mathbf{x}^{*} \leftarrow \mathbf{D}^{-\frac{1}{2}} \mathbf{U}^{T} \mathbf{x} \,.
+$$
+3. Classify $\mathbf{x}$ according to $\delta_{k}(\mathbf{x}^{*})$ values:
+
+$$
+\begin{align}
+\delta_{k}(\mathbf{x}^{*})=\mathbf{x^{*}}^{T} \hat{\mu}_{k}-\frac{1}{2} \hat{\mu}_{k}^{T} \hat{\mu}_{k}+\log \pi_{k} \,.
+\label{eqn_lda_sphered}
+\end{align}
+$$
+
+Step 2 spheres the data to produce an identity covariance matrix in the transformed space. Step 3 is obtained by following (\ref{eqn_lda}). The computation steps reveal what LDA is actually doing. By sphering the data through step 1 and 2, 
 
 ### Reduced-rank LDA
+
 ### Fisher's LDA
 ### Summary of LDA
 
