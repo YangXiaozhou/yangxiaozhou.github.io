@@ -125,9 +125,46 @@ The derived allocation rule reveals the working of LDA. The left-hand side of th
 
 
 ### Reduced-rank LDA
-What I've just described is the idea of classification by discriminant analysis with certain distribution assumptions on the data. LDA is also popular for its ability to find a small number of meaningful dimensions, thus allowing us to visualize high-dimensional problems in a few dimensions. 
+What I've just described is the idea of classification by discriminant analysis with certain distribution assumptions on the data. LDA is also popular for its ability to find a small number of meaningful dimensions, thus allowing us to visualize high-dimensional problems in a few dimensions. What do we mean by meaningful and how does LDA find these dimensions? We will anwser these questions shortly. First, take a look at the below plot. For a [wine classification](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html#sklearn.datasets.load_wine) problem with 3 classes and 13 dimensions, the plot visualizes the data in two discriminant coordinates found by LDA. In this 2-dimensional space, the classes can be well-separated. In comparison, the classes are not as clearly separated using the first 2 principal components found by PCA. 
 
 ![lda_vs_pca](/assets/2019-10-02/lda_vs_pca.pdf)
+<details>
+<summary>Here's the script to generate the above plot.</summary>
+<div markdown="1">
+``` python
+import matplotlib.pyplot as plt
+from sklearn import datasets
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+from sklearn.decomposition import PCA
+%matplotlib inline
+
+wine = datasets.load_wine()
+X = wine.data
+y = wine.target
+target_names = wine.target_names
+
+X_r_lda = LinearDiscriminantAnalysis(n_components=2).fit(X, y).transform(X)
+X_r_pca = PCA(n_components=2).fit(X).transform(X)
+
+with plt.style.context('seaborn-talk'):
+    fig, axes = plt.subplots(1,2,figsize=[15,6])
+    colors = ['navy', 'turquoise', 'darkorange']
+    for color, i, target_name in zip(colors, [0, 1, 2], target_names):
+        axes[0].scatter(X_r_lda[y == i, 0], X_r_lda[y == i, 1], alpha=.8, label=target_name, color=color)
+        axes[1].scatter(X_r_pca[y == i, 0], X_r_pca[y == i, 1], alpha=.8, label=target_name, color=color)
+    axes[0].title.set_text('LDA for Wine dataset')
+    axes[1].title.set_text('PCA for Wine dataset')
+    axes[0].set_xlabel('Discriminant Coordinate 1')
+    axes[0].set_ylabel('Discriminant Coordinate 2')
+    axes[1].set_xlabel('PC 1')
+    axes[1].set_ylabel('PC 2')
+```
+</div>
+</details>
+
+
+#### Inherent dimension reduction
+
 
 ### Fisher's LDA
 

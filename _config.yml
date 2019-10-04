@@ -1,7 +1,12 @@
 # Dependencies
+
 markdown: kramdown
 kramdown: 
   input: GFM
+  # parse_block_html: true
+
+# markdown: CommonMarkGhPages
+
 highlighter:      rouge
 
 # Permalinks
@@ -28,6 +33,7 @@ github:
 plugins: 
   - jekyll-paginate
   - jekyll-archives
+  - jekyll-commonmark-ghpages
 
 disqus:
   shortname: yangxiaozhou
