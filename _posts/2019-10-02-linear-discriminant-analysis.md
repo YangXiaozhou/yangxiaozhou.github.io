@@ -127,7 +127,7 @@ The derived allocation rule reveals the working of LDA. The left-hand side of th
 ### Reduced-rank LDA
 What I've just described is the idea of classification by discriminant analysis with certain distribution assumptions on the data. LDA is also popular for its ability to find a small number of meaningful dimensions, thus allowing us to visualize high-dimensional problems in a few dimensions. What do we mean by meaningful and how does LDA find these dimensions? We will anwser these questions shortly. First, take a look at the below plot. For a [wine classification](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html#sklearn.datasets.load_wine) problem with 3 classes and 13 dimensions, the plot visualizes the data in two discriminant coordinates found by LDA. In this 2-dimensional space, the classes can be well-separated. In comparison, the classes are not as clearly separated using the first 2 principal components found by PCA. 
 
-![lda_vs_pca](/assets/2019-10-02/lda_vs_pca.pdf)
+![lda_vs_pca]({{ '/' | relative_url }}/assets/2019-10-02/lda_vs_pca.pdf)
 <details>
 <summary>Here's the script to generate the above plot.</summary>
 <div markdown="1">
