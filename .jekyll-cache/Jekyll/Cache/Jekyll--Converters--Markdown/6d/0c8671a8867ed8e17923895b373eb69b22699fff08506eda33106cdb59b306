@@ -1,195 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  
-  <!-- include collecttags -->
-  
-  
-
-
-
-
-
-  
-
-  <title>
-    
-      Linear discriminant analysis - LDA &middot; 杨晓州
-    
-  </title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/hyde.css">
-  <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css" rel="stylesheet">
-
-
-
-
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
-                                 <link rel="shortcut icon" href="/public/favicon.ico">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-
-  <!-- MathJax -->
-  <script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-  });
-  MathJax.Hub.Queue(function() {
-    // Fix <code> tags after MathJax finishes running. This is a
-    // hack to overcome a shortcoming of Markdown. Discussion at
-    // https://github.com/mojombo/jekyll/issues/199
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-
-  MathJax.Hub.Config({
-  // Autonumbering by mathjax
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-</script>
-</head>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89141653-4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-89141653-4');
-</script>
-
-
-
-  <body>
-
-    <div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>
-        <!-- <a href="/"> -->
-          杨晓州
-        </a>
-      </h1>
-      <p class="lead">I write about my experiences here.</p>
-    </div>
-
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item" href="/">Home</a>
-
-      <!-- Manual set order -->
-      <a class="sidebar-nav-item" href="/categories">Categories</a>
-      <a class="sidebar-nav-item" href="/publication">Publication</a>
-      <a class="sidebar-nav-item" href="/about">About</a>
-
-      <!-- Uncomment for auto order -->
-      <!-- 
-
-      
-      
-        
-          
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/about/">About</a>
-          
-        
-      
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/categories/">Categories</a>
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/publication/">Publication</a>
-          
-        
-      
-        
-          
-        
-       -->
-
-      
-      <!-- <a class="sidebar-nav-item" href="https://github.com/yangxiaozhou/yangxiaozhou.github.io">GitHub project</a> -->
-      <!-- <span class="sidebar-nav-item">Currently v</span> -->
-      
-<div id="social-media">
-    
-    
-        
-        
-            <a href="mailto:xiaozhou.yang@u.nus.edu" title="Email"><i class="fa fa-envelope"></i></a>
-        
-    
-        
-        
-            <a href="https://www.linkedin.com/in/yangxiaozhou" title="Linkedin"><i class="fab fa-linkedin"></i></a>
-        
-    
-        
-        
-            <a href="https://github.com/YangXiaozhou" title="GitHub"><i class="fab fa-github"></i></a>
-        
-    
-        
-        
-            <a href="https://www.youtube.com/user/a315345751" title="YouTube"><i class="fab fa-youtube"></i></a>
-        
-    
-</div>
-
-
-    </nav>
-
-    <p>&copy; 2019. All rights reserved.</p>
-  </div>
-</div>
-
-
-    <div class="content container">
-      <div class="post">
-  <h1 class="post-title">Linear discriminant analysis - LDA</h1>
-  <span class="post-date">02 Oct 2019</span>
-  <p>Linear discriminant analysis (LDA) is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed.</p>
+I"�T<p>Linear discriminant analysis (LDA) is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed.</p>
 
 <p>Two prominent examples of using LDA (and it’s variants) include:</p>
 <ul>
@@ -256,73 +65,6 @@
 
 <script type="math/tex; mode=display">\hat{\mathbf{\Sigma}} (\beta) = \beta \hat{\mathbf{\Sigma}} + (1-\beta) \mathbf{I} \,.</script>
 
-<p>In situations where the number of input variables greatly exceed the number of samples, covariance matrix can be poorly estimated. Shrinkage can hopefully improve the estimation and classification accuracy.<br />
-<img src="/assets/2019-10-02/lda_shrinkage.pdf" alt="lda_shrinkage" /></p>
-<details>
-<summary>Here's the script taken from <a href="https://scikit-learn.org/stable/auto_examples/classification/plot_lda.html">scikit-learn</a> to generate the above plot.</summary>
-<div>
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
-<span class="kn">from</span> <span class="nn">sklearn.discriminant_analysis</span> <span class="kn">import</span> <span class="n">LinearDiscriminantAnalysis</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-
-<span class="n">n_train</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># samples for training
-</span><span class="n">n_test</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c1"># samples for testing
-</span><span class="n">n_averages</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># how often to repeat classification
-</span><span class="n">n_features_max</span> <span class="o">=</span> <span class="mi">75</span>  <span class="c1"># maximum number of features
-</span><span class="n">step</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># step size for the calculation
-</span>
-
-<span class="k">def</span> <span class="nf">generate_data</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">n_features</span><span class="p">):</span>
-    <span class="s">"""Generate random blob-ish data with noisy features.
-
-    This returns an array of input data with shape `(n_samples, n_features)`
-    and an array of `n_samples` target labels.
-
-    Only one feature contains discriminative information, the other features
-    contain only noise.
-    """</span>
-    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="p">[[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
-
-    <span class="c1"># add non-discriminative features
-</span>    <span class="k">if</span> <span class="n">n_features</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)])</span>
-    <span class="k">return</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
-
-<span class="n">acc_clf1</span><span class="p">,</span> <span class="n">acc_clf2</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
-<span class="n">n_features_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_features_max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">n_features</span> <span class="ow">in</span> <span class="n">n_features_range</span><span class="p">:</span>
-    <span class="n">score_clf1</span><span class="p">,</span> <span class="n">score_clf2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_averages</span><span class="p">):</span>
-        <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">(</span><span class="n">n_train</span><span class="p">,</span> <span class="n">n_features</span><span class="p">)</span>
-
-        <span class="n">clf1</span> <span class="o">=</span> <span class="n">LinearDiscriminantAnalysis</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s">'lsqr'</span><span class="p">,</span> <span class="n">shrinkage</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-        <span class="n">clf2</span> <span class="o">=</span> <span class="n">LinearDiscriminantAnalysis</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s">'lsqr'</span><span class="p">,</span> <span class="n">shrinkage</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-        <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">(</span><span class="n">n_test</span><span class="p">,</span> <span class="n">n_features</span><span class="p">)</span>
-        <span class="n">score_clf1</span> <span class="o">+=</span> <span class="n">clf1</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-        <span class="n">score_clf2</span> <span class="o">+=</span> <span class="n">clf2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-    <span class="n">acc_clf1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score_clf1</span> <span class="o">/</span> <span class="n">n_averages</span><span class="p">)</span>
-    <span class="n">acc_clf2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score_clf2</span> <span class="o">/</span> <span class="n">n_averages</span><span class="p">)</span>
-
-<span class="n">features_samples_ratio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">n_features_range</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_train</span>
-
-<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s">'seaborn-talk'</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">features_samples_ratio</span><span class="p">,</span> <span class="n">acc_clf1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="s">"LDA with shrinkage"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'navy'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">features_samples_ratio</span><span class="p">,</span> <span class="n">acc_clf2</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="s">"LDA"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'gold'</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'n_features / n_samples'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Classification accuracy'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s">'size'</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-</code></pre></div>    </div>
-  </div>
-</details>
-
 <h4 id="computation-for-lda">Computation for LDA</h4>
 <p>We can see from (\ref{eqn_lda}) and (\ref{eqn_qda}) that computations of discriminant functions can be simplified if we diagonalize the covariance matrices first. That is, data are transformed to have an identity covariance matrices. In the case of LDA, here’s how we proceed witht the computation:</p>
 
@@ -363,7 +105,7 @@
 </ol>
 
 <h3 id="reduced-rank-lda">Reduced-rank LDA</h3>
-<p>What I’ve just described is classification by LDA. LDA is also popular for its ability to find a small number of meaningful dimensions, allowing us to visualize high-dimensional problems. What do we mean by meaningful and how does LDA find these dimensions? We will anwser these questions shortly. First, take a look at the below plot. For a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html#sklearn.datasets.load_wine">wine classification</a> problem with 3 different types of wines and 13 input variables, the plot visualizes the data in two discriminant coordinates found by LDA. In this 2-dimensional space, the classes can be well-separated. In comparison, the classes are not as clearly separated using the first 2 principal components found by PCA.</p>
+<p>What I’ve just described is classification by LDA. LDA is also popular for its ability to find a small number of meaningful dimensions, allowing us to visualize high-dimensional problems. What do we mean by meaningful and how does LDA find these dimensions? We will anwser these questions shortly. First, take a look at the below plot. For a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html#sklearn.datasets.load_wine">wine classification</a> problem with 3 classes and 13 dimensions, the plot visualizes the data in two discriminant coordinates found by LDA. In this 2-dimensional space, the classes can be well-separated. In comparison, the classes are not as clearly separated using the first 2 principal components found by PCA.</p>
 
 <p><img src="/assets/2019-10-02/lda_vs_pca.pdf" alt="lda_vs_pca" /></p>
 <details>
@@ -420,73 +162,15 @@
 
     <script type="math/tex; mode=display">\mathbf{B}^* = \sum_{k=1}^{K} (\hat{\mathbf{\mu}}^*_k - \hat{\mathbf{\mu}}^*)(\hat{\mathbf{\mu}}^*_k - \hat{\mathbf{\mu}}^*)^T \,.</script>
   </li>
-  <li>Obtain $L$ eigenvectors <script type="math/tex">(\mathbf{v}^*_\ell)</script> in <script type="math/tex">\mathbf{V}^*</script> of 
-<script type="math/tex">\mathbf{B}^* = \mathbf{V}^* \mathbf{D_B} \mathbf{V^*}^T</script> cooresponding to the $L$ largest eigenvalues. These define the coordinates of the optimal subspace.</li>
-  <li>Obtain $L$ new (discriminant) variables $Z_\ell = (\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell)^T X$, for $\ell = 1, \dots, L$.</li>
+  <li>Obtain eigenvectors <script type="math/tex">(\mathbf{v}^*_\ell)</script> in <script type="math/tex">\mathbf{V}^*</script> of 
+<script type="math/tex">\operatorname{cov}(\mathbf{M}^*) = \mathbf{V}^* \mathbf{D_B} \mathbf{V^*}^T</script>.</li>
+  <li>Obtain new (discriminant) variables $Z_\ell = (\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell)X$, $\ell = 1, \dots, L$.</li>
 </ol>
 
-<p>Through this procedure, we reduce our data dimension from <script type="math/tex">\mathbf{X}_{(N \times p)}</script> to <script type="math/tex">\mathbf{Z}_{(N \times L)}</script>. Discriminant coordinate 1 and 2 in the previous wine plot are found by setting $L = 2$. Repeating LDA procedures for classification using the new data $\mathbf{Z}$ is called the reduced-rank LDA.</p>
-
 <h3 id="fishers-lda">Fisher’s LDA</h3>
-<p>Fisher derived the computation steps according to his optimality definition in a different way<sup id="fnref:3"><a href="#fn:3" class="footnote">1</a></sup>. His steps of performing the reduced-rank LDA would later be known as the Fisher’s LDA.</p>
 
 <h3 id="summary-of-lda">Summary of LDA</h3>
 
 <h2 id="conlcusion">Conlcusion</h2>
 
-<h4 id="footnotes">Footnotes</h4>
-
-<div class="footnotes">
-  <ol>
-    <li id="fn:3">
-      <p>Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
-
-</div>
-
-<span class="post-tags">
-    
-      <i class="fa fa-tag fa-xs" aria-hidden="true"></i>
-      
-      <a class="no-underline" href="/tag/LDA"><nobr>LDA</nobr></code>&nbsp;</a>    
-    
-      <i class="fa fa-tag fa-xs" aria-hidden="true"></i>
-      
-      <a class="no-underline" href="/tag/supervised-learning"><nobr>supervised-learning</nobr></code>&nbsp;</a>    
-    
-      <i class="fa fa-tag fa-xs" aria-hidden="true"></i>
-      
-      <a class="no-underline" href="/tag/classification"><nobr>classification</nobr></code>&nbsp;</a>    
-    
-</span>
-
-<div class="recent">
-  <h2>Recent Posts</h2>
-  <ul class="recent-posts">
-    
-      <li>
-        <h4>
-          <a href="/statistics/2019/10/03/beyond-lda.html">
-            Beyond LDA: Flexible, penalized, and mixture discriminant analysis
-          </a>
-          <small>03 Oct 2019</small>
-        </h4>
-      </li>
-    
-      <li>
-        <h4>
-          <a href="/code/2019/09/25/set-up-blog.html">
-            How did I set up my blog using Jekyll, Hyde and GitHub
-          </a>
-          <small>25 Sep 2019</small>
-        </h4>
-      </li>
-    
-  </ul>
-</div>
-    </div>
-
-  </body>
-</html>
+:ET

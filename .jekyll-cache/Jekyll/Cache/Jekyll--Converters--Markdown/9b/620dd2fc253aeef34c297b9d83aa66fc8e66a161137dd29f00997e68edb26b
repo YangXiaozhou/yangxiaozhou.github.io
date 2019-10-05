@@ -1,195 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  
-  <!-- include collecttags -->
-  
-  
-
-
-
-
-
-  
-
-  <title>
-    
-      Linear discriminant analysis - LDA &middot; 杨晓州
-    
-  </title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/hyde.css">
-  <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css" rel="stylesheet">
-
-
-
-
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
-                                 <link rel="shortcut icon" href="/public/favicon.ico">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-
-  <!-- MathJax -->
-  <script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-  });
-  MathJax.Hub.Queue(function() {
-    // Fix <code> tags after MathJax finishes running. This is a
-    // hack to overcome a shortcoming of Markdown. Discussion at
-    // https://github.com/mojombo/jekyll/issues/199
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-
-  MathJax.Hub.Config({
-  // Autonumbering by mathjax
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-</script>
-</head>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89141653-4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-89141653-4');
-</script>
-
-
-
-  <body>
-
-    <div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>
-        <!-- <a href="/"> -->
-          杨晓州
-        </a>
-      </h1>
-      <p class="lead">I write about my experiences here.</p>
-    </div>
-
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item" href="/">Home</a>
-
-      <!-- Manual set order -->
-      <a class="sidebar-nav-item" href="/categories">Categories</a>
-      <a class="sidebar-nav-item" href="/publication">Publication</a>
-      <a class="sidebar-nav-item" href="/about">About</a>
-
-      <!-- Uncomment for auto order -->
-      <!-- 
-
-      
-      
-        
-          
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/about/">About</a>
-          
-        
-      
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/categories/">Categories</a>
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/publication/">Publication</a>
-          
-        
-      
-        
-          
-        
-       -->
-
-      
-      <!-- <a class="sidebar-nav-item" href="https://github.com/yangxiaozhou/yangxiaozhou.github.io">GitHub project</a> -->
-      <!-- <span class="sidebar-nav-item">Currently v</span> -->
-      
-<div id="social-media">
-    
-    
-        
-        
-            <a href="mailto:xiaozhou.yang@u.nus.edu" title="Email"><i class="fa fa-envelope"></i></a>
-        
-    
-        
-        
-            <a href="https://www.linkedin.com/in/yangxiaozhou" title="Linkedin"><i class="fab fa-linkedin"></i></a>
-        
-    
-        
-        
-            <a href="https://github.com/YangXiaozhou" title="GitHub"><i class="fab fa-github"></i></a>
-        
-    
-        
-        
-            <a href="https://www.youtube.com/user/a315345751" title="YouTube"><i class="fab fa-youtube"></i></a>
-        
-    
-</div>
-
-
-    </nav>
-
-    <p>&copy; 2019. All rights reserved.</p>
-  </div>
-</div>
-
-
-    <div class="content container">
-      <div class="post">
-  <h1 class="post-title">Linear discriminant analysis - LDA</h1>
-  <span class="post-date">02 Oct 2019</span>
-  <p>Linear discriminant analysis (LDA) is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed.</p>
+I"��<p>Linear discriminant analysis (LDA) is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed.</p>
 
 <p>Two prominent examples of using LDA (and it’s variants) include:</p>
 <ul>
@@ -200,7 +9,7 @@
 <p>This article starts with introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems.</p>
 
 <h3 id="classification-by-discriminant-analysis">Classification by discriminant analysis</h3>
-<p>Consider a generic classification problem: A random variable $X$ comes from one of $K$ classes, $G = 1, \dots, K$, with density $f_k(\mathbf{x})$ on $\mathbb{R}^p$. A discriminant rule divides the space into $K$ disjoint regions $\mathbb{R}_1, \dots, \mathbb{R}_K$. Classification by discriminant analysis simply means that we allocate $\mathbf{x }$ to $\Pi_{j}$ if $\mathbf{x} \in \mathbb{R}_j$. We can follow two allocation rules:</p>
+<p>Consider a generic classification problem: A random variable $X$ comes from one of $K$ classes, $G = <abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr>, \dots, K$, with density $f_k(\mathbf{x})$ on $\mathbb{R}^p$. A discriminant rule divides the space into $K$ disjoint regions $\mathbb{R}_1, \dots, \mathbb{R}_K$. Classification by discriminant analysis simply means that we allocate $\mathbf{x }$ to $\Pi_{j}$ if $\mathbf{x} \in \mathbb{R}_j$. We can follow two allocation rules:</p>
 
 <ul>
   <li><em>Maximum likelihood rule</em>: If we assume that each class could occur with equal probability, then allocate $\mathbf{x }$ to $\Pi_{j}$ if $j = \arg\max_i f_i(\mathbf{x})$ .</li>
@@ -234,15 +43,15 @@
 <p>Similarly, the decision boundary is quadratic in $\mathbf{x}$. This is known as quadratic discriminant analysis (QDA).</p>
 
 <h4 id="number-of-parameters">Number of parameters</h4>
-<p>In real problems, population parameters are usually unknown and estimated from training data as $\hat{\pi}_k, \hat{\mathbf{\mu}}_k, \hat{\mathbf{\Sigma}}_k$. While QDA accommodates more flexible decision boundaries compared to LDA, the number of parameters needed to be estimated also increase faster than that of LDA. From (\ref{eqn_lda}), $p+1$ parameters (nonlinear transformation of the original distribution parameters) are needed to construct the discriminant function. For a problem with $K$ classes, we would only need $K-1$ such discriminant functions by arbitrarily choosing one class to be the base class, i.e.</p>
+<p>In real problems, population parameters are usually unknown and estimated from training data as $\hat{\pi}_k, \hat{\mathbf{\mu}}_k, \hat{\mathbf{\Sigma}}_k$. While QDA accommodates more flexible decision boundaries compared to LDA, the number of parameters needed to be estimated also increase faster than that of LDA. From (\ref{eqn_lda}), $p+<abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr>$ parameters (nonlinear transformation of the original distribution parameters) are needed to construct the discriminant function. For a problem with $K$ classes, we would only need $K-<abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr>$ such discriminant functions by arbitrarily choosing one class to be the base class, i.e.</p>
 
 <script type="math/tex; mode=display">\delta_{k}'(\mathbf{x}) = \delta_{k}(\mathbf{x}) - \delta_{K}(\mathbf{x})\,,</script>
 
-<p>$k = 1, \dots, K-1$. Hence, the total number of estimated parameters for LDA is <script type="math/tex">(K-1)(p+1)</script>. On the other hand, for each QDA discriminant function (\ref{eqn_qda}), mean vector, covariance matrix, and class prior need to be estimated:</p>
+<p>$k = <abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr>, \dots, K-<abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr>$. Hence, the total number of estimated parameters for LDA is <script type="math/tex">(K-1)(p+1)</script>. On the other hand, for each QDA discriminant function (\ref{eqn_qda}), mean vector, covariance matrix, and class prior need to be estimated:</p>
 <ul>
   <li>Mean: $p$</li>
-  <li>Covariance: $p(p+1)/2$</li>
-  <li>Class prior: 1</li>
+  <li>Covariance: $p(p+<abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr>)/2$</li>
+  <li>Class prior: <abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr></li>
 </ul>
 
 <p>The total number of estimated parameters for QDA is <script type="math/tex">(K-1)\{p(p+3)/2+1\}</script>. <em>Therefore, the number of parameters estimated in LDA increases linearly with $p$ while that of QDA increases quadratically with $p$.</em> We would expect QDA to have worse performance than LDA when the dimension $p$ is large.</p>
@@ -400,11 +209,11 @@
 </details>
 
 <h4 id="inherent-dimension-reduction">Inherent dimension reduction</h4>
-<p>In the above wine example, a 13-dimensional problem is visualized in a 2d space. Why is this possible? This is possible because there’s inherent dimension reduction in LDA. We have observed from the previous section that LDA makes distance comparison in the space spanned by different class centroids. Two distinct points lie on a 1d line; three distinct points lie on a 2d plane. Similarly, $K$ class centroids lie on a hyperplane with dimension at most $(K-1)$. In particular, the subspace spanned by the centroids is</p>
+<p>In the above wine example, a 13-dimensional problem is visualized in a 2d space. Why is this possible? This is possible because there’s inherent dimension reduction in LDA. We have observed from the previous section that LDA makes distance comparison in the space spanned by different class centroids. Two distinct points lie on a 1d line; three distinct points lie on a 2d plane. Similarly, $K$ class centroids lie on a hyperplane with dimension at most $(K-<abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr>)$. In particular, the subspace spanned by the centroids is</p>
 
 <script type="math/tex; mode=display">H_{K-1}=\mu_{1} \oplus \operatorname{span}\left\{\mu_{i}-\mu_{1}, 2 \leq i \leq K\right\} \,.</script>
 
-<p>When making distance comparisons, distances orthorgonal to this subspace would add no information since they contribute equally for each class. Hence, by restricting distance comparisons to this subspace only would not lose any information useful for LDA classification. That means, we can safely transform our task from a $p$-dimensional problem to a $(K-1)$-dimensional problem by an orthogonal projection of the data onto this subspace. When $p \gg K$, this is a considerable drop in the number of dimensions. What if we want to reduce the dimension further from $p$ tp $L$ where $K \gg L$? We can construct an $L$-dimensional subspace, $H_L$, from $H_{K-1}$ and this subspace is optimal, in some sense, to LDA classification.</p>
+<p>When making distance comparisons, distances orthorgonal to this subspace would add no information since they contribute equally for each class. Hence, by restricting distance comparisons to this subspace only would not lose any information useful for LDA classification. That means, we can safely transform our task from a $p$-dimensional problem to a $(K-<abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr>)$-dimensional problem by an orthogonal projection of the data onto this subspace. When $p \gg K$, this is a considerable drop in the number of dimensions. What if we want to reduce the dimension further from $p$ tp $L$ where $K \gg L$? We can construct an $L$-dimensional subspace, $H_L$, from $H_{K-<abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr>}$ and this subspace is optimal, in some sense, to LDA classification.</p>
 
 <h4 id="optimal-subspace-and-computation">Optimal subspace and computation</h4>
 <p>Fisher proposes that the subspace $H_L$ is optimal when the class centroids of sphered data have maximum separation in this subspace in terms of variance. Following this defition, optimal subspace coordinates are simply found by doing PCA on sphered class centroids. The computation steps are summarized below:</p>
@@ -414,7 +223,7 @@
 
     <script type="math/tex; mode=display">\mathbf{W} = \sum_{k=1}^{K} \sum_{g_i = k} (\mathbf{x}_i - \hat{\mu}_k)(\mathbf{x}_i - \hat{\mu}_k)^T \,.</script>
   </li>
-  <li>Sphere the centroids: $\mathbf{M}^* = \mathbf{M} \mathbf{W}^{-\frac{1}{2}}$, using eigen-decomposition of $\mathbf{W}$.</li>
+  <li>Sphere the centroids: $\mathbf{M}^* = \mathbf{M} \mathbf{W}^{-\frac{<abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr>}{2}}$, using eigen-decomposition of $\mathbf{W}$.</li>
   <li>
     <p>Compute <script type="math/tex">\mathbf{B}^* = \operatorname{cov}(\mathbf{M}^*)</script>, the between-class covariance of sphered class centroids by</p>
 
@@ -422,71 +231,16 @@
   </li>
   <li>Obtain $L$ eigenvectors <script type="math/tex">(\mathbf{v}^*_\ell)</script> in <script type="math/tex">\mathbf{V}^*</script> of 
 <script type="math/tex">\mathbf{B}^* = \mathbf{V}^* \mathbf{D_B} \mathbf{V^*}^T</script> cooresponding to the $L$ largest eigenvalues. These define the coordinates of the optimal subspace.</li>
-  <li>Obtain $L$ new (discriminant) variables $Z_\ell = (\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell)^T X$, for $\ell = 1, \dots, L$.</li>
+  <li>Obtain $L$ new (discriminant) variables $Z_\ell = (\mathbf{W}^{-\frac{<abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr>}{2}} \mathbf{v}^*_\ell)^T X$, for $\ell = <abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr>, \dots, L$.</li>
 </ol>
 
-<p>Through this procedure, we reduce our data dimension from <script type="math/tex">\mathbf{X}_{(N \times p)}</script> to <script type="math/tex">\mathbf{Z}_{(N \times L)}</script>. Discriminant coordinate 1 and 2 in the previous wine plot are found by setting $L = 2$. Repeating LDA procedures for classification using the new data $\mathbf{Z}$ is called the reduced-rank LDA.</p>
+<p>Through this procedure, we reduce our data dimension from <script type="math/tex">\mathbf{X}_{(N \times p)}</script> to <script type="math/tex">\mathbf{Z}_{(N \times L)}</script>. Discriminant coordinate <abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr> and 2 in the previous wine plot are found by setting $L = 2$. Repeating LDA procedures for classification using the new data $\mathbf{Z}$ is called the reduced-rank LDA.</p>
 
 <h3 id="fishers-lda">Fisher’s LDA</h3>
-<p>Fisher derived the computation steps according to his optimality definition in a different way<sup id="fnref:3"><a href="#fn:3" class="footnote">1</a></sup>. His steps of performing the reduced-rank LDA would later be known as the Fisher’s LDA.</p>
+<p>Fisher derived the computation steps according to his optimality definition in a different way[^<abbr title="Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.">1</abbr>]. His steps of performing the reduced-rank LDA would later be known as the Fisher’s LDA.</p>
 
 <h3 id="summary-of-lda">Summary of LDA</h3>
 
 <h2 id="conlcusion">Conlcusion</h2>
 
-<h4 id="footnotes">Footnotes</h4>
-
-<div class="footnotes">
-  <ol>
-    <li id="fn:3">
-      <p>Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
-
-</div>
-
-<span class="post-tags">
-    
-      <i class="fa fa-tag fa-xs" aria-hidden="true"></i>
-      
-      <a class="no-underline" href="/tag/LDA"><nobr>LDA</nobr></code>&nbsp;</a>    
-    
-      <i class="fa fa-tag fa-xs" aria-hidden="true"></i>
-      
-      <a class="no-underline" href="/tag/supervised-learning"><nobr>supervised-learning</nobr></code>&nbsp;</a>    
-    
-      <i class="fa fa-tag fa-xs" aria-hidden="true"></i>
-      
-      <a class="no-underline" href="/tag/classification"><nobr>classification</nobr></code>&nbsp;</a>    
-    
-</span>
-
-<div class="recent">
-  <h2>Recent Posts</h2>
-  <ul class="recent-posts">
-    
-      <li>
-        <h4>
-          <a href="/statistics/2019/10/03/beyond-lda.html">
-            Beyond LDA: Flexible, penalized, and mixture discriminant analysis
-          </a>
-          <small>03 Oct 2019</small>
-        </h4>
-      </li>
-    
-      <li>
-        <h4>
-          <a href="/code/2019/09/25/set-up-blog.html">
-            How did I set up my blog using Jekyll, Hyde and GitHub
-          </a>
-          <small>25 Sep 2019</small>
-        </h4>
-      </li>
-    
-  </ul>
-</div>
-    </div>
-
-  </body>
-</html>
+:ET

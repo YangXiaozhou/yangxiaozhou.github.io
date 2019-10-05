@@ -10,7 +10,7 @@ Linear discriminant analysis (LDA) is used as a tool for classification, dimensi
 
 Two prominent examples of using LDA (and it's variants) include:
 - *Bankruptcy prediction*: Edward Altman's [1968 model](https://en.wikipedia.org/wiki/Altman_Z-score) predicts the probability of company bankruptcy using trained LDA coefficients. The accuracy is said to be between 80% and 90%, evaluated over 31 years of data.
-- *Facial recognition*: While features learnt from Principal Components Analysis (PCA) operations are called Eigenfaces, features learnt from LDA operations are called [Fisherfaces](http://www.scholarpedia.org/article/Fisherfaces), named after the great statistician, Sir Ronald Fisher. The connection will be explained later. 
+- *Facial recognition*: While features learnt from Principal Component Analysis (PCA) operations are called Eigenfaces, features learnt from LDA operations are called [Fisherfaces](http://www.scholarpedia.org/article/Fisherfaces), named after the great statistician, Sir Ronald Fisher. The connection will be explained later. 
 
 This article starts with introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems. 
 
@@ -79,6 +79,74 @@ $$
 \hat{\mathbf{\Sigma}} (\beta) = \beta \hat{\mathbf{\Sigma}} + (1-\beta) \mathbf{I} \,.
 $$
 
+In situations where the number of input variables greatly exceed the number of samples, covariance matrix can be poorly estimated. Shrinkage can hopefully improve the estimation and classification accuracy.  
+![lda_shrinkage]({{ '/' | relative_url }}assets/2019-10-02/lda_shrinkage.pdf)
+<details>
+<summary>Here's the script taken from <a href="https://scikit-learn.org/stable/auto_examples/classification/plot_lda.html">scikit-learn</a> to generate the above plot.</summary>
+<div markdown="1">
+``` python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_blobs
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+%matplotlib inline
+
+n_train = 20  # samples for training
+n_test = 200  # samples for testing
+n_averages = 50  # how often to repeat classification
+n_features_max = 75  # maximum number of features
+step = 4  # step size for the calculation
+
+
+def generate_data(n_samples, n_features):
+    """Generate random blob-ish data with noisy features.
+
+    This returns an array of input data with shape `(n_samples, n_features)`
+    and an array of `n_samples` target labels.
+
+    Only one feature contains discriminative information, the other features
+    contain only noise.
+    """
+    X, y = make_blobs(n_samples=n_samples, n_features=1, centers=[[-2], [2]])
+
+    # add non-discriminative features
+    if n_features > 1:
+        X = np.hstack([X, np.random.randn(n_samples, n_features - 1)])
+    return X, y
+
+acc_clf1, acc_clf2 = [], []
+n_features_range = range(1, n_features_max + 1, step)
+for n_features in n_features_range:
+    score_clf1, score_clf2 = 0, 0
+    for _ in range(n_averages):
+        X, y = generate_data(n_train, n_features)
+
+        clf1 = LinearDiscriminantAnalysis(solver='lsqr', shrinkage=0.5).fit(X, y)
+        clf2 = LinearDiscriminantAnalysis(solver='lsqr', shrinkage=None).fit(X, y)
+
+        X, y = generate_data(n_test, n_features)
+        score_clf1 += clf1.score(X, y)
+        score_clf2 += clf2.score(X, y)
+
+    acc_clf1.append(score_clf1 / n_averages)
+    acc_clf2.append(score_clf2 / n_averages)
+
+features_samples_ratio = np.array(n_features_range) / n_train
+
+with plt.style.context('seaborn-talk'):
+    plt.plot(features_samples_ratio, acc_clf1, linewidth=2,
+             label="LDA with shrinkage", color='navy')
+    plt.plot(features_samples_ratio, acc_clf2, linewidth=2,
+             label="LDA", color='gold')
+
+    plt.xlabel('n_features / n_samples')
+    plt.ylabel('Classification accuracy')
+    plt.legend(prop={'size': 18})
+    plt.tight_layout()
+```
+</div>
+</details>
+
 #### Computation for LDA
 We can see from (\ref{eqn_lda}) and (\ref{eqn_qda}) that computations of discriminant functions can be simplified if we diagonalize the covariance matrices first. That is, data are transformed to have an identity covariance matrices. In the case of LDA, here's how we proceed witht the computation:
 
@@ -125,7 +193,7 @@ The derived allocation rule reveals the working of LDA. The left-hand side of th
 
 
 ### Reduced-rank LDA
-What I've just described is the idea of classification by discriminant analysis with certain distribution assumptions on the data. LDA is also popular for its ability to find a small number of meaningful dimensions, thus allowing us to visualize high-dimensional problems in a few dimensions. What do we mean by meaningful and how does LDA find these dimensions? We will anwser these questions shortly. First, take a look at the below plot. For a [wine classification](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html#sklearn.datasets.load_wine) problem with 3 classes and 13 dimensions, the plot visualizes the data in two discriminant coordinates found by LDA. In this 2-dimensional space, the classes can be well-separated. In comparison, the classes are not as clearly separated using the first 2 principal components found by PCA. 
+What I've just described is classification by LDA. LDA is also popular for its ability to find a small number of meaningful dimensions, allowing us to visualize high-dimensional problems. What do we mean by meaningful and how does LDA find these dimensions? We will anwser these questions shortly. First, take a look at the below plot. For a [wine classification](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html#sklearn.datasets.load_wine) problem with 3 different types of wines and 13 input variables, the plot visualizes the data in two discriminant coordinates found by LDA. In this 2-dimensional space, the classes can be well-separated. In comparison, the classes are not as clearly separated using the first 2 principal components found by PCA. 
 
 ![lda_vs_pca]({{ '/' | relative_url }}assets/2019-10-02/lda_vs_pca.pdf)
 <details>
@@ -164,11 +232,43 @@ with plt.style.context('seaborn-talk'):
 
 
 #### Inherent dimension reduction
+In the above wine example, a 13-dimensional problem is visualized in a 2d space. Why is this possible? This is possible because there's inherent dimension reduction in LDA. We have observed from the previous section that LDA makes distance comparison in the space spanned by different class centroids. Two distinct points lie on a 1d line; three distinct points lie on a 2d plane. Similarly, $K$ class centroids lie on a hyperplane with dimension at most $(K-1)$. In particular, the subspace spanned by the centroids is
 
+$$
+H_{K-1}=\mu_{1} \oplus \operatorname{span}\left\{\mu_{i}-\mu_{1}, 2 \leq i \leq K\right\} \,.
+$$ 
+
+When making distance comparisons, distances orthorgonal to this subspace would add no information since they contribute equally for each class. Hence, by restricting distance comparisons to this subspace only would not lose any information useful for LDA classification. That means, we can safely transform our task from a $p$-dimensional problem to a $(K-1)$-dimensional problem by an orthogonal projection of the data onto this subspace. When $p \gg K$, this is a considerable drop in the number of dimensions. What if we want to reduce the dimension further from $p$ tp $L$ where $K \gg L$? We can construct an $L$-dimensional subspace, $H_L$, from $H_{K-1}$ and this subspace is optimal, in some sense, to LDA classification. 
+
+#### Optimal subspace and computation
+Fisher proposes that the subspace $H_L$ is optimal when the class centroids of sphered data have maximum separation in this subspace in terms of variance. Following this defition, optimal subspace coordinates are simply found by doing PCA on sphered class centroids. The computation steps are summarized below:
+1. Find class centroid matrix, $\mathbf{M}_{(K\times p)}$, and pooled var-cov, $$\mathbf{W}_{(p\times p)}$$, where
+
+    $$
+    \mathbf{W} = \sum_{k=1}^{K} \sum_{g_i = k} (\mathbf{x}_i - \hat{\mu}_k)(\mathbf{x}_i - \hat{\mu}_k)^T \,.
+    $$
+
+2. Sphere the centroids: $\mathbf{M}^* = \mathbf{M} \mathbf{W}^{-\frac{1}{2}}$, using eigen-decomposition of $\mathbf{W}$.
+3. Compute $$\mathbf{B}^* = \operatorname{cov}(\mathbf{M}^*)$$, the between-class covariance of sphered class centroids by
+
+    $$
+    \mathbf{B}^* = \sum_{k=1}^{K} (\hat{\mathbf{\mu}}^*_k - \hat{\mathbf{\mu}}^*)(\hat{\mathbf{\mu}}^*_k - \hat{\mathbf{\mu}}^*)^T \,.
+    $$
+
+4. Obtain $L$ eigenvectors $$(\mathbf{v}^*_\ell)$$ in $$\mathbf{V}^*$$ of 
+$$\mathbf{B}^* = \mathbf{V}^* \mathbf{D_B} \mathbf{V^*}^T$$ cooresponding to the $L$ largest eigenvalues. These define the coordinates of the optimal subspace.
+5. Obtain $L$ new (discriminant) variables $Z_\ell = (\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell)^T X$, for $\ell = 1, \dots, L$.
+
+Through this procedure, we reduce our data dimension from $$\mathbf{X}_{(N \times p)}$$ to $$\mathbf{Z}_{(N \times L)}$$. Discriminant coordinate 1 and 2 in the previous wine plot are found by setting $L = 2$. Repeating LDA procedures for classification using the new data $\mathbf{Z}$ is called the reduced-rank LDA. 
 
 ### Fisher's LDA
+Fisher derived the computation steps according to his optimality definition in a different way[^3]. His steps of performing the reduced-rank LDA would later be known as the Fisher's LDA.
 
 ### Summary of LDA
 
 ## Conlcusion
+
+
+#### Footnotes
+[^3]: Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.
 
