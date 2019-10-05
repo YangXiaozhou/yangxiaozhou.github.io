@@ -80,7 +80,7 @@ $$
 $$
 
 In situations where the number of input variables greatly exceed the number of samples, covariance matrix can be poorly estimated. Shrinkage can hopefully improve the estimation and classification accuracy.  
-![lda_shrinkage]({{ '/' | relative_url }}assets/2019-10-02/lda_shrinkage.pdf)
+![lda_shrinkage]({{ '/' | relative_url }}assets/2019-10-02/lda_shrinkage.png)
 <details>
 <summary>Here's the script taken from <a href="https://scikit-learn.org/stable/auto_examples/classification/plot_lda.html">scikit-learn</a> to generate the above plot.</summary>
 <div markdown="1">
@@ -195,7 +195,7 @@ The derived allocation rule reveals the working of LDA. The left-hand side of th
 ### Reduced-rank LDA
 What I've just described is classification by LDA. LDA is also popular for its ability to find a small number of meaningful dimensions, allowing us to visualize high-dimensional problems. What do we mean by meaningful and how does LDA find these dimensions? We will anwser these questions shortly. First, take a look at the below plot. For a [wine classification](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html#sklearn.datasets.load_wine) problem with 3 different types of wines and 13 input variables, the plot visualizes the data in two discriminant coordinates found by LDA. In this 2-dimensional space, the classes can be well-separated. In comparison, the classes are not as clearly separated using the first 2 principal components found by PCA. 
 
-![lda_vs_pca]({{ '/' | relative_url }}assets/2019-10-02/lda_vs_pca.pdf)
+![lda_vs_pca]({{ '/' | relative_url }}assets/2019-10-02/lda_vs_pca.png)
 <details>
 <summary>Here's the script to generate the above plot.</summary>
 <div markdown="1">
@@ -342,13 +342,28 @@ Since $$\mathbf{\gamma}_{(1)}$$ is an eigenvector of $\mathbf{W}^{\frac12} \math
 *In summary, optimal subspace coordinates, also known as discriminant coordinates, are obtained from eigenvectors $$\mathbf{a}_\ell$$ of $$\mathbf{W}^{-1}\mathbf{B}$$, for $$\ell = 1, ... , \min\{p,K-1\}$$.* It can be shown that the $$\mathbf{a}_\ell$$ obtained in this way are the same as $$\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell$$ obtained in the reduced-rank LDA formulation. What is surprising here is that, Fisher arrives at this formulation without any Gaussian assumption on the population, unlike the reduced-rank LDA case. The hope is that, with this sensible rule, LDA would perform well even when the data do not follow exactly the Gaussian distribution.
 
 ## Handwritten digits problem
-Here's an example to show the visualization and classification ability of Fisher's LDA, or simply LDA. 
+Here's an example to show the visualization and classification ability of Fisher's LDA, or simply LDA. The problem is using 64 variables (pixel values from images) to distinguish 10 written digits. The dataset is taken from [here](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits). 
+The training images look like these. 
+![digits]({{ '/' | relative_url }}assets/2019-10-02/digits.png)
 
 
+Top 4 of Fisher's discriminant variables are shown. For example, coordinate 1 contrasts 4's and 2/3's.
+
+![lda_vs_pca]({{ '/' | relative_url }}assets/2019-10-02/reduced_lda_digits.png)
 
 
 ## Summary of LDA
+Virtues of LDA:
+1. Simple prototype classifier: simple to interpret.
+2. Decision boundary is linear: simple to describe and implement.
+3. Dimension reduction: provides informative low-dimensional view on
+data.
 
+Shortcomings of LDA:
+1. Linear decision boundaries may not adequately separate the classes.
+Support for more general boundaries is desired.
+2. In high-dimensional setting, LDA uses too many parameters.
+Regularized version of LDA is desired.
 
 ----------------
 #### References
