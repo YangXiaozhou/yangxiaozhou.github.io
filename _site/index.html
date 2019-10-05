@@ -442,7 +442,10 @@
   <li>
     <p>Find class centroid matrix, $\mathbf{M}_{(K\times p)}$, and pooled var-cov, <script type="math/tex">\mathbf{W}_{(p\times p)}</script>, where</p>
 
-    <script type="math/tex; mode=display">\mathbf{W} = \sum_{k=1}^{K} \sum_{g_i = k} (\mathbf{x}_i - \hat{\mu}_k)(\mathbf{x}_i - \hat{\mu}_k)^T \,.</script>
+    <script type="math/tex; mode=display">\begin{align}
+ \mathbf{W} = \sum_{k=1}^{K} \sum_{g_i = k} (\mathbf{x}_i - \hat{\mu}_k)(\mathbf{x}_i - \hat{\mu}_k)^T \,.
+ \label{within_w}
+ \end{align}</script>
   </li>
   <li>Sphere the centroids: $\mathbf{M}^* = \mathbf{M} \mathbf{W}^{-\frac{1}{2}}$, using eigen-decomposition of $\mathbf{W}$.</li>
   <li>
@@ -458,18 +461,91 @@
 <p>Through this procedure, we reduce our data dimension from <script type="math/tex">\mathbf{X}_{(N \times p)}</script> to <script type="math/tex">\mathbf{Z}_{(N \times L)}</script>. Discriminant coordinate 1 and 2 in the previous wine plot are found by setting $L = 2$. Repeating LDA procedures for classification using the new data $\mathbf{Z}$ is called the reduced-rank LDA.</p>
 
 <h3 id="fishers-lda">Fisher’s LDA</h3>
-<p>Fisher derived the computation steps according to his optimality definition in a different way<sup id="fnref:3"><a href="#fn:3" class="footnote">1</a></sup>. His steps of performing the reduced-rank LDA would later be known as the Fisher’s LDA.</p>
+<p>Fisher derived the computation steps according to his optimality definition in a different way<sup id="fnref:Fisher"><a href="#fn:Fisher" class="footnote">1</a></sup>. His steps of performing the reduced-rank LDA would later be known as the Fisher’s LDA. Fisher does not make any assumption about the distribution of the populations, $\Pi_1, \dots, \Pi_K$. Instead, he tries to find a “sensible” rule so that the classification task becomes easier. In particular, Fisher finds a linear combination <script type="math/tex">Z = \mathbf{a}^T X</script> where the between-class variance, $\mathbf{B} = \operatorname{cov}(\mathbf{M})$, is maximized relative to the within-class variance, $\mathbf{W}$, as defined in (\ref{within_w}).</p>
 
-<h3 id="summary-of-lda">Summary of LDA</h3>
+<p>The below plot, taken from ESL<sup id="fnref:ESL"><a href="#fn:ESL" class="footnote">2</a></sup>, shows why this rule makes intuitive sense. The rule sets out to find a direction, $\mathbf{a}$, where, after projecting the data onto that direction, class centroids have maximum separation between them and each class has minimum variance within them. The projection direction found under this rule, shown in the plot on the right, is a much better direction. 
+<img src="/assets/2019-10-02/sensible_rule.png" alt="sensible_rule" /></p>
 
-<h2 id="conlcusion">Conlcusion</h2>
+<h4 id="generalized-eigenvalue-problem">Generalized eigenvalue problem</h4>
+<p>Finding the optimal direction(s) above amounts to solving an optimization problem:
+<script type="math/tex">\max_{\mathbf{a}} (\mathbf{a}^{T} \mathbf{B} \mathbf{a})/(\mathbf{a}^{T} \mathbf{W} \mathbf{a}) \,,</script>
+which is equivalent to</p>
 
-<h4 id="footnotes">Footnotes</h4>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\label{eqn_g_eigen}
+\max_{\mathbf{a}} {}&{} \mathbf{a}^{T} \mathbf{B} \mathbf{a} \,,\\ 
+\text{s.t. } &{} \mathbf{a}^{T} \mathbf{W} \mathbf{a} = 1 \,, \nonumber
+\end{align} %]]></script>
+
+<p>since the scaling of $\mathbf{a}$ does not affect the soliution. Let $\mathbf{W}^{\frac12}$ be the symmetric square root of $\mathbf{W}$, and $\mathbf{y} = \mathbf{W}^{\frac12} \mathbf{a}$. We can rewrite the problem (\ref{eqn_g_eigen}) as</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\label{eqn_g_eigen_1}
+\max_{\mathbf{y}} {}&{} \mathbf{y}^{T} \mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} \mathbf{y} \,,\\ 
+\text{s.t } &{} \mathbf{y}^{T} \mathbf{y} = 1 \,. \nonumber
+\end{align} %]]></script>
+
+<p>Since $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$ is symmetric, we can find the spectral decomposition of it as</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} = \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \,.
+\label{eqn_fisher_eigen}
+\end{align}</script>
+
+<p>Let $\mathbf{z} = \mathbf{\Gamma}^T \mathbf{y}$. So $\mathbf{z}^T \mathbf{z} = \mathbf{y}^T \mathbf{\Gamma} \mathbf{\Gamma}^T \mathbf{y} = \mathbf{y}^T \mathbf{y}$, and</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+\mathbf{y}^{T} \mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} \mathbf{y} &= \mathbf{y}^{T} \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \mathbf{y} \\
+&= \mathbf{z}^T \mathbf{\Lambda} \mathbf{z} \,.
+\end{align*} %]]></script>
+
+<p>Problem (\ref{eqn_g_eigen_1}) can then be written as</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\label{eqn_g_eigen_2}
+\max_{\mathbf{z}} {}&{} \mathbf{z}^T \mathbf{\Lambda} \mathbf{z} = \sum_i \lambda_i z_i^2 \,,\\ 
+\text{s.t } &{} \mathbf{z}^{T} \mathbf{z} = 1 \,. \nonumber
+\end{align} %]]></script>
+
+<p>If the eigenvalues are written in descending order, then</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+\max_{\mathbf{z}} \sum_i \lambda_i z_i^2 &\le \lambda_1 \sum_i z_i^2 \,,\\
+&= \lambda_1 \,,
+\end{align*} %]]></script>
+
+<p>and the upper bound is attained at $\mathbf{z} = (1,0,0,\dots,0)^T$. Since $\mathbf{y} = \mathbf{\Gamma} \mathbf{z}$, the solution is <script type="math/tex">\mathbf{y} = \mathbf{\gamma}_{(1)}</script>, the eigenvector corresponding to the largest eigenvalue in (\ref{eqn_fisher_eigen}). Since $\mathbf{y} = \mathbf{W}^{\frac12} \mathbf{a}$, the optimal projection direction is <script type="math/tex">\mathbf{a} = \mathbf{W}^{-\frac12} \mathbf{\gamma}_{(1)}</script>.</p>
+
+<p><strong>Theorem A.6.2</strong> from MA<sup id="fnref:MA"><a href="#fn:MA" class="footnote">3</a></sup>: For <script type="math/tex">\mathbf{A}_(n \times p)</script> and $\mathbf{B}_(p \times n)$, the non-zero eigenvalues of
+$\mathbf{AB}$ and $\mathbf{BA}$ are the same and have the same multiplicity. If $\mathbf{x}$ is a non-trivial eigenvector of $\mathbf{AB}$ for an eigenvalue $\lambda \neq 0$, then $\mathbf{y}=\mathbf{Bx}$ is a non-trivial eigenvector of $\mathbf{BA}$.</p>
+
+<p>Since <script type="math/tex">\mathbf{\gamma}_{(1)}</script> is an eigenvector of $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$, then, $\mathbf{W}^{-\frac12} \mathbf{\gamma}_{(1)}$ is also the eigenvector of $\mathbf{W}^{-\frac12} \mathbf{W}^{-\frac12} \mathbf{B} = \mathbf{W}^{-1} \mathbf{B}$, using <strong>Theorem A.6.2</strong>.</p>
+
+<p><em>In summary, optimal subspace coordinates, also known as discriminant coordinates, are obtained from eigenvectors <script type="math/tex">\mathbf{a}_\ell</script> of <script type="math/tex">\mathbf{W}^{-1}\mathbf{B}</script>, for <script type="math/tex">\ell = 1, ... , \min\{p,K-1\}</script>.</em> It can be shown that the <script type="math/tex">\mathbf{a}_\ell</script> obtained in this way are the same as <script type="math/tex">\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell</script> obtained in the reduced-rank LDA formulation. What is surprising here is that, Fisher arrives at this formulation without any Gaussian assumption on the population, unlike the reduced-rank LDA case. The hope is that, with this sensible rule, LDA would perform well even when the data do not follow exactly the Gaussian distribution.</p>
+
+<h2 id="handwritten-digits-problem">Handwritten digits problem</h2>
+<p>Here’s an example to show the visualization and classification ability of Fisher’s LDA, or simply LDA.</p>
+
+<h2 id="summary-of-lda">Summary of LDA</h2>
+
+<hr />
+<h4 id="references">References</h4>
 
 <div class="footnotes">
   <ol>
-    <li id="fn:3">
-      <p>Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:Fisher">
+      <p>Fisher, R. A. (1936). <em>The use of multiple measurements in taxonomic problems. Annals of eugenics</em>, 7(2), 179-188. <a href="#fnref:Fisher" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:ESL">
+      <p>Friedman, J., Hastie, T., &amp; Tibshirani, R. (2001). <em>The elements of statistical learning</em> (Vol. 1, No. 10). New York: Springer series in statistics. <a href="#fnref:ESL" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:MA">
+      <p>Mardia, K. V., Kent, J. T., &amp; Bibby, J. M. <em>Multivariate analysis</em>. 1979. Probability and mathematical statistics. Academic Press Inc. <a href="#fnref:MA" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

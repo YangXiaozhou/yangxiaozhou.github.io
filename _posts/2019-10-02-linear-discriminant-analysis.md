@@ -245,7 +245,10 @@ Fisher proposes that the subspace $H_L$ is optimal when the class centroids of s
 1. Find class centroid matrix, $\mathbf{M}_{(K\times p)}$, and pooled var-cov, $$\mathbf{W}_{(p\times p)}$$, where
 
     $$
+    \begin{align}
     \mathbf{W} = \sum_{k=1}^{K} \sum_{g_i = k} (\mathbf{x}_i - \hat{\mu}_k)(\mathbf{x}_i - \hat{\mu}_k)^T \,.
+    \label{within_w}
+    \end{align}
     $$
 
 2. Sphere the centroids: $\mathbf{M}^* = \mathbf{M} \mathbf{W}^{-\frac{1}{2}}$, using eigen-decomposition of $\mathbf{W}$.
@@ -262,13 +265,94 @@ $$\mathbf{B}^* = \mathbf{V}^* \mathbf{D_B} \mathbf{V^*}^T$$ cooresponding to the
 Through this procedure, we reduce our data dimension from $$\mathbf{X}_{(N \times p)}$$ to $$\mathbf{Z}_{(N \times L)}$$. Discriminant coordinate 1 and 2 in the previous wine plot are found by setting $L = 2$. Repeating LDA procedures for classification using the new data $\mathbf{Z}$ is called the reduced-rank LDA. 
 
 ### Fisher's LDA
-Fisher derived the computation steps according to his optimality definition in a different way[^3]. His steps of performing the reduced-rank LDA would later be known as the Fisher's LDA.
+Fisher derived the computation steps according to his optimality definition in a different way[^Fisher]. His steps of performing the reduced-rank LDA would later be known as the Fisher's LDA. Fisher does not make any assumption about the distribution of the populations, $\Pi_1, \dots, \Pi_K$. Instead, he tries to find a "sensible" rule so that the classification task becomes easier. In particular, Fisher finds a linear combination $$Z = \mathbf{a}^T X$$ where the between-class variance, $\mathbf{B} = \operatorname{cov}(\mathbf{M})$, is maximized relative to the within-class variance, $\mathbf{W}$, as defined in (\ref{within_w}). 
 
-### Summary of LDA
+The below plot, taken from ESL[^ESL], shows why this rule makes intuitive sense. The rule sets out to find a direction, $\mathbf{a}$, where, after projecting the data onto that direction, class centroids have maximum separation between them and each class has minimum variance within them. The projection direction found under this rule, shown in the plot on the right, is a much better direction. 
+![sensible_rule]({{ '/' | relative_url }}assets/2019-10-02/sensible_rule.png)
 
-## Conlcusion
+#### Generalized eigenvalue problem
+Finding the optimal direction(s) above amounts to solving an optimization problem:
+$$
+\max_{\mathbf{a}} (\mathbf{a}^{T} \mathbf{B} \mathbf{a})/(\mathbf{a}^{T} \mathbf{W} \mathbf{a}) \,,
+$$
+which is equivalent to 
+
+$$
+\begin{align}
+\label{eqn_g_eigen}
+\max_{\mathbf{a}} {}&{} \mathbf{a}^{T} \mathbf{B} \mathbf{a} \,,\\ 
+\text{s.t. } &{} \mathbf{a}^{T} \mathbf{W} \mathbf{a} = 1 \,, \nonumber
+\end{align}
+$$
+
+since the scaling of $\mathbf{a}$ does not affect the soliution. Let $\mathbf{W}^{\frac12}$ be the symmetric square root of $\mathbf{W}$, and $\mathbf{y} = \mathbf{W}^{\frac12} \mathbf{a}$. We can rewrite the problem (\ref{eqn_g_eigen}) as
+
+$$
+\begin{align}
+\label{eqn_g_eigen_1}
+\max_{\mathbf{y}} {}&{} \mathbf{y}^{T} \mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} \mathbf{y} \,,\\ 
+\text{s.t } &{} \mathbf{y}^{T} \mathbf{y} = 1 \,. \nonumber
+\end{align}
+$$
+
+Since $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$ is symmetric, we can find the spectral decomposition of it as
+
+$$
+\begin{align}
+\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} = \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \,.
+\label{eqn_fisher_eigen}
+\end{align}
+$$
+
+Let $\mathbf{z} = \mathbf{\Gamma}^T \mathbf{y}$. So $\mathbf{z}^T \mathbf{z} = \mathbf{y}^T \mathbf{\Gamma} \mathbf{\Gamma}^T \mathbf{y} = \mathbf{y}^T \mathbf{y}$, and 
+
+$$
+\begin{align*}
+\mathbf{y}^{T} \mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} \mathbf{y} &= \mathbf{y}^{T} \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \mathbf{y} \\
+&= \mathbf{z}^T \mathbf{\Lambda} \mathbf{z} \,.
+\end{align*}
+$$
+
+Problem (\ref{eqn_g_eigen_1}) can then be written as
+
+$$
+\begin{align}
+\label{eqn_g_eigen_2}
+\max_{\mathbf{z}} {}&{} \mathbf{z}^T \mathbf{\Lambda} \mathbf{z} = \sum_i \lambda_i z_i^2 \,,\\ 
+\text{s.t } &{} \mathbf{z}^{T} \mathbf{z} = 1 \,. \nonumber
+\end{align}
+$$
+
+If the eigenvalues are written in descending order, then
+
+$$
+\begin{align*}
+\max_{\mathbf{z}} \sum_i \lambda_i z_i^2 &\le \lambda_1 \sum_i z_i^2 \,,\\
+&= \lambda_1 \,,
+\end{align*}
+$$
+
+and the upper bound is attained at $\mathbf{z} = (1,0,0,\dots,0)^T$. Since $\mathbf{y} = \mathbf{\Gamma} \mathbf{z}$, the solution is $$\mathbf{y} = \mathbf{\gamma}_{(1)}$$, the eigenvector corresponding to the largest eigenvalue in (\ref{eqn_fisher_eigen}). Since $\mathbf{y} = \mathbf{W}^{\frac12} \mathbf{a}$, the optimal projection direction is $$\mathbf{a} = \mathbf{W}^{-\frac12} \mathbf{\gamma}_{(1)}$$.
+
+**Theorem A.6.2** from MA[^MA]: For $$\mathbf{A}_(n \times p)$$ and $\mathbf{B}_(p \times n)$, the non-zero eigenvalues of
+$\mathbf{AB}$ and $\mathbf{BA}$ are the same and have the same multiplicity. If $\mathbf{x}$ is a non-trivial eigenvector of $\mathbf{AB}$ for an eigenvalue $\lambda \neq 0$, then $\mathbf{y}=\mathbf{Bx}$ is a non-trivial eigenvector of $\mathbf{BA}$.
+
+Since $$\mathbf{\gamma}_{(1)}$$ is an eigenvector of $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$, then, $\mathbf{W}^{-\frac12} \mathbf{\gamma}_{(1)}$ is also the eigenvector of $\mathbf{W}^{-\frac12} \mathbf{W}^{-\frac12} \mathbf{B} = \mathbf{W}^{-1} \mathbf{B}$, using **Theorem A.6.2**. 
+
+*In summary, optimal subspace coordinates, also known as discriminant coordinates, are obtained from eigenvectors $$\mathbf{a}_\ell$$ of $$\mathbf{W}^{-1}\mathbf{B}$$, for $$\ell = 1, ... , \min\{p,K-1\}$$.* It can be shown that the $$\mathbf{a}_\ell$$ obtained in this way are the same as $$\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell$$ obtained in the reduced-rank LDA formulation. What is surprising here is that, Fisher arrives at this formulation without any Gaussian assumption on the population, unlike the reduced-rank LDA case. The hope is that, with this sensible rule, LDA would perform well even when the data do not follow exactly the Gaussian distribution.
+
+## Handwritten digits problem
+Here's an example to show the visualization and classification ability of Fisher's LDA, or simply LDA. 
 
 
-#### Footnotes
-[^3]: Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.
+
+
+## Summary of LDA
+
+
+----------------
+#### References
+[^Fisher]: Fisher, R. A. (1936). *The use of multiple measurements in taxonomic problems. Annals of eugenics*, 7(2), 179-188.
+[^ESL]: Friedman, J., Hastie, T., & Tibshirani, R. (2001). *The elements of statistical learning* (Vol. 1, No. 10). New York: Springer series in statistics.
+[^MA]: Mardia, K. V., Kent, J. T., & Bibby, J. M. *Multivariate analysis*. 1979. Probability and mathematical statistics. Academic Press Inc.
 

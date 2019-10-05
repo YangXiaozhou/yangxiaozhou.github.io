@@ -4,7 +4,7 @@
  <title>杨晓州</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-10-05T13:42:49+08:00</updated>
+ <updated>2019-10-05T18:37:27+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -254,7 +254,10 @@
   &lt;li&gt;
     &lt;p&gt;Find class centroid matrix, $\mathbf{M}_{(K\times p)}$, and pooled var-cov, &lt;script type=&quot;math/tex&quot;&gt;\mathbf{W}_{(p\times p)}&lt;/script&gt;, where&lt;/p&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{W} = \sum_{k=1}^{K} \sum_{g_i = k} (\mathbf{x}_i - \hat{\mu}_k)(\mathbf{x}_i - \hat{\mu}_k)^T \,.&lt;/script&gt;
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+ \mathbf{W} = \sum_{k=1}^{K} \sum_{g_i = k} (\mathbf{x}_i - \hat{\mu}_k)(\mathbf{x}_i - \hat{\mu}_k)^T \,.
+ \label{within_w}
+ \end{align}&lt;/script&gt;
   &lt;/li&gt;
   &lt;li&gt;Sphere the centroids: $\mathbf{M}^* = \mathbf{M} \mathbf{W}^{-\frac{1}{2}}$, using eigen-decomposition of $\mathbf{W}$.&lt;/li&gt;
   &lt;li&gt;
@@ -270,18 +273,91 @@
 &lt;p&gt;Through this procedure, we reduce our data dimension from &lt;script type=&quot;math/tex&quot;&gt;\mathbf{X}_{(N \times p)}&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;\mathbf{Z}_{(N \times L)}&lt;/script&gt;. Discriminant coordinate 1 and 2 in the previous wine plot are found by setting $L = 2$. Repeating LDA procedures for classification using the new data $\mathbf{Z}$ is called the reduced-rank LDA.&lt;/p&gt;
 
 &lt;h3 id=&quot;fishers-lda&quot;&gt;Fisher’s LDA&lt;/h3&gt;
-&lt;p&gt;Fisher derived the computation steps according to his optimality definition in a different way&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. His steps of performing the reduced-rank LDA would later be known as the Fisher’s LDA.&lt;/p&gt;
+&lt;p&gt;Fisher derived the computation steps according to his optimality definition in a different way&lt;sup id=&quot;fnref:Fisher&quot;&gt;&lt;a href=&quot;#fn:Fisher&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. His steps of performing the reduced-rank LDA would later be known as the Fisher’s LDA. Fisher does not make any assumption about the distribution of the populations, $\Pi_1, \dots, \Pi_K$. Instead, he tries to find a “sensible” rule so that the classification task becomes easier. In particular, Fisher finds a linear combination &lt;script type=&quot;math/tex&quot;&gt;Z = \mathbf{a}^T X&lt;/script&gt; where the between-class variance, $\mathbf{B} = \operatorname{cov}(\mathbf{M})$, is maximized relative to the within-class variance, $\mathbf{W}$, as defined in (\ref{within_w}).&lt;/p&gt;
 
-&lt;h3 id=&quot;summary-of-lda&quot;&gt;Summary of LDA&lt;/h3&gt;
+&lt;p&gt;The below plot, taken from ESL&lt;sup id=&quot;fnref:ESL&quot;&gt;&lt;a href=&quot;#fn:ESL&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;, shows why this rule makes intuitive sense. The rule sets out to find a direction, $\mathbf{a}$, where, after projecting the data onto that direction, class centroids have maximum separation between them and each class has minimum variance within them. The projection direction found under this rule, shown in the plot on the right, is a much better direction. 
+&lt;img src=&quot;/assets/2019-10-02/sensible_rule.png&quot; alt=&quot;sensible_rule&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;conlcusion&quot;&gt;Conlcusion&lt;/h2&gt;
+&lt;h4 id=&quot;generalized-eigenvalue-problem&quot;&gt;Generalized eigenvalue problem&lt;/h4&gt;
+&lt;p&gt;Finding the optimal direction(s) above amounts to solving an optimization problem:
+&lt;script type=&quot;math/tex&quot;&gt;\max_{\mathbf{a}} (\mathbf{a}^{T} \mathbf{B} \mathbf{a})/(\mathbf{a}^{T} \mathbf{W} \mathbf{a}) \,,&lt;/script&gt;
+which is equivalent to&lt;/p&gt;
 
-&lt;h4 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h4&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\label{eqn_g_eigen}
+\max_{\mathbf{a}} {}&amp;{} \mathbf{a}^{T} \mathbf{B} \mathbf{a} \,,\\ 
+\text{s.t. } &amp;{} \mathbf{a}^{T} \mathbf{W} \mathbf{a} = 1 \,, \nonumber
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;since the scaling of $\mathbf{a}$ does not affect the soliution. Let $\mathbf{W}^{\frac12}$ be the symmetric square root of $\mathbf{W}$, and $\mathbf{y} = \mathbf{W}^{\frac12} \mathbf{a}$. We can rewrite the problem (\ref{eqn_g_eigen}) as&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\label{eqn_g_eigen_1}
+\max_{\mathbf{y}} {}&amp;{} \mathbf{y}^{T} \mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} \mathbf{y} \,,\\ 
+\text{s.t } &amp;{} \mathbf{y}^{T} \mathbf{y} = 1 \,. \nonumber
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Since $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$ is symmetric, we can find the spectral decomposition of it as&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} = \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \,.
+\label{eqn_fisher_eigen}
+\end{align}&lt;/script&gt;
+
+&lt;p&gt;Let $\mathbf{z} = \mathbf{\Gamma}^T \mathbf{y}$. So $\mathbf{z}^T \mathbf{z} = \mathbf{y}^T \mathbf{\Gamma} \mathbf{\Gamma}^T \mathbf{y} = \mathbf{y}^T \mathbf{y}$, and&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+\mathbf{y}^{T} \mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} \mathbf{y} &amp;= \mathbf{y}^{T} \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \mathbf{y} \\
+&amp;= \mathbf{z}^T \mathbf{\Lambda} \mathbf{z} \,.
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Problem (\ref{eqn_g_eigen_1}) can then be written as&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\label{eqn_g_eigen_2}
+\max_{\mathbf{z}} {}&amp;{} \mathbf{z}^T \mathbf{\Lambda} \mathbf{z} = \sum_i \lambda_i z_i^2 \,,\\ 
+\text{s.t } &amp;{} \mathbf{z}^{T} \mathbf{z} = 1 \,. \nonumber
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;If the eigenvalues are written in descending order, then&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+\max_{\mathbf{z}} \sum_i \lambda_i z_i^2 &amp;\le \lambda_1 \sum_i z_i^2 \,,\\
+&amp;= \lambda_1 \,,
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;and the upper bound is attained at $\mathbf{z} = (1,0,0,\dots,0)^T$. Since $\mathbf{y} = \mathbf{\Gamma} \mathbf{z}$, the solution is &lt;script type=&quot;math/tex&quot;&gt;\mathbf{y} = \mathbf{\gamma}_{(1)}&lt;/script&gt;, the eigenvector corresponding to the largest eigenvalue in (\ref{eqn_fisher_eigen}). Since $\mathbf{y} = \mathbf{W}^{\frac12} \mathbf{a}$, the optimal projection direction is &lt;script type=&quot;math/tex&quot;&gt;\mathbf{a} = \mathbf{W}^{-\frac12} \mathbf{\gamma}_{(1)}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem A.6.2&lt;/strong&gt; from MA&lt;sup id=&quot;fnref:MA&quot;&gt;&lt;a href=&quot;#fn:MA&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;: For &lt;script type=&quot;math/tex&quot;&gt;\mathbf{A}_(n \times p)&lt;/script&gt; and $\mathbf{B}_(p \times n)$, the non-zero eigenvalues of
+$\mathbf{AB}$ and $\mathbf{BA}$ are the same and have the same multiplicity. If $\mathbf{x}$ is a non-trivial eigenvector of $\mathbf{AB}$ for an eigenvalue $\lambda \neq 0$, then $\mathbf{y}=\mathbf{Bx}$ is a non-trivial eigenvector of $\mathbf{BA}$.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;\mathbf{\gamma}_{(1)}&lt;/script&gt; is an eigenvector of $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$, then, $\mathbf{W}^{-\frac12} \mathbf{\gamma}_{(1)}$ is also the eigenvector of $\mathbf{W}^{-\frac12} \mathbf{W}^{-\frac12} \mathbf{B} = \mathbf{W}^{-1} \mathbf{B}$, using &lt;strong&gt;Theorem A.6.2&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;In summary, optimal subspace coordinates, also known as discriminant coordinates, are obtained from eigenvectors &lt;script type=&quot;math/tex&quot;&gt;\mathbf{a}_\ell&lt;/script&gt; of &lt;script type=&quot;math/tex&quot;&gt;\mathbf{W}^{-1}\mathbf{B}&lt;/script&gt;, for &lt;script type=&quot;math/tex&quot;&gt;\ell = 1, ... , \min\{p,K-1\}&lt;/script&gt;.&lt;/em&gt; It can be shown that the &lt;script type=&quot;math/tex&quot;&gt;\mathbf{a}_\ell&lt;/script&gt; obtained in this way are the same as &lt;script type=&quot;math/tex&quot;&gt;\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell&lt;/script&gt; obtained in the reduced-rank LDA formulation. What is surprising here is that, Fisher arrives at this formulation without any Gaussian assumption on the population, unlike the reduced-rank LDA case. The hope is that, with this sensible rule, LDA would perform well even when the data do not follow exactly the Gaussian distribution.&lt;/p&gt;
+
+&lt;h2 id=&quot;handwritten-digits-problem&quot;&gt;Handwritten digits problem&lt;/h2&gt;
+&lt;p&gt;Here’s an example to show the visualization and classification ability of Fisher’s LDA, or simply LDA.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary-of-lda&quot;&gt;Summary of LDA&lt;/h2&gt;
+
+&lt;hr /&gt;
+&lt;h4 id=&quot;references&quot;&gt;References&lt;/h4&gt;
 
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:3&quot;&gt;
-      &lt;p&gt;Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:Fisher&quot;&gt;
+      &lt;p&gt;Fisher, R. A. (1936). &lt;em&gt;The use of multiple measurements in taxonomic problems. Annals of eugenics&lt;/em&gt;, 7(2), 179-188. &lt;a href=&quot;#fnref:Fisher&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:ESL&quot;&gt;
+      &lt;p&gt;Friedman, J., Hastie, T., &amp;amp; Tibshirani, R. (2001). &lt;em&gt;The elements of statistical learning&lt;/em&gt; (Vol. 1, No. 10). New York: Springer series in statistics. &lt;a href=&quot;#fnref:ESL&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:MA&quot;&gt;
+      &lt;p&gt;Mardia, K. V., Kent, J. T., &amp;amp; Bibby, J. M. &lt;em&gt;Multivariate analysis&lt;/em&gt;. 1979. Probability and mathematical statistics. Academic Press Inc. &lt;a href=&quot;#fnref:MA&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
