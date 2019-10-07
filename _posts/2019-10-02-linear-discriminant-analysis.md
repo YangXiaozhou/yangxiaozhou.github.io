@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Linear discriminant analysis - LDA
+title:  "LDA: Linear discriminant analysis in vanilla form"
 date:   2019-10-2 08:00:00 +0800
 categories: STATISTICS
 tags: LDA supervised-learning classification
@@ -10,7 +10,7 @@ Linear discriminant analysis (LDA) is used as a tool for classification, dimensi
 
 Two prominent examples of using LDA (and it's variants) include:
 - *Bankruptcy prediction*: Edward Altman's [1968 model](https://en.wikipedia.org/wiki/Altman_Z-score) predicts the probability of company bankruptcy using trained LDA coefficients. The accuracy is said to be between 80% and 90%, evaluated over 31 years of data.
-- *Facial recognition*: While features learnt from Principal Component Analysis (PCA) operations are called Eigenfaces, features learnt from LDA operations are called [Fisherfaces](http://www.scholarpedia.org/article/Fisherfaces), named after the great statistician, Sir Ronald Fisher. The connection will be explained later. 
+- *Facial recognition*: While features learnt from Principal Component Analysis (PCA) operations are called Eigenfaces, features learnt from LDA operations are called [Fisherfaces](http://www.scholarpedia.org/article/Fisherfaces), named after the statistician, Sir Ronald Fisher. The connection will be explained later. 
 
 This article starts with introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems. 
 
@@ -82,7 +82,7 @@ $$
 In situations where the number of input variables greatly exceed the number of samples, covariance matrix can be poorly estimated. Shrinkage can hopefully improve the estimation and classification accuracy.  
 ![lda_shrinkage]({{ '/' | relative_url }}assets/2019-10-02/lda_shrinkage.png)
 <details>
-<summary>Here's the script taken from <a href="https://scikit-learn.org/stable/auto_examples/classification/plot_lda.html">scikit-learn</a> to generate the above plot.</summary>
+<summary>Click here for the script to generate the above plot, credit to <a href="https://scikit-learn.org/stable/auto_examples/classification/plot_lda.html">scikit-learn</a>.</summary>
 <div markdown="1">
 ``` python
 import numpy as np
@@ -197,7 +197,7 @@ What I've just described is classification by LDA. LDA is also popular for its a
 
 ![lda_vs_pca]({{ '/' | relative_url }}assets/2019-10-02/lda_vs_pca.png)
 <details>
-<summary>Here's the script to generate the above plot.</summary>
+<summary>Click here for the script to generate the above plot.</summary>
 <div markdown="1">
 ``` python
 import matplotlib.pyplot as plt
@@ -332,41 +332,134 @@ $$
 \end{align*}
 $$
 
-and the upper bound is attained at $\mathbf{z} = (1,0,0,\dots,0)^T$. Since $\mathbf{y} = \mathbf{\Gamma} \mathbf{z}$, the solution is $$\mathbf{y} = \mathbf{\gamma}_{(1)}$$, the eigenvector corresponding to the largest eigenvalue in (\ref{eqn_fisher_eigen}). Since $\mathbf{y} = \mathbf{W}^{\frac12} \mathbf{a}$, the optimal projection direction is $$\mathbf{a} = \mathbf{W}^{-\frac12} \mathbf{\gamma}_{(1)}$$.
+and the upper bound is attained at $\mathbf{z} = (1,0,0,\dots,0)^T$. Since $\mathbf{y} = \mathbf{\Gamma} \mathbf{z}$, the solution is $$\mathbf{y} = \pmb \gamma_{(1)}$$, the eigenvector corresponding to the largest eigenvalue in (\ref{eqn_fisher_eigen}). Since $\mathbf{y} = \mathbf{W}^{\frac12} \mathbf{a}$, the optimal projection direction is $$\mathbf{a} = \mathbf{W}^{-\frac12} \pmb \gamma_{(1)}$$.
 
 **Theorem A.6.2** from MA[^MA]: For $$\mathbf{A}_(n \times p)$$ and $\mathbf{B}_(p \times n)$, the non-zero eigenvalues of
 $\mathbf{AB}$ and $\mathbf{BA}$ are the same and have the same multiplicity. If $\mathbf{x}$ is a non-trivial eigenvector of $\mathbf{AB}$ for an eigenvalue $\lambda \neq 0$, then $\mathbf{y}=\mathbf{Bx}$ is a non-trivial eigenvector of $\mathbf{BA}$.
 
-Since $$\mathbf{\gamma}_{(1)}$$ is an eigenvector of $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$, then, $\mathbf{W}^{-\frac12} \mathbf{\gamma}_{(1)}$ is also the eigenvector of $\mathbf{W}^{-\frac12} \mathbf{W}^{-\frac12} \mathbf{B} = \mathbf{W}^{-1} \mathbf{B}$, using **Theorem A.6.2**. 
+Since $$\pmb \gamma_{(1)}$$ is an eigenvector of $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$, then, $\mathbf{W}^{-\frac12} \pmb \gamma_{(1)}$ is also the eigenvector of $\mathbf{W}^{-\frac12} \mathbf{W}^{-\frac12} \mathbf{B} = \mathbf{W}^{-1} \mathbf{B}$, using **Theorem A.6.2**. 
 
 *In summary, optimal subspace coordinates, also known as discriminant coordinates, are obtained from eigenvectors $$\mathbf{a}_\ell$$ of $$\mathbf{W}^{-1}\mathbf{B}$$, for $$\ell = 1, ... , \min\{p,K-1\}$$.* It can be shown that the $$\mathbf{a}_\ell$$ obtained in this way are the same as $$\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell$$ obtained in the reduced-rank LDA formulation. What is surprising here is that, Fisher arrives at this formulation without any Gaussian assumption on the population, unlike the reduced-rank LDA case. The hope is that, with this sensible rule, LDA would perform well even when the data do not follow exactly the Gaussian distribution.
 
 ## Handwritten digits problem
-Here's an example to show the visualization and classification ability of Fisher's LDA, or simply LDA. The problem is using 64 variables (pixel values from images) to distinguish 10 written digits. The dataset is taken from [here](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits). 
-The training images look like these. 
+Here's an example to show the visualization and classification ability of Fisher's LDA, or simply LDA. We need to recognize 10 different digits, i.e. 0 to 9, using 64 variables (pixel values from images). The dataset is taken from [here](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits). 
+
+First, we can visualze the training images and they look like these: 
 ![digits]({{ '/' | relative_url }}assets/2019-10-02/digits.png)
+<details>
+<summary>Click here for the script.</summary>
+<div markdown="1">
+``` python
+import matplotlib.pyplot as plt
+from sklearn import datasets, svm, metrics
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+%matplotlib inline
+
+digits = datasets.load_digits()
+
+images_and_labels = list(zip(digits.images, digits.target))
+for index, (image, label) in enumerate(images_and_labels[:4]):
+    plt.subplot(2, 4, index + 1)
+    plt.axis('off')
+    plt.imshow(image, cmap=plt.cm.gray_r, interpolation='nearest')
+    plt.title('Training: %i' % label)
+    plt.tight_layout()
+```
+</div>
+</details>
 
 
-Top 4 of Fisher's discriminant variables are shown. For example, coordinate 1 contrasts 4's and 2/3's.
-
+Next, we train an LDA classifier on the first half of the data. Solving the generalized eigenvalue problem mentioned previously give us a list optimal projection directions. In this problem, we keep the top 4 coordinates and transformed data are shown below. 
 ![lda_vs_pca]({{ '/' | relative_url }}assets/2019-10-02/reduced_lda_digits.png)
+<details>
+<summary>Click here for the script.</summary>
+<div markdown="1">
+``` python
+X = digits.data
+y = digits.target
+target_names = digits.target_names
 
+# Create a classifier: a Fisher's LDA classifier
+lda = LinearDiscriminantAnalysis(n_components=4, solver='eigen', shrinkage=0.1)
+
+# Train lda on the first half of the digits
+lda = lda.fit(X[:n_samples // 2], y[:n_samples // 2])
+X_r_lda = lda.transform(X)
+
+# Visualize transformed data on learnt discriminant coordinates
+with plt.style.context('seaborn-talk'):
+    fig, axes = plt.subplots(1,2,figsize=[13,6])
+    for i, target_name in zip([0,1,2,3,4,5,6,7,8,9], target_names):
+        axes[0].scatter(X_r_lda[y == i, 0], X_r_lda[y == i, 1], alpha=.8,
+                        label=target_name, marker='$%.f$'%i)
+        axes[1].scatter(X_r_lda[y == i, 2], X_r_lda[y == i, 3], alpha=.8,
+                        label=target_name, marker='$%.f$'%i)
+    axes[0].set_xlabel('Discriminant Coordinate 1')
+    axes[0].set_ylabel('Discriminant Coordinate 2')
+    axes[1].set_xlabel('Discriminant Coordinate 3')
+    axes[1].set_ylabel('Discriminant Coordinate 4')
+    plt.tight_layout()
+```
+</div>
+</details>
+
+The above plot allows us to interpret the trained LDA classifier. For example, coordinate 1 helps to contrast 4's and 2/3's while coordinate 2 contrasts 0's and 1's. Subsequently, coordinate 3 and 4 help to discriminate digits not well-separated in coordinate 1 and 2. We test the trained classifier with the other half of the dataset and the performance is summarized in the report below.
+
+|---
+| |         precision  |  recall | f1-score  | support
+|-|-:|-:|-:|-: 
+|          0   |    0.96   |   0.99   |   0.97    |    88
+|          1   |    0.94   |   0.85   |   0.89    |    91
+|          2   |    0.99   |   0.90   |   0.94    |    86
+|          3   |    0.91   |   0.95   |   0.93    |    91
+|          4   |    0.99   |   0.91   |   0.95    |    92
+|          5   |    0.92   |   0.95   |   0.93    |    91
+|          6   |    0.97   |   0.99   |   0.98    |    91
+|          7   |    0.98   |   0.96   |   0.97    |    89
+|          8   |    0.92   |   0.86   |   0.89    |    88
+|          9   |    0.77   |   0.95   |   0.85    |    92
+|---
+|avg / total   |    0.93   |   0.93   |   0.93    |   899
+
+<details>
+<summary>Click here for the script.</summary>
+<div markdown="1">
+``` python
+n_samples = len(X)
+
+# Predict the value of the digit on the second half:
+expected = y[n_samples // 2:]
+predicted = lda.predict(X[n_samples // 2:])
+
+report = metrics.classification_report(expected, predicted)
+print("Classification report:\n%s" % (report))
+```
+</div>
+</details>
+
+The highest precision is 99% and the lowest is 77%. This is actually a decent result considering the fact that the method is proposed some 70 yers ago. Besides, we have not done anything to make the method better for this specific problem, i.e. there is collinearity in input variables; shrinkage parameter might not be the optimal. 
 
 ## Summary of LDA
+Here I summarize the virtues and shortcomings of LDA.
+
 Virtues of LDA:
+
 1. Simple prototype classifier: simple to interpret.
-2. Decision boundary is linear: simple to describe and implement.
+2. Decision boundary is linear: simple to implement and robust.
 3. Dimension reduction: provides informative low-dimensional view on
 data.
 
 Shortcomings of LDA:
-1. Linear decision boundaries may not adequately separate the classes.
-Support for more general boundaries is desired.
-2. In high-dimensional setting, LDA uses too many parameters.
-Regularized version of LDA is desired.
+
+1. Linear decision boundaries may not adequately separate the classes. Support for more general boundaries is desired.
+2. In high-dimensional setting, LDA uses too many parameters. Regularized version of LDA is desired.
+3. Support for more complex prototype classification is desired. 
+
+
+In the next article, flexible, penalized, and mixture discriminant analysis will be introduced to address each of the three shortcomings of LDA. With these generalizations, LDA can take on much more difficult and complex problems since it was first conceived.
 
 ----------------
-#### References
+## References
 [^Fisher]: Fisher, R. A. (1936). *The use of multiple measurements in taxonomic problems. Annals of eugenics*, 7(2), 179-188.
 [^ESL]: Friedman, J., Hastie, T., & Tibshirani, R. (2001). *The elements of statistical learning* (Vol. 1, No. 10). New York: Springer series in statistics.
 [^MA]: Mardia, K. V., Kent, J. T., & Bibby, J. M. *Multivariate analysis*. 1979. Probability and mathematical statistics. Academic Press Inc.

@@ -21,7 +21,7 @@
 
   <title>
     
-      Linear discriminant analysis - LDA &middot; 杨晓州
+      LDA: Linear discriminant analysis in vanilla form &middot; 杨晓州
     
   </title>
 
@@ -117,6 +117,10 @@
       
         
           
+        
+      
+        
+          
             <a class="sidebar-nav-item" href="/about/">About</a>
           
         
@@ -187,14 +191,14 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Linear discriminant analysis - LDA</h1>
+  <h1 class="post-title">LDA: Linear discriminant analysis in vanilla form</h1>
   <span class="post-date">02 Oct 2019</span>
   <p>Linear discriminant analysis (LDA) is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed.</p>
 
 <p>Two prominent examples of using LDA (and it’s variants) include:</p>
 <ul>
   <li><em>Bankruptcy prediction</em>: Edward Altman’s <a href="https://en.wikipedia.org/wiki/Altman_Z-score">1968 model</a> predicts the probability of company bankruptcy using trained LDA coefficients. The accuracy is said to be between 80% and 90%, evaluated over 31 years of data.</li>
-  <li><em>Facial recognition</em>: While features learnt from Principal Component Analysis (PCA) operations are called Eigenfaces, features learnt from LDA operations are called <a href="http://www.scholarpedia.org/article/Fisherfaces">Fisherfaces</a>, named after the great statistician, Sir Ronald Fisher. The connection will be explained later.</li>
+  <li><em>Facial recognition</em>: While features learnt from Principal Component Analysis (PCA) operations are called Eigenfaces, features learnt from LDA operations are called <a href="http://www.scholarpedia.org/article/Fisherfaces">Fisherfaces</a>, named after the statistician, Sir Ronald Fisher. The connection will be explained later.</li>
 </ul>
 
 <p>This article starts with introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems.</p>
@@ -259,7 +263,7 @@
 <p>In situations where the number of input variables greatly exceed the number of samples, covariance matrix can be poorly estimated. Shrinkage can hopefully improve the estimation and classification accuracy.<br />
 <img src="/assets/2019-10-02/lda_shrinkage.png" alt="lda_shrinkage" /></p>
 <details>
-<summary>Here's the script taken from <a href="https://scikit-learn.org/stable/auto_examples/classification/plot_lda.html">scikit-learn</a> to generate the above plot.</summary>
+<summary>Click here for the script to generate the above plot, credit to <a href="https://scikit-learn.org/stable/auto_examples/classification/plot_lda.html">scikit-learn</a>.</summary>
 <div>
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -367,7 +371,7 @@
 
 <p><img src="/assets/2019-10-02/lda_vs_pca.png" alt="lda_vs_pca" /></p>
 <details>
-<summary>Here's the script to generate the above plot.</summary>
+<summary>Click here for the script to generate the above plot.</summary>
 <div>
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
@@ -489,43 +493,210 @@ which is equivalent to</p>
 &= \lambda_1 \,,
 \end{align*} %]]></script>
 
-<p>and the upper bound is attained at $\mathbf{z} = (1,0,0,\dots,0)^T$. Since $\mathbf{y} = \mathbf{\Gamma} \mathbf{z}$, the solution is <script type="math/tex">\mathbf{y} = \mathbf{\gamma}_{(1)}</script>, the eigenvector corresponding to the largest eigenvalue in (\ref{eqn_fisher_eigen}). Since $\mathbf{y} = \mathbf{W}^{\frac12} \mathbf{a}$, the optimal projection direction is <script type="math/tex">\mathbf{a} = \mathbf{W}^{-\frac12} \mathbf{\gamma}_{(1)}</script>.</p>
+<p>and the upper bound is attained at $\mathbf{z} = (1,0,0,\dots,0)^T$. Since $\mathbf{y} = \mathbf{\Gamma} \mathbf{z}$, the solution is <script type="math/tex">\mathbf{y} = \pmb \gamma_{(1)}</script>, the eigenvector corresponding to the largest eigenvalue in (\ref{eqn_fisher_eigen}). Since $\mathbf{y} = \mathbf{W}^{\frac12} \mathbf{a}$, the optimal projection direction is <script type="math/tex">\mathbf{a} = \mathbf{W}^{-\frac12} \pmb \gamma_{(1)}</script>.</p>
 
 <p><strong>Theorem A.6.2</strong> from MA<sup id="fnref:MA"><a href="#fn:MA" class="footnote">3</a></sup>: For <script type="math/tex">\mathbf{A}_(n \times p)</script> and $\mathbf{B}_(p \times n)$, the non-zero eigenvalues of
 $\mathbf{AB}$ and $\mathbf{BA}$ are the same and have the same multiplicity. If $\mathbf{x}$ is a non-trivial eigenvector of $\mathbf{AB}$ for an eigenvalue $\lambda \neq 0$, then $\mathbf{y}=\mathbf{Bx}$ is a non-trivial eigenvector of $\mathbf{BA}$.</p>
 
-<p>Since <script type="math/tex">\mathbf{\gamma}_{(1)}</script> is an eigenvector of $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$, then, $\mathbf{W}^{-\frac12} \mathbf{\gamma}_{(1)}$ is also the eigenvector of $\mathbf{W}^{-\frac12} \mathbf{W}^{-\frac12} \mathbf{B} = \mathbf{W}^{-1} \mathbf{B}$, using <strong>Theorem A.6.2</strong>.</p>
+<p>Since <script type="math/tex">\pmb \gamma_{(1)}</script> is an eigenvector of $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$, then, $\mathbf{W}^{-\frac12} \pmb \gamma_{(1)}$ is also the eigenvector of $\mathbf{W}^{-\frac12} \mathbf{W}^{-\frac12} \mathbf{B} = \mathbf{W}^{-1} \mathbf{B}$, using <strong>Theorem A.6.2</strong>.</p>
 
 <p><em>In summary, optimal subspace coordinates, also known as discriminant coordinates, are obtained from eigenvectors <script type="math/tex">\mathbf{a}_\ell</script> of <script type="math/tex">\mathbf{W}^{-1}\mathbf{B}</script>, for <script type="math/tex">\ell = 1, ... , \min\{p,K-1\}</script>.</em> It can be shown that the <script type="math/tex">\mathbf{a}_\ell</script> obtained in this way are the same as <script type="math/tex">\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell</script> obtained in the reduced-rank LDA formulation. What is surprising here is that, Fisher arrives at this formulation without any Gaussian assumption on the population, unlike the reduced-rank LDA case. The hope is that, with this sensible rule, LDA would perform well even when the data do not follow exactly the Gaussian distribution.</p>
 
 <h2 id="handwritten-digits-problem">Handwritten digits problem</h2>
-<p>Here’s an example to show the visualization and classification ability of Fisher’s LDA, or simply LDA. The problem is using 64 variables (pixel values from images) to distinguish 10 written digits. The dataset is taken from <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits">here</a>. 
-The training images look like these. 
+<p>Here’s an example to show the visualization and classification ability of Fisher’s LDA, or simply LDA. We need to recognize 10 different digits, i.e. 0 to 9, using 64 variables (pixel values from images). The dataset is taken from <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits">here</a>.</p>
+
+<p>First, we can visualze the training images and they look like these: 
 <img src="/assets/2019-10-02/digits.png" alt="digits" /></p>
+<details>
+<summary>Click here for the script.</summary>
+<div>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">svm</span><span class="p">,</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">sklearn.discriminant_analysis</span> <span class="kn">import</span> <span class="n">LinearDiscriminantAnalysis</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 
-<p>Top 4 of Fisher’s discriminant variables are shown. For example, coordinate 1 contrasts 4’s and 2/3’s.</p>
+<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
 
-<p><img src="/assets/2019-10-02/reduced_lda_digits.png" alt="lda_vs_pca" /></p>
+<span class="n">images_and_labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="p">,</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">images_and_labels</span><span class="p">[:</span><span class="mi">4</span><span class="p">]):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">'off'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray_r</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s">'nearest'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Training: </span><span class="si">%</span><span class="s">i'</span> <span class="o">%</span> <span class="n">label</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </div>
+</details>
+
+<p>Next, we train an LDA classifier on the first half of the data. Solving the generalized eigenvalue problem mentioned previously give us a list optimal projection directions. In this problem, we keep the top 4 coordinates and transformed data are shown below. 
+<img src="/assets/2019-10-02/reduced_lda_digits.png" alt="lda_vs_pca" /></p>
+<details>
+<summary>Click here for the script.</summary>
+<div>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span>
+<span class="n">target_names</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">target_names</span>
+
+<span class="c1"># Create a classifier: a Fisher's LDA classifier
+</span><span class="n">lda</span> <span class="o">=</span> <span class="n">LinearDiscriminantAnalysis</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s">'eigen'</span><span class="p">,</span> <span class="n">shrinkage</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="c1"># Train lda on the first half of the digits
+</span><span class="n">lda</span> <span class="o">=</span> <span class="n">lda</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="n">n_samples</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="n">n_samples</span> <span class="o">//</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">X_r_lda</span> <span class="o">=</span> <span class="n">lda</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Visualize transformed data on learnt discriminant coordinates
+</span><span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s">'seaborn-talk'</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target_name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="n">target_names</span><span class="p">):</span>
+        <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_r_lda</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_r_lda</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.8</span><span class="p">,</span>
+                        <span class="n">label</span><span class="o">=</span><span class="n">target_name</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s">'$</span><span class="si">%</span><span class="s">.f$'</span><span class="o">%</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_r_lda</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">X_r_lda</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.8</span><span class="p">,</span>
+                        <span class="n">label</span><span class="o">=</span><span class="n">target_name</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s">'$</span><span class="si">%</span><span class="s">.f$'</span><span class="o">%</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'Discriminant Coordinate 1'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">'Discriminant Coordinate 2'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'Discriminant Coordinate 3'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">'Discriminant Coordinate 4'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </div>
+</details>
+
+<p>The above plot allows us to interpret the trained LDA classifier. For example, coordinate 1 helps to contrast 4’s and 2/3’s while coordinate 2 contrasts 0’s and 1’s. Subsequently, coordinate 3 and 4 help to discriminate digits not well-separated in coordinate 1 and 2. We test the trained classifier with the other half of the dataset and the performance is summarized in the report below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th style="text-align: right">precision</th>
+      <th style="text-align: right">recall</th>
+      <th style="text-align: right">f1-score</th>
+      <th style="text-align: right">support</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td style="text-align: right">0.96</td>
+      <td style="text-align: right">0.99</td>
+      <td style="text-align: right">0.97</td>
+      <td style="text-align: right">88</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td style="text-align: right">0.94</td>
+      <td style="text-align: right">0.85</td>
+      <td style="text-align: right">0.89</td>
+      <td style="text-align: right">91</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td style="text-align: right">0.99</td>
+      <td style="text-align: right">0.90</td>
+      <td style="text-align: right">0.94</td>
+      <td style="text-align: right">86</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td style="text-align: right">0.91</td>
+      <td style="text-align: right">0.95</td>
+      <td style="text-align: right">0.93</td>
+      <td style="text-align: right">91</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td style="text-align: right">0.99</td>
+      <td style="text-align: right">0.91</td>
+      <td style="text-align: right">0.95</td>
+      <td style="text-align: right">92</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td style="text-align: right">0.92</td>
+      <td style="text-align: right">0.95</td>
+      <td style="text-align: right">0.93</td>
+      <td style="text-align: right">91</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td style="text-align: right">0.97</td>
+      <td style="text-align: right">0.99</td>
+      <td style="text-align: right">0.98</td>
+      <td style="text-align: right">91</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td style="text-align: right">0.98</td>
+      <td style="text-align: right">0.96</td>
+      <td style="text-align: right">0.97</td>
+      <td style="text-align: right">89</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td style="text-align: right">0.92</td>
+      <td style="text-align: right">0.86</td>
+      <td style="text-align: right">0.89</td>
+      <td style="text-align: right">88</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td style="text-align: right">0.77</td>
+      <td style="text-align: right">0.95</td>
+      <td style="text-align: right">0.85</td>
+      <td style="text-align: right">92</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>avg / total</td>
+      <td style="text-align: right">0.93</td>
+      <td style="text-align: right">0.93</td>
+      <td style="text-align: right">0.93</td>
+      <td style="text-align: right">899</td>
+    </tr>
+  </tbody>
+</table>
+
+<details>
+<summary>Click here for the script.</summary>
+<div>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Predict the value of the digit on the second half:
+</span><span class="n">expected</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">n_samples</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:]</span>
+<span class="n">predicted</span> <span class="o">=</span> <span class="n">lda</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">n_samples</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:])</span>
+
+<span class="n">report</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">classification_report</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Classification report:</span><span class="se">\n</span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">report</span><span class="p">))</span>
+</code></pre></div>    </div>
+  </div>
+</details>
+
+<p>The highest precision is 99% and the lowest is 77%. This is actually a decent result considering the fact that the method is proposed some 70 yers ago. Besides, we have not done anything to make the method better for this specific problem, i.e. there is collinearity in input variables; shrinkage parameter might not be the optimal.</p>
 
 <h2 id="summary-of-lda">Summary of LDA</h2>
+<p>Here I summarize the virtues and shortcomings of LDA.</p>
+
 <p>Virtues of LDA:</p>
+
 <ol>
   <li>Simple prototype classifier: simple to interpret.</li>
-  <li>Decision boundary is linear: simple to describe and implement.</li>
+  <li>Decision boundary is linear: simple to implement and robust.</li>
   <li>Dimension reduction: provides informative low-dimensional view on
 data.</li>
 </ol>
 
 <p>Shortcomings of LDA:</p>
+
 <ol>
-  <li>Linear decision boundaries may not adequately separate the classes.
-Support for more general boundaries is desired.</li>
-  <li>In high-dimensional setting, LDA uses too many parameters.
-Regularized version of LDA is desired.</li>
+  <li>Linear decision boundaries may not adequately separate the classes. Support for more general boundaries is desired.</li>
+  <li>In high-dimensional setting, LDA uses too many parameters. Regularized version of LDA is desired.</li>
+  <li>Support for more complex prototype classification is desired.</li>
 </ol>
 
+<p>In the next article, flexible, penalized, and mixture discriminant analysis will be introduced to address each of the three shortcomings of LDA. With these generalizations, LDA can take on much more difficult and complex problems since it was first conceived.</p>
+
 <hr />
-<h4 id="references">References</h4>
+<h2 id="references">References</h2>
 
 <div class="footnotes">
   <ol>
