@@ -4,7 +4,7 @@
  <title>杨晓州</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-10-14T15:18:13+08:00</updated>
+ <updated>2019-11-04T09:56:13+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -13,33 +13,19 @@
 
  
  <entry>
-   <title>Beyond LDA: Flexible, penalized, and mixture discriminant analysis</title>
-   <link href="http://localhost:4000/statistics/2019/10/03/beyond-lda.html"/>
-   <updated>2019-10-03T08:00:00+08:00</updated>
-   <id>http://localhost:4000/statistics/2019/10/03/beyond-lda</id>
-   <content type="html">&lt;p&gt;This is the second article that talks about the classification and dimension reduction tool LDA.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;flexible-discriminant-analysis-fda&quot;&gt;Flexible discriminant analysis (FDA)&lt;/h3&gt;
-&lt;h3 id=&quot;penalized-discriminant-analysis-pda&quot;&gt;Penalized discriminant analysis (PDA)&lt;/h3&gt;
-&lt;h3 id=&quot;mixture-discriminant-analysis-mda&quot;&gt;Mixture discriminant analysis (MDA)&lt;/h3&gt;
-</content>
- </entry>
- 
- <entry>
    <title>LDA: Linear discriminant analysis in vanilla form</title>
    <link href="http://localhost:4000/statistics/2019/10/02/linear-discriminant-analysis.html"/>
    <updated>2019-10-02T08:00:00+08:00</updated>
    <id>http://localhost:4000/statistics/2019/10/02/linear-discriminant-analysis</id>
-   <content type="html">&lt;p&gt;Linear discriminant analysis (LDA) is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible methods are employed.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Linear discriminant analysis (LDA) is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible ones are employed.&lt;/p&gt;
 
 &lt;p&gt;Two prominent examples of using LDA (and it’s variants) include:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;Bankruptcy prediction&lt;/em&gt;: Edward Altman’s &lt;a href=&quot;https://en.wikipedia.org/wiki/Altman_Z-score&quot;&gt;1968 model&lt;/a&gt; predicts the probability of company bankruptcy using trained LDA coefficients. The accuracy is said to be between 80% and 90%, evaluated over 31 years of data.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Facial recognition&lt;/em&gt;: While features learnt from Principal Component Analysis (PCA) operations are called Eigenfaces, features learnt from LDA operations are called &lt;a href=&quot;http://www.scholarpedia.org/article/Fisherfaces&quot;&gt;Fisherfaces&lt;/a&gt;, named after the statistician, Sir Ronald Fisher. The connection will be explained later.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Facial recognition&lt;/em&gt;: While features learned from Principal Component Analysis (PCA) are called Eigenfaces, those learned from LDA are called &lt;a href=&quot;http://www.scholarpedia.org/article/Fisherfaces&quot;&gt;Fisherfaces&lt;/a&gt;, named after the statistician, Sir Ronald Fisher. We explain this connection later.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;This article starts with introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems.&lt;/p&gt;
+&lt;p&gt;This article starts by introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems.&lt;/p&gt;
 
 &lt;h3 id=&quot;classification-by-discriminant-analysis&quot;&gt;Classification by discriminant analysis&lt;/h3&gt;
 &lt;p&gt;Consider a generic classification problem: A random variable $X$ comes from one of $K$ classes, $G = 1, \dots, K$, with density $f_k(\mathbf{x})$ on $\mathbb{R}^p$. A discriminant rule divides the space into $K$ disjoint regions $\mathbb{R}_1, \dots, \mathbb{R}_K$. Classification by discriminant analysis simply means that we allocate $\mathbf{x }$ to $\Pi_{j}$ if $\mathbf{x} \in \mathbb{R}_j$. We can follow two allocation rules:&lt;/p&gt;
@@ -65,7 +51,7 @@
     \label{eqn_lda}
 \end{align}&lt;/script&gt;
 
-&lt;p&gt;This is a linear function in $\mathbf{x}$. Thus, the decision boundary between any pair of classes is also a linear function in $\mathbf{x}$. This is the reason that this classification procedure is called linear discriminant analysis. Without the equal covariance assumption, the quadratic term in the likelihood does not cancel out, hence the resulting discriminant function is a quadractic function in $\mathbf{x}$:
+&lt;p&gt;This is a linear function in $\mathbf{x}$. Thus, the decision boundary between any pair of classes is also a linear function in $\mathbf{x}$, the reason for its name: linear discriminant analysis. Without the equal covariance assumption, the quadratic term in the likelihood does not cancel out, hence the resulting discriminant function is a quadratic function in $\mathbf{x}$:
 &lt;script type=&quot;math/tex&quot;&gt;\begin{align}
     \delta_{k}(\mathbf{x}) = 
     - \frac{1}{2} \log|\mathbf{\Sigma}_k| 
@@ -76,7 +62,7 @@
 &lt;p&gt;Similarly, the decision boundary is quadratic in $\mathbf{x}$. This is known as quadratic discriminant analysis (QDA).&lt;/p&gt;
 
 &lt;h4 id=&quot;number-of-parameters&quot;&gt;Number of parameters&lt;/h4&gt;
-&lt;p&gt;In real problems, population parameters are usually unknown and estimated from training data as $\hat{\pi}_k, \hat{\mathbf{\mu}}_k, \hat{\mathbf{\Sigma}}_k$. While QDA accommodates more flexible decision boundaries compared to LDA, the number of parameters needed to be estimated also increase faster than that of LDA. From (\ref{eqn_lda}), $p+1$ parameters (nonlinear transformation of the original distribution parameters) are needed to construct the discriminant function. For a problem with $K$ classes, we would only need $K-1$ such discriminant functions by arbitrarily choosing one class to be the base class, i.e.&lt;/p&gt;
+&lt;p&gt;In real problems, population parameters are usually unknown and estimated from training data as $\hat{\pi}_k, \hat{\mathbf{\mu}}_k, \hat{\mathbf{\Sigma}}_k$. While QDA accommodates more flexible decision boundaries compared to LDA, the number of parameters needed to be estimated also increases faster than that of LDA. From (\ref{eqn_lda}), $p+1$ parameters (nonlinear transformation of the original distribution parameters) are needed to construct the discriminant function. For a problem with $K$ classes, we would only need $K-1$ such discriminant functions by arbitrarily choosing one class to be the base class, i.e.&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\delta_{k}'(\mathbf{x}) = \delta_{k}(\mathbf{x}) - \delta_{K}(\mathbf{x})\,,&lt;/script&gt;
 
@@ -166,7 +152,7 @@
 &lt;/details&gt;
 
 &lt;h4 id=&quot;computation-for-lda&quot;&gt;Computation for LDA&lt;/h4&gt;
-&lt;p&gt;We can see from (\ref{eqn_lda}) and (\ref{eqn_qda}) that computations of discriminant functions can be simplified if we diagonalize the covariance matrices first. That is, data are transformed to have an identity covariance matrices. In the case of LDA, here’s how we proceed witht the computation:&lt;/p&gt;
+&lt;p&gt;We can see from (\ref{eqn_lda}) and (\ref{eqn_qda}) that computations of discriminant functions can be simplified if we diagonalize the covariance matrices first. That is, data are transformed to have an identity covariance matrices. In the case of LDA, here’s how we proceed with the computation:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Perform eigen-decompostion on the pooled covariance matrix: 
@@ -182,7 +168,7 @@
 \label{eqn_lda_sphered}
 \end{align}&lt;/script&gt;
 
-&lt;p&gt;Step 2 spheres the data to produce an identity covariance matrix in the transformed space. Step 4 is obtained by following (\ref{eqn_lda}). Let’s take a two class example to see what LDA is actually doing. Suppose there are two classes, $k$ and $\ell$. We classify $\mathbf{x}$ to class $k$ if &lt;script type=&quot;math/tex&quot;&gt;\delta_{k}(\mathbf{x}^{*}) - \delta_{\ell}(\mathbf{x}^{*}) &gt; 0&lt;/script&gt;. Following the four steps outlined above, we write&lt;/p&gt;
+&lt;p&gt;Step 2 spheres the data to produce an identity covariance matrix in the transformed space. Step 4 is obtained by following (\ref{eqn_lda}). Let’s take a two-class example to see what LDA is doing. Suppose there are two classes, $k$ and $\ell$. We classify $\mathbf{x}$ to class $k$ if &lt;script type=&quot;math/tex&quot;&gt;\delta_{k}(\mathbf{x}^{*}) - \delta_{\ell}(\mathbf{x}^{*}) &gt; 0&lt;/script&gt;. Following the four steps outlined above, we write&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align*}
@@ -198,14 +184,14 @@
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{x^{*}}^{T} (\hat{\mu}_{k} - \hat{\mu}_{\ell}) &gt; \frac{1}{2} (\hat{\mu}_{k} + \hat{\mu}_{\ell})^{T}(\hat{\mu}_{k} - \hat{\mu}_{\ell}) - \log \hat{\pi}_{k}/\hat{\pi}_{\ell} \,.&lt;/script&gt;
 
-&lt;p&gt;The derived allocation rule reveals the working of LDA. The left-hand side of the equation is the length of orthorgonal projection of &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x^{*}}&lt;/script&gt; onto the line segment joining the two class centroids. The right-hand side is the location of the centre of the segment corrected by class prior probabilities. &lt;em&gt;Essentially, LDA classifies the data to the closest class centroid.&lt;/em&gt; Two observations can be made here.&lt;/p&gt;
+&lt;p&gt;The derived allocation rule reveals the working of LDA. The left-hand side of the equation is the length of the orthogonal projection of &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x^{*}}&lt;/script&gt; onto the line segment joining the two class centroids. The right-hand side is the location of the center of the segment corrected by class prior probabilities. &lt;em&gt;Essentially, LDA classifies the data to the closest class centroid.&lt;/em&gt; We make two observations here.&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;The decision point deviates from the middle point when the class prior probabilities are not the same, i.e. the boundary is pushed toward the class with a smaller prior probability.&lt;/li&gt;
+  &lt;li&gt;The decision point deviates from the middle point when the class prior probabilities are not the same, i.e., the boundary is pushed toward the class with a smaller prior probability.&lt;/li&gt;
   &lt;li&gt;Data are projected onto the space spanned by class centroids, e.g. &lt;script type=&quot;math/tex&quot;&gt;\hat{\mu}_{k} - \hat{\mu}_{\ell}&lt;/script&gt;. Distance comparisons are then done in that space.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;reduced-rank-lda&quot;&gt;Reduced-rank LDA&lt;/h3&gt;
-&lt;p&gt;What I’ve just described is classification by LDA. LDA is also popular for its ability to find a small number of meaningful dimensions, allowing us to visualize high-dimensional problems. What do we mean by meaningful and how does LDA find these dimensions? We will anwser these questions shortly. First, take a look at the below plot. For a &lt;a href=&quot;https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html#sklearn.datasets.load_wine&quot;&gt;wine classification&lt;/a&gt; problem with 3 different types of wines and 13 input variables, the plot visualizes the data in two discriminant coordinates found by LDA. In this 2-dimensional space, the classes can be well-separated. In comparison, the classes are not as clearly separated using the first 2 principal components found by PCA.&lt;/p&gt;
+&lt;p&gt;What I’ve just described is the classification by LDA. LDA is also famous for its ability to find a small number of meaningful dimensions, allowing us to visualize high-dimensional problems. What do we mean by meaningful, and how does LDA find these dimensions? We will answer these questions shortly. First, take a look at the below plot. For a &lt;a href=&quot;https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html#sklearn.datasets.load_wine&quot;&gt;wine classification&lt;/a&gt; problem with three different types of wines and 13 input variables, the plot visualizes the data in two discriminant coordinates found by LDA. In this two-dimensional space, the classes can be well-separated. In comparison, the classes are not as clearly separated using the first two principal components found by PCA.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/2019-10-02/lda_vs_pca.png&quot; alt=&quot;lda_vs_pca&quot; /&gt;&lt;/p&gt;
 &lt;details&gt;
@@ -242,14 +228,14 @@
 &lt;/details&gt;
 
 &lt;h4 id=&quot;inherent-dimension-reduction&quot;&gt;Inherent dimension reduction&lt;/h4&gt;
-&lt;p&gt;In the above wine example, a 13-dimensional problem is visualized in a 2d space. Why is this possible? This is possible because there’s inherent dimension reduction in LDA. We have observed from the previous section that LDA makes distance comparison in the space spanned by different class centroids. Two distinct points lie on a 1d line; three distinct points lie on a 2d plane. Similarly, $K$ class centroids lie on a hyperplane with dimension at most $(K-1)$. In particular, the subspace spanned by the centroids is&lt;/p&gt;
+&lt;p&gt;In the above wine example, a 13-dimensional problem is visualized in a 2d space. Why is this possible? This is possible because there’s an inherent dimension reduction in LDA. We have observed from the previous section that LDA makes distance comparison in the space spanned by different class centroids. Two distinct points lie on a 1d line; three distinct points lie on a 2d plane. Similarly, $K$ class centroids lie on a hyperplane with dimension at most $(K-1)$. In particular, the subspace spanned by the centroids is&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;H_{K-1}=\mu_{1} \oplus \operatorname{span}\left\{\mu_{i}-\mu_{1}, 2 \leq i \leq K\right\} \,.&lt;/script&gt;
 
-&lt;p&gt;When making distance comparisons, distances orthorgonal to this subspace would add no information since they contribute equally for each class. Hence, by restricting distance comparisons to this subspace only would not lose any information useful for LDA classification. That means, we can safely transform our task from a $p$-dimensional problem to a $(K-1)$-dimensional problem by an orthogonal projection of the data onto this subspace. When $p \gg K$, this is a considerable drop in the number of dimensions. What if we want to reduce the dimension further from $p$ tp $L$ where $K \gg L$? We can construct an $L$-dimensional subspace, $H_L$, from $H_{K-1}$ and this subspace is optimal, in some sense, to LDA classification.&lt;/p&gt;
+&lt;p&gt;When making distance comparisons, distances orthogonal to this subspace would add no information since they contribute equally for each class. Hence, by restricting distance comparisons to this subspace only would not lose any information useful for LDA classification. That means, we can safely transform our task from a $p$-dimensional problem to a $(K-1)$-dimensional problem by an orthogonal projection of the data onto this subspace. When $p \gg K$, this is a considerable drop in the number of dimensions. What if we want to reduce the dimension further from $p$ to $L$ where $K \gg L$? We can construct an $L$-dimensional subspace, $H_L$, from $H_{K-1}$, and this subspace is optimal, in some sense, to LDA classification.&lt;/p&gt;
 
 &lt;h4 id=&quot;optimal-subspace-and-computation&quot;&gt;Optimal subspace and computation&lt;/h4&gt;
-&lt;p&gt;Fisher proposes that the subspace $H_L$ is optimal when the class centroids of sphered data have maximum separation in this subspace in terms of variance. Following this defition, optimal subspace coordinates are simply found by doing PCA on sphered class centroids. The computation steps are summarized below:&lt;/p&gt;
+&lt;p&gt;Fisher proposes that the subspace $H_L$ is optimal when the class centroids of sphered data have maximum separation in this subspace in terms of variance. Following this definition, optimal subspace coordinates are simply found by doing PCA on sphered class centroids. The computation steps are summarized below:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;Find class centroid matrix, $\mathbf{M}_{(K\times p)}$, and pooled var-cov, &lt;script type=&quot;math/tex&quot;&gt;\mathbf{W}_{(p\times p)}&lt;/script&gt;, where&lt;/p&gt;
@@ -270,12 +256,12 @@
   &lt;li&gt;Obtain $L$ new (discriminant) variables $Z_\ell = (\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell)^T X$, for $\ell = 1, \dots, L$.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Through this procedure, we reduce our data dimension from &lt;script type=&quot;math/tex&quot;&gt;\mathbf{X}_{(N \times p)}&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;\mathbf{Z}_{(N \times L)}&lt;/script&gt;. Discriminant coordinate 1 and 2 in the previous wine plot are found by setting $L = 2$. Repeating LDA procedures for classification using the new data $\mathbf{Z}$ is called the reduced-rank LDA.&lt;/p&gt;
+&lt;p&gt;Through this procedure, we reduce our data dimension from &lt;script type=&quot;math/tex&quot;&gt;\mathbf{X}_{(N \times p)}&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;\mathbf{Z}_{(N \times L)}&lt;/script&gt;. Discriminant coordinate 1 and 2 in the previous wine plot are found by setting $L = 2$. Repeating LDA procedures for classification using the new data, $\mathbf{Z}$, is called the reduced-rank LDA.&lt;/p&gt;
 
 &lt;h3 id=&quot;fishers-lda&quot;&gt;Fisher’s LDA&lt;/h3&gt;
 &lt;p&gt;Fisher derived the computation steps according to his optimality definition in a different way&lt;sup id=&quot;fnref:Fisher&quot;&gt;&lt;a href=&quot;#fn:Fisher&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. His steps of performing the reduced-rank LDA would later be known as the Fisher’s LDA. Fisher does not make any assumption about the distribution of the populations, $\Pi_1, \dots, \Pi_K$. Instead, he tries to find a “sensible” rule so that the classification task becomes easier. In particular, Fisher finds a linear combination &lt;script type=&quot;math/tex&quot;&gt;Z = \mathbf{a}^T X&lt;/script&gt; where the between-class variance, $\mathbf{B} = \operatorname{cov}(\mathbf{M})$, is maximized relative to the within-class variance, $\mathbf{W}$, as defined in (\ref{within_w}).&lt;/p&gt;
 
-&lt;p&gt;The below plot, taken from ESL&lt;sup id=&quot;fnref:ESL&quot;&gt;&lt;a href=&quot;#fn:ESL&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;, shows why this rule makes intuitive sense. The rule sets out to find a direction, $\mathbf{a}$, where, after projecting the data onto that direction, class centroids have maximum separation between them and each class has minimum variance within them. The projection direction found under this rule, shown in the plot on the right, is a much better direction. 
+&lt;p&gt;The below plot, taken from ESL&lt;sup id=&quot;fnref:ESL&quot;&gt;&lt;a href=&quot;#fn:ESL&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;, shows why this rule makes intuitive sense. The rule sets out to find a direction, $\mathbf{a}$, where, after projecting the data onto that direction, class centroids have maximum separation between them, and each class has minimum variance within them. The projection direction found under this rule, shown in the plot on the right, is much better.
 &lt;img src=&quot;/assets/2019-10-02/sensible_rule.png&quot; alt=&quot;sensible_rule&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;generalized-eigenvalue-problem&quot;&gt;Generalized eigenvalue problem&lt;/h4&gt;
@@ -290,7 +276,7 @@ which is equivalent to&lt;/p&gt;
 \text{s.t. } &amp;{} \mathbf{a}^{T} \mathbf{W} \mathbf{a} = 1 \,, \nonumber
 \end{align} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;since the scaling of $\mathbf{a}$ does not affect the soliution. Let $\mathbf{W}^{\frac12}$ be the symmetric square root of $\mathbf{W}$, and $\mathbf{y} = \mathbf{W}^{\frac12} \mathbf{a}$. We can rewrite the problem (\ref{eqn_g_eigen}) as&lt;/p&gt;
+&lt;p&gt;since the scaling of $\mathbf{a}$ does not affect the solution. Let $\mathbf{W}^{\frac12}$ be the symmetric square root of $\mathbf{W}$, and $\mathbf{y} = \mathbf{W}^{\frac12} \mathbf{a}$. We can rewrite the problem (\ref{eqn_g_eigen}) as&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
@@ -338,10 +324,10 @@ $\mathbf{AB}$ and $\mathbf{BA}$ are the same and have the same multiplicity. If 
 
 &lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;\pmb \gamma_{(1)}&lt;/script&gt; is an eigenvector of $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$, then, $\mathbf{W}^{-\frac12} \pmb \gamma_{(1)}$ is also the eigenvector of $\mathbf{W}^{-\frac12} \mathbf{W}^{-\frac12} \mathbf{B} = \mathbf{W}^{-1} \mathbf{B}$, using &lt;strong&gt;Theorem A.6.2&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;In summary, optimal subspace coordinates, also known as discriminant coordinates, are obtained from eigenvectors &lt;script type=&quot;math/tex&quot;&gt;\mathbf{a}_\ell&lt;/script&gt; of &lt;script type=&quot;math/tex&quot;&gt;\mathbf{W}^{-1}\mathbf{B}&lt;/script&gt;, for &lt;script type=&quot;math/tex&quot;&gt;\ell = 1, ... , \min\{p,K-1\}&lt;/script&gt;.&lt;/em&gt; It can be shown that the &lt;script type=&quot;math/tex&quot;&gt;\mathbf{a}_\ell&lt;/script&gt; obtained in this way are the same as &lt;script type=&quot;math/tex&quot;&gt;\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell&lt;/script&gt; obtained in the reduced-rank LDA formulation. What is surprising here is that, Fisher arrives at this formulation without any Gaussian assumption on the population, unlike the reduced-rank LDA case. The hope is that, with this sensible rule, LDA would perform well even when the data do not follow exactly the Gaussian distribution.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In summary, optimal subspace coordinates, also known as discriminant coordinates, are obtained from eigenvectors &lt;script type=&quot;math/tex&quot;&gt;\mathbf{a}_\ell&lt;/script&gt; of &lt;script type=&quot;math/tex&quot;&gt;\mathbf{W}^{-1}\mathbf{B}&lt;/script&gt;, for &lt;script type=&quot;math/tex&quot;&gt;\ell = 1, ... , \min\{p,K-1\}&lt;/script&gt;.&lt;/em&gt; It can be shown that the &lt;script type=&quot;math/tex&quot;&gt;\mathbf{a}_\ell&lt;/script&gt;s obtained are the same as &lt;script type=&quot;math/tex&quot;&gt;\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell&lt;/script&gt;s obtained in the reduced-rank LDA formulation. Surprisingly, Fisher arrives at this formulation without any Gaussian assumption on the population, unlike the reduced-rank LDA formulation. The hope is that, with this sensible rule, LDA would perform well even when the data do not follow exactly the Gaussian distribution.&lt;/p&gt;
 
 &lt;h2 id=&quot;handwritten-digits-problem&quot;&gt;Handwritten digits problem&lt;/h2&gt;
-&lt;p&gt;Here’s an example to show the visualization and classification ability of Fisher’s LDA, or simply LDA. We need to recognize 10 different digits, i.e. 0 to 9, using 64 variables (pixel values from images). The dataset is taken from &lt;a href=&quot;https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here’s an example to show the visualization and classification ability of Fisher’s LDA, or simply LDA. We need to recognize ten different digits, i.e., 0 to 9, using 64 variables (pixel values from images). The dataset is taken from &lt;a href=&quot;https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;First, we can visualze the training images and they look like these: 
 &lt;img src=&quot;/assets/2019-10-02/digits.png&quot; alt=&quot;digits&quot; /&gt;&lt;/p&gt;
@@ -366,7 +352,7 @@ $\mathbf{AB}$ and $\mathbf{BA}$ are the same and have the same multiplicity. If 
   &lt;/div&gt;
 &lt;/details&gt;
 
-&lt;p&gt;Next, we train an LDA classifier on the first half of the data. Solving the generalized eigenvalue problem mentioned previously give us a list optimal projection directions. In this problem, we keep the top 4 coordinates and transformed data are shown below. 
+&lt;p&gt;Next, we train an LDA classifier on the first half of the data. Solving the generalized eigenvalue problem mentioned previously gives us a list of optimal projection directions. In this problem, we keep the top 4 coordinates, and the transformed data are shown below. 
 &lt;img src=&quot;/assets/2019-10-02/reduced_lda_digits.png&quot; alt=&quot;lda_vs_pca&quot; /&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt;Click here for the script.&lt;/summary&gt;
@@ -399,7 +385,7 @@ $\mathbf{AB}$ and $\mathbf{BA}$ are the same and have the same multiplicity. If 
   &lt;/div&gt;
 &lt;/details&gt;
 
-&lt;p&gt;The above plot allows us to interpret the trained LDA classifier. For example, coordinate 1 helps to contrast 4’s and 2/3’s while coordinate 2 contrasts 0’s and 1’s. Subsequently, coordinate 3 and 4 help to discriminate digits not well-separated in coordinate 1 and 2. We test the trained classifier with the other half of the dataset and the performance is summarized in the report below.&lt;/p&gt;
+&lt;p&gt;The above plot allows us to interpret the trained LDA classifier. For example, coordinate 1 helps to contrast 4’s and 2/3’s while coordinate 2 contrasts 0’s and 1’s. Subsequently, coordinate 3 and 4 help to discriminate digits not well-separated in coordinate 1 and 2. We test the trained classifier using the other half of the dataset. The report below summarizes the result.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -509,7 +495,7 @@ $\mathbf{AB}$ and $\mathbf{BA}$ are the same and have the same multiplicity. If 
   &lt;/div&gt;
 &lt;/details&gt;
 
-&lt;p&gt;The highest precision is 99% and the lowest is 77%. This is actually a decent result considering the fact that the method is proposed some 70 yers ago. Besides, we have not done anything to make the method better for this specific problem, i.e. there is collinearity in input variables; shrinkage parameter might not be the optimal.&lt;/p&gt;
+&lt;p&gt;The highest precision is 99%, and the lowest is 77%, a decent result knowing that the method was proposed some 70 years ago. Besides, we have not done anything to make the procedure better for this specific problem. For example, there is collinearity in the input variables, and the shrinkage parameter might not be optimal.&lt;/p&gt;
 
 &lt;h2 id=&quot;summary-of-lda&quot;&gt;Summary of LDA&lt;/h2&gt;
 &lt;p&gt;Here I summarize the virtues and shortcomings of LDA.&lt;/p&gt;
@@ -527,11 +513,11 @@ data.&lt;/li&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Linear decision boundaries may not adequately separate the classes. Support for more general boundaries is desired.&lt;/li&gt;
-  &lt;li&gt;In high-dimensional setting, LDA uses too many parameters. Regularized version of LDA is desired.&lt;/li&gt;
+  &lt;li&gt;In a high-dimensional setting, LDA uses too many parameters. A regularized version of LDA is desired.&lt;/li&gt;
   &lt;li&gt;Support for more complex prototype classification is desired.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;In the next article, flexible, penalized, and mixture discriminant analysis will be introduced to address each of the three shortcomings of LDA. With these generalizations, LDA can take on much more difficult and complex problems since it was first conceived.&lt;/p&gt;
+&lt;p&gt;In the next article, flexible, penalized, and mixture discriminant analysis will be introduced to address each of the three shortcomings of LDA. With these generalizations, LDA can take on much more difficult and complex problems.&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
