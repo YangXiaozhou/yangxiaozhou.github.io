@@ -3,12 +3,16 @@ layout: page
 title: Publication
 permalink: /publication/
 ---
+#### Under Review
+1. **Yang, X.**, Chen, N., & Zhai C., [A control chart approach to power system line outage detection under transient dynamics](https://arxiv.org/abs/1911.01733). arXiv:1911.01733 [eess.SY], pp. 1–8, 2019.
+
+
 #### Journal
 
 
 #### Conference
 
-1. Zhang, H., Xiao, G., Xie, Y., Zhai, C., **Yang, X.**, Yang, L., ... & Pan, T. C. (2018, May). [A High-Precision Discrete Tracking Differentiator and its Application in Processing PMU Data](https://ieeexplore.ieee.org/abstract/document/8698409/). In *2018 International Conference on Control, Artificial Intelligence, Robotics & Optimization (ICCAIRO)* (pp. 1-5). IEEE.
+1. Zhang, H., Xiao, G., Xie, Y., Zhai, C., **Yang, X.**, Yang, L., ... & Pan, T. C. (2018, May). [A high-precision discrete tracking differentiator and its application in processing PMU data](https://ieeexplore.ieee.org/abstract/document/8698409/). In *2018 International Conference on Control, Artificial Intelligence, Robotics & Optimization (ICCAIRO)* (pp. 1-5). IEEE.
 
 #### Book Chapter
 
