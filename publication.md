@@ -3,9 +3,10 @@ layout: page
 title: Publication
 permalink: /publication/
 ---
-#### Under Review
-1. **Yang, X.**, Chen, N., & Zhai C., [A control chart approach to power system line outage detection under transient dynamics](https://arxiv.org/abs/1911.01733). arXiv:1911.01733 [eess.SY], pp. 1–8, 2019.
+#### Upcoming
+1. **Yang, X.**, Chen, N., & Zhai C. (2019) [A control chart approach to power system line outage detection under transient dynamics](https://arxiv.org/abs/1911.01733). arXiv:1911.01733 [eess.SY].
 
+----
 
 #### Journal
 
