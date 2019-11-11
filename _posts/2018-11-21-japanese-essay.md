@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "日本語の練習"
-date:   2019-01-28 08:00:00 +0800
+date:   2018-11-21 08:00:00 +0800
 categories: LANGUAGE
 tags: Japanese
 ---

@@ -4,7 +4,7 @@
  <title>杨晓州</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-11-08T17:56:32+08:00</updated>
+ <updated>2019-11-11T10:55:42+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -719,9 +719,9 @@ In (\ref{eq:sample}), we find the value of an interesting integral:
  
  <entry>
    <title>日本語の練習</title>
-   <link href="http://localhost:4000/language/2019/01/28/japanese-essay.html"/>
-   <updated>2019-01-28T08:00:00+08:00</updated>
-   <id>http://localhost:4000/language/2019/01/28/japanese-essay</id>
+   <link href="http://localhost:4000/language/2018/11/21/japanese-essay.html"/>
+   <updated>2018-11-21T08:00:00+08:00</updated>
+   <id>http://localhost:4000/language/2018/11/21/japanese-essay</id>
    <content type="html">&lt;p&gt;A collection of Japanese practice writings. All comments and corrections are welcomed.&lt;/p&gt;
 
 &lt;h3 id=&quot;2019年4月5日--私の夢&quot;&gt;2019年4月5日 ｜ 私の夢&lt;/h3&gt;
