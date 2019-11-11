@@ -4,13 +4,42 @@
  <title>杨晓州</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-11-11T10:55:42+08:00</updated>
+ <updated>2019-11-11T16:55:08+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>深度工作：一个研究者（我自己）应该做的事</title>
+   <link href="http://localhost:4000/learning/2019/11/11/academic-deep-work.html"/>
+   <updated>2019-11-11T08:00:00+08:00</updated>
+   <id>http://localhost:4000/learning/2019/11/11/academic-deep-work</id>
+   <content type="html">&lt;p&gt;这篇文章里我想总结一下Newport关于深度工作的书，自己读后的感想以及学到的知识。后半段将结合马华灵先生建议的学术江湖的七种武器，分析并提炼出对于我这般刚上路的研究者，应该花足够时间和精力去做的深度工作。&lt;/p&gt;
+
+&lt;h2 id=&quot;深度工作&quot;&gt;深度工作&lt;/h2&gt;
+&lt;p&gt;Cal Newport的《深度工作》&lt;a href=&quot;https://www.calnewport.com/books/deep-work/&quot;&gt;(Deep Work)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;学术武器&quot;&gt;学术武器&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.douban.com/note/671893735/&quot;&gt;马华灵：我的思想历程（附：学术江湖的七种武器）&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Beyond LDA: Flexible, penalized, and mixture discriminant analysis</title>
+   <link href="http://localhost:4000/statistics/2019/10/03/beyond-lda.html"/>
+   <updated>2019-10-03T08:00:00+08:00</updated>
+   <id>http://localhost:4000/statistics/2019/10/03/beyond-lda</id>
+   <content type="html">&lt;p&gt;This is the second article that talks about the classification and dimension reduction tool LDA.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;flexible-discriminant-analysis-fda&quot;&gt;Flexible discriminant analysis (FDA)&lt;/h3&gt;
+&lt;h3 id=&quot;penalized-discriminant-analysis-pda&quot;&gt;Penalized discriminant analysis (PDA)&lt;/h3&gt;
+&lt;h3 id=&quot;mixture-discriminant-analysis-mda&quot;&gt;Mixture discriminant analysis (MDA)&lt;/h3&gt;
+</content>
+ </entry>
  
  <entry>
    <title>LDA: Linear discriminant analysis in vanilla form</title>
@@ -719,9 +748,9 @@ In (\ref{eq:sample}), we find the value of an interesting integral:
  
  <entry>
    <title>日本語の練習</title>
-   <link href="http://localhost:4000/language/2018/11/21/japanese-essay.html"/>
+   <link href="http://localhost:4000/learning/2018/11/21/japanese-essay.html"/>
    <updated>2018-11-21T08:00:00+08:00</updated>
-   <id>http://localhost:4000/language/2018/11/21/japanese-essay</id>
+   <id>http://localhost:4000/learning/2018/11/21/japanese-essay</id>
    <content type="html">&lt;p&gt;A collection of Japanese practice writings. All comments and corrections are welcomed.&lt;/p&gt;
 
 &lt;h3 id=&quot;2019年4月5日--私の夢&quot;&gt;2019年4月5日 ｜ 私の夢&lt;/h3&gt;
