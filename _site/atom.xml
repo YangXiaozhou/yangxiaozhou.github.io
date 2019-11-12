@@ -4,7 +4,7 @@
  <title>杨晓州</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-11-13T00:01:32+08:00</updated>
+ <updated>2019-11-13T00:05:25+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>如何读书：读书体验比书本身重要多了</title>
-   <link href="http://localhost:4000/reading/2019/11/12/how-to-read.html"/>
-   <updated>2019-11-12T08:00:00+08:00</updated>
-   <id>http://localhost:4000/reading/2019/11/12/how-to-read</id>
+   <link href="http://localhost:4000/reading/2019/11/13/how-to-read.html"/>
+   <updated>2019-11-13T00:00:00+08:00</updated>
+   <id>http://localhost:4000/reading/2019/11/13/how-to-read</id>
    <content type="html">&lt;p&gt;我有选书购书的习惯，也有逛书店花五分钟决定带回哪本书的习惯；我有读书的习惯，也有读完之后忘掉书里有什么精彩内容的习惯；我有边读边在留白评论的习惯，也有不再翻看评论、对当时的观点反刍加工的习惯。所以家里未拆封的书越来越多，断断续续在读的书具体说不出来哪里吸引我，读过的书也好像被快速消费过没能在我的生活中再次露脸。总而言之，我并不了解应该如何读书。幸运的是，奥野宣之在他的《如何有效阅读一本书》里告诉了我。&lt;/p&gt;
 
 &lt;ul&gt;
@@ -103,7 +103,12 @@
 不难看出，笔记里的结构几乎原封不动地变成了我这篇文章的结构，再加上我在书里相关标记写下的评论，这篇文章的主要内容在我做完读书笔记的同时也就完成了。而这也是作者推崇的，以自己的读书笔记为基础，进一步写出原创文章，做属于自己的思想的输出。&lt;/p&gt;
 
 &lt;h3 id=&quot;通过重读笔记提高自我&quot;&gt;通过重读笔记提高自我&lt;/h3&gt;
-&lt;p&gt;读书体验的最后一步，也是我从没做过的一步：重读笔记。就跟很多人去重读自己的日记一样，时常重读读书笔记能让自己读过的书好像一直存在自己生活中，不断酝酿，不断跟自己的经历、知识发生新的碰撞。关于如何重读，作者推荐：&lt;/p&gt;
+&lt;p&gt;读书体验的最后一步，也是我从没做过的一步：重读笔记。就像有人会偶尔重读日记一样，时常重读读书笔记能让自己读过的书好像一直存在自己生活中，不断酝酿，不断跟自己的经历、知识发生新的碰撞：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;如果把一本书比作一个“场所”，那么读书笔记就是在这个场所拍摄的照片。在不同时间去同一个场所拍照，拍出来的照片都会有所不同，而过一段时间再去看这些照片，对那个场所的印象也会发生变化。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;关于如何重读，作者推荐：&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;简单回顾：读笔记&lt;/li&gt;
   &lt;li&gt;细致回顾：读笔记 + 原书标记&lt;/li&gt;
@@ -111,35 +116,6 @@
 &lt;/ul&gt;
 
 &lt;p&gt;这么看，我确实一个回顾都没做过😂。一开始读这本书是因为买了新的笔记本，我老是买新笔记本，想着要写点什么文字，最后都沦为平时工作用的草稿纸（也是很重要啦）。看了这本书的评论觉得可能会帮我结束这个循环，目前看来很有希望。读之前，如何写读书笔记是我最感兴趣的部分，不过读完发现，以随想笔记到笔记回顾的一整个读书体验来理解读书这事儿，才是奥野宣之这本书给我最大的收获吧。&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>深度工作：一个研究者（我自己）应该做的事</title>
-   <link href="http://localhost:4000/reading/2019/11/11/academic-deep-work.html"/>
-   <updated>2019-11-11T08:00:00+08:00</updated>
-   <id>http://localhost:4000/reading/2019/11/11/academic-deep-work</id>
-   <content type="html">&lt;p&gt;什么是深度工作？为什么即时讯息不会提高而是降低我的工作效率？为什么忙绿工作了十个小时却并没完成什么重要的事情？为什么我要选择鼓励深度工作的公司？对于这些问题，Newport在他的深度工作里做出了回答。我想利用这篇文章来总结一下此书，读后的感想以及能为我所用的知识。后半段将结合马华灵先生建议的学术江湖的七种武器，提炼出对于我这般刚上路的研究者，应该花足够精力和时间去做的事儿，换言之：一个研究者应该做的深度工作。&lt;/p&gt;
-
-&lt;h2 id=&quot;深度工作&quot;&gt;深度工作&lt;/h2&gt;
-&lt;p&gt;Cal Newport的《深度工作》&lt;a href=&quot;https://www.calnewport.com/books/deep-work/&quot;&gt;(Deep Work)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;学术武器&quot;&gt;学术武器&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.douban.com/note/671893735/&quot;&gt;马华灵：我的思想历程（附：学术江湖的七种武器）&lt;/a&gt;&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Beyond LDA: Flexible, penalized, and mixture discriminant analysis</title>
-   <link href="http://localhost:4000/statistics/2019/10/03/beyond-lda.html"/>
-   <updated>2019-10-03T08:00:00+08:00</updated>
-   <id>http://localhost:4000/statistics/2019/10/03/beyond-lda</id>
-   <content type="html">&lt;p&gt;This is the second article that talks about the classification and dimension reduction tool LDA.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;flexible-discriminant-analysis-fda&quot;&gt;Flexible discriminant analysis (FDA)&lt;/h3&gt;
-&lt;h3 id=&quot;penalized-discriminant-analysis-pda&quot;&gt;Penalized discriminant analysis (PDA)&lt;/h3&gt;
-&lt;h3 id=&quot;mixture-discriminant-analysis-mda&quot;&gt;Mixture discriminant analysis (MDA)&lt;/h3&gt;
 </content>
  </entry>
  
@@ -900,45 +876,6 @@ A collection of Japanese practice writings. All comments and corrections are wel
 &lt;h3 id=&quot;2018年11月21日順天堂大学のみなさんとの交流から学んだこと&quot;&gt;2018年11月21日　｜　順天堂大学のみなさんとの交流から学んだこと&lt;/h3&gt;
 
 &lt;p&gt;　年を取る人が多くて、若い人があまり多くないので、介護離職はたしかに日本にとって大きい社会的問題です。そして、この問題の答えは、早く考えなければなりません。日本では介護サービスにかかる費用がとても高いので、普通の家族は、あまり払う事ができないですから、主に家族が介護をしています。さらに、介護者の人数は今よりもっとたくさん必要になります。もしそうでなければ、コストは絶対より高くなると思います。順天堂大学の学生が発表した事について、第一と第二とあんの会社員が介護休暇や介護休業を取ったり、フレックスタイム制が有ったりする会社は大切だと言いました。それは私もそう思いますが、日本の会社は残業が多くて、競争がとても厳しいですから、難しいと思います。三つ目のあんは、いいと思います。外国人の労働者は、もうシンガポールや香港では長い間います。確かに、おじいさんやおばあさんは、外国人と一緒に暮らして、世話をしてもらう事が嫌いかもしれません。でも、私は半年ぐらい京都で住んでいましたから、外国人は日本人と一緒に暮らすことができると思います。外国人のヘルパーさんは日本語や日本の文化を勉強してから、働くことが解決策の一つだと思います。&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>东南亚背包：一路向北！新加坡-马来西亚-泰国-老挝-云南-成都</title>
-   <link href="http://localhost:4000/travel/2014/07/02/backpacking-in-sea-2014.html"/>
-   <updated>2014-07-02T08:00:00+08:00</updated>
-   <id>http://localhost:4000/travel/2014/07/02/backpacking-in-sea-2014</id>
-   <content type="html">&lt;p&gt;先交代一下背景，同行一共四个男生，大学同学，在 新加坡 念书。此次的路线实际上很多人已经走过（不过好像国内的朋友从北往南走的比较多）。&lt;/p&gt;
-
-&lt;p&gt;一张图顶千个字👇&lt;/p&gt;
-
-&lt;p&gt;具体行程：
-吉隆坡 （3天）—-&amp;gt; 槟城 （2天）—-&amp;gt; 涛岛 (Koh Tao)（6天）—-&amp;gt; 曼谷 （2天）
-—-&amp;gt; 大城 (Ayuthaya)（1天）—-&amp;gt; 清迈 （4天）—-&amp;gt; 清莱 （2天）—-&amp;gt; 美斯乐(Mae Salong) （1天）
-—-&amp;gt; 会晒 (Huay Xai)（1天）—-&amp;gt; 湄公河 （2天）—-&amp;gt; 琅勃拉邦 （3天）—-&amp;gt;乌多姆赛(Oudomxay)（1天）
-—-&amp;gt; 景洪 —-&amp;gt; 昆明 （1天）—-&amp;gt; 成都 （5天）&lt;/p&gt;
-
-&lt;p&gt;预算：一万RMB，实际没用完。&lt;/p&gt;
-
-&lt;p&gt;吃喝住行（穷游）：
-住宿基本不预定，一般是在到达下一站之前会做一些功课，去到那边客栈聚集的地方再一家一家地找。
-吃的话是尽量去吃当地人吃的东西，但也会有大餐上桌的情况， 比如 涛岛 的海鲜烧烤， 清迈 的泰北美食。
-交通方面也是尽量选择当地人会坐的交通，大巴，火车，渡船，山地自行车，步行。什么便宜什么就可以有， 比如 下面这货👇。&lt;/p&gt;
-
-&lt;p&gt;哈哈，竹筏是开个玩笑。关于如何在吃喝住行方面省钱防止被宰，我会在后面写到。&lt;/p&gt;
-
-&lt;p&gt;行前准备（两周）：&lt;/p&gt;
-
-&lt;p&gt;签证：
-马来西亚 ：驻 新加坡 办事处（High Commission of Malaysia in Singapore）指定的旅行社签发，四五十新币，一年之内多次入境。指定的旅行社名单和联系方式在 马来西亚 驻 新加坡 办事处的网站上找得到，或者也可以直接去珍珠大厦逛逛，那边很多被指定的旅行社。
-链接: http://www.kln.gov.my/web/sgp_singapore/requirement_foreigner&lt;/p&gt;
-
-&lt;p&gt;泰国 ：驻 新加坡 大使馆签发。这个签证办得不那么省心，官网和电话里都告诉我说除了正常的签证申请资料外，还要有进入和离开 泰国 的交通证明，机票，船票，车票都可以。入境的车票好定，拿到了电子发票，可是出 泰国 的交通在 新加坡 实在是没法定，要么是电话预定之后需要在当地的7-11付款，要么就是自己亲自到了 泰国 老挝 边境的时候再去买票。最后实在没办法，只能带了张入境的车票去大使馆，结果居然很顺利地过了，一天就能取，好像也是四五十新币，单次入境。&lt;/p&gt;
-
-&lt;p&gt;老挝 ：入境关口签，后面会讲到。&lt;/p&gt;
-
-&lt;p&gt;装备：
-背包（65L）＋冲锋包，短裤短袖，书笔，电脑，相机（尼康D90），手机，手电，防蚊剂＊，拖鞋＊，等等。&lt;/p&gt;
 </content>
  </entry>
  
