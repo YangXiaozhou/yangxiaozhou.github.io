@@ -13,9 +13,9 @@ highlighter:      rouge
 # permalink:        pretty
 
 # Setup
-title:            杨晓州
+title:            "Xiaozhou's Notes"
 tagline:          ''
-description:      'I write about my experiences here.'
+description:      ''
 url:              https://yangxiaozhou.github.io
 baseurl:          ''
 
