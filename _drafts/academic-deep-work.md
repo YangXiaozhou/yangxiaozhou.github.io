@@ -12,6 +12,45 @@ tags: work habit academic-training
 ---
 Cal Newport的《深度工作》[(Deep Work)](https://www.calnewport.com/books/deep-work/)
 
+#### Ritualize the deep work
+
+1. Where you'll work and for how long?
+    - 制定好深度工作的地点与时间，尽最大可能保持这个地点和时间。如果中间有会议或者seminar之类的，提前调整好时间，算作是浅型工作，总的来说要保持弹性。
+        - Place of work: CREATE office; Duration: 9am - 5pm:
+            - Morning deep work: 9am - 11am
+            - Lunch break: 11am - 1230pm
+            - Afternoon shallow work: 1230pm - 0130pm
+            - Nap: 0130pm - 2pm
+            - Afternoon deep work: 2pm - 5pm
+        - Optional
+            - Dinner break: 5pm - 6pm
+            - Night deep work: 6pm - 7pm
+            - Night shallow work/shutdown: 7pm - 8pm
+
+2. How you'll work once you start to work?
+    - 制定好深度工作时的规矩，必须遵循这个规矩。这个规矩应该可以尽可能实际，也能保证深度工作的效果。
+    - 深度工作时：
+       - 坚决不使用手机；
+       - 电脑上不查email，不浏览跟工作无关的网页，不看跟工作无关的文件。
+3. How you'll support your work?
+    - 尽可能从环境、吃喝等等方面帮助完成上面的ritual。
+    - 准备：
+       - 早晨深度工作开始之前喝一杯咖啡，并将水壶接满水；
+       - 9点开启潮汐专注模式，并将手机放进抽屉；
+       - 下午2点开始潮汐专注模式，并将手机放进抽屉。
+
+#### Embrace boredom
+
+- This is to prevent our brains from being addicted to distractions. Resist the temptation to use handphone or surf the internet at the slightest hint of boredom.
+- Memory training helps one's ability to concentrate. 
+
+#### Quit social media
+- Put conscience effort in scheduling off-work hour activities. Our brain relaxes when we swtich focus, not by induldging in semi-conscious web surfing.
+    - 晚上的时候不固定具体时间和时长，但是尽量做到三件事：
+        + 背N1单词
+        + 读正在读的书
+        + 11点睡床上
+
 
 学术武器
 ---
