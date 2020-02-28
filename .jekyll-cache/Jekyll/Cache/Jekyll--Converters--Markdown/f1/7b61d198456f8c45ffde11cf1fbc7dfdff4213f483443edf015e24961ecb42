@@ -1,0 +1,159 @@
+I"d<p>A (work-in-progress) roadmap for statistical learning concepts and tools.</p>
+
+<p><strong>Regression</strong></p>
+<ol>
+  <li>Regularised Linear Regression
+    <ul>
+      <li>Ridge regression</li>
+      <li>Lasso regression</li>
+      <li>Logistic (ridge/lasso) regression</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Next: however, linear relationship might be too restrictive in many cases, we wish to allow nonlinear relationship between response and predictors.</p>
+
+<ol>
+  <li>Basis Expansion Method
+    <ul>
+      <li>Approximate mean function in a piecewise way
+        <ul>
+          <li>kth order spline for kth order piece, i.e. cubic spline means each segment is approximated by a cubic function formed by basis functions</li>
+          <li>Positive part remain operator (x - r)+ to ensure continuity at knots</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Additive Model (semi-parametric method, building on top of basis expansion method)
+    <ul>
+      <li>More flexible than linear but retains the interpretability
+        <ul>
+          <li>Partially linear additive model: summation of linear variables and functions of variable
+            <ul>
+              <li>Nonlinear variables can be assumed to be represented by spline basis</li>
+              <li>What if a variable influences the relationship between Y and X?
+                <ul>
+                  <li>Varying coefficient regression model: variable coefficients are functions of a variable(Z)</li>
+                  <li>Such function can be assumed to have good estimation by spline method</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Generalised: extend the method beyond linear link function, e.g. logistic</li>
+      <li>If we approximate each additive variable by piecewise linear model: multivariate adaptive regression spline (MARS)</li>
+    </ul>
+  </li>
+  <li>Local Averaging Method
+    <ul>
+      <li>To estimate the regression surface, we can use local averaging method by defining two things
+        <ol>
+          <li>What is “local”? i.e. how do we partition the space/find out the regression surface?</li>
+          <li>How to compute “average”? i.e. simple average, weighted average?</li>
+        </ol>
+      </li>
+      <li>Point 1 above
+        <ul>
+          <li>Binary recursive method: Regression and classification tree (CART)</li>
+          <li>Neighbourhood method: identifies a neighbour through some metric (kNN)</li>
+        </ul>
+      </li>
+      <li>Point 2 above
+        <ul>
+          <li>Simple average: CART, kNN</li>
+          <li>Weighted average: weighted kNN, see point 7 below</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>But this kind of method produces non-smooth m(x) estimation since the weight used is indicator function.</p>
+
+<ol>
+  <li>Kernel Smoothing
+    <ul>
+      <li>Replace the indicator function by a kernel function (symmetric pdf)</li>
+      <li>Nadaraya-Watson (NW) estimator: least square estimator weighted by kernel function</li>
+      <li>The value of h defines the size of the neighbourhood</li>
+      <li>Hence h determines the trade-off between model complexity and stability</li>
+      <li>But y need not be locally constant (regression tree, kNN, KS), we can assume y is locally linear or polynomial
+        <ul>
+          <li>LLKS</li>
+          <li>LPKS</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Next: But the MSE of KS (nonparametric) methods increases with p (CoD). We can do dimension reduction, besides assuming a structure for m(x).</li>
+  <li>Dimension-reduction based method
+    <ol>
+      <li>Ridge function = 1: Single-index model: one projection direction, in terms of unknown link function
+        <ul>
+          <li>More flexible than linear regression, but also more interpretable than PPR</li>
+        </ul>
+      </li>
+      <li>Ridge function &gt; 1: Projection pursuit regression: one projection direction for each ridge function
+        <ul>
+          <li>Approximate target by non-linear function of the linear combination of input</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>Machine Learning
+    <ul>
+      <li>Without assuming the model of the data, learning a function that maps features (X) to predictions (Y), assume a space of the function (linear space, non-linear space), assume a convex loss/risk function (square error function).</li>
+      <li>Representer theorem provides the theoretical foundation for functions from RKHS to approximate the relationship by assuming a certain kernel, which is defined by the kind of kernel.</li>
+      <li>Support Vector Machine: learning the location of the support vectors and the value of alpha for the kernel of support vectors, i.e. linear kernel, gaussian kernel, rbf kernel.</li>
+      <li>How is it different (performance, computation and etc.) for low and high dimensional case when we use non-linear kernel SVM?</li>
+      <li>Classification
+        <ul>
+          <li>Fisher’s linear discriminant: linear combination of dimensions of X -&gt; find a linear hyperplane that maximally separates the linear combination and minimises the variance.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Classification</strong>
+    1. Linear methods
+        - Linear regression
+        - Linear discriminant analysis
+    2. Non-linear methods
+        1. SVM
+        2. Discriminant analysis
+            1. QDA ( assume unequal variance)
+            2. Flexible discriminant analysis
+            3. Mixture discriminant analysis</p>
+
+<p>Bayesian Inference</p>
+<ol>
+  <li>Inference for dynamic systems/state-space models(SSMs)
+    <ol>
+      <li>Finite SSM: Baum-Petrie filter is the optimal filter with O(K^2) complexity.</li>
+      <li>Linear-Gaussian SSM: Kalman filter is the optimal filter, propagate mean and variance for inference.</li>
+      <li>Non-linear dynamics and/or non-Gaussian noise:
+        <ol>
+          <li>Extended Kalman filter</li>
+          <li>Unscented Kalman filter</li>
+          <li>Sequential Monte Carlo (Particle filters) methods can be used since the distribution information is preserved beyond mean and covariance:
+            <ol>
+              <li>Importance sampling to tackle difficult-to-sample posterior distribution problem</li>
+              <li>Recursive formulation to tackle online inference complexity problem</li>
+              <li>Resampling to ensure long-term stability of the particle method (mitigates sample impoverishment)</li>
+            </ol>
+          </li>
+          <li>Particle filtering
+            <ol>
+              <li></li>
+            </ol>
+          </li>
+          <li>Particle smoothing</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+:ET
