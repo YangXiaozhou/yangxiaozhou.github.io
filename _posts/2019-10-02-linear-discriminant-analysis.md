@@ -12,7 +12,7 @@ Two prominent examples of using LDA (and it's variants) include:
 - *Bankruptcy prediction*: Edward Altman's [1968 model](https://en.wikipedia.org/wiki/Altman_Z-score) predicts the probability of company bankruptcy using trained LDA coefficients. The accuracy is said to be between 80% and 90%, evaluated over 31 years of data.
 - *Facial recognition*: While features learned from Principal Component Analysis (PCA) are called Eigenfaces, those learned from LDA are called [Fisherfaces](http://www.scholarpedia.org/article/Fisherfaces), named after the statistician, Sir Ronald Fisher. We explain this connection later.
 
-This article starts by introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems.
+This article starts by introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems. By the way, you can find a set of <a href="/assets/2019-10-02/Discriminant_Analysis.pdf" target="_blank">corresponding slides</a> where I present roughly the same materials written in this article.
 
 ### Classification by discriminant analysis
 Consider a generic classification problem: A random variable $X$ comes from one of $K$ classes, $G = 1, \dots, K$, with density $f_k(\mathbf{x})$ on $\mathbb{R}^p$. A discriminant rule divides the space into $K$ disjoint regions $\mathbb{R}_1, \dots, \mathbb{R}_K$. Classification by discriminant analysis simply means that we allocate $\mathbf{x }$ to $\Pi\_{j}$ if $\mathbf{x} \in \mathbb{R}_j$. We can follow two allocation rules:

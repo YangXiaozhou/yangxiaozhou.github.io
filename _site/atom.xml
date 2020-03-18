@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-02-18T10:47:36+08:00</updated>
+ <updated>2020-03-18T10:26:41+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -578,7 +578,7 @@
   &lt;li&gt;&lt;em&gt;Facial recognition&lt;/em&gt;: While features learned from Principal Component Analysis (PCA) are called Eigenfaces, those learned from LDA are called &lt;a href=&quot;http://www.scholarpedia.org/article/Fisherfaces&quot;&gt;Fisherfaces&lt;/a&gt;, named after the statistician, Sir Ronald Fisher. We explain this connection later.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;This article starts by introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems.&lt;/p&gt;
+&lt;p&gt;This article starts by introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems. By the way, you can find a set of &lt;a href=&quot;/assets/2019-10-02/Discriminant_Analysis.pdf&quot; target=&quot;_blank&quot;&gt;corresponding slides&lt;/a&gt; where I present roughly the same materials written in this article.&lt;/p&gt;
 
 &lt;h3 id=&quot;classification-by-discriminant-analysis&quot;&gt;Classification by discriminant analysis&lt;/h3&gt;
 &lt;p&gt;Consider a generic classification problem: A random variable $X$ comes from one of $K$ classes, $G = 1, \dots, K$, with density $f_k(\mathbf{x})$ on $\mathbb{R}^p$. A discriminant rule divides the space into $K$ disjoint regions $\mathbb{R}_1, \dots, \mathbb{R}_K$. Classification by discriminant analysis simply means that we allocate $\mathbf{x }$ to $\Pi_{j}$ if $\mathbf{x} \in \mathbb{R}_j$. We can follow two allocation rules:&lt;/p&gt;

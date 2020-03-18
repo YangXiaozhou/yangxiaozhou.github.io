@@ -198,6 +198,10 @@
         
           
         
+      
+        
+          
+        
        -->
 
       
@@ -863,7 +867,7 @@
   <li><em>Facial recognition</em>: While features learned from Principal Component Analysis (PCA) are called Eigenfaces, those learned from LDA are called <a href="http://www.scholarpedia.org/article/Fisherfaces">Fisherfaces</a>, named after the statistician, Sir Ronald Fisher. We explain this connection later.</li>
 </ul>
 
-<p>This article starts by introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems.</p>
+<p>This article starts by introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems. By the way, you can find a set of <a href="/assets/2019-10-02/Discriminant_Analysis.pdf" target="_blank">corresponding slides</a> where I present roughly the same materials written in this article.</p>
 
 <h3 id="classification-by-discriminant-analysis">Classification by discriminant analysis</h3>
 <p>Consider a generic classification problem: A random variable $X$ comes from one of $K$ classes, $G = 1, \dots, K$, with density $f_k(\mathbf{x})$ on $\mathbb{R}^p$. A discriminant rule divides the space into $K$ disjoint regions $\mathbb{R}_1, \dots, \mathbb{R}_K$. Classification by discriminant analysis simply means that we allocate $\mathbf{x }$ to $\Pi_{j}$ if $\mathbf{x} \in \mathbb{R}_j$. We can follow two allocation rules:</p>
