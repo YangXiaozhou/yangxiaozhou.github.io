@@ -4,13 +4,30 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-03-18T10:26:41+08:00</updated>
+ <updated>2020-03-24T15:42:09+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Dashboard: Tracking the Covid-19 Disease</title>
+   <link href="http://localhost:4000/2020/03/24/COVID-19.html"/>
+   <updated>2020-03-24T08:00:00+08:00</updated>
+   <id>http://localhost:4000/2020/03/24/COVID-19</id>
+   <content type="html">&lt;p&gt;最后一次更新：&lt;/p&gt;
+
+&lt;iframe width=&quot;586&quot; height=&quot;443&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=15610113&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;586&quot; height=&quot;443&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=1124767386&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;696.3789017085838&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=709712852&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;696.3789017085838&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=366153234&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Roadmap of Statistical Learning</title>
@@ -225,83 +242,6 @@
   &lt;li&gt;田中さんの学位は修士（しゅうし）です。&lt;/li&gt;
   &lt;li&gt;中学受験のため、子どもを塾（じゅく）に通わせることにした。&lt;/li&gt;
 &lt;/ol&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>菜谱</title>
-   <link href="http://localhost:4000/learning/2020/01/01/recipe.html"/>
-   <updated>2020-01-01T08:00:00+08:00</updated>
-   <id>http://localhost:4000/learning/2020/01/01/recipe</id>
-   <content type="html">&lt;p&gt;做过的好吃的东西，为了不忘记怎么做，把菜谱都收集起来放在这儿。只要没有单独说的，一律按适量原则。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;#宫保鸡丁&quot;&gt;宫保鸡丁&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#油泼猪手&quot;&gt;油泼猪手&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#腊肉糯米圆子&quot;&gt;腊肉糯米圆子&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;宫保鸡丁&quot;&gt;宫保鸡丁&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/recipes/kong_pao_chicken.jpg&quot; alt=&quot;宫保鸡丁&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;准备材料：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;肉：鸡腿肉去骨，切丁。&lt;/li&gt;
-  &lt;li&gt;上浆：上一次葱姜水，抓匀，上蛋清，抓匀，再上一次姜葱水，抓匀。放入生抽、老抽、花雕酒，抓匀，再放入胡椒粉、盐、淀粉，抓匀。最后用&lt;strong&gt;少量油封住&lt;/strong&gt;。&lt;/li&gt;
-  &lt;li&gt;小料：大葱花，蒜片，姜片。&lt;/li&gt;
-  &lt;li&gt;料汁儿：少量盐，多点糖，胡椒粉，料酒，酱油，老抽，适量水淀粉，最后加上点&lt;strong&gt;葱姜蒜片尝味道&lt;/strong&gt;。&lt;/li&gt;
-  &lt;li&gt;花生：热水泡了去皮。&lt;/li&gt;
-  &lt;li&gt;干辣椒：切段。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;开始做：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;小火炸花生，慢慢炸到香脆。&lt;/li&gt;
-  &lt;li&gt;另起锅，热锅冷油，小火滑鸡丁，滑好倒出。&lt;/li&gt;
-  &lt;li&gt;小火煸炒花椒，捞出花椒，煸干辣椒。&lt;/li&gt;
-  &lt;li&gt;煸好的辣椒花椒油中加入鸡丁，开大火，翻炒几下下葱姜蒜，炒出香味，下料汁儿，看颜色适量放老抽上色。&lt;/li&gt;
-  &lt;li&gt;出锅前倒入少量花椒油和花生。&lt;/li&gt;
-  &lt;li&gt;上菜！&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;注意：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;上浆一定要耐心，每放一次调料就要抓匀。&lt;/li&gt;
-  &lt;li&gt;调好的料汁儿需要尝一尝，根据味道再做调整，缺啥补啥。&lt;/li&gt;
-  &lt;li&gt;花生需要小火慢炸，炸到香脆，微黄。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;油泼猪手&quot;&gt;油泼猪手&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/recipes/splash_oil_pig_trotters.jpg&quot; alt=&quot;油泼猪手&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;准备材料：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;洗净小猪手。&lt;/li&gt;
-  &lt;li&gt;小葱切段，姜切片，蒜切片。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;开始做：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;焯水：小猪手冷水下锅焯水，&lt;strong&gt;水中放醋&lt;/strong&gt;。&lt;/li&gt;
-  &lt;li&gt;备汤：高压锅内放水，盐，花雕酒，葱叶，姜片。&lt;/li&gt;
-  &lt;li&gt;炖肉：焯好水的猪脚拿出用热水清洗干净，放入高压锅，炖四十分钟左右。&lt;/li&gt;
-  &lt;li&gt;小火炸花生，把花生炸至香脆。&lt;/li&gt;
-  &lt;li&gt;猪手炖好拿出来泡在冰水里降温，用手尽量掰成小块儿状，方便入味。&lt;/li&gt;
-  &lt;li&gt;沥干水分的猪手中放入花生米，小葱，蒜片，香油，盐，醋，搅拌均匀。&lt;/li&gt;
-  &lt;li&gt;另起锅，放入油和花椒，&lt;strong&gt;小火煸出花椒油&lt;/strong&gt;。&lt;/li&gt;
-  &lt;li&gt;拌好的猪手中放入辣椒面（量依照个人口味），泼上热的花椒油（油泼猪手）。&lt;/li&gt;
-  &lt;li&gt;上菜！&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;注意：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;高压锅炖久一点能使猪手更软糯，根据喜好的口感可以自己选择时长。&lt;/li&gt;
-  &lt;li&gt;提前备好足够的冰块，猪手出锅后让它尽量冷却，不然手掰起来非常烫。&lt;/li&gt;
-  &lt;li&gt;辣椒面根据自己喜好放入，不能吃辣的注意别放太多。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;腊肉糯米圆子&quot;&gt;腊肉糯米圆子&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/recipes/sticky_rice_ball.jpg&quot; alt=&quot;腊肉糯米圆子&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -1267,6 +1207,83 @@ In (\ref{eq:sample}), we find the value of an interesting integral:
   &lt;li&gt;MathJax &lt;a href=&quot;https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&quot;&gt;basics&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+</content>
+ </entry>
+ 
+ <entry>
+   <title>菜谱</title>
+   <link href="http://localhost:4000/learning/2019/01/01/recipe.html"/>
+   <updated>2019-01-01T08:00:00+08:00</updated>
+   <id>http://localhost:4000/learning/2019/01/01/recipe</id>
+   <content type="html">&lt;p&gt;做过的好吃的东西，为了不忘记怎么做，把菜谱都收集起来放在这儿。只要没有单独说的，一律按适量原则。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;#宫保鸡丁&quot;&gt;宫保鸡丁&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#油泼猪手&quot;&gt;油泼猪手&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#腊肉糯米圆子&quot;&gt;腊肉糯米圆子&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;宫保鸡丁&quot;&gt;宫保鸡丁&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/recipes/kong_pao_chicken.jpg&quot; alt=&quot;宫保鸡丁&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;准备材料：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;肉：鸡腿肉去骨，切丁。&lt;/li&gt;
+  &lt;li&gt;上浆：上一次葱姜水，抓匀，上蛋清，抓匀，再上一次姜葱水，抓匀。放入生抽、老抽、花雕酒，抓匀，再放入胡椒粉、盐、淀粉，抓匀。最后用&lt;strong&gt;少量油封住&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;小料：大葱花，蒜片，姜片。&lt;/li&gt;
+  &lt;li&gt;料汁儿：少量盐，多点糖，胡椒粉，料酒，酱油，老抽，适量水淀粉，最后加上点&lt;strong&gt;葱姜蒜片尝味道&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;花生：热水泡了去皮。&lt;/li&gt;
+  &lt;li&gt;干辣椒：切段。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;开始做：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;小火炸花生，慢慢炸到香脆。&lt;/li&gt;
+  &lt;li&gt;另起锅，热锅冷油，小火滑鸡丁，滑好倒出。&lt;/li&gt;
+  &lt;li&gt;小火煸炒花椒，捞出花椒，煸干辣椒。&lt;/li&gt;
+  &lt;li&gt;煸好的辣椒花椒油中加入鸡丁，开大火，翻炒几下下葱姜蒜，炒出香味，下料汁儿，看颜色适量放老抽上色。&lt;/li&gt;
+  &lt;li&gt;出锅前倒入少量花椒油和花生。&lt;/li&gt;
+  &lt;li&gt;上菜！&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;上浆一定要耐心，每放一次调料就要抓匀。&lt;/li&gt;
+  &lt;li&gt;调好的料汁儿需要尝一尝，根据味道再做调整，缺啥补啥。&lt;/li&gt;
+  &lt;li&gt;花生需要小火慢炸，炸到香脆，微黄。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;油泼猪手&quot;&gt;油泼猪手&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/recipes/splash_oil_pig_trotters.jpg&quot; alt=&quot;油泼猪手&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;准备材料：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;洗净小猪手。&lt;/li&gt;
+  &lt;li&gt;小葱切段，姜切片，蒜切片。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;开始做：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;焯水：小猪手冷水下锅焯水，&lt;strong&gt;水中放醋&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;备汤：高压锅内放水，盐，花雕酒，葱叶，姜片。&lt;/li&gt;
+  &lt;li&gt;炖肉：焯好水的猪脚拿出用热水清洗干净，放入高压锅，炖四十分钟左右。&lt;/li&gt;
+  &lt;li&gt;小火炸花生，把花生炸至香脆。&lt;/li&gt;
+  &lt;li&gt;猪手炖好拿出来泡在冰水里降温，用手尽量掰成小块儿状，方便入味。&lt;/li&gt;
+  &lt;li&gt;沥干水分的猪手中放入花生米，小葱，蒜片，香油，盐，醋，搅拌均匀。&lt;/li&gt;
+  &lt;li&gt;另起锅，放入油和花椒，&lt;strong&gt;小火煸出花椒油&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;拌好的猪手中放入辣椒面（量依照个人口味），泼上热的花椒油（油泼猪手）。&lt;/li&gt;
+  &lt;li&gt;上菜！&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;高压锅炖久一点能使猪手更软糯，根据喜好的口感可以自己选择时长。&lt;/li&gt;
+  &lt;li&gt;提前备好足够的冰块，猪手出锅后让它尽量冷却，不然手掰起来非常烫。&lt;/li&gt;
+  &lt;li&gt;辣椒面根据自己喜好放入，不能吃辣的注意别放太多。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;腊肉糯米圆子&quot;&gt;腊肉糯米圆子&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/recipes/sticky_rice_ball.jpg&quot; alt=&quot;腊肉糯米圆子&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
 </content>
  </entry>
  
