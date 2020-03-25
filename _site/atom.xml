@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-03-24T20:51:08+08:00</updated>
+ <updated>2020-03-25T11:21:56+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -17,13 +17,26 @@
    <link href="http://localhost:4000/2020/03/24/COVID-19.html"/>
    <updated>2020-03-24T08:00:00+08:00</updated>
    <id>http://localhost:4000/2020/03/24/COVID-19</id>
-   <content type="html">&lt;p&gt;Latest update time: 2020.03.24&lt;/p&gt;
+   <content type="html">&lt;p&gt;Latest update time: 2020.03.25&lt;/p&gt;
 
+&lt;h2 id=&quot;confirmed-cases&quot;&gt;Confirmed Cases&lt;/h2&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=15610113&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=1124767386&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;death-cases&quot;&gt;Death Cases&lt;/h2&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=709712852&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=366153234&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;signals-of-containmentrecovery&quot;&gt;Signals of Containment/Recovery&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;US Testing Numbers&lt;/li&gt;
+&lt;/ol&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=481777218&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;World Search Interest
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://ssl.gstatic.com/trends_nrtr/2152_RC02/embed_loader.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; trends.embed.renderExploreWidget(&quot;TIMESERIES&quot;, {&quot;comparisonItem&quot;:[{&quot;keyword&quot;:&quot;/m/0b23px&quot;,&quot;geo&quot;:&quot;&quot;,&quot;time&quot;:&quot;today 5-y&quot;},{&quot;keyword&quot;:&quot;/m/01kr41&quot;,&quot;geo&quot;:&quot;&quot;,&quot;time&quot;:&quot;today 5-y&quot;},{&quot;keyword&quot;:&quot;/m/0cycc&quot;,&quot;geo&quot;:&quot;&quot;,&quot;time&quot;:&quot;today 5-y&quot;}],&quot;category&quot;:0,&quot;property&quot;:&quot;&quot;}, {&quot;exploreQuery&quot;:&quot;date=today%205-y&amp;amp;q=%2Fm%2F0b23px,%2Fm%2F01kr41,%2Fm%2F0cycc&quot;,&quot;guestPath&quot;:&quot;https://trends.google.com:443/trends/embed/&quot;}); &lt;/script&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </content>
  </entry>
  
