@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-03-25T11:21:56+08:00</updated>
+ <updated>2020-03-25T21:40:05+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -13,255 +13,63 @@
 
  
  <entry>
-   <title>Dashboard: Tracking the Covid-19 Disease</title>
+   <title>Tracking the COVID-19 Disease Outbreak and Signals of Containment</title>
    <link href="http://localhost:4000/2020/03/24/COVID-19.html"/>
    <updated>2020-03-24T08:00:00+08:00</updated>
    <id>http://localhost:4000/2020/03/24/COVID-19</id>
    <content type="html">&lt;p&gt;Latest update time: 2020.03.25&lt;/p&gt;
 
+&lt;p&gt;Prognosis:&lt;/p&gt;
+
+&lt;h2 id=&quot;signals-of-containment&quot;&gt;Signals of Containment&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-percentage-change&quot;&gt;1. Percentage Change&lt;/h3&gt;
+&lt;p&gt;5-day moving average (MA) of the percentage change in confirmed cases reported in selected countries. To easily classify the situation, we can use the following scale&lt;sup id=&quot;fnref:percentage&quot;&gt;&lt;a href=&quot;#fn:percentage&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;r &gt; 100\%&lt;/script&gt;: &lt;strong&gt;Rapidly increasing&lt;/strong&gt;. The total number of cases is doubling everyday.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+10\% &lt; r &lt; 100\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Increasing&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+1\% &lt; r &lt; 10\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Slowly increasing&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;. There is almost no new cases reported.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe width=&quot;696&quot; height=&quot;431.99999999999994&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=1897242208&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&quot;2-us-testing-numbers&quot;&gt;2. US Testing Numbers&lt;/h3&gt;
+&lt;p&gt;As the containment takes effect, we expect to see the number of positive and negative tests stabalize, and the number of tests pending result drops.&lt;/p&gt;
+&lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=481777218&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&quot;3-google-search-interest-in-us&quot;&gt;3. Google Search Interest in US&lt;/h3&gt;
+&lt;p&gt;This figure tells us how many people in the US are searching for keywords such as “hand sanitizer” or “sympotom”. I suspect that as the community spread of the virus is being contained, we can expect to see a drop in searches for words like “sympotom” and “influenza”, similar to the trends shown in Singapore.&lt;/p&gt;
+&lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=783455223&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=196247116&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+
 &lt;h2 id=&quot;confirmed-cases&quot;&gt;Confirmed Cases&lt;/h2&gt;
-&lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=15610113&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=1124767386&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;696.0000000000001&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=967719983&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 
 &lt;h2 id=&quot;death-cases&quot;&gt;Death Cases&lt;/h2&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=709712852&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=366153234&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 
-&lt;h2 id=&quot;signals-of-containmentrecovery&quot;&gt;Signals of Containment/Recovery&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;US Testing Numbers&lt;/li&gt;
-&lt;/ol&gt;
-&lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=481777218&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;World Search Interest
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://ssl.gstatic.com/trends_nrtr/2152_RC02/embed_loader.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; trends.embed.renderExploreWidget(&quot;TIMESERIES&quot;, {&quot;comparisonItem&quot;:[{&quot;keyword&quot;:&quot;/m/0b23px&quot;,&quot;geo&quot;:&quot;&quot;,&quot;time&quot;:&quot;today 5-y&quot;},{&quot;keyword&quot;:&quot;/m/01kr41&quot;,&quot;geo&quot;:&quot;&quot;,&quot;time&quot;:&quot;today 5-y&quot;},{&quot;keyword&quot;:&quot;/m/0cycc&quot;,&quot;geo&quot;:&quot;&quot;,&quot;time&quot;:&quot;today 5-y&quot;}],&quot;category&quot;:0,&quot;property&quot;:&quot;&quot;}, {&quot;exploreQuery&quot;:&quot;date=today%205-y&amp;amp;q=%2Fm%2F0b23px,%2Fm%2F01kr41,%2Fm%2F0cycc&quot;,&quot;guestPath&quot;:&quot;https://trends.google.com:443/trends/embed/&quot;}); &lt;/script&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h2&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:percentage&quot;&gt;
+      &lt;p&gt;The percentage only indicates a relative change. The actual number of new cases reported in each country may be very different as it depends on the absolute number of cumulative cases in that country. &lt;a href=&quot;#fnref:percentage&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
 </content>
  </entry>
  
  <entry>
-   <title>Roadmap of Statistical Learning</title>
-   <link href="http://localhost:4000/statistics/2020/01/10/statistical_learning_map.html"/>
-   <updated>2020-01-10T08:00:00+08:00</updated>
-   <id>http://localhost:4000/statistics/2020/01/10/statistical_learning_map</id>
-   <content type="html">&lt;p&gt;A (work-in-progress) roadmap for statistical learning concepts and tools.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Regression&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Regularised Linear Regression
-    &lt;ul&gt;
-      &lt;li&gt;Ridge regression&lt;/li&gt;
-      &lt;li&gt;Lasso regression&lt;/li&gt;
-      &lt;li&gt;Logistic (ridge/lasso) regression&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Next: however, linear relationship might be too restrictive in many cases, we wish to allow nonlinear relationship between response and predictors.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Basis Expansion Method
-    &lt;ul&gt;
-      &lt;li&gt;Approximate mean function in a piecewise way
-        &lt;ul&gt;
-          &lt;li&gt;kth order spline for kth order piece, i.e. cubic spline means each segment is approximated by a cubic function formed by basis functions&lt;/li&gt;
-          &lt;li&gt;Positive part remain operator (x - r)+ to ensure continuity at knots&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Additive Model (semi-parametric method, building on top of basis expansion method)
-    &lt;ul&gt;
-      &lt;li&gt;More flexible than linear but retains the interpretability
-        &lt;ul&gt;
-          &lt;li&gt;Partially linear additive model: summation of linear variables and functions of variable
-            &lt;ul&gt;
-              &lt;li&gt;Nonlinear variables can be assumed to be represented by spline basis&lt;/li&gt;
-              &lt;li&gt;What if a variable influences the relationship between Y and X?
-                &lt;ul&gt;
-                  &lt;li&gt;Varying coefficient regression model: variable coefficients are functions of a variable(Z)&lt;/li&gt;
-                  &lt;li&gt;Such function can be assumed to have good estimation by spline method&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Generalised: extend the method beyond linear link function, e.g. logistic&lt;/li&gt;
-      &lt;li&gt;If we approximate each additive variable by piecewise linear model: multivariate adaptive regression spline (MARS)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Local Averaging Method
-    &lt;ul&gt;
-      &lt;li&gt;To estimate the regression surface, we can use local averaging method by defining two things
-        &lt;ol&gt;
-          &lt;li&gt;What is “local”? i.e. how do we partition the space/find out the regression surface?&lt;/li&gt;
-          &lt;li&gt;How to compute “average”? i.e. simple average, weighted average?&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Point 1 above
-        &lt;ul&gt;
-          &lt;li&gt;Binary recursive method: Regression and classification tree (CART)&lt;/li&gt;
-          &lt;li&gt;Neighbourhood method: identifies a neighbour through some metric (kNN)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Point 2 above
-        &lt;ul&gt;
-          &lt;li&gt;Simple average: CART, kNN&lt;/li&gt;
-          &lt;li&gt;Weighted average: weighted kNN, see point 7 below&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;But this kind of method produces non-smooth m(x) estimation since the weight used is indicator function.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Kernel Smoothing
-    &lt;ul&gt;
-      &lt;li&gt;Replace the indicator function by a kernel function (symmetric pdf)&lt;/li&gt;
-      &lt;li&gt;Nadaraya-Watson (NW) estimator: least square estimator weighted by kernel function&lt;/li&gt;
-      &lt;li&gt;The value of h defines the size of the neighbourhood&lt;/li&gt;
-      &lt;li&gt;Hence h determines the trade-off between model complexity and stability&lt;/li&gt;
-      &lt;li&gt;But y need not be locally constant (regression tree, kNN, KS), we can assume y is locally linear or polynomial
-        &lt;ul&gt;
-          &lt;li&gt;LLKS&lt;/li&gt;
-          &lt;li&gt;LPKS&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Next: But the MSE of KS (nonparametric) methods increases with p (CoD). We can do dimension reduction, besides assuming a structure for m(x).&lt;/li&gt;
-  &lt;li&gt;Dimension-reduction based method
-    &lt;ol&gt;
-      &lt;li&gt;Ridge function = 1: Single-index model: one projection direction, in terms of unknown link function
-        &lt;ul&gt;
-          &lt;li&gt;More flexible than linear regression, but also more interpretable than PPR&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Ridge function &amp;gt; 1: Projection pursuit regression: one projection direction for each ridge function
-        &lt;ul&gt;
-          &lt;li&gt;Approximate target by non-linear function of the linear combination of input&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Machine Learning
-    &lt;ul&gt;
-      &lt;li&gt;Without assuming the model of the data, learning a function that maps features (X) to predictions (Y), assume a space of the function (linear space, non-linear space), assume a convex loss/risk function (square error function).&lt;/li&gt;
-      &lt;li&gt;Representer theorem provides the theoretical foundation for functions from RKHS to approximate the relationship by assuming a certain kernel, which is defined by the kind of kernel.&lt;/li&gt;
-      &lt;li&gt;Support Vector Machine: learning the location of the support vectors and the value of alpha for the kernel of support vectors, i.e. linear kernel, gaussian kernel, rbf kernel.&lt;/li&gt;
-      &lt;li&gt;How is it different (performance, computation and etc.) for low and high dimensional case when we use non-linear kernel SVM?&lt;/li&gt;
-      &lt;li&gt;Classification
-        &lt;ul&gt;
-          &lt;li&gt;Fisher’s linear discriminant: linear combination of dimensions of X -&amp;gt; find a linear hyperplane that maximally separates the linear combination and minimises the variance.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Classification&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Linear methods
-    &lt;ul&gt;
-      &lt;li&gt;Linear regression&lt;/li&gt;
-      &lt;li&gt;Linear discriminant analysis&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Non-linear methods
-    &lt;ul&gt;
-      &lt;li&gt;SVM&lt;/li&gt;
-      &lt;li&gt;Discriminant analysis
-        &lt;ol&gt;
-          &lt;li&gt;QDA ( assume unequal variance)&lt;/li&gt;
-          &lt;li&gt;Flexible discriminant analysis&lt;/li&gt;
-          &lt;li&gt;Mixture discriminant analysis&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Bayesian Inference&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Inference for dynamic systems/state-space models(SSMs)
-    &lt;ul&gt;
-      &lt;li&gt;Finite SSM: Baum-Petrie filter is the optimal filter with O(K^2) complexity.&lt;/li&gt;
-      &lt;li&gt;Linear-Gaussian SSM: Kalman filter is the optimal filter, propagate mean and variance for inference.&lt;/li&gt;
-      &lt;li&gt;Non-linear dynamics and/or non-Gaussian noise:
-        &lt;ol&gt;
-          &lt;li&gt;Extended Kalman filter&lt;/li&gt;
-          &lt;li&gt;Unscented Kalman filter&lt;/li&gt;
-          &lt;li&gt;Sequential Monte Carlo (Particle filters) methods can be used since the distribution information is preserved beyond mean and covariance:
-            &lt;ol&gt;
-              &lt;li&gt;Importance sampling to tackle difficult-to-sample posterior distribution problem&lt;/li&gt;
-              &lt;li&gt;Recursive formulation to tackle online inference complexity problem&lt;/li&gt;
-              &lt;li&gt;Resampling to ensure long-term stability of the particle method (mitigates sample impoverishment)&lt;/li&gt;
-            &lt;/ol&gt;
-          &lt;/li&gt;
-          &lt;li&gt;Particle filtering
-            &lt;ol&gt;
-              &lt;li&gt;&lt;/li&gt;
-            &lt;/ol&gt;
-          &lt;/li&gt;
-          &lt;li&gt;Particle smoothing&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>Particle filters: vallina and advanced</title>
-   <link href="http://localhost:4000/statistics/2020/01/10/particle-filter.html"/>
-   <updated>2020-01-10T08:00:00+08:00</updated>
-   <id>http://localhost:4000/statistics/2020/01/10/particle-filter</id>
-   <content type="html">&lt;p&gt;The problem - Non-linear dynamic state estimation&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;state-space model for dynamic systems&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Other methods - Kalman-based fiter?&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;limitations&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The method - Bayesian estimation through Monte Carlo method&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Bayesian estimation&lt;/li&gt;
-  &lt;li&gt;Monte Carlo method&lt;/li&gt;
-&lt;/ul&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>N1-キクタン日本語</title>
-   <link href="http://localhost:4000/learning/2020/01/06/Japanese-n1-words.html"/>
-   <updated>2020-01-06T08:00:00+08:00</updated>
-   <id>http://localhost:4000/learning/2020/01/06/Japanese-n1-words</id>
-   <content type="html">&lt;h3 id=&quot;day-1&quot;&gt;Day 1&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;アルバイトで学業（がくぎょう）がおろそかにになる大学生もいる。&lt;/li&gt;
-  &lt;li&gt;来週の金曜日までに、この課題（かだい）を提出してください。&lt;/li&gt;
-  &lt;li&gt;田中さんの学位は修士（しゅうし）です。&lt;/li&gt;
-  &lt;li&gt;中学受験のため、子どもを塾（じゅく）に通わせることにした。&lt;/li&gt;
-&lt;/ol&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>如何读书：读书体验比书本身重要多了</title>
+   <title>读书笔记：读书体验是什么</title>
    <link href="http://localhost:4000/reading/2019/11/12/how-to-read.html"/>
    <updated>2019-11-12T08:00:00+08:00</updated>
    <id>http://localhost:4000/reading/2019/11/12/how-to-read</id>
-   <content type="html">&lt;p&gt;我有选书购书的习惯，也有逛书店花五分钟决定带回哪本书的习惯；我有读书的习惯，也有读完之后忘掉书里有什么精彩内容的习惯；我有边读边在留白评论的习惯，也有不再翻看评论、对当时的观点反刍加工的习惯。所以家里未拆封的书越来越多，断断续续在读的书具体说不出来哪里吸引我，读过的书也好像被快速消费过没能在我的生活中再次露脸。总而言之，我并不了解应该如何读书。幸运的是，奥野宣之在他的《如何有效阅读一本书》里告诉了我。&lt;/p&gt;
+   <content type="html">&lt;p&gt;我有选书购书的习惯，也有逛书店花五分钟决定带回哪本书的时候；我时不时读书，但往往读完之后忘掉书里有什么精彩内容；我有在留白评论的习惯，也有不再翻看当时写下的评论、观点的习惯。家里未拆封的书越来越多，断断续续在读的书具体也说不出来哪里吸引我，读过的书好像被快速消费过一样没再露脸。坦白讲，我并不了解应该如何读书吧。幸运的是，奥野宣之在他的《如何有效阅读一本书》里提供了清晰的方法。&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;书名：&lt;a href=&quot;https://book.douban.com/subject/26789567/&quot;&gt;如何有效阅读一本书&lt;/a&gt;&lt;/li&gt;
@@ -360,159 +168,6 @@
 &lt;/ul&gt;
 
 &lt;p&gt;这么看，我确实一个回顾都没做过😂。一开始读这本书是因为买了新的笔记本，我老是买新笔记本，想着要写点什么文字，最后都沦为平时工作用的草稿纸（也是很重要啦）。看了这本书的评论觉得可能会帮我结束这个循环，目前看来很有希望。读之前，如何写读书笔记是我最感兴趣的部分，不过读完发现，以随想笔记到笔记回顾的一整个读书体验来理解读书这事儿，才是奥野宣之这本书给我最大的收获吧。&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>深度工作：一个研究者（我自己）应该做的事</title>
-   <link href="http://localhost:4000/reading/2019/11/11/academic-deep-work.html"/>
-   <updated>2019-11-11T08:00:00+08:00</updated>
-   <id>http://localhost:4000/reading/2019/11/11/academic-deep-work</id>
-   <content type="html">&lt;p&gt;什么是深度工作？为什么即时讯息不会提高而是降低我的工作效率？为什么忙绿工作了十个小时却并没完成什么重要的事情？为什么我要选择鼓励深度工作的公司？对于这些问题，Newport在他的深度工作里做出了回答。我想利用这篇文章来总结一下此书，读后的感想以及能为我所用的知识。后半段将结合马华灵先生建议的学术江湖的七种武器，提炼出对于我这般刚上路的研究者，应该花足够精力和时间去做的事儿，换言之：一个研究者应该做的深度工作。&lt;/p&gt;
-
-&lt;h2 id=&quot;深度工作&quot;&gt;深度工作&lt;/h2&gt;
-&lt;p&gt;Cal Newport的《深度工作》&lt;a href=&quot;https://www.calnewport.com/books/deep-work/&quot;&gt;(Deep Work)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;ritualize-the-deep-work&quot;&gt;Ritualize the deep work&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Where you’ll work and for how long?
-    &lt;ul&gt;
-      &lt;li&gt;制定好深度工作的地点与时间，尽最大可能保持这个地点和时间。如果中间有会议或者seminar之类的，提前调整好时间，算作是浅型工作，总的来说要保持弹性。
-        &lt;ul&gt;
-          &lt;li&gt;Place of work: CREATE office; Duration: 9am - 5pm:
-            &lt;ul&gt;
-              &lt;li&gt;Morning deep work: 9am - 11am&lt;/li&gt;
-              &lt;li&gt;Lunch break: 11am - 1230pm&lt;/li&gt;
-              &lt;li&gt;Afternoon shallow work: 1230pm - 0130pm&lt;/li&gt;
-              &lt;li&gt;Nap: 0130pm - 2pm&lt;/li&gt;
-              &lt;li&gt;Afternoon deep work: 2pm - 5pm&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;Optional
-            &lt;ul&gt;
-              &lt;li&gt;Dinner break: 5pm - 6pm&lt;/li&gt;
-              &lt;li&gt;Night deep work: 6pm - 7pm&lt;/li&gt;
-              &lt;li&gt;Night shallow work/shutdown: 7pm - 8pm&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;How you’ll work once you start to work?
-    &lt;ul&gt;
-      &lt;li&gt;制定好深度工作时的规矩，必须遵循这个规矩。这个规矩应该可以尽可能实际，也能保证深度工作的效果。&lt;/li&gt;
-      &lt;li&gt;深度工作时：
-        &lt;ul&gt;
-          &lt;li&gt;坚决不使用手机；&lt;/li&gt;
-          &lt;li&gt;电脑上不查email，不浏览跟工作无关的网页，不看跟工作无关的文件。&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;How you’ll support your work?
-    &lt;ul&gt;
-      &lt;li&gt;尽可能从环境、吃喝等等方面帮助完成上面的ritual。&lt;/li&gt;
-      &lt;li&gt;准备：
-        &lt;ul&gt;
-          &lt;li&gt;早晨深度工作开始之前喝一杯咖啡，并将水壶接满水；&lt;/li&gt;
-          &lt;li&gt;9点开启潮汐专注模式，并将手机放进抽屉；&lt;/li&gt;
-          &lt;li&gt;下午2点开始潮汐专注模式，并将手机放进抽屉。&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;embrace-boredom&quot;&gt;Embrace boredom&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;This is to prevent our brains from being addicted to distractions. Resist the temptation to use handphone or surf the internet at the slightest hint of boredom.&lt;/li&gt;
-  &lt;li&gt;Memory training helps one’s ability to concentrate.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;quit-social-media&quot;&gt;Quit social media&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Put conscience effort in scheduling off-work hour activities. Our brain relaxes when we swtich focus, not by induldging in semi-conscious web surfing.
-    &lt;ul&gt;
-      &lt;li&gt;晚上的时候不固定具体时间和时长，但是尽量做到三件事：
-        &lt;ul&gt;
-          &lt;li&gt;背N1单词&lt;/li&gt;
-          &lt;li&gt;读正在读的书&lt;/li&gt;
-          &lt;li&gt;11点睡床上&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;学术武器&quot;&gt;学术武器&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.douban.com/note/671893735/&quot;&gt;马华灵：我的思想历程（附：学术江湖的七种武器）&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;马华灵根据自己的经历总结出了做学术需要修炼的七大“武器”，这七个方向包括了对学术人的追求的拷问，也有对做学术的具体操作的指导，下面列出他的七大“武器”以及我的一些总结和思考。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;学术源泉
-    &lt;ul&gt;
-      &lt;li&gt;我为什么做学术？&lt;/li&gt;
-      &lt;li&gt;什么是学术？&lt;/li&gt;
-      &lt;li&gt;学术的发展历史是怎样的？&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;学术问题
-    &lt;ul&gt;
-      &lt;li&gt;我的学术问题是什么？&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;学术概念
-    &lt;ul&gt;
-      &lt;li&gt;我对我使用的概念真的了解了吗？&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;学术阅读
-    &lt;ul&gt;
-      &lt;li&gt;梳理逻辑框架&lt;/li&gt;
-      &lt;li&gt;把握文章论述重点&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;学术笔记
-    &lt;ul&gt;
-      &lt;li&gt;记录并明白核心框架&lt;/li&gt;
-      &lt;li&gt;建立一个有层次的文章思路地图（i.e. Sections, subsections, sub-subsections）&lt;/li&gt;
-      &lt;li&gt;注明文章的出版信息和页码&lt;/li&gt;
-      &lt;li&gt;尝试对文章的每一步进行质问&lt;/li&gt;
-      &lt;li&gt;总结文章的优点和缺点，思考优点如何借鉴，缺点如何避免与解决&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;学术批评
-    &lt;ul&gt;
-      &lt;li&gt;建设性批评&lt;/li&gt;
-      &lt;li&gt;目的是能完善文章&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;学术写作
-    &lt;ul&gt;
-      &lt;li&gt;逻辑清晰&lt;/li&gt;
-      &lt;li&gt;观点明确&lt;/li&gt;
-      &lt;li&gt;化整为零，然后化零为整（i.e. paragraph to subsection, subsection to section, section to paper）&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Beyond LDA: Flexible, penalized, and mixture discriminant analysis</title>
-   <link href="http://localhost:4000/statistics/2019/10/03/beyond-lda.html"/>
-   <updated>2019-10-03T08:00:00+08:00</updated>
-   <id>http://localhost:4000/statistics/2019/10/03/beyond-lda</id>
-   <content type="html">&lt;p&gt;This is the second article that talks about the classification and dimension reduction tool LDA.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;flexible-discriminant-analysis-fda&quot;&gt;Flexible discriminant analysis (FDA)&lt;/h3&gt;
-&lt;h3 id=&quot;penalized-discriminant-analysis-pda&quot;&gt;Penalized discriminant analysis (PDA)&lt;/h3&gt;
-&lt;h3 id=&quot;mixture-discriminant-analysis-mda&quot;&gt;Mixture discriminant analysis (MDA)&lt;/h3&gt;
 </content>
  </entry>
  
@@ -1350,45 +1005,6 @@ A collection of Japanese practice writings. All comments and corrections are wel
 &lt;h3 id=&quot;2018年11月21日順天堂大学のみなさんとの交流から学んだこと&quot;&gt;2018年11月21日　｜　順天堂大学のみなさんとの交流から学んだこと&lt;/h3&gt;
 
 &lt;p&gt;　年を取る人が多くて、若い人があまり多くないので、介護離職はたしかに日本にとって大きい社会的問題です。そして、この問題の答えは、早く考えなければなりません。日本では介護サービスにかかる費用がとても高いので、普通の家族は、あまり払う事ができないですから、主に家族が介護をしています。さらに、介護者の人数は今よりもっとたくさん必要になります。もしそうでなければ、コストは絶対より高くなると思います。順天堂大学の学生が発表した事について、第一と第二とあんの会社員が介護休暇や介護休業を取ったり、フレックスタイム制が有ったりする会社は大切だと言いました。それは私もそう思いますが、日本の会社は残業が多くて、競争がとても厳しいですから、難しいと思います。三つ目のあんは、いいと思います。外国人の労働者は、もうシンガポールや香港では長い間います。確かに、おじいさんやおばあさんは、外国人と一緒に暮らして、世話をしてもらう事が嫌いかもしれません。でも、私は半年ぐらい京都で住んでいましたから、外国人は日本人と一緒に暮らすことができると思います。外国人のヘルパーさんは日本語や日本の文化を勉強してから、働くことが解決策の一つだと思います。&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>东南亚背包：一路向北！新加坡-马来西亚-泰国-老挝-云南-成都</title>
-   <link href="http://localhost:4000/travel/2014/07/02/backpacking-in-sea-2014.html"/>
-   <updated>2014-07-02T08:00:00+08:00</updated>
-   <id>http://localhost:4000/travel/2014/07/02/backpacking-in-sea-2014</id>
-   <content type="html">&lt;p&gt;先交代一下背景，同行一共四个男生，大学同学，在 新加坡 念书。此次的路线实际上很多人已经走过（不过好像国内的朋友从北往南走的比较多）。&lt;/p&gt;
-
-&lt;p&gt;一张图顶千个字👇&lt;/p&gt;
-
-&lt;p&gt;具体行程：
-吉隆坡 （3天）—-&amp;gt; 槟城 （2天）—-&amp;gt; 涛岛 (Koh Tao)（6天）—-&amp;gt; 曼谷 （2天）
-—-&amp;gt; 大城 (Ayuthaya)（1天）—-&amp;gt; 清迈 （4天）—-&amp;gt; 清莱 （2天）—-&amp;gt; 美斯乐(Mae Salong) （1天）
-—-&amp;gt; 会晒 (Huay Xai)（1天）—-&amp;gt; 湄公河 （2天）—-&amp;gt; 琅勃拉邦 （3天）—-&amp;gt;乌多姆赛(Oudomxay)（1天）
-—-&amp;gt; 景洪 —-&amp;gt; 昆明 （1天）—-&amp;gt; 成都 （5天）&lt;/p&gt;
-
-&lt;p&gt;预算：一万RMB，实际没用完。&lt;/p&gt;
-
-&lt;p&gt;吃喝住行（穷游）：
-住宿基本不预定，一般是在到达下一站之前会做一些功课，去到那边客栈聚集的地方再一家一家地找。
-吃的话是尽量去吃当地人吃的东西，但也会有大餐上桌的情况， 比如 涛岛 的海鲜烧烤， 清迈 的泰北美食。
-交通方面也是尽量选择当地人会坐的交通，大巴，火车，渡船，山地自行车，步行。什么便宜什么就可以有， 比如 下面这货👇。&lt;/p&gt;
-
-&lt;p&gt;哈哈，竹筏是开个玩笑。关于如何在吃喝住行方面省钱防止被宰，我会在后面写到。&lt;/p&gt;
-
-&lt;p&gt;行前准备（两周）：&lt;/p&gt;
-
-&lt;p&gt;签证：
-马来西亚 ：驻 新加坡 办事处（High Commission of Malaysia in Singapore）指定的旅行社签发，四五十新币，一年之内多次入境。指定的旅行社名单和联系方式在 马来西亚 驻 新加坡 办事处的网站上找得到，或者也可以直接去珍珠大厦逛逛，那边很多被指定的旅行社。
-链接: http://www.kln.gov.my/web/sgp_singapore/requirement_foreigner&lt;/p&gt;
-
-&lt;p&gt;泰国 ：驻 新加坡 大使馆签发。这个签证办得不那么省心，官网和电话里都告诉我说除了正常的签证申请资料外，还要有进入和离开 泰国 的交通证明，机票，船票，车票都可以。入境的车票好定，拿到了电子发票，可是出 泰国 的交通在 新加坡 实在是没法定，要么是电话预定之后需要在当地的7-11付款，要么就是自己亲自到了 泰国 老挝 边境的时候再去买票。最后实在没办法，只能带了张入境的车票去大使馆，结果居然很顺利地过了，一天就能取，好像也是四五十新币，单次入境。&lt;/p&gt;
-
-&lt;p&gt;老挝 ：入境关口签，后面会讲到。&lt;/p&gt;
-
-&lt;p&gt;装备：
-背包（65L）＋冲锋包，短裤短袖，书笔，电脑，相机（尼康D90），手机，手电，防蚊剂＊，拖鞋＊，等等。&lt;/p&gt;
 </content>
  </entry>
  

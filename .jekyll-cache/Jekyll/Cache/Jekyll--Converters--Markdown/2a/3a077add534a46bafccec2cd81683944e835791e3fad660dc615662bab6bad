@@ -1,0 +1,45 @@
+I"<p>Latest update time: 2020.03.25</p>
+
+<p>Prognosis:</p>
+
+<h2 id="signals-of-containment">Signals of Containment</h2>
+
+<h3 id="1-percentage-change">1. Percentage Change</h3>
+<p>5-day moving average (MA) of the percentage change in confirmed cases reported in selected countries. To easily classify the situation, we can use the following scale<sup id="fnref:percentage"><a href="#fn:percentage" class="footnote">1</a></sup>:</p>
+<ul>
+  <li><script type="math/tex">r > 100\%</script>: <strong>Rapidly increasing</strong>. The total number of cases is doubling everyday.</li>
+  <li><script type="math/tex">% <![CDATA[
+10\% < r < 100\% %]]></script>: <strong>Increasing</strong>.</li>
+  <li><script type="math/tex">% <![CDATA[
+1\% < r < 10\% %]]></script>: <strong>Slowly increasing</strong>.</li>
+  <li><script type="math/tex">% <![CDATA[
+r < 1\% %]]></script>: <strong>Under control</strong>. There is almost no new cases reported.</li>
+</ul>
+<iframe width="696" height="431.99999999999994" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=1897242208&amp;format=interactive"></iframe>
+
+<h3 id="2-us-testing-numbers">2. US Testing Numbers</h3>
+<p>As the containment takes effect, we expect to see the number of positive and negative tests stabalize, and the number of tests pending result drops.</p>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=481777218&amp;format=interactive"></iframe>
+
+<h3 id="3-google-search-interest-in-us">3. Google Search Interest in US</h3>
+<p>This figure tells us how many people in the US are searching for keywords such as “hand sanitizer” or “sympotom”. I suspect that as the community spread of the virus is being contained, we can expect to see a drop in searches for words like “sympotom” and “influenza”.</p>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=783455223&amp;format=interactive"></iframe>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=196247116&amp;format=interactive"></iframe>
+
+<h2 id="confirmed-cases">Confirmed Cases</h2>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=1124767386&amp;format=interactive"></iframe>
+<iframe width="696.0000000000001" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=967719983&amp;format=interactive"></iframe>
+
+<h2 id="death-cases">Death Cases</h2>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=709712852&amp;format=interactive"></iframe>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=366153234&amp;format=interactive"></iframe>
+
+<h2 id="footnotes">Footnotes</h2>
+<div class="footnotes">
+  <ol>
+    <li id="fn:percentage">
+      <p>The percentage only indicates the relative change. The actual number of new cases reported depends on the absolute number of confirmed cases in that country. <a href="#fnref:percentage" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET
