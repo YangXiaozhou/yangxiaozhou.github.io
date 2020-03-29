@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-03-28T23:22:26+08:00</updated>
+ <updated>2020-03-29T11:16:28+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -17,27 +17,27 @@
    <link href="http://localhost:4000/2020/03/24/COVID-19.html"/>
    <updated>2020-03-24T08:00:00+08:00</updated>
    <id>http://localhost:4000/2020/03/24/COVID-19</id>
-   <content type="html">&lt;p&gt;I update the current COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and any emerging signals of containment. Latest update: March 28, 2020&lt;/p&gt;
+   <content type="html">&lt;p&gt;I update the current COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and any emerging signals of containment. The graphs in this blog are best viewed on a Laptop browser. Latest update: March 29, 2020.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-prognosis&quot;&gt;1. Prognosis&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;United States&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;The number of confirmed infections has been increasing by 30% daily for the past few days. This is expected to continue, given the large number of testings being carried out right now (&lt;a href=&quot;#US Testing Numbers&quot;&gt;60K test results&lt;/a&gt; are pending).&lt;/li&gt;
+      &lt;li&gt;The number of confirmed cases has been increasing by about 30% daily for a while. This is expected to continue as more testings are carried out(&lt;a href=&quot;#US Testing Numbers&quot;&gt;60K test results&lt;/a&gt; are pending).&lt;/li&gt;
       &lt;li&gt;There is an upward trend in the case fatality rate, likely due to an overwhelmed healthcare system.&lt;/li&gt;
       &lt;li&gt;On the upside, though, it seems like people are actively protecting themselves now as the &lt;a href=&quot;#Google Search Interest&quot;&gt;google search&lt;/a&gt; for “mask” is at an all-time high.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Europe&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;Europe is probably reaching the end of the tunnel as the number of daily confirmed cases is increasing at a &lt;a href=&quot;#Percentage Change&quot;&gt;slower rate every day&lt;/a&gt;, with Italy, the slowest, at 10%, and Spain, the fastest, at 18%.&lt;/li&gt;
-      &lt;li&gt;The Italian healthcare system faced a grave challenge, with the case fatality rate currently at 10.6% and still increasing. Spain seems to be heading &lt;a href=&quot;#case fatality rate&quot;&gt;in the same direction&lt;/a&gt; with a 7.8% fatality rate. Germany, though, fares well in this regard and manages to record only a 0.7% fatality rate.&lt;/li&gt;
+      &lt;li&gt;The containment efforts are probably taking effect as the number of daily confirmed cases is increasing at a &lt;a href=&quot;#Percentage Change&quot;&gt;slower rate every day&lt;/a&gt;, with Italy, the slowest, at 10%, and Spain, the fastest, at 18%.&lt;/li&gt;
+      &lt;li&gt;The Italian healthcare system is still facing a grave challenge, with the case fatality rate currently at 10.8% and still increasing. Spain seems to be heading &lt;a href=&quot;#case fatality rate&quot;&gt;in the same direction&lt;/a&gt; with a 8.2% fatality rate. Germany, though, fares well in this regard and manages to record only a 0.8% fatality rate.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Asia&lt;/strong&gt;
     &lt;ul&gt;
       &lt;li&gt;Most of Asia still seems to have the outbreak under control, especially in places like China, Singapore, Hong Kong, Taiwan, and South Korea.&lt;/li&gt;
-      &lt;li&gt;There’s been a surge in the number of imported cases due to mainly home-coming citizens to places like China and Singapore. Governments have imposed stricter quarantine procedures since then.&lt;/li&gt;
+      &lt;li&gt;There’s been a surge in the number of imported cases and sporadic domestic clusters. Governments have imposed stricter quarantine procedures and social distancing measures since then.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -78,10 +78,18 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;. T
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=366153234&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=709712852&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 
-&lt;h2 id=&quot;other-tracking-websites-worth-visting&quot;&gt;Other tracking websites worth visting:&lt;/h2&gt;
+&lt;h2 id=&quot;websites-worth-visting&quot;&gt;Websites Worth Visting:&lt;/h2&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Bloomberg&lt;/strong&gt;: &lt;a href=&quot;https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/?srnd=premium-asia&quot;&gt;Mapping the Coronavirus Outbreak Across the World&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;JHU Center for Systems Science and Engineering&lt;/strong&gt;: &lt;a href=&quot;https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6&quot;&gt;Coronavirus COVID-19 Global Cases&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;US Testing Numbers&lt;/strong&gt;: &lt;a href=&quot;https://covidtracking.com/&quot;&gt;The COIVD Tracking Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Global MediXchange for Combating COVID-19&lt;/strong&gt;: &lt;a href=&quot;https://www.alibabacloud.com/universal-service/pdf_reader?spm=a3c0i.14138300.8102420620.dreadnow.646d647fDWbsii&amp;amp;cdnorigin=video-intl&amp;amp;pdf=Read%20Online-Handbook%20of%20COVID-19%20Prevention%20and%20Treatment.pdf&quot;&gt;Handbook of COVID-19 Prevention and Treatment&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;interesting-articles&quot;&gt;Interesting Articles&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.nytimes.com/2020/03/19/us/politics/trump-coronavirus-outbreak.html&quot;&gt;Before Virus Outbreak, a Cascade of Warnings Went Unheeded&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.citylab.com/life/2020/03/coronavirus-cases-france-train-hospital-tgv-covid-19-patient/608833/&quot;&gt;To Fight a Fast-Moving Pandemic, Get a Faster Hospital&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h2&gt;
