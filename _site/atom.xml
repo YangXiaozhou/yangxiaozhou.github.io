@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-03-29T11:16:28+08:00</updated>
+ <updated>2020-03-30T09:31:18+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -17,26 +17,26 @@
    <link href="http://localhost:4000/2020/03/24/COVID-19.html"/>
    <updated>2020-03-24T08:00:00+08:00</updated>
    <id>http://localhost:4000/2020/03/24/COVID-19</id>
-   <content type="html">&lt;p&gt;I update the current COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and any emerging signals of containment. The graphs in this blog are best viewed on a Laptop browser. Latest update: March 29, 2020.&lt;/p&gt;
+   <content type="html">&lt;p&gt;I update the current COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and any emerging signals of containment. The graphs in this blog are best viewed on a Laptop browser. Latest update: March 30, 2020.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-prognosis&quot;&gt;1. Prognosis&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;United States&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;The number of confirmed cases has been increasing by about 30% daily for a while. This is expected to continue as more testings are carried out(&lt;a href=&quot;#US Testing Numbers&quot;&gt;60K test results&lt;/a&gt; are pending).&lt;/li&gt;
+      &lt;li&gt;The number of confirmed cases has been increasing by about 25% daily for a while. This is expected to continue as more testings are carried out(&lt;a href=&quot;#US Testing Numbers&quot;&gt;60K test results&lt;/a&gt; are pending).&lt;/li&gt;
       &lt;li&gt;There is an upward trend in the case fatality rate, likely due to an overwhelmed healthcare system.&lt;/li&gt;
       &lt;li&gt;On the upside, though, it seems like people are actively protecting themselves now as the &lt;a href=&quot;#Google Search Interest&quot;&gt;google search&lt;/a&gt; for “mask” is at an all-time high.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Europe&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;The containment efforts are probably taking effect as the number of daily confirmed cases is increasing at a &lt;a href=&quot;#Percentage Change&quot;&gt;slower rate every day&lt;/a&gt;, with Italy, the slowest, at 10%, and Spain, the fastest, at 18%.&lt;/li&gt;
-      &lt;li&gt;The Italian healthcare system is still facing a grave challenge, with the case fatality rate currently at 10.8% and still increasing. Spain seems to be heading &lt;a href=&quot;#case fatality rate&quot;&gt;in the same direction&lt;/a&gt; with a 8.2% fatality rate. Germany, though, fares well in this regard and manages to record only a 0.8% fatality rate.&lt;/li&gt;
+      &lt;li&gt;The containment efforts are probably taking effect as the number of daily confirmed cases is increasing at a &lt;a href=&quot;#Percentage Change&quot;&gt;slower rate every day&lt;/a&gt;, with Italy, the slowest, at 7.8%, and Spain, the fastest, at 15%.&lt;/li&gt;
+      &lt;li&gt;The Italian healthcare system is still facing a grave challenge, with the case fatality rate (CFR) currently at 11% and still increasing. Spain seems to be heading &lt;a href=&quot;#case fatality rate&quot;&gt;in the same direction&lt;/a&gt; with a 8.5% CFR. Germany, on the other hand, fares well in this regard and manages to record only a 0.8% fatality rate. Note, though, there are caveats to reporting naive CFR which I explain below.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Asia&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;Most of Asia still seems to have the outbreak under control, especially in places like China, Singapore, Hong Kong, Taiwan, and South Korea.&lt;/li&gt;
+      &lt;li&gt;Most of Asia still seem to have the outbreak under control, especially in places like China, Singapore, Hong Kong, Taiwan, and South Korea.&lt;/li&gt;
       &lt;li&gt;There’s been a surge in the number of imported cases and sporadic domestic clusters. Governments have imposed stricter quarantine procedures and social distancing measures since then.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -77,6 +77,33 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;. T
 &lt;p&gt;&lt;a name=&quot;case fatality rate&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=366153234&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=709712852&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Why Italy has high CFR?
+    &lt;blockquote&gt;
+      &lt;p&gt;Italy’s death rate might also be higher because of how fatalities are recorded.  In Italy, all those who die in hospitals with Coronavirus are included in the death counts (association + attribution).&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In constrast, Germany only counts the case where the patient dies from Coronavirus (attribution) and not with the Coronavirus (association).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;How does selection bias affect CFR?
+    &lt;blockquote&gt;
+      &lt;p&gt;[In Italy], a change in strategy on Feb 25 limited testing to patients who had severe signs and symptoms also resulted in a 19% positive rate (21,157 of 109,170 tested as of Mar 14) and an apparent increase in the death rate—from 3.1% on Feb 24 to 7.2% on Mar 17—patients with milder illness were no longer tested.  In the UK, only patients deemed ill enough to require at least one night in hospital met the criteria for a Covid-19 test.&lt;/p&gt;
+
+      &lt;p&gt;CFR rates are subject to selection bias as more severe cases are tested, generally those in the hospital settings or those with more severe symptoms. The number of currently infected asymptomatics is uncertain: estimates put it at least a half are asymptomatic; the proportion not coming forward for testing is also highly doubtful (i.e. you are symptomatic, but you do not present for testing). Therefore we can assume the IFR is significantly lower than the CFR.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;When is CFR accurate?
+    &lt;blockquote&gt;
+      &lt;p&gt;Iceland’s higher rates of testing, the smaller population, and their ability to ascertain all those with Sars-CoV-2  means they can obtain. an accurate estimate of the CFR and the infection fatality rate (IFR) during the pandemic (most countries will only be able to do this after the pandemic). Current data from Iceland suggests their IFR is somewhere between 0.01% and 0.19%.  –&amp;gt; Can we do the same for Singapore?&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The bottom line is, CFR is probably &lt;strong&gt;inflated&lt;/strong&gt; in many countries and IFR is &lt;strong&gt;much lower&lt;/strong&gt; than CFR.&lt;/p&gt;
 
 &lt;h2 id=&quot;websites-worth-visting&quot;&gt;Websites Worth Visting:&lt;/h2&gt;
 &lt;ol&gt;

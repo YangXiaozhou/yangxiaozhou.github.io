@@ -1,0 +1,107 @@
+I"&<p>I update the current COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and any emerging signals of containment. The graphs in this blog are best viewed on a Laptop browser. Latest update: March 30, 2020.</p>
+
+<h2 id="1-prognosis">1. Prognosis</h2>
+<ul>
+  <li><strong>United States</strong>
+    <ul>
+      <li>The number of confirmed cases has been increasing by about 25% daily for a while. This is expected to continue as more testings are carried out(<a href="#US Testing Numbers">60K test results</a> are pending).</li>
+      <li>There is an upward trend in the case fatality rate, likely due to an overwhelmed healthcare system.</li>
+      <li>On the upside, though, it seems like people are actively protecting themselves now as the <a href="#Google Search Interest">google search</a> for “mask” is at an all-time high.</li>
+    </ul>
+  </li>
+  <li><strong>Europe</strong>
+    <ul>
+      <li>The containment efforts are probably taking effect as the number of daily confirmed cases is increasing at a <a href="#Percentage Change">slower rate every day</a>, with Italy, the slowest, at 7.8%, and Spain, the fastest, at 15%.</li>
+      <li>The Italian healthcare system is still facing a grave challenge, with the case fatality rate (CFR) currently at 11% and still increasing. Spain seems to be heading <a href="#case fatality rate">in the same direction</a> with a 8.5% CFR. Germany, on the other hand, fares well in this regard and manages to record only a 0.8% fatality rate. Note, though, there are caveats to reporting naive CFR which I explain below.</li>
+    </ul>
+  </li>
+  <li><strong>Asia</strong>
+    <ul>
+      <li>Most of Asia still seem to have the outbreak under control, especially in places like China, Singapore, Hong Kong, Taiwan, and South Korea.</li>
+      <li>There’s been a surge in the number of imported cases and sporadic domestic clusters. Governments have imposed stricter quarantine procedures and social distancing measures since then.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="2-signals-of-containment">2. Signals of Containment</h2>
+
+<p><a name="Percentage Change"></a></p>
+<h3 id="percentage-change">Percentage Change</h3>
+<p>7-day moving average (MA) of the percentage change in confirmed cases reported in selected countries. It is important to see both the percentage change and the trend of the percentage. To easily classify the situation, we can use the following scale<sup id="fnref:percentage"><a href="#fn:percentage" class="footnote">1</a></sup>:</p>
+<ul>
+  <li><script type="math/tex">r > 100\%</script>: <strong>Rapidly increasing</strong>. The total number of cases is doubling everyday.</li>
+  <li><script type="math/tex">% <![CDATA[
+10\% < r < 100\% %]]></script>: <strong>Increasing</strong>.</li>
+  <li><script type="math/tex">% <![CDATA[
+1\% < r < 10\% %]]></script>: <strong>Slowly increasing</strong>.</li>
+  <li><script type="math/tex">% <![CDATA[
+r < 1\% %]]></script>: <strong>Under control</strong>. There is almost no new case reported.</li>
+</ul>
+<iframe width="696" height="431.99999999999994" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=1897242208&amp;format=interactive"></iframe>
+
+<p><a name="Google Search Interest"></a></p>
+<h3 id="google-search-interest">Google Search Interest</h3>
+<p>This figure tells us how many people in the US are searching for keywords such as “hand sanitizer” or “symptom”. I suspect that as the community spread of the virus is being contained, we can expect to see a drop in searches for words like “symptom” and “influenza”, similar to the trends shown in Singapore.</p>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=783455223&amp;format=interactive"></iframe>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=196247116&amp;format=interactive"></iframe>
+
+<p><a name="US Testing Numbers"></a></p>
+<h3 id="us-testing-numbers">US Testing Numbers</h3>
+<p>As the containment takes effect, we expect to see the number of positive and negative tests stabilize, and the number of tests pending result drops.</p>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=481777218&amp;format=interactive"></iframe>
+
+<h2 id="confirmed-cases">Confirmed Cases</h2>
+<iframe width="696.0000000000001" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=967719983&amp;format=interactive"></iframe>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=1124767386&amp;format=interactive"></iframe>
+
+<h2 id="death-cases">Death Cases</h2>
+<p><a name="case fatality rate"></a></p>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=366153234&amp;format=interactive"></iframe>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=709712852&amp;format=interactive"></iframe>
+
+<ul>
+  <li>Why Italy has high CFR?
+    <blockquote>
+      <p>Italy’s death rate might also be higher because of how fatalities are recorded.  In Italy, all those who die in hospitals with Coronavirus are included in the death counts.</p>
+    </blockquote>
+  </li>
+  <li>When is CFR accurate?
+    <blockquote>
+      <p>Iceland’s higher rates of testing, the smaller population, and their ability to ascertain all those with Sars-CoV-2  means they can obtain. an accurate estimate of the CFR and the infection fatality rate (IFR) during the pandemic (most countries will only be able to do this after the pandemic). Current data from Iceland suggests their IFR is somewhere between 0.01% and 0.19%.  –&gt; Can we do the same for Singapore?</p>
+    </blockquote>
+  </li>
+  <li>Effect of strategy and selection bias on data reported
+    <blockquote>
+      <ul>
+        <li>Italy: A change in strategy on Feb 25 limited testing to patients who had severe signs and symptoms also resulted in a 19% positive rate (21,157 of 109,170 tested as of Mar 14) and an apparent increase in the death rate—from 3.1% on Feb 24 to 7.2% on Mar 17—patients with milder illness were no longer tested.  In the UK, only patients deemed ill enough to require at least one night in hospital met the criteria for a Covid-19 test.</li>
+        <li>CFR rates are subject to selection bias as more severe cases are tested, generally those in the hospital settings or those with more severe symptoms. The number of currently infected asymptomatics is uncertain: estimates put it at least a half are asymptomatic; the proportion not coming forward for testing is also highly doubtful (i.e. you are symptomatic, but you do not present for testing). Therefore we can assume the IFR is significantly lower than the CFR.</li>
+      </ul>
+    </blockquote>
+  </li>
+</ul>
+
+<p>The bottom line is, <strong>CFR is probably inflated in many countries. IFR is much lower than CFR.</strong></p>
+
+<h2 id="websites-worth-visting">Websites Worth Visting:</h2>
+<ol>
+  <li><strong>Bloomberg</strong>: <a href="https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/?srnd=premium-asia">Mapping the Coronavirus Outbreak Across the World</a></li>
+  <li><strong>JHU Center for Systems Science and Engineering</strong>: <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">Coronavirus COVID-19 Global Cases</a></li>
+  <li><strong>US Testing Numbers</strong>: <a href="https://covidtracking.com/">The COIVD Tracking Project</a></li>
+  <li><strong>Global MediXchange for Combating COVID-19</strong>: <a href="https://www.alibabacloud.com/universal-service/pdf_reader?spm=a3c0i.14138300.8102420620.dreadnow.646d647fDWbsii&amp;cdnorigin=video-intl&amp;pdf=Read%20Online-Handbook%20of%20COVID-19%20Prevention%20and%20Treatment.pdf">Handbook of COVID-19 Prevention and Treatment</a></li>
+</ol>
+
+<h2 id="interesting-articles">Interesting Articles</h2>
+<ol>
+  <li><a href="https://www.nytimes.com/2020/03/19/us/politics/trump-coronavirus-outbreak.html">Before Virus Outbreak, a Cascade of Warnings Went Unheeded</a></li>
+  <li><a href="https://www.citylab.com/life/2020/03/coronavirus-cases-france-train-hospital-tgv-covid-19-patient/608833/">To Fight a Fast-Moving Pandemic, Get a Faster Hospital</a></li>
+</ol>
+
+<h2 id="footnotes">Footnotes</h2>
+<div class="footnotes">
+  <ol>
+    <li id="fn:percentage">
+      <p>The percentage only indicates a relative change. The actual number of new cases reported in each country may be very different, as it depends on the absolute number of cumulative cases in that country. <a href="#fnref:percentage" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET
