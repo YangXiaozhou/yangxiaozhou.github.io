@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-03-30T09:31:18+08:00</updated>
+ <updated>2020-03-31T11:18:09+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -17,21 +17,21 @@
    <link href="http://localhost:4000/2020/03/24/COVID-19.html"/>
    <updated>2020-03-24T08:00:00+08:00</updated>
    <id>http://localhost:4000/2020/03/24/COVID-19</id>
-   <content type="html">&lt;p&gt;I update the current COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and any emerging signals of containment. The graphs in this blog are best viewed on a Laptop browser. Latest update: March 30, 2020.&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;strong&gt;Any conclusion drawn from the data should be viewed with caution due to the dynamic nature of a pandemic and the adundant sources of bias associated with reporting.&lt;/strong&gt; I update the current COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and any emerging signal of containment. The graphs in this blog are best viewed on a Laptop browser. Latest update: March 31, 2020.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-prognosis&quot;&gt;1. Prognosis&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;United States&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;The number of confirmed cases has been increasing by about 25% daily for a while. This is expected to continue as more testings are carried out(&lt;a href=&quot;#US Testing Numbers&quot;&gt;60K test results&lt;/a&gt; are pending).&lt;/li&gt;
-      &lt;li&gt;There is an upward trend in the case fatality rate, likely due to an overwhelmed healthcare system.&lt;/li&gt;
+      &lt;li&gt;The number of confirmed cases is still inceasing rapidly at a rate of over 20%, although that seems to be slowing down.&lt;/li&gt;
+      &lt;li&gt;There is a slight upward trend in the case fatality rate (CFR), likely due to an overwhelmed healthcare system.&lt;/li&gt;
       &lt;li&gt;On the upside, though, it seems like people are actively protecting themselves now as the &lt;a href=&quot;#Google Search Interest&quot;&gt;google search&lt;/a&gt; for “mask” is at an all-time high.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Europe&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;The containment efforts are probably taking effect as the number of daily confirmed cases is increasing at a &lt;a href=&quot;#Percentage Change&quot;&gt;slower rate every day&lt;/a&gt;, with Italy, the slowest, at 7.8%, and Spain, the fastest, at 15%.&lt;/li&gt;
-      &lt;li&gt;The Italian healthcare system is still facing a grave challenge, with the case fatality rate (CFR) currently at 11% and still increasing. Spain seems to be heading &lt;a href=&quot;#case fatality rate&quot;&gt;in the same direction&lt;/a&gt; with a 8.5% CFR. Germany, on the other hand, fares well in this regard and manages to record only a 0.8% fatality rate. Note, though, there are caveats to reporting naive CFR which I explain below.&lt;/li&gt;
+      &lt;li&gt;The containment efforts are probably taking effect as the number of daily confirmed cases is increasing at a &lt;a href=&quot;#Percentage Change&quot;&gt;slower rate every day&lt;/a&gt;, with Italy, the slowest, at 7%, and Spain, the fastest, at 15%.&lt;/li&gt;
+      &lt;li&gt;The Italian healthcare system is still facing a grave challenge, with the case fatality rate (CFR) currently at 11% and still increasing. Spain seems to be heading &lt;a href=&quot;#case fatality rate&quot;&gt;in the same direction&lt;/a&gt; with a 8.8% CFR. Germany, on the other hand, fares well in this regard and manages to record only a 1% fatality rate. Note, though, there are caveats to reporting naive CFR which I explain below.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Asia&lt;/strong&gt;
@@ -46,7 +46,7 @@
 
 &lt;p&gt;&lt;a name=&quot;Percentage Change&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;percentage-change&quot;&gt;Percentage Change&lt;/h3&gt;
-&lt;p&gt;7-day moving average (MA) of the percentage change in confirmed cases reported in selected countries. It is important to see both the percentage change and the trend of the percentage. To easily classify the situation, we can use the following scale&lt;sup id=&quot;fnref:percentage&quot;&gt;&lt;a href=&quot;#fn:percentage&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+&lt;p&gt;Look out for the 7-day moving average (MA) of the percentage change in confirmed cases reported. It is important to see both the current percentage change and its trend. To easily classify the situation, we can use the following scale&lt;sup id=&quot;fnref:percentage&quot;&gt;&lt;a href=&quot;#fn:percentage&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;r &gt; 100\%&lt;/script&gt;: &lt;strong&gt;Rapidly increasing&lt;/strong&gt;. The total number of cases is doubling everyday.&lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
@@ -57,6 +57,12 @@
 r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;. There is almost no new case reported.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;431.99999999999994&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=1897242208&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+&lt;h4 id=&quot;things-to-note&quot;&gt;Things to Note&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Japan had a turning point on 23rd March where the increase of cases started accelerating. Coincidently (or maybe not), Japan and I.O.C. officially anounced the &lt;a href=&quot;https://www.nytimes.com/2020/03/24/sports/olympics/coronavirus-summer-olympics-postponed.html&quot;&gt;postponement of Tokyo 2020&lt;/a&gt; on the next day.&lt;/li&gt;
+  &lt;li&gt;Italy has dipped down to the below-10% region, but nowhere near under-control yet. Germany, Spain and Switzerland seem to be following suit.&lt;/li&gt;
+  &lt;li&gt;The rates in China and Singapore are slowing, too, likely due to heightened arrival restriction and control.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;a name=&quot;Google Search Interest&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;google-search-interest&quot;&gt;Google Search Interest&lt;/h3&gt;
@@ -71,22 +77,12 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;. T
 
 &lt;h2 id=&quot;confirmed-cases&quot;&gt;Confirmed Cases&lt;/h2&gt;
 &lt;iframe width=&quot;696.0000000000001&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=967719983&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
-&lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=1124767386&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+&lt;!--&lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=1124767386&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;--&gt;
 
 &lt;h2 id=&quot;death-cases&quot;&gt;Death Cases&lt;/h2&gt;
 &lt;p&gt;&lt;a name=&quot;case fatality rate&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=366153234&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=709712852&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Why Italy has high CFR?
-    &lt;blockquote&gt;
-      &lt;p&gt;Italy’s death rate might also be higher because of how fatalities are recorded.  In Italy, all those who die in hospitals with Coronavirus are included in the death counts (association + attribution).&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In constrast, Germany only counts the case where the patient dies from Coronavirus (attribution) and not with the Coronavirus (association).&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;How does selection bias affect CFR?
@@ -98,14 +94,15 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;. T
   &lt;/li&gt;
   &lt;li&gt;When is CFR accurate?
     &lt;blockquote&gt;
-      &lt;p&gt;Iceland’s higher rates of testing, the smaller population, and their ability to ascertain all those with Sars-CoV-2  means they can obtain. an accurate estimate of the CFR and the infection fatality rate (IFR) during the pandemic (most countries will only be able to do this after the pandemic). Current data from Iceland suggests their IFR is somewhere between 0.01% and 0.19%.  –&amp;gt; Can we do the same for Singapore?&lt;/p&gt;
+      &lt;p&gt;Iceland’s higher rates of testing, the smaller population, and their ability to ascertain all those with Sars-CoV-2  means they can obtain. an accurate estimate of the CFR and the infection fatality rate (IFR) during the pandemic (most countries will only be able to do this after the pandemic). Current data from Iceland suggests their IFR is somewhere between 0.01% and 0.19%.&lt;/p&gt;
     &lt;/blockquote&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The bottom line is, CFR is probably &lt;strong&gt;inflated&lt;/strong&gt; in many countries and IFR is &lt;strong&gt;much lower&lt;/strong&gt; than CFR.&lt;/p&gt;
 
-&lt;h2 id=&quot;websites-worth-visting&quot;&gt;Websites Worth Visting:&lt;/h2&gt;
+&lt;h2 id=&quot;additional-resources&quot;&gt;Additional Resources&lt;/h2&gt;
+&lt;h4 id=&quot;websites&quot;&gt;Websites&lt;/h4&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Bloomberg&lt;/strong&gt;: &lt;a href=&quot;https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/?srnd=premium-asia&quot;&gt;Mapping the Coronavirus Outbreak Across the World&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;JHU Center for Systems Science and Engineering&lt;/strong&gt;: &lt;a href=&quot;https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6&quot;&gt;Coronavirus COVID-19 Global Cases&lt;/a&gt;&lt;/li&gt;
@@ -113,10 +110,12 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;. T
   &lt;li&gt;&lt;strong&gt;Global MediXchange for Combating COVID-19&lt;/strong&gt;: &lt;a href=&quot;https://www.alibabacloud.com/universal-service/pdf_reader?spm=a3c0i.14138300.8102420620.dreadnow.646d647fDWbsii&amp;amp;cdnorigin=video-intl&amp;amp;pdf=Read%20Online-Handbook%20of%20COVID-19%20Prevention%20and%20Treatment.pdf&quot;&gt;Handbook of COVID-19 Prevention and Treatment&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;interesting-articles&quot;&gt;Interesting Articles&lt;/h2&gt;
+&lt;h4 id=&quot;articles&quot;&gt;Articles&lt;/h4&gt;
 &lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.nytimes.com/2020/03/19/us/politics/trump-coronavirus-outbreak.html&quot;&gt;Before Virus Outbreak, a Cascade of Warnings Went Unheeded&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.citylab.com/life/2020/03/coronavirus-cases-france-train-hospital-tgv-covid-19-patient/608833/&quot;&gt;To Fight a Fast-Moving Pandemic, Get a Faster Hospital&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.nytimes.com/2020/03/19/us/politics/trump-coronavirus-outbreak.html&quot;&gt;Before Virus Outbreak, a Cascade of Warnings Went Unheeded&lt;/a&gt;, March 19, 2020&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.citylab.com/life/2020/03/coronavirus-cases-france-train-hospital-tgv-covid-19-patient/608833/&quot;&gt;To Fight a Fast-Moving Pandemic, Get a Faster Hospital&lt;/a&gt;, MARCH 26, 2020&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.businessinsider.sg/coronavirus-spain-says-rapid-tests-sent-from-china-missing-cases-2020-3?_ga=2.212074516.1285585527.1585620210-963085568.1583747541&amp;amp;r=US&amp;amp;IR=T&quot;&gt;Spain, Europe’s worst-hit country after Italy, says coronavirus tests it bought from China are failing to detect positive cases&lt;/a&gt;, March 26, 2020&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://time.com/5812555/germany-coronavirus-deaths/&quot;&gt;Why Is Germany’s Coronavirus Death Rate So Low?&lt;/a&gt;, March 30, 2020&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h2&gt;
