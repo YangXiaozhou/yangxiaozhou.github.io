@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Roadmap of Statistical Learning"
-date:   2020-01-10 08:00:00 +0800
-categories: STATISTICS
-tags: statistical_learning
+title:  "COVID-19: Obersations from Singapore"
+date:   2020-04-01 08:00:00 +0800
+categories: 
+tags: 
 ---
 
 
