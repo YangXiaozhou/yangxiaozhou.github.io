@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-03-31T11:18:09+08:00</updated>
+ <updated>2020-04-04T09:43:35+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -13,40 +13,51 @@
 
  
  <entry>
-   <title>Tracking the COVID-19 Disease Outbreak and Signals of Containment</title>
+   <title>COVID-19</title>
+   <link href="http://localhost:4000/2020/04/02/covid-19-my-experience-in-singapore.html"/>
+   <updated>2020-04-02T08:00:00+08:00</updated>
+   <id>http://localhost:4000/2020/04/02/covid-19-my-experience-in-singapore</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>[每日更新] Tracking the COVID-19 Outbreak and Signals of Containment</title>
    <link href="http://localhost:4000/2020/03/24/COVID-19.html"/>
    <updated>2020-03-24T08:00:00+08:00</updated>
    <id>http://localhost:4000/2020/03/24/COVID-19</id>
-   <content type="html">&lt;p&gt;&lt;strong&gt;Any conclusion drawn from the data should be viewed with caution due to the dynamic nature of a pandemic and the adundant sources of bias associated with reporting.&lt;/strong&gt; I update the current COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and any emerging signal of containment. The graphs in this blog are best viewed on a Laptop browser. Latest update: March 31, 2020.&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;strong&gt;Any conclusion drawn from the data should be viewed with caution due to the dynamic nature of a pandemic and the adundant sources of bias associated with reporting.&lt;/strong&gt; 
+I update every morning the COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and any emerging signal of containment. The intent of this blog is not to feed daily news, but to present underlying trends and perspectives worth considering when reading the news. The graphs in this blog are best viewed on a Laptop browser. Latest update: April 04, 2020.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-prognosis&quot;&gt;1. Prognosis&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;United States&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;The number of confirmed cases is still inceasing rapidly at a rate of over 20%, although that seems to be slowing down.&lt;/li&gt;
-      &lt;li&gt;There is a slight upward trend in the case fatality rate (CFR), likely due to an overwhelmed healthcare system.&lt;/li&gt;
-      &lt;li&gt;On the upside, though, it seems like people are actively protecting themselves now as the &lt;a href=&quot;#Google Search Interest&quot;&gt;google search&lt;/a&gt; for “mask” is at an all-time high.&lt;/li&gt;
+      &lt;li&gt;The increase of new cases is slowing down &lt;a href=&quot;#Percentage Change&quot;&gt;(18%)&lt;/a&gt;. One factor might be because the testing centres have reached their maximum processing capacity as the number of &lt;a href=&quot;#US Testing Numbers&quot;&gt;tests pending results&lt;/a&gt; hovers around 60,000 for the last nine days. This is &lt;a href=&quot;https://edition.cnn.com/2020/04/01/politics/testing-backlog-coronavirus-quest-invs/index.html&quot;&gt;reported by CNN&lt;/a&gt;, too.&lt;/li&gt;
+      &lt;li&gt;The case fatality rate (CFR) continues to rise, likely due to an increasingly overwhelmed healthcare system, especially in New York, New Jersey, and Michigan.&lt;/li&gt;
+      &lt;li&gt;On the upside, though, people are actively protecting themselves now as the &lt;a href=&quot;#Google Search Interest&quot;&gt;google search&lt;/a&gt; for “mask” is at an all-time high.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Europe&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;The containment efforts are probably taking effect as the number of daily confirmed cases is increasing at a &lt;a href=&quot;#Percentage Change&quot;&gt;slower rate every day&lt;/a&gt;, with Italy, the slowest, at 7%, and Spain, the fastest, at 15%.&lt;/li&gt;
-      &lt;li&gt;The Italian healthcare system is still facing a grave challenge, with the case fatality rate (CFR) currently at 11% and still increasing. Spain seems to be heading &lt;a href=&quot;#case fatality rate&quot;&gt;in the same direction&lt;/a&gt; with a 8.8% CFR. Germany, on the other hand, fares well in this regard and manages to record only a 1% fatality rate. Note, though, there are caveats to reporting naive CFR which I explain below.&lt;/li&gt;
+      &lt;li&gt;The containment efforts are taking effect as the number of cases is increasing at a &lt;a href=&quot;#Percentage Change&quot;&gt;slower rate every day&lt;/a&gt;, with Italy, the slowest, at 5%, and Germany, the fastest, at 10%.&lt;/li&gt;
+      &lt;li&gt;The Italian healthcare system is still facing a grave challenge, with the case fatality rate (CFR) currently at 12% and still increasing. Spain seems to be heading &lt;a href=&quot;#case fatality rate&quot;&gt;in the same direction&lt;/a&gt; with a 9% CFR. France, not tracked here, is on par with Spain in CFR.&lt;/li&gt;
+      &lt;li&gt;Germany and Switzerland, on the other hand, fare well in this regard and manage to record a 1.3% and 2.8% CFR, respectively. Austria, too, has managed one of the lowerest CFRs (1.4%) among European nations. (Austria, Germany, and a large part of Switzerland are all German-speaking.🤔) Note there are caveats to reporting naive CFR which I &lt;a href=&quot;case fatality rate&quot;&gt;explain below&lt;/a&gt;.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Asia&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;Most of Asia still seem to have the outbreak under control, especially in places like China, Singapore, Hong Kong, Taiwan, and South Korea.&lt;/li&gt;
-      &lt;li&gt;There’s been a surge in the number of imported cases and sporadic domestic clusters. Governments have imposed stricter quarantine procedures and social distancing measures since then.&lt;/li&gt;
+      &lt;li&gt;For the first time, Singapore is going into a national “Shelter in Place” mode. The timeing is not surprising as some degree of wide-spread community infection is going on. The number of unlinked cases, those yet to find the source of infection, spiked over the last few days; Singapore also recorded 12 new clusters of infection just over the past five days (One of them is right across the river from my house).
+  &lt;img src=&quot;/assets/covid-19/unlinked-cases.png&quot; alt=&quot;unlinked_cases&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;Japan seems to have steadied the rate of infection, partly thanks to the public plea by the governor of Tokyo, Yuriko Koike (小池百合子), and her &lt;a href=&quot;http://www.asahi.com/ajw/articles/13240195&quot;&gt;hint on a possible Tokyo lockdown&lt;/a&gt;.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-signals-of-containment&quot;&gt;2. Signals of Containment&lt;/h2&gt;
-
 &lt;p&gt;&lt;a name=&quot;Percentage Change&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;percentage-change&quot;&gt;Percentage Change&lt;/h3&gt;
-&lt;p&gt;Look out for the 7-day moving average (MA) of the percentage change in confirmed cases reported. It is important to see both the current percentage change and its trend. To easily classify the situation, we can use the following scale&lt;sup id=&quot;fnref:percentage&quot;&gt;&lt;a href=&quot;#fn:percentage&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+&lt;p&gt;Look out for the 7-day moving average of the day-on-day percentage change in confirmed cases. It is important to see both the current percentage change and its trend. To easily classify the situation, we can use the following scale&lt;sup id=&quot;fnref:percentage&quot;&gt;&lt;a href=&quot;#fn:percentage&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;r &gt; 100\%&lt;/script&gt;: &lt;strong&gt;Rapidly increasing&lt;/strong&gt;. The total number of cases is doubling everyday.&lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
@@ -57,22 +68,23 @@
 r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;. There is almost no new case reported.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;431.99999999999994&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=1897242208&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
+
 &lt;h4 id=&quot;things-to-note&quot;&gt;Things to Note&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Japan had a turning point on 23rd March where the increase of cases started accelerating. Coincidently (or maybe not), Japan and I.O.C. officially anounced the &lt;a href=&quot;https://www.nytimes.com/2020/03/24/sports/olympics/coronavirus-summer-olympics-postponed.html&quot;&gt;postponement of Tokyo 2020&lt;/a&gt; on the next day.&lt;/li&gt;
-  &lt;li&gt;Italy has dipped down to the below-10% region, but nowhere near under-control yet. Germany, Spain and Switzerland seem to be following suit.&lt;/li&gt;
-  &lt;li&gt;The rates in China and Singapore are slowing, too, likely due to heightened arrival restriction and control.&lt;/li&gt;
+  &lt;li&gt;Italy is seeing hope at the current 5% increasing rate, but there’s still some days to go to reach 1%. Germany, Spain and Switzerland seem to be following suit.&lt;/li&gt;
+  &lt;li&gt;The rates in China and Singapore are flattening, too, likely due to heightened arrival restriction and control.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a name=&quot;Google Search Interest&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;google-search-interest&quot;&gt;Google Search Interest&lt;/h3&gt;
-&lt;p&gt;This figure tells us how many people in the US are searching for keywords such as “hand sanitizer” or “symptom”. I suspect that as the community spread of the virus is being contained, we can expect to see a drop in searches for words like “symptom” and “influenza”, similar to the trends shown in Singapore.&lt;/p&gt;
+&lt;p&gt;This figure tells us how many people in the US are searching for keywords such as “hand sanitizer” or “symptom”. I suspect that as the community spread of the virus is being contained, we can expect to see a drop in searches for words like “symptom” and “influenza”, similar to the trends shown in Singapore. The rebound in Singapore has come after several new clusters of infection emerged over the last few days.&lt;/p&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=783455223&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=196247116&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;&lt;a name=&quot;US Testing Numbers&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;us-testing-numbers&quot;&gt;US Testing Numbers&lt;/h3&gt;
-&lt;p&gt;As the containment takes effect, we expect to see the number of positive and negative tests stabilize, and the number of tests pending result drops.&lt;/p&gt;
+&lt;p&gt;As the containment takes effect, we expect to see the number of positive and negative tests stabilize, and the number of tests pending result drops. As you can see, we are not there yet.&lt;/p&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=481777218&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 
 &lt;h2 id=&quot;confirmed-cases&quot;&gt;Confirmed Cases&lt;/h2&gt;
@@ -105,15 +117,15 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;. T
 &lt;h4 id=&quot;websites&quot;&gt;Websites&lt;/h4&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Bloomberg&lt;/strong&gt;: &lt;a href=&quot;https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/?srnd=premium-asia&quot;&gt;Mapping the Coronavirus Outbreak Across the World&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;JHU Center for Systems Science and Engineering&lt;/strong&gt;: &lt;a href=&quot;https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6&quot;&gt;Coronavirus COVID-19 Global Cases&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Johns Hopkins University&lt;/strong&gt;: &lt;a href=&quot;https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6&quot;&gt;Coronavirus COVID-19 Global Cases&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;US Testing Numbers&lt;/strong&gt;: &lt;a href=&quot;https://covidtracking.com/&quot;&gt;The COIVD Tracking Project&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Global MediXchange for Combating COVID-19&lt;/strong&gt;: &lt;a href=&quot;https://www.alibabacloud.com/universal-service/pdf_reader?spm=a3c0i.14138300.8102420620.dreadnow.646d647fDWbsii&amp;amp;cdnorigin=video-intl&amp;amp;pdf=Read%20Online-Handbook%20of%20COVID-19%20Prevention%20and%20Treatment.pdf&quot;&gt;Handbook of COVID-19 Prevention and Treatment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Global MediXchange&lt;/strong&gt;: &lt;a href=&quot;https://www.alibabacloud.com/universal-service/pdf_reader?spm=a3c0i.14138300.8102420620.dreadnow.646d647fDWbsii&amp;amp;cdnorigin=video-intl&amp;amp;pdf=Read%20Online-Handbook%20of%20COVID-19%20Prevention%20and%20Treatment.pdf&quot;&gt;Handbook of COVID-19 Prevention and Treatment&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h4 id=&quot;articles&quot;&gt;Articles&lt;/h4&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.nytimes.com/2020/03/19/us/politics/trump-coronavirus-outbreak.html&quot;&gt;Before Virus Outbreak, a Cascade of Warnings Went Unheeded&lt;/a&gt;, March 19, 2020&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.citylab.com/life/2020/03/coronavirus-cases-france-train-hospital-tgv-covid-19-patient/608833/&quot;&gt;To Fight a Fast-Moving Pandemic, Get a Faster Hospital&lt;/a&gt;, MARCH 26, 2020&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.citylab.com/life/2020/03/coronavirus-cases-france-train-hospital-tgv-covid-19-patient/608833/&quot;&gt;To Fight a Fast-Moving Pandemic, Get a Faster Hospital&lt;/a&gt;, March 26, 2020&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.businessinsider.sg/coronavirus-spain-says-rapid-tests-sent-from-china-missing-cases-2020-3?_ga=2.212074516.1285585527.1585620210-963085568.1583747541&amp;amp;r=US&amp;amp;IR=T&quot;&gt;Spain, Europe’s worst-hit country after Italy, says coronavirus tests it bought from China are failing to detect positive cases&lt;/a&gt;, March 26, 2020&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://time.com/5812555/germany-coronavirus-deaths/&quot;&gt;Why Is Germany’s Coronavirus Death Rate So Low?&lt;/a&gt;, March 30, 2020&lt;/li&gt;
 &lt;/ol&gt;
