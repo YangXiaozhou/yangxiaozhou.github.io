@@ -1,27 +1,28 @@
-I"�.<p><strong>Any conclusion drawn from the data should be viewed with caution due to the dynamic nature of a pandemic and the adundant sources of bias associated with reporting.</strong> 
-I update every morning the COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and any emerging signal of containment. The intent of this blog is not to feed daily news, but to present underlying trends and perspectives worth considering when reading the news. The graphs in this blog are best viewed on a Laptop browser. Latest update: April 04, 2020.</p>
+I"0<p><strong>Any conclusion drawn from the data should be viewed with caution due to the dynamic nature of a pandemic and the adundant sources of bias associated with reporting.</strong> 
+I update every morning the COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and any emerging signal of containment. The intent of this blog is not to feed daily news, but to present underlying trends and perspectives worth considering when reading the news. The graphs in this blog are best viewed on a Laptop browser. Latest update: April 05, 2020.</p>
 
 <h2 id="1-prognosis">1. Prognosis</h2>
 <ul>
   <li><strong>United States</strong>
     <ul>
-      <li>The increase of new cases is slowing down <a href="#Percentage Change">(18%)</a>. One factor might be because the testing centres have reached their maximum processing capacity as the number of <a href="#US Testing Numbers">tests pending results</a> hovers around 60,000 for the last nine days. This is <a href="https://edition.cnn.com/2020/04/01/politics/testing-backlog-coronavirus-quest-invs/index.html">reported by CNN</a>, too.</li>
+      <li>The increase of new cases is slowing down <a href="#Percentage Change">(15%)</a>, as the strategy of “Test! Test! Test!” proves key to know the real-time situation on the ground. US has conducted more than 1.1 million tests over the past ten days, or on average, 110,000 per day. The <a href="#US Testing Numbers">number of tests pending results</a> also dropped from 61,980 to around 15,000.</li>
       <li>The case fatality rate (CFR) continues to rise, likely due to an increasingly overwhelmed healthcare system, especially in New York, New Jersey, and Michigan.</li>
       <li>On the upside, though, people are actively protecting themselves now as the <a href="#Google Search Interest">google search</a> for “mask” is at an all-time high.</li>
     </ul>
   </li>
   <li><strong>Europe</strong>
     <ul>
-      <li>The containment efforts are taking effect as the number of cases is increasing at a <a href="#Percentage Change">slower rate every day</a>, with Italy, the slowest, at 5%, and Germany, the fastest, at 10%.</li>
-      <li>The Italian healthcare system is still facing a grave challenge, with the case fatality rate (CFR) currently at 12% and still increasing. Spain seems to be heading <a href="#case fatality rate">in the same direction</a> with a 9% CFR. France, not tracked here, is on par with Spain in CFR.</li>
-      <li>Germany and Switzerland, on the other hand, fare well in this regard and manage to record a 1.3% and 2.8% CFR respectively. Austria, too, has managed one of the lowerest CFRs (1.4%) among European nations. (Austria, Germany, and a large part of Switzerland are all German-speaking.🤔) Note, though, there are caveats to reporting naive CFR which I <a href="case fatality rate">explain below</a>.</li>
+      <li>The containment efforts are taking effect as the number of cases is increasing at a <a href="#Percentage Change">slower rate every day</a>, with Italy, the slowest, at 5%, and Spain, the fastest, at 9%.</li>
+      <li>The Italian healthcare system is still facing a grave challenge, with the case fatality rate (CFR) currently at 12%. Spain seems to be heading <a href="#case fatality rate">in the same direction</a> with a 10% CFR. Howeverm there are signs that the CFRs are slowing down.</li>
+      <li>Germany and Switzerland, on the other hand, fare well in this regard and manage to record a 1.3% and 2.8% CFR, respectively. Austria, too, has managed one of the lowerest CFRs (1.4%) among European nations. (Austria, Germany, and a large part of Switzerland are all German-speaking.🤔) Note there are caveats to reporting naive CFR which I <a href="case fatality rate">explain below</a>.</li>
     </ul>
   </li>
   <li><strong>Asia</strong>
     <ul>
-      <li>For the first time, Singapore is going into national “Shelter in Place” mode. This is not a surprising decision as some degree of wide-spread community infection is going on. The number of unlinked cases, those yet to find the source of infection, spiked over the last few days; Singapore also recorded 12 new clusters of infection just over the past five days (One of them is right across the river from my house).
+      <li>The cases in Japan are rapidly rising, approaching a 10% <a href="#Percentage Change">day-on-day growth rate</a>.</li>
+      <li>One thing to note, we could almost cerntainly say that Japan is undertesting its population to know what is really going on. Assuming the true CFR is 1.2%<sup id="fnref:diamond_princess"><a href="#fn:diamond_princess" class="footnote">1</a></sup>, Japan’s current fatality number, 77, indicates that at least 6,417 people have been infected. However, only 3,139 cases are officially confirmed as of now.</li>
+      <li>For the first time, Singapore is going into a national “Shelter in Place” mode. The timeing is not surprising as some degree of wide-spread community infection is going on. The number of unlinked cases, those yet to find the source of infection, spiked over the last few days; Singapore also recorded 12 new clusters of infection just over the past five days (One of them is right across the river from my house).
   <img src="/assets/covid-19/unlinked-cases.png" alt="unlinked_cases" /></li>
-      <li>Japan seems to have steadied the rate of infection, partly thanks to the public plea by the governor of Tokyo, Yuriko Koike (小池百合子), and her <a href="http://www.asahi.com/ajw/articles/13240195">hint on a possible Tokyo lockdown</a>.</li>
     </ul>
   </li>
 </ul>
@@ -29,7 +30,7 @@ I update every morning the COVID-19 situation in the US, Europe, and Asia, track
 <h2 id="2-signals-of-containment">2. Signals of Containment</h2>
 <p><a name="Percentage Change"></a></p>
 <h3 id="percentage-change">Percentage Change</h3>
-<p>Look out for the 7-day moving average of the day-on-day percentage change in confirmed cases. It is important to see both the current percentage change and its trend. To easily classify the situation, we can use the following scale<sup id="fnref:percentage"><a href="#fn:percentage" class="footnote">1</a></sup>:</p>
+<p>Look out for the 7-day moving average of the day-on-day percentage change in confirmed cases. It is important to see both the current percentage change and its trend. To easily classify the situation, we can use the following scale<sup id="fnref:percentage"><a href="#fn:percentage" class="footnote">2</a></sup>:</p>
 <ul>
   <li><script type="math/tex">r > 100\%</script>: <strong>Rapidly increasing</strong>. The total number of cases is doubling everyday.</li>
   <li><script type="math/tex">% <![CDATA[
@@ -61,10 +62,9 @@ r < 1\% %]]></script>: <strong>Under control</strong>. There is almost no new ca
 
 <h2 id="confirmed-cases">Confirmed Cases</h2>
 <iframe width="696.0000000000001" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=967719983&amp;format=interactive"></iframe>
-<!--<iframe width="696" height="432" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=1124767386&amp;format=interactive"></iframe>-->
-
-<h2 id="death-cases">Death Cases</h2>
-<p><a name="case fatality rate"></a></p>
+<p>Death Cases
+—
+<a name="case fatality rate"></a></p>
 <iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=366153234&amp;format=interactive"></iframe>
 <iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=709712852&amp;format=interactive"></iframe>
 
@@ -105,6 +105,9 @@ r < 1\% %]]></script>: <strong>Under control</strong>. There is almost no new ca
 <h2 id="footnotes">Footnotes</h2>
 <div class="footnotes">
   <ol>
+    <li id="fn:diamond_princess">
+      <p><a href="https://www.medrxiv.org/content/10.1101/2020.03.05.20031773v2">Russell, Timothy W., et al. “Estimating the infection and case fatality ratio for COVID-19 using age-adjusted data from the outbreak on the Diamond Princess cruise ship.” medRxiv (2020).</a> <a href="#fnref:diamond_princess" class="reversefootnote">&#8617;</a></p>
+    </li>
     <li id="fn:percentage">
       <p>The percentage only indicates a relative change. The actual number of new cases reported in each country may be very different, as it depends on the absolute number of cumulative cases in that country. <a href="#fnref:percentage" class="reversefootnote">&#8617;</a></p>
     </li>
