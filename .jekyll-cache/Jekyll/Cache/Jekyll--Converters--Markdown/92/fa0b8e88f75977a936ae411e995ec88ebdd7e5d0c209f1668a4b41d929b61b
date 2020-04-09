@@ -1,0 +1,138 @@
+I"�8<p><strong>Any conclusion drawn from the data should be viewed with caution due to the dynamic nature of a pandemic and the adundant sources of bias associated with reporting.</strong> 
+I update every morning the COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and signals of containment. The intent of this blog is not to feed daily news, but to present perspectives worth considering when reading the news. The graphs in this blog are interactive and best viewed on a Laptop browser. Latest update: April 09, 2020.</p>
+
+<h2 id="1-prognosis">1. Prognosis</h2>
+<ul>
+  <li><strong>Asia</strong>
+    <ul>
+      <li>Singapore’s dormitory clusters and local unlinked cases continue to drive up the total number. This is expected considering the delay between infection and test confirmation.</li>
+      <li>Japan also has a relatively flat curve. However, there are legitimate concerns that Japan has been under-testing its population. For example, Japan has conducted 437 tests <a href="#https://www.worldometers.info/coronavirus/">per one million population</a>. In Singapore, that number is 11,110.</li>
+    </ul>
+  </li>
+  <li><strong>United States</strong>
+    <ul>
+      <li>The increase of new cases is slowing down <a href="#Percentage Change">(11%)</a>. The US has conducted more than 1.3 million tests over the past ten days, or on average, 130,000 per day. The <a href="#US Testing Numbers">number of tests pending results</a> also dropped from 61,980 to around 16,000.</li>
+      <li>The case fatality rate (CFR) continues to rise, likely due to an increasingly overwhelmed healthcare system. The number of deaths is going to pass that of Spain.</li>
+    </ul>
+  </li>
+  <li><strong>Europe</strong>
+    <ul>
+      <li>The containment efforts are taking effect as the increase of cases has significantly slowed down, with Italy, the slowest, at 4%, and UK, the fastest, at 12%.</li>
+      <li>There are signs of recovery as well. The worst-hit countries in Europe, Italy, and Spain, are seeing a <a href="#case fatality rate">stabalization of death rates</a>. The same cannot be said for UK, with a CFR of 12% and still increasing. Of course, UK’s advice for citizens with mild symptoms to stay at home for <a href="https://www.businessinsider.sg/coronavirus-boris-johnson-tells-brits-with-symptoms-to-stay-at-home-for-at-least-a-week-2020-3?r=US&amp;IR=T">at least seven days</a> contributed to the high naive CFR.</li>
+      <li>While the CFRs in Switzerland and Germany have been comparatively low, they are steadily climbing. Switzerland is probably the first country in Europe to flatten the curve, which conducted one of the highest number of tests <a href="#https://www.worldometers.info/coronavirus/">per one million population</a>.</li>
+      <li>Note there are caveats to reporting naive CFR, which I <a href="#cfr bias">explain below</a>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="2-signals-of-containment">2. Signals of Containment</h2>
+<p><a name="Percentage Change"></a></p>
+<h3 id="percentage-change">Percentage Change</h3>
+<p>Look out for the 7-day moving average of the day-on-day percentage change in confirmed cases. It is important to see both the current percentage change and its trend. To easily classify the situation, we can use the following scale<sup id="fnref:percentage"><a href="#fn:percentage" class="footnote">1</a></sup>:</p>
+<ul>
+  <li><script type="math/tex">r > 10\%</script>: <strong>Rapidly increasing</strong>.</li>
+  <li><script type="math/tex">% <![CDATA[
+r < 10\% %]]></script>: <strong>Increasing</strong>.</li>
+  <li><script type="math/tex">% <![CDATA[
+r < 5\% %]]></script>: <strong>Slowly increasing</strong>.</li>
+  <li><script type="math/tex">% <![CDATA[
+r < 1\% %]]></script>: <strong>Under control</strong>.</li>
+</ul>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=565833280&amp;format=interactive"></iframe>
+<ul>
+  <li>Japan had a turning point on 23rd March where the increase of cases started accelerating. Coincidently (or maybe not), Japan and I.O.C. officially anounced the <a href="https://www.nytimes.com/2020/03/24/sports/olympics/coronavirus-summer-olympics-postponed.html">postponement of Tokyo 2020</a> on the next day.</li>
+  <li>The cases in Japan have been rising at an increasing rate, now at a 10% <a href="#Percentage Change">day-on-day growth rate</a>. Considering the exponential growth of infections, Abe, Japanese prime minister, is declaring emergency state for seven prefectures. - April 7, 2020</li>
+</ul>
+
+<p><a name="Google Search Interest"></a></p>
+<h3 id="google-search-interest">Google Search Interest</h3>
+<p>This figure tells us how many people in the US are searching for keywords such as “hand sanitizer” or “symptom”. I suspect that as the community spread of the virus is being contained, we can expect to see a drop in searches for words like “symptom” and “influenza”, similar to the trends shown in Singapore.</p>
+
+<p>There are drastic differences in terms of the US and Singapore google search interests during this pandemic. When signs of community infection emerged in early March, people in the US were searching for “symptom” at a record-high frequency, similarly for “influenza” and “hand sanitizer”. Searches for “mask”, however, were not so heightened. The picture in Singapore looks very different. When more infections emerged inside the border in late January and early February, the search for “mask” shoot up rapidly, and masks went out of stock everywhere in Singapore. There are probably two main reasons for this:</p>
+<ol>
+  <li>A high percentage of Chinese living in Singapore;</li>
+  <li>As a nation that went through SARS, it feels natural for most people to wear masks when a contagion is spreading in the community.</li>
+</ol>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=783455223&amp;format=interactive"></iframe>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=196247116&amp;format=interactive"></iframe>
+
+<p><a name="US Testing Numbers"></a></p>
+<h3 id="us-testing-numbers">US Testing Numbers</h3>
+<p>As the containment takes effect, we expect to see the number of positive and negative tests stabilize, and the number of tests pending result drops. As you can see, we are not there yet.</p>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=481777218&amp;format=interactive"></iframe>
+
+<h2 id="3-confirmed-cases">3. Confirmed Cases</h2>
+<hr />
+<p><a name="Case progression"></a></p>
+<iframe width="696.0000000000001" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=967719983&amp;format=interactive"></iframe>
+<ul>
+  <li>We could almost cerntainly say that Japan is undertesting its population to know what is really going on. Assuming the true CFR is 1.2%<sup id="fnref:diamond_princess"><a href="#fn:diamond_princess" class="footnote">2</a></sup>, Japan’s current fatality number, 77, indicates that at least 6,417 people have been infected. However, only 3,139 cases are officially confirmed as of now. - April 5, 2020.</li>
+  <li>For the first time, Singapore is going into a national “Shelter in Place” mode. The timeing is not surprising as some degree of wide-spread community infection is going on. The number of unlinked cases, those yet to find the source of infection, spiked over the last few days; Singapore also recorded 12 new clusters of infection just over the past five days (One of them is right across the river from my house). - April 5, 2020.</li>
+  <li>Singapore sees a steady increase in confirmed cases, mainly in foreign worker dormitory clusters. However, if we look at the <a href="#Case progression">progression of confirmed cases</a> in Singapore, it’s an almost perfect example of what “flatten the curve” looks like. For the most part, the cases double every ten days, whereas cases in some of the worst-hit countries double every one to three days.  - April 8, 2020</li>
+</ul>
+
+<h2 id="4-death-cases">4. Death Cases</h2>
+<hr />
+<p><a name="case fatality rate"></a></p>
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=366153234&amp;format=interactive"></iframe>
+<ul>
+  <li>Germany and Switzerland fare well in this regard and manage to record comparatively low CFRs. Austria, too, has managed one of the lowerest CFRs among European nations. Austria, Germany, and a large part of Switzerland are German-speaking.🤔</li>
+</ul>
+
+<iframe width="696" height="432" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=709712852&amp;format=interactive"></iframe>
+
+<p><a name="cfr bias"></a></p>
+<ul>
+  <li>How does selection bias affect CFR?
+    <blockquote>
+      <p>[In Italy], a change in strategy on Feb 25 limited testing to patients who had severe signs and symptoms also resulted in a 19% positive rate (21,157 of 109,170 tested as of Mar 14) and an apparent increase in the death rate—from 3.1% on Feb 24 to 7.2% on Mar 17—patients with milder illness were no longer tested.  In the UK, only patients deemed ill enough to require at least one night in hospital met the criteria for a Covid-19 test.</p>
+
+      <p>CFR rates are subject to selection bias as more severe cases are tested, generally those in the hospital settings or those with more severe symptoms. The number of currently infected asymptomatics is uncertain: estimates put it at least a half are asymptomatic; the proportion not coming forward for testing is also highly doubtful (i.e. you are symptomatic, but you do not present for testing). Therefore we can assume the IFR is significantly lower than the CFR.</p>
+    </blockquote>
+  </li>
+  <li>When is CFR accurate?
+    <blockquote>
+      <p>Iceland’s higher rates of testing, the smaller population, and their ability to ascertain all those with Sars-CoV-2  means they can obtain. an accurate estimate of the CFR and the infection fatality rate (IFR) during the pandemic (most countries will only be able to do this after the pandemic). Current data from Iceland suggests their IFR is somewhere between 0.01% and 0.19%.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>The bottom line is, CFR is probably <strong>inflated</strong> in many countries and IFR is <strong>much lower</strong> than CFR.</p>
+
+<h2 id="resources">Resources</h2>
+<h4 id="websites">Websites</h4>
+<ol>
+  <li><strong>Bloomberg</strong>: <a href="https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/?srnd=premium-asia">Mapping the Coronavirus Outbreak Across the World</a></li>
+  <li><strong>Johns Hopkins University</strong>: <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">Coronavirus COVID-19 Global Cases</a></li>
+  <li><strong>Global MediXchange</strong>: <a href="https://www.alibabacloud.com/universal-service/pdf_reader?spm=a3c0i.14138300.8102420620.dreadnow.646d647fDWbsii&amp;cdnorigin=video-intl&amp;pdf=Read%20Online-Handbook%20of%20COVID-19%20Prevention%20and%20Treatment.pdf">Handbook of COVID-19 Prevention and Treatment</a></li>
+</ol>
+
+<h4 id="articles">Articles</h4>
+<ol>
+  <li><a href="https://www.nytimes.com/2020/03/19/us/politics/trump-coronavirus-outbreak.html">Before Virus Outbreak, a Cascade of Warnings Went Unheeded</a>, March 19, 2020</li>
+  <li><a href="https://www.citylab.com/life/2020/03/coronavirus-cases-france-train-hospital-tgv-covid-19-patient/608833/">To Fight a Fast-Moving Pandemic, Get a Faster Hospital</a>, March 26, 2020</li>
+  <li><a href="https://www.businessinsider.sg/coronavirus-spain-says-rapid-tests-sent-from-china-missing-cases-2020-3?_ga=2.212074516.1285585527.1585620210-963085568.1583747541&amp;r=US&amp;IR=T">Spain, Europe’s worst-hit country after Italy, says coronavirus tests it bought from China are failing to detect positive cases</a>, March 26, 2020</li>
+  <li><a href="https://time.com/5812555/germany-coronavirus-deaths/">Why Is Germany’s Coronavirus Death Rate So Low?</a>, March 30, 2020</li>
+</ol>
+
+<h4 id="data-sources">Data sources</h4>
+<ul>
+  <li>Japan: <a href="https://www3.nhk.or.jp/news/special/coronavirus/#infection-status">NHK</a></li>
+  <li>Singapore: <a href="https://www.moh.gov.sg/covid-19">Ministry of Health</a></li>
+  <li>Other countries: JHU <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">Coronavirus COVID-19 Global Cases</a></li>
+  <li>US testing numbers: <a href="https://covidtracking.com/">The COIVD Tracking Project</a></li>
+  <li>Search interests: <a href="https://trends.google.com/trends/explore?date=today%205-y&amp;geo=US&amp;q=%2Fm%2F0b23px,%2Fm%2F01kr41,%2Fm%2F0cycc,%2Fm%2F01b_06">Google Trends</a></li>
+</ul>
+
+<h2 id="footnotes">Footnotes</h2>
+<div class="footnotes">
+  <ol>
+    <li id="fn:percentage">
+      <p>The percentage only indicates a relative change. The actual number of new cases reported in each country may be very different, as it depends on the absolute number of cumulative cases in that country. <a href="#fnref:percentage" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:diamond_princess">
+      <p><a href="https://www.medrxiv.org/content/10.1101/2020.03.05.20031773v2">Russell, Timothy W., et al. “Estimating the infection and case fatality ratio for COVID-19 using age-adjusted data from the outbreak on the Diamond Princess cruise ship.” medRxiv (2020).</a> <a href="#fnref:diamond_princess" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET
