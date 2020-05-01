@@ -2,7 +2,7 @@
 layout: post
 title:  "LDA: Linear discriminant analysis in vanilla form"
 date:   2019-10-2 08:00:00 +0800
-categories: STATISTICS
+categories: DATA
 tags: LDA supervised-learning classification
 ---
 
