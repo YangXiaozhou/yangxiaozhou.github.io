@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Hi, I am *Yang* Xiaozhou (杨晓州), currently working on my Ph.D. in industrial engineering at National University of Singapore, under the supervision of A/P [Chen Nan](https://www.eng.nus.edu.sg/isem/staff/chen-nan/). I am also part of the [Future Resilient Systems](http://www.frs.ethz.ch) program at [Singapore-ETH Centre](https://sec.ethz.ch). I am interested in condition monitoring problems for complex physical systems using data-driven methods. When I am not working, I like doing [sports](https://www.strava.com/athletes/29332455/), hiking and scuba diving around South East Asia. I also make [videos](https://www.youtube.com/user/a315345751/) about my diving and cycling trips. 
+Hi, I am *Yang* Xiaozhou (杨晓州), currently working on my Ph.D. in industrial engineering at National University of Singapore, mentored by A/P [Chen Nan](https://www.eng.nus.edu.sg/isem/staff/chen-nan/). I am also part of the Future Resilient Systems program at [Singapore-ETH Centre](https://sec.ethz.ch). I am interested in condition monitoring problems for complex physical systems using data-driven methods. When I am not working, I like cooking, doing [sports](https://www.strava.com/athletes/29332455/) and scuba diving around South East Asia. I also make [videos](https://www.youtube.com/user/a315345751/) about my diving and cycling trips. 
 
 Growing up, my dad would always tell me that "好记性不如烂笔头", which means that the palest ink is better than the best memory. He is a man of words. I can still remember vividly how he would sit in the living room and write in his journal every night. I am becoming increasingly aware of the fact that:
 - Writing stuff down forces me to organize and think deeper.
