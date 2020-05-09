@@ -1,27 +1,32 @@
 ---
 layout: post
-title:  "LDA: Linear discriminant analysis in vanilla form"
+title:  "Linear Discriminant Analysis, Explained."
 date:   2019-10-2 08:00:00 +0800
 categories: DATA
 tags: LDA supervised-learning classification
 ---
+### Key takeaways
+1. Linear discriminant analysis (LDA) is not just a dimension reduction tool, but also a robust classification method.
+2. With or without data normality assumption, we can arrive at the same LDA features, which explains its robustness.
 
-Linear discriminant analysis (LDA) is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces stable, effective, and interpretable classification results. Therefore, when tackling a classification problem, LDA is often the first and benchmarking method before other more complicated and flexible ones are employed.
+LDA is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces robust, decent, and interpretable classification results. When tackling real-world classification problems, LDA is often the first and benchmarking method before other more complicated and flexible ones are employed.
 
 Two prominent examples of using LDA (and it's variants) include:
 - *Bankruptcy prediction*: Edward Altman's [1968 model](https://en.wikipedia.org/wiki/Altman_Z-score) predicts the probability of company bankruptcy using trained LDA coefficients. The accuracy is said to be between 80% and 90%, evaluated over 31 years of data.
 - *Facial recognition*: While features learned from Principal Component Analysis (PCA) are called Eigenfaces, those learned from LDA are called [Fisherfaces](http://www.scholarpedia.org/article/Fisherfaces), named after the statistician, Sir Ronald Fisher. We explain this connection later.
 
-This article starts by introducing the classic LDA and its reduced-rank version. Then we summarize the merits and disadvantages of LDA. The second article following this generalizes LDA to handle more complex problems. By the way, you can find a set of <a href="/assets/2019-10-02/Discriminant_Analysis.pdf" target="_blank">corresponding slides</a> where I present roughly the same materials written in this article.
+This article starts by introducing the classic LDA and why it's deeply rooted as a classification method. Next we see the inherent dimension reduction in this method and how it leads to the reduced-rank LDA. After that, we see how Fisher masterfully arrived at the same algorithm, without assuming anything on the data. A hand-written digits classification problem is used to illustrate the performance of the LDA. The merits and disadvantages of the method is summarized at the end.
+
+The second article following this generalizes LDA to handle more complex problems. By the way, you can find a set of <a href="/assets/2019-10-02/Discriminant_Analysis.pdf" target="_blank">corresponding slides</a> where I present roughly the same materials written in this article.
 
 ### Classification by discriminant analysis
-Consider a generic classification problem: A random variable $X$ comes from one of $K$ classes, $G = 1, \dots, K$, with density $f_k(\mathbf{x})$ on $\mathbb{R}^p$. A discriminant rule divides the space into $K$ disjoint regions $\mathbb{R}_1, \dots, \mathbb{R}_K$. Classification by discriminant analysis simply means that we allocate $\mathbf{x }$ to $\Pi\_{j}$ if $\mathbf{x} \in \mathbb{R}_j$. We can follow two allocation rules:
+Let's see how LDA can be derived as a supervised classification method. Consider a generic classification problem: A random variable $X$ comes from one of $K$ classes, with density $f_k(\mathbf{x})$ on $\mathbb{R}^p$. A discriminant rule tries to divides the data space into $K$ disjoint regions $\mathbb{R}_1, \dots, \mathbb{R}_K$ that represent all classes (imagine the boxes on a chess board). With these regions, classification by discriminant analysis simply means that we allocate $\mathbf{x }$ to class $j$ if $\mathbf{x}$ is in region $j$. The question is then, how do we know which region the data $\mathbf{x }$ falls in? Naturally, We can follow two allocation rules:
 
-- *Maximum likelihood rule*: If we assume that each class could occur with equal probability, then allocate $\mathbf{x }$ to $\Pi_{j}$ if $j = \arg\max_i f_i(\mathbf{x})$ .
+- *Maximum likelihood rule*: If we assume that each class could occur with equal probability, then allocate $\mathbf{x }$ to class $j$ if $j = \arg\max_i f_i(\mathbf{x})$.
 - *Bayesian rule*: If we know the class prior probabilities, $\pi_1, \dots, \pi_K$, then allocate $\mathbf{x }$ to $\Pi_{j}$ if $j = \arg\max_i \pi_i f_i(\mathbf{x}) $.
 
 #### Linear and quadratic discriminant analysis
-If we assume data comes from multivariate Gaussian distribution, i.e. $X \sim N(\mathbf{\mu}, \mathbf{\Sigma})$, explicit forms of the above allocation rules can be obtained. Following the Bayesian rule, we classify $\mathbf{x}$ to $\Pi_{j}$ if $j = \arg\max_i \delta_i(\mathbf{x})$ where 
+If we assume data comes from multivariate Gaussian distribution, i.e. $X \sim N(\mathbf{\mu}, \mathbf{\Sigma})$, explicit forms of the above allocation rules can be obtained. Following the Bayesian rule, we classify $\mathbf{x}$ to class $j$ if $j = \arg\max_i \delta_i(\mathbf{x})$ where 
 
 $$
 \begin{align}
@@ -29,16 +34,16 @@ $$
 \end{align}
 $$ 
 
-is called the discriminant function. Note the use of log-likelihood here.  The decision boundary separating any two classes, $k$ and $\ell$, is the set of $\mathbf{x}$ where two discriminant functions have the same value, i.e. $$\{\mathbf{x}: \delta_k(\mathbf{x}) = \delta_{\ell}(\mathbf{x})\}$$. 
+is called the discriminant function. Note the use of log-likelihood here.  The decision boundary separating any two classes, $k$ and $\ell$, is the set of $\mathbf{x}$ where two discriminant functions have the same value, i.e. $$\{\mathbf{x}: \delta_k(\mathbf{x}) = \delta_{\ell}(\mathbf{x})\}$$. Therefore, any data that falls on the decision boundary is equally likely from the two classes.
 
 LDA arises in the case where we assume equal covariance among $K$ classes, i.e. $\mathbf{\Sigma}_1 = \mathbf{\Sigma}_2 = \dots = \mathbf{\Sigma}_K$. Then we can obtain the following discriminant function:
 
 $$
 \begin{align}
-    \delta_{k}(\mathbf{x}) = \mathbf{x}^{T} \mathbf{\Sigma}^{-1} \mathbf{\mu}_{k}-\frac{1}{2} \mathbf{\mu}_{k}^{T} \mathbf{\Sigma}^{-1} \mathbf{\mu}_{k}+\log \pi_{k} \,.
+    \delta_{k}(\mathbf{x}) = \mathbf{x}^{T} \mathbf{\Sigma}^{-1} \mathbf{\mu}_{k}-\frac{1}{2} \mathbf{\mu}_{k}^{T} \mathbf{\Sigma}^{-1} \mathbf{\mu}_{k}+\log \pi_{k} \,,
     \label{eqn_lda}
 \end{align}
-$$
+$$ using the Gaussian distribution likelihood function.
 
 This is a linear function in $\mathbf{x}$. Thus, the decision boundary between any pair of classes is also a linear function in $\mathbf{x}$, the reason for its name: linear discriminant analysis. Without the equal covariance assumption, the quadratic term in the likelihood does not cancel out, hence the resulting discriminant function is a quadratic function in $\mathbf{x}$:
 $$
@@ -52,21 +57,25 @@ $$
 
 Similarly, the decision boundary is quadratic in $\mathbf{x}$. This is known as quadratic discriminant analysis (QDA).
 
-#### Number of parameters
+#### Which is better? LDA or QDA?
 In real problems, population parameters are usually unknown and estimated from training data as $\hat{\pi}_k, \hat{\mathbf{\mu}}_k, \hat{\mathbf{\Sigma}}_k$. While QDA accommodates more flexible decision boundaries compared to LDA, the number of parameters needed to be estimated also increases faster than that of LDA. From (\ref{eqn_lda}), $p+1$ parameters (nonlinear transformation of the original distribution parameters) are needed to construct the discriminant function. For a problem with $K$ classes, we would only need $K-1$ such discriminant functions by arbitrarily choosing one class to be the base class, i.e. 
 
 $$
 \delta_{k}'(\mathbf{x}) = \delta_{k}(\mathbf{x}) - \delta_{K}(\mathbf{x})\,,
 $$
 
-$k = 1, \dots, K-1$. Hence, the total number of estimated parameters for LDA is $$(K-1)(p+1)$$. On the other hand, for each QDA discriminant function (\ref{eqn_qda}), mean vector, covariance matrix, and class prior need to be estimated:
+$k = 1, \dots, K-1$. Hence, the total number of estimated parameters for LDA is $$(K-1)(p+1)$$. 
+
+On the other hand, for each QDA discriminant function (\ref{eqn_qda}), mean vector, covariance matrix, and class prior need to be estimated:
 - Mean: $p$
 - Covariance: $p(p+1)/2$
 - Class prior: 1
- 
-The total number of estimated parameters for QDA is $$(K-1)\{p(p+3)/2+1\}$$. *Therefore, the number of parameters estimated in LDA increases linearly with $p$ while that of QDA increases quadratically with $p$.* We would expect QDA to have worse performance than LDA when the dimension $p$ is large. 
 
-#### Compromise between LDA & QDA
+The total number of estimated parameters for QDA is $$(K-1)\{p(p+3)/2+1\}$$. 
+
+*Therefore, the number of parameters estimated in LDA increases linearly with $p$ while that of QDA increases quadratically with $p$.* We would expect QDA to have worse performance than LDA when the dimension $p$ is large. 
+
+#### A silver lining? Compromise between LDA & QDA
 We can find a compromise between LDA and QDA by regularizing the individual class covariance matrices. That is, individual covariance matrix shrinks toward a common pooled covariance matrix through a penalty parameter $\alpha$:
 
 $$
@@ -148,7 +157,7 @@ with plt.style.context('seaborn-talk'):
 </details>
 
 #### Computation for LDA
-We can see from (\ref{eqn_lda}) and (\ref{eqn_qda}) that computations of discriminant functions can be simplified if we diagonalize the covariance matrices first. That is, data are transformed to have an identity covariance matrices. In the case of LDA, here's how we proceed with the computation:
+We can see from (\ref{eqn_lda}) and (\ref{eqn_qda}) that computations of discriminant functions can be simplified if we diagonalize the covariance matrices first. That is, data are transformed to have an identity covariance matrix. In the case of LDA, here's how we proceed with the computation:
 
 1. Perform eigen-decompostion on the pooled covariance matrix: 
 $$
@@ -262,7 +271,7 @@ Fisher proposes that the subspace $H_L$ is optimal when the class centroids of s
 $$\mathbf{B}^* = \mathbf{V}^* \mathbf{D_B} \mathbf{V^*}^T$$ cooresponding to the $L$ largest eigenvalues. These define the coordinates of the optimal subspace.
 5. Obtain $L$ new (discriminant) variables $Z_\ell = (\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell)^T X$, for $\ell = 1, \dots, L$.
 
-Through this procedure, we reduce our data dimension from $$\mathbf{X}_{(N \times p)}$$ to $$\mathbf{Z}_{(N \times L)}$$. Discriminant coordinate 1 and 2 in the previous wine plot are found by setting $L = 2$. Repeating LDA procedures for classification using the new data, $\mathbf{Z}$, is called the reduced-rank LDA. 
+Through this procedure, we reduce our data from $$\mathbf{X}_{(N \times p)}$$ to $$\mathbf{Z}_{(N \times L)}$$. Discriminant coordinate 1 and 2 in the previous wine plot are found by setting $L = 2$. Repeating LDA procedures for classification using the new data, $\mathbf{Z}$, is called the reduced-rank LDA. 
 
 ### Fisher's LDA
 Fisher derived the computation steps according to his optimality definition in a different way[^Fisher]. His steps of performing the reduced-rank LDA would later be known as the Fisher's LDA. Fisher does not make any assumption about the distribution of the populations, $\Pi_1, \dots, \Pi_K$. Instead, he tries to find a "sensible" rule so that the classification task becomes easier. In particular, Fisher finds a linear combination $$Z = \mathbf{a}^T X$$ where the between-class variance, $\mathbf{B} = \operatorname{cov}(\mathbf{M})$, is maximized relative to the within-class variance, $\mathbf{W}$, as defined in (\ref{within_w}). 
@@ -444,10 +453,10 @@ Here I summarize the virtues and shortcomings of LDA.
 
 Virtues of LDA:
 
-1. Simple prototype classifier: simple to interpret.
-2. Decision boundary is linear: simple to implement and robust.
-3. Dimension reduction: provides informative low-dimensional view on
-data.
+1. Simple prototype classifier: Distance to the class mean is used, it's simple to interpret.
+2. Decision boundary is linear: It's simple to implement and the classification is robust.
+3. Dimension reduction: It provides informative low-dimensional view on
+the data, which is both useful for visualization and feature engineering.
 
 Shortcomings of LDA:
 
