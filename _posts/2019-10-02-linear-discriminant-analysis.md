@@ -1,14 +1,19 @@
 ---
 layout: post
-title:  "Linear Discriminant Analysis, Explained."
+title:  "Linear Discriminant Analysis, Explained"
 date:   2019-10-2 08:00:00 +0800
 categories: DATA
 tags: LDA supervised-learning classification
 ---
+*Intuitions, illustrations, and maths: How it's more than a dimension reduction tool and why it's robust for real-world applications.*
+
+![mda]({{ '/' | relative_url }}assets/2019-10-02/mda.png) This graph shows that boundaries (blue lines) learned by mixture discriminant analysis (MDA) successfully separate three mingled classes. MDA is one of the powerful extensions of LDA.
+
 ### Key takeaways
 1. Linear discriminant analysis (LDA) is not just a dimension reduction tool, but also a robust classification method.
 2. With or without data normality assumption, we can arrive at the same LDA features, which explains its robustness.
 
+### Introduction
 LDA is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces robust, decent, and interpretable classification results. When tackling real-world classification problems, LDA is often the first and benchmarking method before other more complicated and flexible ones are employed.
 
 Two prominent examples of using LDA (and it's variants) include:

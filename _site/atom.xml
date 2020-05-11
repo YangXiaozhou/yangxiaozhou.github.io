@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-05-10T00:01:04+08:00</updated>
+ <updated>2020-05-10T16:59:15+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -683,16 +683,21 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
  </entry>
  
  <entry>
-   <title>Linear Discriminant Analysis, Explained.</title>
+   <title>Linear Discriminant Analysis, Explained</title>
    <link href="http://localhost:4000/data/2019/10/02/linear-discriminant-analysis.html"/>
    <updated>2019-10-02T08:00:00+08:00</updated>
    <id>http://localhost:4000/data/2019/10/02/linear-discriminant-analysis</id>
-   <content type="html">&lt;h3 id=&quot;key-takeaways&quot;&gt;Key takeaways&lt;/h3&gt;
+   <content type="html">&lt;p&gt;&lt;em&gt;Intuitions, illustrations, and maths: How it’s more than a dimension reduction tool and why it’s robust for real-world applications.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2019-10-02/mda.png&quot; alt=&quot;mda&quot; /&gt; This graph shows that boundaries (blue lines) learned by mixture discriminant analysis (MDA) successfully separate three mingled classes. MDA is one of the powerful extensions of LDA.&lt;/p&gt;
+
+&lt;h3 id=&quot;key-takeaways&quot;&gt;Key takeaways&lt;/h3&gt;
 &lt;ol&gt;
   &lt;li&gt;Linear discriminant analysis (LDA) is not just a dimension reduction tool, but also a robust classification method.&lt;/li&gt;
   &lt;li&gt;With or without data normality assumption, we can arrive at the same LDA features, which explains its robustness.&lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;LDA is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces robust, decent, and interpretable classification results. When tackling real-world classification problems, LDA is often the first and benchmarking method before other more complicated and flexible ones are employed.&lt;/p&gt;
 
 &lt;p&gt;Two prominent examples of using LDA (and it’s variants) include:&lt;/p&gt;
