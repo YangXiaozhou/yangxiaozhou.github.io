@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-05-11T09:56:07+08:00</updated>
+ <updated>2020-05-11T10:22:20+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -17,9 +17,7 @@
    <link href="http://localhost:4000/journal/2020/04/30/journal-2020-04.html"/>
    <updated>2020-04-30T08:00:00+08:00</updated>
    <id>http://localhost:4000/journal/2020/04/30/journal-2020-04</id>
-   <content type="html">&lt;p&gt;这个月收到了稿子的消息，在尝试拼上最后一块问题的“拼图”，以及思考如何坐上司机的位置。&lt;/p&gt;
-
-&lt;h3 id=&quot;用online-em方法学参数e&quot;&gt;用online EM方法学参数E&lt;/h3&gt;
+   <content type="html">&lt;p&gt;&lt;em&gt;这个月收到了稿子的消息，在尝试拼上最后一块问题的“拼图”，以及思考如何坐上司机的位置。&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;一转眼又两个星期没跟老板（博士导师）讨论研究上的问题了。&lt;/p&gt;
 
@@ -57,7 +55,7 @@
    <updated>2020-03-24T08:00:00+08:00</updated>
    <id>http://localhost:4000/2020/03/24/COVID-19</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;Any conclusion drawn from the data should be viewed with caution due to the dynamic nature of a pandemic and the adundant sources of bias associated with reporting.&lt;/strong&gt; 
-I periodically update here the COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and signals of containment. The intent of this blog is not to feed daily news, but to present perspectives worth considering when reading the news. The graphs in this blog are &lt;strong&gt;interactive&lt;/strong&gt; and best viewed on a Laptop browser.&lt;/p&gt;
+I periodically update here the COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and signals of containment. The intent of this blog is not to feed daily news, but to present perspectives worth considering when reading the news. The graphs in this blog are &lt;strong&gt;interactive&lt;/strong&gt; and best viewed on a desktop browser.&lt;/p&gt;
 
 &lt;h2 id=&quot;signals-of-containment&quot;&gt;Signals of Containment&lt;/h2&gt;
 
