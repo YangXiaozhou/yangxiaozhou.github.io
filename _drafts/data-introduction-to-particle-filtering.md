@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Particle filters: vallina and advanced"
+title:  "Particle filtering: vallina and advanced"
 date:   2020-01-10 08:00:00 +0800
-categories: STATISTICS
+categories: DATA
 tags: Bayesian Monte-Carlo Particle-filter
 ---
 

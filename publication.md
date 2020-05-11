@@ -9,7 +9,7 @@ permalink: /publication/
 Submitted to *IEEE Transactions on Power Systems*, under revision.
 
 2. **Yang, X.**, Chen, N., & Zhai C. (2019). [Optimal placement of limited PMUs for transmission line outage detection and identification](https://arxiv.org/abs/1911.02852). *arXiv: 1911.02852 [eess.SY]*. 
-Submitted to *PMAPS 2020*.
+*16th International Conference on Probabilistic Methods Applied to Power Systems*, accepted.
 
 ----
 

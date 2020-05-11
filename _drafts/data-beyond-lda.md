@@ -2,7 +2,7 @@
 layout: post
 title:  "Beyond LDA: Flexible, penalized, and mixture discriminant analysis"
 date:   2019-10-03 08:00:00 +0800
-categories: STATISTICS
+categories: DATA
 tags: LDA supervised-learning classification
 ---
 
