@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Linear Discriminant Analysis, Explained"
+title:  "Linear discriminant analysis, explained"
 date:   2019-10-2 08:00:00 +0800
 categories: DATA
 tags: LDA supervised-learning classification
