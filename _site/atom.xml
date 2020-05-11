@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-05-10T16:59:15+08:00</updated>
+ <updated>2020-05-11T09:56:07+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -57,33 +57,9 @@
    <updated>2020-03-24T08:00:00+08:00</updated>
    <id>http://localhost:4000/2020/03/24/COVID-19</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;Any conclusion drawn from the data should be viewed with caution due to the dynamic nature of a pandemic and the adundant sources of bias associated with reporting.&lt;/strong&gt; 
-I update (almost) every morning the COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and signals of containment. The intent of this blog is not to feed daily news, but to present perspectives worth considering when reading the news. The graphs in this blog are &lt;strong&gt;interactive&lt;/strong&gt; and best viewed on a Laptop browser. Latest update: May 10, 2020.&lt;/p&gt;
+I periodically update here the COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and signals of containment. The intent of this blog is not to feed daily news, but to present perspectives worth considering when reading the news. The graphs in this blog are &lt;strong&gt;interactive&lt;/strong&gt; and best viewed on a Laptop browser.&lt;/p&gt;
 
-&lt;h2 id=&quot;1-prognosis&quot;&gt;1. Prognosis&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Asia&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Singapore now has the highest number of COVID-19 cases among ASEAN countries. Dormitory clusters and local unlinked cases continue to drive up the total number (6% increasing rate).&lt;/li&gt;
-      &lt;li&gt;Cases in Indonesia is increasing at a moderate speed. However, it has one of the highest CFRs in the region, &lt;a href=&quot;#case fatality rate&quot;&gt;now at 8%&lt;/a&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;United States&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Death toll continues to rise, and the CFR is now at 6%. As more cases surface, the healthcare system faces increasing pressure to provide limited ICU beds to the most needed.&lt;/li&gt;
-      &lt;li&gt;On the other hand, daily new cases continue to slow down &lt;a href=&quot;#Percentage Change&quot;&gt;(3%)&lt;/a&gt;. Still, many states, especially in the mid and mid-west, are lagging on their testing.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Europe&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Countries in Europe have &lt;a href=&quot;#Case progression&quot;&gt;flattened the curve&lt;/a&gt;, though, only for the confirmed cases. The death cases are still increasing.&lt;/li&gt;
-      &lt;li&gt;There are clear signs of recovery as well. The worst-hit countries, Italy, Spain, and the UK are seeing a &lt;a href=&quot;#case fatality rate&quot;&gt;stabalization of death rates&lt;/a&gt;. Meanwhile, UK’s CFR now exceeds that of Italy at 16%.&lt;/li&gt;
-      &lt;li&gt;Overall, European countries may be approaching their peak in confirmed cases, and the stabilization of CFR indicates the rebound of the healthcare system. However, as we saw the recent surges in places like Singapore and South Korea, this is a long battle, and the second wave may arrive at any instance of complacency.&lt;/li&gt;
-      &lt;li&gt;Note there are caveats to reporting naive CFR (the ratio of current death and current cases), which I &lt;a href=&quot;#cfr bias&quot;&gt;explain below&lt;/a&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-signals-of-containment&quot;&gt;2. Signals of Containment&lt;/h2&gt;
+&lt;h2 id=&quot;signals-of-containment&quot;&gt;Signals of Containment&lt;/h2&gt;
 
 &lt;p&gt;&lt;a name=&quot;Confirmed and Death Cases&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;the-interplay-of-confirmed-and-death-cases&quot;&gt;The Interplay of Confirmed and Death Cases&lt;/h3&gt;
@@ -140,7 +116,7 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
 &lt;p&gt;As the containment takes effect, we expect to see the number of positive and negative tests stabilize, and the number of tests pending result drops. As you can see, we are not there yet.&lt;/p&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=481777218&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
 
-&lt;h2 id=&quot;3-cumulative-case-progression&quot;&gt;3. Cumulative Case Progression&lt;/h2&gt;
+&lt;h2 id=&quot;cumulative-case-progression&quot;&gt;Cumulative Case Progression&lt;/h2&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;a name=&quot;Case progression&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;iframe width=&quot;696.0000000000001&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=967719983&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
@@ -150,7 +126,7 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
   &lt;li&gt;Singapore sees a steady increase in confirmed cases, mainly in foreign worker dormitory clusters. However, if we look at the &lt;a href=&quot;#Case progression&quot;&gt;progression of confirmed cases&lt;/a&gt; in Singapore, it’s an almost perfect example of what “flatten the curve” looks like. For the most part, the cases double every ten days, whereas cases in some of the worst-hit countries double every one to three days.  - April 8, 2020&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;4-death-cases&quot;&gt;4. Death Cases&lt;/h2&gt;
+&lt;h2 id=&quot;death-cases&quot;&gt;Death Cases&lt;/h2&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;a name=&quot;case fatality rate&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;iframe width=&quot;696&quot; height=&quot;432&quot; seamless=&quot;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQnqDux0h60qbKyhlYff1YMpjwhPZA694IOW4ixe0XNFi-JUHjXxJ69AFIGXajrBURwUKW2FnELgE1C/pubchart?oid=366153234&amp;amp;format=interactive&quot;&gt;&lt;/iframe&gt;
