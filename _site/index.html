@@ -282,16 +282,15 @@
 <h3 id="年度公牛体重竞猜">年度公牛体重竞猜</h3>
 <p>让我们回到观察小天才Galton。1907年三月的自然杂志上刊登了他一篇篇幅只有一页的<a href="https://www.nature.com/articles/075450a0">来信</a>，名为：Vox Populi，直译为“民众的声音”，现在指大多数人的意见。住在英国Plymouth的他，注意到了家附近的镇子上每年都有举办这样一种家禽体重竞猜活动：主办方拉一头牛出来，参与竞猜的本地农夫、屠夫等感兴趣且有经验者对牛进行评估，并将他认为这头牛被宰杀洗净之后的体重提交上去。本着对大众智慧的科学研究态度，他通过某种方式获得了一次竞猜比赛中的数据：牛的真实体重以及787个竞猜者的估计。</p>
 
-<p style="display: block; margin-left: auto; margin-right: auto; width: 75%;"><img src="/assets/francis-galton/stock_show.jpg" alt="stock_show" /></p>
+<p style="display: block; margin-left: auto; margin-right: auto; width: 80%;"><img src="/assets/francis-galton/stock_show.jpg" alt="stock_show" /></p>
 
 <p>他把提交的所有竞猜体重从小到大排列开，发现中位数（一半的数比它低，一半比它高，”median”一词就是他给取的）是1207磅，而那头牛的真实净体重是1198磅，也就是说，民众的判断在这里跟真实值只差了0.8%！<sup id="fnref:correction"><a href="#fn:correction" class="footnote">2</a></sup>
 在那个线性回归还不是所有数据分析课程的第一节课，数据科学也还不是一种职业的时候，Galton从787个竞猜体重中通过简单的手算看到了以平均值或中位数对真实值进行估计的准确性。现在我们知道了，sample mean is an unbiased estimator of the true population mean。</p>
 
 <p>Galton的观察没有停在估计的准确性上，他还想知道，每个人估计的误差有多大。他随即把所有估计与中位数的偏差画了出来，他发现，每一个有经验的“肉眼测体重者”所做的估计，从低估的到高估的，一系列的偏差与正态分布极为相似。也就是说，如果把真实净体重看做是这个采样分布的mean，那任意一个参赛者（有经验的）来估计，他的估计值将是以真实净体重为中心的正态分布而分布着的（绕口！）。Let’s try again. The estimate by any pair of trained eyes is distributed normally around the true dressed weight of the ox. 这里我们得提一个无数现代科学依赖的理论：Central limit theorem (CLT)。对，就是那个可以解释为什么正态分布在现实生活中如此普遍的理论。因为CLT，我们现在确切地知道，当样本量足够大时，样本平均值呈以真实值为中心的正态分布。所以，从年度公牛体重竞猜的真实数据上，他，Sir Francis Galton，看到了central limit theorem。</p>
 
-<p>附上他原稿里的跟理论正态分布做对比的图，横轴是百分位，纵轴是偏差：</p>
-
-<p style="display: block; margin-left: 150px; margin-right: auto; width: 100%;"><img src="/assets/francis-galton/francis-galton-the-wisdom-of-crowds.jpg" alt="francis-galton-the-wisdom-of-crowds" /></p>
+<p>附上他原稿里的跟理论正态分布做对比的图，横轴是百分位，纵轴是偏差：
+<img src="/assets/francis-galton/francis-galton-the-wisdom-of-crowds.jpg" alt="francis-galton-the-wisdom-of-crowds" /></p>
 
 <h3 id="galton-board与柏青哥">Galton Board与柏青哥</h3>
 <p>Galton对于这种没有征兆但又近乎定律般呈正态分布的偏差非常着迷，他把偏差呈现出来的图称为:The Curve of Frenquency，也就是我们现在熟知的样本偏差的正态分布图。为了展现这种偏差的正态分布（即，CLT)以及前面提到的回归谬误，Galton设计了一个令人拍案叫绝的装置：Galton Board，现在也叫bean machine，如下图：</p>
@@ -311,7 +310,7 @@ k
 
 <p>读到这里，了解CLT的朋友或许已经明白为什么这个Galton board可以展示呈正态分布的偏差了。CLT的一个特殊应用是证明当试验的次数($n$)足够大的时候，binomial distribution的pmf会跟正态分布十分相似。换句话说，当我们的Galton board足够大，同时扔下的弹珠足够多的时候，我们应该就能看到经典的正态分布Bell curve！Genius!</p>
 
-<center><iframe width="711" height="400" src="https://www.youtube.com/embed/jiWt77xme64" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></center>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/jiWt77xme64" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></center>
 
 <hr />
 <p>为什么我们说这个弹珠机也能展示之前提到的回归谬误呢？把刚才那几百个弹珠落下来之后呈现出来的分布记在我们脑海中。让我再次使用做菜的例子，假设在最右端的弹珠代表着我做出了迄今为止最好吃的一道菜，因为不寻常地走运（弹珠掉入最右边的几率非常小）。现在，我把这颗弹珠拿出来，让它从顶部再一次下落（再做一次同样的菜），你觉得大概率会是掉在哪片地方？有多大概率再次到达最右端（做出同样高水平的菜）？</p>
