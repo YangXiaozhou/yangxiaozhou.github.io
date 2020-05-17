@@ -20,6 +20,8 @@ tags:
 想象这样一种情况：朋友在我搬新家的时候来家里吃饭，刚好碰到我前面说的超常发挥，都说做的猪手好吃！过了几个月，家里聚会，应朋友强烈要求，再次做出一盘猪手，不过这次是正常发挥。朋友吃后回忆起之前，评论到：“水平下降了呀！” 我冤不冤？ 这样的冤枉我们生活中还真不少，以至于它有个专门的称呼：Regression fallacy，中文叫“回归谬误”。Daniel Kahneman讲过亲身经历的这样[一个例子](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3292229/)：他有一次给飞行员学校做培训，提到了表扬能使学员变得更优秀。下面的一个教官不同意了，说他每次一夸完降落做得简直完美的学员，下一次一定做得没那么好，而刚被他骂过的学员，马上就能看到提升。听了教官的抗议，Kahneman当下有了一个eureka moment，他说道：
 > because we tend to reward others when they do well and punish them when they do badly, and because there is regression to the mean, it is part of the human condition that we are statistically punished for rewarding others and rewarded for punishing them.
 
+回归谬误可以用数学证明，假设两个变量以bivariate normal distribution分布，只要他们的correlation小于1，就会有回归谬误出现，对证明感兴趣的朋友可以看[维基](https://en.wikipedia.org/wiki/Regression_toward_the_mean)。
+
 ### 年度公牛体重竞猜
 让我们回到观察小天才Galton。1907年三月的自然杂志上刊登了他一篇篇幅只有一页的[来信](https://www.nature.com/articles/075450a0)，名为：Vox Populi，直译为“民众的声音”，现在指大多数人的意见。住在英国Plymouth的他，注意到了家附近的镇子上每年都有举办这样一种家禽体重竞猜活动：主办方拉一头牛出来，参与竞猜的本地农夫、屠夫等感兴趣且有经验者对牛进行评估，并将他认为这头牛被宰杀洗净之后的体重提交上去。本着对大众智慧的科学研究态度，他通过某种方式获得了一次竞猜比赛中的数据：牛的真实体重以及787个竞猜者的估计。
 
@@ -38,7 +40,7 @@ Galton的观察没有停在估计的准确性上，他还想知道，每个人�
 Galton对于这种没有征兆但又近乎定律般呈正态分布的偏差非常着迷，他把偏差呈现出来的图称为:The Curve of Frenquency，也就是我们现在熟知的样本偏差的正态分布图。为了展现这种偏差的正态分布（即，CLT)以及前面提到的回归谬误，Galton设计了一个令人拍案叫绝的装置：Galton Board，现在也叫bean machine，如下图：
 
 ![GaltonBoard](/assets/francis-galton/GaltonBoard.png)
-{:style="display: block; margin-left: auto; margin-right: auto; width: 50%;"}
+{:style="display: block; margin-left: auto; margin-right: auto; width: 75%;"}
 
 像不像我们小时候在街巷的小卖部店里玩过的弹珠机？没错，他们的背后是同样的原理。实际上，风靡全日本的柏青哥也是用的这样的设计原理：弹珠从顶部落下，经过跟若干层的撞针的撞击，最终掉进最下面从左到右N个桶当中的某个桶里。因为我们并不知道弹珠在跟每一根撞针撞击之后是走左还是走右，所以某个弹珠的最终位置并不能提前知道（i.e. 随机事件，随机漫步，随机过程）。
 
@@ -63,10 +65,7 @@ for $k = 0, \dots, n$.
 呵，Life!
 
 ### 结语
-
-
-
-
+Francis Galton作为英国维多利加时期的一位博学家，他的经历实在是太过丰富。自幼出生在富足精英的家庭，他是达尔文的表弟，年轻时继承了父亲的大笔遗产之后去到非洲大陆探险，回国之后写成的游记成了畅销书。Galton用他敏锐的观察力和好奇心，研究了无数问题，有些没啥实际作用，而有些却改变了众多领域接下来一百多年的发展。他做了早期的回归分析、提出了correlation的概率、将统计应用到遗传学等等，数理统计最重要的学者之一Karl Pearson是他的学生。同时，他发明了第一张天气地图、开启了对气候的科学研究，提出了一种有效识别指纹的方法，对当时的犯罪研究提供了帮助。哦，对了，他也提出了一种根据不同人脸图像来提出“平均特征”的方法。
 
 
 最后附上一个把Galton board解释得清楚得多、诙谐又幽默的哥们的[视频](https://www.youtube.com/embed/UCmPmkHqHXk)。

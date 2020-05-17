@@ -1,4 +1,4 @@
-I"N/<p>周末读Aeon的一篇文章：<a href="https://aeon.co/ideas/algorithms-associating-appearance-and-criminality-have-a-dark-past?utm_source=Aeon+Newsletter&amp;utm_campaign=f7c118f081-EMAIL_CAMPAIGN_2020_05_11_01_52&amp;utm_medium=email&amp;utm_term=0_411a82e59d-f7c118f081-69607277">Algorithms associating appearance and criminality have a dark past</a>，讲现在有研究人员用机器学习算法通过人脸来判断某人犯罪的几率。文中讲到这种从人外表提取预见性特征的尝试，在犯罪学历史上并不新奇，19世纪的意大利犯罪学家Cesare Lombroso认为罪犯的脸部有独特的样貌：突出的前额、鹰型鼻梁；而18世纪的Francis Galton则尝试回答一个更广泛的问题：人的外表跟他或她的健康状况、犯罪倾向、智力等等有关系吗？或者说，人的基因是否决定了健康、行为、智力和竞争力？</p>
+I"�/<p>周末读Aeon的一篇文章：<a href="https://aeon.co/ideas/algorithms-associating-appearance-and-criminality-have-a-dark-past?utm_source=Aeon+Newsletter&amp;utm_campaign=f7c118f081-EMAIL_CAMPAIGN_2020_05_11_01_52&amp;utm_medium=email&amp;utm_term=0_411a82e59d-f7c118f081-69607277">Algorithms associating appearance and criminality have a dark past</a>，讲现在有研究人员用机器学习算法通过人脸来判断某人犯罪的几率。文中讲到这种从人外表提取预见性特征的尝试，在犯罪学历史上并不新奇，19世纪的意大利犯罪学家Cesare Lombroso认为罪犯的脸部有独特的样貌：突出的前额、鹰型鼻梁；而18世纪的Francis Galton则尝试回答一个更广泛的问题：人的外表跟他或她的健康状况、犯罪倾向、智力等等有关系吗？或者说，人的基因是否决定了健康、行为、智力和竞争力？</p>
 
 <h3 id="francis-galton是谁">Francis Galton是谁？</h3>
 <p>这名字看起来有点眼熟，我隐约记得在老板的一门Forecasting统计课上听到过。仔细一想，对，在线性回归的部分时，老板上课专门介绍了他。Sir Francis Galton，姓Galton，名Francis，但当提到他时，出于礼仪，你得加个Sir，因为他在1909年被英国女王授予了骑士爵位。为什么在讲线性回归的时候要介绍他呢？因为他作为第一个人，观察并记录了这样一种现象<sup id="fnref:Galton_heights"><a href="#fn:Galton_heights" class="footnote">1</a></sup>：平均身高很高的父母，往往会有身高更接近普通的孩子；而平均身高偏低的父母的孩子，成年后通常有着更接近普通人的身高。
@@ -24,14 +24,13 @@
 
 <p>Galton的观察没有停在估计的准确性上，他还想知道，每个人估计的误差有多大。他随即把所有估计与中位数的偏差画了出来，他发现，每一个有经验的“肉眼测体重者”所做的估计，从低估的到高估的，一系列的偏差与正态分布极为相似。也就是说，如果把真实净体重看做是这个采样分布的mean，那任意一个参赛者（有经验的）来估计，他的估计值将是以真实净体重为中心的正态分布而分布着的（绕口！）。Let’s try again. The estimate by any pair of trained eyes is distributed normally around the true dressed weight of the ox. 这里我们得提一个无数现代科学依赖的理论：Central limit theorem (CLT)。对，就是那个可以解释为什么正态分布在现实生活中如此普遍的理论。因为CLT，我们现在确切地知道，当样本量足够大时，样本平均值呈以真实值为中心的正态分布。所以，从年度公牛体重竞猜的真实数据上，他，Sir Francis Galton，看到了central limit theorem。</p>
 
-<p>附上他原稿里的跟理论正态分布做对比的图，横轴是百分位，纵轴是偏差：</p>
-
-<p style="display: block; margin-left: auto; margin-right: auto; width: 100%;"><img src="/assets/francis-galton/francis-galton-the-wisdom-of-crowds.jpg" alt="francis-galton-the-wisdom-of-crowds" /></p>
+<p>附上他原稿里的跟理论正态分布做对比的图，横轴是百分位，纵轴是偏差：
+<img src="/assets/francis-galton/francis-galton-the-wisdom-of-crowds.jpg" alt="francis-galton-the-wisdom-of-crowds" /></p>
 
 <h3 id="galton-board与柏青哥">Galton Board与柏青哥</h3>
 <p>Galton对于这种没有征兆但又近乎定律般呈正态分布的偏差非常着迷，他把偏差呈现出来的图称为:The Curve of Frenquency，也就是我们现在熟知的样本偏差的正态分布图。为了展现这种偏差的正态分布（即，CLT)以及前面提到的回归谬误，Galton设计了一个令人拍案叫绝的装置：Galton Board，现在也叫bean machine，如下图：</p>
 
-<p style="display: block; margin-left: auto; margin-right: auto; width: 50%;"><img src="/assets/francis-galton/GaltonBoard.png" alt="GaltonBoard" /></p>
+<p style="display: block; margin-left: auto; margin-right: auto; width: 75%;"><img src="/assets/francis-galton/GaltonBoard.png" alt="GaltonBoard" /></p>
 
 <p>像不像我们小时候在街巷的小卖部店里玩过的弹珠机？没错，他们的背后是同样的原理。实际上，风靡全日本的柏青哥也是用的这样的设计原理：弹珠从顶部落下，经过跟若干层的撞针的撞击，最终掉进最下面从左到右N个桶当中的某个桶里。因为我们并不知道弹珠在跟每一根撞针撞击之后是走左还是走右，所以某个弹珠的最终位置并不能提前知道（i.e. 随机事件，随机漫步，随机过程）。</p>
 
@@ -54,6 +53,8 @@ k
 <p>呵，Life!</p>
 
 <h3 id="结语">结语</h3>
+
+<p>噢，差点忘了，让我把Galton其他头衔也一起放上来吧：统计学家、气象学家、心理学家、航海家、地理学家，以及，达尔文的</p>
 
 <p>最后附上一个把Galton board解释得清楚得多、诙谐又幽默的哥们的<a href="https://www.youtube.com/embed/UCmPmkHqHXk">视频</a>。</p>
 
