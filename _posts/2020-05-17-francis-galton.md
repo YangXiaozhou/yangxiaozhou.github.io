@@ -26,7 +26,7 @@ tags:
 让我们回到观察小天才Galton。1907年三月的自然杂志上刊登了他一篇篇幅只有一页的[来信](https://www.nature.com/articles/075450a0)，名为：Vox Populi，直译为“民众的声音”，现在指大多数人的意见。住在英国Plymouth的他，注意到了家附近的镇子上每年都有举办这样一种家禽体重竞猜活动：主办方拉一头牛出来，参与竞猜的本地农夫、屠夫等感兴趣且有经验者对牛进行评估，并将他认为这头牛被宰杀洗净之后的体重提交上去。本着对大众智慧的科学研究态度，他通过某种方式获得了一次竞猜比赛中的数据：牛的真实体重以及787个竞猜者的估计。
 
 ![stock_show](/assets/francis-galton/stock_show.jpg)
-{:style="display: block; margin-left: auto; margin-right: auto; width: 80%;"}
+{:style="display: block; margin-left: auto; margin-right: auto; width: 100%;"}
 
 他把提交的所有竞猜体重从小到大排列开，发现中位数（一半的数比它低，一半比它高，"median"一词就是他给取的）是1207磅，而那头牛的真实净体重是1198磅，也就是说，民众的判断在这里跟真实值只差了0.8%！[^correction]
 在那个线性回归还不是所有数据分析课程的第一节课，数据科学也还不是一种职业的时候，Galton从787个竞猜体重中通过简单的手算看到了以平均值或中位数对真实值进行估计的准确性。现在我们知道了，sample mean is an unbiased estimator of the true population mean。
@@ -64,11 +64,15 @@ for $k = 0, \dots, n$.
 
 呵，Life!
 
+对于众多弹珠看似随机、无法预测地落下，最后被某种魔力聚拢，一个挨着一个，逐渐呈现出美丽的正态分布的现象，Galton自己是这样描述的：
+> Order in Apparent Chaos: I know of scarcely anything so apt to impress the imagination as the wonderful form of cosmic order expressed by the Law of Frequency of Error. The law would have been personified by the Greeks and deified, if they had known of it. It reigns with serenity and in complete self-effacement amidst the wildest confusion. The huger the mob, and the greater the apparent anarchy, the more perfect is its sway. It is the supreme law of Unreason. Whenever a large sample of chaotic elements are taken in hand and marshalled in the order of their magnitude, an unsuspected and most beautiful form of regularity proves to have been latent all along.
+
 ### 结语
-Francis Galton作为英国维多利加时期的一位博学家，他的经历实在是太过丰富。自幼出生在富足精英的家庭，他是达尔文的表弟，年轻时继承了父亲的大笔遗产之后去到非洲大陆探险，回国之后写成的游记成了畅销书。Galton用他敏锐的观察力和好奇心，研究了无数问题，有些没啥实际作用，而有些却改变了众多领域接下来一百多年的发展。他做了早期的回归分析、提出了correlation的概率、将统计应用到遗传学等等，数理统计最重要的学者之一Karl Pearson是他的学生。同时，他发明了第一张天气地图、开启了对气候的科学研究，提出了一种有效识别指纹的方法，对当时的犯罪研究提供了帮助。哦，对了，他也提出了一种根据不同人脸图像来提出“平均特征”的方法。
+Francis Galton作为英国维多利亚时期的一位博学家，经历实在是太过丰富。自幼出生在富足精英的家庭，他是达尔文的表弟，年轻时继承了父亲的大笔遗产之后去非洲大陆探险，回国之后写成的游记成了畅销书。用他敏锐的观察力和好奇心，Galton研究了很多问题，有些没啥实际影响（最佳切蛋糕法、最佳沏茶法），有些却改变了众多领域接下来一百多年的发展。他做了早期的回归分析、提出了correlation的概念、将统计应用到遗传学、心理学，数理统计最重要的学者之一Karl Pearson是他的学生。同时，他为了得到数据，发明了问卷调查；研究天气，发明了第一张天气地图、开启了对气候的科学研究；提出了一种有效识别指纹的方法，对当时的法医学做了推动。哦，对了，正如我们开头所说，他也提出了一种根据不同人脸图像提取“平均特征”的方法。
 
+Galton所观察到的世界，让他有了很多疑问，他尝试用各种方法去丈量这个世界，并从看似混沌无序的现象中找到秩序和规律。我惊叹于Galton的观察力、跟随自己好奇心不断的探索与尝试以及对自己专业不设限的态度。文艺复兴人的精神劲儿可见一斑。好了，不多说了，我要去入手一个Galton board了。
 
-最后附上一个把Galton board解释得清楚得多、诙谐又幽默的哥们的[视频](https://www.youtube.com/embed/UCmPmkHqHXk)。
+最后附上一个把Galton board解释得比我清楚得多、诙谐又幽默的哥们的[视频](https://www.youtube.com/embed/UCmPmkHqHXk)。
 
 ### 注释
 [^Galton_heights]:这里放上Galton自己制作的父母孩子身高回归图：![Galton_heights](/assets/francis-galton/Galton's_correlation_diagram_1875.jpg)
