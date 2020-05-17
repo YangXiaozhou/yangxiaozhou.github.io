@@ -1,0 +1,29 @@
+I"�<p>周末读Aeon的一篇文章：<a href="https://aeon.co/ideas/algorithms-associating-appearance-and-criminality-have-a-dark-past?utm_source=Aeon+Newsletter&amp;utm_campaign=f7c118f081-EMAIL_CAMPAIGN_2020_05_11_01_52&amp;utm_medium=email&amp;utm_term=0_411a82e59d-f7c118f081-69607277">Algorithms associating appearance and criminality have a dark past</a>，讲现在有研究人员用机器学习算法通过人脸来判断某人犯罪的几率。文中讲到这种从人外表提取预见性特征的尝试，在犯罪学历史上并不新奇，19世纪的意大利犯罪学家Cesare Lombroso认为罪犯的脸部有独特的样貌：突出的前额、鹰型鼻梁；而18世纪的Francis Galton则尝试回答一个更广泛的问题：人的外表跟他或她的健康状况、犯罪倾向、智力等等有关系吗？或者说，人的基因是否决定了健康、行为、智力和竞争力？</p>
+
+<h3 id="francis-galton是谁">Francis Galton是谁？</h3>
+<p>这名字看起来有点眼熟，我隐约记得在老板的一门Forecasting统计课上听到过。仔细一想，对，在线性回归的部分时，老板上课专门介绍了他。Sir Francis Galton，姓Galton，名Francis，但当提到他时，出于礼仪，你得加个Sir，因为他在1909年被英国女王授予了骑士爵位。为什么在讲线性回归的时候要介绍他呢？因为他作为第一个人，观察并记录了这样一种现象：平均身高很高的父母，往往会有身高更接近普通的孩子；而平均身高偏低的父母的孩子，成年后通常有着更接近普通人的身高。
+下图是<a href="https://www.ams.org/journals/bull/2013-50-01/S0273-0979-2012-01374-5/S0273-0979-2012-01374-5.pdf">Bradley Efron</a>根据Galton当时收集到的父母和孩子的身高数据重新制的图，完美地展现了我们现在所知道的Bivariate normal distribution。
+<img src="/assets/francis-galton/regression_to_mean.png" alt="regression_to_mean" />
+他把这种现象称为regression towards mediocrity[reference]，现在通常叫做regression toward the mean，中文貌似叫“向均数回归”。同样的现象，我们在生活中很多地方都很观察到：因为运气而押中题目的学生考出了高分，下一次考试的成绩却没那么突出；连续投中三个三分球的朋友，下个球往往“容易”失手；我上周做<a href="https://yangxiaozhou.github.io/learning/2019/01/01/recipe.html#%E6%B2%B9%E6%B3%BC%E7%8C%AA%E6%89%8B">油泼猪手</a>时各种调料拿捏得很好，味道超棒，这周再做一次，大概率味道会比较普通🤷‍♂️。</p>
+
+<p>符合这原则的现象，他们有一个共通点：他们的结果往往完全或部分由随机因素决定，而随机因素的影响往往符合以0为中心的正态分布（时好时坏）。比如说，三分球进或不进，有投手能力的影响但也有运气的成分；我做的某道菜的味道，取决于下厨能力，但我的专心程度、手抖程度以及心情等几乎随机的因素也会有所影响。也就是说，假设某一天我超级走运，做出了迄今为止最好吃的一道菜，这种事件发生的概率是很小的（得到正态分布上的极大值（或极小值）的概率）。下一次做，大概率我会正常发挥，菜的味道也没上次好（取到了正态分布上0周围的某个值）。</p>
+
+<p>想象这样一种情况：朋友在我搬新家的时候来家里吃饭，刚好碰到我前面说的超常发挥，都说做的猪手好吃！过了几个月，家里聚会，应朋友强烈要求，再次做出一盘猪手，不过这次是正常发挥。朋友吃后回忆起之前，评论到：“水平下降了呀！” 我冤不冤？ 这样的冤枉我们生活中还真不少，以至于它有个专门的称呼：Regression fallacy，中文叫“回归谬误”。Daniel Kahneman讲过亲身经历的这样<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3292229/">一个例子</a>：他有一次给飞行员学校做培训，提到了表扬能使学员变得更优秀。下面的一个教官不同意了，说他每次一夸完降落做得简直完美的学员，下一次一定做得没那么好，而刚被他骂过的学员，马上就能看到提升。听了教官的抗议，Kahneman当下有了一个eureka moment，他说道：</p>
+<blockquote>
+  <p>because we tend to reward others when they do well and punish them when they do badly, and because there is regression to the mean, it is part of the human condition that we are statistically punished for rewarding others and rewarded for punishing them.</p>
+</blockquote>
+
+<h3 id="年度公牛体重竞猜">年度公牛体重竞猜</h3>
+<p>让我们回到观察小天才Galton。1907年三月的自然杂志上刊登了他一篇篇幅只有一页的<a href="https://www.nature.com/articles/075450a0">来信</a>，名为：Vox Populi，直译为“民众的声音”，现在指大多数人的意见。住在英国Plymouth的他，注意到了家附近的镇子上每年都有举办这样一种家禽体重竞猜活动：主办方拉一头牛出来，参与竞猜的本地农夫、屠夫等感兴趣且有经验者对牛进行评估，并将他认为这头牛被宰杀洗净之后的体重提交上去。本着对大众智慧的科学研究态度，他通过某种方式获得了一次竞猜比赛中的数据：牛的真实体重以及787个竞猜者的估计。<img src="/assets/francis-galton/stock_show.jpg" alt="stock_show" /></p>
+
+<p>在那个数据科学还不是一种职业、线性回归也没有变成数据分析课程第一章的时候，中看到了以平均值或中位数对真实值进行估计的准确性，也看到了这样的估计与真实值之间的偏差呈正态分布。</p>
+
+<h3 id="galton-board与柏青哥">Galton Board与柏青哥</h3>
+<p>为了展现这种偏差的正态分布以及前面提到的回归谬误，Galton设计了一个令人拍案叫绝的装置：Galton Board。这个board可以展示central limit theorem，对，就是那个可以解释为什么正态分布在现实生活中如此普遍的理论。这个board也可以展示Galton自己发现的regression toward the mean现象。</p>
+
+<p>解释Galton board的视频：</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UCmPmkHqHXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>这里放上Galton自己制作的父母孩子身高回归图：
+<img src="/assets/francis-galton/Galton's_correlation_diagram_1875.jpg" alt="Galton_heights" /></p>
+:ET
