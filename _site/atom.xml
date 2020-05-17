@@ -4,13 +4,62 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-05-11T10:22:20+08:00</updated>
+ <updated>2020-05-17T11:48:43+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>2020年5月：</title>
+   <link href="http://localhost:4000/journal/2020/05/16/journal-2020-05.html"/>
+   <updated>2020-05-16T08:00:00+08:00</updated>
+   <id>http://localhost:4000/journal/2020/05/16/journal-2020-05</id>
+   <content type="html">&lt;p&gt;2020.02.06 - 安排自己的PhD训练
+让自己的PhD training变得structured, how?
+Schedule around deep work:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Research work&lt;/li&gt;
+  &lt;li&gt;Academic training&lt;/li&gt;
+  &lt;li&gt;Professional development&lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Francis Galton</title>
+   <link href="http://localhost:4000/data/2020/05/16/francis-galton.html"/>
+   <updated>2020-05-16T08:00:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/05/16/francis-galton</id>
+   <content type="html">&lt;p&gt;周末读Aeon的一篇文章：&lt;a href=&quot;https://aeon.co/ideas/algorithms-associating-appearance-and-criminality-have-a-dark-past?utm_source=Aeon+Newsletter&amp;amp;utm_campaign=f7c118f081-EMAIL_CAMPAIGN_2020_05_11_01_52&amp;amp;utm_medium=email&amp;amp;utm_term=0_411a82e59d-f7c118f081-69607277&quot;&gt;Algorithms associating appearance and criminality have a dark past&lt;/a&gt;，讲现在有研究人员用机器学习算法通过人脸来判断某人犯罪的几率。文中讲到这种从人外表提取预见性特征的尝试，在犯罪学历史上并不新奇，19世纪的意大利犯罪学家Cesare Lombroso认为罪犯的脸部有独特的样貌：突出的前额、鹰型鼻梁；而18世纪的Francis Galton则尝试回答一个更广泛的问题：人的外表跟他或她的健康状况、犯罪倾向、智力等等有关系吗？或者说，人的基因是否决定了健康、行为、智力和竞争力？&lt;/p&gt;
+
+&lt;p&gt;Francis Galton？
+这名字看起来很眼熟，我隐约记得在老板的一门Forecasting统计课上听到过。仔细一想，对，在线性回归的部分时，老板上课专门介绍了他。Sir Francis Galton，姓Galton，名Francis，但当提到他时，出于礼仪，你得加个Sir，因为他在1909年被英国女王授予了骑士爵位。为什么在讲线性回归的时候要介绍他呢？因为他作为第一个人，观察并记录了这样一种现象：平均身高很高的父母，往往会有身高更接近普通的孩子；而平均身高偏低的父母的孩子，成年后通常有着更接近普通人的身高。
+下图是&lt;a href=&quot;https://www.ams.org/journals/bull/2013-50-01/S0273-0979-2012-01374-5/S0273-0979-2012-01374-5.pdf&quot;&gt;Bradley Efron&lt;/a&gt;根据Galton当时收集到的父母和孩子的身高数据重新制的图，完美地展现了我们现在所知道的Bivariate normal distribution。
+&lt;img src=&quot;/assets/francis-galton/regression_to_mean.png&quot; alt=&quot;regression_to_mean&quot; /&gt;
+他把这种现象称为regression towards mediocrity[reference]，现在通常叫做regression toward the mean，中文貌似叫“向均数回归”。同样的现象，我们在生活中很多地方都很观察到：因为运气而押中题目的学生考出了高分，下一次考试的成绩却没那么突出；连续投中三个三分球的朋友，下个球往往“容易”失手；我上周做&lt;a href=&quot;https://yangxiaozhou.github.io/learning/2019/01/01/recipe.html#%E6%B2%B9%E6%B3%BC%E7%8C%AA%E6%89%8B&quot;&gt;油泼猪手&lt;/a&gt;时各种调料拿捏得很好，味道超棒，这周再做一次，大概率味道会比较普通🤷‍♂️。&lt;/p&gt;
+
+&lt;p&gt;符合这原则的现象，他们有一个共通点：他们的结果往往完全或部分由随机因素决定，而随机因素的影响往往符合以0为中心的正态分布（时好时坏）。比如说，三分球进或不进，有投手能力的影响但也有运气的成分；我做的某道菜的味道，取决于下厨能力，但我的专心程度、手抖程度以及心情等几乎随机的因素也会有所影响。也就是说，假设某一天我超级走运，做出了迄今为止最好吃的一道菜，这种事件发生的概率是很小的（得到正态分布上的极大值（或极小值）的概率）。下一次做，大概率我会正常发挥，菜的味道也没上次好（取到了正态分布上0周围的某个值）。&lt;/p&gt;
+
+&lt;p&gt;想象这样一种情况：朋友在我搬新家的时候来家里吃饭，刚好碰到我前面说的超常发挥，都说做的猪手好吃！过了几个月，家里聚会，应朋友强烈要求，再次做出一盘猪手，不过这次是正常发挥。朋友吃后回忆起之前，评论到：“水平下降了呀！” 我冤不冤？ 这样的冤枉我们生活中还真不少，以至于它有个专门的称呼：Regression fallacy，中文叫“回归谬误”。Daniel Kahneman讲过亲身经历的这样&lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3292229/&quot;&gt;一个例子&lt;/a&gt;：他有一次给飞行员学校做培训，提到了表扬能使学员变得更优秀。下面的一个教官不同意了，说他每次一夸完降落做得简直完美的学员，下一次一定做得没那么好，而刚被他骂过的学员，马上就能看到提升。听了教官的抗议，Kahneman当下有了一个eureka moment，他说道：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;because we tend to reward others when they do well and punish them when they do badly, and because there is regression to the mean, it is part of the human condition that we are statistically punished for rewarding others and rewarded for punishing them.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;让我们回到观察小天才Galton。从年度公牛体重竞猜的数据中看到了以平均值与中位数对真实值进行估计的准确性，也看到了这样的估计与真实值之间的偏差呈正态分布。&lt;/p&gt;
+
+&lt;p&gt;为了展现这种差值的正态分布以及前面提到的回归谬误，Galton设计了一个令人拍案叫绝的装置：Galton Board。这个board可以展示central limit theorem，对，就是那个可以解释为什么正态分布在现实生活中如此普遍的理论。这个board也可以展示Galton自己发现的regression toward the mean现象。&lt;/p&gt;
+
+&lt;p&gt;解释Galton board的视频：&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/UCmPmkHqHXk&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;这里放上Galton自己制作的父母孩子身高回归图：
+&lt;img src=&quot;/assets/francis-galton/Galton's_correlation_diagram_1875.jpg&quot; alt=&quot;Galton_heights&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>2020年4月：更难的方法与有套路的交流</title>
@@ -51,9 +100,9 @@
  
  <entry>
    <title>Tracking the COVID-19 outbreak and signals of containment</title>
-   <link href="http://localhost:4000/2020/03/24/COVID-19.html"/>
+   <link href="http://localhost:4000/data/2020/03/24/COVID-19.html"/>
    <updated>2020-03-24T08:00:00+08:00</updated>
-   <id>http://localhost:4000/2020/03/24/COVID-19</id>
+   <id>http://localhost:4000/data/2020/03/24/COVID-19</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;Any conclusion drawn from the data should be viewed with caution due to the dynamic nature of a pandemic and the adundant sources of bias associated with reporting.&lt;/strong&gt; 
 I periodically update here the COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and signals of containment. The intent of this blog is not to feed daily news, but to present perspectives worth considering when reading the news. The graphs in this blog are &lt;strong&gt;interactive&lt;/strong&gt; and best viewed on a desktop browser.&lt;/p&gt;
 
@@ -194,10 +243,188 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
  </entry>
  
  <entry>
-   <title>Roadmap of Statistical Learning</title>
-   <link href="http://localhost:4000/statistics/2020/01/10/statistical_learning_map.html"/>
+   <title>Roadmap of statistical learning</title>
+   <link href="http://localhost:4000/data/2020/01/10/data-statistical_learning_map.html"/>
    <updated>2020-01-10T08:00:00+08:00</updated>
-   <id>http://localhost:4000/statistics/2020/01/10/-statistical_learning_map</id>
+   <id>http://localhost:4000/data/2020/01/10/data-statistical_learning_map</id>
+   <content type="html">&lt;p&gt;A (work-in-progress) roadmap for statistical learning concepts and tools. 
+&lt;img src=&quot;/assets/ST-road-map/mindmap.png&quot; alt=&quot;Mindmap&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Regression&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Regularised Linear Regression
+    &lt;ul&gt;
+      &lt;li&gt;Ridge regression&lt;/li&gt;
+      &lt;li&gt;Lasso regression&lt;/li&gt;
+      &lt;li&gt;Logistic (ridge/lasso) regression&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Next: however, linear relationship might be too restrictive in many cases, we wish to allow nonlinear relationship between response and predictors.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Basis Expansion Method
+    &lt;ul&gt;
+      &lt;li&gt;Approximate mean function in a piecewise way
+        &lt;ul&gt;
+          &lt;li&gt;kth order spline for kth order piece, i.e. cubic spline means each segment is approximated by a cubic function formed by basis functions&lt;/li&gt;
+          &lt;li&gt;Positive part remain operator (x - r)+ to ensure continuity at knots&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Additive Model (semi-parametric method, building on top of basis expansion method)
+    &lt;ul&gt;
+      &lt;li&gt;More flexible than linear but retains the interpretability
+        &lt;ul&gt;
+          &lt;li&gt;Partially linear additive model: summation of linear variables and functions of variable
+            &lt;ul&gt;
+              &lt;li&gt;Nonlinear variables can be assumed to be represented by spline basis&lt;/li&gt;
+              &lt;li&gt;What if a variable influences the relationship between Y and X?
+                &lt;ul&gt;
+                  &lt;li&gt;Varying coefficient regression model: variable coefficients are functions of a variable(Z)&lt;/li&gt;
+                  &lt;li&gt;Such function can be assumed to have good estimation by spline method&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Generalised: extend the method beyond linear link function, e.g. logistic&lt;/li&gt;
+      &lt;li&gt;If we approximate each additive variable by piecewise linear model: multivariate adaptive regression spline (MARS)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Local Averaging Method
+    &lt;ul&gt;
+      &lt;li&gt;To estimate the regression surface, we can use local averaging method by defining two things
+        &lt;ol&gt;
+          &lt;li&gt;What is “local”? i.e. how do we partition the space/find out the regression surface?&lt;/li&gt;
+          &lt;li&gt;How to compute “average”? i.e. simple average, weighted average?&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Point 1 above
+        &lt;ul&gt;
+          &lt;li&gt;Binary recursive method: Regression and classification tree (CART)&lt;/li&gt;
+          &lt;li&gt;Neighbourhood method: identifies a neighbour through some metric (kNN)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Point 2 above
+        &lt;ul&gt;
+          &lt;li&gt;Simple average: CART, kNN&lt;/li&gt;
+          &lt;li&gt;Weighted average: weighted kNN, see point 7 below&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But this kind of method produces non-smooth m(x) estimation since the weight used is indicator function.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Kernel Smoothing
+    &lt;ul&gt;
+      &lt;li&gt;Replace the indicator function by a kernel function (symmetric pdf)&lt;/li&gt;
+      &lt;li&gt;Nadaraya-Watson (NW) estimator: least square estimator weighted by kernel function&lt;/li&gt;
+      &lt;li&gt;The value of h defines the size of the neighbourhood&lt;/li&gt;
+      &lt;li&gt;Hence h determines the trade-off between model complexity and stability&lt;/li&gt;
+      &lt;li&gt;But y need not be locally constant (regression tree, kNN, KS), we can assume y is locally linear or polynomial
+        &lt;ul&gt;
+          &lt;li&gt;LLKS&lt;/li&gt;
+          &lt;li&gt;LPKS&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next: But the MSE of KS (nonparametric) methods increases with p (CoD). We can do dimension reduction, besides assuming a structure for m(x).&lt;/li&gt;
+  &lt;li&gt;Dimension-reduction based method
+    &lt;ol&gt;
+      &lt;li&gt;Ridge function = 1: Single-index model: one projection direction, in terms of unknown link function
+        &lt;ul&gt;
+          &lt;li&gt;More flexible than linear regression, but also more interpretable than PPR&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Ridge function &amp;gt; 1: Projection pursuit regression: one projection direction for each ridge function
+        &lt;ul&gt;
+          &lt;li&gt;Approximate target by non-linear function of the linear combination of input&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Machine Learning
+    &lt;ul&gt;
+      &lt;li&gt;Without assuming the model of the data, learning a function that maps features (X) to predictions (Y), assume a space of the function (linear space, non-linear space), assume a convex loss/risk function (square error function).&lt;/li&gt;
+      &lt;li&gt;Representer theorem provides the theoretical foundation for functions from RKHS to approximate the relationship by assuming a certain kernel, which is defined by the kind of kernel.&lt;/li&gt;
+      &lt;li&gt;Support Vector Machine: learning the location of the support vectors and the value of alpha for the kernel of support vectors, i.e. linear kernel, gaussian kernel, rbf kernel.&lt;/li&gt;
+      &lt;li&gt;How is it different (performance, computation and etc.) for low and high dimensional case when we use non-linear kernel SVM?&lt;/li&gt;
+      &lt;li&gt;Classification
+        &lt;ul&gt;
+          &lt;li&gt;Fisher’s linear discriminant: linear combination of dimensions of X -&amp;gt; find a linear hyperplane that maximally separates the linear combination and minimises the variance.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Classification&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Linear methods
+    &lt;ul&gt;
+      &lt;li&gt;Linear regression&lt;/li&gt;
+      &lt;li&gt;Linear discriminant analysis&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Non-linear methods
+    &lt;ul&gt;
+      &lt;li&gt;SVM&lt;/li&gt;
+      &lt;li&gt;Discriminant analysis
+        &lt;ol&gt;
+          &lt;li&gt;QDA ( assume unequal variance)&lt;/li&gt;
+          &lt;li&gt;Flexible discriminant analysis&lt;/li&gt;
+          &lt;li&gt;Mixture discriminant analysis&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Bayesian Inference&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Inference for dynamic systems/state-space models(SSMs)
+    &lt;ul&gt;
+      &lt;li&gt;Finite SSM: Baum-Petrie filter is the optimal filter with O(K^2) complexity.&lt;/li&gt;
+      &lt;li&gt;Linear-Gaussian SSM: Kalman filter is the optimal filter, propagate mean and variance for inference.&lt;/li&gt;
+      &lt;li&gt;Non-linear dynamics and/or non-Gaussian noise:
+        &lt;ol&gt;
+          &lt;li&gt;Extended Kalman filter&lt;/li&gt;
+          &lt;li&gt;Unscented Kalman filter&lt;/li&gt;
+          &lt;li&gt;Sequential Monte Carlo (Particle filters) methods can be used since the distribution information is preserved beyond mean and covariance:
+            &lt;ol&gt;
+              &lt;li&gt;Importance sampling to tackle difficult-to-sample posterior distribution problem&lt;/li&gt;
+              &lt;li&gt;Recursive formulation to tackle online inference complexity problem&lt;/li&gt;
+              &lt;li&gt;Resampling to ensure long-term stability of the particle method (mitigates sample impoverishment)&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Particle filtering
+            &lt;ol&gt;
+              &lt;li&gt;&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Particle smoothing&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Roadmap of statistical learning</title>
+   <link href="http://localhost:4000/data/2020/01/10/data-line-outage-detection-via-sequential-hypothesis-testing.html"/>
+   <updated>2020-01-10T08:00:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/01/10/data-line-outage-detection-via-sequential-hypothesis-testing</id>
    <content type="html">&lt;p&gt;A (work-in-progress) roadmap for statistical learning concepts and tools.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Regression&lt;/strong&gt;&lt;/p&gt;
@@ -371,10 +598,187 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
  </entry>
  
  <entry>
-   <title>Particle filters: vallina and advanced</title>
-   <link href="http://localhost:4000/statistics/2020/01/10/introduction-to-particle-filtering.html"/>
+   <title>Roadmap of statistical learning</title>
+   <link href="http://localhost:4000/data/2020/01/10/data-line-outage-detection-based-on-particle-filtering.html"/>
    <updated>2020-01-10T08:00:00+08:00</updated>
-   <id>http://localhost:4000/statistics/2020/01/10/-introduction-to-particle-filtering</id>
+   <id>http://localhost:4000/data/2020/01/10/data-line-outage-detection-based-on-particle-filtering</id>
+   <content type="html">&lt;p&gt;A (work-in-progress) roadmap for statistical learning concepts and tools.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Regression&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Regularised Linear Regression
+    &lt;ul&gt;
+      &lt;li&gt;Ridge regression&lt;/li&gt;
+      &lt;li&gt;Lasso regression&lt;/li&gt;
+      &lt;li&gt;Logistic (ridge/lasso) regression&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Next: however, linear relationship might be too restrictive in many cases, we wish to allow nonlinear relationship between response and predictors.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Basis Expansion Method
+    &lt;ul&gt;
+      &lt;li&gt;Approximate mean function in a piecewise way
+        &lt;ul&gt;
+          &lt;li&gt;kth order spline for kth order piece, i.e. cubic spline means each segment is approximated by a cubic function formed by basis functions&lt;/li&gt;
+          &lt;li&gt;Positive part remain operator (x - r)+ to ensure continuity at knots&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Additive Model (semi-parametric method, building on top of basis expansion method)
+    &lt;ul&gt;
+      &lt;li&gt;More flexible than linear but retains the interpretability
+        &lt;ul&gt;
+          &lt;li&gt;Partially linear additive model: summation of linear variables and functions of variable
+            &lt;ul&gt;
+              &lt;li&gt;Nonlinear variables can be assumed to be represented by spline basis&lt;/li&gt;
+              &lt;li&gt;What if a variable influences the relationship between Y and X?
+                &lt;ul&gt;
+                  &lt;li&gt;Varying coefficient regression model: variable coefficients are functions of a variable(Z)&lt;/li&gt;
+                  &lt;li&gt;Such function can be assumed to have good estimation by spline method&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Generalised: extend the method beyond linear link function, e.g. logistic&lt;/li&gt;
+      &lt;li&gt;If we approximate each additive variable by piecewise linear model: multivariate adaptive regression spline (MARS)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Local Averaging Method
+    &lt;ul&gt;
+      &lt;li&gt;To estimate the regression surface, we can use local averaging method by defining two things
+        &lt;ol&gt;
+          &lt;li&gt;What is “local”? i.e. how do we partition the space/find out the regression surface?&lt;/li&gt;
+          &lt;li&gt;How to compute “average”? i.e. simple average, weighted average?&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Point 1 above
+        &lt;ul&gt;
+          &lt;li&gt;Binary recursive method: Regression and classification tree (CART)&lt;/li&gt;
+          &lt;li&gt;Neighbourhood method: identifies a neighbour through some metric (kNN)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Point 2 above
+        &lt;ul&gt;
+          &lt;li&gt;Simple average: CART, kNN&lt;/li&gt;
+          &lt;li&gt;Weighted average: weighted kNN, see point 7 below&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But this kind of method produces non-smooth m(x) estimation since the weight used is indicator function.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Kernel Smoothing
+    &lt;ul&gt;
+      &lt;li&gt;Replace the indicator function by a kernel function (symmetric pdf)&lt;/li&gt;
+      &lt;li&gt;Nadaraya-Watson (NW) estimator: least square estimator weighted by kernel function&lt;/li&gt;
+      &lt;li&gt;The value of h defines the size of the neighbourhood&lt;/li&gt;
+      &lt;li&gt;Hence h determines the trade-off between model complexity and stability&lt;/li&gt;
+      &lt;li&gt;But y need not be locally constant (regression tree, kNN, KS), we can assume y is locally linear or polynomial
+        &lt;ul&gt;
+          &lt;li&gt;LLKS&lt;/li&gt;
+          &lt;li&gt;LPKS&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next: But the MSE of KS (nonparametric) methods increases with p (CoD). We can do dimension reduction, besides assuming a structure for m(x).&lt;/li&gt;
+  &lt;li&gt;Dimension-reduction based method
+    &lt;ol&gt;
+      &lt;li&gt;Ridge function = 1: Single-index model: one projection direction, in terms of unknown link function
+        &lt;ul&gt;
+          &lt;li&gt;More flexible than linear regression, but also more interpretable than PPR&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Ridge function &amp;gt; 1: Projection pursuit regression: one projection direction for each ridge function
+        &lt;ul&gt;
+          &lt;li&gt;Approximate target by non-linear function of the linear combination of input&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Machine Learning
+    &lt;ul&gt;
+      &lt;li&gt;Without assuming the model of the data, learning a function that maps features (X) to predictions (Y), assume a space of the function (linear space, non-linear space), assume a convex loss/risk function (square error function).&lt;/li&gt;
+      &lt;li&gt;Representer theorem provides the theoretical foundation for functions from RKHS to approximate the relationship by assuming a certain kernel, which is defined by the kind of kernel.&lt;/li&gt;
+      &lt;li&gt;Support Vector Machine: learning the location of the support vectors and the value of alpha for the kernel of support vectors, i.e. linear kernel, gaussian kernel, rbf kernel.&lt;/li&gt;
+      &lt;li&gt;How is it different (performance, computation and etc.) for low and high dimensional case when we use non-linear kernel SVM?&lt;/li&gt;
+      &lt;li&gt;Classification
+        &lt;ul&gt;
+          &lt;li&gt;Fisher’s linear discriminant: linear combination of dimensions of X -&amp;gt; find a linear hyperplane that maximally separates the linear combination and minimises the variance.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Classification&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Linear methods
+    &lt;ul&gt;
+      &lt;li&gt;Linear regression&lt;/li&gt;
+      &lt;li&gt;Linear discriminant analysis&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Non-linear methods
+    &lt;ul&gt;
+      &lt;li&gt;SVM&lt;/li&gt;
+      &lt;li&gt;Discriminant analysis
+        &lt;ol&gt;
+          &lt;li&gt;QDA ( assume unequal variance)&lt;/li&gt;
+          &lt;li&gt;Flexible discriminant analysis&lt;/li&gt;
+          &lt;li&gt;Mixture discriminant analysis&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Bayesian Inference&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Inference for dynamic systems/state-space models(SSMs)
+    &lt;ul&gt;
+      &lt;li&gt;Finite SSM: Baum-Petrie filter is the optimal filter with O(K^2) complexity.&lt;/li&gt;
+      &lt;li&gt;Linear-Gaussian SSM: Kalman filter is the optimal filter, propagate mean and variance for inference.&lt;/li&gt;
+      &lt;li&gt;Non-linear dynamics and/or non-Gaussian noise:
+        &lt;ol&gt;
+          &lt;li&gt;Extended Kalman filter&lt;/li&gt;
+          &lt;li&gt;Unscented Kalman filter&lt;/li&gt;
+          &lt;li&gt;Sequential Monte Carlo (Particle filters) methods can be used since the distribution information is preserved beyond mean and covariance:
+            &lt;ol&gt;
+              &lt;li&gt;Importance sampling to tackle difficult-to-sample posterior distribution problem&lt;/li&gt;
+              &lt;li&gt;Recursive formulation to tackle online inference complexity problem&lt;/li&gt;
+              &lt;li&gt;Resampling to ensure long-term stability of the particle method (mitigates sample impoverishment)&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Particle filtering
+            &lt;ol&gt;
+              &lt;li&gt;&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Particle smoothing&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Particle filtering: vallina and advanced</title>
+   <link href="http://localhost:4000/data/2020/01/10/data-introduction-to-particle-filtering.html"/>
+   <updated>2020-01-10T08:00:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/01/10/data-introduction-to-particle-filtering</id>
    <content type="html">&lt;p&gt;The problem - Non-linear dynamic state estimation&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;state-space model for dynamic systems&lt;/li&gt;
@@ -401,6 +805,7 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
    <id>http://localhost:4000/reading/2019/11/12/how-to-read</id>
    <content type="html">&lt;p&gt;我有选书购书的习惯，也有逛书店花五分钟决定带回哪本书的时候；我时不时读书，但往往读完之后忘掉书里有什么精彩内容；我有在留白评论的习惯，也有不再翻看当时写下的评论、观点的习惯。家里未拆封的书越来越多，断断续续在读的书具体也说不出来哪里吸引我，读过的书好像被快速消费过一样没再露脸。坦白讲，我并不了解应该如何读书吧。幸运的是，奥野宣之在他的《如何有效阅读一本书》里提供了清晰的方法。&lt;/p&gt;
 
+&lt;p style=&quot;display: block; margin-left: auto; margin-right: auto; width: 50%;&quot;&gt;&lt;img src=&quot;/assets/2019-11-12/book_cover.jpg&quot; alt=&quot;cover&quot; /&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;书名：&lt;a href=&quot;https://book.douban.com/subject/26789567/&quot;&gt;如何有效阅读一本书&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;原名：読書は1冊のノートにまとめなさい&lt;/li&gt;
@@ -481,8 +886,9 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
 &lt;p&gt;我想这道理几乎适用于所有需要长久坚持的事，探究一门深奥的学问、学习一门外语、亦或是健身减肥等等。我发现人往往能轻松看到漫长过程之后的一种状态，这或许是我们这样高等生物的特殊能力；但人又往往忍不住会对期待的状态过于着急。这的确与我们身处的社会环境有所关系，但在我们的基因当中是否也有着这种既有远见又企求触手可得的回报的种子呢？&lt;/p&gt;
 
 &lt;p&gt;我在读这本书的时候所做的读书笔记就没有按照作者推荐的格式，而是采用了自己习惯的类似于PPT设计的风格：
-&lt;img src=&quot;/assets/2019-11-12/how_to_read.jpg&quot; alt=&quot;how_to_read&quot; /&gt;
-不难看出，笔记里的结构几乎原封不动地变成了我这篇文章的结构，再加上在书里相关标记写下的评论，这篇文章的主要内容在我做完读书笔记的同时也就完成了。而这也是作者推崇的，以自己的读书笔记为基础，进一步写出原创文章，做属于自己的思想的输出。&lt;/p&gt;
+&lt;img src=&quot;/assets/2019-11-12/how_to_read.jpg&quot; alt=&quot;how_to_read&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;不难看出，笔记里的结构几乎原封不动地变成了我这篇文章的结构，再加上在书里相关标记写下的评论，这篇文章的主要内容在我做完读书笔记的同时也就完成了。而这也是作者推崇的，以自己的读书笔记为基础，进一步写出原创文章，做属于自己的思想的输出。&lt;/p&gt;
 
 &lt;h3 id=&quot;通过重读笔记提高自我&quot;&gt;通过重读笔记提高自我&lt;/h3&gt;
 &lt;p&gt;读书体验的最后一步，也是我从没做过的一步：重读笔记。就像有人会偶尔重读日记一样，时常重读读书笔记能让自己读过的书好像一直存在自己生活中，不断酝酿，不断跟自己的经历、知识发生新的碰撞：&lt;/p&gt;
@@ -503,9 +909,9 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
  
  <entry>
    <title>深度工作：一个研究者（我自己）应该做的事</title>
-   <link href="http://localhost:4000/reading/2019/11/11/academic-deep-work.html"/>
+   <link href="http://localhost:4000/reading/2019/11/11/reading-academic-deep-work.html"/>
    <updated>2019-11-11T08:00:00+08:00</updated>
-   <id>http://localhost:4000/reading/2019/11/11/-academic-deep-work</id>
+   <id>http://localhost:4000/reading/2019/11/11/reading-academic-deep-work</id>
    <content type="html">&lt;p&gt;什么是深度工作？为什么即时讯息不会提高而是降低我的工作效率？为什么忙绿工作了十个小时却并没完成什么重要的事情？为什么我要选择鼓励深度工作的公司？对于这些问题，Newport在他的深度工作里做出了回答。我想利用这篇文章来总结一下此书，读后的感想以及能为我所用的知识。后半段将结合马华灵先生建议的学术江湖的七种武器，提炼出对于我这般刚上路的研究者，应该花足够精力和时间去做的事儿，换言之：一个研究者应该做的深度工作。&lt;/p&gt;
 
 &lt;h2 id=&quot;深度工作&quot;&gt;深度工作&lt;/h2&gt;
@@ -644,9 +1050,9 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
  
  <entry>
    <title>Beyond LDA: Flexible, penalized, and mixture discriminant analysis</title>
-   <link href="http://localhost:4000/statistics/2019/10/03/beyond-lda.html"/>
+   <link href="http://localhost:4000/data/2019/10/03/data-beyond-lda.html"/>
    <updated>2019-10-03T08:00:00+08:00</updated>
-   <id>http://localhost:4000/statistics/2019/10/03/-beyond-lda</id>
+   <id>http://localhost:4000/data/2019/10/03/data-beyond-lda</id>
    <content type="html">&lt;p&gt;This is the second article that talks about the classification and dimension reduction tool LDA.&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -657,7 +1063,7 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
  </entry>
  
  <entry>
-   <title>Linear Discriminant Analysis, Explained</title>
+   <title>Linear discriminant analysis, explained</title>
    <link href="http://localhost:4000/data/2019/10/02/linear-discriminant-analysis.html"/>
    <updated>2019-10-02T08:00:00+08:00</updated>
    <id>http://localhost:4000/data/2019/10/02/linear-discriminant-analysis</id>

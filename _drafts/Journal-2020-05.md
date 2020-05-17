@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "2020年5月："
-date:   2020-05-31 08:00:00 +0800
+date:   2020-05-16 08:00:00 +0800
 categories: JOURNAL
 tags: academic-training 
 ---
@@ -12,3 +12,13 @@ Schedule around deep work:
 1. Research work
 2. Academic training
 3. Professional development
+
+
+
+
+
+
+
+
+
+

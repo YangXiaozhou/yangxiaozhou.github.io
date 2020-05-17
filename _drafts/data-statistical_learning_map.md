@@ -7,6 +7,7 @@ tags: statistical_learning
 ---
 
 A (work-in-progress) roadmap for statistical learning concepts and tools. 
+![Mindmap]({{ '/' | relative_url }}assets/ST-road-map/mindmap.png)
 
 **Regression**
 1. Regularised Linear Regression
