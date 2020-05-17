@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Francis Galton: 维多利亚时代博学家与他观察到的世界"
+title:  "Francis Galton: 维多利亚时代的博学家与他观察到的奇妙世界"
 date:   2020-05-17 08:00:00 +0800
 categories: DATA
 tags:  
