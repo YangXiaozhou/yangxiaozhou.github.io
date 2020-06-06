@@ -17,23 +17,27 @@ Cal Newport的《深度工作》[(Deep Work)](https://www.calnewport.com/books/d
 1. Where you'll work and for how long?
     - 制定好深度工作的地点与时间，尽最大可能保持这个地点和时间。如果中间有会议或者seminar之类的，提前调整好时间，算作是浅型工作，总的来说要保持弹性。
         - Place of work: Home office; Duration: 9am - 5pm:
-            - Plan my work: 830am - 9am
+        - Morning
+            + Meditation: 0700am - 0715am
+            + Writers write: 0730am - 0830am
+            - Breakfast/Plan my work: 830am - 9am
             - Deep work: 9am - 12am
+        - Afternoon
             - Lunch: 12am - 1pm
             - Shallow work: 1pm - 130pm
             - Nap: 0130pm - 2pm
-            - Deep work: 2pm - 530pm
-            - Shallow work: 530pm - 6pm
-        - Optional
-            - Dinner: 6pm - 7pm
-            - Japanese/Blog: 830pm - 930pm
+            - Deep work: 2pm - 5pm
+            - Shallow work/Exercise/Cooking: 5pm - 6pm
+        - Night
+            - Dinner: 6pm - 8pm
+            - Learning (Math, Japanese): 830pm - 930pm
             - Reading: 930pm - 1030pm
 
 2. How you'll work once you start to work?
     - 制定好深度工作时的规矩，必须遵循这个规矩。这个规矩应该可以尽可能实际，也能保证深度工作的效果。
     - 深度工作时：
-       - 坚决不使用手机；
-       - 电脑上不查email，不浏览跟工作无关的网页，不看跟工作无关的文件。
+       - 不使用手机；
+       - 不查email，不浏览跟工作无关的网页，不看跟工作无关的文件。
 3. How you'll support your work?
     - 尽可能从环境、吃喝等等方面帮助完成上面的ritual。
     - 准备：
@@ -48,8 +52,8 @@ Cal Newport的《深度工作》[(Deep Work)](https://www.calnewport.com/books/d
 
 #### Quit social media
 - Put conscience effort in scheduling off-work hour activities. Our brain relaxes when we swtich focus, not by induldging in semi-conscious web surfing.
-    - 晚上的时候不固定具体时间和时长，但是尽量做到三件事：
-        + 背N1单词
+    - 晚上的时候不固定具体时间和时长，但是尽量做到：
+        + 背N3单词
         + 读正在读的书
         + 11点睡床上
 

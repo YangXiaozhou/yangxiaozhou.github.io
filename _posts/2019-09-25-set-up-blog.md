@@ -66,11 +66,10 @@ I want to add tags and categories to my posts and create a dedicated page where 
 ```yaml
 ---
 layout: post
-mathjax: true
-title:  "Linear discriminant analysis (LDA) and beyond"
-date:   2019-09-26 08:00:00 +0800
-categories: statistics
-tags: supervised-learning classification
+title:  "Linear discriminant analysis, explained"
+date:   2019-10-2 08:00:00 +0800
+categories: DATA
+tags: LDA supervised-learning classification
 ---
 ```
 

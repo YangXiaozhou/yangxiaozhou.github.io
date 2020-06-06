@@ -6,7 +6,7 @@ permalink: /publication/
 [Google Scholar](https://scholar.google.com/citations?user=pWnVbHQAAAAJ&hl=en)
 #### Upcoming
 1. **Yang, X.**, Chen, N., & Zhai C. (2019). [A control chart approach to power system line outage detection under transient dynamics](https://arxiv.org/abs/1911.01733). *arXiv:1911.01733 [eess.SY]*. 
-Submitted to *IEEE Transactions on Power Systems*, under revision.
+Submitted to *IEEE Transactions on Power Systems*, under 2nd review.
 
 2. **Yang, X.**, Chen, N., & Zhai C. (2019). [Optimal placement of limited PMUs for transmission line outage detection and identification](https://arxiv.org/abs/1911.02852). *arXiv: 1911.02852 [eess.SY]*. 
 *16th International Conference on Probabilistic Methods Applied to Power Systems*, accepted.
