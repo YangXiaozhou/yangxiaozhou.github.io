@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "一件“小事”：Racial discrimination其实离我们很近"
+title:  "一件“小事”：Discrimination其实离我们很近"
 date:   2020-06-14 08:00:00 +0800
 categories: JOURNAL
 tags:  
