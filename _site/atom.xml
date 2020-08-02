@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-07-11T12:13:15+08:00</updated>
+ <updated>2020-08-02T17:40:32+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -13,11 +13,141 @@
 
  
  <entry>
-   <title>2020年6月：像做talkshow一样去做学术报告</title>
+   <title>菊与刀</title>
+   <link href="http://localhost:4000/reading/2020/07/22/reading-The-Chrysanthemum-and-the-Sword.html"/>
+   <updated>2020-07-22T08:00:00+08:00</updated>
+   <id>http://localhost:4000/reading/2020/07/22/reading-The-Chrysanthemum-and-the-Sword</id>
+   <content type="html">&lt;p&gt;时间是个奇妙的东西。第一次知道《菊与刀》还是在清华中学的课堂上，这书可能是推荐课外阅读丛书之一，那时的我对日本没什么特别兴趣，只依稀记得徐慧老师在讲台上给我们介绍这本书的样子。十年之后，偶然再次看到此书时，我已经在京都大学交换过、住过胶囊酒店与温泉旅馆、参加过Best Body Japan以及给朋友充当过日本“导游”。对樱花之国的历史和文化有了一定了解之后，现在再来看《菊与刀》，感触颇多。&lt;/p&gt;
+
+&lt;p style=&quot;display: block; margin-left: auto; margin-right: auto; width: 50%;&quot;&gt;&lt;img src=&quot;/assets/books/C_and_S_cover&quot; alt=&quot;cover&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;书名：&lt;a href=&quot;https://book.douban.com/subject/26171368/&quot;&gt;菊与刀&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;原名：The Chrysanthemum and the Sword&lt;/li&gt;
+  &lt;li&gt;作者：鲁思·本尼迪克特 (Ruth Benedict)&lt;/li&gt;
+  &lt;li&gt;译者：胡新梅&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-背景&quot;&gt;1. 背景&lt;/h3&gt;
+
+&lt;p&gt;本书作者鲁思是美国的一位人类学家，在文化人类学的领域颇有影响力。她的研究关注不同民族文化的产生以及差异，主张一个民族的文化能解构成智慧、宗教以及美的元素，她也认为对不同民族的了解与尊重是我们能和平共存的基础：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The purpose of anthropology is to make the world safe for human differences.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;美国加入二战后，鲁思被战时情报局(Office of War Information)聘为特殊顾问，专门研究日本。基于当时的工作写出的《菊与刀》(1946) 现在通常被认为是最畅销、最经典的西方战后日本人論著作。值得一提的是，《菊与刀》在日本和中国家喻户晓，几乎是“日本人国民性研究”的代言词，影响着一代又一代的学者和像我这样的普通读者，而在美国，这只是鲁思职业生涯中的一个工作，读者大多是人类学研究者，这本书被看做是她文化人类学理论的一个具体应用。&lt;/p&gt;
+
+&lt;p&gt;同样一本书在太平洋的两岸有着完全不同的回响，这背后的原因是什么？是否跟我们的身份有关？是否跟这书出版的时间有关？自出版以来，对《菊与刀》的评价也从来没少过，有人称赞鲁思工作的开创性，也有人质疑她研究的准确性，毕竟她从未去过日本。这些问题待我们看过本书的内容之后再来聊。&lt;/p&gt;
+
+&lt;h3 id=&quot;2-逻辑框架&quot;&gt;2. 逻辑框架&lt;/h3&gt;
+
+&lt;p&gt;作者在第一章定义了本书想要回答的问题和使用的分析方法，更重要的是，她也说明了本书不能回答的问题。她在第二章谈论了日本人的战争观，当时的美国人接触到日本大多是通过战争，这一章的内容是作为引子来带出后面的论述。第三、四章讨论了日本社会信奉的等级制以及它在明治政府所做社会改革中的体现。之后鲁思详细说明了形成日本人人生观的各种道德准则（第五到第九章）、他们面临的道德困境（第十章）、对自我修炼的执著（第十一章）以及对子女教育的观察（第十二章）。最后一章是作者对日本战后社会的预测。&lt;/p&gt;
+
+&lt;h3 id=&quot;3-方法&quot;&gt;3. 方法&lt;/h3&gt;
+
+&lt;p&gt;作者在第一章提出了她的研究问题，说明了这不是一本介绍日本社会、历史的书，而是一本有明确问题，使用了已有的研究方法，得到了成果继而写成的书：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;因此，本书并非一本专门论述日本的宗教、经济、政治或家庭观念的书，而是考察日本人在日常生活中的
+一些固有观念，从而探讨日本民族特性形成的原因。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;在作者看来，固有观念是依据，民族特性是问题。所以，就跟其他学术研究一样，本书有它设立的假定，有它问题的局限性，所使用的研究方法也不一定完美。我们大可不必把它看做是绝对权威的日本民族研究经典，以客观、尊重的眼光来评判它，我觉得比较合适。具体来说，作者的研究建立在这样一个假定之上：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;…即认为那些最孤立的细小行为之间也一定存在着某种系统性的联系。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;带着这样的信念，鲁思主要从两个方向去研究日本民族性的问题，一个是通过建立日本与亚太地区其他国家（主要是中国）之间的文化相似性和差异性，另一个是研究日本人的日常琐事。而鉴于战时无法前往日本生活，鲁思当时研究的材料主要分三种：与居住在美国的日本人访谈，关于日本的已有文献资料以及日本人创作的电影。我们可以记住作者的假定、方法以及材料，因为这些也是后人对本书或褒或贬的评价的焦点。&lt;/p&gt;
+
+&lt;h3 id=&quot;4-等级制&quot;&gt;4. 等级制&lt;/h3&gt;
+
+&lt;p&gt;作者认为，日本发起侵略战争是因为他们相信等级制，欲在大东亚建立新的秩序，让各国“各安其位”。在这里的分析中，作者准确地捕捉到了天皇在军事行动中的角色：军人的精神领袖与让行动正当化的理由。因为天皇与日本密不可分，天皇就是日本的象征，所以军人们认为上战场就是“对天皇意志的效忠”。&lt;/p&gt;
+
+&lt;p&gt;那等级制只有在军队里扮演重要角色吗？不，恰恰相反，作者认为日本人信奉的等级制就体现在社会中的方方面面，大体来讲包括社会阶级、家庭成员、年龄与性别，在这些语境里都有明确的等级区分，比如皇室对于平民、父亲对于孩子、长辈对于晚辈以及男人对于女人。对于这样的观察，作者总结说&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;日本人对于等级制的信赖是他们处理人与人、人与国家关系等一切关系的基础。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;从这句话里我们实际上能看出本书两个被后人诟病的点：作者经常用“日本人”开头，暗指所有人都一样，实则不然，这样的论述有过于笼统过于简化的嫌疑；而“一切”这类代表绝对程度的词更是在学术研究中极少见到，批评者只需找出一个反例便能让你在问答环节瞬间尴尬。&lt;/p&gt;
+
+&lt;p&gt;不过我倒是可以想到一个足以说明等级制观念渗透于日本社会的例子：日语的使用。在日语里，根据说话人双方的等级，我需要相应改变所用的词语，比如当我在跟上级讲话时，我需要使用所谓的尊敬型词语形式，而跟我的同辈则不用，甚至我可以使用“向下”型跟小孩儿讲话(さしあげます/あげます/やります)。这里的上级包括了工作中的上级、客户、家庭中的长辈以及任何我“应该”以尊敬语气交谈的人，也就是说，小孩儿们从语言学习开始就被教导着人分等级，以及该如何去判断说话双方的等级。这并不让人惊讶，毕竟语言往往承载着这社会的历史、习惯与认知，学习语言也就成了继承这些传统的方式。&lt;/p&gt;
+
+&lt;p&gt;有意思的是，作者观察到等级高的人并不能为所欲为，在日本，他们受到尊敬的前提是有尽其职责。在谈到家长在家庭成员中的地位时，她用了一个很形象的比喻：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;日本人从家庭生活经验中了解到只有符合家庭共同利益的决定才能得到认可，任何人都不能强制执行，包括一家之长，日本的家长更像是全家人的物质和精神财产管理人。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;为什么在很多人看来等级制无处不在、人的行为被无数框架约束着的日本社会能高效运作、甚至在战后经济腾飞，早早成为无数不多的亚洲发达国家？作者知道对于她的美国读者来说，这可能很难理解，因为美国社会看上去似乎没那么多等级差异、更崇尚个人主义以及平权主义。她进一步说，她认为这是因为日本人习惯“行为准则被细化、地位被明确”的社会，因为&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;虽然生活中要遵守各种繁琐的细则，但对日本人来说，只有这样，他们的生活才能有序进行，才会有一种安全感和归属感。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这里的描述让我惊叹于作者的人类学分析能力，没在日本生活过、不懂日语也并非日本研究出身的鲁思，能通过短短几个月的研究就抓住了一个又一个日本社会的独特样貌。对这个让生活“有序进行”的“安全感和归属感”我真的非常有共鸣。去日本生活了一段时间之后我发现，大大小小工作岗位上的人们矜矜业业，进便利店总有店员对你的欢迎，火车总是准点，拉面店里空间狭小但你旁边的大叔总是会整齐放好他的背包以免给你造成不便。生活在这样的社会里，时不时会让我有种错觉，会以为这是个精密无比的机器，而机器的每个零件都在精准无误地履行他们的职责，有点像萨特所描述的咖啡店里那个太想把自己变成服务员的&lt;a href=&quot;https://existentialcomics.com/comic/101&quot;&gt;服务员&lt;/a&gt;。不过，我确实感觉得到安全感，而当我也开始遵守这些细则时，我感觉成了这社会的一员。&lt;/p&gt;
+
+&lt;p&gt;安全感指的是对某个结果的预期没有太多不确定性，能安全预料到。比如当你作为后辈去为前辈跑腿时，你能安全预料到你的后辈也会为你做同样的事；比如当你在地铁上保持安静时，你能几乎确定其他人也会一样保持安静。这种约定俗成就是安全感的来源。而归属感就更好理解，它是左右集体活动的重要元素，它来自于人类作为社群动物的天性，它就是随大流的天性。当你遵从这这个社会约定俗成的规则时，你成了这其中普通的一员，其他成员看上去跟你一样，你就有了归属感。&lt;/p&gt;
+
+&lt;h3 id=&quot;5-明治政府&quot;&gt;5. 明治政府&lt;/h3&gt;
+
+&lt;p&gt;明治新政府当时派出伊藤博文前往欧洲各国取经，想要从立法等层面着手建立新日本。在当时的英国博学家Herbert Spencer与伊藤博文的信件来往中国，他提到&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;…日本人对长者的传统义务以及对天皇的义务都是日本独特的文化。日本将在“长者”的带领下避开那些崇尚个人主义国家所面临的一些不可避免的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这个评论很有意思，对长者的义务或许不是日本独有，但对天皇的义务确实如此。先不说他提到的“不可避免的问题”是什么，但Spencer是19世纪末最有影响力的英国博学家，就是他首先提出了“适者生存(Survival of the fittest)”的概念，后期也已支持社会达尔文主义“出名”。虽然在20世纪以来他已经失去了在西方世界曾经的学术地位，但他和他的著作在日本与中国仍然有着很大的影响。明治新政府也很满意Spencer的回信，因为这样他们就能将天皇等充分反映了等级制的社会元素保留下来。&lt;/p&gt;
+
+&lt;p&gt;而另外一个新政府下出现的变革是军部的独立。当时的宪法虽然没有明文规定，但是军部可以在一定程度上独立于内阁做决定甚至直接影响内阁，比如他们可以“拒绝委派陆海军将领担任内阁中的职务”。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;…人们对军部的做法通常采取接受服从的态度。并不是因为他们赞同这些做法，而是他们早已习惯了这种等级关系，也不赞成逾越特权界限。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;而民众对军部也是尊敬的，这或许与早期军人许多是曾经的武士有关，也与他们宣称是天皇的部队有关。总之，这种人民的支持与内阁对军部有限的牵制能力为之后二战时期日本变成军国主义国家埋下了伏笔。&lt;/p&gt;
+
+&lt;p&gt;明治政府作为当时倒幕之后组建起来的新政府，做出的各行各业的改革也充分体现了日本人对“各安其位
+”的等级观念。在政治中，天皇可以任命高层人物，上议院的影响力远高于下议院；神道作为国民信仰已然是超越宗教的存在，其神职人员有着“贵族”的地位，而其他宗教人员则没有。&lt;/p&gt;
+
+&lt;h3 id=&quot;6-受恩与还债&quot;&gt;6. 受恩与还债&lt;/h3&gt;
+
+&lt;p&gt;日本是个非常强调个人义务和责任的社会，这也是我去到那边之后能很快感到自如的原因，我本身也是这样的人。而在这样的环境里，作者观察到，“爱”跟义务画上了等号：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;从某种意义上说，日本人认为“爱”其实就是一种应尽的义务，一种对恩情的回报。而美国人却认为“爱”是一种真情的流露，是自愿给予的、不求回报的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;虽然作者描绘的日本人和美国人对于“爱”的理解看似处在天平的两端，但我认为实际上“爱”是包括了责任与感情的。一个更准确的说法可能是，日本社会更强调“爱”当中的责任，而美国则更强调情感。当然了，本书的研究都来自于作者在八十年前对当时的日本资料以及更早的日本历史的考察，这些观察与形象不一定适用于现在的日本，现在两者的差异可能已经有所减少了。总的来说，人总是会受身处大环境的影响，尤其是在年少成长期。日本的社会养育出了看重亲密关系中责任部分的人，但同时也会让其他不适应者想要逃离吧。&lt;/p&gt;
+
+&lt;p&gt;如果说来自于“爱”的义务会更加沉重但没那么频繁，那“陌生人的恩惠”则是刚好相反。因为这样的恩惠会时常发生，而在很多日本人心中，接受了别人的恩惠就必须要回报，所以作者发现他们会常为此类恩惠感到烦恼。比如说，日语里有很多可以用来表示感谢的词语，但实际上，很多这些词语是用来表达接受别人帮助时的“不安心情”。&lt;/p&gt;
+
+&lt;p&gt;还记得刚去日本没多久的时候，有个词让我有点摸不着头脑 - すみません，字面意思是“抱歉”，有点像是英文的“execus me”，而“谢谢”的日语直译是“ありがとう”。去了日本之后我发现大家用这两个词的习惯跟我很不一样。比如说，我在路上捡了别人掉的一张毛巾还给他，他不会说“ありがとう（谢谢）”，而是说“すみません（抱歉）”；公交车特意多等了几秒钟之后上来的乘客对司机说的不是“ありがとう（谢谢）”而是“すみません（抱歉）”。后来我明白了，所有承受了别人恩情（尤其是陌生人）的时候，大家习惯首先对别人表示抱歉，来表达自己受到恩情而又可能无法偿还的不安心情。&lt;/p&gt;
+
+&lt;h3 id=&quot;7-社会的压力&quot;&gt;7. 社会的压力&lt;/h3&gt;
+
+&lt;p&gt;大家都知道高自杀率是日本长久以来的社会问题，不少日本国内国外的学者、记者、公民团体等致力于研究这个课题，我们都想知道在一个平均寿命最长、医疗体系发达、有山有水的这么一个亚洲老牌发达国家，为什么有那么多人自杀？这本书的后几章我觉得也给出了一些答案。&lt;/p&gt;
+
+&lt;p&gt;第一个因素就跟前面所说的报答恩情有关。作者发现，日本人把恩情分为两类，第一类是无论多久都无法还清的恩情：忠与孝；第二类是需要在一定时间之内偿还的：欠世人的情义与对自己名誉的维护。日本社会把人们是否有尽他们的义务去偿还恩情看得很重，有的人甚至把“不能报答情义的人视为是人格上破产”。虽然这类社会关系与期待带来的心理负担不是日本社会仅有，但他们的过分强调会使得普通人无时无刻不处在巨大的压力之下：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;总之，人们在履行“情义”时总是感到很为难，感到不情愿，因为“情义”成为人们日常交往中所背负的沉重的心理负担。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;另外一个因素则是上面所说的日本人对维护自己名誉的追求。作者在许多历史文献与影视作品中发现，尽其所能去澄清谣言、维护名誉的事情是高尚的，是一种美德，是被推崇与赞扬的。而同时，日本人看上去习惯把某人所从事的工作与他本人紧密联系起来，这样所有对他工作的评价既是对他这个人的评价。所以可以想象，当我的工作做得不好得到批评之后，我会觉得这是对我这个人本身的批评，从而一个正常的工作的失误就变成了我质疑自己生命价值的灵魂拷问，这样的生活能不压力大吗？&lt;/p&gt;
+
+&lt;p&gt;而这些压力会被另外一个元素加剧：羞耻感。在日本社会长大的孩子往往羞耻心会比较重，作者发现&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;日本人之所以把谨慎与自重划等号，是因为他们总是感觉别人在注视评价自己。…因此，这种以羞耻感为基础的文化更看重别人的评价。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;随时都在想着自己在别人眼中的样子，一直做一个“被注视”的人，虽然这种被动的来自他人的原初体验在萨特看来是我们与这个世界交流所必不可少的，但如果体验只有“被注视”，总是担心自己的一些行为是否会给自己带来负面的评价，这样的生活肯定很累吧。一个例子就是如今名人所面对的24小时360度全民评价，就在今年五月，日本的摔跤运动员木村花在参加了一档非常出名的真人秀(Terrace House)之后，受到连续几个月的网络暴力无法承受而&lt;a href=&quot;https://www.nytimes.com/2020/07/17/arts/television/terrace-house-suicide.html&quot;&gt;结束了自己的生命&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;8-结语&quot;&gt;8. 结语&lt;/h3&gt;
+
+&lt;p&gt;二战战败之后，日本人开始了对自己的身份搜寻，而《菊与刀》作为一本美国学者写出的书刚好能让日本人从中去搜寻自己与美国人的区别，如何在美国政府的介入下重建日本。学界对本书的批评也从来没有消失过，主要批评的点有三个：作者书中很多被冠以日本民族性的特征实际上是基于对军国主义时期的日本军队的描写，而基于军人的研究并不能代表普通日本人；不过这源自于一个更大的本书采用的方法的问题，鲁思从头到尾都把日本民族当做了整齐的一体来描述，然后同一民族也会有多样性，本书没有照顾到这一方面；最后一个是鲁思书中的单一不变的民族性，在本书中，时间的元素对于民族特征的影响没有体现出来。&lt;/p&gt;
+
+&lt;p&gt;但是，就像我第一段“背景”中所说，本书有开篇的假设，有作者作为美国人类学家的视角限制，也有她为了写成一本书而对内容所做出的一些取舍，《菊与刀》出版之后所带起来的对日本社会、日本人的研究的热潮是这本书实实在在的贡献，后来的研究中有去对她的一些观点做进一步阐述的，也有做有理有据的反驳的，但本书不断被引用，也在中国和日本继续热销，可能有很多跟我一样的年轻朋友，读到的第一本非中国视角的关于日本的书籍就是《菊与刀》，这种经久不衰的影响力着实很让人惊叹了。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>2020年6月：像做talk show一样去做学术报告</title>
    <link href="http://localhost:4000/journal/2020/07/10/journal-2020-06.html"/>
    <updated>2020-07-10T08:00:00+08:00</updated>
    <id>http://localhost:4000/journal/2020/07/10/journal-2020-06</id>
-   <content type="html">&lt;p&gt;6月的新加坡结束了封城，而我也在这个月的最后一天收到了&lt;a href=&quot;https://ieeexplore.ieee.org/document/9132677&quot;&gt;文章&lt;/a&gt;被接收的邮件。&lt;/p&gt;
+   <content type="html">&lt;p&gt;6月的新加坡结束了封城，而我也在这个月的最后一天收到了&lt;a href=&quot;https://www.researchgate.net/publication/342652506_A_Control_Chart_Approach_to_Power_System_Line_Outage_Detection_Under_Transient_Dynamics&quot;&gt;文章&lt;/a&gt;被接收的邮件。&lt;/p&gt;
 
 &lt;p&gt;博一开始就在与不同老师的交流中了解到，科研与发表不是简单的因果关系：做了厉害的科研工作就能在顶级期刊上发表研究结果，这俩更像是有一定相关性但也分别独立于彼此的事件，最简单的例子就是我可能可以控制某个工作投入的时间，但无法控制谁是审稿人、审稿人的学术品味等等。在我很小的博士生圈子里，一篇文章被修改两三次、回复审稿人意见的信件比原文章还要长、修改期间所做的工作量不比原文少等这一类的经历也是没少听说，所以当我的第一篇文章在经过一轮修改之后便被接收时，心里虽然很高兴，但总觉得这次多少也走了些运吧。&lt;/p&gt;
 
@@ -32,7 +162,7 @@
 
 &lt;p&gt;下一个我会想到的问题就是，如果观众从我的分享中只记住了一件事儿，这事儿是什么？换句话说，我整个分享的&lt;strong&gt;中心思想&lt;/strong&gt;是什么。定好这样一个key takeaway之后，就可以根据它去设计分享的内容了：所有内容都要服务于这个中心思想，如果不相关，那就要果断删去。&lt;/p&gt;
 
-&lt;p&gt;回到照顾观众的问题，我在思考要如何解决观众的知识背景与我的研究之间的差异问题时，一直想找到一个合适的类比(analogy)。介绍陌生的概念时，如果用观众熟悉的事情做类比，往往能一下子让大家有一个直观的理解。实际上，这样的“套路”在各类talkshow里经常被用到，尽管大多数时候是带着戏谑成分的类比。&lt;/p&gt;
+&lt;p&gt;回到照顾观众的问题，我在思考要如何解决观众的知识背景与我的研究之间的差异问题时，一直想找到一个合适的类比(analogy)。介绍陌生的概念时，如果用观众熟悉的事情做类比，往往能一下子让大家有一个直观的理解。实际上，这样的“套路”在各类talk show里经常被用到，尽管大多数时候是带着戏谑成分的类比。&lt;/p&gt;
 
 &lt;p&gt;沿着这个思路，我越发清晰地认识到，我所做的电网断线监测研究与传染病大流行有几个非常相似的地方：他们都能迅速从一个case变成一个cluster；他们出现时都会有些异常的“信号”；而且这些“信号”一开始会很微弱，以及不完整。Good!虽然不是每个人都熟悉电网，但是我相信大家应该对新冠疫情不会陌生了。所以后来在我的分享里，几乎每一个关键地方，我都会用新冠疫情作为类比来解释。从我得到的一些反馈来看，这个类比应该还是发挥了一些作用了。&lt;/p&gt;
 &lt;figure&gt;
@@ -42,7 +172,7 @@
 
 &lt;p&gt;整个分享我花了最多的时间去聊问题的意义，目前大家面临的挑战，以及我们的研究能解决哪部分的问题，中间穿插着各种跟新冠疫情的类比，确保观众能对我说的东西有一个直观的理解。聊的时间最少的是实际工作中费时最久的部分，比如方法、仿真和代码等等，毕竟我的目的是让大家对这问题有所兴趣，而不是只把我们写的文章读出来。&lt;/p&gt;
 
-&lt;p&gt;值得一提的是，我在写分享会的稿子时，特意在某一页的内容里设计了一个joke，想尝试一下像talkshow一样营造一下轻松的气氛。然而，在实际分享过程中，不知道是因为脱稿还是因为这事儿对我来说实在太新，竟然完完全全忘记了说这个joke，最后讲完才想起来，实在有点小小的遗憾。行吧，下次再试一次。&lt;/p&gt;
+&lt;p&gt;值得一提的是，我在写分享会的稿子时，特意在某一页的内容里设计了一个joke，想尝试一下像talk show一样营造一下轻松的气氛。然而，在实际分享过程中，不知道是因为脱稿还是因为这事儿对我来说实在太新，竟然完完全全忘记了说这个joke，最后讲完才想起来，实在有点小小的遗憾。行吧，下次再试一次。&lt;/p&gt;
 
 </content>
  </entry>
@@ -61,6 +191,15 @@
 &lt;p&gt;新冠疫情刚爆发时，亚裔在很多国家遭受到了非暴力和暴力的攻击；最近因为弗洛伊德的事件，反抗种族歧视、警察暴力的抗议活动席卷全美，以及其他被殖民过或深受殖民时期影响的国家。美国的种族歧视问题有长久的历史原因，是制度性的、让人呼吸不过来的，但我对这些了解最多来自一些文字、影像和媒体记录，实际上无法真正体会到作为一个非裔美国人，在那样的环境中长大、生存是怎样的经历。&lt;/p&gt;
 
 &lt;p&gt;新加坡也曾经是英国的殖民地，从古至今的重要贸易交汇点聚集了来自不同地区的人，种族之间的对抗和摩擦也一直存在。最近的一次大规模冲突事件发生在1969年，在那之后政府和民众很努力去维持多种族、多国籍、多宗教的社会的和谐，也没再发生过跟种族或宗教相关的严重的抗议游行事件。但，这不代表隐性的歧视不存在了，昨天的事情恰恰说明这样的偏见其实离我们很近。我觉得我有义务把经历的这一件“小事”说出来，因为太多的沉默让类似的事情一再发生。另外，一个人恐怕很难改变别人的既有偏见，甚至很多时候会越描越黑，但我们可以尽量不用有色眼镜去看待其他种族、信仰、出身地、甚至是任何与我们背景不同的人。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Expectation maximization, explained</title>
+   <link href="http://localhost:4000/data/2020/06/10/data-introduction-to-EM.html"/>
+   <updated>2020-06-10T08:00:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/06/10/data-introduction-to-EM</id>
+   <content type="html">
 </content>
  </entry>
  
@@ -96,6 +235,24 @@
 
 &lt;p&gt;大概就是想尝试做这个事儿吧，一个一个对学过的东西做系统性的整理，梳理框架然后写成相对完整的笔记，对框架里的每个部分逐渐形成自己的理解；在之后的扩充过程中既能找到新知识在框架中的位置，也能不断更新自己的框架和理解。&lt;/p&gt;
 
+</content>
+ </entry>
+ 
+ <entry>
+   <title>枪炮、病菌与钢铁</title>
+   <link href="http://localhost:4000/reading/2020/06/01/reading-guns-germs-steels.html"/>
+   <updated>2020-06-01T08:00:00+08:00</updated>
+   <id>http://localhost:4000/reading/2020/06/01/reading-guns-germs-steels</id>
+   <content type="html">&lt;p&gt;[History: Science or art?]&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>枪炮、病菌与钢铁</title>
+   <link href="http://localhost:4000/reading/2020/06/01/reading-collections-2020.html"/>
+   <updated>2020-06-01T08:00:00+08:00</updated>
+   <id>http://localhost:4000/reading/2020/06/01/reading-collections-2020</id>
+   <content type="html">&lt;p&gt;[History: Science or art?]&lt;/p&gt;
 </content>
  </entry>
  
@@ -369,6 +526,562 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
  </entry>
  
  <entry>
+   <title>Roadmap of statistical learning</title>
+   <link href="http://localhost:4000/data/2020/01/10/data-statistical_learning_map.html"/>
+   <updated>2020-01-10T08:00:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/01/10/data-statistical_learning_map</id>
+   <content type="html">&lt;p&gt;A (work-in-progress) roadmap for statistical learning concepts and tools. 
+&lt;img src=&quot;/assets/ST-road-map/mindmap.png&quot; alt=&quot;Mindmap&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Regression&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Regularised Linear Regression
+    &lt;ul&gt;
+      &lt;li&gt;Ridge regression&lt;/li&gt;
+      &lt;li&gt;Lasso regression&lt;/li&gt;
+      &lt;li&gt;Logistic (ridge/lasso) regression&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Next: however, linear relationship might be too restrictive in many cases, we wish to allow nonlinear relationship between response and predictors.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Basis Expansion Method
+    &lt;ul&gt;
+      &lt;li&gt;Approximate mean function in a piecewise way
+        &lt;ul&gt;
+          &lt;li&gt;kth order spline for kth order piece, i.e. cubic spline means each segment is approximated by a cubic function formed by basis functions&lt;/li&gt;
+          &lt;li&gt;Positive part remain operator (x - r)+ to ensure continuity at knots&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Additive Model (semi-parametric method, building on top of basis expansion method)
+    &lt;ul&gt;
+      &lt;li&gt;More flexible than linear but retains the interpretability
+        &lt;ul&gt;
+          &lt;li&gt;Partially linear additive model: summation of linear variables and functions of variable
+            &lt;ul&gt;
+              &lt;li&gt;Nonlinear variables can be assumed to be represented by spline basis&lt;/li&gt;
+              &lt;li&gt;What if a variable influences the relationship between Y and X?
+                &lt;ul&gt;
+                  &lt;li&gt;Varying coefficient regression model: variable coefficients are functions of a variable(Z)&lt;/li&gt;
+                  &lt;li&gt;Such function can be assumed to have good estimation by spline method&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Generalised: extend the method beyond linear link function, e.g. logistic&lt;/li&gt;
+      &lt;li&gt;If we approximate each additive variable by piecewise linear model: multivariate adaptive regression spline (MARS)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Local Averaging Method
+    &lt;ul&gt;
+      &lt;li&gt;To estimate the regression surface, we can use local averaging method by defining two things
+        &lt;ol&gt;
+          &lt;li&gt;What is “local”? i.e. how do we partition the space/find out the regression surface?&lt;/li&gt;
+          &lt;li&gt;How to compute “average”? i.e. simple average, weighted average?&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Point 1 above
+        &lt;ul&gt;
+          &lt;li&gt;Binary recursive method: Regression and classification tree (CART)&lt;/li&gt;
+          &lt;li&gt;Neighbourhood method: identifies a neighbour through some metric (kNN)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Point 2 above
+        &lt;ul&gt;
+          &lt;li&gt;Simple average: CART, kNN&lt;/li&gt;
+          &lt;li&gt;Weighted average: weighted kNN, see point 7 below&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But this kind of method produces non-smooth m(x) estimation since the weight used is indicator function.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Kernel Smoothing
+    &lt;ul&gt;
+      &lt;li&gt;Replace the indicator function by a kernel function (symmetric pdf)&lt;/li&gt;
+      &lt;li&gt;Nadaraya-Watson (NW) estimator: least square estimator weighted by kernel function&lt;/li&gt;
+      &lt;li&gt;The value of h defines the size of the neighbourhood&lt;/li&gt;
+      &lt;li&gt;Hence h determines the trade-off between model complexity and stability&lt;/li&gt;
+      &lt;li&gt;But y need not be locally constant (regression tree, kNN, KS), we can assume y is locally linear or polynomial
+        &lt;ul&gt;
+          &lt;li&gt;LLKS&lt;/li&gt;
+          &lt;li&gt;LPKS&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next: But the MSE of KS (nonparametric) methods increases with p (CoD). We can do dimension reduction, besides assuming a structure for m(x).&lt;/li&gt;
+  &lt;li&gt;Dimension-reduction based method
+    &lt;ol&gt;
+      &lt;li&gt;Ridge function = 1: Single-index model: one projection direction, in terms of unknown link function
+        &lt;ul&gt;
+          &lt;li&gt;More flexible than linear regression, but also more interpretable than PPR&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Ridge function &amp;gt; 1: Projection pursuit regression: one projection direction for each ridge function
+        &lt;ul&gt;
+          &lt;li&gt;Approximate target by non-linear function of the linear combination of input&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Machine Learning
+    &lt;ul&gt;
+      &lt;li&gt;Without assuming the model of the data, learning a function that maps features (X) to predictions (Y), assume a space of the function (linear space, non-linear space), assume a convex loss/risk function (square error function).&lt;/li&gt;
+      &lt;li&gt;Representer theorem provides the theoretical foundation for functions from RKHS to approximate the relationship by assuming a certain kernel, which is defined by the kind of kernel.&lt;/li&gt;
+      &lt;li&gt;Support Vector Machine: learning the location of the support vectors and the value of alpha for the kernel of support vectors, i.e. linear kernel, gaussian kernel, rbf kernel.&lt;/li&gt;
+      &lt;li&gt;How is it different (performance, computation and etc.) for low and high dimensional case when we use non-linear kernel SVM?&lt;/li&gt;
+      &lt;li&gt;Classification
+        &lt;ul&gt;
+          &lt;li&gt;Fisher’s linear discriminant: linear combination of dimensions of X -&amp;gt; find a linear hyperplane that maximally separates the linear combination and minimises the variance.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Classification&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Linear methods
+    &lt;ul&gt;
+      &lt;li&gt;Linear regression&lt;/li&gt;
+      &lt;li&gt;Linear discriminant analysis&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Non-linear methods
+    &lt;ul&gt;
+      &lt;li&gt;SVM&lt;/li&gt;
+      &lt;li&gt;Discriminant analysis
+        &lt;ol&gt;
+          &lt;li&gt;QDA ( assume unequal variance)&lt;/li&gt;
+          &lt;li&gt;Flexible discriminant analysis&lt;/li&gt;
+          &lt;li&gt;Mixture discriminant analysis&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Bayesian Inference&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Inference for dynamic systems/state-space models(SSMs)
+    &lt;ul&gt;
+      &lt;li&gt;Finite SSM: Baum-Petrie filter is the optimal filter with O(K^2) complexity.&lt;/li&gt;
+      &lt;li&gt;Linear-Gaussian SSM: Kalman filter is the optimal filter, propagate mean and variance for inference.&lt;/li&gt;
+      &lt;li&gt;Non-linear dynamics and/or non-Gaussian noise:
+        &lt;ol&gt;
+          &lt;li&gt;Extended Kalman filter&lt;/li&gt;
+          &lt;li&gt;Unscented Kalman filter&lt;/li&gt;
+          &lt;li&gt;Sequential Monte Carlo (Particle filters) methods can be used since the distribution information is preserved beyond mean and covariance:
+            &lt;ol&gt;
+              &lt;li&gt;Importance sampling to tackle difficult-to-sample posterior distribution problem&lt;/li&gt;
+              &lt;li&gt;Recursive formulation to tackle online inference complexity problem&lt;/li&gt;
+              &lt;li&gt;Resampling to ensure long-term stability of the particle method (mitigates sample impoverishment)&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Particle filtering
+            &lt;ol&gt;
+              &lt;li&gt;&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Particle smoothing&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Roadmap of statistical learning</title>
+   <link href="http://localhost:4000/data/2020/01/10/data-line-outage-detection-via-sequential-hypothesis-testing.html"/>
+   <updated>2020-01-10T08:00:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/01/10/data-line-outage-detection-via-sequential-hypothesis-testing</id>
+   <content type="html">&lt;p&gt;A (work-in-progress) roadmap for statistical learning concepts and tools.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Regression&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Regularised Linear Regression
+    &lt;ul&gt;
+      &lt;li&gt;Ridge regression&lt;/li&gt;
+      &lt;li&gt;Lasso regression&lt;/li&gt;
+      &lt;li&gt;Logistic (ridge/lasso) regression&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Next: however, linear relationship might be too restrictive in many cases, we wish to allow nonlinear relationship between response and predictors.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Basis Expansion Method
+    &lt;ul&gt;
+      &lt;li&gt;Approximate mean function in a piecewise way
+        &lt;ul&gt;
+          &lt;li&gt;kth order spline for kth order piece, i.e. cubic spline means each segment is approximated by a cubic function formed by basis functions&lt;/li&gt;
+          &lt;li&gt;Positive part remain operator (x - r)+ to ensure continuity at knots&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Additive Model (semi-parametric method, building on top of basis expansion method)
+    &lt;ul&gt;
+      &lt;li&gt;More flexible than linear but retains the interpretability
+        &lt;ul&gt;
+          &lt;li&gt;Partially linear additive model: summation of linear variables and functions of variable
+            &lt;ul&gt;
+              &lt;li&gt;Nonlinear variables can be assumed to be represented by spline basis&lt;/li&gt;
+              &lt;li&gt;What if a variable influences the relationship between Y and X?
+                &lt;ul&gt;
+                  &lt;li&gt;Varying coefficient regression model: variable coefficients are functions of a variable(Z)&lt;/li&gt;
+                  &lt;li&gt;Such function can be assumed to have good estimation by spline method&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Generalised: extend the method beyond linear link function, e.g. logistic&lt;/li&gt;
+      &lt;li&gt;If we approximate each additive variable by piecewise linear model: multivariate adaptive regression spline (MARS)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Local Averaging Method
+    &lt;ul&gt;
+      &lt;li&gt;To estimate the regression surface, we can use local averaging method by defining two things
+        &lt;ol&gt;
+          &lt;li&gt;What is “local”? i.e. how do we partition the space/find out the regression surface?&lt;/li&gt;
+          &lt;li&gt;How to compute “average”? i.e. simple average, weighted average?&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Point 1 above
+        &lt;ul&gt;
+          &lt;li&gt;Binary recursive method: Regression and classification tree (CART)&lt;/li&gt;
+          &lt;li&gt;Neighbourhood method: identifies a neighbour through some metric (kNN)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Point 2 above
+        &lt;ul&gt;
+          &lt;li&gt;Simple average: CART, kNN&lt;/li&gt;
+          &lt;li&gt;Weighted average: weighted kNN, see point 7 below&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But this kind of method produces non-smooth m(x) estimation since the weight used is indicator function.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Kernel Smoothing
+    &lt;ul&gt;
+      &lt;li&gt;Replace the indicator function by a kernel function (symmetric pdf)&lt;/li&gt;
+      &lt;li&gt;Nadaraya-Watson (NW) estimator: least square estimator weighted by kernel function&lt;/li&gt;
+      &lt;li&gt;The value of h defines the size of the neighbourhood&lt;/li&gt;
+      &lt;li&gt;Hence h determines the trade-off between model complexity and stability&lt;/li&gt;
+      &lt;li&gt;But y need not be locally constant (regression tree, kNN, KS), we can assume y is locally linear or polynomial
+        &lt;ul&gt;
+          &lt;li&gt;LLKS&lt;/li&gt;
+          &lt;li&gt;LPKS&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next: But the MSE of KS (nonparametric) methods increases with p (CoD). We can do dimension reduction, besides assuming a structure for m(x).&lt;/li&gt;
+  &lt;li&gt;Dimension-reduction based method
+    &lt;ol&gt;
+      &lt;li&gt;Ridge function = 1: Single-index model: one projection direction, in terms of unknown link function
+        &lt;ul&gt;
+          &lt;li&gt;More flexible than linear regression, but also more interpretable than PPR&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Ridge function &amp;gt; 1: Projection pursuit regression: one projection direction for each ridge function
+        &lt;ul&gt;
+          &lt;li&gt;Approximate target by non-linear function of the linear combination of input&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Machine Learning
+    &lt;ul&gt;
+      &lt;li&gt;Without assuming the model of the data, learning a function that maps features (X) to predictions (Y), assume a space of the function (linear space, non-linear space), assume a convex loss/risk function (square error function).&lt;/li&gt;
+      &lt;li&gt;Representer theorem provides the theoretical foundation for functions from RKHS to approximate the relationship by assuming a certain kernel, which is defined by the kind of kernel.&lt;/li&gt;
+      &lt;li&gt;Support Vector Machine: learning the location of the support vectors and the value of alpha for the kernel of support vectors, i.e. linear kernel, gaussian kernel, rbf kernel.&lt;/li&gt;
+      &lt;li&gt;How is it different (performance, computation and etc.) for low and high dimensional case when we use non-linear kernel SVM?&lt;/li&gt;
+      &lt;li&gt;Classification
+        &lt;ul&gt;
+          &lt;li&gt;Fisher’s linear discriminant: linear combination of dimensions of X -&amp;gt; find a linear hyperplane that maximally separates the linear combination and minimises the variance.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Classification&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Linear methods
+    &lt;ul&gt;
+      &lt;li&gt;Linear regression&lt;/li&gt;
+      &lt;li&gt;Linear discriminant analysis&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Non-linear methods
+    &lt;ul&gt;
+      &lt;li&gt;SVM&lt;/li&gt;
+      &lt;li&gt;Discriminant analysis
+        &lt;ol&gt;
+          &lt;li&gt;QDA ( assume unequal variance)&lt;/li&gt;
+          &lt;li&gt;Flexible discriminant analysis&lt;/li&gt;
+          &lt;li&gt;Mixture discriminant analysis&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Bayesian Inference&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Inference for dynamic systems/state-space models(SSMs)
+    &lt;ul&gt;
+      &lt;li&gt;Finite SSM: Baum-Petrie filter is the optimal filter with O(K^2) complexity.&lt;/li&gt;
+      &lt;li&gt;Linear-Gaussian SSM: Kalman filter is the optimal filter, propagate mean and variance for inference.&lt;/li&gt;
+      &lt;li&gt;Non-linear dynamics and/or non-Gaussian noise:
+        &lt;ol&gt;
+          &lt;li&gt;Extended Kalman filter&lt;/li&gt;
+          &lt;li&gt;Unscented Kalman filter&lt;/li&gt;
+          &lt;li&gt;Sequential Monte Carlo (Particle filters) methods can be used since the distribution information is preserved beyond mean and covariance:
+            &lt;ol&gt;
+              &lt;li&gt;Importance sampling to tackle difficult-to-sample posterior distribution problem&lt;/li&gt;
+              &lt;li&gt;Recursive formulation to tackle online inference complexity problem&lt;/li&gt;
+              &lt;li&gt;Resampling to ensure long-term stability of the particle method (mitigates sample impoverishment)&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Particle filtering
+            &lt;ol&gt;
+              &lt;li&gt;&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Particle smoothing&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Roadmap of statistical learning</title>
+   <link href="http://localhost:4000/data/2020/01/10/data-line-outage-detection-based-on-particle-filtering.html"/>
+   <updated>2020-01-10T08:00:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/01/10/data-line-outage-detection-based-on-particle-filtering</id>
+   <content type="html">&lt;p&gt;A (work-in-progress) roadmap for statistical learning concepts and tools.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Regression&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Regularised Linear Regression
+    &lt;ul&gt;
+      &lt;li&gt;Ridge regression&lt;/li&gt;
+      &lt;li&gt;Lasso regression&lt;/li&gt;
+      &lt;li&gt;Logistic (ridge/lasso) regression&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Next: however, linear relationship might be too restrictive in many cases, we wish to allow nonlinear relationship between response and predictors.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Basis Expansion Method
+    &lt;ul&gt;
+      &lt;li&gt;Approximate mean function in a piecewise way
+        &lt;ul&gt;
+          &lt;li&gt;kth order spline for kth order piece, i.e. cubic spline means each segment is approximated by a cubic function formed by basis functions&lt;/li&gt;
+          &lt;li&gt;Positive part remain operator (x - r)+ to ensure continuity at knots&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Additive Model (semi-parametric method, building on top of basis expansion method)
+    &lt;ul&gt;
+      &lt;li&gt;More flexible than linear but retains the interpretability
+        &lt;ul&gt;
+          &lt;li&gt;Partially linear additive model: summation of linear variables and functions of variable
+            &lt;ul&gt;
+              &lt;li&gt;Nonlinear variables can be assumed to be represented by spline basis&lt;/li&gt;
+              &lt;li&gt;What if a variable influences the relationship between Y and X?
+                &lt;ul&gt;
+                  &lt;li&gt;Varying coefficient regression model: variable coefficients are functions of a variable(Z)&lt;/li&gt;
+                  &lt;li&gt;Such function can be assumed to have good estimation by spline method&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Generalised: extend the method beyond linear link function, e.g. logistic&lt;/li&gt;
+      &lt;li&gt;If we approximate each additive variable by piecewise linear model: multivariate adaptive regression spline (MARS)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Local Averaging Method
+    &lt;ul&gt;
+      &lt;li&gt;To estimate the regression surface, we can use local averaging method by defining two things
+        &lt;ol&gt;
+          &lt;li&gt;What is “local”? i.e. how do we partition the space/find out the regression surface?&lt;/li&gt;
+          &lt;li&gt;How to compute “average”? i.e. simple average, weighted average?&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Point 1 above
+        &lt;ul&gt;
+          &lt;li&gt;Binary recursive method: Regression and classification tree (CART)&lt;/li&gt;
+          &lt;li&gt;Neighbourhood method: identifies a neighbour through some metric (kNN)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Point 2 above
+        &lt;ul&gt;
+          &lt;li&gt;Simple average: CART, kNN&lt;/li&gt;
+          &lt;li&gt;Weighted average: weighted kNN, see point 7 below&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But this kind of method produces non-smooth m(x) estimation since the weight used is indicator function.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Kernel Smoothing
+    &lt;ul&gt;
+      &lt;li&gt;Replace the indicator function by a kernel function (symmetric pdf)&lt;/li&gt;
+      &lt;li&gt;Nadaraya-Watson (NW) estimator: least square estimator weighted by kernel function&lt;/li&gt;
+      &lt;li&gt;The value of h defines the size of the neighbourhood&lt;/li&gt;
+      &lt;li&gt;Hence h determines the trade-off between model complexity and stability&lt;/li&gt;
+      &lt;li&gt;But y need not be locally constant (regression tree, kNN, KS), we can assume y is locally linear or polynomial
+        &lt;ul&gt;
+          &lt;li&gt;LLKS&lt;/li&gt;
+          &lt;li&gt;LPKS&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next: But the MSE of KS (nonparametric) methods increases with p (CoD). We can do dimension reduction, besides assuming a structure for m(x).&lt;/li&gt;
+  &lt;li&gt;Dimension-reduction based method
+    &lt;ol&gt;
+      &lt;li&gt;Ridge function = 1: Single-index model: one projection direction, in terms of unknown link function
+        &lt;ul&gt;
+          &lt;li&gt;More flexible than linear regression, but also more interpretable than PPR&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Ridge function &amp;gt; 1: Projection pursuit regression: one projection direction for each ridge function
+        &lt;ul&gt;
+          &lt;li&gt;Approximate target by non-linear function of the linear combination of input&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Machine Learning
+    &lt;ul&gt;
+      &lt;li&gt;Without assuming the model of the data, learning a function that maps features (X) to predictions (Y), assume a space of the function (linear space, non-linear space), assume a convex loss/risk function (square error function).&lt;/li&gt;
+      &lt;li&gt;Representer theorem provides the theoretical foundation for functions from RKHS to approximate the relationship by assuming a certain kernel, which is defined by the kind of kernel.&lt;/li&gt;
+      &lt;li&gt;Support Vector Machine: learning the location of the support vectors and the value of alpha for the kernel of support vectors, i.e. linear kernel, gaussian kernel, rbf kernel.&lt;/li&gt;
+      &lt;li&gt;How is it different (performance, computation and etc.) for low and high dimensional case when we use non-linear kernel SVM?&lt;/li&gt;
+      &lt;li&gt;Classification
+        &lt;ul&gt;
+          &lt;li&gt;Fisher’s linear discriminant: linear combination of dimensions of X -&amp;gt; find a linear hyperplane that maximally separates the linear combination and minimises the variance.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Classification&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Linear methods
+    &lt;ul&gt;
+      &lt;li&gt;Linear regression&lt;/li&gt;
+      &lt;li&gt;Linear discriminant analysis&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Non-linear methods
+    &lt;ul&gt;
+      &lt;li&gt;SVM&lt;/li&gt;
+      &lt;li&gt;Discriminant analysis
+        &lt;ol&gt;
+          &lt;li&gt;QDA ( assume unequal variance)&lt;/li&gt;
+          &lt;li&gt;Flexible discriminant analysis&lt;/li&gt;
+          &lt;li&gt;Mixture discriminant analysis&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Bayesian Inference&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Inference for dynamic systems/state-space models(SSMs)
+    &lt;ul&gt;
+      &lt;li&gt;Finite SSM: Baum-Petrie filter is the optimal filter with O(K^2) complexity.&lt;/li&gt;
+      &lt;li&gt;Linear-Gaussian SSM: Kalman filter is the optimal filter, propagate mean and variance for inference.&lt;/li&gt;
+      &lt;li&gt;Non-linear dynamics and/or non-Gaussian noise:
+        &lt;ol&gt;
+          &lt;li&gt;Extended Kalman filter&lt;/li&gt;
+          &lt;li&gt;Unscented Kalman filter&lt;/li&gt;
+          &lt;li&gt;Sequential Monte Carlo (Particle filters) methods can be used since the distribution information is preserved beyond mean and covariance:
+            &lt;ol&gt;
+              &lt;li&gt;Importance sampling to tackle difficult-to-sample posterior distribution problem&lt;/li&gt;
+              &lt;li&gt;Recursive formulation to tackle online inference complexity problem&lt;/li&gt;
+              &lt;li&gt;Resampling to ensure long-term stability of the particle method (mitigates sample impoverishment)&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Particle filtering
+            &lt;ol&gt;
+              &lt;li&gt;&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Particle smoothing&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Particle filtering: vallina and advanced</title>
+   <link href="http://localhost:4000/data/2020/01/10/data-introduction-to-particle-filtering.html"/>
+   <updated>2020-01-10T08:00:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/01/10/data-introduction-to-particle-filtering</id>
+   <content type="html">&lt;p&gt;The problem - Non-linear dynamic state estimation&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;state-space model for dynamic systems&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other methods - Kalman-based fiter?&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;limitations&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The method - Bayesian estimation through Monte Carlo method&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bayesian estimation&lt;/li&gt;
+  &lt;li&gt;Monte Carlo method&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>读书笔记：读书体验是什么</title>
    <link href="http://localhost:4000/reading/2019/11/12/how-to-read.html"/>
    <updated>2019-11-12T08:00:00+08:00</updated>
@@ -474,6 +1187,168 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
 &lt;/ul&gt;
 
 &lt;p&gt;这么看，我确实一个回顾都没做过😂。一开始读这本书是因为买了新的笔记本，我老是买新笔记本，想着要写点什么文字，最后都沦为平时工作用的草稿纸（也是很重要啦）。看了这本书的评论觉得可能会帮我结束这个循环，目前看来很有希望。读之前，如何写读书笔记是我最感兴趣的部分，不过读完发现，以随想笔记到笔记回顾的一整个读书体验来理解读书这事儿，才是奥野宣之这本书给我最大的收获吧。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>深度工作：一个研究者（我自己）应该做的事</title>
+   <link href="http://localhost:4000/reading/2019/11/11/reading-academic-deep-work.html"/>
+   <updated>2019-11-11T08:00:00+08:00</updated>
+   <id>http://localhost:4000/reading/2019/11/11/reading-academic-deep-work</id>
+   <content type="html">&lt;p&gt;什么是深度工作？为什么即时讯息不会提高而是降低我的工作效率？为什么忙绿工作了十个小时却并没完成什么重要的事情？为什么我要选择鼓励深度工作的公司？对于这些问题，Newport在他的深度工作里做出了回答。我想利用这篇文章来总结一下此书，读后的感想以及能为我所用的知识。后半段将结合马华灵先生建议的学术江湖的七种武器，提炼出对于我这般刚上路的研究者，应该花足够精力和时间去做的事儿，换言之：一个研究者应该做的深度工作。&lt;/p&gt;
+
+&lt;h2 id=&quot;深度工作&quot;&gt;深度工作&lt;/h2&gt;
+&lt;p&gt;Cal Newport的《深度工作》&lt;a href=&quot;https://www.calnewport.com/books/deep-work/&quot;&gt;(Deep Work)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;ritualize-the-deep-work&quot;&gt;Ritualize the deep work&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Where you’ll work and for how long?
+    &lt;ul&gt;
+      &lt;li&gt;制定好深度工作的地点与时间，尽最大可能保持这个地点和时间。如果中间有会议或者seminar之类的，提前调整好时间，算作是浅型工作，总的来说要保持弹性。
+        &lt;ul&gt;
+          &lt;li&gt;Place of work: Home office; Duration: 9am - 5pm:&lt;/li&gt;
+          &lt;li&gt;Morning
+            &lt;ul&gt;
+              &lt;li&gt;Meditation: 0700am - 0715am&lt;/li&gt;
+              &lt;li&gt;Writers write: 0730am - 0830am&lt;/li&gt;
+              &lt;li&gt;Breakfast/Plan my work: 830am - 9am&lt;/li&gt;
+              &lt;li&gt;Deep work: 9am - 12am&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Afternoon
+            &lt;ul&gt;
+              &lt;li&gt;Lunch: 12am - 1pm&lt;/li&gt;
+              &lt;li&gt;Shallow work: 1pm - 130pm&lt;/li&gt;
+              &lt;li&gt;Nap: 0130pm - 2pm&lt;/li&gt;
+              &lt;li&gt;Deep work: 2pm - 5pm&lt;/li&gt;
+              &lt;li&gt;Shallow work/Exercise/Cooking: 5pm - 6pm&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Night
+            &lt;ul&gt;
+              &lt;li&gt;Dinner: 6pm - 8pm&lt;/li&gt;
+              &lt;li&gt;Learning (Math, Japanese): 830pm - 930pm&lt;/li&gt;
+              &lt;li&gt;Reading: 930pm - 1030pm&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;How you’ll work once you start to work?
+    &lt;ul&gt;
+      &lt;li&gt;制定好深度工作时的规矩，必须遵循这个规矩。这个规矩应该可以尽可能实际，也能保证深度工作的效果。&lt;/li&gt;
+      &lt;li&gt;深度工作时：
+        &lt;ul&gt;
+          &lt;li&gt;不使用手机；&lt;/li&gt;
+          &lt;li&gt;不查email，不浏览跟工作无关的网页，不看跟工作无关的文件。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;How you’ll support your work?
+    &lt;ul&gt;
+      &lt;li&gt;尽可能从环境、吃喝等等方面帮助完成上面的ritual。&lt;/li&gt;
+      &lt;li&gt;准备：
+        &lt;ul&gt;
+          &lt;li&gt;早晨深度工作开始之前喝一杯咖啡，并将水壶接满水；&lt;/li&gt;
+          &lt;li&gt;9点开启潮汐专注模式，并将手机放进抽屉；&lt;/li&gt;
+          &lt;li&gt;下午2点开始潮汐专注模式，并将手机放进抽屉。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;embrace-boredom&quot;&gt;Embrace boredom&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;This is to prevent our brains from being addicted to distractions. Resist the temptation to use handphone or surf the internet at the slightest hint of boredom.&lt;/li&gt;
+  &lt;li&gt;Memory training helps one’s ability to concentrate.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;quit-social-media&quot;&gt;Quit social media&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Put conscience effort in scheduling off-work hour activities. Our brain relaxes when we swtich focus, not by induldging in semi-conscious web surfing.
+    &lt;ul&gt;
+      &lt;li&gt;晚上的时候不固定具体时间和时长，但是尽量做到：
+        &lt;ul&gt;
+          &lt;li&gt;背N3单词&lt;/li&gt;
+          &lt;li&gt;读正在读的书&lt;/li&gt;
+          &lt;li&gt;11点睡床上&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;学术武器&quot;&gt;学术武器&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.douban.com/note/671893735/&quot;&gt;马华灵：我的思想历程（附：学术江湖的七种武器）&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;马华灵根据自己的经历总结出了做学术需要修炼的七大“武器”，这七个方向包括了对学术人的追求的拷问，也有对做学术的具体操作的指导，下面列出他的七大“武器”以及我的一些总结和思考。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;学术源泉
+    &lt;ul&gt;
+      &lt;li&gt;我为什么做学术？&lt;/li&gt;
+      &lt;li&gt;什么是学术？&lt;/li&gt;
+      &lt;li&gt;学术的发展历史是怎样的？&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;学术问题
+    &lt;ul&gt;
+      &lt;li&gt;我的学术问题是什么？&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;学术概念
+    &lt;ul&gt;
+      &lt;li&gt;我对我使用的概念真的了解了吗？&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;学术阅读
+    &lt;ul&gt;
+      &lt;li&gt;梳理逻辑框架&lt;/li&gt;
+      &lt;li&gt;把握文章论述重点&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;学术笔记
+    &lt;ul&gt;
+      &lt;li&gt;记录并明白核心框架&lt;/li&gt;
+      &lt;li&gt;建立一个有层次的文章思路地图（i.e. Sections, subsections, sub-subsections）&lt;/li&gt;
+      &lt;li&gt;注明文章的出版信息和页码&lt;/li&gt;
+      &lt;li&gt;尝试对文章的每一步进行质问&lt;/li&gt;
+      &lt;li&gt;总结文章的优点和缺点，思考优点如何借鉴，缺点如何避免与解决&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;学术批评
+    &lt;ul&gt;
+      &lt;li&gt;建设性批评&lt;/li&gt;
+      &lt;li&gt;目的是能完善文章&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;学术写作
+    &lt;ul&gt;
+      &lt;li&gt;逻辑清晰&lt;/li&gt;
+      &lt;li&gt;观点明确&lt;/li&gt;
+      &lt;li&gt;化整为零，然后化零为整（i.e. paragraph to subsection, subsection to section, section to paper）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Beyond LDA: Flexible, penalized, and mixture discriminant analysis</title>
+   <link href="http://localhost:4000/data/2019/10/03/data-beyond-lda.html"/>
+   <updated>2019-10-03T08:00:00+08:00</updated>
+   <id>http://localhost:4000/data/2019/10/03/data-beyond-lda</id>
+   <content type="html">&lt;p&gt;This is the second article that talks about the classification and dimension reduction tool LDA.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;flexible-discriminant-analysis-fda&quot;&gt;Flexible discriminant analysis (FDA)&lt;/h3&gt;
+&lt;h3 id=&quot;penalized-discriminant-analysis-pda&quot;&gt;Penalized discriminant analysis (PDA)&lt;/h3&gt;
+&lt;h3 id=&quot;mixture-discriminant-analysis-mda&quot;&gt;Mixture discriminant analysis (MDA)&lt;/h3&gt;
 </content>
  </entry>
  
@@ -1342,6 +2217,54 @@ A collection of Japanese practice writings. All comments and corrections are wel
 &lt;h3 id=&quot;2018年11月21日順天堂大学のみなさんとの交流から学んだこと&quot;&gt;2018年11月21日　｜　順天堂大学のみなさんとの交流から学んだこと&lt;/h3&gt;
 
 &lt;p&gt;　年を取る人が多くて、若い人があまり多くないので、介護離職はたしかに日本にとって大きい社会的問題です。そして、この問題の答えは、早く考えなければなりません。日本では介護サービスにかかる費用がとても高いので、普通の家族は、あまり払う事ができないですから、主に家族が介護をしています。さらに、介護者の人数は今よりもっとたくさん必要になります。もしそうでなければ、コストは絶対より高くなると思います。順天堂大学の学生が発表した事について、第一と第二とあんの会社員が介護休暇や介護休業を取ったり、フレックスタイム制が有ったりする会社は大切だと言いました。それは私もそう思いますが、日本の会社は残業が多くて、競争がとても厳しいですから、難しいと思います。三つ目のあんは、いいと思います。外国人の労働者は、もうシンガポールや香港では長い間います。確かに、おじいさんやおばあさんは、外国人と一緒に暮らして、世話をしてもらう事が嫌いかもしれません。でも、私は半年ぐらい京都で住んでいましたから、外国人は日本人と一緒に暮らすことができると思います。外国人のヘルパーさんは日本語や日本の文化を勉強してから、働くことが解決策の一つだと思います。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>USP ePortfolio</title>
+   <link href="http://localhost:4000/2017/05/31/ePortfolio-usp.html"/>
+   <updated>2017-05-31T08:00:00+08:00</updated>
+   <id>http://localhost:4000/2017/05/31/-ePortfolio-usp</id>
+   <content type="html">&lt;p&gt;https://blog.nus.edu.sg/yangxiaozhou/&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>东南亚背包：一路向北！新加坡-马来西亚-泰国-老挝-云南-成都</title>
+   <link href="http://localhost:4000/travel/2014/07/02/1-backpacking-in-sea-2014.html"/>
+   <updated>2014-07-02T08:00:00+08:00</updated>
+   <id>http://localhost:4000/travel/2014/07/02/1-backpacking-in-sea-2014</id>
+   <content type="html">&lt;p&gt;先交代一下背景，同行一共四个男生，大学同学，在 新加坡 念书。此次的路线实际上很多人已经走过（不过好像国内的朋友从北往南走的比较多）。&lt;/p&gt;
+
+&lt;p&gt;一张图顶千个字👇&lt;/p&gt;
+
+&lt;p&gt;具体行程：
+吉隆坡 （3天）—-&amp;gt; 槟城 （2天）—-&amp;gt; 涛岛 (Koh Tao)（6天）—-&amp;gt; 曼谷 （2天）
+—-&amp;gt; 大城 (Ayuthaya)（1天）—-&amp;gt; 清迈 （4天）—-&amp;gt; 清莱 （2天）—-&amp;gt; 美斯乐(Mae Salong) （1天）
+—-&amp;gt; 会晒 (Huay Xai)（1天）—-&amp;gt; 湄公河 （2天）—-&amp;gt; 琅勃拉邦 （3天）—-&amp;gt;乌多姆赛(Oudomxay)（1天）
+—-&amp;gt; 景洪 —-&amp;gt; 昆明 （1天）—-&amp;gt; 成都 （5天）&lt;/p&gt;
+
+&lt;p&gt;预算：一万RMB，实际没用完。&lt;/p&gt;
+
+&lt;p&gt;吃喝住行（穷游）：
+住宿基本不预定，一般是在到达下一站之前会做一些功课，去到那边客栈聚集的地方再一家一家地找。
+吃的话是尽量去吃当地人吃的东西，但也会有大餐上桌的情况， 比如 涛岛 的海鲜烧烤， 清迈 的泰北美食。
+交通方面也是尽量选择当地人会坐的交通，大巴，火车，渡船，山地自行车，步行。什么便宜什么就可以有， 比如 下面这货👇。&lt;/p&gt;
+
+&lt;p&gt;哈哈，竹筏是开个玩笑。关于如何在吃喝住行方面省钱防止被宰，我会在后面写到。&lt;/p&gt;
+
+&lt;p&gt;行前准备（两周）：&lt;/p&gt;
+
+&lt;p&gt;签证：
+马来西亚 ：驻 新加坡 办事处（High Commission of Malaysia in Singapore）指定的旅行社签发，四五十新币，一年之内多次入境。指定的旅行社名单和联系方式在 马来西亚 驻 新加坡 办事处的网站上找得到，或者也可以直接去珍珠大厦逛逛，那边很多被指定的旅行社。
+链接: http://www.kln.gov.my/web/sgp_singapore/requirement_foreigner&lt;/p&gt;
+
+&lt;p&gt;泰国 ：驻 新加坡 大使馆签发。这个签证办得不那么省心，官网和电话里都告诉我说除了正常的签证申请资料外，还要有进入和离开 泰国 的交通证明，机票，船票，车票都可以。入境的车票好定，拿到了电子发票，可是出 泰国 的交通在 新加坡 实在是没法定，要么是电话预定之后需要在当地的7-11付款，要么就是自己亲自到了 泰国 老挝 边境的时候再去买票。最后实在没办法，只能带了张入境的车票去大使馆，结果居然很顺利地过了，一天就能取，好像也是四五十新币，单次入境。&lt;/p&gt;
+
+&lt;p&gt;老挝 ：入境关口签，后面会讲到。&lt;/p&gt;
+
+&lt;p&gt;装备：
+背包（65L）＋冲锋包，短裤短袖，书笔，电脑，相机（尼康D90），手机，手电，防蚊剂＊，拖鞋＊，等等。&lt;/p&gt;
 </content>
  </entry>
  
