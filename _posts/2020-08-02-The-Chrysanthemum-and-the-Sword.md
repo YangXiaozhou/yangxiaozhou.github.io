@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "菊与刀"
-date:   2020-07-22 08:00:00 +0800
+date:   2020-08-02 08:00:00 +0800
 categories: READING
 tags: Japan book-review
 ---
