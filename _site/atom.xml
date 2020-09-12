@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-09-12T09:49:00+08:00</updated>
+ <updated>2020-09-12T12:01:06+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -22,6 +22,27 @@
 &lt;h1 id=&quot;principal-component-analysis&quot;&gt;Principal Component Analysis&lt;/h1&gt;
 
 &lt;h1 id=&quot;ridge-regularization&quot;&gt;Ridge regularization&lt;/h1&gt;
+
+&lt;h4 id=&quot;on-the-relationship-between-ols-ridge-regression-and-pca&quot;&gt;On the relationship between OLS, Ridge regression, and PCA&lt;/h4&gt;
+&lt;p&gt;Simple yet elegant relaionships between OLS estimates, ridge estimates and PCA can be found through the lens of spectral decomposition. We see these relationships through Exercise 8.8.1 of MA&lt;sup id=&quot;fnref:MA&quot;&gt;&lt;a href=&quot;#fn:MA&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Set-up&lt;/strong&gt; Given the following regression model:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{y}=\mathbf{X} \boldsymbol{\beta}+\mu \mathbf{1}+\mathbf{u}, \quad \mathbf{u} \sim N_{\mathrm{n}}\left(\mathbf{0}, \sigma^{2} \mathbf{I}\right),&lt;/script&gt;
+
+&lt;p&gt;consider the columns of $\mathbf{X}$ have been standardized to have mean 0 and variance 1. Then the ridge estimate of $\mathbf{\beta}$ is $\mathbf{\beta}^* = (\mathbf{X}^T \mathbf{X} + \lambda \mathbf{I})^{-1} \mathbf{X}^T \mathbf{y}$ where for given $\mathbf{X}$, $\lambda \ge 0$ is a small fixed ridge regularization parameter. Note that when $\lambda = 0$, it is just the OLS estimate.&lt;/p&gt;
+
+&lt;p&gt;Also consider the spectral decomposition of the var-cov matrix $\mathbf{X}^T \mathbf{X} = \mathbf{G} \mathbf{L} \mathbf{G}^T$. Let $\mathbf{W} = \mathbf{X}\mathbf{G}$ be the principal component transformation of the original data matrix.&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:MA&quot;&gt;
+      &lt;p&gt;Mardia, K. V., Kent, J. T., &amp;amp; Bibby, J. M. &lt;em&gt;Multivariate Analysis&lt;/em&gt;. 1979. Probability and mathematical statistics. Academic Press Inc. &lt;a href=&quot;#fnref:MA&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
 </content>
  </entry>
  
@@ -652,11 +673,13 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;linear-and-quadratic-discriminant-analysis&quot;&gt;Linear and quadratic discriminant analysis&lt;/h4&gt;
-&lt;p&gt;If we assume data comes from multivariate Gaussian distribution, i.e. $X \sim N(\mathbf{\mu}, \mathbf{\Sigma})$, explicit forms of the above allocation rules can be obtained. Following the Bayesian rule, we classify $\mathbf{x}$ to class $j$ if $j = \arg\max_i \delta_i(\mathbf{x})$ where 
-&lt;script type=&quot;math/tex&quot;&gt;\begin{align}
+&lt;p&gt;If we assume data comes from multivariate Gaussian distribution, i.e. $X \sim N(\mathbf{\mu}, \mathbf{\Sigma})$, explicit forms of the above allocation rules can be obtained. Following the Bayesian rule, we classify $\mathbf{x}$ to class $j$ if $j = \arg\max_i \delta_i(\mathbf{x})$ where&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
     \delta_i(\mathbf{x}) = \log f_i(\mathbf{x}) + \log \pi_i
-\end{align}&lt;/script&gt; 
-is called the discriminant function. Note the use of log-likelihood here.  The decision boundary separating any two classes, $k$ and $\ell$, is the set of $\mathbf{x}$ where two discriminant functions have the same value, i.e. &lt;script type=&quot;math/tex&quot;&gt;\{\mathbf{x}: \delta_k(\mathbf{x}) = \delta_{\ell}(\mathbf{x})\}&lt;/script&gt;. Therefore, any data that falls on the decision boundary is equally likely from the two classes.&lt;/p&gt;
+\end{align}&lt;/script&gt;
+
+&lt;p&gt;is called the discriminant function. Note the use of log-likelihood here.  The decision boundary separating any two classes, $k$ and $\ell$, is the set of $\mathbf{x}$ where two discriminant functions have the same value, i.e. &lt;script type=&quot;math/tex&quot;&gt;\{\mathbf{x}: \delta_k(\mathbf{x}) = \delta_{\ell}(\mathbf{x})\}&lt;/script&gt;. Therefore, any data that falls on the decision boundary is equally likely from the two classes.&lt;/p&gt;
 
 &lt;p&gt;LDA arises in the case where we assume equal covariance among $K$ classes, i.e. $\mathbf{\Sigma}_1 = \mathbf{\Sigma}_2 = \dots = \mathbf{\Sigma}_K$. Then we can obtain the following discriminant function:&lt;/p&gt;
 
@@ -680,7 +703,7 @@ is called the discriminant function. Note the use of log-likelihood here.  The d
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\delta_{k}'(\mathbf{x}) = \delta_{k}(\mathbf{x}) - \delta_{K}(\mathbf{x})\,,&lt;/script&gt;
 
-&lt;p&gt;$k = 1, \dots, K-1$. Hence, the total number of estimated parameters for LDA is &lt;script type=&quot;math/tex&quot;&gt;(K-1)(p+1)&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;for $k = 1, \dots, K-1$. Hence, the total number of estimated parameters for LDA is &lt;script type=&quot;math/tex&quot;&gt;(K-1)(p+1)&lt;/script&gt;.&lt;/p&gt;
 
 &lt;p&gt;On the other hand, for each QDA discriminant function (\ref{eqn_qda}), mean vector, covariance matrix, and class prior need to be estimated:&lt;/p&gt;
 &lt;ul&gt;
@@ -771,10 +794,8 @@ is called the discriminant function. Note the use of log-likelihood here.  The d
 
 &lt;h4 id=&quot;computation-for-lda&quot;&gt;Computation for LDA&lt;/h4&gt;
 &lt;p&gt;We can see from (\ref{eqn_lda}) and (\ref{eqn_qda}) that computations of discriminant functions can be simplified if we diagonalize the covariance matrices first. That is, data are transformed to have an identity covariance matrix (no correlation, variance of 1). In the case of LDA, here’s how we proceed with the computation:&lt;/p&gt;
-
 &lt;ol&gt;
-  &lt;li&gt;Perform eigen-decompostion on the pooled covariance matrix: 
-&lt;script type=&quot;math/tex&quot;&gt;\hat{\mathbf{\Sigma}} = \mathbf{U}\mathbf{D}\mathbf{U}^{T} \,.&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;Perform eigen-decompostion on the pooled covariance matrix: &lt;script type=&quot;math/tex&quot;&gt;\hat{\mathbf{\Sigma}} = \mathbf{U}\mathbf{D}\mathbf{U}^{T} \,.&lt;/script&gt;&lt;/li&gt;
   &lt;li&gt;Sphere the data:
 &lt;script type=&quot;math/tex&quot;&gt;\mathbf{X}^{*} \leftarrow \mathbf{D}^{-\frac{1}{2}} \mathbf{U}^{T} \mathbf{X} \,.&lt;/script&gt;&lt;/li&gt;
   &lt;li&gt;Obtain class means in the transformed space: &lt;script type=&quot;math/tex&quot;&gt;\hat{\mu}_1, \dots, \hat{\mu}_{K}&lt;/script&gt;.&lt;/li&gt;
@@ -1178,7 +1199,7 @@ the data, which is both useful for visualization and feature engineering.&lt;/li
    <id>http://localhost:4000/learning/2019/09/25/set-up-blog</id>
    <content type="html">&lt;p&gt;What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and GitHub issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now).&lt;/p&gt;
 
-&lt;p&gt;My aim is simple, to set up a blog for myself where I can post stuff about my life. The blog needs to be free, elegant, intuitive and support math. My current set up, Jekyll + Hyde + Github + MathJax, matches with that. Since there are many resources online about setting up a blog using Jekyll and serve it with GitHub, I am going to skip all the standard procedures by referring to the official documents. Instead, this post specifically documents:&lt;/p&gt;
+&lt;p&gt;My aim is simple, to set up a blog for myself where I can post stuff about my life. The blog needs to be free, elegant, intuitive and supports math. My current set up, Jekyll + Hyde + Github + MathJax, matches with that. Since there are many resources online about setting up a blog using Jekyll and serve it with GitHub, I am going to skip all the standard procedures by referring to the official documents. Instead, this post specifically documents:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;the sequence of setting up different parts,&lt;/li&gt;
   &lt;li&gt;adding support for Tags, Categories and their corresponding pages,&lt;/li&gt;
@@ -1315,25 +1336,27 @@ title: Categories
   &lt;li&gt;Displayed math using &lt;code class=&quot;highlighter-rouge&quot;&gt;\$\$...\$\$&lt;/code&gt; on a new paragraph:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{x}+\mathbf{y} \,.&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat{\mathbf{\Sigma}}_k (\alpha) = \alpha \hat{\mathbf{\Sigma}}_k + (1-\alpha) \hat{\mathbf{\Sigma}} \,.&lt;/script&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Automatic numbering and referencing using &lt;span class=&quot;tex2jax_ignore&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\ref{label}&lt;/code&gt;&lt;/span&gt;:
-In (\ref{eq:sample}), we find the value of an interesting integral:
-\begin{align}
-\int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15} \, .
-\label{eq:sample}
-\end{align}&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Multiline equations using &lt;code class=&quot;highlighter-rouge&quot;&gt;\begin{align*}&lt;/code&gt;:
-\begin{align*}
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \,,\newline
-\nabla \cdot \vec{\mathbf{E}} &amp;amp; = 4 \pi \rho \,.
-\end{align*}&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Automatic numbering and referencing using &lt;span class=&quot;tex2jax_ignore&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\ref{label}&lt;/code&gt;&lt;/span&gt;:
+In (\ref{eq:sample}), we find the value of an interesting integral:&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15} \, .
+  \label{eq:sample}
+\end{align}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Multiline equations using &lt;code class=&quot;highlighter-rouge&quot;&gt;\begin{align*}&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \,,\newline
+  \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \,.
+\end{align*} %]]&gt;&lt;/script&gt;
 
 &lt;p&gt;That’s it for now. Happy blogging.&lt;/p&gt;
 

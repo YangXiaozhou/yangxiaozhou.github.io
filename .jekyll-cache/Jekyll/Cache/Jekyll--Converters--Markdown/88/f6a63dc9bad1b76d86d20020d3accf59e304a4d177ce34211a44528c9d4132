@@ -1,6 +1,6 @@
-I"ó5<p>What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and GitHub issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now).</p>
+I"¢6<p>What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and GitHub issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now).</p>
 
-<p>My aim is simple, to set up a blog for myself where I can post stuff about my life. The blog needs to be free, elegant, intuitive and support math. My current set up, Jekyll + Hyde + Github + MathJax, matches with that. Since there are many resources online about setting up a blog using Jekyll and serve it with GitHub, I am going to skip all the standard procedures by referring to the official documents. Instead, this post specifically documents:</p>
+<p>My aim is simple, to set up a blog for myself where I can post stuff about my life. The blog needs to be free, elegant, intuitive and supports math. My current set up, Jekyll + Hyde + Github + MathJax, matches with that. Since there are many resources online about setting up a blog using Jekyll and serve it with GitHub, I am going to skip all the standard procedures by referring to the official documents. Instead, this post specifically documents:</p>
 <ul>
   <li>the sequence of setting up different parts,</li>
   <li>adding support for Tags, Categories and their corresponding pages,</li>
@@ -137,25 +137,27 @@ title: Categories
   <li>Displayed math using <code class="highlighter-rouge">\$\$...\$\$</code> on a new paragraph:</li>
 </ul>
 
-<script type="math/tex; mode=display">\mathbf{x}+\mathbf{y} \,.</script>
+<script type="math/tex; mode=display">\hat{\mathbf{\Sigma}}_k (\alpha) = \alpha \hat{\mathbf{\Sigma}}_k + (1-\alpha) \hat{\mathbf{\Sigma}} \,.</script>
 
 <ul>
-  <li>
-    <p>Automatic numbering and referencing using <span class="tex2jax_ignore"><code class="highlighter-rouge">\ref{label}</code></span>:
-In (\ref{eq:sample}), we find the value of an interesting integral:
-\begin{align}
-\int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15} \, .
-\label{eq:sample}
-\end{align}</p>
-  </li>
-  <li>
-    <p>Multiline equations using <code class="highlighter-rouge">\begin{align*}</code>:
-\begin{align*}
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \,,\newline
-\nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \,.
-\end{align*}</p>
-  </li>
+  <li>Automatic numbering and referencing using <span class="tex2jax_ignore"><code class="highlighter-rouge">\ref{label}</code></span>:
+In (\ref{eq:sample}), we find the value of an interesting integral:</li>
 </ul>
+
+<script type="math/tex; mode=display">\begin{align}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15} \, .
+  \label{eq:sample}
+\end{align}</script>
+
+<ul>
+  <li>Multiline equations using <code class="highlighter-rouge">\begin{align*}</code>:</li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \,,\newline
+  \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \,.
+\end{align*} %]]></script>
 
 <p>Thatâ€™s it for now. Happy blogging.</p>
 

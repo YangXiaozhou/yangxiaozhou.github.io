@@ -1,4 +1,4 @@
-I"¹ã<p><em>Intuitions, illustrations, and maths: How itâ€™s more than a dimension reduction tool and why itâ€™s robust for real-world applications.</em></p>
+I"»ã<p><em>Intuitions, illustrations, and maths: How itâ€™s more than a dimension reduction tool and why itâ€™s robust for real-world applications.</em></p>
 
 <p><img src="/assets/2019-10-02/mda.png" alt="mda" /> This graph shows that boundaries (blue lines) learned by mixture discriminant analysis (MDA) successfully separate three mingled classes. MDA is one of the powerful extensions of LDA.</p>
 
@@ -60,7 +60,7 @@
 
 <script type="math/tex; mode=display">\delta_{k}'(\mathbf{x}) = \delta_{k}(\mathbf{x}) - \delta_{K}(\mathbf{x})\,,</script>
 
-<p>$k = 1, \dots, K-1$. Hence, the total number of estimated parameters for LDA is <script type="math/tex">(K-1)(p+1)</script>.</p>
+<p>for $k = 1, \dots, K-1$. Hence, the total number of estimated parameters for LDA is <script type="math/tex">(K-1)(p+1)</script>.</p>
 
 <p>On the other hand, for each QDA discriminant function (\ref{eqn_qda}), mean vector, covariance matrix, and class prior need to be estimated:</p>
 <ul>
@@ -151,10 +151,8 @@
 
 <h4 id="computation-for-lda">Computation for LDA</h4>
 <p>We can see from (\ref{eqn_lda}) and (\ref{eqn_qda}) that computations of discriminant functions can be simplified if we diagonalize the covariance matrices first. That is, data are transformed to have an identity covariance matrix (no correlation, variance of 1). In the case of LDA, hereâ€™s how we proceed with the computation:</p>
-
 <ol>
-  <li>Perform eigen-decompostion on the pooled covariance matrix: 
-<script type="math/tex">\hat{\mathbf{\Sigma}} = \mathbf{U}\mathbf{D}\mathbf{U}^{T} \,.</script></li>
+  <li>Perform eigen-decompostion on the pooled covariance matrix: <script type="math/tex">\hat{\mathbf{\Sigma}} = \mathbf{U}\mathbf{D}\mathbf{U}^{T} \,.</script></li>
   <li>Sphere the data:
 <script type="math/tex">\mathbf{X}^{*} \leftarrow \mathbf{D}^{-\frac{1}{2}} \mathbf{U}^{T} \mathbf{X} \,.</script></li>
   <li>Obtain class means in the transformed space: <script type="math/tex">\hat{\mu}_1, \dots, \hat{\mu}_{K}</script>.</li>

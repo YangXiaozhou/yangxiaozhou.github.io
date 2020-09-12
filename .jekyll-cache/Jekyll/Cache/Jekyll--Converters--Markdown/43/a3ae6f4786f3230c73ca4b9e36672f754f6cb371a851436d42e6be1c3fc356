@@ -1,0 +1,27 @@
+I"ô<p>This is a collection of my study notes on various foundational topics of statistical learning. It is intended as a knowledge repository for myself and a work in progress that I will periodically update.</p>
+
+<h1 id="principal-component-analysis">Principal Component Analysis</h1>
+
+<h1 id="ridge-regularization">Ridge regularization</h1>
+
+<h4 id="on-the-relationship-between-ols-ridge-regression-and-pca">On the relationship between OLS, Ridge regression, and PCA</h4>
+<p>Simple yet elegant relaionships between OLS estimates, ridge estimates and PCA can be found through the lens of spectral decomposition. We see these relationships through Exercise 8.8.1 of MA<sup id="fnref:MA"><a href="#fn:MA" class="footnote">1</a></sup>:</p>
+
+<p>Given the following regression model:</p>
+
+<script type="math/tex; mode=display">\mathbf{y}=\mathbf{X} \boldsymbol{\beta}+\mu \mathbf{1}+\mathbf{u}, \quad \mathbf{u} \sim N_{\mathrm{n}}\left(\mathbf{0}, \sigma^{2} \mathbf{I}\right),</script>
+
+<p>Consider the columns of $\mathbf{X}$ have been standardized to have mean 0 and variance 1. Then the ridge estimate of $\mathbf{\beta}$ is</p>
+
+<script type="math/tex; mode=display">\mathbf{\beta}^* =</script>
+
+<h1 id="references">References</h1>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:MA">
+      <p>Mardia, K. V., Kent, J. T., &amp; Bibby, J. M. <em>Multivariate Analysis</em>. 1979. Probability and mathematical statistics. Academic Press Inc.Â <a href="#fnref:MA" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET
