@@ -5,7 +5,6 @@ date:   2019-10-2 08:00:00 +0800
 categories: DATA
 tags: LDA supervised-learning classification
 ---
-
 *Intuitions, illustrations, and maths: How it's more than a dimension reduction tool and why it's robust for real-world applications.*
 
 ![mda]({{ '/' | relative_url }}assets/2019-10-02/mda.png) This graph shows that boundaries (blue lines) learned by mixture discriminant analysis (MDA) successfully separate three mingled classes. MDA is one of the powerful extensions of LDA.
@@ -39,6 +38,7 @@ $$
     \delta_i(\mathbf{x}) = \log f_i(\mathbf{x}) + \log \pi_i
 \end{align}
 $$ 
+
 is called the discriminant function. Note the use of log-likelihood here.  The decision boundary separating any two classes, $k$ and $\ell$, is the set of $\mathbf{x}$ where two discriminant functions have the same value, i.e. $$\{\mathbf{x}: \delta_k(\mathbf{x}) = \delta_{\ell}(\mathbf{x})\}$$. Therefore, any data that falls on the decision boundary is equally likely from the two classes.
 
 LDA arises in the case where we assume equal covariance among $K$ classes, i.e. $\mathbf{\Sigma}_1 = \mathbf{\Sigma}_2 = \dots = \mathbf{\Sigma}_K$. Then we can obtain the following discriminant function:

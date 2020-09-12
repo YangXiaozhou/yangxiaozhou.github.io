@@ -140,47 +140,26 @@ The last piece to my website is to add the support of $\LaTeX$-like math. This i
 - Inline math using `\$...\$`: $\mathbf{x}+\mathbf{y}$.
 - Displayed math using `\$\$...\$\$` on a new paragraph: 
 
-Inline $\mathbf{x}+\mathbf{y} \,.$, \\(\mathbf{x}+\mathbf{y} \,.\\).
-
-\\[
-\mathbf{x}+\mathbf{y} \,.
-\\]
-
-\[
-\mathbf{x}+\mathbf{y} \,.
-\]
-
-\[ 
-\begin{align}
-\mathbf{x}+\mathbf{y} \,.
-\end{align}
-\]
-
-\begin{align}
-\mathbf{x}+\mathbf{y} \,.
-\end{align}
-
-\\(
-\begin{align}
-\mathbf{x}+\mathbf{y} \,.
-\end{align}
-\\)
-
-
+$$
+\hat{\mathbf{\Sigma}}_k (\alpha) = \alpha \hat{\mathbf{\Sigma}}_k + (1-\alpha) \hat{\mathbf{\Sigma}} \,.
+$$
 
 - Automatic numbering and referencing using <span class="tex2jax_ignore">`\ref{label}`</span>:
 In (\ref{eq:sample}), we find the value of an interesting integral:
+$$
 \begin{align}
   \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15} \, .
   \label{eq:sample}
 \end{align}
+$$
 
 - Multiline equations using `\begin{align*}`:
+$$
 \begin{align\*}
   \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \,,\newline
   \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \,.
 \end{align\*} 
-
+$$
 
 That's it for now. Happy blogging. 
 
