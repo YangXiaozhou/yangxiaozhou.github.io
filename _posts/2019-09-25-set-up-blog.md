@@ -142,45 +142,22 @@ The last piece to my website is to add the support of $\LaTeX$-like math. This i
 
 Inline $\mathbf{x}+\mathbf{y} \,.$, \\(\mathbf{x}+\mathbf{y} \,.\\).
 
-$$
+\[ 
+\begin{align}
 \mathbf{x}+\mathbf{y} \,.
-$$
+\end{align}
+\]
 
-something
-$$
-\mathbf{x}+\mathbf{y} \,.
-$$
-
-$$
-\mathbf{x}+\mathbf{y} \,.
-$$
-something
-
-something
-$$
-\mathbf{x}+\mathbf{y} \,.
-$$
-something
-
-\begin{equations}
-\mathbf{x}+\mathbf{y} \,.
-\end{equations}
-
-$$
-\begin{equations}
-\mathbf{x}+\mathbf{y} \,.
-\end{equations}
-$$
 
 \begin{align}
 \mathbf{x}+\mathbf{y} \,.
 \end{align}
 
-$$
-\begin{align}
+\\(\begin{align}
 \mathbf{x}+\mathbf{y} \,.
 \end{align}
-$$
+\\)
+
 
 
 - Automatic numbering and referencing using <span class="tex2jax_ignore">`\ref{label}`</span>:
