@@ -162,19 +162,6 @@ $$
 \end{align*} 
 $$
 
-$$
-\begin{align\*}
-  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \,,\newline
-  \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \,.
-\end{align\*} 
-$$
-
-\begin{align*}
-  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \,,\newline
-  \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \,.
-\end{align*} 
-Test text
-
 That's it for now. Happy blogging. 
 
 Additional resources:

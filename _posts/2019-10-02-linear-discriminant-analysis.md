@@ -164,10 +164,7 @@ with plt.style.context('seaborn-talk'):
 #### Computation for LDA
 We can see from (\ref{eqn_lda}) and (\ref{eqn_qda}) that computations of discriminant functions can be simplified if we diagonalize the covariance matrices first. That is, data are transformed to have an identity covariance matrix (no correlation, variance of 1). In the case of LDA, here's how we proceed with the computation:
 
-1. Perform eigen-decompostion on the pooled covariance matrix: 
-$$
-\hat{\mathbf{\Sigma}} = \mathbf{U}\mathbf{D}\mathbf{U}^{T} \,.
-$$
+1. Perform eigen-decompostion on the pooled covariance matrix: $ \hat{\mathbf{\Sigma}} = \mathbf{U}\mathbf{D}\mathbf{U}^{T} \,. $
 2. Sphere the data:
 $$
 \mathbf{X}^{*} \leftarrow \mathbf{D}^{-\frac{1}{2}} \mathbf{U}^{T} \mathbf{X} \,.
