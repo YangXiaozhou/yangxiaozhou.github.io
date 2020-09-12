@@ -32,13 +32,11 @@ Let's see how LDA can be derived as a supervised classification method. Consider
 
 #### Linear and quadratic discriminant analysis
 If we assume data comes from multivariate Gaussian distribution, i.e. $X \sim N(\mathbf{\mu}, \mathbf{\Sigma})$, explicit forms of the above allocation rules can be obtained. Following the Bayesian rule, we classify $\mathbf{x}$ to class $j$ if $j = \arg\max_i \delta_i(\mathbf{x})$ where 
-
 $$
 \begin{align}
     \delta_i(\mathbf{x}) = \log f_i(\mathbf{x}) + \log \pi_i
 \end{align}
 $$ 
-
 is called the discriminant function. Note the use of log-likelihood here.  The decision boundary separating any two classes, $k$ and $\ell$, is the set of $\mathbf{x}$ where two discriminant functions have the same value, i.e. $$\{\mathbf{x}: \delta_k(\mathbf{x}) = \delta_{\ell}(\mathbf{x})\}$$. Therefore, any data that falls on the decision boundary is equally likely from the two classes.
 
 LDA arises in the case where we assume equal covariance among $K$ classes, i.e. $\mathbf{\Sigma}_1 = \mathbf{\Sigma}_2 = \dots = \mathbf{\Sigma}_K$. Then we can obtain the following discriminant function:

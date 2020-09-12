@@ -4,13 +4,26 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-08-03T09:04:42+08:00</updated>
+ <updated>2020-09-12T09:49:00+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Statistical learning knowledge repo: Foundation</title>
+   <link href="http://localhost:4000/data/2020/09/11/data-knowledge-repository.html"/>
+   <updated>2020-09-11T08:00:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/09/11/data-knowledge-repository</id>
+   <content type="html">&lt;p&gt;This is a collection of my study notes on various foundational topics of statistical learning. It is intended as a knowledge repository for myself and a work in progress that I will periodically update.&lt;/p&gt;
+
+&lt;h1 id=&quot;principal-component-analysis&quot;&gt;Principal Component Analysis&lt;/h1&gt;
+
+&lt;h1 id=&quot;ridge-regularization&quot;&gt;Ridge regularization&lt;/h1&gt;
+</content>
+ </entry>
  
  <entry>
    <title>菊与刀：三个月的研究写出了人类学最出名的书？</title>
@@ -75,7 +88,7 @@
   &lt;p&gt;日本人从家庭生活经验中了解到只有符合家庭共同利益的决定才能得到认可，任何人都不能强制执行，包括一家之长，日本的家长更像是全家人的物质和精神财产管理人。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;为什么在很多人看来等级制无处不在、人的行为被无数框架约束着的日本社会能高效运作，在战后经济腾飞，成为无数不多的亚洲发达国家？作者知道对于她的美国读者来说，这可能很难理解，因为美国社会看上去似乎没那么多等级差异也更崇尚个人主义。她认为这是因为日本人习惯“行为准则被细化、地位被明确”的社会：&lt;/p&gt;
+&lt;p&gt;为什么在很多人看来等级制无处不在、人的行为被无数框架约束着的日本社会能高效运作，在战后经济腾飞，成为为数不多的亚洲发达国家？作者知道对于她的美国读者来说，这可能很难理解，因为美国社会看上去似乎没那么多等级差异也更崇尚个人主义。她认为这是因为日本人习惯“行为准则被细化、地位被明确”的社会：&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;虽然生活中要遵守各种繁琐的细则，但对日本人来说，只有这样，他们的生活才能有序进行，才会有一种安全感和归属感。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -639,13 +652,11 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;linear-and-quadratic-discriminant-analysis&quot;&gt;Linear and quadratic discriminant analysis&lt;/h4&gt;
-&lt;p&gt;If we assume data comes from multivariate Gaussian distribution, i.e. $X \sim N(\mathbf{\mu}, \mathbf{\Sigma})$, explicit forms of the above allocation rules can be obtained. Following the Bayesian rule, we classify $\mathbf{x}$ to class $j$ if $j = \arg\max_i \delta_i(\mathbf{x})$ where&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+&lt;p&gt;If we assume data comes from multivariate Gaussian distribution, i.e. $X \sim N(\mathbf{\mu}, \mathbf{\Sigma})$, explicit forms of the above allocation rules can be obtained. Following the Bayesian rule, we classify $\mathbf{x}$ to class $j$ if $j = \arg\max_i \delta_i(\mathbf{x})$ where 
+&lt;script type=&quot;math/tex&quot;&gt;\begin{align}
     \delta_i(\mathbf{x}) = \log f_i(\mathbf{x}) + \log \pi_i
-\end{align}&lt;/script&gt;
-
-&lt;p&gt;is called the discriminant function. Note the use of log-likelihood here.  The decision boundary separating any two classes, $k$ and $\ell$, is the set of $\mathbf{x}$ where two discriminant functions have the same value, i.e. &lt;script type=&quot;math/tex&quot;&gt;\{\mathbf{x}: \delta_k(\mathbf{x}) = \delta_{\ell}(\mathbf{x})\}&lt;/script&gt;. Therefore, any data that falls on the decision boundary is equally likely from the two classes.&lt;/p&gt;
+\end{align}&lt;/script&gt; 
+is called the discriminant function. Note the use of log-likelihood here.  The decision boundary separating any two classes, $k$ and $\ell$, is the set of $\mathbf{x}$ where two discriminant functions have the same value, i.e. &lt;script type=&quot;math/tex&quot;&gt;\{\mathbf{x}: \delta_k(\mathbf{x}) = \delta_{\ell}(\mathbf{x})\}&lt;/script&gt;. Therefore, any data that falls on the decision boundary is equally likely from the two classes.&lt;/p&gt;
 
 &lt;p&gt;LDA arises in the case where we assume equal covariance among $K$ classes, i.e. $\mathbf{\Sigma}_1 = \mathbf{\Sigma}_2 = \dots = \mathbf{\Sigma}_K$. Then we can obtain the following discriminant function:&lt;/p&gt;
 

@@ -266,6 +266,25 @@
   
   <div class="post">
     <h2 class="post-title">
+      <a href="/data/2020/09/11/data-knowledge-repository.html">
+        Statistical learning knowledge repo: Foundation
+      </a>
+    </h2>
+
+    <span class="post-date">11 Sep 2020</span>
+
+    <p>This is a collection of my study notes on various foundational topics of statistical learning. It is intended as a knowledge repository for myself and a work in progress that I will periodically update.</p>
+
+    <!-- <p>This is a collection of my study notes on various foundational topics of statistical learning. It is intended as a knowledge repository for myself and a work in progress that I will periodically update.</p>
+
+<h1 id="principal-component-analysis">Principal Component Analysis</h1>
+
+<h1 id="ridge-regularization">Ridge regularization</h1>
+ -->
+  </div>
+  
+  <div class="post">
+    <h2 class="post-title">
       <a href="/reading/2020/08/02/The-Chrysanthemum-and-the-Sword.html">
         菊与刀：三个月的研究写出了人类学最出名的书？
       </a>
@@ -333,7 +352,7 @@
   <p>日本人从家庭生活经验中了解到只有符合家庭共同利益的决定才能得到认可，任何人都不能强制执行，包括一家之长，日本的家长更像是全家人的物质和精神财产管理人。</p>
 </blockquote>
 
-<p>为什么在很多人看来等级制无处不在、人的行为被无数框架约束着的日本社会能高效运作，在战后经济腾飞，成为无数不多的亚洲发达国家？作者知道对于她的美国读者来说，这可能很难理解，因为美国社会看上去似乎没那么多等级差异也更崇尚个人主义。她认为这是因为日本人习惯“行为准则被细化、地位被明确”的社会：</p>
+<p>为什么在很多人看来等级制无处不在、人的行为被无数框架约束着的日本社会能高效运作，在战后经济腾飞，成为为数不多的亚洲发达国家？作者知道对于她的美国读者来说，这可能很难理解，因为美国社会看上去似乎没那么多等级差异也更崇尚个人主义。她认为这是因为日本人习惯“行为准则被细化、地位被明确”的社会：</p>
 <blockquote>
   <p>虽然生活中要遵守各种繁琐的细则，但对日本人来说，只有这样，他们的生活才能有序进行，才会有一种安全感和归属感。</p>
 </blockquote>
@@ -946,13 +965,11 @@ r < 1\% %]]></script>: <strong>Under control</strong>.</li>
 </ul>
 
 <h4 id="linear-and-quadratic-discriminant-analysis">Linear and quadratic discriminant analysis</h4>
-<p>If we assume data comes from multivariate Gaussian distribution, i.e. $X \sim N(\mathbf{\mu}, \mathbf{\Sigma})$, explicit forms of the above allocation rules can be obtained. Following the Bayesian rule, we classify $\mathbf{x}$ to class $j$ if $j = \arg\max_i \delta_i(\mathbf{x})$ where</p>
-
-<script type="math/tex; mode=display">\begin{align}
+<p>If we assume data comes from multivariate Gaussian distribution, i.e. $X \sim N(\mathbf{\mu}, \mathbf{\Sigma})$, explicit forms of the above allocation rules can be obtained. Following the Bayesian rule, we classify $\mathbf{x}$ to class $j$ if $j = \arg\max_i \delta_i(\mathbf{x})$ where 
+<script type="math/tex">\begin{align}
     \delta_i(\mathbf{x}) = \log f_i(\mathbf{x}) + \log \pi_i
-\end{align}</script>
-
-<p>is called the discriminant function. Note the use of log-likelihood here.  The decision boundary separating any two classes, $k$ and $\ell$, is the set of $\mathbf{x}$ where two discriminant functions have the same value, i.e. <script type="math/tex">\{\mathbf{x}: \delta_k(\mathbf{x}) = \delta_{\ell}(\mathbf{x})\}</script>. Therefore, any data that falls on the decision boundary is equally likely from the two classes.</p>
+\end{align}</script> 
+is called the discriminant function. Note the use of log-likelihood here.  The decision boundary separating any two classes, $k$ and $\ell$, is the set of $\mathbf{x}$ where two discriminant functions have the same value, i.e. <script type="math/tex">\{\mathbf{x}: \delta_k(\mathbf{x}) = \delta_{\ell}(\mathbf{x})\}</script>. Therefore, any data that falls on the decision boundary is equally likely from the two classes.</p>
 
 <p>LDA arises in the case where we assume equal covariance among $K$ classes, i.e. $\mathbf{\Sigma}_1 = \mathbf{\Sigma}_2 = \dots = \mathbf{\Sigma}_K$. Then we can obtain the following discriminant function:</p>
 
@@ -1464,190 +1481,6 @@ the data, which is both useful for visualization and feature engineering.</li>
     </li>
   </ol>
 </div>
- -->
-  </div>
-  
-  <div class="post">
-    <h2 class="post-title">
-      <a href="/learning/2019/09/25/set-up-blog.html">
-        How did I set up my blog using Jekyll, Hyde and GitHub
-      </a>
-    </h2>
-
-    <span class="post-date">25 Sep 2019</span>
-
-    <p>What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and GitHub issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now).</p>
-
-    <!-- <p>What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and GitHub issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now).</p>
-
-<p>My aim is simple, to set up a blog for myself where I can post stuff about my life. The blog needs to be free, elegant, intuitive and support math. My current set up, Jekyll + Hyde + Github + MathJax, matches with that. Since there are many resources online about setting up a blog using Jekyll and serve it with GitHub, I am going to skip all the standard procedures by referring to the official documents. Instead, this post specifically documents:</p>
-<ul>
-  <li>the sequence of setting up different parts,</li>
-  <li>adding support for Tags, Categories and their corresponding pages,</li>
-  <li>adding MathJax to support $\LaTeX$-like math.</li>
-</ul>
-
-<p>I am using a macbook, so the steps will be described assuming the system is macOS. When in doubt, just google the relevant steps for other OSs.</p>
-
-<h2 id="1-set-up-jekyll">1. Set up Jekyll</h2>
-<p>Jekyll is the package that is generating all your website pages. First thing you want to do is to make sure that <a href="https://jekyllrb.com">Jekyll</a> is installed and ready to run.</p>
-
-<p>Follow the official <a href="https://jekyllrb.com/docs/">instructions</a>. If you successfully made a new site, good!</p>
-
-<ol>
-  <li>But if you ran into a <strong>failed to build native extension error</strong>, install macOS SDK headers with the following line.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
-</code></pre></div>    </div>
-  </li>
-  <li>If you ran into a <strong>file permission error</strong>, run the following lines to set GEM_HOME to your user directory.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'# Install Ruby Gems to ~/gems'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
-<span class="nb">echo</span> <span class="s1">'export GEM_HOME=$HOME/gems'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
-<span class="nb">echo</span> <span class="s1">'export PATH=$HOME/gems/bin:$PATH'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
-<span class="nb">source</span> ~/.bashrc
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<p>Now you can proceed with the following line and the rest of the steps.</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>bundler jekyll
-</code></pre></div></div>
-
-<p>The problem is caused by the macOS Mojave update. The above solution is provided by <a href="https://talk.jekyllrb.com/t/issues-installing-jekyll-on-macos-mojave/2400/3">desiredpersona and Frank</a>. Make sure Jekyll can run normally before proceeding to step 2.</p>
-
-<h2 id="2-set-up-github-repo">2. Set up GitHub repo</h2>
-<p>Jekyll generates web pages locally; we need a GitHub repository to host our pages so that they can be accessed on the internet. For this part, setup can be done by following GitHub’s official <a href="https://pages.github.com">instructions</a>. In the end, you should have a repo on GitHub called <em>username</em>.github.io, and the corresponding local folder on your computer. In my case, the name of my repo is yangxiaozhou.github.io.</p>
-
-<p>By the end of Step 1 and 2, we have set up the local engine for generating web pages and the GitHub repo for hosting and publishing your pages. Now we proceed to the actual website construction.</p>
-
-<h2 id="3-use-a-website-template">3. Use a website template</h2>
-<p><a href="http://hyde.getpoole.com">Hyde</a> is a Jekyll website theme built on <a href="https://github.com/poole/poole">Poole</a>. They provide the template and the theme for the website. There are many themes for Jekyll, but I decided to use Hyde because I like the elegant design and it’s easy to customize.</p>
-
-<p>To get Hyde, just download <a href="https://github.com/poole/hyde">the repo</a> and move all the files into the local folder that you have just created in Step 2. Remember to clear any existing file in that folder before moving in Hyde files. From here, you just have to edit parts of those files to make the website yours (or use it as it is). I changed the following two lines in <code class="highlighter-rouge">_config.yml</code> since redcarpet and pygments are not supported anymore. Other variables can also be changed such as name, GitHub account, etc.</p>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">markdown</span><span class="pi">:</span> <span class="s">kramdown</span>
-<span class="na">highlighter</span><span class="pi">:</span> <span class="s">rouge</span>
-</code></pre></div></div>
-<p>At this point, it would be a good idea to learn some basics of <a href="https://jekyllrb.com/docs/">Jekyll</a>, e.g. what is a front matter, what is a page, how to create a layout, etc. After learning these, you can go ahead and customize the website as you’d like.</p>
-
-<p>One problem that I ran into is that pages look fine in local serve, but when I publish them to the web, all pages other than the home page have suddenly lost all their style elements. After searching through the internet, I realize that this has to do with the <code class="highlighter-rouge">url</code> and <code class="highlighter-rouge">baseurl</code> usage. If you also have this problem, consider doing the following:</p>
-<ul>
-  <li>change all the <code class="highlighter-rouge">{{ site.baseurl }}</code>
-instances in <code class="highlighter-rouge">head.html</code> and <code class="highlighter-rouge">sidebar.html</code> to <code class="highlighter-rouge">{{ '/' | relative_url }}</code> so that the correct files can be located.</li>
-</ul>
-
-<h2 id="4-add-tags--categories">4. Add tags &amp; categories</h2>
-<p>I want to add tags and categories to my posts and create a dedicated page where posts can be arranged according to <a href="https://yangxiaozhou.github.io/tag/supervised-learning">tags</a>/<a href="https://yangxiaozhou.github.io/categories/">categories</a>. This should be easy since tags and categories are default front matter variables that you can define in Jekyll. For example, tags and categories of my LDA post are defined like this:</p>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
-<span class="na">title</span><span class="pi">:</span>  <span class="s2">"</span><span class="s">Linear</span><span class="nv"> </span><span class="s">discriminant</span><span class="nv"> </span><span class="s">analysis,</span><span class="nv"> </span><span class="s">explained"</span>
-<span class="na">date</span><span class="pi">:</span>   <span class="s">2019-10-2 08:00:00 +0800</span>
-<span class="na">categories</span><span class="pi">:</span> <span class="s">DATA</span>
-<span class="na">tags</span><span class="pi">:</span> <span class="s">LDA supervised-learning classification</span>
-<span class="nn">---</span>
-</code></pre></div></div>
-
-<p>For <strong>categories</strong>, I created one page where posts of different categories are collected and the page is accessible through the sidebar link. To do this, just create a <code class="highlighter-rouge">category.html</code> in the root folder:</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
-layout: page
-permalink: /categories/
-title: Categories
----
-
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"archives"</span><span class="nt">&gt;</span>
-{% for category in site.categories %}
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"archive-group"</span><span class="nt">&gt;</span>
-    {% capture category_name %}{{ category | first }}{% endcapture %}
-    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"#{{ category_name | slugize }}"</span><span class="nt">&gt;&lt;/div&gt;</span>
-    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
-
-    <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"category-head"</span><span class="nt">&gt;</span>{{ category_name }}<span class="nt">&lt;/h3&gt;</span>
-    <span class="nt">&lt;a</span> <span class="na">name=</span><span class="s">"{{ category_name | slugize }}"</span><span class="nt">&gt;&lt;/a&gt;</span>
-    {% for post in site.categories[category_name] %}
-    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"archive-item"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;h4&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.baseurl }}{{ post.url }}"</span><span class="nt">&gt;</span>{{post.title}}<span class="nt">&lt;/a&gt;&lt;/h4&gt;</span>
-    <span class="nt">&lt;/article&gt;</span>
-    {% endfor %}
-  <span class="nt">&lt;/div&gt;</span>
-{% endfor %}
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-
-<p>For <strong>tags</strong>, I did two things:</p>
-<ol>
-  <li>Show the tags of a post at the end of the content.</li>
-  <li>For every tag, create a page where posts are collected, i.e. <a href="https://yangxiaozhou.github.io/tag/classification">classification</a>, <a href="https://yangxiaozhou.github.io/tag/supervised-learning">supervised-learning</a>.</li>
-</ol>
-
-<p>To do 1, include the following lines after the <code class="highlighter-rouge">content</code> section in your <code class="highlighter-rouge">post.html</code>:</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"post-tags"</span><span class="nt">&gt;</span>
-    {% for tag in page.tags %}
-      {% capture tag_name %}{{ tag }}{% endcapture %}
-      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"no-underline"</span> <span class="na">href=</span><span class="s">"/tag/{{ tag_name }}"</span><span class="nt">&gt;&lt;code</span> <span class="na">class=</span><span class="s">"highligher-rouge"</span><span class="nt">&gt;&lt;nobr&gt;</span>{{ tag_name }}<span class="nt">&lt;/nobr&gt;&lt;/code&gt;</span><span class="ni">&amp;nbsp;</span><span class="nt">&lt;/a&gt;</span>    
-    {% endfor %}
-<span class="nt">&lt;/span&gt;</span>
-</code></pre></div></div>
-
-<p>To do 2, Long Qian has written a very clear <a href="https://longqian.me/2017/02/09/github-jekyll-tag/">post</a> about it.</p>
-
-<h2 id="5-add-mathjax">5. Add MathJax</h2>
-<p>The last piece to my website is to add the support of $\LaTeX$-like math. This is done through MathJax. There are two steps to achieve it:</p>
-
-<ol>
-  <li>Create a <code class="highlighter-rouge">mathjax.html</code> file and put it in your <code class="highlighter-rouge">_includes</code> folder. Download the file <a href="https://github.com/YangXiaozhou/yangxiaozhou.github.io/blob/master/_includes/mathjax.html">here</a>.</li>
-  <li>
-    <p>Put the following line before <code class="highlighter-rouge">&lt;/head&gt;</code> in your <code class="highlighter-rouge">head.html</code>:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {% include mathjax.html %}
-</code></pre></div>    </div>
-
-    <p>to enbale MathJax on the page.</p>
-  </li>
-</ol>
-
-<h4 id="tips">Tips</h4>
-<ul>
-  <li>To use the normal dollar sign instead of the MathJax command (escape), put <code class="highlighter-rouge">&lt;span class="tex2jax_ignore"&gt;...&lt;/span&gt;</code> around the text you don’t want MathJax to process.</li>
-  <li>Check out currently supported Tex/LaTeX commands by MathJax <a href="https://docs.mathjax.org/en/latest/input/tex/macros/index.html">here</a>.</li>
-</ul>
-
-<h4 id="math-rendering-showcase">Math Rendering Showcase</h4>
-<ul>
-  <li>Inline math using <code class="highlighter-rouge">\$...\$</code>: $\mathbf{x}+\mathbf{y}$.</li>
-  <li>Displayed math using <code class="highlighter-rouge">\$\$...\$\$</code> on a new paragraph:</li>
-</ul>
-
-<script type="math/tex; mode=display">\mathbf{x}+\mathbf{y} \,.</script>
-
-<ul>
-  <li>
-    <p>Automatic numbering and referencing using <span class="tex2jax_ignore"><code class="highlighter-rouge">\ref{label}</code></span>:
-In (\ref{eq:sample}), we find the value of an interesting integral:
-\begin{align}
-\int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15} \, .
-\label{eq:sample}
-\end{align}</p>
-  </li>
-  <li>
-    <p>Multiline equations using <code class="highlighter-rouge">\begin{align*}</code>:
-\begin{align*}
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \,,\newline
-\nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \,.
-\end{align*}</p>
-  </li>
-</ul>
-
-<p>That’s it for now. Happy blogging.</p>
-
-<p>Additional resources:</p>
-<ul>
-  <li>Set up <a href="https://blog.webjeda.com/jekyll-categories/">categories &amp; tags</a></li>
-  <li>Set up <a href="http://joshualande.com/jekyll-github-pages-poole">Disqus comments &amp; Google Analytics</a></li>
-  <li>Add in social media <a href="https://jreel.github.io/social-media-icons-on-jekyll/">icons</a></li>
-  <li>kramdown <a href="https://kramdown.gettalong.org/quickref.html">basics</a></li>
-  <li>MathJax <a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">basics</a></li>
-</ul>
-
  -->
   </div>
   
