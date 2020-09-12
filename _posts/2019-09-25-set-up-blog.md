@@ -142,18 +142,26 @@ The last piece to my website is to add the support of $\LaTeX$-like math. This i
 
 Inline $\mathbf{x}+\mathbf{y} \,.$, \\(\mathbf{x}+\mathbf{y} \,.\\).
 
+\\[
+\mathbf{x}+\mathbf{y} \,.
+\\]
+
+\[
+\mathbf{x}+\mathbf{y} \,.
+\]
+
 \[ 
 \begin{align}
 \mathbf{x}+\mathbf{y} \,.
 \end{align}
 \]
 
-
 \begin{align}
 \mathbf{x}+\mathbf{y} \,.
 \end{align}
 
-\\(\begin{align}
+\\(
+\begin{align}
 \mathbf{x}+\mathbf{y} \,.
 \end{align}
 \\)
