@@ -140,9 +140,48 @@ The last piece to my website is to add the support of $\LaTeX$-like math. This i
 - Inline math using `\$...\$`: $\mathbf{x}+\mathbf{y}$.
 - Displayed math using `\$\$...\$\$` on a new paragraph: 
 
+Inline $\mathbf{x}+\mathbf{y} \,.$, \\(\mathbf{x}+\mathbf{y} \,.\\).
+
 $$
 \mathbf{x}+\mathbf{y} \,.
 $$
+
+something
+$$
+\mathbf{x}+\mathbf{y} \,.
+$$
+
+$$
+\mathbf{x}+\mathbf{y} \,.
+$$
+something
+
+something
+$$
+\mathbf{x}+\mathbf{y} \,.
+$$
+something
+
+\begin{equations}
+\mathbf{x}+\mathbf{y} \,.
+\end{equations}
+
+$$
+\begin{equations}
+\mathbf{x}+\mathbf{y} \,.
+\end{equations}
+$$
+
+\begin{align}
+\mathbf{x}+\mathbf{y} \,.
+\end{align}
+
+$$
+\begin{align}
+\mathbf{x}+\mathbf{y} \,.
+\end{align}
+$$
+
 
 - Automatic numbering and referencing using <span class="tex2jax_ignore">`\ref{label}`</span>:
 In (\ref{eq:sample}), we find the value of an interesting integral:

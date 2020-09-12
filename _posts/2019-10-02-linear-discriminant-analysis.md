@@ -5,6 +5,7 @@ date:   2019-10-2 08:00:00 +0800
 categories: DATA
 tags: LDA supervised-learning classification
 ---
+
 *Intuitions, illustrations, and maths: How it's more than a dimension reduction tool and why it's robust for real-world applications.*
 
 ![mda]({{ '/' | relative_url }}assets/2019-10-02/mda.png) This graph shows that boundaries (blue lines) learned by mixture discriminant analysis (MDA) successfully separate three mingled classes. MDA is one of the powerful extensions of LDA.
@@ -32,6 +33,7 @@ Let's see how LDA can be derived as a supervised classification method. Consider
 
 #### Linear and quadratic discriminant analysis
 If we assume data comes from multivariate Gaussian distribution, i.e. $X \sim N(\mathbf{\mu}, \mathbf{\Sigma})$, explicit forms of the above allocation rules can be obtained. Following the Bayesian rule, we classify $\mathbf{x}$ to class $j$ if $j = \arg\max_i \delta_i(\mathbf{x})$ where 
+
 $$
 \begin{align}
     \delta_i(\mathbf{x}) = \log f_i(\mathbf{x}) + \log \pi_i
@@ -67,7 +69,7 @@ $$
 \delta_{k}'(\mathbf{x}) = \delta_{k}(\mathbf{x}) - \delta_{K}(\mathbf{x})\,,
 $$
 
-$k = 1, \dots, K-1$. Hence, the total number of estimated parameters for LDA is $$(K-1)(p+1)$$. 
+for $k = 1, \dots, K-1$. Hence, the total number of estimated parameters for LDA is $$(K-1)(p+1)$$. 
 
 On the other hand, for each QDA discriminant function (\ref{eqn_qda}), mean vector, covariance matrix, and class prior need to be estimated:
 - Mean: $p$
