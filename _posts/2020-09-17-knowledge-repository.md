@@ -3,7 +3,7 @@ layout: post
 title:  "Statistical learning knowledge repository"
 date:   2020-09-17 08:00:00 +0800
 categories: DATA
-tags: statistical-learning machine-learning data-science regularization
+tags: statistical-learning machine-learning data-science regularization supervised-learning
 ---
 
 This is a collection of my notes on various topics of statistical learning. It is intended as a knowledge repository for myself and a work in progress that I will periodically update. 
