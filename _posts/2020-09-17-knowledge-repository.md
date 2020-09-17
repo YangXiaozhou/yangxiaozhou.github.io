@@ -24,7 +24,7 @@ $$
 \mathbf{y}=\mathbf{X} \boldsymbol{\beta}+\mu \mathbf{1}+\mathbf{u}, \quad \mathbf{u} \sim N_{\mathrm{n}}\left(\mathbf{0}, \sigma^{2} \mathbf{I}\right),
 $$
 
-consider the columns of $\mathbf{X}$ have been standardized to have mean 0 and variance 1. Then the ridge estimate of $\boldsymbol{\beta}$ is $\boldsymbol{\beta}^* = (\mathbf{X}^{\top} \mathbf{X} + \lambda \mathbf{I})^{-1} \mathbf{X}^{\top} \mathbf{y}$ where for given $\mathbf{X}$, $\lambda \ge 0$ is a small fixed ridge regularization parameter. Note that when $\lambda = 0$, it is just the OLS formulation. Also consider the spectral decomposition of the var-cov matrix $\mathbf{X}^{\top} \mathbf{X} = \mathbf{G} \mathbf{L} \mathbf{G}^{\top}$. Let $\mathbf{W} = \mathbf{X}\mathbf{G}$ be the principal component transformation of the original data matrix. 
+consider the columns of $\mathbf{X}$ have been standardized to have mean 0 and variance 1. Then the ridge estimate of $\boldsymbol{\beta}$ is $\boldsymbol{\beta}^* = (\mathbf{X}^{\top} \mathbf{X} + \lambda \mathbf{I})^{-1} \mathbf{X}^{\top} \mathbf{y}$ where for given $\mathbf{X}$, $\lambda \ge 0$ is a small fixed ridge regularization parameter. Note that when $\lambda = 0$, it is just the OLS formulation. Also, consider the spectral decomposition of the var-cov matrix $\mathbf{X}^{\top} \mathbf{X} = \mathbf{G} \mathbf{L} \mathbf{G}^{\top}$. Let $\mathbf{W} = \mathbf{X}\mathbf{G}$ be the principal component transformation of the original data matrix. 
 
 ### Result 1.1
 
@@ -87,7 +87,7 @@ $$
 
 ### Result 1.2
 
-It follows from Result 1.1 that we can establish a direct link between the OLS estimates $\hat{\boldsymbol{\beta}}$ and the ridge estimates $\boldsymbol{\beta}^*$ through spectral decomposition of the var-cov matrix. Specifically, we have
+It follows from Result 1.1 that we can establish a direct link between the OLS estimate $\hat{\boldsymbol{\beta}}$ and the ridge estimate $\boldsymbol{\beta}^*$ through spectral decomposition of the var-cov matrix. Specifically, we have
 
 $$
 \boldsymbol{\beta}^{*}=\mathbf{G D G}^{\top} \hat{\boldsymbol{\beta}}, \quad \text { where } \mathbf{D}=\operatorname{diag}\left(\frac{l_{i}}{l_{i}+k} \right),
@@ -133,7 +133,7 @@ $$
 \end{align*}
 $$
 
-Now, from the previous two results, we can show that the trace MSE of the ridge estimates can be decomposed into two parts: **variance** and **bias**, and obtain explicit formula for them. The availability of exact formula for MSE allows things like regularization path to be computed easily. 
+Now, from the previous two results, we can show that the trace MSE of the ridge estimates can be decomposed into two parts: **variance** and **bias**, and obtain an explicit formula for them. The availability of the exact formula for MSE allows things like regularization path to be computed easily.
 
 Specifically, we have 
 
@@ -207,16 +207,16 @@ $$
 $$
 
 Notice that the gradient of the trace MSE function is negative when $\lambda$ is 0. This tells us two things:
-1. We can reduce the trace MSE by taking a non-zero $\lambda$ value. In particular, we are trading a bit of bias for reduction in variance as the variance function ($\gamma_1$) is monotonically decreasing in $\lambda$. However, we need to find the right balance between variance and bias so that the overall trace MSE is minimized. 
+1. We can reduce the trace MSE by taking a non-zero $\lambda$ value. In particular, we are trading a bit of bias for a reduction in variance as the variance function ($\gamma_1$) is monotonically decreasing in $\lambda$. However, we need to find the right balance between variance and bias so that the overall trace MSE is minimized. 
 2. The reduction in trace MSE by ridge regularization is higher when some $l_i$s are small. That is, when there is considerable collinearity among the predictors, ridge regularization can achieve much smaller trace MSE than OLS. 
 
 ### Visualization 
 
-Using the `sklearn.metrics.make_regression` function, I generated a noisy regression data set with 50 samples and 10 features. However, most of the variances (in PCA sense) are explained by 5 of those 10 features, i.e. last 5 eigenvalues are relatively small. 
-
-From the figure, we can clearly see that increasing $\lambda$ shrinks every coefficient towards 0. On the other hand, an optimal $\lambda$ is found at around 1 where the MSE of estimated coefficients is minimized. 
+Using the `sklearn.metrics.make_regression` function, I generated a noisy regression data set with 50 samples and 10 features. However, most of the variances (in PCA sense) are explained by 5 of those 10 features, i.e. last 5 eigenvalues are relatively small. Here are the regularization path and the coefficient error plot.
 
 ![ridge_error](/assets/learning-repo/ridge_lambda_mse.png)
+
+From the figure, we can clearly see that increasing $\lambda$ shrinks every coefficient towards 0. On the other hand, an optimal $\lambda$ is found at around 1 where the MSE of estimated coefficients is minimized. 
 
 <details>
 <summary>Click here for the script to generate the above plot, credit to <a href="https://scikit-learn.org/stable/auto_examples/linear_model/plot_ridge_coeffs.html#sphx-glr-auto-examples-linear-model-plot-ridge-coeffs-py">scikit-learn</a>.</summary>
