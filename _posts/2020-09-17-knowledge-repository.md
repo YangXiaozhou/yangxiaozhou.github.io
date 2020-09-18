@@ -40,7 +40,7 @@ This result shows us two important insights:
     - Larger $\lambda$ corresponds to heavier shrinking for every parameter. 
     - However, given the same $\lambda$, principal components corresponding to larger eigenvalues receive the least shrinking.
 
-The two shrinking effects are clearly visible from this figure. 
+To demonstrate the two shrinking effects, I plotted the percentage shrunken ($1- l_{i}/(l_{i}+\lambda)$) as a function of the ordered principal components as well as the value of the ridge regularization parameter. The two shrinking effects are clearly visible from this figure.
 ![lambda_effect](/assets/learning-repo/pca_ridge_lambda_effect.png)
 
 <details>
@@ -109,7 +109,7 @@ $$
 \boldsymbol{\alpha}^* = \mathbf{G}^{\top}\boldsymbol{\beta}^*
 $$
 
-where $\boldsymbol{\beta}^*$ is the ridge estimates of $\boldsymbol{\beta}$, then we have
+where $\boldsymbol{\beta}^*$ is the ridge estimate of $\boldsymbol{\beta}$, then we have
 
 $$
 \begin{align*}
@@ -216,7 +216,11 @@ Using the `sklearn.metrics.make_regression` function, I generated a noisy regres
 
 ![ridge_error](/assets/learning-repo/ridge_lambda_mse.png)
 
-From the figure, we can clearly see that increasing $\lambda$ shrinks every coefficient towards 0. On the other hand, an optimal $\lambda$ is found at around 1 where the MSE of estimated coefficients is minimized. 
+From the figure, we can clearly see that
+- Increasing $\lambda$ shrinks every coefficient towards 0. 
+- OLS procedure (left-hand side of both figures) produces erroneous (and with a large variance) estimate. the estimator MSE is significantly larger than that of the ridge regression. 
+- An optimal $\lambda$ is found at around 1 where the MSE of ridge estimated coefficients is minimized. 
+- On the other hand, $\lambda$ values larger and smaller than 1 are suboptimal as they lead to over-regularization and under-regularization in this case.
 
 <details>
 <summary>Click here for the script to generate the above plot, credit to <a href="https://scikit-learn.org/stable/auto_examples/linear_model/plot_ridge_coeffs.html#sphx-glr-auto-examples-linear-model-plot-ridge-coeffs-py">scikit-learn</a>.</summary>
