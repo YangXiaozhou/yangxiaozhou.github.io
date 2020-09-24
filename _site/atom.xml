@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-09-24T14:56:52+08:00</updated>
+ <updated>2020-09-24T15:34:34+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -74,7 +74,7 @@
    <link href="http://localhost:4000/data/2020/09/24/intro-to-cnn.html"/>
    <updated>2020-09-24T08:00:00+08:00</updated>
    <id>http://localhost:4000/data/2020/09/24/intro-to-cnn</id>
-   <content type="html">&lt;p&gt;In this post, I introduce very briefly what are &lt;strong&gt;deep neural networks&lt;/strong&gt; (DNNs) and &lt;strong&gt;convolutional neural networks&lt;/strong&gt; (CNNs). There is no math involved. This should be a good refresher if you are already familiar with DNNs and CNNs. If not, at the end of this post, you could gain an intuitive understanding of the motivation behind CNN and the key components that define a CNN.&lt;/p&gt;
+   <content type="html">&lt;p&gt;In this post, I briefly introduce what are &lt;strong&gt;deep neural networks&lt;/strong&gt; (DNNs) and &lt;strong&gt;convolutional neural networks&lt;/strong&gt; (CNNs). There is no math involved. This should be a good refresher if you are already familiar with DNNs and CNNs. If not, at the end of this post, you could gain an intuitive understanding of the motivation behind CNN and the key components that define a CNN.&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#deep-neural-network&quot; id=&quot;markdown-toc-deep-neural-network&quot;&gt;Deep neural network&lt;/a&gt;    &lt;ul&gt;
@@ -100,12 +100,12 @@
 
 &lt;p&gt;Looking at the problems that ML tries to solve, ML is often sliced into&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Supervised learning: predicting a label, e.g. classification, or a continuous variable;&lt;/li&gt;
+  &lt;li&gt;Supervised learning: predicting a label, e.g., classification, or a continuous variable;&lt;/li&gt;
   &lt;li&gt;Unsupervised learning: pattern recognition for unlabeled data, e.g., clustering;&lt;/li&gt;
-  &lt;li&gt;Reinforcement learning: algorithms learn the best way to “behave”, e.g. AlphaGo, self-driving cars.&lt;/li&gt;
+  &lt;li&gt;Reinforcement learning: algorithms learn the best way to “behave”, e.g., AlphaGo, self-driving cars.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Deep learning, among others, is a powerful form of machine learning that has garnered much attention for its successes in computer vision (e.g. image recognition), natural language processing, and beyond. Neural network is originally inspired by information processing and communication nodes in biological systems. By design, input data is passed through layers of the network, which contain a number of nodes, analogous to “neurons”. The system then outputs a certain representation of the information. DNN is probably the most well-known network for deep learning and it can be trained to learn the features of the data very well.&lt;/p&gt;
+&lt;p&gt;Among others, deep learning is a powerful form of machine learning that has garnered much attention for its successes in computer vision (e.g., image recognition), natural language processing, and beyond. The neural network is inspired by information processing and communication nodes in biological systems. By design, input data is passed through layers of the network, containing several nodes, analogous to “neurons”. The system then outputs a particular representation of the information. DNN is probably the most well-known network for deep learning, and it can be trained to learn the features of the data very well.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/cnn-covid-19/deep-nn.jpg&quot; alt=&quot;Deep neural network&quot; /&gt;Image &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6347705/&quot;&gt;credit&lt;/a&gt;.&lt;/p&gt;
 
@@ -116,9 +116,9 @@
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;forward-propagation&quot;&gt;Forward propagation&lt;/h2&gt;
-&lt;p&gt;This is the &lt;strong&gt;prediction&lt;/strong&gt; step. The network reads the input data, computes its values across the network and gives a final output value.&lt;/p&gt;
+&lt;p&gt;This is the &lt;strong&gt;prediction&lt;/strong&gt; step. The network reads the input data, computes its values across the network, and gives a final output value.&lt;/p&gt;
 
-&lt;p&gt;But how does the network computes an output value? Let’s see what happens in a single layer network when it does one prediction. It takes in inputs as a vector of numbers. Each node in the layer has its own weight. When the input value is passed through the layer, the network computes its weighted sum. This is usually followed by a (usually nonlinear) activation function, e.g. step function, where the weighted sum is “activated”.&lt;/p&gt;
+&lt;p&gt;But how does the network computes an output value? Let’s see what happens in a single layer network when it makes one prediction. It takes input as a vector of numbers. Each node in the layer has its weight. When the input value is passed through the layer, the network computes its weighted sum. This is usually followed by a (typically nonlinear) activation function, e.g., step function, where the weighted sum is “activated”.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/cnn-covid-19/perceptron.jpg&quot; alt=&quot;perceptron&quot; /&gt; Image &lt;a href=&quot;https://deepai.org/machine-learning-glossary-and-terms/perceptron&quot;&gt;credit&lt;/a&gt;.&lt;/p&gt;
 
@@ -131,13 +131,13 @@
 &lt;p&gt;&lt;img src=&quot;/assets/cnn-covid-19/mlp.png&quot; alt=&quot;mlp&quot; /&gt; Image &lt;a href=&quot;https://www.cs.purdue.edu/homes/ribeirob/courses/Spring2020/lectures/03/MLP_and_backprop.html&quot;&gt;credit&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;backpropagation&quot;&gt;Backpropagation&lt;/h2&gt;
-&lt;p&gt;This is the &lt;strong&gt;training&lt;/strong&gt; step. By comparing the network’s predictions/outputs and the ground truth values, i.e., compute loss, the network adjusts its parameters so that the performance is improved.&lt;/p&gt;
+&lt;p&gt;This is the &lt;strong&gt;training&lt;/strong&gt; step. By comparing the network’s predictions/outputs and the ground truth values, i.e., compute loss, the network adjusts its parameters to improve the performance.&lt;/p&gt;
 
-&lt;p&gt;How does the network adjust the parameters (weights and biases) through training? This is done through an operation called &lt;strong&gt;backpropagation&lt;/strong&gt;, or backprop. The network takes the loss and recursively calculates the slope of the loss function with respect to each network parameter. Calculating these slopes requires the usage of chain rule from calculus, you can read more about it &lt;a href=&quot;https://sebastianraschka.com/faq/docs/backprop-arbitrary.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;How does the network adjust the parameters (weights and biases) through training? This is done through an operation called &lt;strong&gt;backpropagation&lt;/strong&gt;, or backprop. The network takes the loss and recursively calculates the loss function’s slope with respect to each parameter. Calculating these slopes requires the usage of chain rule from calculus; you can read more about it &lt;a href=&quot;https://sebastianraschka.com/faq/docs/backprop-arbitrary.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;An optimization algorithm is then used to update network parameters using the gradient information until the performance cannot be improved anymore. One commonly used optimizer is stochastic gradient descent.&lt;/p&gt;
 
-&lt;p&gt;One analogy often used to explain gradient-based optimization is hiking. Training the network so that its loss is minimized is like trying to get down to the lowest point on the ground from a mountain. Backprop operation finding the loss function gradients is like finding the path on your way down. Optimization algorithm is the step where you actually take the path and eventually reach the lowest point. &lt;img src=&quot;/assets/cnn-covid-19/gradient-descent.png&quot; alt=&quot;gradient-descent&quot; /&gt; Image &lt;a href=&quot;https://www.datasciencecentral.com/profiles/blogs/alternatives-to-the-gradient-descent-algorithm&quot;&gt;credit&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;One analogy often used to explain gradient-based optimization is hiking. Training the network to minimize loss is like getting down to the lowest point on the ground from a mountain. Backprop operation finding the loss function gradients is like finding the path on your way down. The optimization algorithm is the step where you actually take the path and eventually reach the lowest point. &lt;img src=&quot;/assets/cnn-covid-19/gradient-descent.png&quot; alt=&quot;gradient-descent&quot; /&gt; Image &lt;a href=&quot;https://www.datasciencecentral.com/profiles/blogs/alternatives-to-the-gradient-descent-algorithm&quot;&gt;credit&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I am glossing over many details, but I hope you now know that DNN&lt;/p&gt;
 &lt;ul&gt;
@@ -150,16 +150,16 @@
 
 &lt;h1 id=&quot;convolutional-neural-network&quot;&gt;Convolutional neural network&lt;/h1&gt;
 
-&lt;p&gt;Ordinary neural networks that we’ve talked about above expect input data to be a &lt;strong&gt;vector of numbers&lt;/strong&gt;, i.e., $\mathbf{x} = [x_1, x_2, x_3, \dots]$. What if we want to train an &lt;strong&gt;image classifier&lt;/strong&gt;, i.e. use image as the input? Let’s talk about some digital image basics.&lt;/p&gt;
+&lt;p&gt;Ordinary neural networks that we’ve talked about above expect input data to be a &lt;strong&gt;vector of numbers&lt;/strong&gt;, i.e., $\mathbf{x} = [x_1, x_2, x_3, \dots]$. What if we want to train an &lt;strong&gt;image classifier&lt;/strong&gt;, i.e., use an image as the input? Let’s talk about some digital image basics.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;An image is a &lt;strong&gt;collection of pixels&lt;/strong&gt;. For example, a 32-by-32 image has $32 \times 32 = 1024$ pixels.&lt;/li&gt;
   &lt;li&gt;Each pixel is an &lt;strong&gt;intensity represented by a number&lt;/strong&gt; in the range $[0, 255]$, $0$ is black and $255$ is white.&lt;/li&gt;
   &lt;li&gt;Color images have three dimensions: &lt;strong&gt;[width, height, depth]&lt;/strong&gt; where depth is usually 3.&lt;/li&gt;
-  &lt;li&gt;Why is depth 3? That’s because it encodes the intensity of [&lt;strong&gt;R&lt;/strong&gt;ed, &lt;strong&gt;G&lt;/strong&gt;reen, &lt;strong&gt;B&lt;/strong&gt;lue], i.e. RGB values.&lt;/li&gt;
+  &lt;li&gt;Why is depth 3? That’s because it encodes the intensity of [&lt;strong&gt;R&lt;/strong&gt;ed, &lt;strong&gt;G&lt;/strong&gt;reen, &lt;strong&gt;B&lt;/strong&gt;lue], i.e., RGB values.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Therefore, to a computer program, this black and white Lincoln image is just a matrix of integers. 
+&lt;p&gt;Therefore, this black and white Lincoln image is just a matrix of integers. 
 &lt;img src=&quot;/assets/cnn-covid-19/image_pixel.png&quot; alt=&quot;image_pixel&quot; /&gt; Image &lt;a href=&quot;https://ai.stanford.edu/~syyeung/cvweb/tutorial1.html&quot;&gt;credit&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Since a digital image can be represented as a 2D grid of pixel values, we could stretch out/flatten the grid, make it into a vector of numbers and feed it into a neural network. That solves the problem…right?&lt;/p&gt;
@@ -186,7 +186,7 @@
 
 &lt;p&gt;On the other hand, CNN is designed to scale well with images and take advantage of these unique properties. It does with two unique features:&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Weight sharing&lt;/strong&gt;: All local parts of the image are processed with the same weights so that identical patterns could be detected at many locations, e.g., horizontal edges, curvs and etc.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Weight sharing&lt;/strong&gt;: All local parts of the image are processed with the same weights so that identical patterns could be detected at many locations, e.g., horizontal edges, curves and etc.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Hierarchy of features&lt;/strong&gt;: Lower-level patterns learned at the start are composed to form higher-level ones across layers, e.g., edges to contours to face outline.&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -195,7 +195,7 @@
   &lt;li&gt;Define a filter: a 2D weight matrix of a certain size, e.g. 3-by-3 filter.&lt;/li&gt;
   &lt;li&gt;Convolve the whole image with the filter: multiply each pixel under the filter with the weight.&lt;/li&gt;
   &lt;li&gt;Convolution output forms a new image: a feature map.&lt;/li&gt;
-  &lt;li&gt;By using multiple filters (each with a different weight matrix), different features can be captured.&lt;/li&gt;
+  &lt;li&gt;Using multiple filters (each with a different weight matrix), different features can be captured.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h4 id=&quot;convolution-example-mean-filter&quot;&gt;Convolution example: mean filter&lt;/h4&gt;
@@ -216,10 +216,10 @@
  [0.11 0.11 0.11]
  [0.11 0.11 0.11]]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;In a convolution, this “mean filter” actually slides across the image, takes the values of 9 connected pixels, multiplies each with the weight (0.11) and returns the sum, i.e., the weighted average of the original 9 values, hence the name “mean filter”: 
+&lt;p&gt;In a convolution, this “mean filter” actually slides across the image, takes the values of 9 connected pixels, multiplies each with the weight (0.11), and returns the sum, i.e., the weighted average of the original 9 values, hence the name “mean filter”: 
 &lt;img src=&quot;/assets/cnn-covid-19/convolution.gif&quot; alt=&quot;convolution&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;You can see the averaging effect from the filtered image pixel values. It kind of blurs out any edges in the image.&lt;/p&gt;
+&lt;p&gt;You can see the averaging effect from the filtered image pixel values. It blurs out any edges in the image.&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Filtered image pixel values: 
  [[0.11 0.22 0.33 0.22 0.11]
  [0.22 0.44 0.67 0.44 0.22]
@@ -232,9 +232,9 @@
 
 &lt;p&gt;Well, CNN essentially applies the same convolution procedure, but the key difference is it &lt;strong&gt;learns the filter weights&lt;/strong&gt; through backpropagation (training).&lt;/p&gt;
 
-&lt;p&gt;Also, for each layer, there are usually many filters, each with a different weight matrix, applied to the same image. Each filter would capture a different pattern of the same image. A CNN could also have many layers of convolution. The complexity of the network allows features at different scales to be captured. This is the hierarchy of features mentioned above.&lt;/p&gt;
+&lt;p&gt;Also, there are usually many filters for each layer, each with a different weight matrix, applied to the same image. Each filter would capture a different pattern of the same image. A CNN could also have many layers of convolution. The complexity of the network allows features at different scales to be captured. This is the hierarchy of features mentioned above.&lt;/p&gt;
 
-&lt;p&gt;For example, here’s an illustration of features learned by filters from early to latter part of the network.&lt;/p&gt;
+&lt;p&gt;For example, here’s an illustration of features learned by filters from early to the latter part of the network.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Early filters capture edges and textures. (&lt;strong&gt;General&lt;/strong&gt;)&lt;/li&gt;
   &lt;li&gt;Latter filters form parts and objects. (&lt;strong&gt;Specific&lt;/strong&gt;)&lt;/li&gt;
@@ -265,7 +265,7 @@
   &lt;/li&gt;
   &lt;li&gt;How to connect each layer?
     &lt;ul&gt;
-      &lt;li&gt;Besides the type of layers, you need to design an architecture for your CNN. This is an active field of research, e.g. what’s a better architecture? or can we automatically search for a better architecture? Check “neural architecture search” out if you are interested.&lt;/li&gt;
+      &lt;li&gt;Besides the type of layers, you need to design an architecture for your CNN. This is an active field of research, e.g., what’s a better architecture? or can we automatically search for a better architecture? Check “neural architecture search” out if you are interested.&lt;/li&gt;
       &lt;li&gt;A commonly used architecture goes like this:
         &lt;ul&gt;
           &lt;li&gt;$\text{INPUT} \rightarrow [ [\text{CONV} \rightarrow \text{RELU}]^N \rightarrow \text{POOL}]^M \rightarrow [\text{FC} \rightarrow \text{RELU}]^K \rightarrow \text{FC}$&lt;/li&gt;
@@ -278,7 +278,7 @@
 
 &lt;h1 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h1&gt;
 
-&lt;p&gt;In the my next post, &lt;a href=&quot;http://yangxiaozhou.github.io/data/2020-09-24-detecting-covid19-based-on-ct-scan.html&quot;&gt;INFORMS Data Challenge: Can we detect COVID-19 using deep learning?&lt;/a&gt;, we are going to explore how CNN can be used to build a &lt;strong&gt;COVID-19 CT scan image classifier&lt;/strong&gt;. This classifier can take in an unknown patient’s CT scan, and predicts if the patient has COVID-19 or not.&lt;/p&gt;
+&lt;p&gt;In my next post, &lt;a href=&quot;http://yangxiaozhou.github.io/data/2020-09-24-detecting-covid19-based-on-ct-scan.html&quot;&gt;INFORMS Data Challenge: Can we detect COVID-19 using deep learning?&lt;/a&gt;, we are going to explore how CNN can be used to build a &lt;strong&gt;COVID-19 CT scan image classifier&lt;/strong&gt;. This classifier can take in an unknown patient’s CT scan and predicts if the patient has COVID-19 or not.&lt;/p&gt;
 
 &lt;h1 class=&quot;no_toc&quot; id=&quot;further-resources&quot;&gt;Further resources&lt;/h1&gt;
 
