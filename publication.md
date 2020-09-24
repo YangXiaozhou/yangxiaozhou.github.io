@@ -6,6 +6,8 @@ permalink: /publication/
 [Google Scholar](https://scholar.google.com/citations?user=pWnVbHQAAAAJ&hl=en)
 #### Upcoming
 
+1. A particle filter approach to line outage detection considering generator dynamics, working paper. 
+
 ----
 
 #### Journal
