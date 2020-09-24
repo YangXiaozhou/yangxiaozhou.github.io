@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-09-17T18:27:38+08:00</updated>
+ <updated>2020-09-24T13:33:14+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -13,11 +13,272 @@
 
  
  <entry>
+   <title>INFORMS Data Challenge: Can we detect COVID-19 using deep learning?</title>
+   <link href="http://localhost:4000/data/2020/09/24/data-detecting-covid19-based-on-ct-scan.html"/>
+   <updated>2020-09-24T08:01:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/09/24/data-detecting-covid19-based-on-ct-scan</id>
+   <content type="html">&lt;p&gt;&lt;em&gt;Tagline&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#covid-19-classifier-using-cnn&quot; id=&quot;markdown-toc-covid-19-classifier-using-cnn&quot;&gt;COVID-19 classifier using CNN&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#informs-data-challenge&quot; id=&quot;markdown-toc-informs-data-challenge&quot;&gt;INFORMS data challenge&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#classifier-via-transfer-learning&quot; id=&quot;markdown-toc-classifier-via-transfer-learning&quot;&gt;Classifier via transfer learning&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#where-do-we-go-from-here&quot; id=&quot;markdown-toc-where-do-we-go-from-here&quot;&gt;Where do we go from here?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;covid-19-classifier-using-cnn&quot;&gt;COVID-19 classifier using CNN&lt;/h1&gt;
+
+&lt;h2 id=&quot;informs-data-challenge&quot;&gt;INFORMS data challenge&lt;/h2&gt;
+&lt;h2 id=&quot;classifier-via-transfer-learning&quot;&gt;Classifier via transfer learning&lt;/h2&gt;
+&lt;h3 id=&quot;pre-processing&quot;&gt;Pre-processing&lt;/h3&gt;
+&lt;h3 id=&quot;transfer-learning&quot;&gt;Transfer learning&lt;/h3&gt;
+
+&lt;h1 id=&quot;where-do-we-go-from-here&quot;&gt;Where do we go from here?&lt;/h1&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Introduction to convolutional neural network</title>
+   <link href="http://localhost:4000/data/2020/09/24/intro_to_cnn.html"/>
+   <updated>2020-09-24T08:00:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/09/24/intro_to_cnn</id>
+   <content type="html">&lt;p&gt;In this post, I introduce very briefly what are &lt;strong&gt;deep neural networks&lt;/strong&gt; (DNNs) and &lt;strong&gt;convolutional neural networks&lt;/strong&gt; (CNNs). There is no math involved. This should be a good refresher if you are already familiar with DNNs and CNNs. If not, at the end of this post, you could gain an intuitive understanding of the motivation behind CNN and the key components that define a CNN.&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#deep-neural-network&quot; id=&quot;markdown-toc-deep-neural-network&quot;&gt;Deep neural network&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#forward-propagation&quot; id=&quot;markdown-toc-forward-propagation&quot;&gt;Forward propagation&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#backpropagation&quot; id=&quot;markdown-toc-backpropagation&quot;&gt;Backpropagation&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#convolutional-neural-network&quot; id=&quot;markdown-toc-convolutional-neural-network&quot;&gt;Convolutional neural network&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#the-power-of-convolution&quot; id=&quot;markdown-toc-the-power-of-convolution&quot;&gt;The power of convolution&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#key-features-of-a-cnn&quot; id=&quot;markdown-toc-key-features-of-a-cnn&quot;&gt;Key features of a CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#whats-next&quot; id=&quot;markdown-toc-whats-next&quot;&gt;What’s next?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;deep-neural-network&quot;&gt;Deep neural network&lt;/h1&gt;
+
+&lt;p&gt;If you are familiar with DNNs, feel free to skip to &lt;a href=&quot;#Convolutional neural network&quot;&gt;Convolutional neural network&lt;/a&gt;. Before diving into neural networks, let’s first see the machine learning big picture:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Machine learning&lt;/strong&gt; (ML) is the study of computer algorithms that improve automatically through experience. – Wikipedia&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Looking at the problems that ML tries to solve, ML is often sliced into&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Supervised learning: predicting a label, e.g. classification, or a continuous variable;&lt;/li&gt;
+  &lt;li&gt;Unsupervised learning: pattern recognition for unlabeled data, e.g., clustering;&lt;/li&gt;
+  &lt;li&gt;Reinforcement learning: algorithms learn the best way to “behave”, e.g. AlphaGo, self-driving cars.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Deep learning, among others, is a powerful form of machine learning that has garnered much attention for its successes in computer vision (e.g. image recognition), natural language processing, and beyond. Neural network is originally inspired by information processing and communication nodes in biological systems. By design, input data is passed through layers of the network, which contain a number of nodes, analogous to “neurons”. The system then outputs a certain representation of the information. DNN is probably the most well-known network for deep learning and it can be trained to learn the features of the data very well.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/cnn-covid-19/deep-nn.jpg&quot; alt=&quot;Deep neural network&quot; /&gt;Image &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6347705/&quot;&gt;credit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Roughly speaking, there are two important operations that make a neural network.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Forward propagation&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Backpropagation&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;forward-propagation&quot;&gt;Forward propagation&lt;/h2&gt;
+&lt;p&gt;This is the &lt;strong&gt;prediction&lt;/strong&gt; step. The network reads the input data, computes its values across the network and gives a final output value.&lt;/p&gt;
+
+&lt;p&gt;But how does the network computes an output value? Let’s see what happens in a single layer network when it does one prediction. It takes in inputs as a vector of numbers. Each node in the layer has its own weight. When the input value is passed through the layer, the network computes its weighted sum. This is usually followed by a (usually nonlinear) activation function, e.g. step function, where the weighted sum is “activated”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/cnn-covid-19/perceptron.jpg&quot; alt=&quot;perceptron&quot; /&gt; Image &lt;a href=&quot;https://deepai.org/machine-learning-glossary-and-terms/perceptron&quot;&gt;credit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you know a bit about algebra, this is what the operation is doing:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;y = f(\mathbf{w}\cdot \mathbf{x} + b)&lt;/script&gt;
+
+&lt;p&gt;where $\mathbf{w}\cdot \mathbf{x} + b$ is the weighted sum, $f(\cdot)$ is the activation function, and $y$ is the output. Now, in a deeper neural network, the procedure is essentially the same, i.e., the &lt;strong&gt;input –&amp;gt; weighted sum –&amp;gt; activation&lt;/strong&gt; process is repeated for each layer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/cnn-covid-19/mlp.png&quot; alt=&quot;mlp&quot; /&gt; Image &lt;a href=&quot;https://www.cs.purdue.edu/homes/ribeirob/courses/Spring2020/lectures/03/MLP_and_backprop.html&quot;&gt;credit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;backpropagation&quot;&gt;Backpropagation&lt;/h2&gt;
+&lt;p&gt;This is the &lt;strong&gt;training&lt;/strong&gt; step. By comparing the network’s predictions/outputs and the ground truth values, i.e., compute loss, the network adjusts its parameters so that the performance is improved.&lt;/p&gt;
+
+&lt;p&gt;How does the network adjust the parameters (weights and biases) through training? This is done through an operation called &lt;strong&gt;backpropagation&lt;/strong&gt;, or backprop. The network takes the loss and recursively calculates the slope of the loss function with respect to each network parameter. Calculating these slopes requires the usage of chain rule from calculus, you can read more about it &lt;a href=&quot;https://sebastianraschka.com/faq/docs/backprop-arbitrary.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;An optimization algorithm is then used to update network parameters using the gradient information until the performance cannot be improved anymore. One commonly used optimizer is stochastic gradient descent.&lt;/p&gt;
+
+&lt;p&gt;One analogy often used to explain gradient-based optimization is hiking. Training the network so that its loss is minimized is like trying to get down to the lowest point on the ground from a mountain. Backprop operation finding the loss function gradients is like finding the path on your way down. Optimization algorithm is the step where you actually take the path and eventually reach the lowest point. &lt;img src=&quot;/assets/cnn-covid-19/gradient-descent.png&quot; alt=&quot;gradient-descent&quot; /&gt; Image &lt;a href=&quot;https://www.datasciencecentral.com/profiles/blogs/alternatives-to-the-gradient-descent-algorithm&quot;&gt;credit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I am glossing over many details, but I hope you now know that DNN&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;is a powerful &lt;strong&gt;machine learning&lt;/strong&gt; technique;&lt;/li&gt;
+  &lt;li&gt;can be used to tackle &lt;strong&gt;supervised&lt;/strong&gt;, &lt;strong&gt;unsupervised&lt;/strong&gt; and &lt;strong&gt;reinforcement learning&lt;/strong&gt; problems;&lt;/li&gt;
+  &lt;li&gt;consists of forward propagation (&lt;strong&gt;input to output&lt;/strong&gt;) and backpropagation (&lt;strong&gt;error to parameter update&lt;/strong&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We are ready to talk about CNN!&lt;/p&gt;
+
+&lt;h1 id=&quot;convolutional-neural-network&quot;&gt;Convolutional neural network&lt;/h1&gt;
+
+&lt;p&gt;Ordinary neural networks that we’ve talked about above expect input data to be a &lt;strong&gt;vector of numbers&lt;/strong&gt;, i.e., $\mathbf{x} = [x_1, x_2, x_3, \dots]$. What if we want to train an &lt;strong&gt;image classifier&lt;/strong&gt;, i.e. use image as the input? Let’s talk about some digital image basics.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;An image is a &lt;strong&gt;collection of pixels&lt;/strong&gt;. For example, a 32-by-32 image has $32 \times 32 = 1024$ pixels.&lt;/li&gt;
+  &lt;li&gt;Each pixel is an &lt;strong&gt;intensity represented by a number&lt;/strong&gt; in the range $[0, 255]$, $0$ is black and $255$ is white.&lt;/li&gt;
+  &lt;li&gt;Color images have three dimensions: &lt;strong&gt;[width, height, depth]&lt;/strong&gt; where depth is usually 3.&lt;/li&gt;
+  &lt;li&gt;Why is depth 3? That’s because it encodes the intensity of [&lt;strong&gt;R&lt;/strong&gt;ed, &lt;strong&gt;G&lt;/strong&gt;reen, &lt;strong&gt;B&lt;/strong&gt;lue], i.e. RGB values.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Therefore, to a computer program, this black and white Lincoln image is just a matrix of integers. 
+&lt;img src=&quot;/assets/cnn-covid-19/image_pixel.png&quot; alt=&quot;image_pixel&quot; /&gt; Image &lt;a href=&quot;https://ai.stanford.edu/~syyeung/cvweb/tutorial1.html&quot;&gt;credit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since a digital image can be represented as a 2D grid of pixel values, we could stretch out/flatten the grid, make it into a vector of numbers and feed it into a neural network. That solves the problem…right?&lt;/p&gt;
+
+&lt;p&gt;However, there are two major limitations to this approach.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;It does not scale well to bigger images.&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;While it is still manageable for an input with $32\times32 = 1024$ dimensions, most real-life images are bigger than this.&lt;/li&gt;
+      &lt;li&gt;For example, a color image of size 320x320x3 would translate to an input with dimension &lt;strong&gt;307200&lt;/strong&gt;!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;It does not consider the properties of an image.&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;Locality&lt;/em&gt;: Nearby pixels are usually strongly correlated (e.g., see the outline of Lincoln’s face). Stretching it out breaks the pattern.&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Translation invariance&lt;/em&gt;: Meaningful features could occur anywhere on an image, e.g., see the flying bird.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/cnn-covid-19/flying-bird.png&quot; alt=&quot;bird&quot; /&gt; Image &lt;a href=&quot;https://storage.googleapis.com/deepmind-media/UCLxDeepMind_2020/L3%20-%20UUCLxDeepMind%20DL2020.pdf&quot;&gt;credit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-power-of-convolution&quot;&gt;The power of convolution&lt;/h2&gt;
+
+&lt;p&gt;On the other hand, CNN is designed to scale well with images and take advantage of these unique properties. It does with two unique features:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Weight sharing&lt;/strong&gt;: All local parts of the image are processed with the same weights so that identical patterns could be detected at many locations, e.g., horizontal edges, curvs and etc.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Hierarchy of features&lt;/strong&gt;: Lower-level patterns learned at the start are composed to form higher-level ones across layers, e.g., edges to contours to face outline.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is done through the operation of &lt;strong&gt;convolution&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Define a filter: a 2D weight matrix of a certain size, e.g. 3-by-3 filter.&lt;/li&gt;
+  &lt;li&gt;Convolve the whole image with the filter: multiply each pixel under the filter with the weight.&lt;/li&gt;
+  &lt;li&gt;Convolution output forms a new image: a feature map.&lt;/li&gt;
+  &lt;li&gt;By using multiple filters (each with a different weight matrix), different features can be captured.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;convolution-example-mean-filter&quot;&gt;Convolution example: mean filter&lt;/h4&gt;
+&lt;p&gt;Actually, let’s see the operation in numbers and images. It will be easier to understand what’s really going on. Here we create an image of a bright square using 0s and 1s. &lt;code class=&quot;highlighter-rouge&quot;&gt;matplotlib&lt;/code&gt; interprets values in [0,1] the same as in [0, 255].&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Original image pixel values: 
+ [[0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 1. 1. 1. 0. 0.]
+ [0. 0. 1. 1. 1. 0. 0.]
+ [0. 0. 1. 1. 1. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0.]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;And this is how the image looks like: &lt;img src=&quot;/assets/cnn-covid-19/bright_square.png&quot; alt=&quot;square&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Recall that a filter is a 2D weight matrix. Let’s create an example filter, and call it the &lt;strong&gt;“mean filter”&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[[0.11 0.11 0.11]
+ [0.11 0.11 0.11]
+ [0.11 0.11 0.11]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In a convolution, this “mean filter” actually slides across the image, takes the values of 9 connected pixels, multiplies each with the weight (0.11) and returns the sum, i.e., the weighted average of the original 9 values, hence the name “mean filter”: 
+&lt;img src=&quot;/assets/cnn-covid-19/convolution.gif&quot; alt=&quot;convolution&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can see the averaging effect from the filtered image pixel values. It kind of blurs out any edges in the image.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Filtered image pixel values: 
+ [[0.11 0.22 0.33 0.22 0.11]
+ [0.22 0.44 0.67 0.44 0.22]
+ [0.33 0.67 1.   0.67 0.33]
+ [0.22 0.44 0.67 0.44 0.22]
+ [0.11 0.22 0.33 0.22 0.11]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;What’s this to do with a convolutional neural network?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Well, CNN essentially applies the same convolution procedure, but the key difference is it &lt;strong&gt;learns the filter weights&lt;/strong&gt; through backpropagation (training).&lt;/p&gt;
+
+&lt;p&gt;Also, for each layer, there are usually many filters, each with a different weight matrix, applied to the same image. Each filter would capture a different pattern of the same image. A CNN could also have many layers of convolution. The complexity of the network allows features at different scales to be captured. This is the hierarchy of features mentioned above.&lt;/p&gt;
+
+&lt;p&gt;For example, here’s an illustration of features learned by filters from early to latter part of the network.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Early filters capture edges and textures. (&lt;strong&gt;General&lt;/strong&gt;)&lt;/li&gt;
+  &lt;li&gt;Latter filters form parts and objects. (&lt;strong&gt;Specific&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/cnn-covid-19/feature.png&quot; alt=&quot;title&quot; /&gt; Image &lt;a href=&quot;https://distill.pub/2017/feature-visualization/&quot;&gt;credit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;key-features-of-a-cnn&quot;&gt;Key features of a CNN&lt;/h2&gt;
+
+&lt;p&gt;While DNN uses many fully-connected layers, CNN contains mostly convolutional layers. In its simplest form, CNN is a network with a set of layers that transform an image to a set of class probabilities. Some of the most popular types of layers are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Convolutional layer&lt;/strong&gt; (CONV): Image undergoes a convolution with filters.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;RELU layer&lt;/strong&gt; (RELU): Element-wise nonlinear activation function (same as those in DNN before).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pooling layer&lt;/strong&gt; (POOL): Image undergoes a convolution with a mean (or max) filter, so it’s down-sampled.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Fully-connected layer&lt;/strong&gt; (FC): Usually used as the last layer to output a class probability prediction.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now, if you are &lt;em&gt;designing your own CNN&lt;/em&gt;, there are many elements to play with. They generally fall into two categories:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Type of convolutional layer
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Depth&lt;/strong&gt;: The number of filters to use for each layer.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Stride&lt;/strong&gt;: How big of a step to take when sliding the filter across the image, usually 1 (see the convolution GIF above) or 2.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Size&lt;/strong&gt;: Size of each convolution filter, e.g., the mean filter is 3-by-3.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Padding&lt;/strong&gt;: Whether to use paddings around images when doing convolution. This determines the output image size.&lt;/li&gt;
+      &lt;li&gt;And others.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;How to connect each layer?
+    &lt;ul&gt;
+      &lt;li&gt;Besides the type of layers, you need to design an architecture for your CNN. This is an active field of research, e.g. what’s a better architecture? or can we automatically search for a better architecture? Check “neural architecture search” out if you are interested.&lt;/li&gt;
+      &lt;li&gt;A commonly used architecture goes like this:
+        &lt;ul&gt;
+          &lt;li&gt;$\text{INPUT} \rightarrow [ [\text{CONV} \rightarrow \text{RELU}]^N \rightarrow \text{POOL}]^M \rightarrow [\text{FC} \rightarrow \text{RELU}]^K \rightarrow \text{FC}$&lt;/li&gt;
+          &lt;li&gt;The power $N, M, K$ means that the operation is repeated those number of times.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h1&gt;
+
+&lt;p&gt;In the my next post, &lt;a href=&quot;http://yangxiaozhou.github.io/data/2020-09-24-detecting-covid19-based-on-ct-scan.html&quot;&gt;INFORMS Data Challenge: Can we detect COVID-19 using deep learning?&lt;/a&gt;, we are going to explore how CNN can be used to build a &lt;strong&gt;COVID-19 CT scan image classifier&lt;/strong&gt;. This classifier can take in an unknown patient’s CT scan, and predicts if the patient has COVID-19 or not.&lt;/p&gt;
+
+&lt;h1 class=&quot;no_toc&quot; id=&quot;further-resources&quot;&gt;Further resources&lt;/h1&gt;
+
+&lt;p&gt;You can learn more about CNN 👉:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cs231n.github.io/&quot;&gt;CS231n Convolutional Neural Networks for Visual Recognition&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=shVKhOmT0HE&amp;amp;ab_channel=DeepMind&quot;&gt;DeepMind x UCL | Convolutional Neural Networks for Image Recognition
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;and how to implement them 👉:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://keras.io/getting_started/intro_to_keras_for_engineers/&quot;&gt;Introduction to Keras for Engineers
+&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/images/cnn&quot;&gt;Tensorflow Keras CNN Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Enjoy! 👏👏👏&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Statistical learning knowledge repository</title>
    <link href="http://localhost:4000/data/2020/09/17/knowledge-repository.html"/>
    <updated>2020-09-17T08:00:00+08:00</updated>
    <id>http://localhost:4000/data/2020/09/17/knowledge-repository</id>
-   <content type="html">&lt;p&gt;This is a collection of my notes on various topics of statistical learning. It is intended as a knowledge repository for myself and a work in progress that I will periodically update.&lt;/p&gt;
+   <content type="html">&lt;p&gt;This is a collection of my notes on various topics of statistical learning. It is intended as a knowledge repository for some of the unexpected discoveries, less-talked-about connections, and under-the-hood concepts for statistical learning. It’s a work in progress that I will periodically update.&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#ridge-regularization&quot; id=&quot;markdown-toc-ridge-regularization&quot;&gt;Ridge regularization&lt;/a&gt;    &lt;ul&gt;
@@ -37,7 +298,11 @@
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{y}=\mathbf{X} \boldsymbol{\beta}+\mu \mathbf{1}+\mathbf{u}, \quad \mathbf{u} \sim N_{\mathrm{n}}\left(\mathbf{0}, \sigma^{2} \mathbf{I}\right),&lt;/script&gt;
 
-&lt;p&gt;consider the columns of $\mathbf{X}$ have been standardized to have mean 0 and variance 1. Then the ridge estimate of $\boldsymbol{\beta}$ is $\boldsymbol{\beta}^* = (\mathbf{X}^{\top} \mathbf{X} + \lambda \mathbf{I})^{-1} \mathbf{X}^{\top} \mathbf{y}$ where for given $\mathbf{X}$, $\lambda \ge 0$ is a small fixed ridge regularization parameter. Note that when $\lambda = 0$, it is just the OLS formulation. Also consider the spectral decomposition of the var-cov matrix $\mathbf{X}^{\top} \mathbf{X} = \mathbf{G} \mathbf{L} \mathbf{G}^{\top}$. Let $\mathbf{W} = \mathbf{X}\mathbf{G}$ be the principal component transformation of the original data matrix.&lt;/p&gt;
+&lt;p&gt;consider the columns of $\mathbf{X}$ have been standardized to have mean 0 and variance 1. Then the ridge estimate of $\boldsymbol{\beta}$ is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\boldsymbol{\beta}^* = (\mathbf{X}^{\top} \mathbf{X} + \lambda \mathbf{I})^{-1} \mathbf{X}^{\top} \mathbf{y}&lt;/script&gt;
+
+&lt;p&gt;where for given $\mathbf{X}$, $\lambda \ge 0$ is a small fixed ridge regularization parameter. Note that when $\lambda = 0$, it is just the OLS formulation. Also, consider the spectral decomposition of the var-cov matrix $\mathbf{X}^{\top} \mathbf{X} = \mathbf{G} \mathbf{L} \mathbf{G}^{\top}$. Let $\mathbf{W} = \mathbf{X}\mathbf{G}$ be the principal component transformation of the original data matrix.&lt;/p&gt;
 
 &lt;h3 id=&quot;result-11&quot;&gt;Result 1.1&lt;/h3&gt;
 
@@ -56,11 +321,11 @@
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;The two shrinking effects are clearly visible from this figure. 
+&lt;p&gt;To demonstrate the two shrinking effects, I plotted the percentage shrunken ($1- l_{i}/(l_{i}+\lambda)$) as a function of the ordered principal components as well as the value of the ridge regularization parameter. The two shrinking effects are clearly visible from this figure.
 &lt;img src=&quot;/assets/learning-repo/pca_ridge_lambda_effect.png&quot; alt=&quot;lambda_effect&quot; /&gt;&lt;/p&gt;
 
 &lt;details&gt;
-    &lt;summary&gt;Proof of Result 1.1&lt;/summary&gt;
+    &lt;summary&gt;Proof of Result 1.1:&lt;/summary&gt;
 Since $\boldsymbol{\alpha} = \mathbf{G}^{\top}\boldsymbol{\beta}$ and $\mathbf{W} = \mathbf{X}\mathbf{G}$, then 
 
 $$
@@ -98,19 +363,18 @@ $$
 \alpha_{i}^{*}=\frac{l_{i}}{l_{i}+\lambda} \hat{\alpha}_{i}, \quad i=1, \ldots, p. \blacksquare
 $$
 
-
 &lt;/details&gt;
 
 &lt;h3 id=&quot;result-12&quot;&gt;Result 1.2&lt;/h3&gt;
 
-&lt;p&gt;It follows from Result 1.1 that we can establish a direct link between the OLS estimates $\hat{\boldsymbol{\beta}}$ and the ridge estimates $\boldsymbol{\beta}^*$ through spectral decomposition of the var-cov matrix. Specifically, we have&lt;/p&gt;
+&lt;p&gt;It follows from Result 1.1 that we can establish a direct link between the OLS estimate $\hat{\boldsymbol{\beta}}$ and the ridge estimate $\boldsymbol{\beta}^*$ through spectral decomposition of the var-cov matrix. Specifically, we have&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\boldsymbol{\beta}^{*}=\mathbf{G D G}^{\top} \hat{\boldsymbol{\beta}}, \quad \text { where } \mathbf{D}=\operatorname{diag}\left(\frac{l_{i}}{l_{i}+k} \right),&lt;/script&gt;
 
 &lt;p&gt;for $i=1, \ldots, p$.&lt;/p&gt;
 
 &lt;details&gt;
-    &lt;summary&gt;Proof of Result 1.2&lt;/summary&gt;
+    &lt;summary&gt;Proof of Result 1.2:&lt;/summary&gt;
 Since $\alpha_{i}^{*}=\frac{l_{i}}{l_{i}+\lambda} \hat{\alpha}_{i}$, for $i=1, \ldots, p$, and $\hat{\boldsymbol{\alpha}} = \mathbf{G}^{\top}\hat{\boldsymbol{\beta}}$, then
 
 $$
@@ -123,7 +387,7 @@ $$
 \boldsymbol{\alpha}^* = \mathbf{G}^{\top}\boldsymbol{\beta}^*
 $$
 
-where $\boldsymbol{\beta}^*$ is the ridge estimates of $\boldsymbol{\beta}$, then we have
+where $\boldsymbol{\beta}^*$ is the ridge estimate of $\boldsymbol{\beta}$, then we have
 
 $$
 \begin{align*}
@@ -146,7 +410,7 @@ where $\mathbf{D}=\operatorname{diag}\left(\frac{l_{i}}{l_{i}+k} \right)$, for $
 &amp;= \sum_{i=1}^{p} E[(\beta_{i}^* - \beta_{i})^2] \,.
 \end{align*} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;Now, from the previous two results, we can show that the trace MSE of the ridge estimates can be decomposed into two parts: &lt;strong&gt;variance&lt;/strong&gt; and &lt;strong&gt;bias&lt;/strong&gt;, and obtain explicit formula for them. The availability of exact formula for MSE allows things like regularization path to be computed easily.&lt;/p&gt;
+&lt;p&gt;Now, from the previous two results, we can show that the trace MSE of the ridge estimates can be decomposed into two parts: &lt;strong&gt;variance&lt;/strong&gt; and &lt;strong&gt;bias&lt;/strong&gt;, and obtain an explicit formula for them. The availability of the exact formula for MSE allows things like regularization path to be computed easily.&lt;/p&gt;
 
 &lt;p&gt;Specifically, we have&lt;/p&gt;
 
@@ -161,45 +425,46 @@ where $\mathbf{D}=\operatorname{diag}\left(\frac{l_{i}}{l_{i}+k} \right)$, for $
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\gamma_2(\lambda) = \sum_{i=1}^{p} (E[\beta_{i}^* - \beta_{i}])^2 = \lambda^2 \sum_{i=1}^{p} \frac{\alpha_i^2}{(l_i + \lambda)^2} \,.&lt;/script&gt;
 
 &lt;details&gt;
-    &lt;summary&gt;Proof of Result 1.3&lt;/summary&gt;
-    &lt;div&gt;
-    &lt;p&gt;First let’s look at the sum of variances. We start by writing out the expression for the variance of the ridge estimates:&lt;/p&gt;
+    &lt;summary&gt;Proof of Result 1.3:&lt;/summary&gt;
+First let's look at the sum of variances. We start by writing out the expression for the variance of the ridge estimates:
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+$$
 \begin{align*}
-V(\boldsymbol{\beta}^*) &amp;= \mathbf{GDG}^{\top} V(\hat{\boldsymbol{\beta}}) \mathbf{GDG}^{\top} \\
-&amp;= \mathbf{GDG}^{\top} \sigma^2 \mathbf{X^{\top}X}^{-1} \mathbf{GDG}^{\top} \\
-&amp;= \sigma^2 \mathbf{GDG}^{\top} (\mathbf{GLG})^{-1} \mathbf{GDG}^{\top} \\
-&amp;= \sigma^2 \mathbf{GD} L^{-1} \mathbf{DG}^{\top} \\
-&amp;= \sigma^2 \mathbf{G} \operatorname{diag}(l_i/(l_i + \lambda)^2) \mathbf{G}^{\top} \,, \quad i=1, \ldots, p.
-\end{align*} %]]&gt;&lt;/script&gt;
+V(\boldsymbol{\beta}^*) &amp;amp;= \mathbf{GDG}^{\top} V(\hat{\boldsymbol{\beta}}) \mathbf{GDG}^{\top} \\
+&amp;amp;= \mathbf{GDG}^{\top} \sigma^2 \mathbf{X^{\top}X}^{-1} \mathbf{GDG}^{\top} \\
+&amp;amp;= \sigma^2 \mathbf{GDG}^{\top} (\mathbf{GLG})^{-1} \mathbf{GDG}^{\top} \\
+&amp;amp;= \sigma^2 \mathbf{GD} L^{-1} \mathbf{DG}^{\top} \\
+&amp;amp;= \sigma^2 \mathbf{G} \operatorname{diag}(l_i/(l_i + \lambda)^2) \mathbf{G}^{\top} \,, \quad i=1, \ldots, p.
+\end{align*}
+$$ 
 
-    &lt;p&gt;Hence, by extracting out the variances from the diagonal, we obtain the first expression:&lt;/p&gt;
+Hence, by extracting out the variances from the diagonal, we obtain the first expression:
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+$$
 \begin{align*}
-\gamma_1(\lambda) &amp;= \sum_{i=1}^{p} V(\beta_{i}^*) \\
-&amp;= \operatorname{tr} V(\boldsymbol{\beta}^*) \\
-&amp;= \sigma^2 \operatorname{tr}(\operatorname{diag}(l_i/(l_i + \lambda)^2) \mathbf{G}^{\top} \mathbf{G}) \\
-&amp;= \sigma^2 \sum_{i=1}^{p} \frac{l_i}{(l_i + \lambda)^2} \,.
-\end{align*} %]]&gt;&lt;/script&gt;
+\gamma_1(\lambda) &amp;amp;= \sum_{i=1}^{p} V(\beta_{i}^*) \\
+&amp;amp;= \operatorname{tr} V(\boldsymbol{\beta}^*) \\
+&amp;amp;= \sigma^2 \operatorname{tr}(\operatorname{diag}(l_i/(l_i + \lambda)^2) \mathbf{G}^{\top} \mathbf{G}) \\
+&amp;amp;= \sigma^2 \sum_{i=1}^{p} \frac{l_i}{(l_i + \lambda)^2} \,.
+\end{align*}
+$$
 
-    &lt;p&gt;Now let’s look at the bias term. We write it in matrix form to see that:&lt;/p&gt;
+Now let's look at the bias term. We write it in matrix form to see that:
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+$$
 \begin{align*}
-\gamma_2(\lambda) &amp;= \sum_{i=1}^{p} (E[\beta_{i}^* - \beta_{i}])^2 \\
-&amp;= (E[\boldsymbol{\beta}^*] - \boldsymbol{\beta})^{\top}(E[\boldsymbol{\beta}^*] - \boldsymbol{\beta}) \\
-&amp;= (\mathbf{GDG}^{\top}\boldsymbol{\beta} - \boldsymbol{\beta})^{\top}(\mathbf{GDG}^{\top}\boldsymbol{\beta} - \boldsymbol{\beta}) \\
-&amp;= \mathbf{B}^{\top}\mathbf{GD}^2\mathbf{G}^{\top}\boldsymbol{\beta} - 2\boldsymbol{\beta}^{\top}\mathbf{GDG^{\top}}\boldsymbol{\beta} + \boldsymbol{\beta}^{\top}\boldsymbol{\beta} \\
-&amp;= \boldsymbol{\alpha}^{\top}\mathbf{D}^2\boldsymbol{\alpha} - 2\boldsymbol{\alpha}^{\top}\mathbf{D}\boldsymbol{\alpha} + \boldsymbol{\alpha}^{\top}\mathbf{G^{\top}G}\boldsymbol{\alpha} \\
-&amp;= \boldsymbol{\alpha}^{\top} (\mathbf{D}^2 - 2\mathbf{D} + 1) \boldsymbol{\alpha} \\
-&amp;= \boldsymbol{\alpha}^{\top} \operatorname{diag}(\lambda^2/(l_i + \lambda)^2) \boldsymbol{\alpha} \\
-&amp;= \lambda^2 \sum_{i=1}^{p}(\alpha_{i}^2/(l_i + \lambda)^2) \,.
-\end{align*} %]]&gt;&lt;/script&gt;
+\gamma_2(\lambda) &amp;amp;= \sum_{i=1}^{p} (E[\beta_{i}^* - \beta_{i}])^2 \\
+&amp;amp;= (E[\boldsymbol{\beta}^*] - \boldsymbol{\beta})^{\top}(E[\boldsymbol{\beta}^*] - \boldsymbol{\beta}) \\
+&amp;amp;= (\mathbf{GDG}^{\top}\boldsymbol{\beta} - \boldsymbol{\beta})^{\top}(\mathbf{GDG}^{\top}\boldsymbol{\beta} - \boldsymbol{\beta}) \\
+&amp;amp;= \mathbf{B}^{\top}\mathbf{GD}^2\mathbf{G}^{\top}\boldsymbol{\beta} - 2\boldsymbol{\beta}^{\top}\mathbf{GDG^{\top}}\boldsymbol{\beta} + \boldsymbol{\beta}^{\top}\boldsymbol{\beta} \\
+&amp;amp;= \boldsymbol{\alpha}^{\top}\mathbf{D}^2\boldsymbol{\alpha} - 2\boldsymbol{\alpha}^{\top}\mathbf{D}\boldsymbol{\alpha} + \boldsymbol{\alpha}^{\top}\mathbf{G^{\top}G}\boldsymbol{\alpha} \\
+&amp;amp;= \boldsymbol{\alpha}^{\top} (\mathbf{D}^2 - 2\mathbf{D} + 1) \boldsymbol{\alpha} \\
+&amp;amp;= \boldsymbol{\alpha}^{\top} \operatorname{diag}(\lambda^2/(l_i + \lambda)^2) \boldsymbol{\alpha} \\
+&amp;amp;= \lambda^2 \sum_{i=1}^{p}(\alpha_{i}^2/(l_i + \lambda)^2) \,.
+\end{align*}
+$$
 
-    &lt;p&gt;Combining the two gamma terms completes the proof. $\blacksquare$&lt;/p&gt;
-  &lt;/div&gt;
+Combining the two gamma terms completes the proof. $\blacksquare$
 &lt;/details&gt;
 
 &lt;h3 id=&quot;result-14&quot;&gt;Result 1.4&lt;/h3&gt;
@@ -210,17 +475,23 @@ V(\boldsymbol{\beta}^*) &amp;= \mathbf{GDG}^{\top} V(\hat{\boldsymbol{\beta}}) \
 
 &lt;p&gt;Notice that the gradient of the trace MSE function is negative when $\lambda$ is 0. This tells us two things:&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;We can reduce the trace MSE by taking a non-zero $\lambda$ value. In particular, we are trading a bit of bias for reduction in variance as the variance function ($\gamma_1$) is monotonically decreasing in $\lambda$. However, we need to find the right balance between variance and bias so that the overall trace MSE is minimized.&lt;/li&gt;
+  &lt;li&gt;We can reduce the trace MSE by taking a non-zero $\lambda$ value. In particular, we are trading a bit of bias for a reduction in variance as the variance function ($\gamma_1$) is monotonically decreasing in $\lambda$. However, we need to find the right balance between variance and bias so that the overall trace MSE is minimized.&lt;/li&gt;
   &lt;li&gt;The reduction in trace MSE by ridge regularization is higher when some $l_i$s are small. That is, when there is considerable collinearity among the predictors, ridge regularization can achieve much smaller trace MSE than OLS.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;visualization&quot;&gt;Visualization&lt;/h3&gt;
 
-&lt;p&gt;Using the &lt;code class=&quot;highlighter-rouge&quot;&gt;sklearn.metrics.make_regression&lt;/code&gt; function, I generated a noisy regression data set with 50 samples and 10 features. However, most of the variances (in PCA sense) are explained by 5 of those 10 features, i.e. last 5 eigenvalues are relatively small.&lt;/p&gt;
-
-&lt;p&gt;From the figure, we can clearly see that increasing $\lambda$ shrinks every coefficient towards 0. On the other hand, an optimal $\lambda$ is found at around 1 where the MSE of estimated coefficients is minimized.&lt;/p&gt;
+&lt;p&gt;Using the &lt;code class=&quot;highlighter-rouge&quot;&gt;sklearn.metrics.make_regression&lt;/code&gt; function, I generated a noisy regression data set with 50 samples and 10 features. However, most of the variances (in PCA sense) are explained by 5 of those 10 features, i.e. last 5 eigenvalues are relatively small. Here are the regularization path and the coefficient error plot.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/learning-repo/ridge_lambda_mse.png&quot; alt=&quot;ridge_error&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the figure, we can clearly see that&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Increasing $\lambda$ shrinks every coefficient towards 0. &lt;/li&gt;
+  &lt;li&gt;OLS procedure (left-hand side of both figures) produces erroneous (and with a large variance) estimate. the estimator MSE is significantly larger than that of the ridge regression. &lt;/li&gt;
+  &lt;li&gt;An optimal $\lambda$ is found at around 1 where the MSE of ridge estimated coefficients is minimized. &lt;/li&gt;
+  &lt;li&gt;On the other hand, $\lambda$ values larger and smaller than 1 are suboptimal as they lead to over-regularization and under-regularization in this case.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;details&gt;
 &lt;summary&gt;Click here for the script to generate the above plot, credit to &lt;a href=&quot;https://scikit-learn.org/stable/auto_examples/linear_model/plot_ridge_coeffs.html#sphx-glr-auto-examples-linear-model-plot-ridge-coeffs-py&quot;&gt;scikit-learn&lt;/a&gt;.&lt;/summary&gt;

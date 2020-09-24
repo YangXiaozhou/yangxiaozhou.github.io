@@ -1,0 +1,63 @@
+I"�<p><em>Tagline</em></p>
+
+<!-- ![mda](/assets/2019-10-02/mda.png) -->
+
+<ul id="markdown-toc">
+  <li><a href="#key-takeaways" id="markdown-toc-key-takeaways">Key takeaways</a></li>
+  <li><a href="#introduction-to-convolutional-neural-network" id="markdown-toc-introduction-to-convolutional-neural-network">Introduction to convolutional neural network</a>    <ul>
+      <li><a href="#deep-neural-network" id="markdown-toc-deep-neural-network">Deep neural network</a></li>
+      <li><a href="#convolutional-neural-network" id="markdown-toc-convolutional-neural-network">Convolutional neural network</a></li>
+    </ul>
+  </li>
+  <li><a href="#end-to-end-cnn-covid-19-classifier" id="markdown-toc-end-to-end-cnn-covid-19-classifier">End-to-end CNN COVID-19 classifier</a>    <ul>
+      <li><a href="#informs-data-challenge" id="markdown-toc-informs-data-challenge">INFORMS data challenge</a></li>
+      <li><a href="#covid-19-classifier-via-transfer-learning" id="markdown-toc-covid-19-classifier-via-transfer-learning">COVID-19 classifier via transfer learning</a></li>
+    </ul>
+  </li>
+  <li><a href="#where-do-we-go-from-here" id="markdown-toc-where-do-we-go-from-here">Where do we go from here?</a></li>
+</ul>
+<hr />
+
+<h1 id="key-takeaways">Key takeaways</h1>
+<p>1.
+2.
+3.</p>
+
+<h3 id="confusion-matrix">Confusion matrix</h3>
+<h3 id="classified-covid-19-and-noncovid-19-images">Classified COVID-19 and NonCovid-19 images</h3>
+
+<h1 id="introduction-to-convolutional-neural-network">Introduction to convolutional neural network</h1>
+
+<p>To get everyone on the same page, I am going to introduce very briefly what are <strong>deep neural networks</strong> (DNNs) and <strong>convolutional neural networks</strong> (CNNs). At the end of this section, you can gain an intuitive understanding of the motivation behind CNN and the key components that define a CNN.</p>
+
+<h2 id="deep-neural-network">Deep neural network</h2>
+
+<p>Before diving into neural networks, let’s first see the machine learning big picture:</p>
+<blockquote>
+  <p>Wikipedia: <strong>Machine learning</strong> (ML) is the study of computer algorithms that improve automatically through experience.</p>
+</blockquote>
+
+<p>Machine learning is often sliced into</p>
+<ul>
+  <li>Supervised learning: predicting a label, e.g. classification, or a continuous variable);</li>
+  <li>Unsupervised learning (pattern recognition for unlabeled data, e.g., clustering),</li>
+  <li>Reinforcement learning (algorithms learn the best way to “behave”, e.g. AlphaGo Zero, self-driving cars).</li>
+</ul>
+
+<p>Deep learning is a powerful form of machine learning that has garnered much attention for its successes in computer vision (e.g. image recognition), natural language processing, and beyond.</p>
+
+<h2 id="convolutional-neural-network">Convolutional neural network</h2>
+
+<h1 id="end-to-end-cnn-covid-19-classifier">End-to-end CNN COVID-19 classifier</h1>
+
+<h2 id="informs-data-challenge">INFORMS data challenge</h2>
+<h2 id="covid-19-classifier-via-transfer-learning">COVID-19 classifier via transfer learning</h2>
+<h3 id="pre-processing">Pre-processing</h3>
+<h3 id="transfer-learning">Transfer learning</h3>
+
+<h1 id="where-do-we-go-from-here">Where do we go from here?</h1>
+
+<hr />
+<h2 class="no_toc" id="references">References</h2>
+
+:ET

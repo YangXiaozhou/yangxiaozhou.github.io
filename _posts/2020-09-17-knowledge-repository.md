@@ -6,7 +6,7 @@ categories: DATA
 tags: statistical-learning machine-learning data-science regularization supervised-learning
 ---
 
-This is a collection of my notes on various topics of statistical learning. It is intended as a knowledge repository for myself and a work in progress that I will periodically update. 
+This is a collection of my notes on various topics of statistical learning. It is intended as a knowledge repository for some of the unexpected discoveries, less-talked-about connections, and under-the-hood concepts for statistical learning. It's a work in progress that I will periodically update. 
 
 * TOC
 {:toc}
@@ -24,7 +24,13 @@ $$
 \mathbf{y}=\mathbf{X} \boldsymbol{\beta}+\mu \mathbf{1}+\mathbf{u}, \quad \mathbf{u} \sim N_{\mathrm{n}}\left(\mathbf{0}, \sigma^{2} \mathbf{I}\right),
 $$
 
-consider the columns of $\mathbf{X}$ have been standardized to have mean 0 and variance 1. Then the ridge estimate of $\boldsymbol{\beta}$ is $\boldsymbol{\beta}^* = (\mathbf{X}^{\top} \mathbf{X} + \lambda \mathbf{I})^{-1} \mathbf{X}^{\top} \mathbf{y}$ where for given $\mathbf{X}$, $\lambda \ge 0$ is a small fixed ridge regularization parameter. Note that when $\lambda = 0$, it is just the OLS formulation. Also, consider the spectral decomposition of the var-cov matrix $\mathbf{X}^{\top} \mathbf{X} = \mathbf{G} \mathbf{L} \mathbf{G}^{\top}$. Let $\mathbf{W} = \mathbf{X}\mathbf{G}$ be the principal component transformation of the original data matrix. 
+consider the columns of $\mathbf{X}$ have been standardized to have mean 0 and variance 1. Then the ridge estimate of $\boldsymbol{\beta}$ is 
+
+$$
+\boldsymbol{\beta}^* = (\mathbf{X}^{\top} \mathbf{X} + \lambda \mathbf{I})^{-1} \mathbf{X}^{\top} \mathbf{y}
+$$
+
+where for given $\mathbf{X}$, $\lambda \ge 0$ is a small fixed ridge regularization parameter. Note that when $\lambda = 0$, it is just the OLS formulation. Also, consider the spectral decomposition of the var-cov matrix $\mathbf{X}^{\top} \mathbf{X} = \mathbf{G} \mathbf{L} \mathbf{G}^{\top}$. Let $\mathbf{W} = \mathbf{X}\mathbf{G}$ be the principal component transformation of the original data matrix. 
 
 ### Result 1.1
 
@@ -44,7 +50,7 @@ To demonstrate the two shrinking effects, I plotted the percentage shrunken ($1-
 ![lambda_effect](/assets/learning-repo/pca_ridge_lambda_effect.png)
 
 <details>
-    <summary>Proof of Result 1.1</summary>
+    <summary>Proof of Result 1.1:</summary>
 Since $\boldsymbol{\alpha} = \mathbf{G}^{\top}\boldsymbol{\beta}$ and $\mathbf{W} = \mathbf{X}\mathbf{G}$, then 
 
 $$
@@ -82,7 +88,6 @@ $$
 \alpha_{i}^{*}=\frac{l_{i}}{l_{i}+\lambda} \hat{\alpha}_{i}, \quad i=1, \ldots, p. \blacksquare
 $$
 
-
 </details>
 
 ### Result 1.2
@@ -96,7 +101,7 @@ $$
 for $i=1, \ldots, p$.
 
 <details>
-    <summary>Proof of Result 1.2</summary>
+    <summary>Proof of Result 1.2:</summary>
 Since $\alpha_{i}^{*}=\frac{l_{i}}{l_{i}+\lambda} \hat{\alpha}_{i}$, for $i=1, \ldots, p$, and $\hat{\boldsymbol{\alpha}} = \mathbf{G}^{\top}\hat{\boldsymbol{\beta}}$, then
 
 $$
@@ -154,8 +159,7 @@ $$
 $$
 
 <details>
-    <summary>Proof of Result 1.3</summary>
-    <div markdown="1">
+    <summary>Proof of Result 1.3:</summary>
 First let's look at the sum of variances. We start by writing out the expression for the variance of the ridge estimates:
 
 $$
@@ -195,7 +199,6 @@ $$
 $$
 
 Combining the two gamma terms completes the proof. $\blacksquare$
-</div>
 </details>
 
 ### Result 1.4
@@ -276,6 +279,12 @@ with plt.style.context('seaborn-talk'):
 ```
 </div>
 </details>
+
+
+
+
+
+
 
 
 
