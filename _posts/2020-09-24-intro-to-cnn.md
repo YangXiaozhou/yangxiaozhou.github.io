@@ -6,7 +6,9 @@ categories: DATA
 tags: deep-learning supervised-learning classification
 ---
 
-In this post, I briefly introduce what are **deep neural networks** (DNNs) and **convolutional neural networks** (CNNs). There is no math involved. This should be a good refresher if you are already familiar with DNNs and CNNs. If not, at the end of this post, you could gain an intuitive understanding of the motivation behind CNN and the key components that define a CNN. 
+I am not a deep learning researcher, but I know a few things about neural networks through various exposures. On the other hand, I've always heard that CNN is a type of neural network that's especially good at the image-related problems. But, what does that really mean? What's with the word "convolutional"? What's so different about an image-related problem?
+
+Recently I had the opportunity to work on a COVID-19 image classification problem and built a CNN-based classifier using tensorflow.kerasthat achieved an 87% accuracy rate. More importantly, I think that I've figured out the answers to those questions. In this post, I share with you those answers in an intuitive math-free way. If you are already familiar with DNNs and CNNs, this post should feel like a good refresher. If not, at the end of this post, you could gain an intuitive understanding of the motivation behind CNN and the unique features that define a CNN.
 
 * TOC
 {:toc}
@@ -169,12 +171,14 @@ Now, if you are *designing your own CNN*, there are many elements to play with. 
 
 # What's next?
 
-In my next post, [INFORMS Data Challenge: Can we detect COVID-19 using deep learning?](http://yangxiaozhou.github.io/data/2020-09-24-detecting-covid19-based-on-ct-scan.html), we are going to explore how CNN can be used to build a **COVID-19 CT scan image classifier**. This classifier can take in an unknown patient's CT scan and predicts if the patient has COVID-19 or not.
+Thank you for reading until the end! I hope by now you could see the difference between a CNN and a regular DNN, and also gained an intuitive understanding of what convolution operation is all about. Please let me know your thoughts or any feedback in the comment section below.
+
+In my next post, we are going to explore how CNN can be used to build a COVID-19 CT scan image classifier. This classifier can take in an unknown patient's CT scan and predicts if the patient has COVID-19 or not.
 
 # Further resources
 {: .no_toc}
 
-You can learn more about CNN 👉:
+If you are interested in knowing more about CNNs, check out 👉:
 - [CS231n Convolutional Neural Networks for Visual Recognition](https://cs231n.github.io/)
 - [DeepMind x UCL | Convolutional Neural Networks for Image Recognition
 ](https://www.youtube.com/watch?v=shVKhOmT0HE&ab_channel=DeepMind)

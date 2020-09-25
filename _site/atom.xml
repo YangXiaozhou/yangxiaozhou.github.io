@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-09-24T15:35:11+08:00</updated>
+ <updated>2020-09-25T16:03:51+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -14,35 +14,30 @@
  
  <entry>
    <title>INFORMS Data Challenge: Can we detect COVID-19 using deep learning?</title>
-   <link href="http://localhost:4000/data/2020/09/24/data-detecting-covid19-based-on-ct-scan.html"/>
-   <updated>2020-09-24T08:01:00+08:00</updated>
-   <id>http://localhost:4000/data/2020/09/24/data-detecting-covid19-based-on-ct-scan</id>
+   <link href="http://localhost:4000/data/2020/09/25/data-detecting-covid19-based-on-ct-scan.html"/>
+   <updated>2020-09-25T08:01:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/09/25/data-detecting-covid19-based-on-ct-scan</id>
    <content type="html">&lt;p&gt;In this article, I’ll walk you through the COVID-19 convolutional neural network (CNN) classifier that we’ve built as an entry to the 2020 INFORMS QSR Data &lt;a href=&quot;https://connect.informs.org/HigherLogic/System/DownloadDocumentFile.ashx?DocumentFileKey=f404f7b8-fcd6-75d5-f7a7-d262eab132e7&quot;&gt;Challenge&lt;/a&gt;. This article focuses on the &lt;strong&gt;implementation&lt;/strong&gt; of an end-to-end CNN image classifier using &lt;code class=&quot;highlighter-rouge&quot;&gt;tensorflow.keras&lt;/code&gt;. If you are not familiar with CNN, or would like a refresher on the key features of CNNs, I highly recommend reading &lt;a href=&quot;http://yangxiaozhou.github.io/data/2020-09-24-intro-to-cnn.html&quot;&gt;Introduction to convolutional neural network&lt;/a&gt; first.&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#covid-19-classifier-using-cnn&quot; id=&quot;markdown-toc-covid-19-classifier-using-cnn&quot;&gt;COVID-19 classifier using CNN&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#whats-the-challenge&quot; id=&quot;markdown-toc-whats-the-challenge&quot;&gt;What’s the challenge?&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#whats-provided&quot; id=&quot;markdown-toc-whats-provided&quot;&gt;What’s provided?&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#classifier-via-transfer-learning&quot; id=&quot;markdown-toc-classifier-via-transfer-learning&quot;&gt;Classifier via transfer learning&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#whats-the-challenge&quot; id=&quot;markdown-toc-whats-the-challenge&quot;&gt;What’s the challenge?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#proprocessing&quot; id=&quot;markdown-toc-proprocessing&quot;&gt;Proprocessing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#classifier-via-transfer-learning&quot; id=&quot;markdown-toc-classifier-via-transfer-learning&quot;&gt;Classifier via transfer learning&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#where-do-we-go-from-here&quot; id=&quot;markdown-toc-where-do-we-go-from-here&quot;&gt;Where do we go from here?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;h1 id=&quot;covid-19-classifier-using-cnn&quot;&gt;COVID-19 classifier using CNN&lt;/h1&gt;
-
 &lt;p&gt;The COVID-19 pandemic has changed lives around the world. This is the current situation as of 2020/09/24 according to &lt;a href=&quot;https://covid19.who.int/&quot;&gt;WHO&lt;/a&gt;. 
 &lt;img src=&quot;/assets/cnn-covid-19/covid-19-pandemic.png&quot; alt=&quot;current situation&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;whats-the-challenge&quot;&gt;What’s the challenge?&lt;/h2&gt;
+&lt;h1 id=&quot;whats-the-challenge&quot;&gt;What’s the challenge?&lt;/h1&gt;
 
 &lt;p&gt;&lt;strong&gt;Computed tomography (CT) scans&lt;/strong&gt; have been used for screening and diagnosing COVID-19, especially in areas where swab test resources are severely lacking. The goal of the data challenge is to diagnose COVID-19 using the chest CT scans.&lt;/p&gt;
 
 &lt;p&gt;Therefore, the challenge is to come up with a &lt;strong&gt;classification model&lt;/strong&gt; that classify patients to COVID or NonCOVID based on their chest CT scans, &lt;strong&gt;as accurately as possible&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;whats-provided&quot;&gt;What’s provided?&lt;/h2&gt;
+&lt;h3 id=&quot;whats-provided&quot;&gt;What’s provided?&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Training data set
@@ -58,11 +53,36 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;All of data are taken from a &lt;a href=&quot;https://github.com/UCSD-AI4H/COVID-CT&quot;&gt;public data set&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;All data are taken from a &lt;a href=&quot;https://github.com/UCSD-AI4H/COVID-CT&quot;&gt;public data set&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;classifier-via-transfer-learning&quot;&gt;Classifier via transfer learning&lt;/h2&gt;
-&lt;h3 id=&quot;pre-processing&quot;&gt;Pre-processing&lt;/h3&gt;
-&lt;h3 id=&quot;transfer-learning&quot;&gt;Transfer learning&lt;/h3&gt;
+&lt;h1 id=&quot;proprocessing&quot;&gt;Proprocessing&lt;/h1&gt;
+
+&lt;p&gt;Let’s have a look at some NonCOVID and COVID CT scans. It’s important to note that the challenge is to distinguish between COVID and NonCOVID CT scans, rather than COVID and Normal scans. In fact, it is obvious that the NonCOVID scans show different degree of abnormal patterns. This is because the similar patterns can develop in COVID-19 patients as well as other pneumonia patients. 
+&lt;img src=&quot;/assets/cnn-covid-19/first_look.png&quot; alt=&quot;first_look&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;set-up-data-for-training&quot;&gt;Set up data for training&lt;/h3&gt;
+&lt;p&gt;We reserve 20% of the data for validation. Since some consecutive images come from the same patient, they tend to be similar to each other.  That is, many of our data are &lt;strong&gt;not independent&lt;/strong&gt;. To prevent data leakage (information of training data spills over to validation data), we keep the original image sequence and hold out the last 20% as the validation set.&lt;/p&gt;
+
+&lt;p&gt;After the splitting, we have two pairs of data:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;X_train&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;y_train&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;X_val&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;y_val&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;X is a list of CT scans, and y is a list of binary labels (0 for NonCOVID, 1 for COVID).&lt;/p&gt;
+
+&lt;h3 id=&quot;create-tfdatadataset-object&quot;&gt;Create &lt;code class=&quot;highlighter-rouge&quot;&gt;tf.data.Dataset&lt;/code&gt; object&lt;/h3&gt;
+
+&lt;p&gt;Data science workflow unique to &lt;code class=&quot;highlighter-rouge&quot;&gt;tensorflow&lt;/code&gt; is the usage of &lt;code class=&quot;highlighter-rouge&quot;&gt;Dataset&lt;/code&gt; object. The &lt;code class=&quot;highlighter-rouge&quot;&gt;tf.data.Dataset&lt;/code&gt; API supports writing descriptive and efficient input pipelines. Essentially, it is a tensorflow data structure that greatly simplifies some essential operations, for example, preprocessing, shuffling and training. You can read more about it &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/data/Dataset#shuffle&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We create two &lt;code class=&quot;highlighter-rouge&quot;&gt;tf.data.Dataset&lt;/code&gt; objects, one for training and the other for validation. We also define a wrapper &lt;code class=&quot;highlighter-rouge&quot;&gt;resize_and_shuffle&lt;/code&gt; function where we&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;create a &lt;code class=&quot;highlighter-rouge&quot;&gt;Dataset&lt;/code&gt; object from a (&lt;code class=&quot;highlighter-rouge&quot;&gt;X, y&lt;/code&gt;) pair,&lt;/li&gt;
+  &lt;li&gt;resize each image to a standard size,&lt;/li&gt;
+  &lt;li&gt;shuffle and split the data into batches for CNN training later.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;classifier-via-transfer-learning&quot;&gt;Classifier via transfer learning&lt;/h1&gt;
 
 &lt;h1 id=&quot;where-do-we-go-from-here&quot;&gt;Where do we go from here?&lt;/h1&gt;
 
@@ -74,7 +94,9 @@
    <link href="http://localhost:4000/data/2020/09/24/intro-to-cnn.html"/>
    <updated>2020-09-24T08:00:00+08:00</updated>
    <id>http://localhost:4000/data/2020/09/24/intro-to-cnn</id>
-   <content type="html">&lt;p&gt;In this post, I briefly introduce what are &lt;strong&gt;deep neural networks&lt;/strong&gt; (DNNs) and &lt;strong&gt;convolutional neural networks&lt;/strong&gt; (CNNs). There is no math involved. This should be a good refresher if you are already familiar with DNNs and CNNs. If not, at the end of this post, you could gain an intuitive understanding of the motivation behind CNN and the key components that define a CNN.&lt;/p&gt;
+   <content type="html">&lt;p&gt;I am not a deep learning researcher, but I know a few things about neural networks through various exposures. On the other hand, I’ve always heard that CNN is a type of neural network that’s especially good at the image-related problems. But, what does that really mean? What’s with the word “convolutional”? What’s so different about an image-related problem?&lt;/p&gt;
+
+&lt;p&gt;Recently I had the opportunity to work on a COVID-19 image classification problem and built a CNN-based classifier using tensorflow.kerasthat achieved an 87% accuracy rate. More importantly, I think that I’ve figured out the answers to those questions. In this post, I share with you those answers in an intuitive math-free way. If you are already familiar with DNNs and CNNs, this post should feel like a good refresher. If not, at the end of this post, you could gain an intuitive understanding of the motivation behind CNN and the unique features that define a CNN.&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#deep-neural-network&quot; id=&quot;markdown-toc-deep-neural-network&quot;&gt;Deep neural network&lt;/a&gt;    &lt;ul&gt;
@@ -278,11 +300,13 @@
 
 &lt;h1 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h1&gt;
 
-&lt;p&gt;In my next post, &lt;a href=&quot;http://yangxiaozhou.github.io/data/2020-09-24-detecting-covid19-based-on-ct-scan.html&quot;&gt;INFORMS Data Challenge: Can we detect COVID-19 using deep learning?&lt;/a&gt;, we are going to explore how CNN can be used to build a &lt;strong&gt;COVID-19 CT scan image classifier&lt;/strong&gt;. This classifier can take in an unknown patient’s CT scan and predicts if the patient has COVID-19 or not.&lt;/p&gt;
+&lt;p&gt;Thank you for reading until the end! I hope by now you could see the difference between a CNN and a regular DNN, and also gained an intuitive understanding of what convolution operation is all about. Please let me know your thoughts or any feedback in the comment section below.&lt;/p&gt;
+
+&lt;p&gt;In my next post, we are going to explore how CNN can be used to build a COVID-19 CT scan image classifier. This classifier can take in an unknown patient’s CT scan and predicts if the patient has COVID-19 or not.&lt;/p&gt;
 
 &lt;h1 class=&quot;no_toc&quot; id=&quot;further-resources&quot;&gt;Further resources&lt;/h1&gt;
 
-&lt;p&gt;You can learn more about CNN 👉:&lt;/p&gt;
+&lt;p&gt;If you are interested in knowing more about CNNs, check out 👉:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://cs231n.github.io/&quot;&gt;CS231n Convolutional Neural Networks for Visual Recognition&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=shVKhOmT0HE&amp;amp;ab_channel=DeepMind&quot;&gt;DeepMind x UCL | Convolutional Neural Networks for Image Recognition
