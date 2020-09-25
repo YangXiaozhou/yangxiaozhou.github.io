@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introduction to convolutional neural network"
+title:  "A math-free introduction to convolutional neural network"
 date:   2020-09-24 08:00:00 +0800
 categories: DATA
 tags: deep-learning supervised-learning classification
