@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "INFORMS Data Challenge: Can we detect COVID-19 using deep learning?"
-date:   2020-09-25 08:01:00 +0800
+date:   2020-09-24 08:01:00 +0800
 categories: DATA
 tags: deep-learning supervised-learning classification
 ---

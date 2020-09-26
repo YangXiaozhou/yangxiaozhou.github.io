@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "A math-free introduction to convolutional neural network"
+title:  "Convolutional Neural Network: How is it different from the other networks?"
 date:   2020-09-24 08:00:00 +0800
 categories: DATA
 tags: deep-learning supervised-learning classification
 ---
 
-I am not a deep learning researcher, but I know a few things about neural networks through various exposures. On the other hand, I've always heard that CNN is a type of neural network that's especially good at the image-related problems. But, what does that really mean? What's with the word "convolutional"? What's so different about an image-related problem?
+I am not a deep learning researcher, but I’ve come to know a few things about neural networks through various exposures. I’ve always heard that CNN is a type of neural network that’s particularly good at image-related problems. But, what does that really mean? What’s with the word “convolutional”? What’s so unusual about an image-related problem that a different network is required?
 
 Recently I had the opportunity to work on a COVID-19 image classification problem and built a CNN-based classifier using tensorflow.kerasthat achieved an 87% accuracy rate. More importantly, I think that I've figured out the answers to those questions. In this post, I share with you those answers in an intuitive math-free way. If you are already familiar with DNNs and CNNs, this post should feel like a good refresher. If not, at the end of this post, you could gain an intuitive understanding of the motivation behind CNN and the unique features that define a CNN.
 

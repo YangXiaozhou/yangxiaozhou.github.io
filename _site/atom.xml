@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-09-25T16:07:18+08:00</updated>
+ <updated>2020-09-26T11:01:06+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>INFORMS Data Challenge: Can we detect COVID-19 using deep learning?</title>
-   <link href="http://localhost:4000/data/2020/09/25/data-detecting-covid19-based-on-ct-scan.html"/>
-   <updated>2020-09-25T08:01:00+08:00</updated>
-   <id>http://localhost:4000/data/2020/09/25/data-detecting-covid19-based-on-ct-scan</id>
+   <link href="http://localhost:4000/data/2020/09/24/data-detecting-covid19-based-on-ct-scan.html"/>
+   <updated>2020-09-24T08:01:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/09/24/data-detecting-covid19-based-on-ct-scan</id>
    <content type="html">&lt;p&gt;In this article, I’ll walk you through the COVID-19 convolutional neural network (CNN) classifier that we’ve built as an entry to the 2020 INFORMS QSR Data &lt;a href=&quot;https://connect.informs.org/HigherLogic/System/DownloadDocumentFile.ashx?DocumentFileKey=f404f7b8-fcd6-75d5-f7a7-d262eab132e7&quot;&gt;Challenge&lt;/a&gt;. This article focuses on the &lt;strong&gt;implementation&lt;/strong&gt; of an end-to-end CNN image classifier using &lt;code class=&quot;highlighter-rouge&quot;&gt;tensorflow.keras&lt;/code&gt;. If you are not familiar with CNN, or would like a refresher on the key features of CNNs, I highly recommend reading &lt;a href=&quot;http://yangxiaozhou.github.io/data/2020-09-24-intro-to-cnn.html&quot;&gt;Introduction to convolutional neural network&lt;/a&gt; first.&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -90,11 +90,11 @@
  </entry>
  
  <entry>
-   <title>A math-free introduction to convolutional neural network</title>
+   <title>Convolutional Neural Network: How is it different from the other networks?</title>
    <link href="http://localhost:4000/data/2020/09/24/intro-to-cnn.html"/>
    <updated>2020-09-24T08:00:00+08:00</updated>
    <id>http://localhost:4000/data/2020/09/24/intro-to-cnn</id>
-   <content type="html">&lt;p&gt;I am not a deep learning researcher, but I know a few things about neural networks through various exposures. On the other hand, I’ve always heard that CNN is a type of neural network that’s especially good at the image-related problems. But, what does that really mean? What’s with the word “convolutional”? What’s so different about an image-related problem?&lt;/p&gt;
+   <content type="html">&lt;p&gt;I am not a deep learning researcher, but I’ve come to know a few things about neural networks through various exposures. I’ve always heard that CNN is a type of neural network that’s particularly good at image-related problems. But, what does that really mean? What’s with the word “convolutional”? What’s so unusual about an image-related problem that a different network is required?&lt;/p&gt;
 
 &lt;p&gt;Recently I had the opportunity to work on a COVID-19 image classification problem and built a CNN-based classifier using tensorflow.kerasthat achieved an 87% accuracy rate. More importantly, I think that I’ve figured out the answers to those questions. In this post, I share with you those answers in an intuitive math-free way. If you are already familiar with DNNs and CNNs, this post should feel like a good refresher. If not, at the end of this post, you could gain an intuitive understanding of the motivation behind CNN and the unique features that define a CNN.&lt;/p&gt;
 
