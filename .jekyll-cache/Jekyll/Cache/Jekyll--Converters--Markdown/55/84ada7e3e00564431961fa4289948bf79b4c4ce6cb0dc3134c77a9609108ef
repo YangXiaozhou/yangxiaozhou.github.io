@@ -1,0 +1,117 @@
+I" &<p>By now, you’ve probably seen a few, if not dozens of, articles on how deep learning could help detect COVID-19[refs]. In particular, convolutional neural networks (CNNs) have been studied as a faster and cheaper alternative to the gold-standard PCR test by just analyzing the patient’s computed tomography (CT) scan. It’s not surprising since CNN is excellent at image recognition; Many places have CT scanners rather than COVID-19 testing kits (at least initially)[refs].</p>
+
+<p>But, despite its success on image recognition tasks such as the ImageNet challenge, can CNN really help doctors detect COVID-19? If it can, how accurately can it do so? It’s well known that CT scans are sensitive but not specific to COVID-19[refs]. That is, COVID-19 almost always produces abnormal lung patterns visible from CT scans. However, other pneumonia can produce the same abnormal patterns. Can the powerful and sometimes magical CNN tackle this ambiguity issue?</p>
+
+<p>We had a chance to answer these questions ourselves (with my colleague <a href="">Yuchen</a> and advisor <a href="">A/P Chen</a>). I’ll walk you through a COVID-19 classifier that we’ve built as an entry to the 2020 INFORMS QSR Data <a href="https://connect.informs.org/HigherLogic/System/DownloadDocumentFile.ashx?DocumentFileKey=f404f7b8-fcd6-75d5-f7a7-d262eab132e7">Challenge</a>. If you are not familiar with CNN, or would like a refresher on the key features of CNNs, I highly recommend reading <a href="https://yangxiaozhou.github.io/data/2020/09/24/intro-to-cnn.html">Convolutional Neural Network: How is it different from the other networks?</a> first. Also, if you’d like to get hands-on, you can get all the code and data from my Github <a href="https://github.com/YangXiaozhou/CNN-COVID-19-classification-using-chest-CT-scan">repo</a>.</p>
+
+<h3 id="key-takeaways">Key takeaways</h3>
+<ol>
+  <li>Transfer learning using pre-trained CNN can achieve really strong baseline performance on COVID-19 classification (85% accuracy).</li>
+  <li>However, domain expertise is required to elevate the performance of the CNN (or other ML methods).</li>
+</ol>
+
+<hr />
+<h1 id="whats-the-challenge">What’s the challenge?</h1>
+
+<p>The COVID-19 pandemic has changed lives around the world. This is the current situation as of 2020/09/26 according to <a href="https://covid19.who.int/">WHO</a>. 
+<img src="/assets/cnn-covid-19/covid-19-pandemic.png" alt="current situation" /></p>
+
+<p>CT scans have been used for screening and diagnosing COVID-19, especially in areas where swab test resources are severely lacking. The goal of this data challenge is to diagnose COVID-19 using the chest CT scans. Therefore, we need to build a <strong>classification model</strong> that can classify patients to COVID or NonCOVID based on their chest CT scans, <strong>as accurately as possible</strong>.</p>
+
+<h2 id="whats-provided">What’s provided?</h2>
+<p>Relatively even number of COVID and NonCOVID images are provided to train the model. While meta-information of these images are also provided, they will not be provided during testing.</p>
+
+<ul>
+  <li>Training data set
+    <ul>
+      <li>251 COVID-19 CT images</li>
+      <li>292 non-COVID-19 CT images</li>
+    </ul>
+  </li>
+  <li>Meta-information
+    <ul>
+      <li>e.g., patient information, severity, image caption</li>
+    </ul>
+  </li>
+</ul>
+
+<p>All challenge data are taken from a public <a href="https://github.com/UCSD-AI4H/COVID-CT">data set</a>.</p>
+
+<h1 id="model-performance">Model performance</h1>
+<p>Let’s first take a look at the end result, shall we?</p>
+
+<p>The trained model is evaluated with an independent set of test data. Here you can see the confusion matrix. The overall accuracy is about 85% with a slightly better sensitivity than specificity, i.e., true positive rate &gt; true negative rate. 
+<img src="/assets/cnn-covid-19/confusion_matrix.png" alt="confusion" /></p>
+
+<h1 id="implementation">Implementation</h1>
+<p>Here are some of the provided NonCOVID and COVID CT scans. It’s important to note that the challenge is to distinguish between COVID and NonCOVID CT scans, rather than COVID and Normal scans. In fact, there may be some NonCOVID CT scans that belong to other pneumonia patients. 
+<img src="/assets/cnn-covid-19/first_look.png" alt="first_look" /></p>
+
+<h2 id="train-validation-split">Train-validation split</h2>
+<p>We reserve 20% of the data for validation. Since some consecutive images come from the same patient, they tend to be similar to each other.  That is, many of our data are <strong>not independent</strong>. To prevent data leakage (information of training data spills over to validation data), we keep the original image sequence and hold out the last 20% as the validation set.</p>
+
+<p>After the splitting, we have two pairs of data:</p>
+<ol>
+  <li><code class="highlighter-rouge">X_train</code>, <code class="highlighter-rouge">y_train</code></li>
+  <li><code class="highlighter-rouge">X_val</code>, <code class="highlighter-rouge">y_val</code></li>
+</ol>
+
+<p>X is a list of CT scans, and y is a list of binary labels (0 for NonCOVID, 1 for COVID).</p>
+
+<h2 id="data-augmentation">Data augmentation</h2>
+<p>Data augmentation is a common way to include more random variations into the training data. This helps to prevent overfitting. For image-related learning problems, augmentation typically means applying <strong>random</strong> geometric (e.g., crop, flip, rotate and etc.) and appearance transformation (e.g., contrast, edge filter, Gaussian blur and etc.). Here we use <code class="highlighter-rouge">tf.keras.Sequential</code> to create a pipeline in which the input image is randomly transformed through the following operations:</p>
+<ol>
+  <li>Random horizontal and vertical flip</li>
+  <li>Rotation by a random degree in the range of $[-5\%, 5\%]*2\pi$</li>
+  <li>Random zoom in height by $5\%$</li>
+  <li>Random translation by $5\%$</li>
+  <li>Random contrast adjustment by $5\%$</li>
+</ol>
+
+<p>This is how they look like after the augmentation. 
+<img src="/assets/cnn-covid-19/augmented_scans.png" alt="augmented_scans" /></p>
+
+<h2 id="using-pre-trained-cnn-as-the-backbone">Using pre-trained CNN as the backbone</h2>
+<p>We do not build a CNN from scratch. For an image-related problem that has only modest number of training images, it is recommended to use a pre-trained model as the backbone and do <a href="https://cs231n.github.io/transfer-learning/">transfer learning</a> on that. The chosen model is <a href="https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0">EfficientNetB0</a>. It belongs to the family of models called <a href="https://arxiv.org/abs/1905.11946">EfficientNets</a> proposed by reseachers from Google. EfficientNets are among the current state-of-the-art CNNs for computer vision tasks. They</p>
+<ol>
+  <li>require considerably lower number of parameters,</li>
+  <li>achieved very high accuracies on ImageNet,</li>
+  <li>transferred well to other image classification tasks.</li>
+</ol>
+
+<p>Here’s a performance <a href="https://arxiv.org/abs/1905.11946">comparison</a> between EfficientNets and other well-known models:<img src="/assets/cnn-covid-19/efficientnets.png" alt="EfficientNet" /></p>
+
+<p>EfficientNets, and other well-known pre-trained models, can be easily loaded from <code class="highlighter-rouge">tf.keras.applications</code>. We first import the pre-trained EfficientNetB0 and use it as our model backbone. We remove the original output layer of EfficientNetB0 since it was trained for 1000-class classification. Also, we freeze the model’s weights so that they won’t be updated during the initial training.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Create a base model from the pre-trained EfficientNetB0
+base_model = keras.applications.EfficientNetB0(input_shape=IMG_SHAPE, include_top=False)
+base_model.trainable = False
+</code></pre></div></div>
+
+<h2 id="wrap-our-model-around-it">Wrap our model around it</h2>
+
+<p>With EfficientNet imported, we can use it to our problem by wrapping our classification model around it. You can think of the EfficientNetB0 as a trained feature extractor. The final model has:</p>
+<ol>
+  <li>An input layer</li>
+  <li><strong>EfficientNetB0 base model</strong></li>
+  <li>An average pooling layer: pool the information by average operation</li>
+  <li>A dropout layer: set a percentage of inputs to zero</li>
+  <li>A classification layer: outputs the probability of NonCovid</li>
+</ol>
+
+<p>We can also use <code class="highlighter-rouge">tf.keras.utils.plot_model</code> to visualize our model. <img src="/assets/cnn-covid-19/model.png" alt="model" /></p>
+
+<p>We can see that:</p>
+<ol>
+  <li>The <code class="highlighter-rouge">?</code> in input and output shape is a reserved place for the number of samples, which the model does not know yet.</li>
+  <li>EfficientNetB0 sits right after the input layer.</li>
+  <li>The last (classification) layer has output of dimension 1: NonCovid probability.</li>
+</ol>
+
+<h2 id="training-our-model">Training our model</h2>
+<p><strong>Public data pre-training</strong>:To help EfficientNetB0 adapt to COVID vs NonCOVID image classification, we’ve actually trained our model on another public CT scan data <a href="https://www.kaggle.com/plameneduardo/sarscov2-ctscan-dataset">set</a>. The hope is that training the model on CT scans would allow it to learn features specific to our COVID-19 classification task. We will not go into the public data training part, but the procedure is essentially the same as what I am going to show below.</p>
+
+<h1 id="what-have-we-learned">What have we learned?</h1>
+
+<h1 id="where-do-we-go-from-here">Where do we go from here?</h1>
+
+:ET

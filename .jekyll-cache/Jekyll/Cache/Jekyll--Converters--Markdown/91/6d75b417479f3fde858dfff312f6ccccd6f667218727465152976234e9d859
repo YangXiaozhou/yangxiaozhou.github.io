@@ -1,0 +1,2 @@
+I"�<p>By now, you’ve probably seen a few, if not dozens, articles on how deep learning could help detect COVID-19[refs]. In particular, convolutional neural networks (CNNs) have been studied as a faster and cheaper alternative to the gold-standard PCR test by just analyzing the patient’s computed tomography (CT) scan. It’s not surprising since CNN is excellent at image recognition; Many places have CT scanners rather than COVID-19 testing kits (at least initially)[refs].</p>
+:ET
