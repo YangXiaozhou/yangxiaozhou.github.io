@@ -10,7 +10,7 @@ By now, you've probably seen a few, if not many, [articles](https://scholar.goog
 
 Despite its success in image recognition tasks such as the ImageNet challenge, can CNN really help doctors detect COVID-19? If it can, how accurately can it do so? It's well known that CT scans are sensitive but not [specific](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7227176/) to COVID-19. That is, COVID-19 almost always produces abnormal lung patterns visible from CT scans. However, other pneumonia can create the same abnormal patterns. Can the powerful and sometimes magical CNN tackle this ambiguity issue?
 
-We had a chance to answer these questions ourselves (with my colleague [Yuchen](https://www.linkedin.com/in/yuchen-shi-2830ba158/?originalSubdomain=sg) and advisor [A/P Chen](https://www.eng.nus.edu.sg/isem/staff/chen-nan/)). I'll walk you through a COVID-19 classifier that we've built as an entry to the 2020 INFORMS QSR Data [Challenge](https://connect.informs.org/HigherLogic/System/DownloadDocumentFile.ashx?DocumentFileKey=f404f7b8-fcd6-75d5-f7a7-d262eab132e7). If you are not familiar with CNN, or would like a refresher on the key features of CNNs, I highly recommend reading [Convolutional Neural Network: How is it different from the other networks?](https://yangxiaozhou.github.io/data/2020/09/24/intro-to-cnn.html) first. Also, if you'd like to get hands-on, you can get all the code and data from my Github [repo](https://github.com/YangXiaozhou/CNN-COVID-19-classification-using-chest-CT-scan). 
+We had a chance to answer these questions ourselves (with my colleague [Yuchen](https://www.linkedin.com/in/yuchen-shi-2830ba158/?originalSubdomain=sg) and advisor [A/P Chen](https://www.eng.nus.edu.sg/isem/staff/chen-nan/)). I'll walk you through a COVID-19 classifier that we've built as an entry to 2020 INFORMS QSR Data [Challenge](https://connect.informs.org/HigherLogic/System/DownloadDocumentFile.ashx?DocumentFileKey=f404f7b8-fcd6-75d5-f7a7-d262eab132e7). If you are not familiar with CNN or would like a refresher on the key features of CNNs, I highly recommend reading [Convolutional Neural Network: How is it different from the other networks?](https://yangxiaozhou.github.io/data/2020/09/24/intro-to-cnn.html) first. Also, if you'd like to get hands-on, you can get all the code and data from my Github [repo](https://github.com/YangXiaozhou/CNN-COVID-19-classification-using-chest-CT-scan). 
 
 ## Key takeaways
 1. Transfer learning using pre-trained CNN can achieve a really strong baseline performance on COVID-19 classification (85% accuracy).
@@ -24,7 +24,7 @@ COVID-19 pandemic has changed lives around the world. This is the current situat
 CT scans have been used to screen and diagnose COVID-19, especially in areas where swab test resources are severely lacking. The goal of this data challenge is to diagnose COVID-19 using chest CT scans. Therefore, we need to build a **classification model** that can classify patients to COVID or NonCOVID based on their chest CT scans, **as accurately as possible**.
 
 ## What's provided?
-Relatively even number of COVID and NonCOVID images are provided to train the model. While meta-information of these images are also provided, they will not be provided during testing. The competition also requires that the model's training with provided data must take less than one hour. 
+Relatively even number of COVID and NonCOVID images are provided to train the model. While meta-information of these images is also provided, they will not be provided during testing. The competition also requires that the model's training with provided data must take less than one hour. 
 
 - Training data set
     - 251 COVID-19 CT images
@@ -133,7 +133,7 @@ weighted avg       0.85      0.85      0.85       203
 ```
 And the ROC curve: ![roc_curve]({{ '/' | relative_url }}assets/cnn-covid-19/roc_curve.png)
 
-## What are the correctly and incorrectly classified CT scans?
+## What are correctly and incorrectly classified CT scans?
 
 We can dive into the classification result and see which ones are identified correctly and identified incorrectly. **Potential patterns** found could be leveraged to help further improve the model.  
 
@@ -148,7 +148,7 @@ And here are the incorrect ones:
 We can probably make several observations here:
 1. True positives have obvious abnormal patterns, and the lung structures are well-preserved.
 2. Many of the true negatives have complete black lungs (no abnormal pattern).
-3. Lung boundaries of many false positives are not clear. 
+3. The lung boundaries of many false positives are not clear. 
 
 The point is, to a non-medical person like me, many of the COVID and NonCOVID images look the same. The ambiguity is even more severe when some images have unclear lung boundaries. It seems like our CNN is also having trouble distinguishing those images. 
 

@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-09-27T17:26:03+08:00</updated>
+ <updated>2020-09-27T17:37:44+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -21,7 +21,7 @@
 
 &lt;p&gt;Despite its success in image recognition tasks such as the ImageNet challenge, can CNN really help doctors detect COVID-19? If it can, how accurately can it do so? It’s well known that CT scans are sensitive but not &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7227176/&quot;&gt;specific&lt;/a&gt; to COVID-19. That is, COVID-19 almost always produces abnormal lung patterns visible from CT scans. However, other pneumonia can create the same abnormal patterns. Can the powerful and sometimes magical CNN tackle this ambiguity issue?&lt;/p&gt;
 
-&lt;p&gt;We had a chance to answer these questions ourselves (with my colleague &lt;a href=&quot;https://www.linkedin.com/in/yuchen-shi-2830ba158/?originalSubdomain=sg&quot;&gt;Yuchen&lt;/a&gt; and advisor &lt;a href=&quot;https://www.eng.nus.edu.sg/isem/staff/chen-nan/&quot;&gt;A/P Chen&lt;/a&gt;). I’ll walk you through a COVID-19 classifier that we’ve built as an entry to the 2020 INFORMS QSR Data &lt;a href=&quot;https://connect.informs.org/HigherLogic/System/DownloadDocumentFile.ashx?DocumentFileKey=f404f7b8-fcd6-75d5-f7a7-d262eab132e7&quot;&gt;Challenge&lt;/a&gt;. If you are not familiar with CNN, or would like a refresher on the key features of CNNs, I highly recommend reading &lt;a href=&quot;https://yangxiaozhou.github.io/data/2020/09/24/intro-to-cnn.html&quot;&gt;Convolutional Neural Network: How is it different from the other networks?&lt;/a&gt; first. Also, if you’d like to get hands-on, you can get all the code and data from my Github &lt;a href=&quot;https://github.com/YangXiaozhou/CNN-COVID-19-classification-using-chest-CT-scan&quot;&gt;repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We had a chance to answer these questions ourselves (with my colleague &lt;a href=&quot;https://www.linkedin.com/in/yuchen-shi-2830ba158/?originalSubdomain=sg&quot;&gt;Yuchen&lt;/a&gt; and advisor &lt;a href=&quot;https://www.eng.nus.edu.sg/isem/staff/chen-nan/&quot;&gt;A/P Chen&lt;/a&gt;). I’ll walk you through a COVID-19 classifier that we’ve built as an entry to 2020 INFORMS QSR Data &lt;a href=&quot;https://connect.informs.org/HigherLogic/System/DownloadDocumentFile.ashx?DocumentFileKey=f404f7b8-fcd6-75d5-f7a7-d262eab132e7&quot;&gt;Challenge&lt;/a&gt;. If you are not familiar with CNN or would like a refresher on the key features of CNNs, I highly recommend reading &lt;a href=&quot;https://yangxiaozhou.github.io/data/2020/09/24/intro-to-cnn.html&quot;&gt;Convolutional Neural Network: How is it different from the other networks?&lt;/a&gt; first. Also, if you’d like to get hands-on, you can get all the code and data from my Github &lt;a href=&quot;https://github.com/YangXiaozhou/CNN-COVID-19-classification-using-chest-CT-scan&quot;&gt;repo&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;key-takeaways&quot;&gt;Key takeaways&lt;/h2&gt;
 &lt;ol&gt;
@@ -37,7 +37,7 @@
 &lt;p&gt;CT scans have been used to screen and diagnose COVID-19, especially in areas where swab test resources are severely lacking. The goal of this data challenge is to diagnose COVID-19 using chest CT scans. Therefore, we need to build a &lt;strong&gt;classification model&lt;/strong&gt; that can classify patients to COVID or NonCOVID based on their chest CT scans, &lt;strong&gt;as accurately as possible&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;whats-provided&quot;&gt;What’s provided?&lt;/h2&gt;
-&lt;p&gt;Relatively even number of COVID and NonCOVID images are provided to train the model. While meta-information of these images are also provided, they will not be provided during testing. The competition also requires that the model’s training with provided data must take less than one hour.&lt;/p&gt;
+&lt;p&gt;Relatively even number of COVID and NonCOVID images are provided to train the model. While meta-information of these images is also provided, they will not be provided during testing. The competition also requires that the model’s training with provided data must take less than one hour.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Training data set
@@ -171,7 +171,7 @@ weighted avg       0.85      0.85      0.85       203
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;And the ROC curve: &lt;img src=&quot;/assets/cnn-covid-19/roc_curve.png&quot; alt=&quot;roc_curve&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;what-are-the-correctly-and-incorrectly-classified-ct-scans&quot;&gt;What are the correctly and incorrectly classified CT scans?&lt;/h2&gt;
+&lt;h2 id=&quot;what-are-correctly-and-incorrectly-classified-ct-scans&quot;&gt;What are correctly and incorrectly classified CT scans?&lt;/h2&gt;
 
 &lt;p&gt;We can dive into the classification result and see which ones are identified correctly and identified incorrectly. &lt;strong&gt;Potential patterns&lt;/strong&gt; found could be leveraged to help further improve the model.&lt;/p&gt;
 
@@ -187,7 +187,7 @@ weighted avg       0.85      0.85      0.85       203
 &lt;ol&gt;
   &lt;li&gt;True positives have obvious abnormal patterns, and the lung structures are well-preserved.&lt;/li&gt;
   &lt;li&gt;Many of the true negatives have complete black lungs (no abnormal pattern).&lt;/li&gt;
-  &lt;li&gt;Lung boundaries of many false positives are not clear.&lt;/li&gt;
+  &lt;li&gt;The lung boundaries of many false positives are not clear.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;The point is, to a non-medical person like me, many of the COVID and NonCOVID images look the same. The ambiguity is even more severe when some images have unclear lung boundaries. It seems like our CNN is also having trouble distinguishing those images.&lt;/p&gt;
