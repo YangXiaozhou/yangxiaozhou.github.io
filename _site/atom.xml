@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-09-27T17:37:44+08:00</updated>
+ <updated>2020-09-27T23:02:40+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -420,7 +420,7 @@ weighted avg       0.85      0.85      0.85       203
 
 &lt;p&gt;Thank you for reading until the end! I hope by now you could see the difference between a CNN and a regular DNN, and also gained an intuitive understanding of what convolution operation is all about. Please let me know your thoughts or any feedback in the comment section below.&lt;/p&gt;
 
-&lt;p&gt;In my next post, we are going to explore how CNN can be used to build a COVID-19 CT scan image classifier. This classifier can take in an unknown patient’s CT scan and predicts if the patient has COVID-19 or not.&lt;/p&gt;
+&lt;p&gt;In my next post: &lt;a href=&quot;https://yangxiaozhou.github.io/data/2020/09/27/detecting-covid19-using-cnn.html&quot;&gt;Domain Expertise: What deep learning needs for better COVID-19 detection&lt;/a&gt;, we are going to explore how CNN can be used to build a COVID-19 CT scan image classifier. This classifier can take in an unknown patient’s CT scan and predicts if the patient has COVID-19 or not.&lt;/p&gt;
 
 &lt;h1 class=&quot;no_toc&quot; id=&quot;further-resources&quot;&gt;Further resources&lt;/h1&gt;
 
