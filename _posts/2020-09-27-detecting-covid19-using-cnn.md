@@ -6,7 +6,7 @@ categories: DATA
 tags: deep-learning supervised-learning classification convolutional-neural-network COVID-19
 ---
 
-By now, you've probably seen a few, if not many, [articles](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=detecting+covid-19+using+neural+network&btnG=) on how deep learning could help detect COVID-19. In particular, convolutional neural networks (CNNs) have been studied as a faster and cheaper alternative to the gold-standard PCR test by just analyzing the patient's computed tomography (CT) scan. It's not surprising since CNN is excellent at image recognition; Many places have CT scanners rather than COVID-19 testing kits (at least initially).
+By now, you've probably seen a few, if not many, [articles](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=detecting+covid-19+using+neural+network&btnG=) on how deep learning could help detect COVID-19. In particular, convolutional neural networks (CNNs) have been studied as a faster and cheaper alternative to the gold-standard PCR test by just analyzing the patient's computed tomography (CT) scan. It's not surprising since CNN is excellent at image recognition; many places have CT scanners rather than COVID-19 testing kits (at least initially).
 
 Despite its success in image recognition tasks such as the ImageNet challenge, can CNN really help doctors detect COVID-19? If it can, how accurately can it do so? It's well known that CT scans are sensitive but not [specific](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7227176/) to COVID-19. That is, COVID-19 almost always produces abnormal lung patterns visible from CT scans. However, other pneumonia can create the same abnormal patterns. Can the powerful and sometimes magical CNN tackle this ambiguity issue?
 
