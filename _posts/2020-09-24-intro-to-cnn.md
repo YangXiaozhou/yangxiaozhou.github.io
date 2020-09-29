@@ -173,7 +173,9 @@ Now, if you are *designing your own CNN*, there are many elements to play with. 
 
 Thank you for reading until the end! I hope by now you could see the difference between a CNN and a regular DNN, and also gained an intuitive understanding of what convolution operation is all about. Please let me know your thoughts or any feedback in the comment section below.
 
-In my next post: [Domain Expertise: What deep learning needs for better COVID-19 detection](https://yangxiaozhou.github.io/data/2020/09/27/detecting-covid19-using-cnn.html), we are going to explore how CNN can be used to build a COVID-19 CT scan image classifier. This classifier can take in an unknown patient's CT scan and predicts if the patient has COVID-19 or not.
+
+In the next article, we explore how CNN can be used to build a COVID-19 CT scan image classifier. Unsurprisingly, a pre-trained CNN can achieve strong baseline performance (85% accuracy). However, it takes more than a neural network to produce reliable and convincing results. Here’s the article:  
+[What deep learning needs for better COVID-19 detection](https://yangxiaozhou.github.io/data/2020/09/27/detecting-covid19-using-cnn.html)
 
 # Further resources
 {: .no_toc}
