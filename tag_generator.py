@@ -21,7 +21,7 @@ filenames = glob.glob(post_dir + '*md')
 total_tags = []
 for filename in filenames:
     print(filename)
-    f = open(filename, 'r')
+    f = open(filename, 'r', encoding="utf-8", errors="ignore")
     crawl = False
     for line in f:
         if crawl:
