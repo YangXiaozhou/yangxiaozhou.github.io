@@ -3,7 +3,7 @@ layout: post
 title:  "Linear discriminant analysis, explained"
 date:   2019-10-2 08:00:00 +0800
 categories: DATA
-tags: LDA supervised-learning classification
+tags: LDA supervised-learning classification statistical-learning
 ---
 *Intuitions, illustrations, and maths: How it's more than a dimension reduction tool and why it's robust for real-world applications.*
 
