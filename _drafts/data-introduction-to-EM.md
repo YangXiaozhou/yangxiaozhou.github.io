@@ -1,12 +1,16 @@
 ---
 layout: post
-title:  "Expectation maximization, explained"
+title:  "Expectation-maximization algorithm, explained"
 date:   2020-10-01 08:00:00 +0800
 categories: DATA
 tags: expectation-maximization statistical-learning clustering inference
 ---
 
-the Expectation Maximization algorithm (EM, for short)
+the Expectation-maximization algorithm (EM, for short)
+
+**Write about the problem that the readers care**
+
+**Create instability and offer solution**
 
 If you are in the data science/ML "bubble", you probably have came across EM at some time and wondered: What is EM and why do I need to know it? 
 
@@ -21,33 +25,33 @@ My take on EM, what it is, how it works, how it's related to other techniques, a
 
 ## Motivating examples: Why do we care?
 
-Maybe you already know why you want to use EM, or maybe you don't. Either way, let me use two motivating examples to set the stage for EM. These are quite lengthy, I know, but they perfectly highlight the common feature of the problems that EM is best at solving: **missing information**. 
+Maybe you already know why you want to use EM, or maybe you don't. Either way, let me use two motivating examples to set the stage for EM. These are quite lengthy, I know, but they perfectly highlight the common feature of the problems that EM is best at solving: the presence of **missing information**. 
 
-#### Unsupervised learning: Solving Gaussian mixture model for clustering
+### Unsupervised learning: Solving Gaussian mixture model for clustering
 
-Suppose you have a data set with n number of data points. It could be a group of customers visiting your website (customer profiling) or an image with different objects in it (image segmentation). Clustering is the task of finding out k number of natural groups for your data when you don't know (or don't specify) the real grouping. In general, this is an unsupervised learning problem because no ground-truth labels are used. 
+Suppose you have a data set with n number of data points. It could be a group of customers visiting your website (customer profiling) or an image with different objects in it (image segmentation). Clustering is the task of finding out k number of natural groups for your data when you don't know (or don't specify) the real grouping. This is an unsupervised learning problem because no ground-truth labels are used. 
 
-Such clustering problem can be tackled by several types of algorithms, for example, combinatorial type such as k-means or hierarchical type such as Ward’s hierarchical clustering. However, if you believe that your data could be better modeled as a mixture of normal distributions, then you would go for Gaussian mixture model (**GMM**), another popular clustering approach. 
+Such clustering problem can be tackled by several types of algorithms, e.g., combinatorial type such as k-means or hierarchical type such as Ward’s hierarchical clustering. However, if you believe that your data could be better modeled as a mixture of normal distributions, then you would go for Gaussian mixture model (**GMM**), another popular clustering approach. 
 
-The underlying idea of GMM is this, you assume that behind your data, there's a data generating mechanism. This mechanism first choses one of the k normal distributions (with a certain probability) and then delivers a sample from that normal distribution. Therefore, once you have estimated the parameters of each normal distribution, you could easily cluster each data point by selecting the one that gives the highest likelihood. 
+The underlying idea of GMM is this, you assume that behind your data, there's a data generating mechanism. This mechanism first choses one of the k normal distributions (with a certain probability) and then delivers a sample from that distribution. Therefore, once you have estimated the parameters of each normal distribution, you could easily cluster each data point by selecting the one that gives the highest likelihood. 
 
 <p>
   <img width="1024" alt="ClusterAnalysis Mouse" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/ClusterAnalysis_Mouse.svg/1024px-ClusterAnalysis_Mouse.svg.png">
 </p>
-<i>An example of mixture of Gaussian data and clustering using k-means and EM algorithm. [Source](https://commons.wikimedia.org/wiki/File:ClusterAnalysis_Mouse.svg)</i>
+<i>An example of mixture of Gaussian data and clustering using k-means and GMM (solved by EM). [Source](https://commons.wikimedia.org/wiki/File:ClusterAnalysis_Mouse.svg)</i>
 
-However, estimating the parameters is not a simple task since we do not know which distribution generated which points. EM is an algorithm that can help us solve exactly this problem. This is why EM is the underlying algorithm for solving GMMs in the scikit-learn's [implementation](https://scikit-learn.org/stable/modules/mixture.html#gaussian-mixture). 
+However, estimating the parameters is not a simple task since we do not know which distribution generated which points (**missing information**). EM is an algorithm that can help us solve exactly this problem. This is why EM is the underlying algorithm for solving GMMs in scikit-learn's [implementation](https://scikit-learn.org/stable/modules/mixture.html#gaussian-mixture). 
 
-#### Parameter estimation: Estimating moth allele frequencies to observe natural selection
+### Population genetics: Estimating moth allele frequencies to observe natural selection
 
-Have you heard the phrase "industrial melanism" before? It's a term coined by biologists in the 19th century to describe the phenomenon that animals change their skin color due to the heavy industrialization in the cities. In particular, they observed that previously rare dark peppered moth started to dominate the population in industrialized coal-fueled cities. Scientists at the time were surprised and fascinated by this observation. Further research suggests that the industrialized cities tend to have darker tree barks which disguise darker moths better than the light ones. 
+Have you heard the phrase "industrial melanism" before? It's a term coined by biologists in the 19th century to describe the phenomenon that animals change their skin color due to the heavy industrialization in the cities. In particular, they observed that previously rare dark peppered moth started to dominate the population in industrialized coal-fueled cities. Scientists at the time were surprised and fascinated by this observation. Subsequent research suggests that the industrialized cities tend to have darker tree barks which disguise darker moths better than the light ones. 
 
 <p align="center">
   <img src="{{'/'|relative_url}}assets/intro-to-EM/dark_light_moth.png" alt="pepper_moths" style="zoom: 75%;">
 </p><i>Dark (top) and light (bottom) peppered moth. Image by Jerzy Strzelecki via Wikimedia Commons</i>
 
 
-As a result, dark moths survive the predation better and pass on their genes, giving rise to a predominantly dark peppered moth population.  To prove the natural selection theory, scientists first need to estimate the percentage of black-producing and light-producing genes/alleles present in the moth population. The gene responsible for the moth's color has three types of alleles: C, I and T. Genotypes **C**C, **C**I, and **C**T produce dark peppered moth (*Carbonaria*); **T**T produces light peppered moth (*Typica*); **I**I and **I**T produce moths with intermediate color (*Insularia*). 
+As a result, dark moths survive the predation better and pass on their genes, giving rise to a predominantly dark peppered moth population.  To prove their natural selection theory, scientists first need to estimate the percentage of black-producing and light-producing genes/alleles present in the moth population. The gene responsible for the moth's color has three types of alleles: C, I and T. Genotypes **C**C, **C**I, and **C**T produce dark peppered moth (*Carbonaria*); **T**T produces light peppered moth (*Typica*); **I**I and **I**T produce moths with intermediate color (*Insularia*). 
 
 Here's a hand-drawn graph that shows the **observed** and **missing** information. 
 
@@ -56,15 +60,17 @@ Here's a hand-drawn graph that shows the **observed** and **missing** informatio
 </p><i>Relationship between peppered moth alleles, genotypes, and phenotypes. We observed phenotypes, but wish to estimate percentges of alleles in the population. Image by author</i>
 
 
-We wish to know the percentages of C, I, and T in the population. However, we can only observe the number of *Carbonaria*, *Typica*, and *Insularia* moths by capturing them, but not the genotypes. That fact that we do not observe the genotypes and multiple genotypes produce the same subspecies make the calculation of the allele frequencies difficult. This is where EM comes in to play. With EM, we can easily estimate the allele frequencies and provide concrete evidence for the microevolution that happens on a human time scale due to enviromental  pollution. 
+We wish to know the percentages of C, I, and T in the population. However, we can only observe the number of *Carbonaria*, *Typica*, and *Insularia* moths by capturing them, but not the genotypes (**missing information**). The fact that we do not observe the genotypes and multiple genotypes produce the same subspecies make the calculation of the allele frequencies difficult. This is where EM comes in to play. With EM, we can easily estimate the allele frequencies and provide concrete evidence for the microevolution that happens on a human time scale due to environmental  pollution. 
 
-How does EM tackle the GMM problem and the peppered moth problem? We will illustrate these in the later section. But first, let's see what EM is really about. 
+How does EM tackle the GMM problem and the peppered moth problem in the presence of missing information? We will illustrate these in the later section. But first, let's see what EM is really about. 
 
 ## What is EM?
 
-EM algorithm is an iterative method that finds the maximum likelihood estimate of parameters in problems where hidden variables are present, for example, the power system SSM under this study. It was first introduced in its full generality by Dempster, Laird, and Rubin in their famous paper[^Dempster] and since has been widely used for its numerical stability and strong empirical performance.
+At this point, you must be thinking (I hope): All these examples are wonderful, but what is really EM? Let's dive into it. 
 
-$Y$ are observed variables, $X$ are hidden variables, and we denote the unknown parameter $\text{E}$ as $\theta \in \Theta$. The objective of parameter estimation in SSM is to find $\theta$ such that 
+EM algorithm is an iterative optimization method that finds the maximum likelihood estimate (MLE) of parameters in problems where hidden/missing/latent variables are present. It was first introduced in its full generality by Dempster, Laird, and Rubin in their famous paper[^Dempster] (currently 62k citations). Since then, it has been widely used for its easy implementation, numerical stability, and strong empirical performance.
+
+Let's set up the EM for a general problem and introduce some notations. Suppose that $Y$ are our observed variables, $X$ are hidden variables, and we say that $(X, Y)$ is the complete data. We also denote any unknown parameter of interest as $\theta \in \Theta$. The objective of most parameter estimation problems is to find the most probable $\theta$ given our model and data, i.e.,
 
 $$
 \begin{equation}
@@ -72,29 +78,42 @@ $$
 \end{equation}
 $$
 
-and $p_\theta(\mathbf{y}) = \int p_\theta(\mathbf{x}, \mathbf{y}) d\mathbf{x}$, where $p_\theta(\mathbf{x}, \mathbf{y})$ is known as the complete-data likelihood. The EM algorithm iterates between an expectation step (E-step) and a maximization step (M-step). Assuming $\theta^{(n)}$ is available from the $n$th iteration, the algorithm proceeds as follows:
+where  $p_\theta(\mathbf{y})$ is the incomplete-data likelihood. Using the law of total probability, we can also express the incomplete-data likelihood as
 
-- E-step: define 
-  $Q(\theta | \theta^{(n)})$ as the conditional expectation of the complete-data log-likelihood
+
+$$
+p_\theta(\mathbf{y}) = \int p_\theta(\mathbf{x}, \mathbf{y}) d\mathbf{x} \,,
+$$
+
+
+where $p_\theta(\mathbf{x}, \mathbf{y})$ is known as the complete-data likelihood. 
+
+What's with all these complete- and incomplete-data likelihoods? In many problems, the maximization of the incomplete-data likelihood $p_\theta(\mathbf{y})$ is difficult because of the missing information. On the other hand, it’s often easier to work with complete-data likelihood. EM algorithm is designed to take advantage of this obsercarion. It iterates between an expectation step (E-step) and a maximization step (M-step) to find the MLEs. Assuming $\theta^{(n)}$ is the estimate obtained at the $n$th iteration, the algorithm proceeds as follows:
+
+- **E-step**: define 
+  $Q(\theta | \theta^{(n)})$ as the conditional expectation of the complete-data log-likelihood w.r.t. the hidden variables, given observed data and current parameter estimate, i.e.,
   $$
   \begin{align}
-  Q(\theta | \theta^{(n)}) = \mathbb{E}_{\mathbf{X}|\mathbf{y}, \theta^{(n)}}[\ln p_\theta(\mathbf{x}, \mathbf{y})] \,.
+  Q(\theta | \theta^{(n)}) = \mathbb{E}_{X|\mathbf{y}, \theta^{(n)}}\left[\ln p_\theta(\mathbf{x}, \mathbf{y})\right] \,.
   \end{align}
   $$
 
-- M-step: find $\theta$ that maximizes the above expectation
-  
+- **M-step**: find a new $\theta$ that maximizes the above expectation and set it to $\theta^{(n+1)}$, i.e.,
   $$
-  \begin{equation}
+  \begin{align}
   \theta^{(n+1)} = \arg\max_{\theta \in \Theta} Q(\theta | \theta^{(n)}) \,.
-  \end{equation}
+  \end{align}
   $$
   
-  
 
-The algorithm iterates between the two steps until the estimation has reached a stopping criterion, i.e., until convergence. 
+The above definitions might seem hard-to-grasp at first. Some intuitive explanation might help:
 
-#### Where is EM in the big picture?
+- **E-step**: This step is asking, given our observed data $\mathbf{y}$ and current parameter estimate $\theta^{(n)}$, what are the probabilities of different $X$? Also, under these probable $X$, what are the corresponding log-likelihoods? 
+- **M-step**: Here we ask, under these probable $X$, what is the value of $\theta$ that gives us the maximum expected log-likelihood?
+
+The algorithm iterates between the two steps until a stopping criterion is reached, e.g., when either the Q function or the parameter estimate converged. 
+
+## Where is EM in the big picture?
 
 Connections of EM to other techniques
 
