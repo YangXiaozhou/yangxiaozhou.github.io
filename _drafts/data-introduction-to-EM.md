@@ -1,26 +1,19 @@
 ---
 layout: post
 title:  "Expectation-maximization algorithm, explained"
-date:   2020-10-01 08:00:00 +0800
+date:   2020-10-09 08:00:00 +0800
 categories: DATA
 tags: expectation-maximization statistical-learning clustering inference
 ---
 
-the Expectation-maximization algorithm (EM, for short)
+**Write about the problem that the readers care**. **Create instability and offer solution**
 
-**Write about the problem that the readers care**
+Yes! Let's talk about the expectation-maximization algorithm (EM, for short). If you are in the data science/machine learning "bubble", you've probably came across EM at some point in time and wondered: What is EM and do I need to know it? Well, let's see. It's the algorithm that solves Gaussian mixture model (GMM), a popular clustering approach. The Baum-Welch algorithm that solves hidden Markov model problems is a special case of EM. It's taught at almost all computational statistics classes. It's a classic, powerful, and versatile statistical learning technique that also extends itself in many ways: Monte Carlo EM, Stochastic EM, and Online EM, to name a few.
 
-**Create instability and offer solution**
+This is my take on introducing EM for what it is, how it works, and how it might be improved. We start with two motivating examples (unsupervised learning and evolution). Then we see exactly what EM is in its general form. We go back to action and use EM to solve the two examples. For those curious souls, we then explain both intuitively and mathematically why EM works like a charm. 
 
-If you are in the data science/ML "bubble", you probably have came across EM at some time and wondered: What is EM and why do I need to know it? 
+Most EM tutorials stop here, but we're going to turn it up a notch. 
 
-My take on EM, what it is, how it works, how it's related to other techniques, and how it might be improved. 
-
-1. Motivating examples
-2. What is EM?
-3. EM in action: Does it really work?
-4. Intuition and theory: Why does it work?
-5. So...is it perfect?
 6. Uncertainty: Going beyond point estimate😱
 
 ## Motivating examples: Why do we care?

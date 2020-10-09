@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-10-08T09:11:43+08:00</updated>
+ <updated>2020-10-09T09:20:50+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -14,25 +14,18 @@
  
  <entry>
    <title>Expectation-maximization algorithm, explained</title>
-   <link href="http://localhost:4000/data/2020/10/01/data-introduction-to-EM.html"/>
-   <updated>2020-10-01T08:00:00+08:00</updated>
-   <id>http://localhost:4000/data/2020/10/01/data-introduction-to-EM</id>
-   <content type="html">&lt;p&gt;the Expectation-maximization algorithm (EM, for short)&lt;/p&gt;
+   <link href="http://localhost:4000/data/2020/10/09/data-introduction-to-EM.html"/>
+   <updated>2020-10-09T08:00:00+08:00</updated>
+   <id>http://localhost:4000/data/2020/10/09/data-introduction-to-EM</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;Write about the problem that the readers care&lt;/strong&gt;. &lt;strong&gt;Create instability and offer solution&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Write about the problem that the readers care&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Yes! Let’s talk about the expectation-maximization algorithm (EM, for short). If you are in the data science/machine learning “bubble”, you’ve probably came across EM at some point in time and wondered: What is EM and do I need to know it? Well, let’s see. It’s the algorithm that solves Gaussian mixture model (GMM), a popular clustering approach. The Baum-Welch algorithm that solves hidden Markov model problems is a special case of EM. It’s taught at almost all computational statistics classes. It’s a classic, powerful, and versatile statistical learning technique that also extends itself in many ways: Monte Carlo EM, Stochastic EM, and Online EM, to name a few.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Create instability and offer solution&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is my take on introducing EM for what it is, how it works, and how it might be improved. We start with two motivating examples (unsupervised learning and evolution). Then we see exactly what EM is in its general form. We go back to action and use EM to solve the two examples. For those curious souls, we then explain both intuitively and mathematically why EM works like a charm.&lt;/p&gt;
 
-&lt;p&gt;If you are in the data science/ML “bubble”, you probably have came across EM at some time and wondered: What is EM and why do I need to know it?&lt;/p&gt;
-
-&lt;p&gt;My take on EM, what it is, how it works, how it’s related to other techniques, and how it might be improved.&lt;/p&gt;
+&lt;p&gt;Most EM tutorials stop here, but we’re going to turn it up a notch.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Motivating examples&lt;/li&gt;
-  &lt;li&gt;What is EM?&lt;/li&gt;
-  &lt;li&gt;EM in action: Does it really work?&lt;/li&gt;
-  &lt;li&gt;Intuition and theory: Why does it work?&lt;/li&gt;
-  &lt;li&gt;So…is it perfect?&lt;/li&gt;
   &lt;li&gt;Uncertainty: Going beyond point estimate😱&lt;/li&gt;
 &lt;/ol&gt;
 
