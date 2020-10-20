@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="https://yangxiaozhou.github.io/atom.xml" rel="self"/>
  <link href="https://yangxiaozhou.github.io/"/>
- <updated>2020-10-20T14:42:27+08:00</updated>
+ <updated>2020-10-20T15:20:15+08:00</updated>
  <id>https://yangxiaozhou.github.io</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -21,9 +21,9 @@
 
 &lt;p&gt;Yes! Let’s talk about the expectation-maximization algorithm (EM, for short). If you are in the data science/machine learning “bubble”, you’ve probably come across EM at some point in time and wondered: What is EM, and do I need to know it?&lt;/p&gt;
 
-&lt;p&gt;Well, let’s see. It’s the algorithm that solves Gaussian mixture model, a popular clustering approach. The Baum-Welch algorithm that solves hidden Markov model problems is a special case of EM. It’s taught in almost all computational statistics classes. All in all, it’s a classic, powerful, and versatile statistical learning technique that also extends itself in many ways: Monte Carlo EM, Stochastic EM, and Online EM, to name a few. This article is my take on introducing EM for what it is, how it works, and how it might be improved.&lt;/p&gt;
+&lt;p&gt;Well, let’s see. It’s the algorithm that solves Gaussian mixture model, a popular clustering approach. The Baum-Welch algorithm that solves hidden Markov model problems is a special case of EM. It’s taught in almost all computational statistics classes. It’s a classic, powerful, and versatile statistical learning technique that also extends itself in many ways: Monte Carlo EM, Stochastic EM, and Online EM, to name a few. This article is my take on introducing EM for what it is, how it works, and why it works.&lt;/p&gt;
 
-&lt;p&gt;We start with two motivating examples (unsupervised learning and evolution). Then we see what exactly EM is in its general form. We get back in action and use EM to solve the two examples. For those curious souls, we then explain both intuitively and mathematically why EM works like a charm. Most EM tutorials would stop here, but we’re going to turn it up a notch. We will see some limitations of EM and ways to deal with them. Lastly, we want to go beyond point estimates and quantify the uncertainty with estimates produced by EM.&lt;/p&gt;
+&lt;p&gt;We start with two motivating examples (unsupervised learning and evolution). Then we see what exactly EM is in its general form. We get back in action and use EM to solve the two examples. For those curious souls, we then explain both intuitively and mathematically why EM works like a charm. Lastly, a summary of this article and some further topics are presented.&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#motivating-examples-why-do-we-care&quot; id=&quot;markdown-toc-motivating-examples-why-do-we-care&quot;&gt;Motivating examples: Why do we care?&lt;/a&gt;&lt;/li&gt;
@@ -41,18 +41,18 @@
 
 &lt;h3 id=&quot;unsupervised-learning-solving-gaussian-mixture-model-for-clustering&quot;&gt;Unsupervised learning: Solving Gaussian mixture model for clustering&lt;/h3&gt;
 
-&lt;p&gt;Suppose you have a data set with n number of data points. It could be a group of customers visiting your website (customer profiling) or an image with different objects (image segmentation). Clustering is the task of finding out k number of natural groups for your data when you don’t know (or don’t specify) the real grouping. This is an unsupervised learning problem because no ground-truth labels are used.&lt;/p&gt;
+&lt;p&gt;Suppose you have a data set with $n$ number of data points. It could be a group of customers visiting your website (customer profiling) or an image with different objects (image segmentation). Clustering is the task of finding out $k$ natural groups for your data when you don’t know (or don’t specify) the real grouping. This is an unsupervised learning problem because no ground-truth labels are used.&lt;/p&gt;
 
 &lt;p&gt;Such clustering problem can be tackled by several types of algorithms, e.g., combinatorial type such as k-means or hierarchical type such as Ward’s hierarchical clustering. However, if you believe that your data could be better modeled as a mixture of normal distributions, you would go for Gaussian mixture model (GMM).&lt;/p&gt;
 
-&lt;p&gt;The underlying idea of GMM is this; you assume that behind your data, there’s a data generating mechanism. This mechanism first chooses one of the k normal distributions (with a certain probability) and then delivers a sample from that distribution. Therefore, once you have estimated each normal distribution’s parameters, you could easily cluster each data point by selecting the one that gives the highest likelihood.&lt;/p&gt;
+&lt;p&gt;The underlying idea of GMM is that you assume there’s a data generating mechanism behind your data. This mechanism first chooses one of the $k$ normal distributions (with a certain probability) and then delivers a sample from that distribution. Therefore, once you have estimated each distribution’s parameters, you could easily cluster each data point by selecting the one that gives the highest likelihood.&lt;/p&gt;
 
 &lt;p&gt;
   &lt;img width=&quot;1024&quot; alt=&quot;ClusterAnalysis Mouse&quot; src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/ClusterAnalysis_Mouse.svg/1024px-ClusterAnalysis_Mouse.svg.png&quot; /&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;FIGURE 1.&lt;/strong&gt;&lt;i&gt; An &lt;a href=&quot;https://commons.wikimedia.org/wiki/File:ClusterAnalysis_Mouse.svg&quot;&gt;example&lt;/a&gt; of mixture of Gaussian data and clustering using k-means and GMM (solved by EM).&lt;/i&gt;&lt;/p&gt;
 
-&lt;p&gt;However, estimating the parameters is not a simple task since we do not know which distribution generated which points (&lt;strong&gt;missing information&lt;/strong&gt;). EM is an algorithm that can help us solve exactly this problem. This is why EM is the underlying algorithm for solving GMMs in scikit-learn’s &lt;a href=&quot;https://scikit-learn.org/stable/modules/mixture.html#gaussian-mixture&quot;&gt;implementation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;However, estimating the parameters is not a simple task since we do not know which distribution generated which points (&lt;strong&gt;missing information&lt;/strong&gt;). EM is an algorithm that can help us solve exactly this problem. This is why EM is the underlying solver in scikit-learn’s GMM &lt;a href=&quot;https://scikit-learn.org/stable/modules/mixture.html#gaussian-mixture&quot;&gt;implementation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;population-genetics-estimating-moth-allele-frequencies-to-observe-natural-selection&quot;&gt;Population genetics: Estimating moth allele frequencies to observe natural selection&lt;/h3&gt;
 
@@ -67,10 +67,8 @@
 
 &lt;p&gt;Here’s a hand-drawn graph that shows the &lt;strong&gt;observed&lt;/strong&gt; and &lt;strong&gt;missing&lt;/strong&gt; information.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;/assets/intro-to-EM/moth_relationship.jpg&quot; alt=&quot;moth_relationship&quot; style=&quot;zoom: 100%;&quot; /&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;FIGURE 3.&lt;/strong&gt;&lt;i&gt; Relationship between peppered moth alleles, genotypes, and phenotypes. We observed phenotypes, but wish to estimate percentages of alleles in the population. Image by author&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/intro-to-EM/moth_relationship.jpg&quot; alt=&quot;moth_relationship&quot; /&gt;
+&lt;strong&gt;FIGURE 3.&lt;/strong&gt;&lt;i&gt; Relationship between peppered moth alleles, genotypes, and phenotypes. We observed phenotypes, but wish to estimate percentages of alleles in the population. Image by author&lt;/i&gt;&lt;/p&gt;
 
 &lt;p&gt;We wish to know the percentages of C, I, and T in the population. However, we can only observe the number of &lt;em&gt;Carbonaria&lt;/em&gt;, &lt;em&gt;Typica&lt;/em&gt;, and &lt;em&gt;Insularia&lt;/em&gt; moths by capturing them, but not the genotypes (&lt;strong&gt;missing information&lt;/strong&gt;). The fact that we do not observe the genotypes and multiple genotypes produce the same subspecies make the calculation of the allele frequencies difficult. This is where EM comes in to play. With EM, we can easily estimate the allele frequencies and provide concrete evidence for the micro-evolution happening on a human time scale due to environmental pollution.&lt;/p&gt;
 
@@ -130,24 +128,22 @@ Q(\theta | \theta^{(n)}) = \mathbb{E}_{X|\mathbf{y}, \theta^{(n)}}\left[\ln p_\t
 &lt;p align=&quot;center&quot;&gt;
   &lt;img src=&quot;/assets/intro-to-EM/em_flowchart.png&quot; alt=&quot;em_flowchart&quot; style=&quot;zoom: 100%;&quot; /&gt;
 &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;FIGURE 4.&lt;/strong&gt; &lt;i&gt;The EM algorithm iterates between E-step and M-step to obtain MLEs and stop when the estimates have converged. Image by author&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;FIGURE 4.&lt;/strong&gt; &lt;i&gt;The EM algorithm iterates between E-step and M-step to obtain MLEs and stops when the estimates have converged. Image by author&lt;/i&gt;&lt;/p&gt;
 
 &lt;p&gt;That’s it! With two equations and a bunch of iterations, you have just unlocked one of the most elegant statistical inference techniques!&lt;/p&gt;
 
 &lt;h2 id=&quot;em-in-action-does-it-really-work&quot;&gt;EM in action: Does it really work?&lt;/h2&gt;
 
-&lt;p&gt;What we’ve seen above is the general framework of EM, not the actual implementation of it. We’ve known the essence of EM, i.e., how it works, but do not yet know how to implement it or why it works. In this section, we will see step-by-step just how EM is implemented to solve the two previously mentioned examples. After verifying that EM does work for these problems, we then see intuitively and mathematically why it works in the next section.&lt;/p&gt;
+&lt;p&gt;What we’ve seen above is the general framework of EM, not the actual implementation of it. In this section, we will see step-by-step just how EM is implemented to solve the two previously mentioned examples. After verifying that EM does work for these problems, we then see intuitively and mathematically why it works in the next section.&lt;/p&gt;
 
 &lt;h3 id=&quot;solving-gmm-for-clustering&quot;&gt;Solving GMM for clustering&lt;/h3&gt;
 
 &lt;p&gt;Suppose we have some data and would like to model the density of them.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;/assets/intro-to-EM/mixture_example.png&quot; alt=&quot;mixture_example&quot; style=&quot;zoom: 100%;&quot; /&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;FIGURE 5.&lt;/strong&gt; &lt;i&gt;400 points generated as a mixture of four different normal distributions. Image by author&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/intro-to-EM/mixture_example.png&quot; alt=&quot;mixture_example&quot; /&gt;
+&lt;strong&gt;FIGURE 5.&lt;/strong&gt; &lt;i&gt;400 points generated as a mixture of four different normal distributions. Image by author&lt;/i&gt;&lt;/p&gt;
 
-&lt;p&gt;Are you able to see the different underlying distributions? Apparently, these data come from more than one distributions. Thus a single normal distribution would not be appropriate, and we use a mixture approach. In general, GMM-based clustering is the task of clustering $y_1, \dots, y_n$ data points into $k$ groups. We let&lt;/p&gt;
+&lt;p&gt;Are you able to see the different underlying distributions? Apparently, these data come from more than one distribution. Thus a single normal distribution would not be appropriate, and we use a mixture approach. In general, GMM-based clustering is the task of clustering $y_1, \dots, y_n$ data points into $k$ groups. We let&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;x_{ik}=\left\{\begin{array}{l}
 1 \quad \text{if $y_i$ is in group $k$}\\
@@ -162,7 +158,7 @@ Q(\theta | \theta^{(n)}) = \mathbb{E}_{X|\mathbf{y}, \theta^{(n)}}\left[\ln p_\t
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align} p(y_i) = \sum_{j=1}^k w_j \phi(y_i; \mu_j, \Sigma_j) \,, \end{align}&lt;/script&gt;
 
-&lt;p&gt;where $\phi(\cdot; \mu, \Sigma)$ is the PDF of a normal distribution with mean $\mu$ and variance-covariance $\Sigma$. The total log-likelihood of n points is&lt;/p&gt;
+&lt;p&gt;where $\phi(\cdot; \mu, \Sigma)$ is the PDF of a normal distribution with mean $\mu$ and variance-covariance $\Sigma$. The total log-likelihood of $n$ points is&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
 \ln p(\mathbf{y}) = \sum_{i=1}^{n} \ln \sum_{j=1}^k w_j \phi(y_i; \mu_j, \Sigma_j) \,.
@@ -172,11 +168,11 @@ Q(\theta | \theta^{(n)}) = \mathbb{E}_{X|\mathbf{y}, \theta^{(n)}}\left[\ln p_\t
 
 &lt;h4 id=&quot;expectation-step&quot;&gt;Expectation step&lt;/h4&gt;
 
-&lt;p&gt;Let’s use the EM approach instead! Remember that we first need to define the Q function in the E-step, which is a conditional expectation of the complete data log-likelihood. Since $(\mathbf{x}, \mathbf{y})$ is the complete data, the corresponding complete data likelihood of one data point is&lt;/p&gt;
+&lt;p&gt;Let’s use the EM approach instead! Remember that we first need to define the Q function in the E-step, which is the conditional expectation of the complete-data log-likelihood. Since $(\mathbf{x}, \mathbf{y})$ is the complete data, the corresponding likelihood of one data point is&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;p(x_i, y_i) = \Pi_{j=1}^k \{w_j \phi(y_i; \mu_j, \Sigma_j)\}^{x_{ij}} \,,&lt;/script&gt;
 
-&lt;p&gt;and only the term with $x_{ij} = 1$ is active. Hence, our total complete data log-likelihood is&lt;/p&gt;
+&lt;p&gt;and only the term with $x_{ij} = 1$ is active. Hence, our total complete-data log-likelihood is&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\ln p(\mathbf{x}, \mathbf{y}) = \sum_{i=1}^{n}\sum_{j=1}^k x_{ij}\ln \{w_j \phi(y_i; \mu_j, \Sigma_j)\} \,.&lt;/script&gt;
 
@@ -239,10 +235,8 @@ w_j^{(n+1)} &amp;= \frac{1}{n} \sum_{i=1}^{n} z_{ij}^{(n)} &amp;&amp; \text{New 
 
 &lt;p&gt;In the end, we found the mixing probabilities and all four group’s means and covariance matrices. FIGURE 6 below shows the density contours of each distribution found by EM superimposed on the data, which are now color-coded by their ground-truth groupings. Both the locations (means) and the scales (covariances) of the four underlying normal distributions are correctly identified. Unlike k-means, EM gives us both the clustering of the data and the generative model (GMM) behind them.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;/assets/intro-to-EM/mixture_example_result.png&quot; alt=&quot;mixture_example_result&quot; style=&quot;zoom: 100%;&quot; /&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;FIGURE 6.&lt;/strong&gt; &lt;i&gt; Density contours superimposed on samples from four different normal distributions. Image by author&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/intro-to-EM/mixture_example_result.png&quot; alt=&quot;mixture_example_result&quot; /&gt;
+&lt;strong&gt;FIGURE 6.&lt;/strong&gt; &lt;i&gt; Density contours superimposed on samples from four different normal distributions. Image by author&lt;/i&gt;&lt;/p&gt;
 
 &lt;details&gt;
   &lt;summary&gt;Click here for the GMM-EM implementation, credit to &lt;a href=&quot;http://people.duke.edu/~ccc14/sta-663-2016/14_ExpectationMaximization.html#&quot;&gt;Cliburn Chan&lt;/a&gt;:&lt;/summary&gt;
@@ -481,10 +475,8 @@ n_{\mathrm{IT}}^{(n)} &amp;= n_{\mathrm{Ins}}\frac{2  p_{\mathrm{I}}^{(n)} p_{\m
 
 &lt;p&gt;Let’s try solving the peppered moth problem using the above derived EM procedure. Suppose we captured 622 peppered moths. 85 of them are &lt;em&gt;Carbonaria&lt;/em&gt;, 196 of them are &lt;em&gt;Insularia&lt;/em&gt;, and 341 of them are &lt;em&gt;Typica&lt;/em&gt;. We run the EM iterations for 10 steps, FIGURE 7 shows that we obtain converged results in less than five steps.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;/assets/intro-to-EM/peppered_moth_em.png&quot; alt=&quot;peppered_moth_em&quot; style=&quot;zoom: 75%;&quot; /&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;FIGURE 7.&lt;/strong&gt; &lt;i&gt; EM algorithm converges in less than five steps and finds the allele frequencies.  Image by author&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/intro-to-EM/peppered_moth_em.png&quot; alt=&quot;peppered_moth_em&quot; /&gt;
+&lt;strong&gt;FIGURE 7.&lt;/strong&gt; &lt;i&gt; EM algorithm converges in less than five steps and finds the allele frequencies.  Image by author&lt;/i&gt;&lt;/p&gt;
 
 &lt;details&gt;
 &lt;summary&gt;Click here for the script to run the above experiment:&lt;/summary&gt;
@@ -560,16 +552,14 @@ n_{\mathrm{IT}}^{(n)} &amp;= n_{\mathrm{Ins}}\frac{2  p_{\mathrm{I}}^{(n)} p_{\m
 
 &lt;h4 id=&quot;intuitive-explanation&quot;&gt;Intuitive explanation&lt;/h4&gt;
 
-&lt;p&gt;We start by gaining an intuitive understanding of why EM works. EM solves the parameter estimation problem by transferring the task of maximizing incomplete data likelihood to maximizing complete data likelihood in some small steps.&lt;/p&gt;
+&lt;p&gt;We start by gaining an intuitive understanding of why EM works. EM solves the parameter estimation problem by transferring the task of maximizing incomplete-data likelihood to maximizing complete-data likelihood in some small steps.&lt;/p&gt;
 
 &lt;p&gt;Imagine you are hiking up Mt. Fuji 🗻 for the first time. There are nine stations to reach before the summit, but you do not know the route. Luckily, there are hikers coming down from the top, and they can give you a rough direction to the next station. Therefore, here’s what you can do to reach the top: start at the base station and ask people for the direction to the second station; go to the second station and ask the people there for the path to the third station, and so on. At the end of the day (or start of the day, if you are catching sunrise 🌄), there’s a high chance you’ll reach the summit.&lt;/p&gt;
 
 &lt;p&gt;That’s very much what EM does to find the MLEs for problems where we have missing data. Instead of maximizing $\ln p(\mathbf{x})$ (find the route to summit), EM maximizes the Q function and finds the next $\theta$ that also increases $\ln p(\mathbf{x})$ (ask direction to the next station). FIGURE 8 below illustrates this process in two iterations. Note that the G function is just a combination of Q function and a few other terms constant w.r.t. $\theta$. Maximizing G function w.r.t. $\theta$ is equivalent to maximizing Q function.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;/assets/intro-to-EM/optimization_transfer.png&quot; alt=&quot;optimization_transfer&quot; style=&quot;zoom: 100%;&quot; /&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;FIGURE 8.&lt;/strong&gt; &lt;i&gt; The iterative process of EM illustrated in two steps. As we build and maximize a G function (equivalently, Q function) from the current parameter estimate, we obtain the next parameter estimate. In the process, the incomplete data log-likelihood is also increased.  Image by author&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/intro-to-EM/optimization_transfer.png&quot; alt=&quot;optimization_transfer&quot; /&gt;
+&lt;strong&gt;FIGURE 8.&lt;/strong&gt; &lt;i&gt; The iterative process of EM illustrated in two steps. As we build and maximize a G function (equivalently, Q function) from the current parameter estimate, we obtain the next parameter estimate. In the process, the incomplete-data log-likelihood is also increased.  Image by author&lt;/i&gt;&lt;/p&gt;
 
 &lt;details&gt;
     &lt;summary&gt;&lt;b&gt;Mathematical proof:&lt;/b&gt;&lt;/summary&gt;
