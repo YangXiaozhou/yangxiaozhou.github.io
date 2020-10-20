@@ -245,7 +245,7 @@ We go back to the opening problem of this section. I simulated 400 points using 
 
 In the end, we found the mixing probabilities and all four group's means and covariance matrices. FIGURE 6 below shows the density contours of each distribution found by EM superimposed on the data, which are now color-coded by their ground-truth groupings. Both the locations (means) and the scales (covariances) of the four underlying normal distributions are correctly identified. Unlike k-means, EM gives us both the clustering of the data and the generative model (GMM) behind them. 
 
-![mixture_example_result]({{'/'|relative_url}}assets/intro-to-EM/mixture_example_result.png)
+![mixture_example_result]({{ '/' | relative_url }}assets/intro-to-EM/mixture_example_result.png)
 **FIGURE 6.** <i> Density contours superimposed on samples from four different normal distributions. Image by author</i>
 
 <details>
