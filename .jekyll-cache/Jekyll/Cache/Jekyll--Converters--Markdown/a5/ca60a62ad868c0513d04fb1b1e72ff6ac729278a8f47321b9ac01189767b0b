@@ -1,0 +1,567 @@
+I"��<p><em>A comprehensive guide to the classic and elegant EM algorithm: intuitions, maths, worked examples and Python implementation to illustrate what it does, how it works, and why it works.</em></p>
+
+<p>Yes! Let’s talk about the expectation-maximization algorithm (EM, for short). If you are in the data science/machine learning “bubble”, you’ve probably came across EM at some point in time and wondered: What is EM and do I need to know it?</p>
+
+<p>Well, let’s see. It’s the algorithm that solves Gaussian mixture model, a popular clustering approach. The Baum-Welch algorithm that solves hidden Markov model problems is a special case of EM. It’s taught at almost all computational statistics classes. All in all, it’s a classic, powerful, and versatile statistical learning technique that also extends itself in many ways: Monte Carlo EM, Stochastic EM, and Online EM, to name a few. This article is my take on introducing EM for what it is, how it works, and how it might be improved.</p>
+
+<p>We start with two motivating examples (unsupervised learning and evolution). Then we see exactly what EM is in its general form. We get back in action and use EM to solve the two examples. For those curious souls, we then explain both intuitively and mathematically why EM works like a charm. Most EM tutorials would stop here, but we’re going to turn it up a notch. We will see some limitations of EM and ways to deal with them. Lastly, we want to go beyond point estimates and quantify the uncertainty with estimates produced by EM.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#motivating-examples-why-do-we-care" id="markdown-toc-motivating-examples-why-do-we-care">Motivating examples: Why do we care?</a></li>
+  <li><a href="#general-framework-what-is-em" id="markdown-toc-general-framework-what-is-em">General framework: What is EM?</a></li>
+  <li><a href="#em-in-action-does-it-really-work" id="markdown-toc-em-in-action-does-it-really-work">EM in action: Does it really work?</a></li>
+  <li><a href="#explained-why-does-it-work" id="markdown-toc-explained-why-does-it-work">Explained: Why does it work?</a></li>
+  <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
+  <li><a href="#further-topics" id="markdown-toc-further-topics">Further topics</a></li>
+</ul>
+<hr />
+
+<h2 id="motivating-examples-why-do-we-care">Motivating examples: Why do we care?</h2>
+
+<p>Maybe you already know why you want to use EM, or maybe you don’t. Either way, let me use two motivating examples to set the stage for EM. These are quite lengthy, I know, but they perfectly highlight the common feature of the problems that EM is best at solving: the presence of <strong>missing information</strong>.</p>
+
+<h3 id="unsupervised-learning-solving-gaussian-mixture-model-for-clustering">Unsupervised learning: Solving Gaussian mixture model for clustering</h3>
+
+<p>Suppose you have a data set with n number of data points. It could be a group of customers visiting your website (customer profiling) or an image with different objects in it (image segmentation). Clustering is the task of finding out k number of natural groups for your data when you don’t know (or don’t specify) the real grouping. This is an unsupervised learning problem because no ground-truth labels are used.</p>
+
+<p>Such clustering problem can be tackled by several types of algorithms, e.g., combinatorial type such as k-means or hierarchical type such as Ward’s hierarchical clustering. However, if you believe that your data could be better modeled as a mixture of normal distributions, then you would go for Gaussian mixture model (GMM).</p>
+
+<p>The underlying idea of GMM is this, you assume that behind your data, there’s a data generating mechanism. This mechanism first choses one of the k normal distributions (with a certain probability) and then delivers a sample from that distribution. Therefore, once you have estimated the parameters of each normal distribution, you could easily cluster each data point by selecting the one that gives the highest likelihood.</p>
+
+<p>
+  <img width="1024" alt="ClusterAnalysis Mouse" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/ClusterAnalysis_Mouse.svg/1024px-ClusterAnalysis_Mouse.svg.png" />
+</p>
+<p><strong>FIGURE 1.</strong><i> An <a href="https://commons.wikimedia.org/wiki/File:ClusterAnalysis_Mouse.svg">example</a> of mixture of Gaussian data and clustering using k-means and GMM (solved by EM).</i></p>
+
+<p>However, estimating the parameters is not a simple task since we do not know which distribution generated which points (<strong>missing information</strong>). EM is an algorithm that can help us solve exactly this problem. This is why EM is the underlying algorithm for solving GMMs in scikit-learn’s <a href="https://scikit-learn.org/stable/modules/mixture.html#gaussian-mixture">implementation</a>.</p>
+
+<h3 id="population-genetics-estimating-moth-allele-frequencies-to-observe-natural-selection">Population genetics: Estimating moth allele frequencies to observe natural selection</h3>
+
+<p>Have you heard the phrase “industrial melanism” before? It’s a term coined by biologists in the 19th century to describe the phenomenon that animals change their skin color due to the heavy industrialization in the cities. In particular, they observed that previously rare dark peppered moth started to dominate the population in industrialized coal-fueled cities. Scientists at the time were surprised and fascinated by this observation. Subsequent research suggests that the industrialized cities tend to have darker tree barks which disguise darker moths better than the light ones. You can play this peppered moth <a href="https://askabiologist.asu.edu/peppered-moths-game/play.html">game</a> to understand the phenomenon better.</p>
+
+<p align="center">
+  <img src="/assets/intro-to-EM/dark_light_moth.png" alt="pepper_moths" style="zoom: 75%;" />
+</p>
+<p><strong>FIGURE 2.</strong> <i>Dark (top) and light (bottom) peppered moth. Image by Jerzy Strzelecki via Wikimedia Commons</i></p>
+
+<p>As a result, dark moths survive the predation better and pass on their genes, giving rise to a predominantly dark peppered moth population.  To prove their natural selection theory, scientists first need to estimate the percentage of black-producing and light-producing genes/alleles present in the moth population. The gene responsible for the moth’s color has three types of alleles: C, I and T. Genotypes <strong>C</strong>C, <strong>C</strong>I, and <strong>C</strong>T produce dark peppered moth (<em>Carbonaria</em>); <strong>T</strong>T produces light peppered moth (<em>Typica</em>); <strong>I</strong>I and <strong>I</strong>T produce moths with intermediate color (<em>Insularia</em>).</p>
+
+<p>Here’s a hand-drawn graph that shows the <strong>observed</strong> and <strong>missing</strong> information.</p>
+
+<p align="center">
+  <img src="/assets/intro-to-EM/moth_relationship.jpg" alt="moth_relationship" style="zoom: 100%;" />
+</p>
+<p><strong>FIGURE 3.</strong><i> Relationship between peppered moth alleles, genotypes, and phenotypes. We observed phenotypes, but wish to estimate percentages of alleles in the population. Image by author</i></p>
+
+<p>We wish to know the percentages of C, I, and T in the population. However, we can only observe the number of <em>Carbonaria</em>, <em>Typica</em>, and <em>Insularia</em> moths by capturing them, but not the genotypes (<strong>missing information</strong>). The fact that we do not observe the genotypes and multiple genotypes produce the same subspecies make the calculation of the allele frequencies difficult. This is where EM comes in to play. With EM, we can easily estimate the allele frequencies and provide concrete evidence for the micro-evolution that happens on a human time scale due to environmental  pollution.</p>
+
+<p>How does EM tackle the GMM problem and the peppered moth problem in the presence of missing information? We will illustrate these in the later section. But first, let’s see what EM is really about.</p>
+
+<h2 id="general-framework-what-is-em">General framework: What is EM?</h2>
+
+<p>At this point, you must be thinking (I hope): All these examples are wonderful, but what is really EM? Let’s dive into it.</p>
+
+<p>EM algorithm is an iterative optimization method that finds the maximum likelihood estimate (MLE) of parameters in problems where hidden/missing/latent variables are present. It was first introduced in its full generality by Dempster, Laird, and Rubin (1977) in their famous paper<sup id="fnref:Dempster"><a href="#fn:Dempster" class="footnote">1</a></sup> (currently 62k citations). Since then, it has been widely used for its easy implementation, numerical stability, and strong empirical performance.</p>
+
+<p>Let’s set up the EM for a general problem and introduce some notations. Suppose that $Y$ are our observed variables, $X$ are hidden variables, and we say that the pair $(X, Y)$ is the complete data. We also denote any unknown parameter of interest as $\theta \in \Theta$. The objective of most parameter estimation problems is to find the most probable $\theta$ given our model and data, i.e.,</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\theta = \arg\max_{\theta \in \Theta} p_\theta(\mathbf{y}) \,,
+\end{equation}</script>
+
+<p>where  $p_\theta(\mathbf{y})$ is the incomplete-data likelihood. Using the law of <a href="https://en.wikipedia.org/wiki/Law_of_total_probability">total probability</a>, we can also express the incomplete-data likelihood as</p>
+
+<script type="math/tex; mode=display">p_\theta(\mathbf{y}) = \int p_\theta(\mathbf{x}, \mathbf{y}) d\mathbf{x} \,,</script>
+
+<p>where $p_\theta(\mathbf{x}, \mathbf{y})$ is known as the complete-data likelihood.</p>
+
+<p>What’s with all these complete- and incomplete-data likelihoods? In many problems, the maximization of the incomplete-data likelihood $p_\theta(\mathbf{y})$ is difficult because of the missing information. On the other hand, it’s often easier to work with complete-data likelihood. EM algorithm is designed to take advantage of this observation. It iterates between an <strong>expectation step</strong> (E-step) and a <strong>maximization step</strong> (M-step) to find the MLE.</p>
+
+<p>Assuming $\theta^{(n)}$ is the estimate obtained at the $n$th iteration, the algorithm iterates between the two steps as follows:</p>
+
+<ul>
+  <li>
+    <p><strong>E-step</strong>: define 
+$Q(\theta | \theta^{(n)})$ as the conditional expectation of the complete-data log-likelihood w.r.t. the hidden variables, given observed data and current parameter estimate, i.e.,</p>
+
+    <script type="math/tex; mode=display">\begin{align}
+\label{eqn:e_step}
+Q(\theta | \theta^{(n)}) = \mathbb{E}_{X|\mathbf{y}, \theta^{(n)}}\left[\ln p_\theta(\mathbf{x}, \mathbf{y})\right] \,.
+\end{align}</script>
+  </li>
+  <li>
+    <p><strong>M-step</strong>: find a new $\theta$ that maximizes the above expectation and set it to $\theta^{(n+1)}$, i.e.,</p>
+  </li>
+</ul>
+
+<script type="math/tex; mode=display">\begin{align}
+  \label{eqn:m_step}
+  \theta^{(n+1)} = \arg\max_{\theta \in \Theta} Q(\theta | \theta^{(n)}) \,.
+  \end{align}</script>
+
+<p>The above definitions might seem hard-to-grasp at first. Some intuitive explanation might help:</p>
+
+<ul>
+  <li><strong>E-step</strong>: This step is asking, given our observed data $\mathbf{y}$ and current parameter estimate $\theta^{(n)}$, what are the probabilities of different $X$? Also, under these probable $X$, what are the corresponding log-likelihoods?</li>
+  <li><strong>M-step</strong>: Here we ask, under these probable $X$, what is the value of $\theta$ that gives us the maximum expected log-likelihood?</li>
+</ul>
+
+<p>The algorithm iterates between these two steps until a stopping criterion is reached, e.g., when either the Q function or the parameter estimate has converged. The entire process can be illustrated in the following flowchart.</p>
+
+<p align="center">
+  <img src="/assets/intro-to-EM/em_flowchart.png" alt="em_flowchart" style="zoom: 100%;" />
+</p>
+<p><strong>FIGURE 4.</strong> <i>The EM algorithm iterates between E-step and M-step to obtain MLEs and stop when the estimates have converged. Image by author</i></p>
+
+<p>That’s it! With two equations and a bunch of iterations, you have just unlocked one of the most elegant statistical inference techniques!</p>
+
+<h2 id="em-in-action-does-it-really-work">EM in action: Does it really work?</h2>
+
+<p>What we’ve seen above is the general framework of EM, not the actual implementation of it. We’ve known the essence of EM, i.e., how it works, but do not yet know how to implement it or why it works. In this section, we are going to see step-by-step just how EM is implemented to solve the two previously mentioned examples. After verifying that EM does work for these problems, we then see intuitively and mathematically why it works in the next section.</p>
+
+<h3 id="solving-gmm-for-clustering">Solving GMM for clustering</h3>
+
+<p>Suppose we have some data and would like to model the density of them.</p>
+
+<p align="center">
+  <img src="/assets/intro-to-EM/mixture_example.png" alt="mixture_example" style="zoom: 100%;" />
+</p>
+<p><strong>FIGURE 5.</strong> <i>400 points generated as a mixture of four different normal distributions. Image by author</i></p>
+
+<p>Are you able to see the different underlying distributions? Apparently these data come from more than one distributions, thus a single normal distribution would not be appropriate and we use a mixture approach. In general, GMM-based clustering is the task of clustering $y_1, \dots, y_n$ data points into $k$ groups. We let</p>
+
+<script type="math/tex; mode=display">x_{ik}=\left\{\begin{array}{l}
+1 \quad \text{if $y_i$ is in group $k$}\\
+0 \quad \text{otherwise}
+\end{array}\right.</script>
+
+<p>Thus, $x_i$ is the one-hot coding of data $y_i$, e.g., $x_i = [0, 0, 1]$ if $k = 3$ and $y_i$ is from group 3. In this case, the collection of data points $\mathbf{y}$ is the incomplete data, and $(\mathbf{x}, \mathbf{y})$ is the augmented complete data. We further assume that each group follows a normal distribution, i.e.,</p>
+
+<script type="math/tex; mode=display">y_i \mid x_{ik} = 1 \sim N(\mu_k, \Sigma_k) \,.</script>
+
+<p>Following the usual mixture Gaussian model set up, a new point is generated from the $k$th group with probability $P(x_{ik} = 1) = w_k$ and $\sum_{i=1}^{k} w_i = 1$. Suppose we are only working with the incomplete data $\mathbf{y}$. The likelihood of one data point under a GMM is</p>
+
+<script type="math/tex; mode=display">\begin{align} p(y_i) = \sum_{j=1}^k w_j \phi(y_i; \mu_j, \Sigma_j) \,, \end{align}</script>
+
+<p>where $\phi(\cdot; \mu, \Sigma)$ is the PDF of a normal distribution with mean $\mu$ and variance-covariance $\Sigma$. The total log-likelihood of n points is</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\ln p(\mathbf{y}) = \sum_{i=1}^{n} \ln \sum_{j=1}^k w_j \phi(y_i; \mu_j, \Sigma_j) \,.
+\end{align}</script>
+
+<p>In our problem, we are trying to estimate three groups of parameters: the group mixing probabilities ($\mathbf{w}$) and each distribution’s mean and covariance matrix ($\boldsymbol{\mu}, \boldsymbol{\Sigma}$). The usual approach to parameter estimation is by maximizing the above total log-likelihood function w.r.t. each parameter (MLE). However, this is difficult to do due to the summation inside the $\log$ term.</p>
+
+<h4 id="expectation-step">Expectation step</h4>
+
+<p>Let’s use the EM approach instead! Remember that we first need to define the Q function in the E-step, which is a conditional expectation of the complete data log-likelihood. Since $(\mathbf{x}, \mathbf{y})$ is the complete data, the corresponding complete data likelihood of one data point is</p>
+
+<script type="math/tex; mode=display">p(x_i, y_i) = \Pi_{j=1}^k \{w_j \phi(y_i; \mu_j, \Sigma_j)\}^{x_{ij}} \,,</script>
+
+<p>and only the term with $x_{ij} = 1$ is active. Hence, our total complete data log-likelihood is</p>
+
+<script type="math/tex; mode=display">\ln p(\mathbf{x}, \mathbf{y}) = \sum_{i=1}^{n}\sum_{j=1}^k x_{ij}\ln \{w_j \phi(y_i; \mu_j, \Sigma_j)\} \,.</script>
+
+<p>Denote $\theta$ as the collection of unknown parameters $(\mathbf{w}, \boldsymbol{\mu}, \boldsymbol{\Sigma})$, and $\theta^{(n)}$ as the estimates from the last iteration. Following the E-step formula in ($\ref{eqn:e_step}$), we obtain the Q function as</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\label{eqn:gmm_e_step}
+Q(\theta | \theta^{(n)}) = \sum_{i=1}^{n}\sum_{j=1}^k z_{ij}^{(n)} \ln \{w_j \phi(y_i; \mu_j, \Sigma_j)\}  
+\end{align}</script>
+
+<p>where</p>
+
+<script type="math/tex; mode=display">z_{ij}^{(n)} = \frac{\phi(y_i; \mu_j^{(n)}, \Sigma_j^{(n)}) w_j^{(n)}}{\sum_{l=1}^k \phi(y_i; \mu_l^{(n)}, \Sigma_l^{(n)}) w_l^{(n)}} \,.</script>
+
+<p>Here $z_{ij}^{(n)}$ is the probability that data $y_i$ is in class $j$ with the current parameter estimates $\theta^{(n)}$. This probability is also called responsibility in some texts. It means the responsibility of each class to this data point. It’s also a constant given the observed data and $\theta^{(n)}$.</p>
+
+<details>
+    <summary>Click here for the derivation of the Q function:</summary>
+$$
+  \begin{align*}
+Q(\theta | \theta^{(n)}) &amp;= \mathbb{E}_{X|\mathbf{y}, \theta^{(n)}}\left[\ln p_\theta(\mathbf{x}, \mathbf{y})\right] \\
+&amp;= \mathbb{E}_{X|\mathbf{y}, \theta^{(n)}}\left[\sum_{i=1}^{n}\sum_{j=1}^k x_{ij}\ln \{w_j \phi(y_i; \mu_j, \Sigma_j)\}\right] \\
+&amp;= \sum_{i=1}^{n}\sum_{j=1}^k \underbrace{\mathbb{E}_{X|\mathbf{y}, \theta^{(n)}}[x_{ij}]}_{\text{Expectation taken w.r.t. $X$}} \ln \{w_j \phi(y_i; \mu_j, \Sigma_j)\} \\
+&amp;= \sum_{i=1}^{n}\sum_{j=1}^k p_{\theta^{(n)}}[x_{ij} = 1 \mid \mathbf{y}] \ln \{w_j \phi(y_i; \mu_j, \Sigma_j)\} \\
+&amp;= \sum_{i=1}^{n}\sum_{j=1}^k
+\underbrace{
+\frac{p_{\theta^{(n)}}(y_{i} \mid x_{i} = j) p_{\theta^{(n)}}(x_i = j)}  {\sum_{l=1}^k{p_{\theta^{(n)}}(y_{i} \mid x_{i} = l) p_{\theta^{(n)}}(x_i = l)}}
+}_{\text{Baye's rule}}
+\ln \{w_j \phi(y_i; \mu_j, \Sigma_j)\}  \\
+&amp;= \sum_{i=1}^{n}\sum_{j=1}^k
+\underbrace{
+\frac{\phi(y_i; \mu_j^{(n)}, \Sigma_j^{(n)}) w_j^{(n)}}{\sum_{l=1}^k \phi(y_i; \mu_l^{(n)}, \Sigma_l^{(n)}) w_l^{(n)}}
+}_{\text{Substitue in current estimates}}
+\ln \{w_j \phi(y_i; \mu_j, \Sigma_j)\} \\
+&amp;= \sum_{i=1}^{n}\sum_{j=1}^k z_{ij}^{(n)} \ln \{w_j \phi(y_i; \mu_j, \Sigma_j)\}  
+\end{align*}
+$$
+</details>
+
+<h4 id="maximization-step">Maximization step</h4>
+
+<p>Recall that the EM algorithm proceeds by iterating between the E-step and the M-step. We have obtained the latest iteration’s Q function in the E-step above. Next, we move on to the M-step and find a new $\theta$ that maximizes the Q function in ($\ref{eqn:gmm_e_step}$), i.e., we find</p>
+
+<script type="math/tex; mode=display">\theta^{(n+1)} = \arg\max_{\theta \in \Theta} Q(\theta | \theta^{(n)}) \,.</script>
+
+<p>A closer look at the obtained Q function reveals that it’s actually a weighted normal distribution MLE problem. That means, the new $\theta$ has close-form formulas and can be verified easily using differentiation:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+w_j^{(n+1)} &= \frac{1}{n} \sum_{i=1}^{n} z_{ij}^{(n)} && \text{New mixing probabilities}\\
+\mu_j^{(n+1)} &= \frac{\sum_{i=1}^{n} z_{ij}^{(n)} y_{i}}{\sum_{i=1}^{n} z_{ij}^{(n)}} &&\text{New means}\\
+\Sigma_j^{(n+1)} &= \frac{\sum_{i=1}^{n} z_{ij}^{(n)} (y_{i} - \mu_j^{(n+1)})(y_i - \mu_j^{(n+1)})^T}{\sum_{i}^{n} z_{ij}^{(n)}} &&\text{New var-cov matrices}
+\end{align*} %]]></script>
+
+<p>for $j = 1, \dots, k$.</p>
+
+<h4 id="how-does-it-perform">How does it perform?</h4>
+
+<p>We go back to the opening problem of this section. I simulated 400 points using four different normal distributions. FIGURE 5 is what we see if we do not know the underlying true groupings. We run the EM procedure as derived above and set the algorithm to stop when the log-likelihood does not change anymore.</p>
+
+<p>In the end, we found the mixing probabilities as well as all four group’s means and covariance matrices. FIGURE 6 below shows the density contours of each distribution found by EM superimposed on the data which are now color-coded by their ground-truth groupings. It is clear that both the locations (means) and the scales (covariances) of the four underlying normal distributions are correctly identified. Unlike k-means, EM gives us both the clustering of the data and the generative model (GMM) behind them.</p>
+
+<p align="center">
+  <img src="/assets/intro-to-EM/mixture_example_result.png" alt="mixture_example_result" style="zoom: 100%;" />
+</p>
+<p><strong>FIGURE 6.</strong> <i> Density contours superimposed on samples from four different normal distributions. Image by author</i></p>
+
+<details>
+  <summary>Click here for the GMM-EM implementation, credit to <a href="http://people.duke.edu/~ccc14/sta-663-2016/14_ExpectationMaximization.html#">Cliburn Chan</a>:</summary>
+<div>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">em_gmm_vect</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">pis</span><span class="p">,</span> <span class="n">mus</span><span class="p">,</span> <span class="n">sigmas</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="s">"""
+    EM algorithm implementation for solving Gaussian mixture model inference problem.
+
+    Parameter:
+    xs: n-by-p, observed data
+    pis: 1-by-k, group mixing probabilities
+    mus: k-by-p, mean vector of k groups
+    sigmas: k-by-p-by-p, variance-covariance matrix of k groups
+    
+    Return:
+    ll_new: maximum log-likelihood found
+    pis, mus, sigmas: parameter results
+    """</span>
+    
+    <span class="n">n</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">xs</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pis</span><span class="p">)</span>
+    
+    <span class="n">ll_old</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
+        <span class="n">ll_new</span> <span class="o">=</span> <span class="mi">0</span>
+    
+        <span class="c1"># E-step
+</span>        <span class="n">ws</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+            <span class="n">ws</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">pis</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">mvn</span><span class="p">(</span><span class="n">mus</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">sigmas</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+        <span class="n">ws</span> <span class="o">/=</span> <span class="n">ws</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+        <span class="c1"># M-step
+</span>        <span class="n">pis</span> <span class="o">=</span> <span class="n">ws</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">pis</span> <span class="o">/=</span> <span class="n">n</span>
+        
+        <span class="n">pis_hist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pis</span><span class="p">)</span>
+    
+        <span class="n">mus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="n">xs</span><span class="p">)</span>
+        <span class="n">mus</span> <span class="o">/=</span> <span class="n">ws</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)[:,</span> <span class="bp">None</span><span class="p">]</span>
+    
+        <span class="n">sigmas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+            <span class="n">ys</span> <span class="o">=</span> <span class="n">xs</span> <span class="o">-</span> <span class="n">mus</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="p">:]</span>
+            <span class="n">sigmas</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">ws</span><span class="p">[</span><span class="n">j</span><span class="p">,:,</span><span class="bp">None</span><span class="p">,</span><span class="bp">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">mm</span><span class="p">(</span><span class="n">ys</span><span class="p">[:,:,</span><span class="bp">None</span><span class="p">],</span> <span class="n">ys</span><span class="p">[:,</span><span class="bp">None</span><span class="p">,:]))</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sigmas</span> <span class="o">/=</span> <span class="n">ws</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,</span><span class="bp">None</span><span class="p">,</span><span class="bp">None</span><span class="p">]</span>
+    
+        <span class="c1"># update complete log likelihood
+</span>        <span class="n">ll_new</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">pi</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pis</span><span class="p">,</span> <span class="n">mus</span><span class="p">,</span> <span class="n">sigmas</span><span class="p">):</span>
+            <span class="n">ll_new</span> <span class="o">+=</span> <span class="n">pi</span><span class="o">*</span><span class="n">mvn</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+        <span class="n">ll_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ll_new</span><span class="p">)</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span>
+    
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">ll_new</span> <span class="o">-</span> <span class="n">ll_old</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">ll_old</span> <span class="o">=</span> <span class="n">ll_new</span>
+    
+    <span class="k">return</span> <span class="n">ll_new</span><span class="p">,</span> <span class="n">pis</span><span class="p">,</span> <span class="n">mus</span><span class="p">,</span> <span class="n">sigmas</span>
+</code></pre></div>    </div>
+  </div>                                    
+</details>
+
+<details>
+<summary>Click here for the script to run the above experiment:</summary>
+<div>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">multivariate_normal</span> <span class="k">as</span> <span class="n">mvn</span>
+<span class="kn">from</span> <span class="nn">numpy.core.umath_tests</span> <span class="kn">import</span> <span class="n">matrix_multiply</span> <span class="k">as</span> <span class="n">mm</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="c1"># create data set
+</span><span class="n">n</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">_mus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mf">3.5</span><span class="p">],</span> 
+                 <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
+                 <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">_sigmas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]],</span> 
+                    <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">2</span><span class="p">]],</span> 
+                    <span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">]],</span> 
+                    <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mf">.6</span><span class="p">],[</span><span class="mf">.6</span><span class="p">,</span><span class="mi">1</span><span class="p">]]])</span>
+
+<span class="n">_pis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.25</span><span class="p">]</span><span class="o">*</span><span class="n">_mus</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="p">))</span>
+                    <span class="k">for</span> <span class="n">pi</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">_pis</span><span class="p">,</span> <span class="n">_mus</span><span class="p">,</span> <span class="n">_sigmas</span><span class="p">)])</span>
+
+<span class="c1"># visualize data without labels
+</span><span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s">'seaborn-talk'</span><span class="p">):</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">xs</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">xs</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+<span class="c1"># initial guesses for parameters
+</span><span class="n">pis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">pis</span> <span class="o">/=</span> <span class="n">pis</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span>  <span class="c1"># normalize
+</span><span class="n">mus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">sigmas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># run EM
+# remember to include em_gmm_vect function
+</span><span class="n">ll2</span><span class="p">,</span> <span class="n">pis2</span><span class="p">,</span> <span class="n">mus2</span><span class="p">,</span> <span class="n">sigmas2</span> <span class="o">=</span> <span class="n">em_gmm_vect</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">pis</span><span class="p">,</span> <span class="n">mus</span><span class="p">,</span> <span class="n">sigmas</span><span class="p">)</span>
+
+<span class="c1"># visualize results
+</span><span class="n">intervals</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">intervals</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">ys</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
+<span class="n">_ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">X</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">Y</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">_ys</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">pi</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pis2</span><span class="p">,</span> <span class="n">mus2</span><span class="p">,</span> <span class="n">sigmas2</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">+=</span> <span class="n">pi</span><span class="o">*</span><span class="n">mvn</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">_ys</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">intervals</span><span class="p">,</span> <span class="n">intervals</span><span class="p">))</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s">'seaborn-talk'</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">xs</span><span class="p">[:</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">xs</span><span class="p">[:</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">xs</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="mi">200</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">xs</span><span class="p">[</span><span class="mi">200</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="mi">300</span><span class="p">:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">xs</span><span class="p">[</span><span class="mi">300</span><span class="p">:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s">'1'</span><span class="p">,</span> <span class="s">'2'</span><span class="p">,</span> <span class="s">'3'</span><span class="p">,</span> <span class="s">'4'</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s">'equal'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </div>
+</details>
+
+<h3 id="estimating-allele-frequencies">Estimating allele frequencies</h3>
+
+<p>We return to the population genetics problem mentioned earlier. Suppose we captured $n$ moths and of which there are three different types: <em>Carbonaria</em>, <em>Typica</em>, and <em>Insularia</em>. However, we do not know the genotype of each moth except for <em>Typica</em> moths, see FIGURE 3 above. We wish to estimate the population allele frequencies. Let’s speak in EM terms. Here’s what we know:</p>
+<ul>
+  <li>Observed:
+    <ul>
+      <li>$X = (n_{\mathrm{Car}}, n_{\mathrm{Typ}}, n_{\mathrm{Ins}})$</li>
+    </ul>
+  </li>
+  <li>Unobserved: the number of different genotypes
+    <ul>
+      <li>$Y = (n_{\mathrm{CC}}, n_{\mathrm{CI}}, n_{\mathrm{CT}}, n_{\mathrm{II}}, n_{\mathrm{IT}}, n_{\mathrm{TT}})$</li>
+    </ul>
+  </li>
+  <li>But we do know the relationship between them:
+    <ul>
+      <li>$n_{\mathrm{Car}} = n_{\mathrm{CC}} + n_{\mathrm{CI}} + n_{\mathrm{CT}}$</li>
+      <li>$n_{\mathrm{Typ}} = n_{\mathrm{TT}}$</li>
+      <li>$n_{\mathrm{Ins}} = n_{\mathrm{II}} + n_{\mathrm{IT}}$</li>
+    </ul>
+  </li>
+  <li>Parameter of interest: allele frequencies
+    <ul>
+      <li>$\theta = (p_\mathrm{C}, p_\mathrm{I}, p_\mathrm{T})$</li>
+      <li>and we know $p_\mathrm{C} + p_\mathrm{I} + p_\mathrm{T} = 1$</li>
+    </ul>
+  </li>
+</ul>
+
+<p>There’s another important modeling principle that we need to use: the Hardy–Weinberg principle, which says that the genotype frequency is the product of the corresponding allele frequency or double that when the two alleles are different. That is, we can expect the genotype frequencies of $n_{\mathrm{CC}}, n_{\mathrm{CI}}, n_{\mathrm{CT}}, n_{\mathrm{II}}, n_{\mathrm{IT}}, n_{\mathrm{TT}}$ to be</p>
+
+<script type="math/tex; mode=display">p_{\mathrm{C}}^2, 2p_{\mathrm{C}}p_{\mathrm{I}}, 2p_{\mathrm{C}}p_{\mathrm{T}}, p_{\mathrm{I}}^2, 2p_{\mathrm{I}}p_{\mathrm{T}}, p_{\mathrm{T}}^2 \,.</script>
+
+<p>Good! Now we are ready to plug in the EM framework. What’s the first step?</p>
+
+<h4 id="expectation-step-1">Expectation step</h4>
+<p>Just like the GMM case, we first need to figure out the complete-data likelihood. Notice that this is actually a multinomial distribution problem. We have population of moths, the chance of capturing a moth of genotype $\mathrm{CC}$ is $p_{\mathrm{C}}^2$, similarly for the other genotypes. Therefore, the complete-data 
+likelihood is just the multinomial <a href="https://en.wikipedia.org/wiki/Multinomial_distribution#Probability_mass_function">distribution PDF</a>:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+p(\mathbf{x}, \mathbf{y}) &= \mathrm{Pr}(N_{\mathrm{CC}} = n_{\mathrm{CC}}, N_{\mathrm{CI}} = n_{\mathrm{CI}}, \dots, N_{\mathrm{TT}} = n_{\mathrm{TT}}) \\
+&= \left(\begin{array}{cccc}
+&n&& \\
+n_{\mathrm{CC}} & n_{\mathrm{CI}} & \dots & n_{\mathrm{TT}}
+\end{array} \right) (p_{\mathrm{C}}^2)^{n_{\mathrm{CC}}} (2p_\mathrm{C} p_\mathrm{I})^{n_{\mathrm{CI}}} \dots (p_{\mathrm{T}}^2)^{n_{\mathrm{TT}}} \,.
+\end{align*} %]]></script>
+
+<p>And the complete-data log-likelihood can be written in the following decomposed form:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+\ln p_{\theta}(\mathbf{x}, \mathbf{y}) &= n_{\mathrm{CC}} \log \left\{p_{\mathrm{C}}^{2}\right\}+n_{\mathrm{CI}} \log \left\{2 p_{\mathrm{C}} p_{\mathrm{I}}\right\}+n_{\mathrm{CT}} \log \left\{2 p_{\mathrm{C}} p_{\mathrm{T}}\right\} \\
+&+n_{\mathrm{II}} \log \left\{p_{\mathrm{I}}^{2}\right\}+n_{\mathrm{IT}} \log \left\{2 p_{\mathrm{I}} p_{\mathrm{T}}\right\}+n_{\mathrm{TT}} \log \left\{p_{\mathrm{T}}^{2}\right\} \\
+&+\log \left(\begin{array}{llllll}
+& & n & & \\
+n_{\mathrm{CC}} & n_{\mathrm{CI}} & n_{\mathrm{CT}} & n_{\mathrm{II}} & n_{\mathrm{IT}} & n_{\mathrm{TT}}
+\end{array}\right)
+\end{aligned} %]]></script>
+
+<p>Remember that the E-step is taking a conditional expectation of the above likelihood w.r.t. the unobserved data $Y$, given the latest iteration’s parameter estimates $\theta^{(n)}$.  The Q function is found to be</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+Q\left(\theta \mid \theta^{(n)}\right) &= n_{\mathrm{CC}}^{(n)} \log \left\{p_{\mathrm{C}}^{2}\right\}+n_{\mathrm{CI}}^{(n)} \log \left\{2 p_{\mathrm{C}} p_{\mathrm{I}}\right\} \\
+&+n_{\mathrm{CT}}^{(n)} \log \left\{2 p_{\mathrm{C}} p_{\mathrm{T}}\right\}+n_{\mathrm{II}}^{(n)} \log \left\{p_{\mathrm{I}}^{2}\right\} \\
+&+n_{\mathrm{IT}}^{(n)} \log \left\{2 p_{\mathrm{I}} p_{\mathrm{T}}\right\}+n_{\mathrm{TT}} \log \left\{p_{\mathrm{T}}^{2}\right\}+k\left(n_{\mathrm{C}}, n_{\mathrm{I}}, n_{\mathrm{T}}, \theta^{(n)}\right) \,,
+\end{aligned} %]]></script>
+
+<p>where $n_{\mathrm{CC}}^{(n)}$ is expected number of $\mathrm{CC}$ type moth given the current allele frequency estimates, and similarly for the other types.</p>
+
+<details>
+    <summary>Click here for the derivation of the Q function:</summary>
+<div>
+    <p>Note that the expectation in the Q function is taken w.r.t. the unobserved variables, i.e., phenotype counts. Therefore, we just need to compute the expectation of $n_{\mathrm{CC}}, \dots, n_{\mathrm{TT}}$ since they are unobserved. Also notice that, given the current allele frequency estimates, the phenotype counts are also multinomial random variables. For example, the three phenotype counts for the <em>Carbonaria</em> type have three-cell multinomial distribution with count parameter $n_{\mathrm{Car}}$ and probabilities proportional to $p_{\mathrm{C}}^{2}, 2 p_{\mathrm{C}} p_{\mathrm{I}}, 2 p_{\mathrm{C}} p_{\mathrm{T}}$.</p>
+
+    <p>Therefore, we can obtain the conditional expectation of all phenotype counts by 
+<script type="math/tex">% <![CDATA[
+\begin{align}
+n_{\mathrm{CC}}^{(n)} &= n_{\mathrm{Car}} \frac{\left(p_{\mathrm{C}}^{(n)}\right)^{2}}{\left(p_{\mathrm{C}}^{(n)}\right)^{2}+2 p_{\mathrm{C}}^{(n)} p_{\mathrm{I}}^{(n)}+2 p_{\mathrm{C}}^{(n)} p_{\mathrm{T}}^{(n)}} \\
+n_{\mathrm{CI}}^{(n)} &=n_{\mathrm{Car}} \frac{2 p_{\mathrm{C}}^{(n)} p_{\mathrm{I}}^{(n)}}{\left(p_{\mathrm{C}}^{(n)}\right)^{2}+2 p_{\mathrm{C}}^{(n)} p_{\mathrm{I}}^{(n)}+2 p_{\mathrm{C}}^{(n)} p_{\mathrm{T}}^{(n)}} \\
+n_{\mathrm{CT}}^{(n)} &= n_{\mathrm{Car}} \frac{2  p_{\mathrm{C}}^{(n)} p_{\mathrm{T}}^{(n)}}{\left(p_{\mathrm{C}}^{(n)}\right)^{2}+2 p_{\mathrm{C}}^{(n)} p_{\mathrm{I}}^{(n)}+2 p_{\mathrm{C}}^{(n)} p_{\mathrm{T}}^{(n)}} \\
+n_{\mathrm{II}}^{(n)} &= n_{\mathrm{Ins}} \frac{\left(p_{\mathrm{I}}^{(n)}\right)^{2}}{\left(p_{\mathrm{I}}^{(n)}\right)^{2}+2 p_{\mathrm{I}}^{(n)} p_{\mathrm{T}}^{(n)}} \\
+n_{\mathrm{IT}}^{(n)} &= n_{\mathrm{Ins}}\frac{2  p_{\mathrm{I}}^{(n)} p_{\mathrm{T}}^{(n)}}{\left(p_{\mathrm{I}}^{(n)}\right)^{2}+2 p_{\mathrm{I}}^{(n)} p_{\mathrm{T}}^{(n)}}
+\end{align} %]]></script></p>
+
+  </div>
+</details>
+
+<h4 id="maximization-step-1">Maximization step</h4>
+
+<p>Since we obtained the expected number of each phenotypes, e.g. $n_{\mathrm{CC}}^{(n)}, n_{\mathrm{CI}}^{(n)}$, estimating the allele frequencies is easy. Intuitively, the frequency of allele $\mathrm{C}$ is calculated as the ratio between the number of allele $\mathrm{C}$ present in the population and the total number of alleles. This works for the other alleles as well. Therefore, in the M-step, we obtain</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+    p_{\mathrm{C}}^{(n+1)} &= \frac{2 n_{\mathrm{CC}}^{(n)} + n_{\mathrm{CI}}^{(n)} + n_{\mathrm{CT}}^{(n)}}{2n} \\
+    p_{\mathrm{I}}^{(n+1)} &= \frac{2 n_{\mathrm{II}}^{(n)} + n_{\mathrm{IT}}^{(n)} + n_{\mathrm{CI}}^{(n)}}{2n} \\
+    p_{\mathrm{T}}^{(n+1)} &= \frac{2 n_{\mathrm{TT}}^{(n)} + n_{\mathrm{IT}}^{(n)} + n_{\mathrm{CT}}^{(n)}}{2n} \,.
+\end{align} %]]></script>
+
+<p>In fact, we could obtain the same M-step formulas by differentiating the Q function and setting them to zero (usual optimization routine).</p>
+
+<h4 id="how-does-it-perform-1">How does it perform?</h4>
+<p>Showcase result.</p>
+
+<p>Estimating the allele frequencies is difficult because of the missing phenotype information. EM helps us to solve this problem by augmenting the process with exactly the missing information. If we look back at the E-step and M-step, we see that the E-step calculates the most probable phenotype counts given the latest frequency estimates; the M-step then calculates the most probable frequencies given the latest phenotype count estimates. This process is evident in the GMM problem as well: the E-step calculates the class responsibilities for each data given the current class parameter estimates; the M-step then estimates the new class parameters using those responsibilities as the data weights.</p>
+
+<h2 id="explained-why-does-it-work">Explained: Why does it work?</h2>
+<p>Working through the previous two examples, we see clearly that the essence of EM lies in the <strong>E-step/M-step</strong> iterative process that augments the observed information with the missing information. And we see that it indeed finds the MLEs effectively. But why does this iterative process work? Is EM just a smart hack or is it well-supported by theory? Let’s find out.</p>
+
+<h4 id="intuitive-explanation">Intuitive explanation</h4>
+
+<p>We start by gaining an intuitive understanding of why EM works. EM solves the parameter estimation problem by transferring the task of maximizing incomplete data likelihood to maximizing complete data likelihood in a number of small steps.</p>
+
+<p>Imagine you are hiking up Mt. Fuji 🗻 for the first time. There are nine stations to reach before the summit, but you do not know the route. Luckily, there are constantly hikers coming down from the top and they can give you a rough direction to the next station. Therefore, here’s what you can do to reach the top: start at the base station and ask people for the direction to the second station; go to the second station and ask the people there for the direction to the third station, and so on. At the end of the day (or start of the day if you are catching sunrise 🌄), there’s a high chance you’ll reach the summit.</p>
+
+<p>That’s very much what EM does to find the MLEs for problems where we have missing data. Instead of maximizing $\ln p(\mathbf{x})$ (find the route to summit), EM maximizes the Q function and finds the next $\theta$ that also increases $\ln p(\mathbf{x})$ (ask direction to the next station). FIGURE 7 below illustrates this process in two iterations. Note that the G function is just a combination of Q function and a few other terms constant w.r.t. $\theta$. Maximizing G function w.r.t. $\theta$ is equivalent to maximizing Q function.</p>
+
+<p align="center">
+  <img src="/assets/intro-to-EM/optimization_transfer.png" alt="optimization_transfer" style="zoom: 100%;" />
+</p>
+<p><strong>FIGURE 7.</strong> <i> The iterative process of EM illustrated in two steps. As we build and maximize a G function (equivalently, Q function) from the current parameter estimate, we obtain the next parameter estimate. In the process, the incomplete data log-likelihood is also increased.  Image by author</i></p>
+
+<details>
+    <summary><b>Mathematical proof:</b></summary>
+Here we show why the iterative scheme can find the maximum likelihood estimate of the parameter with mathematical proof. Let $\ell(\theta) = \ln p_\theta(\mathbf{y})$, thus we have 
+
+$$
+\ell(\theta) - \ell(\theta^{(n)}) = \ln p_\theta(\mathbf{y}) - \ln p_{\theta^{(n)}}(\mathbf{y}) \,.
+$$
+
+We wish to compute an updated $\theta$ such that the above relationship holds above zero. Using $p_\theta(\mathbf{y}) = \int p_\theta(\mathbf{x}, \mathbf{y}) \, \mathrm{d}\mathbf{x}$, we have
+
+$$
+\begin{align*} \ell(\theta) - \ell(\theta^{(n)}) &amp;= \ln \int p_\theta(\mathbf{x}, \mathbf{y}) \, \mathrm{d}\mathbf{x} - \ln p_{\theta^{(n)}}(\mathbf{y}) \\
+&amp;= \ln \int p_\theta(\mathbf{x}, \mathbf{y}) \frac{p_{\theta^{(n)}}(\mathbf{x} | \mathbf{y})}{p_{\theta^{(n)}}(\mathbf{x} | \mathbf{y})} \, \mathrm{d}\mathbf{x} 
+
+- \ln p_{\theta^{(n)}}(\mathbf{y}) \\
+  &amp;= \ln \mathbb{E}_{\mathbf{X} | \mathbf{y} , \theta^{(n)}}\left[\frac{p_\theta(\mathbf{x}, \mathbf{y})}{p_{\theta^{(n)}}(\mathbf{x} | \mathbf{y})}\right] - \ln p_{\theta^{(n)}}(\mathbf{y}) \\
+  &amp;\ge \mathbb{E}_{\mathbf{X} | \mathbf{y} , \theta^{(n)}}\left[\ln \frac{p_\theta(\mathbf{x}, \mathbf{y})}{p_{\theta^{(n)}}(\mathbf{x} | \mathbf{y})}\right] - \ln p_{\theta^{(n)}}(\mathbf{y}) \\
+  &amp;= \mathbb{E}_{\mathbf{X} | \mathbf{y} , \theta^{(n)}}\left[\ln \frac{p_\theta(\mathbf{x}, \mathbf{y})}{p_{\theta^{(n)}}(\mathbf{x} | \mathbf{y} ) p_{\theta^{(n)}}(\mathbf{y})}\right] \\
+  &amp;:= \Delta(\theta | \theta^{(n)}) \,.
+  \end{align*}
+$$
+
+The inequality step follows by Jensen's inequality and the fact that $\ln(\cdot)$ is concave on $[0, \infty]$. The second last step follows since $p_{\theta^{(n)}}(\mathbf{y})$ does not depend on $\mathbf{X}$. Therefore, we have 
+$$
+\ell(\theta) \ge \ell(\theta^{(n)}) + \Delta(\theta|\theta^{(n)}) \,.
+$$
+Define 
+
+$$
+G(\theta | \theta^{(n)}) := \ell(\theta^{(n)}) + \Delta(\theta|\theta^{(n)}) \,,
+$$
+then 
+$\ell(\theta) \ge G(\theta|\theta^{(n)})$. 
+That is, 
+$G(\theta|\theta^{(n)})$ 
+is upper-bounded by $\ell(\theta)$ for all $\theta \in \Theta$. The equality holds when $\theta = \theta^{(n)}$ since
+$$
+\begin{align*}
+G(\theta^{(n)}|\theta^{(n)}) &amp;= \ell(\theta^{(n)}) + \Delta(\theta^{(n)}|\theta^{(n)}) \\
+&amp;= \ell(\theta^{(n)}) + \mathbb{E}_{\mathbf{X} | \mathbf{y} , \theta^{(n)}}\left[\ln \frac{p_{\theta^{(n)}}(\mathbf{x}, \mathbf{y})}{p_{\theta^{(n)}}(\mathbf{x} | \mathbf{y} ) p_{\theta^{(n)}}(\mathbf{y})}\right] \\
+&amp;= \ell(\theta^{(n)}) + \mathbb{E}_{\mathbf{X} | \mathbf{y} , \theta^{(n)}}\left[\ln \frac{p_{\theta^{(n)}}(\mathbf{x}, \mathbf{y})}{p_{\theta^{(n)}}(\mathbf{x}, \mathbf{y})}\right] \\
+&amp;= \ell(\theta^{(n)}) \,.
+\end{align*}
+$$
+Therefore, when computing an updated $\theta$, any increase in 
+$G(\theta|\theta^{(n)})$ leads to an increase in $\ell(\theta)$ by at least 
+$\Delta(\theta|\theta^{(n)})$. The observation is that, by selecting the $\theta$ that maximizes 
+$\Delta(\theta|\theta^{(n)})$, we can achieve the largest increase in $\ell(\theta)$. Formally, we have 
+$$
+\begin{align*}
+\theta^{(n+1)} &amp;= \arg\max_{\theta\in\Theta} G(\theta | \theta^{(n)}) \\
+&amp; = \arg\max_{\theta\in\Theta} 
+\left\lbrace
+\ell(\theta^{(n)}) + \mathbb{E}_{\mathbf{X} | \mathbf{y} , \theta^{(n)}} 
+\left[
+\ln \frac{p_\theta(\mathbf{x}, \mathbf{y})}{p_{\theta^{(n)}}(\mathbf{x} | \mathbf{y}) p_{\theta^{(n)}}(\mathbf{y})}
+\right]
+\right\rbrace\\
+&amp; = \underbrace{\arg\max_{\theta\in\Theta}}_{\text{Maximization}} \underbrace{\mathbb{E}_{\mathbf{X} | \mathbf{y} , \theta^{(n)}}}_{\text{Expectation}}[\ln p_\theta(\mathbf{x}, \mathbf{y})] \\
+&amp; = \arg\max_{\theta\in\Theta} Q(\theta | \theta^{(n)}) \,,
+\end{align*}
+$$
+
+where the second last step follows by dropping terms constant with respect to $\theta$. Thus, the E-step and M-step are made apparent in the formulation. Also, by maximizing 
+$G(\theta | \theta^{(n)})$ instead of $\ell(\theta)$, we have made use of the information of hidden variables $\mathbf{X}$ in the complete-data likelihood. 
+
+</details>
+
+<h2 id="summary">Summary</h2>
+
+<p>In this article, we see that EM converts a difficult problem with missing information to an easy problem through the optimization transfer framework. We also see EM in action by solving step-by-step two problems with Python implementation (Gaussian mixture clustering and peppered moth population genetics). More importantly, we show that EM is not just a smart hack but has solid mathematical groundings on why it would work.</p>
+
+<p>Thanks for reading! I hope this introductory article has helped you a little in getting to know the EM algorithm. From here, if you are interested, consider exploring the following topics.</p>
+
+<h2 id="further-topics">Further topics</h2>
+<p>Digging deeper, the first question you might ask is: So, is EM perfect? Of course it’s not. Sometimes, the Q function is difficult to obtain analytically. We could use Monte Carlo techniques to estimate the Q function, e.g., check out Monte Carlo <a href="https://amstat.tandfonline.com/doi/abs/10.1198/106186001317115045">EM</a>. Sometimes, even with complete-data information, the Q function is still difficult to maximize. We could consider alternative maximizing techniques, e.g., see expectation conditional maximization (<a href="https://academic.oup.com/biomet/article-abstract/80/2/267/251605">ECM</a>). Another disadvantage of EM is that it provides us with only point estimates. In case we want to know the uncertainty in these estimates, we would need to conduct variance estimation through other techniques, e.g., Louis’s method, supplemental EM or bootstrapping.</p>
+
+<hr />
+<h2 class="no_toc" id="references">References</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:Dempster">
+      <p>Dempster, A. P., Laird, N. M., &amp; Rubin, D. B. (1977). Maximum likelihood from incomplete data via the EM algorithm. <em>Journal of the Royal Statistical Society: Series B (Methodological)</em>, <em>39</em>(1), 1-22. <a href="#fnref:Dempster" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET
