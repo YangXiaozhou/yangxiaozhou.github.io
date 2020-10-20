@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Expectation-maximization algorithm, explained"
-date:   2020-10-19 08:00:00 +0800
+date:   2020-10-20 08:00:00 +0800
 categories: DATA
 tags: expectation-maximization statistical-learning clustering inference
 ---
