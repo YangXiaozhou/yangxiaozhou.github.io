@@ -9,6 +9,7 @@
   <li><a href="#uncertainty-going-beyond-point-estimate-" id="markdown-toc-uncertainty-going-beyond-point-estimate-">Uncertainty: Going beyond point estimate 😱</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
+<p>Well, let’s see. It’s the algorithm that solves Gaussian mixture model, a popular clustering approach. The Baum-Welch algorithm that solves hidden Markov model problems is a special case of EM. It’s taught at almost all computational statistics classes. All in all, it’s a classic, powerful, and versatile statistical learning technique that also extends itself in many ways: Monte Carlo EM, Stochastic EM, and Online EM, to name a few. This article is my take on introducing EM for what it is, how it works, and how it might be improved.</p>
 
 <p>We start with two motivating examples (unsupervised learning and evolution). Then we see exactly what EM is in its general form. We get back in action and use EM to solve the two examples. For those curious souls, we then explain both intuitively and mathematically why EM works like a charm. Most EM tutorials would stop here, but we’re going to turn it up a notch. We will see some limitations of EM and ways to deal with them. Lastly, we want to go beyond point estimates and quantify the uncertainty with estimates produced by EM.</p>
 
