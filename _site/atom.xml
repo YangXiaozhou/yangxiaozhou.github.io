@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Xiaozhou's Notes</title>
- <link href="http://localhost:4000/atom.xml" rel="self"/>
- <link href="http://localhost:4000/"/>
- <updated>2020-10-20T13:54:30+08:00</updated>
- <id>http://localhost:4000</id>
+ <link href="https://yangxiaozhou.github.io/atom.xml" rel="self"/>
+ <link href="https://yangxiaozhou.github.io/"/>
+ <updated>2020-10-20T14:42:27+08:00</updated>
+ <id>https://yangxiaozhou.github.io</id>
  <author>
    <name>Yang Xiaozhou</name>
    <email></email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Expectation-maximization algorithm, explained</title>
-   <link href="http://localhost:4000/data/2020/10/20/EM-algorithm-explained.html"/>
+   <link href="https://yangxiaozhou.github.io/data/2020/10/20/EM-algorithm-explained.html"/>
    <updated>2020-10-20T08:00:00+08:00</updated>
-   <id>http://localhost:4000/data/2020/10/20/EM-algorithm-explained</id>
+   <id>https://yangxiaozhou.github.io/data/2020/10/20/EM-algorithm-explained</id>
    <content type="html">&lt;p&gt;&lt;em&gt;A comprehensive guide to the classic and elegant EM algorithm: intuitions, maths, worked examples, and Python implementation to illustrate what it does, how it works, and why it works.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Yes! Let’s talk about the expectation-maximization algorithm (EM, for short). If you are in the data science/machine learning “bubble”, you’ve probably come across EM at some point in time and wondered: What is EM, and do I need to know it?&lt;/p&gt;
@@ -663,9 +663,9 @@ $G(\theta | \theta^{(n)})$ instead of $\ell(\theta)$, we have made use of the in
  
  <entry>
    <title>Domain Expertise: What deep learning needs for better COVID-19 detection</title>
-   <link href="http://localhost:4000/data/2020/09/27/detecting-covid19-using-cnn.html"/>
+   <link href="https://yangxiaozhou.github.io/data/2020/09/27/detecting-covid19-using-cnn.html"/>
    <updated>2020-09-27T08:00:00+08:00</updated>
-   <id>http://localhost:4000/data/2020/09/27/detecting-covid19-using-cnn</id>
+   <id>https://yangxiaozhou.github.io/data/2020/09/27/detecting-covid19-using-cnn</id>
    <content type="html">&lt;p&gt;By now, you’ve probably seen a few, if not many, &lt;a href=&quot;https://scholar.google.com/scholar?hl=en&amp;amp;as_sdt=0%2C5&amp;amp;q=detecting+covid-19+using+neural+network&amp;amp;btnG=&quot;&gt;articles&lt;/a&gt; on how deep learning could help detect COVID-19. In particular, convolutional neural networks (CNNs) have been studied as a faster and cheaper alternative to the gold-standard PCR test by just analyzing the patient’s computed tomography (CT) scan. It’s not surprising since CNN is excellent at image recognition; many places have CT scanners rather than COVID-19 testing kits (at least initially).&lt;/p&gt;
 
 &lt;p&gt;Despite its success in image recognition tasks such as the ImageNet challenge, can CNN really help doctors detect COVID-19? If it can, how accurately can it do so? It’s well known that CT scans are sensitive but not &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7227176/&quot;&gt;specific&lt;/a&gt; to COVID-19. That is, COVID-19 almost always produces abnormal lung patterns visible from CT scans. However, other pneumonia can create the same abnormal patterns. Can the powerful and sometimes magical CNN tackle this ambiguity issue?&lt;/p&gt;
@@ -858,9 +858,9 @@ weighted avg       0.85      0.85      0.85       203
  
  <entry>
    <title>Convolutional Neural Network: How is it different from the other networks?</title>
-   <link href="http://localhost:4000/data/2020/09/24/intro-to-cnn.html"/>
+   <link href="https://yangxiaozhou.github.io/data/2020/09/24/intro-to-cnn.html"/>
    <updated>2020-09-24T08:00:00+08:00</updated>
-   <id>http://localhost:4000/data/2020/09/24/intro-to-cnn</id>
+   <id>https://yangxiaozhou.github.io/data/2020/09/24/intro-to-cnn</id>
    <content type="html">&lt;p&gt;I am not a deep learning researcher, but I’ve come to know a few things about neural networks through various exposures. I’ve always heard that CNN is a type of neural network that’s particularly good at image-related problems. But, what does that really mean? What’s with the word “convolutional”? What’s so unusual about an image-related problem that a different network is required?&lt;/p&gt;
 
 &lt;p&gt;Recently I had the opportunity to work on a COVID-19 image classification problem and built a CNN-based classifier using tensorflow.kerasthat achieved an 87% accuracy rate. More importantly, I think that I’ve figured out the answers to those questions. In this post, I share with you those answers in an intuitive math-free way. If you are already familiar with DNNs and CNNs, this post should feel like a good refresher. If not, at the end of this post, you could gain an intuitive understanding of the motivation behind CNN and the unique features that define a CNN.&lt;/p&gt;
@@ -1094,9 +1094,9 @@ weighted avg       0.85      0.85      0.85       203
  
  <entry>
    <title>Statistical learning knowledge repository</title>
-   <link href="http://localhost:4000/data/2020/09/17/knowledge-repository.html"/>
+   <link href="https://yangxiaozhou.github.io/data/2020/09/17/knowledge-repository.html"/>
    <updated>2020-09-17T08:00:00+08:00</updated>
-   <id>http://localhost:4000/data/2020/09/17/knowledge-repository</id>
+   <id>https://yangxiaozhou.github.io/data/2020/09/17/knowledge-repository</id>
    <content type="html">&lt;p&gt;This is a collection of my notes on various topics of statistical learning. It is intended as a knowledge repository for some of the unexpected discoveries, less-talked-about connections, and under-the-hood concepts for statistical learning. It’s a work in progress that I will periodically update.&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -1380,9 +1380,9 @@ Combining the two gamma terms completes the proof. $\blacksquare$
  
  <entry>
    <title>菊与刀：三个月的研究写出了人类学最出名的书？</title>
-   <link href="http://localhost:4000/reading/2020/08/02/The-Chrysanthemum-and-the-Sword.html"/>
+   <link href="https://yangxiaozhou.github.io/reading/2020/08/02/The-Chrysanthemum-and-the-Sword.html"/>
    <updated>2020-08-02T08:00:00+08:00</updated>
-   <id>http://localhost:4000/reading/2020/08/02/The-Chrysanthemum-and-the-Sword</id>
+   <id>https://yangxiaozhou.github.io/reading/2020/08/02/The-Chrysanthemum-and-the-Sword</id>
    <content type="html">&lt;p&gt;时间是个奇妙的东西。第一次知道《菊与刀》还是在中学的课堂上，这书可能是推荐课外阅读丛书之一，那时的我对日本没什么特别兴趣，只依稀记得徐慧老师在讲台上介绍这本书的模样。十年之后，偶然再次看到此书，对樱花之国的历史和文化有了一定了解，读罢，感触颇多。&lt;/p&gt;
 
 &lt;p style=&quot;display: block; margin-left: auto; margin-right: auto; width: 50%;&quot;&gt;&lt;img src=&quot;/assets/books/C_and_S_cover&quot; alt=&quot;cover&quot; /&gt;&lt;/p&gt;
@@ -1505,9 +1505,9 @@ Combining the two gamma terms completes the proof. $\blacksquare$
  
  <entry>
    <title>2020年6月：像做talk show一样去做学术报告</title>
-   <link href="http://localhost:4000/journal/2020/07/10/journal-2020-06.html"/>
+   <link href="https://yangxiaozhou.github.io/journal/2020/07/10/journal-2020-06.html"/>
    <updated>2020-07-10T08:00:00+08:00</updated>
-   <id>http://localhost:4000/journal/2020/07/10/journal-2020-06</id>
+   <id>https://yangxiaozhou.github.io/journal/2020/07/10/journal-2020-06</id>
    <content type="html">&lt;p&gt;6月的新加坡结束了封城，而我也在这个月的最后一天收到了&lt;a href=&quot;https://www.researchgate.net/publication/342652506_A_Control_Chart_Approach_to_Power_System_Line_Outage_Detection_Under_Transient_Dynamics&quot;&gt;文章&lt;/a&gt;被接收的邮件。&lt;/p&gt;
 
 &lt;p&gt;博一开始就在与不同老师的交流中了解到，科研与发表不是简单的因果关系：做了厉害的科研工作就能在顶级期刊上发表研究结果，这俩更像是有一定相关性但也分别独立于彼此的事件，最简单的例子就是我可能可以控制某个工作投入的时间，但无法控制谁是审稿人、审稿人的学术品味等等。在我很小的博士生圈子里，一篇文章被修改两三次、回复审稿人意见的信件比原文章还要长、修改期间所做的工作量不比原文少等这一类的经历也是没少听说，所以当我的第一篇文章在经过一轮修改之后便被接收时，心里虽然很高兴，但总觉得这次多少也走了些运吧。&lt;/p&gt;
@@ -1527,7 +1527,7 @@ Combining the two gamma terms completes the proof. $\blacksquare$
 
 &lt;p&gt;沿着这个思路，我越发清晰地认识到，我所做的电网断线监测研究与传染病大流行有几个非常相似的地方：他们都能迅速从一个case变成一个cluster；他们出现时都会有些异常的“信号”；而且这些“信号”一开始会很微弱，以及不完整。Good!虽然不是每个人都熟悉电网，但是我相信大家应该对新冠疫情不会陌生了。所以后来在我的分享里，几乎每一个关键地方，我都会用新冠疫情作为类比来解释。从我得到的一些反馈来看，这个类比应该还是发挥了一些作用了。&lt;/p&gt;
 &lt;figure&gt;
-  &lt;img src=&quot;http://localhost:4000/assets/month-journal/presentation-2.png&quot; alt=&quot;presentation-2&quot; /&gt;
+  &lt;img src=&quot;https://yangxiaozhou.github.io/assets/month-journal/presentation-2.png&quot; alt=&quot;presentation-2&quot; /&gt;
   &lt;figcaption&gt;这里我把研究问题中的挑战与对抗新冠疫情的挑战做了类比。&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -1540,9 +1540,9 @@ Combining the two gamma terms completes the proof. $\blacksquare$
  
  <entry>
    <title>一件“小事”：Discrimination其实离我们很近</title>
-   <link href="http://localhost:4000/journal/2020/06/14/journal-discrimination.html"/>
+   <link href="https://yangxiaozhou.github.io/journal/2020/06/14/journal-discrimination.html"/>
    <updated>2020-06-14T08:00:00+08:00</updated>
-   <id>http://localhost:4000/journal/2020/06/14/journal-discrimination</id>
+   <id>https://yangxiaozhou.github.io/journal/2020/06/14/journal-discrimination</id>
    <content type="html">&lt;p&gt;记录一件“小事”。&lt;/p&gt;
 
 &lt;p&gt;昨天跟女朋友坐车去超市，坐在了靠近下车处的第一排两人座位。一路上跟往常一样聊天，说这说那的，坐了大概二十分钟快要到站的时候，一位带着新加坡口音的短发阿姨突然从我们后面走出来，站在打卡下车处，刚落脚就开始对我们讲话，阿姨说：“Are you from China? Don’t you watch our news? You don’t talk (Refrain from talking)  on public transport!” （中文：你们是中国来的吗？你们不看我们的新闻吗？不要在公共交通上讲话！）  因为都戴着口罩，后一句是我不大确定的部分，但是前两句我听得很清楚。这阿姨出现得突然，我们一时间没反应过来，车门打开后，她立马就打了卡下了车，走出车门的同时，还一边看着我们一边用手在自己的太阳穴旁画圈，意思是我们脑子有问题。片刻之后，等我们反应过来，下车去看，她已经走出很远。&lt;/p&gt;
@@ -1557,9 +1557,9 @@ Combining the two gamma terms completes the proof. $\blacksquare$
  
  <entry>
    <title>2020年5月：浅尝Snack Writing</title>
-   <link href="http://localhost:4000/journal/2020/06/06/journal-2020-05.html"/>
+   <link href="https://yangxiaozhou.github.io/journal/2020/06/06/journal-2020-05.html"/>
    <updated>2020-06-06T08:00:00+08:00</updated>
-   <id>http://localhost:4000/journal/2020/06/06/journal-2020-05</id>
+   <id>https://yangxiaozhou.github.io/journal/2020/06/06/journal-2020-05</id>
    <content type="html">&lt;p&gt;五月因为疫情的原因继续在家里工作。这段时间工作重心主要在写东西上面，不太需要跑大量的数据、也不需要太多跟同事老板的交流，虽然我蛮想念办公室的espresso咖啡和时不时不同领域的人过来做的seminar的，这两件事儿家里没法复制。&lt;/p&gt;
 
 &lt;p&gt;提交了上一篇文章的审稿意见回复，两个审稿人提了不少问题但都是建设性或者澄清类的，我写的回复初稿被老板修改不少（First version is always subpar.)。我发现我的回复往往更婉转、迂回，用词也习惯性地用我熟悉的这个工作的语言；而对比老板修改过的版本，表达的点是一样的，但这个点在他的回复里就很明确、更assertive，同时也把那些更技术性的词语换成了更易理解的。这么一想，每次做报告的问答环节我也是这样。最后提交上去的回复，给我的感觉是：同意的点会明确说、不清楚的点会用浅显的语言解释、误解了的点会用不卑不亢的姿态澄清。最后根据审稿人意见做过修改的文章，确实是要比之前的版本更完整、可能造成误解的地方更少了。&lt;/p&gt;
@@ -1592,9 +1592,9 @@ Combining the two gamma terms completes the proof. $\blacksquare$
  
  <entry>
    <title>Francis Galton: 维多利亚时代的博学家与他观察到的奇妙世界</title>
-   <link href="http://localhost:4000/data/2020/05/17/francis-galton.html"/>
+   <link href="https://yangxiaozhou.github.io/data/2020/05/17/francis-galton.html"/>
    <updated>2020-05-17T08:00:00+08:00</updated>
-   <id>http://localhost:4000/data/2020/05/17/francis-galton</id>
+   <id>https://yangxiaozhou.github.io/data/2020/05/17/francis-galton</id>
    <content type="html">&lt;p&gt;周末读Aeon的一篇文章：&lt;a href=&quot;https://aeon.co/ideas/algorithms-associating-appearance-and-criminality-have-a-dark-past?utm_source=Aeon+Newsletter&amp;amp;utm_campaign=f7c118f081-EMAIL_CAMPAIGN_2020_05_11_01_52&amp;amp;utm_medium=email&amp;amp;utm_term=0_411a82e59d-f7c118f081-69607277&quot;&gt;Algorithms associating appearance and criminality have a dark past&lt;/a&gt;，讲现在有研究人员用机器学习算法通过人脸来判断某人犯罪的几率。文中讲到这种从人外表提取预见性特征的尝试，在犯罪学历史上并不新奇，19世纪的意大利犯罪学家Cesare Lombroso认为罪犯的脸部有独特的样貌：突出的前额、鹰型鼻梁；而18世纪的Francis Galton则尝试回答一个更广泛的问题：人的外表跟他或她的健康状况、犯罪倾向、智力等等有关系吗？或者说，人的基因是否决定了健康、行为、智力和竞争力？&lt;/p&gt;
 
 &lt;h3 id=&quot;francis-galton是谁&quot;&gt;Francis Galton是谁？&lt;/h3&gt;
@@ -1680,9 +1680,9 @@ k
  
  <entry>
    <title>2020年4月：更难的方法与有套路的交流</title>
-   <link href="http://localhost:4000/journal/2020/04/30/journal-2020-04.html"/>
+   <link href="https://yangxiaozhou.github.io/journal/2020/04/30/journal-2020-04.html"/>
    <updated>2020-04-30T08:00:00+08:00</updated>
-   <id>http://localhost:4000/journal/2020/04/30/journal-2020-04</id>
+   <id>https://yangxiaozhou.github.io/journal/2020/04/30/journal-2020-04</id>
    <content type="html">&lt;p&gt;这个月收到了稿子的消息，在尝试拼上最后一块问题的“拼图”，以及思考如何坐上司机的位置。&lt;/p&gt;
 
 &lt;p&gt;一转眼又两个星期没跟老板（博士导师）讨论研究上的问题了。&lt;/p&gt;
@@ -1717,9 +1717,9 @@ k
  
  <entry>
    <title>Tracking the COVID-19 outbreak and signals of containment</title>
-   <link href="http://localhost:4000/data/2020/03/24/COVID-19.html"/>
+   <link href="https://yangxiaozhou.github.io/data/2020/03/24/COVID-19.html"/>
    <updated>2020-03-24T08:00:00+08:00</updated>
-   <id>http://localhost:4000/data/2020/03/24/COVID-19</id>
+   <id>https://yangxiaozhou.github.io/data/2020/03/24/COVID-19</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;Any conclusion drawn from the data should be viewed with caution due to the dynamic nature of a pandemic and the adundant sources of bias associated with reporting.&lt;/strong&gt; 
 I periodically update here the COVID-19 situation in the US, Europe, and Asia, tracking both the outbreak and signals of containment. The intent of this blog is not to feed daily news, but to present perspectives worth considering when reading the news. The graphs in this blog are &lt;strong&gt;interactive&lt;/strong&gt; and best viewed on a desktop browser.&lt;/p&gt;
 
@@ -1861,9 +1861,9 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
  
  <entry>
    <title>读书笔记：读书体验是什么</title>
-   <link href="http://localhost:4000/reading/2019/11/12/how-to-read.html"/>
+   <link href="https://yangxiaozhou.github.io/reading/2019/11/12/how-to-read.html"/>
    <updated>2019-11-12T08:00:00+08:00</updated>
-   <id>http://localhost:4000/reading/2019/11/12/how-to-read</id>
+   <id>https://yangxiaozhou.github.io/reading/2019/11/12/how-to-read</id>
    <content type="html">&lt;p&gt;我有选书购书的习惯，也有逛书店花五分钟决定带回哪本书的时候；我时不时读书，但往往读完之后忘掉书里有什么精彩内容；我有在留白评论的习惯，也有不再翻看当时写下的评论、观点的习惯。家里未拆封的书越来越多，断断续续在读的书具体也说不出来哪里吸引我，读过的书好像被快速消费过一样没再露脸。坦白讲，我并不了解应该如何读书吧。幸运的是，奥野宣之在他的《如何有效阅读一本书》里提供了清晰的方法。&lt;/p&gt;
 
 &lt;p style=&quot;display: block; margin-left: auto; margin-right: auto; width: 50%;&quot;&gt;&lt;img src=&quot;/assets/2019-11-12/book_cover.jpg&quot; alt=&quot;cover&quot; /&gt;&lt;/p&gt;
@@ -1970,9 +1970,9 @@ r &lt; 1\% %]]&gt;&lt;/script&gt;: &lt;strong&gt;Under control&lt;/strong&gt;.&l
  
  <entry>
    <title>Linear discriminant analysis, explained</title>
-   <link href="http://localhost:4000/data/2019/10/02/linear-discriminant-analysis.html"/>
+   <link href="https://yangxiaozhou.github.io/data/2019/10/02/linear-discriminant-analysis.html"/>
    <updated>2019-10-02T08:00:00+08:00</updated>
-   <id>http://localhost:4000/data/2019/10/02/linear-discriminant-analysis</id>
+   <id>https://yangxiaozhou.github.io/data/2019/10/02/linear-discriminant-analysis</id>
    <content type="html">&lt;p&gt;&lt;em&gt;Intuitions, illustrations, and maths: How it’s more than a dimension reduction tool and why it’s robust for real-world applications.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/2019-10-02/mda.png&quot; alt=&quot;mda&quot; /&gt; This graph shows that boundaries (blue lines) learned by mixture discriminant analysis (MDA) successfully separate three mingled classes. MDA is one of the powerful extensions of LDA.&lt;/p&gt;
@@ -2526,9 +2526,9 @@ the data, which is both useful for visualization and feature engineering.&lt;/li
  
  <entry>
    <title>How did I set up my blog using Jekyll, Hyde and GitHub</title>
-   <link href="http://localhost:4000/learning/2019/09/25/set-up-blog.html"/>
+   <link href="https://yangxiaozhou.github.io/learning/2019/09/25/set-up-blog.html"/>
    <updated>2019-09-25T08:00:00+08:00</updated>
-   <id>http://localhost:4000/learning/2019/09/25/set-up-blog</id>
+   <id>https://yangxiaozhou.github.io/learning/2019/09/25/set-up-blog</id>
    <content type="html">&lt;p&gt;What would be a better way to start this blog than writing a post about how I set it up? Because after three days of sifting through all the documents, blogs, StackOverflow answers and GitHub issues, I finally realized that the process is not as straightforward as I thought it would be. Anyway, I got it to work (for now).&lt;/p&gt;
 
 &lt;p&gt;My aim is simple, to set up a blog for myself where I can post stuff about my life. The blog needs to be free, elegant, intuitive and supports math. My current set up, Jekyll + Hyde + Github + MathJax, matches with that. Since there are many resources online about setting up a blog using Jekyll and serve it with GitHub, I am going to skip all the standard procedures by referring to the official documents. Instead, this post specifically documents:&lt;/p&gt;
@@ -2706,9 +2706,9 @@ In (\ref{eq:sample}), we find the value of an interesting integral:&lt;/li&gt;
  
  <entry>
    <title>菜谱</title>
-   <link href="http://localhost:4000/learning/2019/01/01/recipe.html"/>
+   <link href="https://yangxiaozhou.github.io/learning/2019/01/01/recipe.html"/>
    <updated>2019-01-01T08:00:00+08:00</updated>
-   <id>http://localhost:4000/learning/2019/01/01/recipe</id>
+   <id>https://yangxiaozhou.github.io/learning/2019/01/01/recipe</id>
    <content type="html">&lt;p&gt;做过的好吃的东西，为了不忘记怎么做，把菜谱都收集起来放在这儿。有很多是跟老饭骨们学的，有些是跟我老妈学的，有视频教程的，我都收录在&lt;a href=&quot;https://www.youtube.com/playlist?list=PL9_EOuhN2bBxtcNacsP8Qtw_zv0oN2lJu&quot;&gt;下厨时间&lt;/a&gt;播放列表里。只要没有单独说的，一律按适量原则。&lt;/p&gt;
 
 &lt;ol&gt;
@@ -2783,9 +2783,9 @@ In (\ref{eq:sample}), we find the value of an interesting integral:&lt;/li&gt;
  
  <entry>
    <title>日本語の練習</title>
-   <link href="http://localhost:4000/learning/2018/11/21/japanese-essay.html"/>
+   <link href="https://yangxiaozhou.github.io/learning/2018/11/21/japanese-essay.html"/>
    <updated>2018-11-21T08:00:00+08:00</updated>
-   <id>http://localhost:4000/learning/2018/11/21/japanese-essay</id>
+   <id>https://yangxiaozhou.github.io/learning/2018/11/21/japanese-essay</id>
    <content type="html">&lt;p&gt;在学习日语过程中零零散散写过一些小短文，想着不如全部放到这儿来，当做自己的一个记录，也希望收到同在日语学习路上的朋友们的反馈。
 A collection of Japanese practice writings. All comments and corrections are welcomed.&lt;/p&gt;
 
