@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="https://yangxiaozhou.github.io/atom.xml" rel="self"/>
  <link href="https://yangxiaozhou.github.io/"/>
- <updated>2020-10-21T08:53:39+08:00</updated>
+ <updated>2020-10-21T09:22:27+08:00</updated>
  <id>https://yangxiaozhou.github.io</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -21,9 +21,9 @@
 
 &lt;p&gt;Yes! Let’s talk about the expectation-maximization algorithm (EM, for short). If you are in the data science “bubble”, you’ve probably come across EM at some point in time and wondered: What is EM, and do I need to know it?&lt;/p&gt;
 
-&lt;p&gt;It’s the algorithm that solves &lt;strong&gt;Gaussian mixture models&lt;/strong&gt;, a popular clustering approach. The Baum-Welch algorithm essential to &lt;strong&gt;hidden Markov models&lt;/strong&gt; is a special type of EM. It works with both big and small data; it thrives when there are missing information while other techniques fail. It’s such a classic, powerful, and versatile statistical learning technique that it’s taught in almost all computational statistics classes. After reading this article, you could gain a strong understanding of the EM algorithm and know when and how to use it.&lt;/p&gt;
+&lt;p&gt;It’s the algorithm that solves &lt;strong&gt;Gaussian mixture models&lt;/strong&gt;, a popular clustering approach. The Baum-Welch algorithm essential to &lt;strong&gt;hidden Markov models&lt;/strong&gt; is a special type of EM. It works with both big and small data; it thrives when there is missing information while other techniques fail. It’s such a classic, powerful, and versatile statistical learning technique that it’s taught in almost all computational statistics classes. After reading this article, you could gain a strong understanding of the EM algorithm and know when and how to use it.&lt;/p&gt;
 
-&lt;p&gt;We start with two motivating examples (unsupervised learning and evolution). Next we see what EM is in its general form. We jump back in action and use EM to solve the two examples. We then explain both intuitively and mathematically why EM works like a charm. Lastly, a summary of this article and some further topics are presented.&lt;/p&gt;
+&lt;p&gt;We start with two motivating examples (unsupervised learning and evolution). Next, we see what EM is in its general form. We jump back in action and use EM to solve the two examples. We then explain both intuitively and mathematically why EM works like a charm. Lastly, a summary of this article and some further topics are presented.&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#motivating-examples-why-do-we-care&quot; id=&quot;markdown-toc-motivating-examples-why-do-we-care&quot;&gt;Motivating examples: Why do we care?&lt;/a&gt;&lt;/li&gt;
@@ -218,7 +218,7 @@ $$
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta^{(n+1)} = \arg\max_{\theta \in \Theta} Q(\theta | \theta^{(n)}) \,.&lt;/script&gt;
 
-&lt;p&gt;A closer look at the obtained Q function reveals that it’s actually a weighted normal distribution MLE problem. That means, the new $\theta$ has close-form formulas and can be verified easily using differentiation:&lt;/p&gt;
+&lt;p&gt;A closer look at the obtained Q function reveals that it’s actually a weighted normal distribution MLE problem. That means, the new $\theta$ has closed-form formulas and can be verified easily using differentiation:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align*}
@@ -231,7 +231,7 @@ w_j^{(n+1)} &amp;= \frac{1}{n} \sum_{i=1}^{n} z_{ij}^{(n)} &amp;&amp; \text{New 
 
 &lt;h4 id=&quot;how-does-it-perform&quot;&gt;How does it perform?&lt;/h4&gt;
 
-&lt;p&gt;We go back to the opening problem of this section. I simulated 400 points using four different normal distributions. FIGURE 5 is what we see if we do not know the underlying true groupings. We run the EM procedure as derived above and set the algorithm to stop when the log-likelihood does not change anymore.&lt;/p&gt;
+&lt;p&gt;We go back to the opening problem in this section. I simulated 400 points using four different normal distributions. FIGURE 5 is what we see if we do not know the underlying true groupings. We run the EM procedure as derived above and set the algorithm to stop when the log-likelihood does not change anymore.&lt;/p&gt;
 
 &lt;p&gt;In the end, we found the mixing probabilities and all four group’s means and covariance matrices. FIGURE 6 below shows the density contours of each distribution found by EM superimposed on the data, which are now color-coded by their ground-truth groupings. Both the locations (means) and the scales (covariances) of the four underlying normal distributions are correctly identified. Unlike k-means, EM gives us both the clustering of the data and the generative model (GMM) behind them.&lt;/p&gt;
 
@@ -403,7 +403,7 @@ w_j^{(n+1)} &amp;= \frac{1}{n} \sum_{i=1}^{n} z_{ij}^{(n)} &amp;&amp; \text{New 
 &lt;p&gt;Good! Now we are ready to plug in the EM framework. What’s the first step?&lt;/p&gt;
 
 &lt;h4 id=&quot;expectation-step-1&quot;&gt;Expectation step&lt;/h4&gt;
-&lt;p&gt;Just like the GMM case, we first need to figure out the complete-data likelihood. Notice that this is actually a multinomial distribution problem. We have population of moths, the chance of capturing a moth of genotype $\mathrm{CC}$ is $p_{\mathrm{C}}^2$, similarly for the other genotypes. Therefore, the complete-data 
+&lt;p&gt;Just like the GMM case, we first need to figure out the complete-data likelihood. Notice that this is actually a multinomial distribution problem. We have a population of moths, the chance of capturing a moth of genotype $\mathrm{CC}$ is $p_{\mathrm{C}}^2$, similarly for the other genotypes. Therefore, the complete-data 
 likelihood is just the multinomial &lt;a href=&quot;https://en.wikipedia.org/wiki/Multinomial_distribution#Probability_mass_function&quot;&gt;distribution PDF&lt;/a&gt;:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
@@ -460,7 +460,7 @@ n_{\mathrm{IT}}^{(n)} &amp;= n_{\mathrm{Ins}}\frac{2  p_{\mathrm{I}}^{(n)} p_{\m
 
 &lt;h4 id=&quot;maximization-step-1&quot;&gt;Maximization step&lt;/h4&gt;
 
-&lt;p&gt;Since we obtained the expected number of each phenotypes, e.g. $n_{\mathrm{CC}}^{(n)}, n_{\mathrm{CI}}^{(n)}$, estimating the allele frequencies is easy. Intuitively, the frequency of allele $\mathrm{C}$ is calculated as the ratio between the number of allele $\mathrm{C}$ present in the population and the total number of alleles. This works for the other alleles as well. Therefore, in the M-step, we obtain&lt;/p&gt;
+&lt;p&gt;Since we obtained the expected number of each phenotype, e.g. $n_{\mathrm{CC}}^{(n)}, n_{\mathrm{CI}}^{(n)}$, estimating the allele frequencies is easy. Intuitively, the frequency of allele $\mathrm{C}$ is calculated as the ratio between the number of allele $\mathrm{C}$ present in the population and the total number of alleles. This works for the other alleles as well. Therefore, in the M-step, we obtain&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
@@ -638,7 +638,7 @@ $G(\theta | \theta^{(n)})$ instead of $\ell(\theta)$, we have made use of the in
 &lt;h2 id=&quot;further-topics&quot;&gt;Further topics&lt;/h2&gt;
 &lt;p&gt;Digging deeper, the first question you might ask is: So, is EM perfect? Of course, it’s not. Sometimes, the Q function is difficult to obtain analytically. We could use Monte Carlo techniques to estimate the Q function, e.g., check out Monte Carlo &lt;a href=&quot;https://amstat.tandfonline.com/doi/abs/10.1198/106186001317115045&quot;&gt;EM&lt;/a&gt;. Sometimes, even with complete-data information, the Q function is still difficult to maximize. We could consider alternative maximizing techniques, e.g., see expectation conditional maximization (&lt;a href=&quot;https://academic.oup.com/biomet/article-abstract/80/2/267/251605&quot;&gt;ECM&lt;/a&gt;). Another disadvantage of EM is that it provides us with only point estimates. In case we want to know the uncertainty in these estimates, we would need to conduct variance estimation through other techniques, e.g., Louis’s method, supplemental EM, or bootstrapping.&lt;/p&gt;
 
-&lt;p&gt;Thanks for reading! Please consider leaving a feedback for me below.&lt;/p&gt;
+&lt;p&gt;Thanks for reading! Please consider leaving feedback for me below.&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;h2 class=&quot;no_toc&quot; id=&quot;references&quot;&gt;References&lt;/h2&gt;
