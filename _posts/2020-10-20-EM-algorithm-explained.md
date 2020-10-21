@@ -10,9 +10,9 @@ tags: expectation-maximization statistical-learning clustering inference
 
 Yes! Let's talk about the expectation-maximization algorithm (EM, for short). If you are in the data science "bubble", you've probably come across EM at some point in time and wondered: What is EM, and do I need to know it?
 
-It's the algorithm that solves **Gaussian mixture models**, a popular clustering approach. The Baum-Welch algorithm essential to **hidden Markov models** is a special type of EM. It works with both big and small data; it thrives when there are missing information while other techniques fail. It's such a classic, powerful, and versatile statistical learning technique that it's taught in almost all computational statistics classes. After reading this article, you could gain a strong understanding of the EM algorithm and know when and how to use it. 
+It's the algorithm that solves **Gaussian mixture models**, a popular clustering approach. The Baum-Welch algorithm essential to **hidden Markov models** is a special type of EM. It works with both big and small data; it thrives when there is missing information while other techniques fail. It's such a classic, powerful, and versatile statistical learning technique that it's taught in almost all computational statistics classes. After reading this article, you could gain a strong understanding of the EM algorithm and know when and how to use it. 
 
-We start with two motivating examples (unsupervised learning and evolution). Next we see what EM is in its general form. We jump back in action and use EM to solve the two examples. We then explain both intuitively and mathematically why EM works like a charm. Lastly, a summary of this article and some further topics are presented.
+We start with two motivating examples (unsupervised learning and evolution). Next, we see what EM is in its general form. We jump back in action and use EM to solve the two examples. We then explain both intuitively and mathematically why EM works like a charm. Lastly, a summary of this article and some further topics are presented.
 
 * TOC
 {:toc}
@@ -225,7 +225,7 @@ $$
 $$
 
 
-A closer look at the obtained Q function reveals that it's actually a weighted normal distribution MLE problem. That means, the new $\theta$ has close-form formulas and can be verified easily using differentiation:
+A closer look at the obtained Q function reveals that it's actually a weighted normal distribution MLE problem. That means, the new $\theta$ has closed-form formulas and can be verified easily using differentiation:
 
 
 $$
@@ -241,7 +241,7 @@ for $j = 1, \dots, k$.
 
 #### How does it perform?
 
-We go back to the opening problem of this section. I simulated 400 points using four different normal distributions. FIGURE 5 is what we see if we do not know the underlying true groupings. We run the EM procedure as derived above and set the algorithm to stop when the log-likelihood does not change anymore. 
+We go back to the opening problem in this section. I simulated 400 points using four different normal distributions. FIGURE 5 is what we see if we do not know the underlying true groupings. We run the EM procedure as derived above and set the algorithm to stop when the log-likelihood does not change anymore. 
 
 In the end, we found the mixing probabilities and all four group's means and covariance matrices. FIGURE 6 below shows the density contours of each distribution found by EM superimposed on the data, which are now color-coded by their ground-truth groupings. Both the locations (means) and the scales (covariances) of the four underlying normal distributions are correctly identified. Unlike k-means, EM gives us both the clustering of the data and the generative model (GMM) behind them. 
 
@@ -401,7 +401,7 @@ $$p_{\mathrm{C}}^2, 2p_{\mathrm{C}}p_{\mathrm{I}}, 2p_{\mathrm{C}}p_{\mathrm{T}}
 Good! Now we are ready to plug in the EM framework. What's the first step? 
 
 #### Expectation step
-Just like the GMM case, we first need to figure out the complete-data likelihood. Notice that this is actually a multinomial distribution problem. We have population of moths, the chance of capturing a moth of genotype $\mathrm{CC}$ is $p_{\mathrm{C}}^2$, similarly for the other genotypes. Therefore, the complete-data 
+Just like the GMM case, we first need to figure out the complete-data likelihood. Notice that this is actually a multinomial distribution problem. We have a population of moths, the chance of capturing a moth of genotype $\mathrm{CC}$ is $p_{\mathrm{C}}^2$, similarly for the other genotypes. Therefore, the complete-data 
 likelihood is just the multinomial [distribution PDF](https://en.wikipedia.org/wiki/Multinomial_distribution#Probability_mass_function):
 
 $$
@@ -463,7 +463,7 @@ And we know $n_{\mathrm{TT}} = n_{\mathrm{Typ}}$.
 
 #### Maximization step
 
-Since we obtained the expected number of each phenotypes, e.g. $n_{\mathrm{CC}}^{(n)}, n_{\mathrm{CI}}^{(n)}$, estimating the allele frequencies is easy. Intuitively, the frequency of allele $\mathrm{C}$ is calculated as the ratio between the number of allele $\mathrm{C}$ present in the population and the total number of alleles. This works for the other alleles as well. Therefore, in the M-step, we obtain
+Since we obtained the expected number of each phenotype, e.g. $n_{\mathrm{CC}}^{(n)}, n_{\mathrm{CI}}^{(n)}$, estimating the allele frequencies is easy. Intuitively, the frequency of allele $\mathrm{C}$ is calculated as the ratio between the number of allele $\mathrm{C}$ present in the population and the total number of alleles. This works for the other alleles as well. Therefore, in the M-step, we obtain
 
 $$
 \begin{align}
@@ -643,7 +643,7 @@ I hope this introductory article has helped you a little in getting to know the 
 ## Further topics
 Digging deeper, the first question you might ask is: So, is EM perfect? Of course, it's not. Sometimes, the Q function is difficult to obtain analytically. We could use Monte Carlo techniques to estimate the Q function, e.g., check out Monte Carlo [EM](https://amstat.tandfonline.com/doi/abs/10.1198/106186001317115045). Sometimes, even with complete-data information, the Q function is still difficult to maximize. We could consider alternative maximizing techniques, e.g., see expectation conditional maximization ([ECM](https://academic.oup.com/biomet/article-abstract/80/2/267/251605)). Another disadvantage of EM is that it provides us with only point estimates. In case we want to know the uncertainty in these estimates, we would need to conduct variance estimation through other techniques, e.g., Louis's method, supplemental EM, or bootstrapping. 
 
-Thanks for reading! Please consider leaving a feedback for me below. 
+Thanks for reading! Please consider leaving feedback for me below. 
 
 ----------------
 ## References
