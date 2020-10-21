@@ -6,13 +6,13 @@ categories: DATA
 tags: expectation-maximization statistical-learning clustering inference
 ---
 
-*A comprehensive guide to the classic and elegant EM algorithm: intuitions, maths, worked examples, and Python implementation to illustrate what it does, how it works, and why it works.*
+*A comprehensive guide to the EM algorithm with intuitions, examples, Python implementation, and maths*
 
-Yes! Let's talk about the expectation-maximization algorithm (EM, for short). If you are in the data science/machine learning "bubble", you've probably come across EM at some point in time and wondered: What is EM, and do I need to know it?
+Yes! Let's talk about the expectation-maximization algorithm (EM, for short). If you are in the data science "bubble", you've probably come across EM at some point in time and wondered: What is EM, and do I need to know it?
 
-Well, let's see. It's the algorithm that solves Gaussian mixture model, a popular clustering approach. The Baum-Welch algorithm that solves hidden Markov model problems is a special case of EM. It's taught in almost all computational statistics classes. It's a classic, powerful, and versatile statistical learning technique that also extends itself in many ways: Monte Carlo EM, Stochastic EM, and Online EM, to name a few. This article is my take on introducing EM for what it is, how it works, and why it works. 
+It's the algorithm that solves **Gaussian mixture models**, a popular clustering approach. The Baum-Welch algorithm essential to **hidden Markov models** is a special type of EM. It works with both big and small data; it thrives when there are missing information while other techniques fail. It's such a classic, powerful, and versatile statistical learning technique that it's taught in almost all computational statistics classes. After reading this article, you could gain a strong understanding of the EM algorithm and know when and how to use it. 
 
-We start with two motivating examples (unsupervised learning and evolution). Then we see what exactly EM is in its general form. We get back in action and use EM to solve the two examples. For those curious souls, we then explain both intuitively and mathematically why EM works like a charm. Lastly, a summary of this article and some further topics are presented.
+We start with two motivating examples (unsupervised learning and evolution). Next we see what EM is in its general form. We jump back in action and use EM to solve the two examples. We then explain both intuitively and mathematically why EM works like a charm. Lastly, a summary of this article and some further topics are presented.
 
 * TOC
 {:toc}
@@ -638,10 +638,12 @@ $G(\theta | \theta^{(n)})$ instead of $\ell(\theta)$, we have made use of the in
 
 In this article, we see that EM converts a difficult problem with missing information to an easy problem through the optimization transfer framework. We also see EM in action by solving step-by-step two problems with Python implementation (Gaussian mixture clustering and peppered moth population genetics). More importantly, we show that EM is not just a smart hack but has solid mathematical groundings on why it would work. 
 
-Thanks for reading! I hope this introductory article has helped you a little in getting to know the EM algorithm. From here, if you are interested, consider exploring the following topics.
+I hope this introductory article has helped you a little in getting to know the EM algorithm. From here, if you are interested, consider exploring the following topics.
 
 ## Further topics
 Digging deeper, the first question you might ask is: So, is EM perfect? Of course, it's not. Sometimes, the Q function is difficult to obtain analytically. We could use Monte Carlo techniques to estimate the Q function, e.g., check out Monte Carlo [EM](https://amstat.tandfonline.com/doi/abs/10.1198/106186001317115045). Sometimes, even with complete-data information, the Q function is still difficult to maximize. We could consider alternative maximizing techniques, e.g., see expectation conditional maximization ([ECM](https://academic.oup.com/biomet/article-abstract/80/2/267/251605)). Another disadvantage of EM is that it provides us with only point estimates. In case we want to know the uncertainty in these estimates, we would need to conduct variance estimation through other techniques, e.g., Louis's method, supplemental EM, or bootstrapping. 
+
+Thanks for reading! Please consider leaving a feedback for me below. 
 
 ----------------
 ## References
