@@ -5,7 +5,7 @@ permalink: /publication/
 ---
 Google [Scholar](https://scholar.google.com/citations?user=pWnVbHQAAAAJ&hl=en)
 
-- **Xiaozhou Yang**, Nan Chen, Chao Zhai. *A control chart approach to power system line outage detection under transient dynamics*. IEEE Transactions on Power Systems, 2020.  [PDF](https://arxiv.org/abs/1911.01733) 
+- **Xiaozhou Yang**, Nan Chen, Chao Zhai. *A control chart approach to power system line outage detection under transient dynamics*. IEEE Transactions on Power Systems, vol. 36, no. 1, pp. 127-135. 2021.  [PDF](https://arxiv.org/abs/1911.01733) 
 
 - **Xiaozhou Yang**, Nan Chen, Chao Zhai. *Optimal placement of limited PMUs for transmission line outage detection and identification*. International Conference on Probabilistic Methods Applied to Power Systems (**PMAPS**), 2020. [PDF](https://arxiv.org/abs/1911.02852) 
 

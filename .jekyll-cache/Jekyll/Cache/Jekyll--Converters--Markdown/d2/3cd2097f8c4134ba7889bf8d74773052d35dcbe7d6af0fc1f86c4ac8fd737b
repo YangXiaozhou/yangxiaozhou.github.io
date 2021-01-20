@@ -1,4 +1,4 @@
-I"�<p>6月的新加坡结束了封城，而我也在这个月的最后一天收到了<a href="https://www.researchgate.net/publication/342652506_A_Control_Chart_Approach_to_Power_System_Line_Outage_Detection_Under_Transient_Dynamics">文章</a>被接收的邮件。</p>
+I"�<p>6月的新加坡结束了封城，而我也在这个月的最后一天收到了<a href="https://www.researchgate.net/publication/342652506_A_Control_Chart_Approach_to_Power_System_Line_Outage_Detection_Under_Transient_Dynamics">文章</a>被接收的邮件。</p>
 
 <p>博一开始就在与不同老师的交流中了解到，科研与发表不是简单的因果关系：做了厉害的科研工作就能在顶级期刊上发表研究结果，这俩更像是有一定相关性但也分别独立于彼此的事件，最简单的例子就是我可能可以控制某个工作投入的时间，但无法控制谁是审稿人、审稿人的学术品味等等。在我很小的博士生圈子里，一篇文章被修改两三次、回复审稿人意见的信件比原文章还要长、修改期间所做的工作量不比原文少等这一类的经历也是没少听说，所以当我的第一篇文章在经过一轮修改之后便被接收时，心里虽然很高兴，但总觉得这次多少也走了些运吧。</p>
 
@@ -17,7 +17,7 @@
 
 <p>沿着这个思路，我越发清晰地认识到，我所做的电网断线监测研究与传染病大流行有几个非常相似的地方：他们都能迅速从一个case变成一个cluster；他们出现时都会有些异常的“信号”；而且这些“信号”一开始会很微弱，以及不完整。Good!虽然不是每个人都熟悉电网，但是我相信大家应该对新冠疫情不会陌生了。所以后来在我的分享里，几乎每一个关键地方，我都会用新冠疫情作为类比来解释。从我得到的一些反馈来看，这个类比应该还是发挥了一些作用了。</p>
 <figure>
-  <img src="https://yangxiaozhou.github.io/assets/month-journal/presentation-2.png" alt="presentation-2" />
+  <img src="http://localhost:4000/assets/month-journal/presentation-2.png" alt="presentation-2" />
   <figcaption>这里我把研究问题中的挑战与对抗新冠疫情的挑战做了类比。</figcaption>
 </figure>
 
