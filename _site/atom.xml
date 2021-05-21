@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2021-01-26T20:51:24+08:00</updated>
+ <updated>2021-05-21T09:27:29+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>2021年1月吃：慢烤手撕猪肉和椒麻鸡</title>
-   <link href="http://localhost:4000/learning/2021/01/10/journal-kitchen-2020-01.html"/>
-   <updated>2021-01-10T00:00:00+08:00</updated>
-   <id>http://localhost:4000/learning/2021/01/10/journal-kitchen-2020-01</id>
+   <link href="http://localhost:4000/learning/2021/01/26/journal-kitchen-2021-01.html"/>
+   <updated>2021-01-26T00:00:00+08:00</updated>
+   <id>http://localhost:4000/learning/2021/01/26/journal-kitchen-2021-01</id>
    <content type="html">&lt;p&gt;记录且分享1月享受的两道菜。&lt;/p&gt;
 
 &lt;h2 id=&quot;slow-cooked-smoky-pulled-pork--慢烤手撕猪肉&quot;&gt;Slow-cooked smoky pulled pork | 慢烤手撕猪肉&lt;/h2&gt;
@@ -2299,14 +2299,14 @@ Recall that we want to find a direction where the between-class variance is maxi
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
 \label{eqn_g_eigen_1}
-\max_{\mathbf{y}} {}&amp;{} \mathbf{y}^{T} \mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} \mathbf{y} \,,\\ 
+\max_{\mathbf{y}} {}&amp;{} \mathbf{y}^{T} \mathbf{W}^{-\frac12} \mathbf{B} \mathbf{W}^{-\frac12} \mathbf{y} \,,\\ 
 \text{s.t } &amp;{} \mathbf{y}^{T} \mathbf{y} = 1 \,. \nonumber
 \end{align} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;Since $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$ is symmetric, we can find the spectral decomposition of it as&lt;/p&gt;
+&lt;p&gt;Since $\mathbf{W}^{-\frac12} \mathbf{B} \mathbf{W}^{-\frac12}$ is symmetric, we can find the spectral decomposition of it as&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
-\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} = \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \,.
+\mathbf{W}^{-\frac12} \mathbf{B} \mathbf{W}^{-\frac12} = \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \,.
 \label{eqn_fisher_eigen}
 \end{align}&lt;/script&gt;
 
@@ -2314,7 +2314,7 @@ Recall that we want to find a direction where the between-class variance is maxi
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align*}
-\mathbf{y}^{T} \mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} \mathbf{y} &amp;= \mathbf{y}^{T} \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \mathbf{y} \\
+\mathbf{y}^{T} \mathbf{W}^{-\frac12} \mathbf{B} \mathbf{W}^{-\frac12} \mathbf{y} &amp;= \mathbf{y}^{T} \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \mathbf{y} \\
 &amp;= \mathbf{z}^T \mathbf{\Lambda} \mathbf{z} \,.
 \end{align*} %]]&gt;&lt;/script&gt;
 
@@ -2340,7 +2340,7 @@ Recall that we want to find a direction where the between-class variance is maxi
 &lt;p&gt;&lt;strong&gt;Theorem A.6.2&lt;/strong&gt; from MA&lt;sup id=&quot;fnref:MA&quot;&gt;&lt;a href=&quot;#fn:MA&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;: For &lt;script type=&quot;math/tex&quot;&gt;\mathbf{A}_(n \times p)&lt;/script&gt; and $\mathbf{B}_(p \times n)$, the non-zero eigenvalues of
 $\mathbf{AB}$ and $\mathbf{BA}$ are the same and have the same multiplicity. If $\mathbf{x}$ is a non-trivial eigenvector of $\mathbf{AB}$ for an eigenvalue $\lambda \neq 0$, then $\mathbf{y}=\mathbf{Bx}$ is a non-trivial eigenvector of $\mathbf{BA}$.&lt;/p&gt;
 
-&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;\pmb \gamma_{(1)}&lt;/script&gt; is an eigenvector of $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$, then, $\mathbf{W}^{-\frac12} \pmb \gamma_{(1)}$ is also the eigenvector of $\mathbf{W}^{-\frac12} \mathbf{W}^{-\frac12} \mathbf{B} = \mathbf{W}^{-1} \mathbf{B}$, using &lt;strong&gt;Theorem A.6.2&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;\pmb \gamma_{(1)}&lt;/script&gt; is an eigenvector of $\mathbf{W}^{-\frac12} \mathbf{B} \mathbf{W}^{-\frac12}$, then, $\mathbf{W}^{-\frac12} \pmb \gamma_{(1)}$ is also the eigenvector of $\mathbf{W}^{-\frac12} \mathbf{W}^{-\frac12} \mathbf{B} = \mathbf{W}^{-1} \mathbf{B}$, using &lt;strong&gt;Theorem A.6.2&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;In summary, optimal subspace coordinates, also known as discriminant coordinates, are obtained from the eigenvectors &lt;script type=&quot;math/tex&quot;&gt;\mathbf{a}_\ell&lt;/script&gt; of &lt;script type=&quot;math/tex&quot;&gt;\mathbf{W}^{-1}\mathbf{B}&lt;/script&gt;, for &lt;script type=&quot;math/tex&quot;&gt;\ell = 1, ... , \min\{p,K-1\}&lt;/script&gt;.&lt;/em&gt; It can be shown that the &lt;script type=&quot;math/tex&quot;&gt;\mathbf{a}_\ell&lt;/script&gt;s obtained are the same as &lt;script type=&quot;math/tex&quot;&gt;\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell&lt;/script&gt;s obtained in the reduced-rank LDA formulation.&lt;/p&gt;
 

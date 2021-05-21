@@ -1,4 +1,4 @@
-I"»ã<p><em>Intuitions, illustrations, and maths: How itâ€™s more than a dimension reduction tool and why itâ€™s robust for real-world applications.</em></p>
+I"¼ã<p><em>Intuitions, illustrations, and maths: How itâ€™s more than a dimension reduction tool and why itâ€™s robust for real-world applications.</em></p>
 
 <p><img src="/assets/2019-10-02/mda.png" alt="mda" /> This graph shows that boundaries (blue lines) learned by mixture discriminant analysis (MDA) successfully separate three mingled classes. MDA is one of the powerful extensions of LDA.</p>
 
@@ -290,7 +290,7 @@ Recall that we want to find a direction where the between-class variance is maxi
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
 \label{eqn_g_eigen_1}
-\max_{\mathbf{y}} {}&{} \mathbf{y}^{T} \mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} \mathbf{y} \,,\\ 
+\max_{\mathbf{y}} {}&{} \mathbf{y}^{T} \mathbf{W}^{\frac-12} \mathbf{B} \mathbf{W}^{\frac12} \mathbf{y} \,,\\ 
 \text{s.t } &{} \mathbf{y}^{T} \mathbf{y} = 1 \,. \nonumber
 \end{align} %]]></script>
 

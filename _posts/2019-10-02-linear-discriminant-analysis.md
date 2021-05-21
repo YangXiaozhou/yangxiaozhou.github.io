@@ -315,16 +315,16 @@ Let $\mathbf{W}^{\frac12}$ be the symmetric square root of $\mathbf{W}$, and $\m
 $$
 \begin{align}
 \label{eqn_g_eigen_1}
-\max_{\mathbf{y}} {}&{} \mathbf{y}^{T} \mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} \mathbf{y} \,,\\ 
+\max_{\mathbf{y}} {}&{} \mathbf{y}^{T} \mathbf{W}^{-\frac12} \mathbf{B} \mathbf{W}^{-\frac12} \mathbf{y} \,,\\ 
 \text{s.t } &{} \mathbf{y}^{T} \mathbf{y} = 1 \,. \nonumber
 \end{align}
 $$
 
-Since $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$ is symmetric, we can find the spectral decomposition of it as
+Since $\mathbf{W}^{-\frac12} \mathbf{B} \mathbf{W}^{-\frac12}$ is symmetric, we can find the spectral decomposition of it as
 
 $$
 \begin{align}
-\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} = \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \,.
+\mathbf{W}^{-\frac12} \mathbf{B} \mathbf{W}^{-\frac12} = \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \,.
 \label{eqn_fisher_eigen}
 \end{align}
 $$
@@ -333,7 +333,7 @@ Let $\mathbf{z} = \mathbf{\Gamma}^T \mathbf{y}$. So $\mathbf{z}^T \mathbf{z} = \
 
 $$
 \begin{align*}
-\mathbf{y}^{T} \mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12} \mathbf{y} &= \mathbf{y}^{T} \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \mathbf{y} \\
+\mathbf{y}^{T} \mathbf{W}^{-\frac12} \mathbf{B} \mathbf{W}^{-\frac12} \mathbf{y} &= \mathbf{y}^{T} \mathbf{\Gamma} \mathbf{\Lambda} \mathbf{\Gamma}^T \mathbf{y} \\
 &= \mathbf{z}^T \mathbf{\Lambda} \mathbf{z} \,.
 \end{align*}
 $$
@@ -362,7 +362,7 @@ and the upper bound is attained at $\mathbf{z} = (1,0,0,\dots,0)^T$. Since $\mat
 **Theorem A.6.2** from MA[^MA]: For $$\mathbf{A}_(n \times p)$$ and $\mathbf{B}_(p \times n)$, the non-zero eigenvalues of
 $\mathbf{AB}$ and $\mathbf{BA}$ are the same and have the same multiplicity. If $\mathbf{x}$ is a non-trivial eigenvector of $\mathbf{AB}$ for an eigenvalue $\lambda \neq 0$, then $\mathbf{y}=\mathbf{Bx}$ is a non-trivial eigenvector of $\mathbf{BA}$.
 
-Since $$\pmb \gamma_{(1)}$$ is an eigenvector of $\mathbf{W}^{\frac12} \mathbf{B} \mathbf{W}^{\frac12}$, then, $\mathbf{W}^{-\frac12} \pmb \gamma_{(1)}$ is also the eigenvector of $\mathbf{W}^{-\frac12} \mathbf{W}^{-\frac12} \mathbf{B} = \mathbf{W}^{-1} \mathbf{B}$, using **Theorem A.6.2**. 
+Since $$\pmb \gamma_{(1)}$$ is an eigenvector of $\mathbf{W}^{-\frac12} \mathbf{B} \mathbf{W}^{-\frac12}$, then, $\mathbf{W}^{-\frac12} \pmb \gamma_{(1)}$ is also the eigenvector of $\mathbf{W}^{-\frac12} \mathbf{W}^{-\frac12} \mathbf{B} = \mathbf{W}^{-1} \mathbf{B}$, using **Theorem A.6.2**. 
 
 *In summary, optimal subspace coordinates, also known as discriminant coordinates, are obtained from the eigenvectors $$\mathbf{a}_\ell$$ of $$\mathbf{W}^{-1}\mathbf{B}$$, for $$\ell = 1, ... , \min\{p,K-1\}$$.* It can be shown that the $$\mathbf{a}_\ell$$s obtained are the same as $$\mathbf{W}^{-\frac{1}{2}} \mathbf{v}^*_\ell$$s obtained in the reduced-rank LDA formulation. 
 
