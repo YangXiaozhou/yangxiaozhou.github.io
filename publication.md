@@ -7,7 +7,7 @@ Google [Scholar](https://scholar.google.com/citations?user=pWnVbHQAAAAJ&hl=en)
 
 ## Preprint
 
-- **Xiaozhou Yang**, Nan Chen, Chao Zhai. *A particle filter approach to power system line outage detection using load and generator bus dynamics*. arXiv:2107.06754. 2021   ([PDF](https://arxiv.org/abs/2107.06754)) 
+- **Xiaozhou Yang**, Nan Chen, Chao Zhai. *A particle filter approach to power system line outage detection using load and generator bus dynamics*. arXiv:2107.06754. 2021   [PDF](https://arxiv.org/abs/2107.06754)
 
 ## Publication
 
