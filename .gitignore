@@ -4,3 +4,8 @@
 .idea/markdown-navigator.xml
 .idea/workspace.xml
 _site/
+.jekyll-cache
+_site
+_site/publication/index.html
+*.html
+*.html
