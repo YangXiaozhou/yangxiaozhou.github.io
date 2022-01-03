@@ -4,7 +4,7 @@
  <title>Xiaozhou's Notes</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2021-11-13T08:35:24+08:00</updated>
+ <updated>2021-12-20T08:32:07+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Yang Xiaozhou</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Introduction to Python Programming: Course Review and Notebooks</title>
-   <link href="http://localhost:4000/learning/2021/11/13/review-intro-to-Python.html"/>
-   <updated>2021-11-13T00:00:00+08:00</updated>
-   <id>http://localhost:4000/learning/2021/11/13/review-intro-to-Python</id>
+   <link href="http://localhost:4000/learning/2021/12/20/review-intro-to-Python.html"/>
+   <updated>2021-12-20T00:00:00+08:00</updated>
+   <id>http://localhost:4000/learning/2021/12/20/review-intro-to-Python</id>
    <content type="html">&lt;p&gt;Suddenly, it seems like everybody is learning how to program and analyze data. One reason is the  opportunity presented by highly accessible computing power and the ease of capturing data. Another is the advent of massive open online course movement (MOOC) and ensuing online learning platforms. To learn something, we are no longer limited to physical classrooms or print (often expensive) textbooks. Educators from around the world design classes that reach student cohort of millions rather than hundreds, and students can come from incredibly diverse backgrounds. Many of the classes offered teach similar contents; They are in a market and “compete” with each other for better student reviews.&lt;/p&gt;
 
 &lt;p&gt;In this article, I would like to recommend such a MOOC: &lt;a href=&quot;https://www.edx.org/professional-certificate/introduction-to-python-programming&quot;&gt;Introduction to Python Programming&lt;/a&gt;, a four-part course run by Dr. David Joyner from the Georgia Institute of Technology. It is not the most popular course on Python programming; It may not even be in &lt;strong&gt;the top 10 list&lt;/strong&gt;. However, I would highly recommend anyone who is or has been learning Python on their own to give this class a try. To quote the course overview:&lt;/p&gt;
@@ -27,24 +27,806 @@
 
 &lt;p&gt;So the questions is, why did I take this course? Certainly, I am not new to programming. I’ve been introduced to CS foundations through C, C++, and Java in my undergraduate days. I picked up Python for my Bachelor thesis on imbalanced data classification. Ever since then, I’ve been learning and using Python for the most part of my Ph.D..&lt;/p&gt;
 
-&lt;p&gt;However, there are unfortunately not many memories left from my C and C++ classes (Use it or lose it); My learning of Python has mostly been sporadic and oriented towards solving something or using something. It was always about programming rather than the bigger picture of computing (This is one of the distinctions that Dr. Joyner makes early in the course). In short, I was looking for a formal introduction to the basics of computing and programming in Python.&lt;/p&gt;
+&lt;p&gt;However, there are unfortunately not many memories left from my C and C++ classes (I guess it’s really use it or lose it); My learning of Python has mostly been sporadic and oriented towards solving something or using something. It was always about programming rather than the bigger picture of computing (This is one of the distinctions that Dr. Joyner makes early in the course). In short, I was looking for a formal introduction to the basics of computing and programming in Python.&lt;/p&gt;
 
 &lt;p&gt;This course does exactly that. Dr. Joyner takes us through essential concepts in computing in a way that feels natural, paced, and yet progressive. Each chapter and subchapter builds on the previous one. I can’t applaud enough for Dr. Joyner’s delivery neither. He always uses common sense analogies to illustrate a particular computing concept. The result is that we walk away not only knowing how to code, but why.&lt;/p&gt;
 
 &lt;p&gt;What sets this course apart though is the &lt;strong&gt;amount&lt;/strong&gt; of &lt;strong&gt;carefully designed&lt;/strong&gt; exercise problems that we get to practice on. For any learning to happen, practice is the key. This course excels on that by providing numerous exercises in each section. Straightforward multiple-choice questions and short coding exercises are provided early in a chapter. As we progress, they become a bit more challenging and yet still completely doable. Each coding exercise is also accompanied by detailed instructions and tips to help anyone in need. Looking back, I would say the videos and texts accounted for 50% of the learning and exercises the remaining 50%. There are many great features of this course that I did not mention, e.g., a companion smart book, real teaching assistants going through exercise problems, all the benefits of a self-paced online course.&lt;/p&gt;
 
-&lt;p&gt;I have learnt about computing as much as I have reviewed in this course. Therefore, I would highly recommend it to anyone currently learning or has learnt Python programming one their own. To close the loop of “read, recite, and review”, I made the notes below. Rather than a replication of Dr. Joyner’s course reading, it is a concise set of notes written to summarize my own understanding. Additional materials are also occasionally added from further reading on the topic. Lastly, I’ve prepared a Jupyter notebook for each chapter where plenty of helpful coding exercises could be run concurrent to the text. My hope is that this set of notebooks can help me and you to quickly review fundamental Python computing concepts and techniques whenever we need in the future.&lt;/p&gt;
+&lt;p&gt;I have learnt about computing as much as I have reviewed in this course. Therefore, I would highly recommend it to anyone currently learning or has learnt Python programming one their own. To close the loop of “read, recite, and review”, I try to write a tutorial for each topic I learn. Rather than a replication of Dr. Joyner’s course reading, it is a concise set of notes written to summarize my own understanding. Additional materials are also occasionally added from further reading on the topic. Lastly, I’ve prepared these tutorials in Jupyter notebooks so that plenty of helpful coding exercises could be run concurrent to the text. My hope is that this set of notebooks can help me and you to quickly review fundamental Python computing concepts and techniques whenever we need in the future.&lt;/p&gt;
 
 &lt;p&gt;You can find all the Jupyter notebooks in this Github &lt;a href=&quot;https://github.com/YangXiaozhou/Introduction_to_Python_programming&quot;&gt;repo&lt;/a&gt;, or go straight to one of them:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/YangXiaozhou/Introduction_to_Python_programming/blob/master/notebooks/1_Foundamentals_and_procedural_programming.ipynb&quot;&gt;Fundamentals and procedural programming&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/YangXiaozhou/Introduction_to_Python_programming/blob/master/notebooks/2_Control_structures.ipynb&quot;&gt;Control structures&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/YangXiaozhou/Introduction_to_Python_programming/blob/master/notebooks/3_Data_structures.ipynb&quot;&gt;Data structures&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/YangXiaozhou/Introduction_to_Python_programming/blob/master/notebooks/4_Objects_and_algorithms.ipynb&quot;&gt;Objects and algorithms&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/YangXiaozhou/Introduction_to_Python_programming/blob/master/1_Foundamentals_and_procedural_programming.ipynb&quot;&gt;Fundamentals and procedural programming&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/YangXiaozhou/Introduction_to_Python_programming/blob/master/2_Control_structures.ipynb&quot;&gt;Control structures&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/YangXiaozhou/Introduction_to_Python_programming/blob/master/3_Data_structures.ipynb&quot;&gt;Data structures&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/YangXiaozhou/Introduction_to_Python_programming/blob/master/4_Objects_and_algorithms.ipynb&quot;&gt;Objects and algorithms&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Alternatively, you can see all the notes in one article without the code &lt;a href=&quot;https://github.com/YangXiaozhou/Introduction_to_Python_programming/blob/master/course_notes.md&quot;&gt;here&lt;/a&gt;. Enjoy.&lt;/p&gt;
+&lt;p&gt;Or if you would like to read the text without any coding exercises, you can go here.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Notes for Introduction to Python Programming</title>
+   <link href="http://localhost:4000/learning/2021/12/20/introduction_to_Python_programming.html"/>
+   <updated>2021-12-20T00:00:00+08:00</updated>
+   <id>http://localhost:4000/learning/2021/12/20/introduction_to_Python_programming</id>
+   <content type="html">&lt;p&gt;This is a four-part series of Introduction to Python Programming, based on Dr. David Joyner’s Edx &lt;a href=&quot;https://www.edx.org/professional-certificate/introduction-to-python-programming&quot;&gt;course&lt;/a&gt;. To see my review of the course, go here. To see the next Chapter, go here.&lt;/p&gt;
+
+&lt;p&gt;[TOC]&lt;/p&gt;
+
+&lt;h1 id=&quot;fundamentals-and-procedural-programming&quot;&gt;Fundamentals and procedural programming&lt;/h1&gt;
+
+&lt;h2 id=&quot;computing&quot;&gt;Computing&lt;/h2&gt;
+
+&lt;p&gt;First up, is computing and programming the same thing?&lt;/p&gt;
+
+&lt;p&gt;Computing is loosely anything we do that involves computers. Programming is the act of giving a set of instructions for computers to act on. Computing is about what we want to do with computers using the programming language that we learnt.&lt;/p&gt;
+
+&lt;p&gt;Here are some commonly used programming vocabularies to distinguish:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Program vs code
+    &lt;ul&gt;
+      &lt;li&gt;Program: A set of lines of code that usually serve one overall function.&lt;/li&gt;
+      &lt;li&gt;A line of code: The smallest unit of programming that instructs computer to do something.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Input vs output
+    &lt;ul&gt;
+      &lt;li&gt;Input: What a program takes in to work with.&lt;/li&gt;
+      &lt;li&gt;Output: What a program produces in return.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compiling vs executing
+    &lt;ul&gt;
+      &lt;li&gt;Compiling: Compilers look for syntax errors in our code, like proofreading an article.&lt;/li&gt;
+      &lt;li&gt;Executing: Actually running the program written.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Console vs graphical user interface (GUI):
+    &lt;ul&gt;
+      &lt;li&gt;Console: Command-line interface that is solely based on text input and output, e.g., Terminal on Mac.&lt;/li&gt;
+      &lt;li&gt;GUI: Much more complex and commonly used interface of computer programs, e.g., Microsoft Word.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What are programming languages?&lt;/p&gt;
+
+&lt;p&gt;To be able to write Japanese essays, we need to learn Japanese, Similarly, to write computer programs, we need to learn programming languages. However, languages differ in many ways, it’s important to keep in mind the &lt;a href=&quot;https://www.realpythonproject.com/you-need-to-know-compiled-interpreted-static-dynamic-and-strong-weak-typing/&quot;&gt;language spectrum&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Static and compiled: e.g., C, C++, Java. These languages do not allow variable type changes after declaration. The program is translated into machine-readable code at once.&lt;/li&gt;
+  &lt;li&gt;Dynamic and interpreted: e.g., Python, JavaScript. These languages allow dynamically changing variable types. The program is translated into machine-readable code one line at a time.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;introduction-to-python&quot;&gt;Introduction to Python&lt;/h2&gt;
+
+&lt;p&gt;Python was created in the 90s, became popular in 2000s. It is one of the most popular languages today. It is a high-level language in the sense that it abstracts aways from core computer processor and memory and is more portable across different operating systems. It is also an interpreted language as it runs code line by line without trying to compile the whole program first.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Python programming&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The common work flow of programming is: Writing code –&amp;gt; Running code –&amp;gt; Evaluating results –&amp;gt; Repeat. Multiple instructions are chained together through lines of code. When we wish to see the value of a variable or the result of a program, &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; function is usually used. Also, it is recommended to work in small chunks of code at a time for Python programming.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;First Python program: Hello, world!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We wish to write a program that outputs a message, “Hello, world!”. Note that &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; is in lower case. Also, the message to be printed is enclosed by parenthesis&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Compiling vs executing&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The difference between compiling and executing a program can be understood through the analogy of building a table with parts and instructions. Compiling means reading the instructions to make sure every parts are in place and the instructions make sense. Executing means actually building the table with the instructions.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Compiling&lt;/em&gt;: Practically, this process looks over our code to see if everything makes sense. Technically, it also translates our code into lower-level machine-understandable code. Compiling before running is not required for every language, .e.g., interpreted languages like Python and JavaScript.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Executing&lt;/em&gt;: Actually running the code and letting it do when we want it to do.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Evaluating results&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;After executing our program, three scenarios can happen:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Run as intended.&lt;/li&gt;
+  &lt;li&gt;Did not do what we intend it to do.&lt;/li&gt;
+  &lt;li&gt;Run into errors.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In the first case, we obtain correct results and we’re happy. In the second case, the program executes successfully but produces incorrect results, e.g., instead of printing 1 to 10, it prints 1 to 9. In this case, we need to locate the code that causes the error and revise it. Finally, the program runs into errors and aborts right away. In another words, our program crashes. We need to locate the error-causing code and correct them.&lt;/p&gt;
+
+&lt;h2 id=&quot;debugging&quot;&gt;Debugging&lt;/h2&gt;
+
+&lt;p&gt;What is debugging?&lt;/p&gt;
+
+&lt;p&gt;When our program causes error or produces incorrect results, we want to do debugging. Debugging is the process of finding out why our code doesn’t behave the way we want it to. It is also like doing research on our code; the aim is to gather as much information as necessary to debug.&lt;/p&gt;
+
+&lt;p&gt;Debugging sometimes is like&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/Users/frs/Downloads/2_Data_science/0_Foundation/4_Computer_science/Introduction_to_Python_programming/assets/debugging.gif&quot; alt=&quot;debugging&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;or like&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/Users/frs/Downloads/2_Data_science/0_Foundation/4_Computer_science/Introduction_to_Python_programming/assets/debugging2.png&quot; alt=&quot;debugging&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;error-types-and-common-errors&quot;&gt;Error types and common errors&lt;/h3&gt;
+
+&lt;p&gt;There are three types of errors with which we need to debug. We can still think of them in terms of building a table from instructions.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Compilation errors: These are the errors when we say: “The instructions do not make sense.” For example, the code syntax is incorrect (syntax error).&lt;/li&gt;
+  &lt;li&gt;Runtime error: These are errors encountered when we are building the table/running the code. For example, if one line of code tries to divide by zero, it would cause divide-by-zero error.&lt;/li&gt;
+  &lt;li&gt;Semantic error: If the table is successfully built but perhaps with reversed tabletop surface, we’ve encountered semantic error. For example, an incorrect code logic might not crash the program but produces an incorrect result.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here are four commonly encountered errors in Python:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NameError&lt;/code&gt;: Using a variable that does not exist.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;TypeError&lt;/code&gt;: Doing something that does not make sense for the type of variable.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AttributeError&lt;/code&gt;: Using attribute of some type of variable which does not make sense.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SyntaxError&lt;/code&gt;: A catch-all name for all sorts of syntax errors in Python.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;basic-debugging-techniques&quot;&gt;Basic debugging techniques&lt;/h3&gt;
+
+&lt;p&gt;Here are some basic debugging techniques that people use frequently.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Print debugging/tracing: Printing out the status of the code throughout the program to identify which part is not running as expected.&lt;/li&gt;
+  &lt;li&gt;Scope debugging: Debugging incrementally on the basis of small sections of code.&lt;/li&gt;
+  &lt;li&gt;Rubber duck debugging: Explaining in detail the logic, goal, and operations of the code to a third person/object (e.g., a rubber duck).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;advanced-debugging-techniques&quot;&gt;Advanced debugging techniques&lt;/h3&gt;
+
+&lt;p&gt;In some modern integrated development environments (IDEs), more advanced debugging support is provided.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Step-by-step execution: The program is run one line at a time, stopping anywhere we wish.&lt;/li&gt;
+  &lt;li&gt;Variable visualization: We could also visualize all active variables as the program runs.&lt;/li&gt;
+  &lt;li&gt;In-line debugging: Automatic checking of errors is done while we’re writing the code.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To learn more about testing and debugging our code, check out the &lt;a href=&quot;https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00-introduction-to-computer-science-and-programming-fall-2008/video-lectures/lecture-11/&quot;&gt;Testing and Debugging lecture&lt;/a&gt; from MIT OpenCourseware’s Introduction to Computer Science and Programming.&lt;/p&gt;
+
+&lt;h2 id=&quot;procedural-programming&quot;&gt;Procedural programming&lt;/h2&gt;
+
+&lt;p&gt;There are different programming paradigms to use when we write code for a program. Here are four common paradigms:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Procedural programming: Giving lines of instructions to the computer to carry out in order.&lt;/li&gt;
+  &lt;li&gt;Functional programming: Writing programs based on functions/methods with inputs and outputs.&lt;/li&gt;
+  &lt;li&gt;Object-oriented programming: Writing programs with custom data types that have custom methods to express complex concepts.&lt;/li&gt;
+  &lt;li&gt;Event-driven programming: Writing programs which wait and react to events rather than running code linearly.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In this course, we start with procedural programming, then functional programming. In the last Chapter, we introduce objected-oriented programming.&lt;/p&gt;
+
+&lt;p&gt;Another important part of the code that we write is not computer code but comments and documentation. They are there to help future us and others understand the code so that future improvements can be made. There are mainly two kinds of comments.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In-line comment: Alongside lines of code, to explain the specific line of code.&lt;/li&gt;
+  &lt;li&gt;Code-block comment: before segments of code, to explain what the segment of code does.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;variables&quot;&gt;Variables&lt;/h2&gt;
+
+&lt;p&gt;What is a variable?&lt;/p&gt;
+
+&lt;p&gt;It is a name in our program that holds some value. Variables are central to programming; Like variables in mathematics, they hold pieces of information. However, variables in computer programs can contain numbers and other things, e.g., characters, list of things, &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt; values. The type of the value is called data type, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt; is an integer. We use &lt;code class=&quot;highlighter-rouge&quot;&gt;type(a_variable)&lt;/code&gt; to access the type of &lt;code class=&quot;highlighter-rouge&quot;&gt;a_variable&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here are four basic data types in Python.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;: Integer, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;10&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-100&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt;: Floating point number, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;0.3&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-1000.0&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;: A string of characters, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;'a'&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;'a &amp;amp; b'&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;'word'&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;'A sentence is also a string.'&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bool&lt;/code&gt;: Boolean variable, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If possible, we could also convert data between different types. Here are the functions to do it in Python.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;int()&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;float()&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;str()&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bool()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;operators&quot;&gt;Operators&lt;/h2&gt;
+
+&lt;p&gt;Operators are the simplest ways to act on data, mostly on basic data types introduced above. There are two types of operators.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mathematical operators: Perform mathematical operations, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt;. They are commonly known but not the most useful in programming.&lt;/li&gt;
+  &lt;li&gt;Logical operators: Perform logical judgements, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt;. They are less known but play a bigger role in programming.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Logical operators can be further broken down into relational (larger, smaller) and boolean (true, false) operators.&lt;/p&gt;
+
+&lt;h3 id=&quot;mathematical-operators&quot;&gt;Mathematical operators&lt;/h3&gt;
+
+&lt;p&gt;Most of us are familiar with mathematical operators:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;,&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt; (remainder), &lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt; (floor division), &lt;code class=&quot;highlighter-rouge&quot;&gt;**&lt;/code&gt; (exponentiation)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A special meaning is attached to the equal sign &lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt;: Assignment operator. We use &lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt; to assign value to a variable.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Normal assignment: The format is &lt;code class=&quot;highlighter-rouge&quot;&gt;a_variable = a_value&lt;/code&gt;, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;a = 3&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Self-assignment: A Python way of assigning a new value to a variable based on the variable’s current value, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;+=&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;*=&lt;/code&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;number = number + 1&lt;/code&gt; is equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;number += 1&lt;/code&gt;``&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;number = number / 3&lt;/code&gt; is equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;number /= 3&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;relational-operators&quot;&gt;Relational operators&lt;/h3&gt;
+
+&lt;p&gt;Unlike mathematical operators, we always receive Boolean values (&lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;) as answers when using logical operators. There are two specific types of logical operators: relational and Boolean.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Relational operators: &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;=&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;=&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;in&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Relational operators compare the two sides and ask questions like: is the left hand side larger/smaller/equal to the right hand side? Specifically, &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; is asking whether the two things are equal; &lt;code class=&quot;highlighter-rouge&quot;&gt;in&lt;/code&gt; is asking whether the left hand side is an element in the right hand side (e.g., if &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; $\in$ &lt;code class=&quot;highlighter-rouge&quot;&gt;[a, b, c]&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;There are some operators that work on strings as well. For example, relational comparison of two strings is done based on the order of their constituent characters, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;'abc &amp;gt; bac'&lt;/code&gt; would produce &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt; since the position of &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; is before &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Strings work with: &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;=&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;=&lt;/code&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; concatenates two strings; &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; duplicates a string by an integer.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;boolean-operators&quot;&gt;Boolean operators&lt;/h3&gt;
+
+&lt;p&gt;Another kind of logical operators is Boolean operators. They act on Boolean values and also return Boolean values.&lt;/p&gt;
+
+&lt;p&gt;The are &lt;code class=&quot;highlighter-rouge&quot;&gt;not&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;and&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;or&lt;/code&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;not&lt;/code&gt;: Flips the Boolean value that follows &lt;code class=&quot;highlighter-rouge&quot;&gt;not&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;and&lt;/code&gt;: Only returns &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt; if both sides are true.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;or&lt;/code&gt;: Returns &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt; when at least one side is true.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;not True&lt;/code&gt; would produce &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;; &lt;code class=&quot;highlighter-rouge&quot;&gt;True and False&lt;/code&gt; would produce &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;; &lt;code class=&quot;highlighter-rouge&quot;&gt;True or False&lt;/code&gt; would produce &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;. Sometimes we encounter a long chain of Boolean evaluation. Python has an internal order of evaluation: &lt;code class=&quot;highlighter-rouge&quot;&gt;not&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;and&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;or&lt;/code&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;control-structures&quot;&gt;Control structures&lt;/h1&gt;
+
+&lt;p&gt;Control structures are programming statements that control, in what sequence, a series of code are run. They put some “human logic” in to a block of code. Until now, all the programs that we’ve written run from top to bottom in a linear sequence. It’s easier to interpret and debug. However, the power of programming shows significantly once we add in control structures. For example, control structures we learn next will be able do things like:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If a pre-specified condition is met, run code block A; If not, run code block B.&lt;/li&gt;
+  &lt;li&gt;If condition 1, 2, and 3 are all met, run code block A; If condition 1 is met, run code block B; If condition 2 is met, run code block C; if condition 3 and 4 are met, run code block D.&lt;/li&gt;
+  &lt;li&gt;Repeatedly run the next block of code for 10 time.&lt;/li&gt;
+  &lt;li&gt;Repeatedly run the next block of code until a pre-specified condition is met.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And many other powerful things.&lt;/p&gt;
+
+&lt;h2 id=&quot;conditionals&quot;&gt;Conditionals&lt;/h2&gt;
+
+&lt;p&gt;The first kind of control structures is called conditionals. They are statements that control which segment of code is executed based on the result of a condition evaluation.&lt;/p&gt;
+
+&lt;p&gt;In Python, we work with three conditional keywords: &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt;.  See the following example of a chained conditional.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Some&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;here&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Outside if-else block
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expression_1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Code&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;block&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expression_2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Code&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;block&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Some&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Some&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Code&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;block&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;
+  
+&lt;span class=&quot;n&quot;&gt;Some&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;here&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Outside if-else block
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Notice a few things in the conditional template above:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Conditional code forms a block by itself. Code above it and below it are not affected by the control logic, i.e., they are not subject to any of the conditional evaluation.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; means “if something is true” and “&lt;em&gt;el&lt;/em&gt;se, &lt;em&gt;if&lt;/em&gt; something is true”.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;expression&amp;gt;&lt;/code&gt; follows &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; to specify what that “something” is. It is a Boolean value or the equivalent of it, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;10 &amp;gt; 0&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;True and False&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;If &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;expression_1&amp;gt;&lt;/code&gt; is not true, the program skips Code block A and continues to the next conditional evaluation.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; means all the previous conditionals are rejected, as a last resort, we’ll run Code block C, without evaluating any condition.&lt;/li&gt;
+  &lt;li&gt;In a chained conditional like the above, at most one block of code is run. Which code block runs depend on the condition evaluation result.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Besides Boolean evaluations, there are a few special things that are considered as &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt; in Python:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Empty strings: &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&quot;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;''&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Empty list: &lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Singleton none: &lt;code class=&quot;highlighter-rouge&quot;&gt;None&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Python supports a shorter way to express single if-else conditional evaluation. Instead of the sequential way above, we can write:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;a_line_of_code if &amp;lt;expression&amp;gt; else another_line_of_code
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above code runs &lt;code class=&quot;highlighter-rouge&quot;&gt;a_line_of_code&lt;/code&gt; if &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;expression&amp;gt;&lt;/code&gt; is true. If not, it runs &lt;code class=&quot;highlighter-rouge&quot;&gt;another_line_of_code&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;loops&quot;&gt;Loops&lt;/h2&gt;
+
+&lt;p&gt;What if we wish to execute a segment of code repeatedly, e.g., for ten times, or until a condition is met? Loops allow us to do exactly that. There are two Python keywords to construct loops: &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;while&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; constructs loops where the number of repeats is known; &lt;code class=&quot;highlighter-rouge&quot;&gt;while&lt;/code&gt; is used when we only know a terminating condition.&lt;/p&gt;
+
+&lt;p&gt;Here’s a template for &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loops:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# For each number i in the list of [1, 2, 3]
+&lt;/span&gt;		&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+  
+&lt;span class=&quot;c1&quot;&gt;# The code above prints
+# 1
+# 2
+# 3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And the template for &lt;code class=&quot;highlighter-rouge&quot;&gt;while&lt;/code&gt; loop:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Repeat while number is less than or equal to 3
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+    &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;  
+
+&lt;span class=&quot;c1&quot;&gt;# The code above prints
+# 1
+# 2
+# 3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There are some keywords that we can use inside the loop for special control purposes.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;continue&lt;/code&gt;: Ignore the rest of the code in this current loop, continue with the next round of execution.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;break&lt;/code&gt;: Ignore the rest of the code in the current loop and exit the loop.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pass&lt;/code&gt;: Do nothing, continue with the next iteration in the loop.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;functions&quot;&gt;Functions&lt;/h2&gt;
+
+&lt;p&gt;Function is a block of of related code grouped together to perform a specific task. They replace repetitive codes with a simple line of function call. They help to make our program concise and organized. Functions can be built-in by a language or used-defined.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;An example&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Define a function
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;function_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+		&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;Add a, b, and other things in args.&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+  	
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
+  
+&lt;span class=&quot;c1&quot;&gt;# Calling(using) a function
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;function_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# b has a default value of 10.
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The above is an example of defining a function in Python:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The function is declared using the keyword &lt;code class=&quot;highlighter-rouge&quot;&gt;def&lt;/code&gt; followed by the function name that we give it.&lt;/li&gt;
+  &lt;li&gt;A function can take as many arguments as necessary separated by comma.&lt;/li&gt;
+  &lt;li&gt;Functions docstring using &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&quot;&quot;&lt;/code&gt; details what the function does and how to use it.&lt;/li&gt;
+  &lt;li&gt;The function returns some value through the keyword &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Types of arguments&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;There are four different types of arguments that we can define in a Python function.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Keyword arguments: They do not have pre-assigned values in the function definition. While calling a function, these positional arguments have to be given values in their order of appearance. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; in the above example is such an argument.&lt;/li&gt;
+  &lt;li&gt;Default arguments: They are arguments which are given default values during function definition. Hence, it may not be necessary to given these values when calling the function. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt; in the above example is such an argument.&lt;/li&gt;
+  &lt;li&gt;Variable-length arguments&lt;/li&gt;
+  &lt;li&gt;These are lists of arguments which we do not known in advance how long they are. They are defined in the function definition using *args.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;The concept of scope&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Scope means the portion of program that a variable can be seen and accessed.&lt;/li&gt;
+  &lt;li&gt;Compiled languages are generally different in scope design from scripted languages.&lt;/li&gt;
+  &lt;li&gt;Scope is usually defined by control structures.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Scoping in Python: Built-in scope &amp;gt;= global scope &amp;gt;= enclosing scope &amp;gt;= local scope&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Local scope: Variables created inside Python functions.&lt;/li&gt;
+  &lt;li&gt;Enclosing scope: Not local nor global scope, hence nonlocal scope, e.g. inside one function but outside another.&lt;/li&gt;
+  &lt;li&gt;Global scope: Variables which can be accessed anywhere in a program.&lt;/li&gt;
+  &lt;li&gt;Build-in scope: Largest scope, all variable names loaded into Python interpreter, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;len()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;int()&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Parameter: Variable that functions expect to receive an input.&lt;/p&gt;
+
+&lt;p&gt;Argument: Value of the function parameter passed as input.&lt;/p&gt;
+
+&lt;h2 id=&quot;error-handling&quot;&gt;Error handling&lt;/h2&gt;
+
+&lt;p&gt;Exception handling: Structure that anticipates and catches errors to avoid crashing and execute certain code.&lt;/p&gt;
+
+&lt;p&gt;Python error handling:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;try&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;except&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;finally&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;try&lt;/code&gt; to execute this segment of code, &lt;code class=&quot;highlighter-rouge&quot;&gt;except&lt;/code&gt; some error occurs, then do that instead. &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt;, if no error occurred, run this segment of code. &lt;code class=&quot;highlighter-rouge&quot;&gt;finally&lt;/code&gt;, regardless of the occurrence of errors, run this segment of code.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;finally&lt;/code&gt;: segment of code to run no matter what happens above, e.g., closing a file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nested exception-handling structure&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Errors escalate up incrementally to see if they can be caught.&lt;/li&gt;
+  &lt;li&gt;Errors also rise through function calls, e.g., an error occurred inside a function.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;data-structures&quot;&gt;Data structures&lt;/h1&gt;
+
+&lt;h2 id=&quot;data-structures-1&quot;&gt;Data structures&lt;/h2&gt;
+
+&lt;h3 id=&quot;passing-by-value-vs-passing-by-reference&quot;&gt;Passing by value vs passing by reference:&lt;/h3&gt;
+
+&lt;p&gt;By value: Giving variable values to functions. Functions can can’t change the original value.&lt;/p&gt;
+
+&lt;p&gt;By reference: Giving variable references to functions. Functions can access and change the original value.&lt;/p&gt;
+
+&lt;h3 id=&quot;passing-by-value-vs-passing-by-reference-in-python&quot;&gt;Passing by value vs passing by reference in Python&lt;/h3&gt;
+
+&lt;p&gt;Different languages have different ways of differentiating these two types.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C: variableName (value) vs *variableName (reference)&lt;/li&gt;
+  &lt;li&gt;Java: primitive types (value) vs non-primitive types (reference)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Python seems to handle everything via pass-by-value.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;However, not all types of data are passed by value, e.g., integers, strings.&lt;/li&gt;
+  &lt;li&gt;The key to discern Python’s behavior is: Mutability of the data type.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;mutability-in-python&quot;&gt;Mutability in Python&lt;/h3&gt;
+
+&lt;p&gt;Mutability: Whether or not a variable’s value can change after being declared.&lt;/p&gt;
+
+&lt;p&gt;In general, all variables in Python are passed by reference. However, only values of mutable data types can be changed, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;list&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;set&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;dict&lt;/code&gt;. Immutable data types in Python include: &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;tuple&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;bool&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;How Python actually work for immutable data types?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;my_int = 5&lt;/code&gt;: Python grabs a memory spot and stores ‘5’ in that spot. &lt;code class=&quot;highlighter-rouge&quot;&gt;my_int&lt;/code&gt; is asked to point to that memory spot with &lt;code class=&quot;highlighter-rouge&quot;&gt;id(my_int)&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;my_int_2 = my_int&lt;/code&gt;: Python asks &lt;code class=&quot;highlighter-rouge&quot;&gt;my_int_2&lt;/code&gt; point to the same memory spot as &lt;code class=&quot;highlighter-rouge&quot;&gt;my_int&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;my_int_2 = my_int_2 + 1&lt;/code&gt;: Python creates a new value ‘6’ and grabs a new memory spot to store it. Then it asks &lt;code class=&quot;highlighter-rouge&quot;&gt;my_int_2&lt;/code&gt; point to the new memory spot as ‘6’ is an immutable data type.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Basically, for immutable data types, when Python is asked to change its value, it does not change it on the spot. It stores the new value at a new memory location and asks the variable point to the new location instead. Therefore:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Identical values have identical memory address for immutable data types.&lt;/li&gt;
+  &lt;li&gt;Each new variable has a new memory address for mutable data types, regardless of the value.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;strings&quot;&gt;Strings&lt;/h2&gt;
+
+&lt;h3 id=&quot;what-are-strings&quot;&gt;What are strings?&lt;/h3&gt;
+
+&lt;p&gt;Some relevant concepts:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;String: A data structure that holds a list, or string of characters, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Hello world!&quot;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Character: A single letter, number, symbol, or special character, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;$&quot;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Unicode: A computing industry standard that sets the correspondence between hexadecimal codes and characters, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;U+0024&lt;/code&gt; means &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Special characters in programming: new line character, tab, etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The true complexity lies in trying to teach computers that way we human view and use these strings of characters. For example, how do we teach computers the concepts of&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ordering: &lt;code class=&quot;highlighter-rouge&quot;&gt;'A' &amp;lt; 'B'&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;'Aa' &amp;lt; 'Ab'&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Capitalization: To capitalize a sentence means &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Do this instead&quot;&lt;/code&gt; -&amp;gt;  &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Do This Instead&quot;.&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Cases: Recognize different cases, and conversion between different cases.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;declaring-strings-in-python&quot;&gt;Declaring strings in Python&lt;/h3&gt;
+
+&lt;p&gt;Python seeks the start and end of the string by matching &lt;code class=&quot;highlighter-rouge&quot;&gt;'&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;, or &lt;code class=&quot;highlighter-rouge&quot;&gt;'''&lt;/code&gt; characters:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A normal string: &lt;code class=&quot;highlighter-rouge&quot;&gt;a = &quot;a string&quot;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;a = 'a string'&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;A string with quotation: &lt;code class=&quot;highlighter-rouge&quot;&gt;a = &quot;'a string'&quot;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;a = '&quot;a string&quot;'&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;A string with double quotation: &lt;code class=&quot;highlighter-rouge&quot;&gt;a = ''' &quot; 'a string' &quot; '''&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However, we would run into trouble if we wish to declare special characters such as the new line character &lt;code class=&quot;highlighter-rouge&quot;&gt;\n&lt;/code&gt; or the tab character &lt;code class=&quot;highlighter-rouge&quot;&gt;\t&lt;/code&gt;. The trick is to use &lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt; as the escape character. It tells the computer to treat these special characters as normal, e.g, &lt;code class=&quot;highlighter-rouge&quot;&gt;'\\n'&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;'\\t'&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;string-concatenation-and-slicing-in-python&quot;&gt;String concatenation and slicing in Python&lt;/h3&gt;
+
+&lt;p&gt;Two of the commonly used operations on strings are concatenation and slicing.&lt;/p&gt;
+
+&lt;p&gt;Concatenation: Put two or more strings together to form a new one.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;my_string_1 + my_string_2&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;a string&quot; + my_string_1&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;my_string_1 += my_string_2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Slicing: Obtain substrings from a string in Python.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Using single index: &lt;code class=&quot;highlighter-rouge&quot;&gt;[index]&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[0]&lt;/code&gt; gets the first, &lt;code class=&quot;highlighter-rouge&quot;&gt;[-1]&lt;/code&gt;gets the last, and &lt;code class=&quot;highlighter-rouge&quot;&gt;[i]&lt;/code&gt; gets the (i+1)th character.&lt;/li&gt;
+      &lt;li&gt;Zero-based indexing: In early computing age, a variable name points to the first item in the string/list. The index means “how many items do I skip in order to get the target item”, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;[3]&lt;/code&gt; says skipping three items from the first item, i.e., to obtain the fourth item.&lt;/li&gt;
+      &lt;li&gt;Zero-based indexing
+        &lt;ul&gt;
+          &lt;li&gt;Legacy reason, in earlier primitive languages, variable pointers point to the first element in a list. Thus index then means how many items to skip to reach the target item, e.g. to get 5th item, we need to skip 4 items.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Using index range: &lt;code class=&quot;highlighter-rouge&quot;&gt;[start:end]&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;[start:]&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;[:end]&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;[start:end:space]&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Start from the item at index &lt;code class=&quot;highlighter-rouge&quot;&gt;start&lt;/code&gt; and get a substring with length &lt;code class=&quot;highlighter-rouge&quot;&gt;end - start&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;space&lt;/code&gt; to get alternate characters, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;[::2]&lt;/code&gt; gets all items at even index.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Using negative index
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[-n:]&lt;/code&gt;: Starts from the $n$th item from the end.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[:-n]&lt;/code&gt;: Ends at the $n$th item from the end.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;string-searching&quot;&gt;String searching&lt;/h3&gt;
+
+&lt;p&gt;Another commonly used operation is searching a certain substring in another string. For example, we would like to know if &lt;code class=&quot;highlighter-rouge&quot;&gt;my_string_1&lt;/code&gt; is contained in &lt;code class=&quot;highlighter-rouge&quot;&gt;my_string_2&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Using Python keyword &lt;code class=&quot;highlighter-rouge&quot;&gt;in&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;not in&lt;/code&gt; for a boolean answer.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;'David' in &quot;Today is David's birthday&quot;&lt;/code&gt; would give &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;'star' not in 'A lot of stairs' &lt;/code&gt; would also give &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Using &lt;code class=&quot;highlighter-rouge&quot;&gt;find()&lt;/code&gt;: A method defined for the string data type, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;my_string_1.find('star')&lt;/code&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;Find the index of the first instance of the substring. If not found, &lt;code class=&quot;highlighter-rouge&quot;&gt;-1&lt;/code&gt; is returned.&lt;/li&gt;
+      &lt;li&gt;We could specify the start and end of the original string to conduct the search.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Using &lt;code class=&quot;highlighter-rouge&quot;&gt;count()&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Count the number of times a substring is found in a string.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;useful-string-methods-in-python&quot;&gt;Useful string methods in Python&lt;/h3&gt;
+
+&lt;p&gt;There are some other useful methods that we could use on strings in Python.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;split(separator)&lt;/code&gt;: Split a string into a list of substrings using the separator.&lt;/li&gt;
+  &lt;li&gt;Case conversion: Convert a string to a different case.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;capitalize()&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lower()&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;upper()&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title()&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;strip()&lt;/code&gt;: Strip out all white spaces in a string.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;replace(old, new)&lt;/code&gt;: Replace all &lt;code class=&quot;highlighter-rouge&quot;&gt;old&lt;/code&gt; substrings with &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt; substrings in a string.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;-&quot;.join(a_list)&lt;/code&gt;: Use “-“ to join all string items in a list and form a new string.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;list-list-structures&quot;&gt;List-list structures&lt;/h2&gt;
+
+&lt;p&gt;A type of data structure that holds multiple individual values under one variable name, accessed by numeric indices. Examples in Python include tuple, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;(1,2,'cat',6)&lt;/code&gt;, and list, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;['a', 2, 'b']&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Tuple: An immutable form of list-like structure.&lt;/li&gt;
+  &lt;li&gt;List: A mutable form of list-like structure.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Both of them support holding non-homogenous data types, e.g., a tuple has both integers and strings.&lt;/p&gt;
+
+&lt;h3 id=&quot;tuples-in-python&quot;&gt;Tuples in Python&lt;/h3&gt;
+
+&lt;p&gt;There are two ways which we can use to access items in a tuple:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Using index: Exactly like how we use indices to access substrings in strings.&lt;/li&gt;
+  &lt;li&gt;Using unpacking technique: &lt;code class=&quot;highlighter-rouge&quot;&gt;(a, b, c, d) = a_tuple&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Usefulness of tuple: Return multiple items from a function, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;return (a,b,c,d)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;lists-in-python&quot;&gt;Lists in Python&lt;/h3&gt;
+
+&lt;p&gt;Lists are much more commonly used in Python programming. All the things that work with tuples as mention previously work with lists. The big difference is that lists are mutable. Hence we can do all sorts of operations on lists. For example, here are some common ones:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;a_list.sort()&lt;/code&gt;: Sort the items in &lt;code class=&quot;highlighter-rouge&quot;&gt;a_list&lt;/code&gt;, default in ascending order.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;a_list.reverse()&lt;/code&gt;: Reverse the order of the items.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;del a_list[i:j]&lt;/code&gt;: Delete &lt;code class=&quot;highlighter-rouge&quot;&gt;j-i&lt;/code&gt; items from &lt;code class=&quot;highlighter-rouge&quot;&gt;a_list &lt;/code&gt; starting from index &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;a_list.remove(x)&lt;/code&gt;: Delete item &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;a_list&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;a_list[i] = x&lt;/code&gt;: Assignment value of &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; to the list item at index &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;advanced-list-like-structures&quot;&gt;Advanced list-like structures&lt;/h3&gt;
+
+&lt;p&gt;There are more types of list-like structures that have specific advantage for certain applications. They are usually lists with certain restrictions on how items can be accessed or modified.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Stacks
+    &lt;ul&gt;
+      &lt;li&gt;Only the most recently added item can be accessed. Each subsequent item is accessed by  removing the next recently added one. In inventory management language, it’s called first in last out, like stacks of finished goods.&lt;/li&gt;
+      &lt;li&gt;One example is the code execution sequence in procedural programming.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Queues
+    &lt;ul&gt;
+      &lt;li&gt;Items added first are accessed first. Each subsequent item is accessed by removing the previous one. This is also called first in first out, like queues of customers.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Linked-lists
+    &lt;ul&gt;
+      &lt;li&gt;Linked-lists are different from other lists where each item has an index and can be accessed via a sequence of indices.&lt;/li&gt;
+      &lt;li&gt;The location of an item in a linked-list is only contained in the previous item in the list.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;file-input-and-output&quot;&gt;File input and output&lt;/h2&gt;
+
+&lt;p&gt;If we want to have some data of our program persist even after the session ends, we need a way to store and read data from our program.  File input and output are complementary processes of saving data to a file and loading data from a file. A file’s encoding specifies a set of rules about writing data to that file and loading data from it. In the most basic form, we would concentrate on dealing with text (&lt;code class=&quot;highlighter-rouge&quot;&gt;.txt&lt;/code&gt;) files.&lt;/p&gt;
+
+&lt;h3 id=&quot;reading-writing-and-appending&quot;&gt;Reading, writing, and appending&lt;/h3&gt;
+
+&lt;p&gt;The basic flow of interacting with files involve:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Opening a file and assign it to a variable.&lt;/li&gt;
+  &lt;li&gt;Do whatever operations we want with the file, e.g., reading data from it, writing data to it.&lt;/li&gt;
+  &lt;li&gt;Close the file after we are done.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To open and close files in Python, we use these functions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;file = open(file_name, mode)&lt;/code&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;file_name&lt;/code&gt; is the address of the write and &lt;code class=&quot;highlighter-rouge&quot;&gt;mode &lt;/code&gt; is one of the three described below.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;file.close()&lt;/code&gt;: Closing the file after we’re done with our operations.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When we open the file in a program, we usually specify a mode of interaction. There are three modes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reading, &lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt;: It means that we are only reading the file and do not intend to modify it.&lt;/li&gt;
+  &lt;li&gt;Writing, &lt;code class=&quot;highlighter-rouge&quot;&gt;w&lt;/code&gt;: We are going to erase everything on it and write some new data into it.&lt;/li&gt;
+  &lt;li&gt;Appending, &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt;: We are going to append some new data to whatever content the file already has.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It’s important to specify the mode. Also, opening a file prevents other programs from modifying it. That’s why we need to close it too after we’re done.&lt;/p&gt;
+
+&lt;h3 id=&quot;writing-files-in-python&quot;&gt;Writing files in Python&lt;/h3&gt;
+
+&lt;p&gt;Basic functions involved in writing data to files:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;file.write()&lt;/code&gt;: Write one string of text into the file.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;file.writelines()&lt;/code&gt;: Write a collection of items into the file.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;print(text, file = file_name)&lt;/code&gt;: This is equivalent to writing &lt;code class=&quot;highlighter-rouge&quot;&gt;text + '\n'&lt;/code&gt; to the file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;reading-files-in-python&quot;&gt;Reading files in Python&lt;/h3&gt;
+
+&lt;p&gt;The reverse process of writing data to a file is reading it from a file. By default, Python treats contents read from a file as text. We would need to convert them to other types if needed. Here are some basic functions of reading from a file:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;file.readline()&lt;/code&gt;: Read the content of a line in the file until the start of the next line.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;file.readlines()&lt;/code&gt;: Read the content of the file line by line and store them in a list of strings.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;file.read().splitlines()&lt;/code&gt;: Read the content of the file and split the content into a list of strings using new line character.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;dictionaries&quot;&gt;Dictionaries&lt;/h2&gt;
+
+&lt;p&gt;Dictionary is one of many powerful data structures. It is a data structure that holds multiple key-value pairs where keys can be used to look up corresponding values. The idea of dictionary is common in different programming languages. They are similarly known as maps, associative arrays, hashmaps, or hashtables. In dictionary, there’s a one-to-one correspondence between a key and a value. Notably, the order of the collection of key-value pairs do not matter in a dictionary, unlike lists.&lt;/p&gt;
+
+&lt;h3 id=&quot;dictionaries-in-python&quot;&gt;Dictionaries in Python&lt;/h3&gt;
+
+&lt;p&gt;While strings are declared with &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&quot;&lt;/code&gt; and lists are declared with &lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt;, dictionaries are declared with &lt;code class=&quot;highlighter-rouge&quot;&gt;{}&lt;/code&gt; in Python. For example, a simple dictionary with two arbitrary keys and values can be declared as&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;a_dict = {key_1: value_1; key_2: value_2}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Python requires that dictionary keys have to be an immutable data type such as string or integer. However, dictionaries themselves are mutable. Hence, we can perform various operations on the values of items in a dictionary, via their keys:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Modifying a value: &lt;code class=&quot;highlighter-rouge&quot;&gt;a_dict[key] = new_value&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Adding a new item: &lt;code class=&quot;highlighter-rouge&quot;&gt;a_dict[new_key] = new_value&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Deleting an item: &lt;code class=&quot;highlighter-rouge&quot;&gt;del a_dict[key]&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Checking the presence of an item: &lt;code class=&quot;highlighter-rouge&quot;&gt;a_key in a_dict&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Another important operation that we often use is traversing through items in a dictionary. We can do so in three common ways:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;for key in a_dict.keys()&lt;/code&gt;: Go through the list of keys.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;for value in a_dict.values()&lt;/code&gt;: Go through the list of values.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;for (key, value) in a_dict.items()&lt;/code&gt;: Go through the list of (key, value) pairs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;objects-and-algorithms&quot;&gt;Objects and algorithms&lt;/h1&gt;
+
+&lt;p&gt;This chapter introduces us to two fundamental pillars of knowledge in computer science: object-oriented programming (OOP) and algorithms. Breadth over depth is emphasized in this chapter.&lt;/p&gt;
+
+&lt;h2 id=&quot;objects&quot;&gt;Objects&lt;/h2&gt;
+
+&lt;h3 id=&quot;what-are-objects&quot;&gt;What are objects?&lt;/h3&gt;
+
+&lt;p&gt;Objects are concepts from OOP paradigm.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In contrast to procedural or functional programming, OOP is a paradigm where custom data types are defined and used with custom methods defined for them.&lt;/li&gt;
+  &lt;li&gt;Class: We usually refer to such a data type as a class with custom methods and variables (also known as class attributes).&lt;/li&gt;
+  &lt;li&gt;Objects and instances: An object or instance is what we usually refer to a particular “variable” created from a class. For example:
+    &lt;ul&gt;
+      &lt;li&gt;From a &lt;code class=&quot;highlighter-rouge&quot;&gt;person&lt;/code&gt; class, we can create a particular person, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;David&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Mary&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;From a &lt;code class=&quot;highlighter-rouge&quot;&gt;book&lt;/code&gt; class, we can create a particular book, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;book_A&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;book_B&lt;/code&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Therefore, to understand the class-instance relationship, we can think of the relationship between an unfilled form and a filled one: An unfilled form represents a template, a class; The form can then be filled with different information by different people to create different instances.&lt;/p&gt;
+
+&lt;h3 id=&quot;objects-and-instances-in-python&quot;&gt;Objects and instances in Python&lt;/h3&gt;
+
+&lt;p&gt;Just like how we need to declare a function before using it, to work with objects and instances, we first need to declare the class. Declaring classes in Python is essentially teaching the computer what kind of concepts make sense for the class object. For example&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To make a &lt;code class=&quot;highlighter-rouge&quot;&gt;book&lt;/code&gt; class, each book instance could have a title, an author, a publication date, etc.&lt;/li&gt;
+  &lt;li&gt;To make a &lt;code class=&quot;highlighter-rouge&quot;&gt;person&lt;/code&gt; class, each person instance could have a name, an age, an eye color, etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;During declaration, Python uses the dot syntax &lt;code class=&quot;highlighter-rouge&quot;&gt;self.&lt;/code&gt; to assign or access its attributes such as title or author.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For example, to set a book instance’s name as &lt;code class=&quot;highlighter-rouge&quot;&gt;'Python Programming'&lt;/code&gt;, we can write: &lt;code class=&quot;highlighter-rouge&quot;&gt;self.name = 'Python Programming'&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;encapsulating-methods-in-classes&quot;&gt;Encapsulating methods in classes&lt;/h3&gt;
+
+&lt;h2 id=&quot;algorithms&quot;&gt;Algorithms&lt;/h2&gt;
+
 </content>
  </entry>
  
