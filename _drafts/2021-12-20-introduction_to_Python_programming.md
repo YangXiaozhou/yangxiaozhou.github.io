@@ -275,9 +275,9 @@ for i in [1,2,3]:  # For each number i in the list of [1, 2, 3]
 		print(i)  
   
 # The code above prints
-# 1
-# 2
-# 3
+1
+2
+3
 ```
 
 And the template for `while` loop:
@@ -286,12 +286,12 @@ And the template for `while` loop:
 number = 1
 while number <= 3:  # Repeat while number is less than or equal to 3
     print(number)  
-    number += 1  
+    number += 1
 
 # The code above prints
-# 1
-# 2
-# 3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+1
+2
+3
 ```
 
 There are some keywords that we can use inside the loop for special control purposes. 
@@ -302,7 +302,7 @@ There are some keywords that we can use inside the loop for special control purp
 
 ## Functions
 
-Function is a block of of related code grouped together to perform a specific task. They replace repetitive codes with a simple line of function call. They help to make our program concise and organized. Functions can be built-in by a language or used-defined.
+Function is a block of related code grouped together to perform a specific task. They replace repetitive codes with a simple line of function call. They help to make our program concise and organized. Functions can be built-in by a language or used-defined.
 
 **An example**
 
@@ -677,11 +677,23 @@ class Person:
         self.father = father
         self.mother = mother
 
-#Write your code here!
 mr_burdell = Person('Mr. Burdell', 53)  # create an instance of father
 mrs_burdell = Person('Mrs. Burdell', 53)  # create an instance of mother
-george_p = Person('George P. Burdell', 25, father=mr_burdell, mother=mrs_burdell)
+george_p = Person('George P. Burdell', 25, father=mr_burdell, mother=mrs_burdell)  # using class instances as arguments
 ```
+
+**Class and instance variables**: it's possible to create variables in a class declaration. However, depending on where you create it, it could be a class or instance variable, which have every different behaviors.
+
+```python
+class Dog:
+
+    kind = 'canine'         # class variable shared by all instances
+
+    def __init__(self, name):
+        self.name = name    # instance variable unique to each instance
+```
+
+In the above code, `kind` is declared before initialization and is a class variable. That means every instance of the class `Dog` would have a variable with value `canine`. If the variable is of mutable data type, any change to the value later is seen by all class instances. On the other hand, `self.name` is an instance variable that can only be accessed and modified by each class instance. 
 
 ## Algorithms
 
@@ -695,20 +707,79 @@ One of the key things we would like to know about an algorithm is its complexity
 
 So what is big $O$ notation? It's a notation to express the worst-case efficiency of an algorithm in terms of the size of input. Similarly, there's big $\Omega$ notation for best-case efficiency and big $\Theta$ notation for typical-case efficiency. Below is a table that shows some of the most commonly seen complexities. In particular, it shows, under each complexity, how the number of required operations grow when the size of input changes from $x_0$ to $x_1$. For example, for a constant complexity, the number of operations is still $y_0$ whereas for quadratic complexity, the number scales quadratically to $y_0 \cdot (\frac{x_1}{x_0})^2$. 
 
-| Complexity   | Notation      | Size of input & number of operations | New size of input & number of  operations                    |
-| ------------ | ------------- | ------------------------------------ | ------------------------------------------------------------ |
-| Constant     | $O(1)$        | $x_0 \,, y_0$                        | $x_1 \,, y_0 \cdot 1$                                        |
-| Logarithmic  | $O(\log n)$   | $x_0 \,, y_0$                        | $x_1 \,, y_0 \cdot \sqrt{\frac{x_1}{x_0}}$                   |
-| Linear       | $O(n)$        | $x_0 \,, y_0$                        | $x_1 \,, y_0 \cdot \frac{x_1}{x_0}$                          |
-| Linearithmic | $O(n \log n)$ | $x_0 \,, y_0$                        | $x_1 \,, y_0 \cdot \frac{x_1}{x_0} \cdot \sqrt{\frac{x_1}{x_0}}$ |
-| Quadratic    | $O(n^2)$      | $x_0 \,, y_0$                        | $x_1 \,, y_0 \cdot (\frac{x_1}{x_0})^2$                      |
-| Cubic        | $O(n^3)$      | $x_0 \,, y_0$                        | $x_1 \,, y_0 \cdot (\frac{x_1}{x_0})^3$                      |
-| Exponential  | $O(2^n)$      | $x_0 \,, y_0$                        | $x_1 \,, y_0^{{x_1}/{x_0}}$                                  |
-| Factorial    | $O(n!)$       | $x_0 \,, y_0$                        | $x_1 \,, y_0 \cdot \frac{x_1}{x_0} !$                        |
+| Complexity   | Notation      | Size of input & number of operations | New size of input | New number of  operations                                |
+| ------------ | ------------- | ------------------------------------ | ----------------- | -------------------------------------------------------- |
+| Constant     | $O(1)$        | $x_0 \,, y_0$                        | $x_1$             | $ y_0 \cdot 1$                                           |
+| Logarithmic  | $O(\log n)$   | $x_0 \,, y_0$                        | $x_1$             | $y_0 \cdot \sqrt{\frac{x_1}{x_0}}$                       |
+| Linear       | $O(n)$        | $x_0 \,, y_0$                        | $x_1$             | $y_0 \cdot \frac{x_1}{x_0}$                              |
+| Linearithmic | $O(n \log n)$ | $x_0 \,, y_0$                        | $x_1$             | $y_0 \cdot \frac{x_1}{x_0} \cdot \sqrt{\frac{x_1}{x_0}}$ |
+| Quadratic    | $O(n^2)$      | $x_0 \,, y_0$                        | $x_1$             | $y_0 \cdot (\frac{x_1}{x_0})^2$                          |
+| Cubic        | $O(n^3)$      | $x_0 \,, y_0$                        | $x_1$             | $y_0 \cdot (\frac{x_1}{x_0})^3$                          |
+| Exponential  | $O(2^n)$      | $x_0 \,, y_0$                        | $x_1$             | $y_0^{{x_1}/{x_0}}$                                      |
+| Factorial    | $O(n!)$       | $x_0 \,, y_0$                        | $x_1$             | $y_0 \cdot \frac{x_1}{x_0} !$                            |
 
 And here's an illustrative plot showing how the number of operations scale with the size of input. As the size of input increases from 1 to 50, algorithms of the "good" complexities require less than 1000 operations whereas that of the "bad" complexity requires around 5000. More notably, the rate of increase from algorithms of the "horrible" complexities seems too fast for my little plot to capture.
 
-<img src="/Users/frs/Downloads/3_Computer_science/1_Introduction/Introduction_to_Python_programming/assets/time_complexity.png" alt="time_complexity"  />
+<img src="/Users/frs/Downloads/3_Computer_science/1_Introduction/Introduction_to_Python_programming/assets/time_complexity.png" alt="time_complexity" style="zoom: 50%;" />
 
 ### Recursion
+
+Recursion is a powerful idea to start our tour into the world of algorithms. It is a type of method characterized by operations that call additional copies of themselves. The idea is to break problem down into smaller and identical tasks. Recursion is best illustrated with the classic example of obtaining the Fibonacci series. The Fibonacci series is a series of numbers with a particular repetitive pattern: $0, 1, 1, 2, 3, 5, 8, 13, ...$ where the number is equal to the sum of the previous two numbers, except of course the first two which we specify as $0$ and $1$. 
+
+```python
+def Fib(n):
+    if n > 2:
+      	# Return sum of the previous two fib numbers
+        return Fib(n-1) + Fib(n-2)  
+    elif n > 1:
+        return 1
+    else:
+        return 0
+```
+
+Notice that in line 4, we have called the function itself, but with different arguments: `n-1` and `n-2`. This line captures the recursive pattern of the $n$th Fibonacci number: it equals to the sum of the previous two Fibonacci numbers. The below code would then give us a list of Fibonacci numbers with `n = 1` to `19`. 
+
+```python
+[Fib(i) for i in range(1, 20)]
+```
+
+And this is the time it takes to compute the 19 numbers:
+
+```bash
+2.51 ms ± 47.2 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+```
+
+**Computation time**
+
+Since we are on the topic of efficient computation, one question people always ask themselves is: Can we do better? 2.53 ms is certainly not a long time. However, considering this is just 19 numbers using a modern computer, we can certainly do better. In fact, if we break down the operations involved in our `Fib` code, we can see many repetitive and possibly wasted operations. For example, below is a plot of operations involved when computing `Fib(5)`. 
+
+<img src="/Users/frs/Downloads/3_Computer_science/1_Introduction/Introduction_to_Python_programming/assets/fib_diagram.png" alt="time_complexity"  />
+
+To compute `Fib(5)`, our program asks for `Fib(3)` and `Fib(4)`. They in turn ask for `Fib(1)`, `Fib(2)`, and `Fib(2)`, `Fib(3)`. We can already see the repeated computation of `Fib(2)` and `Fib(3)` here. All the brightly colored operations in the above plot indicate repeated computation. This is just for `Fib(5)`; our program of asking Fibonacci number from 1 to 19 involves a lot more redundant operations. So can we do better?
+
+```python
+def Fib(n):
+    fib = [0, 1]  # create a list of Fibonacci numbers
+    for i in range(2, n):
+        fib.append(fib[i-1] + fib[i-2])  # append already computed numbers
+    return fib 
+```
+
+The above code maintains a list of computed Fibonacci numbers so far. The new number is then just the sum of the last two items in the list `fib`, cutting down all the redundant computations. Given a total number, the program runs once and returns the correct Fibonacci series. Indeed, this version is significantly faster (~800 times) than the last:
+
+```bash
+3.25 µs ± 254 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+```
+
+### Sorting algorithms
+
+
+
+
+
+
+
+
+
+
 
