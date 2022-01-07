@@ -14,3 +14,5 @@ Growing up, my dad would always tell me that "好记性不如烂笔头", which m
 So I decided to start this blog where I can put thoughts down and not worry about losing them. 
 
 > 没有眼里所无法看见的花朵，更没心中所不愿思慕的明月。\- 松尾芭蕉
+
+<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=uVm0iY606ygkHyRXyKY7n9NxS--WizBHCzBfexdlDOM&cl=ffffff&w=a"></script>
