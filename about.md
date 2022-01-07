@@ -15,4 +15,4 @@ So I decided to start this blog where I can put thoughts down and not worry abou
 
 > 没有眼里所无法看见的花朵，更没心中所不愿思慕的明月。\- 松尾芭蕉
 
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=uVm0iY606ygkHyRXyKY7n9NxS--WizBHCzBfexdlDOM&cl=ffffff&w=a"></script>
+<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=m&d=uVm0iY606ygkHyRXyKY7n9NxS--WizBHCzBfexdlDOM&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353"></script>
